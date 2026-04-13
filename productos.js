@@ -78,7 +78,7 @@ const productos = [
         caracteristicas: ["Ideal para temporada de Exogena podras validar los nombres asociados a los Nit ó cédulas.", "Organiza tus obligaciones tributarias en el entorno calendario.", "Localmente podras convertir Imagen a PDF, Unir PDF y aplicar OCR.", "Accede aun repositorio contable amplio para estar al día."],
         nota: "Se trata de una aplicación ejecutable (EXE) que se configura y licencia de forma remota mediante AnyDesk. Funciona con un pago único por PC que tenga sistema operativo Windows 10/11 y se mantiene operativa de manera indefinida, excepto en caso de cambios estructurales en las plataformas; <b>Conserve su ID (Puesto de trabajo) anydesk para futuros soportes.</b>",
         precio: "COP $69.900",
-        video: "https://youtu.be/94eZHyLqUo8",
+        video: "https://youtu.be/JcVo7Dqg0TY",
         fotos: ["img/p7-0.png", "img/p7-1.png", "img/p7-2.png", "img/p7-3.png", "img/p7-4.png", "img/p7-5.png", "img/p7-6.png", "img/p7-7.png", "img/p7-8.png", "img/p7-9.png", "img/p7-10.png"]
     },
     {

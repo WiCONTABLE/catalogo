@@ -113,9 +113,7 @@
         .faq-answer { padding: 20px; background: #fafafa; display: none; color: #555; line-height: 1.6; border-top: 1px dashed #eee; font-size: 0.95rem; }
 
         /* --- 3. SECCIÓN INFERIOR --- */
-        .product-bottom-section { text-align: center; margin-bottom: 80px; }
-        .price-large { font-size: 3.5rem; font-weight: 900; color: #000; margin-bottom: 25px; letter-spacing: -1px; }
-        .btn-buy-large { display: inline-block; background: var(--ws-green); color: white; padding: 18px 80px; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 1.3rem; transition: 0.3s; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); }
+        .btn-buy-large { display: inline-block; background: var(--ws-green); color: white; border-radius: 12px; text-decoration: none; font-weight: 800; transition: 0.3s; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); }
         .btn-buy-large:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5); background: #20bd5a; }
 
         /* Carrusel Otros Productos */
@@ -187,7 +185,7 @@
                         
                         <div class="faq-item">
                             <div class="faq-question" onclick="toggleFaq(this)">¿Que requiero para instalar la herramienta, que pasos debo seguir? <span style="color:#128C7E;">▼</span></div>
-                            <div class="faq-answer">Para garantizar la mejor experiencia, es fundamental que visualice previamente el video tutorial de funcionamiento. Una vez confirmado el pago, nos pondremos en contacto con usted a través de WhatsApp y AnyDesk para realizar la instalación y activación del producto correspondiente. (<b>RECUERDE</b> que se requiere versión Windows 10 ó preferiblemente Windows 11 para un mejor rendimiento). Adicionalmente, brindaremos un espacio para resolver cualquier inquietud que no haya sido aclarada en el video de apoyo.</div>
+                            <div class="faq-answer">Para garantizar la mejor experiencia, es fundamental que visualice previamente el video tutorial de funcionamiento. Una vez confirmado el pago, nos pondremos en contacto con usted a través de WhatsApp y AnyDesk para realizar la instalación y activación del producto correspondiente. (<b>RECUERDE</b> que se requiere versión Windows 10 ó preferiblemente Windows 11 en los ejecutable .exe y Navegadores Chrome - Brave - Edge en las extensiones web .crx para un mejor rendimiento). Adicionalmente, brindaremos un espacio para resolver cualquier inquietud que no haya sido aclarada en el video de apoyo.</div>
                         </div>
                         <div class="faq-item">
                             <div class="faq-question" onclick="toggleFaq(this)">¿Cuánto se demora el envío o instalación después de hacer el pago? <span style="color:#128C7E;">▼</span></div>
@@ -244,13 +242,15 @@ ${p.fotos.length > 1 ? '<button class="nav-btn prev" onclick="moveSlide(-1)">❮
                                 <span class="tech-value">💻 ${formatoText}</span>
                             </div>
                         </div>
+
+                        <div style="margin-top: 35px; display: flex; align-items: center; gap: 25px; flex-wrap: wrap;">
+                            <div style="font-size: 2.6rem; font-weight: 900; color: #000; letter-spacing: -1px;">${p.precio}</div>
+                            <a href="https://wa.me/${miTelefono}?text=¡Hola! Estuve viendo el videotutorial de funcionamiento y me interesa adquirir la herramienta. Cual es el paso a seguir para adquirir?: ${encodeURIComponent(p.nombre)}" class="btn-buy-large" style="padding: 15px 35px; font-size: 1.1rem; margin: 0;" target="_blank">Pedir por WhatsApp</a>
+                        </div>
                     </div>
                 </div>
 
-                ${seccionTecnicaHTML} <div class="product-bottom-section">
-                    <div class="price-large">${p.precio}</div>
-                    <a href="https://wa.me/${miTelefono}?text=¡Hola! Estuve viendo el videotutorial de funcionamiento y me interesa adquirir la herramienta. Cual es el paso a seguir para adquirir?: ${encodeURIComponent(p.nombre)}" class="btn-buy-large" target="_blank">Pedir por WhatsApp</a>
-                </div>
+                ${seccionTecnicaHTML}
             `;
         }
 

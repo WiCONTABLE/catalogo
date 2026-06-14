@@ -28,7 +28,13 @@
 
         /* --- 1. SECCIÓN SUPERIOR --- */
         .product-top-section { display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; margin-bottom: 40px; }
-        @media (max-width: 850px) { .product-top-section { grid-template-columns: 1fr; } }
+        .mobile-only { display: none; } /* Oculto por defecto en PC */
+        
+        @media (max-width: 850px) { 
+            .product-top-section { grid-template-columns: 1fr; } 
+            .desktop-only { display: none; } /* Se oculta en móviles */
+            .mobile-only { display: block; } /* Se muestra en móviles */
+        }
 
         .product-left { display: flex; flex-direction: column; gap: 20px; }
         .carousel { position: relative; aspect-ratio: 4/5; overflow: hidden; background: #fff; border-radius: 20px; box-shadow: var(--card-shadow); }
@@ -207,7 +213,7 @@
                             <div class="slides" id="slides">${p.fotos.map(f => `<img src="${f}" alt="${p.nombre}">`).join('')}</div>
 ${p.fotos.length > 1 ? '<button class="nav-btn prev" onclick="moveSlide(-1)">❮</button><button class="nav-btn next" onclick="moveSlide(1)">❯</button>' : ''}
                         </div>
-                        <div class="important-note">
+                        <div class="important-note desktop-only">
                             <b>SOPORTE:</b><br><br>${p.nota}
                         </div>
                     </div>
@@ -248,6 +254,10 @@ ${p.fotos.length > 1 ? '<button class="nav-btn prev" onclick="moveSlide(-1)">❮
                             <a href="https://wa.me/${miTelefono}?text=¡Hola! Estuve viendo el videotutorial de funcionamiento y me interesa adquirir la herramienta. Cual es el paso a seguir para adquirir?: ${encodeURIComponent(p.nombre)}" class="btn-buy-large" style="padding: 15px 35px; font-size: 1.1rem; margin: 0;" target="_blank">Pedir por WhatsApp</a>
                         </div>
                     </div>
+                </div>
+
+                <div class="important-note mobile-only" style="margin-bottom: 40px;">
+                    <b>SOPORTE:</b><br><br>${p.nota}
                 </div>
 
                 ${seccionTecnicaHTML}

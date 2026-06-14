@@ -42,7 +42,7 @@ const productos = [
         nombre: "Consulta Datos NIT (DIAN)",
         formato: "Extensión Web .crx",
         mostrarTecnica: true,
-        desc: "<b>REF005</b><p>Verifica de forma masiva y automática el nombre asociado a los NIT, sin procesos manuales ni captchas repetitivos.<p> <p>Ideal para temporada de exógena y validación ágil del estado de proveedores.<p><b>Actualizada el 05-01-2026</b>",
+        desc: "<b>REF005</b><p>Verifica de forma masiva y automática el nombre asociado a los NIT, sin procesos manuales ni captchas repetitivos.<p> <p>Ideal para temporada de exógena y validación de los formatos que requieran esta auditoria.<p><b>Actualizada el 05-01-2026</b>",
         caracteristicas: ["Carga un archivo EXCEL ó pega directamente las identificaciones.", "Puedes decidir en consultar CON estado RUT, la cual te anexara si esta: ACTIVO, CANCELADO ó SUSPENDIDO; este proceso valida catpcha y depende si el portal web se encuentre estable.", "Puedes decidir en consultar SIN estado RUT, la cual es más ligero y estable; este proceso solo te indica si esta registrado o no en la DIAN."],
         nota: "Para brindarle un soporte técnico oportuno, requerimos conectarnos de forma remota a su equipo a través de AnyDesk. Tenga en cuenta que este acceso quedará registrado de manera individual en cada computadora durante la instalación. Por su seguridad, nuestro equipo se comunicará exclusivamente al número de móvil que tiene registrado con nosotros. Asimismo, le recordamos que el funcionamiento de nuestra herramienta depende de plataformas de terceros integradas; cualquier cambio en los parámetros de dichas plataformas nos exime de responsabilidad sobre la continuidad del servicio.</b>",
         precio: "COP $30.000",

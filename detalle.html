@@ -6,43 +6,126 @@
     <title>Detalle - WiCONTABLE</title>
     <link rel="icon" href="img/logowi.png" type="image/png">
     <style>
-        :root { --ws-green: #25D366; --ws-dark: #128C7E; --bg-gray: #f8f9fa; --card-shadow: 0 10px 25px rgba(0,0,0,0.08); }
-        body { font-family: 'Segoe UI', sans-serif; background: var(--bg-gray); margin: 0; position: relative; }
+        :root { 
+            --ws-green: #25D366; 
+            --ws-dark: #128C7E; 
+            --bg-gray: #f8f9fa; 
+            --card-shadow: 0 10px 25px rgba(0,0,0,0.08); 
+            --text-main: #333;
+        }
+        
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg-gray); margin: 0; position: relative; color: var(--text-main); }
         
         body::before { content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: url('img/logowi.png'); background-repeat: no-repeat; background-position: center; background-size: 40%; opacity: 0.04; z-index: 1000; pointer-events: none; }
 
+        /* Barra superior */
         .marquee-wrapper { width: 100%; overflow: hidden; background: white; padding: 12px 0; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 100; }
         .marquee-content { display: inline-block; white-space: nowrap; padding-left: 100%; animation: scroll-text 30s linear infinite; font-weight: 600; color: #008f39; }
         @keyframes scroll-text { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
 
         .main-wrapper { max-width: 1100px; margin: 0 auto; padding: 20px; min-height: 80vh; }
-        .back-btn { display: inline-block; margin-bottom: 20px; text-decoration: none; color: #333; font-weight: bold; }
+        .back-btn { display: inline-block; margin-bottom: 30px; text-decoration: none; color: #333; font-weight: bold; font-size: 1.1rem; }
 
-        .detail-card { background: white; border-radius: 25px; overflow: hidden; box-shadow: var(--card-shadow); display: grid; grid-template-columns: 1fr 1.2fr; margin-bottom: 40px; }
-        @media (max-width: 850px) { .detail-card { grid-template-columns: 1fr; } }
+        /* --- 1. SECCIÓN SUPERIOR --- */
+        .product-top-section { display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; margin-bottom: 40px; }
+        @media (max-width: 850px) { .product-top-section { grid-template-columns: 1fr; } }
 
-        .carousel { position: relative; aspect-ratio: 1/1; overflow: hidden; background: #fff; border-right: 1px solid #eee; }
+        .product-left { display: flex; flex-direction: column; gap: 20px; }
+        .carousel { position: relative; aspect-ratio: 4/5; overflow: hidden; background: #fff; border-radius: 20px; box-shadow: var(--card-shadow); }
         .slides { display: flex; transition: 0.5s; height: 100%; }
-        .slides img { width: 100%; object-fit: contain; flex-shrink: 0; }
-        .nav-btn { position: absolute; top: 50%; background: rgba(255,255,255,0.9); border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; transform: translateY(-50%); }
-        .prev { left: 10px; } .next { right: 10px; }
-
-        .info-content { padding: 30px; }
-        .features { list-style: none; padding: 0; margin: 15px 0; }
-        .features li::before { content: "✅"; margin-right: 10px; }
-        .share-row { display: flex; gap: 10px; margin: 20px 0; align-items: center; }
-        .share-btn { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; }
+        .slides img { width: 100%; object-fit: contain; flex-shrink: 0; padding: 20px; box-sizing: border-box; }
         
-        .important-note { background: #fff9c4; padding: 15px; border-radius: 12px; border-left: 5px solid #fbc02d; font-size: 0.9rem; margin: 20px 0; }
-        .price { font-size: 2.2rem; font-weight: 800; color: #000; margin-bottom: 20px; }
-        .btn-buy { display: block; background: var(--ws-green); color: white; text-align: center; padding: 18px; border-radius: 15px; text-decoration: none; font-weight: bold; font-size: 1.2rem; transition: 0.3s; }
+        /* Caja de soporte */
+        .important-note { background: #fffde7; padding: 25px; border-radius: 15px; border: 1px solid #fbc02d; font-size: 0.9rem; line-height: 1.5; box-shadow: 0 4px 10px rgba(0,0,0,0.03); color: green; }
 
-        /* SCROLL HORIZONTAL */
+        .product-title { font-size: 2.2rem; margin: 0 0 10px 0; color: #000; font-weight: 800; }
+        .product-ref { font-size: 0.95rem; color: #666; font-weight: 600; margin-bottom: 25px; display: inline-block; background: #e0e0e0; padding: 4px 10px; border-radius: 5px; }
+        .product-desc { font-size: 1.05rem; line-height: 1.6; color: #444; margin-bottom: 20px; }
+        
+        .features-title { font-weight: 700; margin-bottom: 10px; display: block; color: #000; }
+        .features { list-style: none; padding: 0; margin: 0 0 25px 0; }
+        .features li { margin-bottom: 12px; display: flex; align-items: flex-start; line-height: 1.4; color: #333; }
+        .features li::before { content: "✅"; margin-right: 12px; font-size: 1.1rem; }
+
+        /* Lista de hipervínculos (Compartir, Video, Formato) */
+        .tech-links { background: rgba(37, 211, 102, 0.05); padding: 20px; border-radius: 12px; border-left: 4px solid var(--ws-green); display: flex; flex-direction: column; gap: 12px; }
+        .tech-links-row { display: flex; align-items: center; font-size: 0.95rem; }
+        .tech-links-label { font-weight: 800; color: #128C7E; width: 130px; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.5px; }
+        .tech-link { color: #1877F2; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 5px; transition: 0.2s; }
+        .tech-link:hover { text-decoration: underline; color: #0000CD; }
+        .tech-value { font-weight: 600; color: #444; }
+
+        /* Botones del Carrusel */
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.4);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            border-radius: 50%;
+            z-index: 10;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .nav-btn:hover { background: var(--ws-green); box-shadow: 0 4px 10px rgba(37, 211, 102, 0.4); }
+        .prev { left: 10px; }
+        .next { right: 10px; }
+
+        /* --- 2. SECCIÓN CENTRAL (DISEÑO FUTURISTA) --- */
+        .product-middle-section { 
+            background: linear-gradient(145deg, #ffffff, #f4f7f6);
+            border-radius: 20px; 
+            border: 1px solid rgba(18, 140, 126, 0.15); 
+            box-shadow: 0 10px 40px rgba(0,0,0,0.06); 
+            margin-bottom: 50px; 
+            overflow: hidden; 
+            position: relative;
+        }
+        
+        /* Línea superior brillante */
+        .product-middle-section::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px;
+            background: linear-gradient(90deg, #25D366, #128C7E, #0000CD, #25D366);
+            background-size: 200% auto;
+            animation: gradient-glow 3s linear infinite;
+        }
+        @keyframes gradient-glow { 0% { background-position: 0% center; } 100% { background-position: 200% center; } }
+
+        .futuristic-tab-container { padding: 0 30px; border-bottom: 1px solid rgba(0,0,0,0.05); background: rgba(255,255,255,0.5); }
+        .futuristic-tab { display: inline-block; padding: 20px 0; font-size: 1.1rem; color: var(--ws-dark); font-weight: 800; text-transform: uppercase; letter-spacing: 1px; border-bottom: 3px solid var(--ws-green); margin-bottom: -1px; }
+        
+        .tab-content { padding: 40px 30px; }
+        .tab-content h3 { font-size: 1.6rem; color: #222; margin-top: 0; font-weight: 800; letter-spacing: -0.5px; }
+        .tab-content p { line-height: 1.7; color: #555; font-size: 1.05rem; }
+
+        /* Acordeón FAQ */
+        .faq-title { text-align: center; color: #0000CD; margin: 50px 0 25px; font-size: 1.4rem; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; }
+        .faq-item { border: 1px solid #eee; margin-bottom: 10px; border-radius: 10px; overflow: hidden; background: white; transition: 0.3s; }
+        .faq-item:hover { box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .faq-question { padding: 18px 20px; background: #fff; cursor: pointer; display: flex; justify-content: space-between; font-weight: 700; color: #333; font-size: 0.95rem; user-select: none; }
+        .faq-answer { padding: 20px; background: #fafafa; display: none; color: #555; line-height: 1.6; border-top: 1px dashed #eee; font-size: 0.95rem; }
+
+        /* --- 3. SECCIÓN INFERIOR --- */
+        .product-bottom-section { text-align: center; margin-bottom: 80px; }
+        .price-large { font-size: 3.5rem; font-weight: 900; color: #000; margin-bottom: 25px; letter-spacing: -1px; }
+        .btn-buy-large { display: inline-block; background: var(--ws-green); color: white; padding: 18px 80px; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 1.3rem; transition: 0.3s; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); }
+        .btn-buy-large:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5); background: #20bd5a; }
+
+        /* Carrusel Otros Productos */
         .scroll-section { margin: 40px 0; }
         .scroll-container { display: flex; gap: 15px; overflow-x: auto; padding: 10px 0 20px; scrollbar-width: thin; }
-        .mini-card { flex: 0 0 160px; background: white; border-radius: 20px; padding: 10px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-decoration: none; color: inherit; border: 1px solid #eee; transition: 0.2s; }
-        .mini-card:hover { transform: scale(1.05); border-color: var(--ws-green); }
-        .mini-img { width: 100%; height: 90px; object-fit: contain; }
+        .mini-card { flex: 0 0 160px; background: white; border-radius: 15px; padding: 15px 10px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05); text-decoration: none; color: inherit; border: 1px solid #eee; transition: 0.2s; display: flex; flex-direction: column; justify-content: space-between; align-items: center; }
+        .mini-card:hover { transform: translateY(-5px); border-color: var(--ws-green); }
+        .mini-img { width: 100%; height: 80px; object-fit: contain; margin-bottom: 10px; }
+        .mini-card h4 { margin: 0 0 10px 0; font-size: 0.85rem; font-weight: 600; line-height: 1.2; }
+        .mini-price { font-size: 0.95rem; font-weight: 800; color: var(--ws-dark); background: rgba(37, 211, 102, 0.1); padding: 5px 10px; border-radius: 8px; width: 100%; box-sizing: border-box; }
 
         .main-footer { background: white; padding: 40px 20px; text-align: center; border-top: 1px solid #eee; position: relative; z-index: 1001; }
     </style>
@@ -54,10 +137,12 @@
 
     <div class="main-wrapper">
         <a href="index.html" class="back-btn">← Volver al Catálogo</a>
-        <div id="product-content"></div>
+        
+        <div id="product-content">
+        </div>
 
         <div class="scroll-section">
-            <p><b>OTROS PRODUCTOS DISPONIBLES:</b></p>
+            <p style="font-weight: 800; font-size: 0.9rem;">OTRAS HERRAMIENTAS DISPONIBLES:</p>
             <div class="scroll-container" id="product-scroll"></div>
         </div>
     </div>
@@ -72,26 +157,101 @@
         const p = productos.find(item => item.id === id);
 
         if (p) {
-            document.getElementById('product-content').innerHTML = `
-                <div class="detail-card">
-                    <div class="carousel">
-                        <div class="slides" id="slides">${p.fotos.map(f => `<img src="${f}">`).join('')}</div>
-                        ${p.fotos.length > 1 ? '<button class="nav-btn prev" onclick="moveSlide(-1)">❮</button><button class="nav-btn next" onclick="moveSlide(1)">❯</button>' : ''}
+            // Extraer la Referencia (REF)
+            let refText = "";
+            let cleanDesc = p.desc;
+            const refMatch = p.desc.match(/<b>(REF\d{3})<\/b>/);
+            if (refMatch) {
+                refText = refMatch[1];
+                cleanDesc = p.desc.replace(/<b>REF\d{3}<\/b>\s*/, '');
+            }
+
+            // Leer el formato directamente desde productos.js
+            let formatoText = p.formato || "Software / Herramienta";
+
+            // 1. Evaluar si el producto debe mostrar la sección técnica
+            let seccionTecnicaHTML = "";
+            if (p.mostrarTecnica === true) {
+                seccionTecnicaHTML = `
+                <div class="product-middle-section">
+                    <div class="futuristic-tab-container">
+                        <div class="futuristic-tab">Descripción Técnica</div>
                     </div>
-                    <div class="info-content">
-                        <h1 style="margin:0;">${p.nombre}</h1>
-                        <p style="color:#555;">${p.desc}</p>
-                        <ul class="features">${p.caracteristicas.map(f => `<li>${f}</li>`).join('')}</ul>
-                        <div class="share-row">
-                            <small><b>Compartir / Videotutorial:</b></small>
-                            <a href="https://wa.me/?text=Mira esto: ${encodeURIComponent(p.nombre)} ${encodeURIComponent(window.location.href)}" class="share-btn" style="background:#25D366" target="_blank"><img src="img/whatsapp.png" width="30"></a>
-                            ${p.video !== "#" ? `<a href="${p.video}" class="share-btn" style="background:#FF0000" target="_blank"><svg width="20" height="20" fill="white" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg></a>` : ''}
+                    
+                    <div class="tab-content">
+                        <h3>Detalles Adicionales de la Herramienta</h3>
+                        <p>Creamos nuestras herramientas escuchando a las personas del gremio que, como tú, buscan la mejor manera de automatizar ese trabajo repetitivo del día a día.</p>
+                        <p><i>Nota: No necesitas realizar pagos recurrentes ni preocuparte por fechas de vencimiento. Te ofrecemos la herramienta mediante un pago único, la cual se mantendrá completamente funcional siempre que el origen de datos no aplique cambios estructurales en su plataforma. Si algún desarrollo deja de ser funcional obtendras el 50% una vez realicemos los ajustes de actualización.</i></p>
+
+                        <h4 class="faq-title">Preguntas Frecuentes</h4>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">¿Que requiero para instalar la herramienta, que pasos debo seguir? <span style="color:#128C7E;">▼</span></div>
+                            <div class="faq-answer">Para garantizar la mejor experiencia, es fundamental que visualice previamente el video tutorial de funcionamiento. Una vez confirmado el pago, nos pondremos en contacto con usted a través de WhatsApp y AnyDesk para realizar la instalación y activación del producto correspondiente. (<b>RECUERDE</b> que se requiere versión Windows 10 ó preferiblemente Windows 11 para un mejor rendimiento). Adicionalmente, brindaremos un espacio para resolver cualquier inquietud que no haya sido aclarada en el video de apoyo.</div>
                         </div>
-                        <div class="important-note"><b>SOPORTE:</b> ${p.nota}</div>
-                        <div class="price">${p.precio}</div>
-                        <a href="https://wa.me/${miTelefono}?text=Me interesa: ${encodeURIComponent(p.nombre)}" class="btn-buy" target="_blank">Pedir por WhatsApp</a>
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">¿Cuánto se demora el envío o instalación después de hacer el pago? <span style="color:#128C7E;">▼</span></div>
+                            <div class="faq-answer">La instalación suele ser inmediata o agendada en el transcurso del mismo día en que se realiza la confirmación del pago.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">¿Que horarios manejan para soporte? <span style="color:#128C7E;">▼</span></div>
+                            <div class="faq-answer">Colega, si Dios lo permite, estamos disponibles en el siguiente horario: Lunes a sábado de 7:00am a 10:00pm y Domingos y festivos 9:00am a 10:00pm</div>
+                        </div>
                     </div>
                 </div>`;
+            }
+
+            // 2. HTML Estructurado final
+            document.getElementById('product-content').innerHTML = `
+                <div class="product-top-section">
+                    <div class="product-left">
+                        <div class="carousel">
+                            <div class="slides" id="slides">${p.fotos.map(f => `<img src="${f}" alt="${p.nombre}">`).join('')}</div>
+${p.fotos.length > 1 ? '<button class="nav-btn prev" onclick="moveSlide(-1)">❮</button><button class="nav-btn next" onclick="moveSlide(1)">❯</button>' : ''}
+                        </div>
+                        <div class="important-note">
+                            <b>SOPORTE:</b><br><br>${p.nota}
+                        </div>
+                    </div>
+                    
+                    <div class="product-right">
+                        <h1 class="product-title">${p.nombre}</h1>
+                        ${refText ? `<span class="product-ref">${refText}</span>` : ''}
+                        
+                        <div class="product-desc">${cleanDesc}</div>
+                        
+                        <span class="features-title">Podrás utilizarla de la siguiente manera:</span>
+                        <ul class="features">${p.caracteristicas.map(f => `<li>${f}</li>`).join('')}</ul>
+                        
+                        <div class="tech-links">
+                            <div class="tech-links-row">
+                                <span class="tech-links-label">Compartir:</span>
+                                <a href="https://wa.me/?text=Mire esta herramienta contable es interesante para adquirirla: ${encodeURIComponent(p.nombre)} - ${encodeURIComponent(window.location.href)}" class="tech-link" target="_blank">
+                                    📲 Enviar por WhatsApp a un colega
+                                </a>
+                            </div>
+                            
+                            ${p.video !== "#" ? `
+                            <div class="tech-links-row">
+                                <span class="tech-links-label">Videotutorial:</span>
+                                <a href="${p.video}" class="tech-link" target="_blank">
+                                    🎥 Ver funcionamiento de la herramienta
+                                </a>
+                            </div>` : ''}
+
+                            <div class="tech-links-row">
+                                <span class="tech-links-label">Formato:</span>
+                                <span class="tech-value">💻 ${formatoText}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                ${seccionTecnicaHTML} <div class="product-bottom-section">
+                    <div class="price-large">${p.precio}</div>
+                    <a href="https://wa.me/${miTelefono}?text=¡Hola! Estuve viendo el videotutorial de funcionamiento y me interesa adquirir la herramienta. Cual es el paso a seguir para adquirir?: ${encodeURIComponent(p.nombre)}" class="btn-buy-large" target="_blank">Pedir por WhatsApp</a>
+                </div>
+            `;
         }
 
         const scrollBox = document.getElementById('product-scroll');
@@ -99,17 +259,46 @@
             if(prod.id !== id) {
                 const m = document.createElement('a');
                 m.className = 'mini-card'; m.href = `detalle.html?id=${prod.id}`;
-                m.innerHTML = `<img src="${prod.fotos[0]}" class="mini-img"><h4>${prod.nombre}</h4>`;
+                m.innerHTML = `<img src="${prod.fotos[0]}" class="mini-img" alt="${prod.nombre}">
+                    <h4>${prod.nombre}</h4>
+                    <div class="mini-price">${prod.precio}</div>
+                `;
                 scrollBox.appendChild(m);
             }
         });
 
-        let cur = 0;
-        window.moveSlide = (s) => {
-            const sl = document.getElementById('slides');
-            cur = (cur + s + p.fotos.length) % p.fotos.length;
-            sl.style.transform = `translateX(-${cur * 100}%)`;
+        window.toggleFaq = (element) => {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('span');
+            
+            if (answer.style.display === "block") {
+                answer.style.display = "none";
+                icon.textContent = "▼";
+            } else {
+                answer.style.display = "block";
+                icon.textContent = "▲";
+            }
         }
+
+        // Función para el Carrusel de Imágenes
+        let currentSlide = 0;
+        window.moveSlide = (direction) => {
+            const slidesContainer = document.getElementById('slides');
+            const totalSlides = slidesContainer.children.length;
+            
+            currentSlide += direction;
+
+            // Lógica para volver al inicio o al final
+            if (currentSlide < 0) {
+                currentSlide = totalSlides - 1;
+            } else if (currentSlide >= totalSlides) {
+                currentSlide = 0;
+            }
+
+            // Mueve el contenedor horizontalmente
+            slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+        };
+
     </script>
 </body>
 </html>

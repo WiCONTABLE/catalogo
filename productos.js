@@ -89,8 +89,8 @@ etiqueta: "¡NUEVO!",
         caracteristicas: ["Diagnóstico inicial de requisitos según topes de la DIAN.", "Análisis de deducciones y beneficios tributarios para pagar lo justo.", "Elaboración del borrador y formulario 110/210.", "Acompañamiento en el proceso de pago y firma electrónica.", "Entrega de informe detallado de la declaración presentada."],
         nota: "El valor del servicio puede variar según la complejidad de la realidad financiera del contribuyente (cantidad de bienes, inversiones, etc.). <b>¡Contáctanos para una cotización personalizada!</b>",
         precio: "Desde COP $300.000",
-        video: "#",
-        fotos: ["img/p11-0.png"]
+        video: "https://webazure.dian.gov.co/consultarenta/",
+        fotos: ["img/p11-0.png", "img/p11-1.png"]
     },
     {
         id: 4,

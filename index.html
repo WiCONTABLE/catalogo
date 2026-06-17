@@ -8,8 +8,8 @@
     <style>
         :root {
             --ws-green: #25D366;
-            --ws-dark: #128C7E; /* El tono verde azulado de los precios */
-            --bg-gray: #f4f7f6; /* El gris claro del fondo de la imagen */
+            --ws-dark: #128C7E;
+            --bg-gray: #f4f7f6;
             --card-shadow: 0 4px 15px rgba(0,0,0,0.05);
             --fb-color: #1877F2; --li-color: #0077b5; --tk-color: #000000;
             --yt-color: #FF0000; --ig-color: #E4405F;
@@ -47,16 +47,16 @@
         .header-section h1 { color: var(--ws-green); margin: 0; font-size: 2.2rem; font-weight: 700; }
         .header-section p { margin: 5px 0; color: #666; }
 
-        /* --- GRID EXACTO A LA IMAGEN --- */
+        /* --- GRID --- */
         .catalog-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr); /* 4 columnas fijas en desktop */
+            grid-template-columns: repeat(4, 1fr);
             gap: 20px;
         }
 
         .product-card {
             background: white; 
-            border-radius: 40px; /* Bordes muy redondeados como la imagen */
+            border-radius: 40px; 
             overflow: hidden;
             box-shadow: var(--card-shadow); 
             transition: transform 0.3s ease; 
@@ -67,9 +67,77 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            position: relative;
         }
         
         .product-card:hover { transform: translateY(-5px); }
+
+        /* --- ETIQUETAS LUMINOSAS (MÚLTIPLES ESTILOS) --- */
+        .badge-base {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            color: white;
+            font-size: 0.70rem;
+            font-weight: 900;
+            padding: 6px 12px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            z-index: 10;
+        }
+
+        /* 1. Nuevo (Rojo/Naranja) */
+        .badge-nuevo {
+            background: linear-gradient(90deg, #ff0000, #ff8c00, #ff0000);
+            background-size: 200% auto;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+            animation: glow-pulse-nuevo 2s linear infinite;
+        }
+        @keyframes glow-pulse-nuevo {
+            0% { background-position: 0% center; box-shadow: 0 0 8px rgba(255,0,0,0.4); }
+            50% { box-shadow: 0 0 18px rgba(255,80,0,0.9); }
+            100% { background-position: 200% center; box-shadow: 0 0 8px rgba(255,0,0,0.4); }
+        }
+
+        /* 2. Mantenimiento (Naranja/Amarillo) */
+        .badge-manten {
+            background: linear-gradient(90deg, #e65c00, #F9D423, #e65c00);
+            background-size: 200% auto;
+            box-shadow: 0 0 10px rgba(230, 92, 0, 0.5);
+            animation: glow-pulse-manten 2.5s linear infinite;
+        }
+        @keyframes glow-pulse-manten {
+            0% { background-position: 0% center; box-shadow: 0 0 8px rgba(230,92,0,0.4); }
+            50% { box-shadow: 0 0 18px rgba(249,212,35,0.8); }
+            100% { background-position: 200% center; box-shadow: 0 0 8px rgba(230,92,0,0.4); }
+        }
+
+        /* 3. Producción (Azul/Celeste) */
+        .badge-prod {
+            background: linear-gradient(90deg, #0052D4, #4364F7, #6FB1FC, #0052D4);
+            background-size: 200% auto;
+            box-shadow: 0 0 10px rgba(67, 100, 247, 0.5);
+            animation: glow-pulse-prod 3s linear infinite;
+        }
+        @keyframes glow-pulse-prod {
+            0% { background-position: 0% center; box-shadow: 0 0 8px rgba(67,100,247,0.4); }
+            50% { box-shadow: 0 0 18px rgba(111,177,252,0.9); }
+            100% { background-position: 200% center; box-shadow: 0 0 8px rgba(67,100,247,0.4); }
+        }
+
+        /* 4. Activa (Verde) */
+        .badge-activa {
+            background: linear-gradient(90deg, #11998e, #38ef7d, #11998e);
+            background-size: 200% auto;
+            box-shadow: 0 0 10px rgba(56, 239, 125, 0.5);
+            animation: glow-pulse-activa 2s linear infinite;
+        }
+        @keyframes glow-pulse-activa {
+            0% { background-position: 0% center; box-shadow: 0 0 8px rgba(17,153,142,0.4); }
+            50% { box-shadow: 0 0 18px rgba(56,239,125,0.9); }
+            100% { background-position: 200% center; box-shadow: 0 0 8px rgba(17,153,142,0.4); }
+        }
 
         .card-img { 
             width: 100%; 
@@ -134,7 +202,7 @@
 
     <footer class="main-footer">
         <div class="footer-content">
-            <p><strong>CONECTATE CON NOSOTROS</strong></p>
+            <p><strong>CONÉCTATE CON NOSOTROS</strong></p>
             <div class="social-links">
                 <a href="https://www.facebook.com/wicontable" class="social-btn bg-fb" target="_blank" title="Facebook">
                     <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
@@ -150,16 +218,13 @@
                 </a>
                 <a href="https://www.youtube.com/@wildersarriahernandez" class="social-btn bg-yt" target="_blank" title="YouTube">
                     <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-</a>
+                </a>
                 <a href="https://www.youtube.com/@wicontable" class="social-btn bg-yt" target="_blank" title="YouTube">
                     <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
                 </a>
-<a href="https://burly-darkness-70e.notion.site/WiCONTABLE-2ea95ee6323880ec8cbae8ba51b03831" class="social-btn bg-no" target="_blank" title="Repositorio Notion">
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M4.459 4.208c.516.31 1.05.626 1.566.938V19.16l2.138 1.13c1.01.536 1.83.666 2.457.168.188-.148.423-.464.71-.94l5.35-8.835v8.52l-2.096.963c-.495.22-.84.52-.84.954 0 .42.433.82.98.82.203 0 .463-.046.776-.145l4.897-1.895c.504-.194.852-.516.852-.964 0-.44-.39-.81-.976-.81-.19 0-.43.04-.706.12l-1.396.44V4.73l2.257-1.258c.85-.473 1.39-.773 1.39-1.29 0-.58-.577-.962-1.344-.962-.315 0-.663.067-.998.175L14.73 3.013c-.482.164-.814.475-.814.93 0 .33.204.66.52.88l1.1.75v10.155l-5.694 9.172v-9.352l2.365-1.18c.532-.26.853-.59.853-1.01 0-.44-.39-.8-.962-.8-.215 0-.472.046-.78.16L4.85 5.168c-.48.17-.79.48-.79.94 0 .34.225.68.56.9l.84.54V19.16z"/>
-    </svg>
-</a>
-
+                <a href="https://burly-darkness-70e.notion.site/WiCONTABLE-2ea95ee6323880ec8cbae8ba51b03831" class="social-btn bg-no" target="_blank" title="Repositorio Notion">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4.459 4.208c.516.31 1.05.626 1.566.938V19.16l2.138 1.13c1.01.536 1.83.666 2.457.168.188-.148.423-.464.71-.94l5.35-8.835v8.52l-2.096.963c-.495.22-.84.52-.84.954 0 .42.433.82.98.82.203 0 .463-.046.776-.145l4.897-1.895c.504-.194.852-.516.852-.964 0-.44-.39-.81-.976-.81-.19 0-.43.04-.706.12l-1.396.44V4.73l2.257-1.258c.85-.473 1.39-.773 1.39-1.29 0-.58-.577-.962-1.344-.962-.315 0-.663.067-.998.175L14.73 3.013c-.482.164-.814.475-.814.93 0 .33.204.66.52.88l1.1.75v10.155l-5.694 9.172v-9.352l2.365-1.18c.532-.26.853-.59.853-1.01 0-.44-.39-.8-.962-.8-.215 0-.472.046-.78.16L4.85 5.168c-.48.17-.79.48-.79.94 0 .34.225.68.56.9l.84.54V19.16z"/></svg>
+                </a>
             </div>
             <p style="font-size: 0.8rem; color: #999; margin-top: 10px;">© 2026 WiCONTABLE</p>
         </div>
@@ -168,20 +233,46 @@
     <script src="productos.js"></script>
     <script>
         const container = document.getElementById('catalog');
-        productos.forEach(p => {
-            const card = document.createElement('div');
-            card.className = 'product-card';
-            card.onclick = () => window.location.href = `detalle.html?id=${p.id}`;
-            card.innerHTML = `
-                <img src="${p.fotos[0]}" class="card-img" alt="${p.nombre}">
-                <div class="info">
-                    <h2>${p.nombre}</h2>
-                    <div class="price-tag">${p.precio}</div>
-                    <div class="ver-detalles">Ver más detalles →</div>
-                </div>
-            `;
-            container.appendChild(card);
-        });
+        
+        if (typeof productos === 'undefined') {
+            container.innerHTML = '<div style="grid-column: 1/-1; text-align: center; background: #fffde7; padding: 30px; border-radius: 20px; border: 2px solid #fbc02d;"><h2 style="color: red; margin: 0;">⚠️ ¡Aviso Importante!</h2><p style="font-size: 1.1rem; color: #333;">Hay un error de lectura o tu navegador guardó una versión antigua.</p><p><b>Solución:</b> Por favor, presiona <b>Ctrl + F5</b> en tu teclado (o limpia el caché de tu navegador) para cargar los productos correctamente.</p></div>';
+        } else {
+            productos.forEach(p => {
+                const card = document.createElement('div');
+                card.className = 'product-card';
+                card.onclick = () => window.location.href = `detalle.html?id=${p.id}`;
+                
+                // Lógica de Inteligencia para las etiquetas
+                let badgeHTML = '';
+                if (p.etiqueta) {
+                    let textUpper = p.etiqueta.toUpperCase();
+                    let badgeColorClass = 'badge-activa'; // Por defecto verde si pones una palabra que no esté en la lista
+                    
+                    if (textUpper.includes('NUEVO')) {
+                        badgeColorClass = 'badge-nuevo';
+                    } else if (textUpper.includes('MANTENIMIENTO')) {
+                        badgeColorClass = 'badge-manten';
+                    } else if (textUpper.includes('PRODUCCI')) { // Sirve para Producción o Produccion
+                        badgeColorClass = 'badge-prod';
+                    } else if (textUpper.includes('ACTIVA')) {
+                        badgeColorClass = 'badge-activa';
+                    }
+
+                    badgeHTML = `<div class="badge-base ${badgeColorClass}">${p.etiqueta}</div>`;
+                }
+
+                card.innerHTML = `
+                    ${badgeHTML}
+                    <img src="${p.fotos[0]}" class="card-img" alt="${p.nombre}">
+                    <div class="info">
+                        <h2>${p.nombre}</h2>
+                        <div class="price-tag">${p.precio}</div>
+                        <div class="ver-detalles">Ver más detalles →</div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
     </script>
 </body>
 </html>

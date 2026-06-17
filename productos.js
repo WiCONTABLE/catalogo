@@ -103,7 +103,7 @@ etiqueta: "¡NUEVO!",
         nota: "Se entrega un correo corporativo con una clave temporal. El usuario es responsable de asignar su propia clave personalizada. La credencial tiene un costo de pago único. En caso de pérdida de la clave creada por el usuario, no será posible recuperar el acceso, <b>se brinda apoyo para la instalación de manera remota mediante AnyDesk.</b> (Recuerde guardar la contraseña que asignó para su respectiva garantía.)",
         precio: "COP $30.000",
         video: "https://youtu.be/jKVPmmDu1-I",
-        fotos: ["img/p4-0.png", "img/p4-1.png"]
+        fotos: ["img/p4-0.png", "img/p4-1.png", "img/p4-2.png"]
     },
     {
         id: 8,

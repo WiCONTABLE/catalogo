@@ -6,7 +6,7 @@ const productos = [
         nombre: "EventoRAD (DIAN)",
         formato: "Ejecutable .exe",
         mostrarTecnica: true,
-        etiqueta: "En Produción",
+        etiqueta: "En Mantenimiento",
         desc: "<b>REF008</b> <p><b>¿Quieres asegurar tus deducciones fiscales sin complicaciones?</b> Optimiza tu gestión tributaria automatizando el envío de los 3 eventos RADIAN a la DIAN.<p> <p>Reduce tareas manuales, evita errores y cumple oportunamente con la normativa, brindando mayor control y tranquilidad en tus procesos contables.<p><b>Actualizada el XX-XX-2026</b>",
         caracteristicas: ["Tener activo la solución gratuita de la DIAN.","Tener certificado digital gratuito de la DIAN (ilimitado) ó generar Token DIAN del contribuyente (dura 1 hora).", "Selecciona los cufes de facturación a procesar.", "Selecciona el periodo y digita las credenciales de firma responsable.", "Emite los siguientes eventos a un solo clic: 01 Acuse de Recibo, 02 Recibo del Bien, 03 Aceptación Expresa."],
         nota: "Para brindarle un soporte técnico oportuno, requerimos conectarnos de forma remota a su equipo a través de AnyDesk. Tenga en cuenta que este acceso quedará registrado de manera individual en cada computadora durante la instalación. Por su seguridad, nuestro equipo se comunicará exclusivamente al número de móvil que tiene registrado con nosotros. Asimismo, le recordamos que el funcionamiento de nuestra herramienta depende de plataformas de terceros integradas; cualquier cambio en los parámetros de dichas plataformas nos exime de responsabilidad sobre la continuidad del servicio.",

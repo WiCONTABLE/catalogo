@@ -67,7 +67,7 @@ etiqueta: "¡NUEVO!",
         fotos: ["img/p8-0.png", "img/p8-1.png"]
     },
 {
-        id: 1,
+        id: 000,
         nombre: "EventoRAD (DIAN)",
         formato: "Ejecutable .exe",
         mostrarTecnica: true,
@@ -80,7 +80,7 @@ etiqueta: "¡NUEVO!",
         fotos: ["img/p0-0.png"]
     },
     {
-        id: 6,
+        id: 00,
         nombre: "WiCONTABLE PRO",
         formato: "Plantilla .xlsm",
         mostrarTecnica: true,
@@ -93,7 +93,7 @@ etiqueta: "En Mantenimiento",
         fotos: ["img/p5-0.png", "img/p5-1.png", "img/p5-2.png", "img/p5-3.png", "img/p5-4.png"]
     },
     {
-        id: 2,
+        id: 0,
         nombre: "ZIPs Downloader (DIAN)",
         formato: "Extensión Web.crx",
         mostrarTecnica: true,

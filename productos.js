@@ -101,9 +101,9 @@ etiqueta: "Activa",
 etiqueta: "Activa",
         desc: "Te invitamos a visualizar nuestro catalogo de ocio, producción y entretenimiento con los mejores precios del mercado.<p><b> </b><p>",
         caracteristicas: ["Plataformas Streaming.", "Antivirus.", "IA.", "VPN.", "Diseño.", "Cursos.", "Juegos"],
-        nota: "(https://acortar.link/MPlataformas) Las membresias son en la mayoria mensuales y otras con oferta de hasta 3 y 12 meses. <b>Escribenos y podemos ampliar la información de interes.</b>",
+        nota: "(https://acortar.link/Plataformax) Las membresias son en la mayoria mensuales y otras con oferta de hasta 3 y 12 meses. <b>Escribenos y podemos ampliar la información de interes.</b>",
         precio: "Desde COP $1.500",
-        video: "https://www.notion.so/26f38a697b938075bfa7ff2855b3979e?v=26f38a697b9380528647000c4043686b",
+        video: "https://acortar.link/Plataformax",
         fotos: ["img/p10-0.png"]
     }
 ];

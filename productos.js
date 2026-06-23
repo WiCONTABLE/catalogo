@@ -62,7 +62,7 @@ etiqueta: "¡NUEVO!",
         desc: "<b>REF000</b><p>Activa de forma segura con credenciales corporativas y evita el uso de parches o cracks que comprometen la seguridad de tu PC.<p><b> </b>",
         caracteristicas: ["Ingresa la clave digital asignada y listo.", "Es transferible, puedes cámbiarla a otro equipo fácilmente.", "Instalala en equipos nuevos o existentes.", "Credenciales independientes - No se vincula a hardware especifico."],
         nota: "Se entrega la clave al usuario final, quien es responsable de su buen uso. La clave permanece operativa de manera indefinida, garantizando acceso continuo y seguridad en todo momento. <b>único pago.</b>",
-        precio: "COP $30.000",
+        precio: "COP $20.000",
         video: "",
         fotos: ["img/p8-0.png", "img/p8-1.png"]
     },

@@ -55,7 +55,7 @@ etiqueta: "¡NUEVO!",
     },
     {
         id: 8,
-        nombre: "Win 10/11 PRO (Retail)",
+        nombre: "Windows 10/11 PRO (Retail)",
         formato: "Credenciales",
         mostrarTecnica: false,
 etiqueta: "¡NUEVO!",
@@ -104,7 +104,8 @@ etiqueta: "En Mantenimiento",
         precio: "COP $0",
         video: "https://www.youtube.com/watch?v=CTyjiL5TMgg",
         fotos: ["img/p1-0.png","img/p1-1.jpg","img/p1-2.jpg"]
-    },
+    },
+
     {
         id: 12,
         nombre: "Declaración de Renta",
@@ -118,7 +119,8 @@ etiqueta: "¡NUEVO!",
         video: "https://webazure.dian.gov.co/consultarenta/",
         fotos: ["img/p11-0.png", "img/p11-1.png"]
     },
-    {
+    
+{
         id: 9,
         nombre: "Anydesk V.6.0",
         formato: "Ejecutable .exe",

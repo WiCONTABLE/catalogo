@@ -6,7 +6,7 @@ const productos = [
         nombre: "PDFs Downloader (DIAN)",
         formato: "Extensión Web.crx",
         mostrarTecnica: true,
-etiqueta: "ACTIVA",
+etiqueta: "En Mantenimiento",
         desc: "<b>REF006</b> <p>Accede y descarga cualquier documento electrónico en PDF directamente desde la DIAN de forma rápida, sencilla y sin procesos manuales innecesarios.<p><b>Actualizada el 28-12-2025</b>",
         caracteristicas: ["Carga un archivo EXCEL ó pega directamente los CUDE, CUDS, CUFE, CUNE.", "Procesa en tiempo de respuesta según captcha de 3, 6, 9 segundos por documento.", "Extra aplicativo (WiPDFs) para desbloquear vista previa, renombrar nómina y listar archivos.", "No necesitas generar TOKEN, ni iniciar sesion DIAN para generar la descarga PDF."],
         nota: "Para brindarle un soporte técnico oportuno, requerimos conectarnos de forma remota a su equipo a través de AnyDesk. Tenga en cuenta que este acceso quedará registrado de manera individual en cada computadora durante la instalación. Por su seguridad, nuestro equipo se comunicará exclusivamente al número de móvil que tiene registrado con nosotros. Asimismo, le recordamos que el funcionamiento de nuestra herramienta depende de plataformas de terceros integradas; cualquier cambio en los parámetros de dichas plataformas nos exime de responsabilidad sobre la continuidad del servicio.</b>",

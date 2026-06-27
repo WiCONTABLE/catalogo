@@ -2,13 +2,13 @@ const miTelefono = "573156016386";
 
 const productos = [
 {
-        id: 5,
+        id: 2,
         nombre: "PDFs Downloader (DIAN)",
         formato: "Extensión Web.crx",
         mostrarTecnica: true,
 etiqueta: "ACTIVA",
         desc: "<b>REF006</b> <p>Accede y descarga cualquier documento electrónico en PDF directamente desde la DIAN de forma rápida, sencilla y sin procesos manuales innecesarios.<p><b>Actualizada el 28-12-2025</b>",
-        caracteristicas: ["No necesitas generar TOKEN, ni Certificado Digital DIAN para la descarga de PDFs.","Carga un archivo EXCEL ó pega directamente los CUDE, CUDS, CUFE, CUNE.", "Procesa en tiempo de respuesta según captcha de 3, 6, 9 segundos por documento.", "Extra aplicativo (WiPDFs) para desbloquear vista previa, renombrar nómina y listar archivos."],
+        caracteristicas: ["No necesitas generar TOKEN, ni Certificado Digital DIAN para la descarga PDFs.","Carga un archivo EXCEL ó pega directamente los CUDE, CUDS, CUFE, CUNE.", "Procesa en tiempo de respuesta según captcha de 3, 6, 9 segundos por documento.", "Extra aplicativo (WiPDFs) para desbloquear vista previa, renombrar nómina y listar archivos."],
         nota: "Para brindarle un soporte técnico oportuno, requerimos conectarnos de forma remota a su equipo a través de AnyDesk. Tenga en cuenta que este acceso quedará registrado de manera individual en cada computadora durante la instalación. Por su seguridad, nuestro equipo se comunicará exclusivamente al número de móvil que tiene registrado con nosotros. Asimismo, le recordamos que el funcionamiento de nuestra herramienta depende de plataformas de terceros integradas; cualquier cambio en los parámetros de dichas plataformas nos exime de responsabilidad sobre la continuidad del servicio.</b>",
         precio: "COP $30.000",
         video: "https://www.youtube.com/watch?v=hiZn2nFgtX4&t",
@@ -41,6 +41,18 @@ etiqueta: "ACTIVA",
         fotos: ["img/p3-0.png", "img/p3-1.jpg"]
     },
 {
+        id: 1,
+        nombre: "ChatGPT PLUS (30 Días)",
+        formato: "Credenciales",
+        mostrarTecnica: false,
+etiqueta: "NUEVO",
+        desc: "Disfruta de acceso completo a las funciones avanzadas de Inteligencia Artificial con una cuenta lista para usar durante 30 días completos. Potencia tu productividad, crea contenido, analiza datos y accede a los modelos más rápidos y actualizados sin interrupciones.<p><b> </b><p>",
+        caracteristicas: ["Datos de acceso: Se entrega un correo electrónico y su respectiva contraseña única.", "Garantía: Cobertura y soporte garantizado durante 20 días ante cualquier inconveniente.", "Compatibilidad: Acceso total desde el navegador de tu computadora, celulares y la aplicación oficial."],
+        nota: "No cambiar los datos de la cuenta: Está totalmente prohibido modificar el correo, la contraseña o los métodos de pago asociados. <b>El incumplimiento de esta norma cancelará de forma inmediata la garantía de tu servicio sin derecho a reemplazo ni reembolso.</b>",
+        precio: "COP $30.000",
+        video: "",
+        fotos: ["img/p1-0.png", "img/p1-1.png", "img/p1-2.png"]
+    },{
         id: 4,
         nombre: "Microsoft 365",
         formato: "Credenciales",
@@ -67,7 +79,7 @@ etiqueta: "¡NUEVO!",
         fotos: ["img/p8-0.png", "img/p8-1.png"]
     },
     {
-        id: 12,
+        id: 11,
         nombre: "Declaración de Renta",
         formato: "Servicio Profesional",
         mostrarTecnica: false,
@@ -79,8 +91,7 @@ etiqueta: "¡NUEVO!",
         video: "https://webazure.dian.gov.co/consultarenta/",
         fotos: ["img/p11-0.png", "img/p11-1.png"]
     },
-    
-{
+    {
         id: 9,
         nombre: "Anydesk V.6.0",
         formato: "Ejecutable .exe",

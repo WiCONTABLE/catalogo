@@ -15,32 +15,6 @@ etiqueta: "ACTIVA",
         fotos: ["img/p2-0.png", "img/p2-1.png", "img/p2-2.jpg","img/p2-3.png"]
     },
 {
-        id: 7,
-        nombre: "WiCONTABLE Lite",
-        formato: "Ejecutable .exe",
-        mostrarTecnica: true,
-etiqueta: "ACTIVA",
-        desc: "<b>REF001</b><p>La primera solución pensada para contadores y profesionales financieros que permite consultar de manera masiva en 4 plataformas claves: DIAN, PROCURADURIA, RUES Y SISBÉN.<p><b>Actualizada el 27-11-2025</b>",
-        caracteristicas: ["Ideal para temporada de Exogena podras validar los nombres asociados a los Nit ó cualquier tipo de documento que permitan las plataformas.", "Organiza tus obligaciones tributarias en el entorno calendario.", "Localmente podras convertir Imagen a PDF, Unir PDF y aplicar OCR.", "Accede aun repositorio contable amplio para estar al día."],
-        nota: "Para brindarle un soporte técnico oportuno, requerimos conectarnos de forma remota a su equipo a través de AnyDesk. Tenga en cuenta que este acceso quedará registrado de manera individual en cada computadora durante la instalación. Por su seguridad, nuestro equipo se comunicará exclusivamente al número de móvil que tiene registrado con nosotros. Asimismo, le recordamos que el funcionamiento de nuestra herramienta depende de plataformas de terceros integradas; cualquier cambio en los parámetros de dichas plataformas nos exime de responsabilidad sobre la continuidad del servicio.</b>",
-        precio: "COP $79.900",
-        video: "https://youtu.be/cVeRtfur7X4",
-        fotos: ["img/p7-0.png", "img/p7-1.png", "img/p7-2.png", "img/p7-3.png", "img/p7-4.png", "img/p7-5.png", "img/p7-6.png", "img/p7-7.png", "img/p7-8.png", "img/p7-9.png", "img/p7-10.png"]
-    },
-    {
-        id: 3,
-        nombre: "Consulta Datos NIT (DIAN)",
-        formato: "Extensión Web .crx",
-        mostrarTecnica: true,
-etiqueta: "ACTIVA",
-        desc: "<b>REF005</b><p>Verifica de forma masiva, automática y directamente en el portal DIAN el nombre asociado a los NIT de contribuyente Persona Juridica ó Persona Natural suscritos, sin procesos manuales ni captchas repetitivos.<p> <p>Ideal para temporada de exógena y validación de los formatos que requieran esta auditoria.<p><b>Actualizada el 05-01-2026</b>",
-        caracteristicas: ["Carga un archivo EXCEL ó pega directamente las identificaciones.", "Puedes decidir en consultar CON estado RUT, la cual te anexara si esta: ACTIVO, CANCELADO ó SUSPENDIDO; este proceso valida catpcha y depende si el portal web se encuentre estable.", "Puedes decidir en consultar SIN estado RUT, la cual es más ligero y estable; este proceso solo te indica si esta registrado o no en la DIAN."],
-        nota: "Para brindarle un soporte técnico oportuno, requerimos conectarnos de forma remota a su equipo a través de AnyDesk. Tenga en cuenta que este acceso quedará registrado de manera individual en cada computadora durante la instalación. Por su seguridad, nuestro equipo se comunicará exclusivamente al número de móvil que tiene registrado con nosotros. Asimismo, le recordamos que el funcionamiento de nuestra herramienta depende de plataformas de terceros integradas; cualquier cambio en los parámetros de dichas plataformas nos exime de responsabilidad sobre la continuidad del servicio.</b>",
-        precio: "COP $30.000",
-        video: "https://www.youtube.com/watch?v=1wLEFzIwj38",
-        fotos: ["img/p3-0.png", "img/p3-1.jpg"]
-    },
-{
         id: 1,
         nombre: "ChatGPT PLUS (30 Días)",
         formato: "Credenciales",
@@ -52,7 +26,8 @@ etiqueta: "NUEVO",
         precio: "COP $30.000",
         video: "",
         fotos: ["img/p1-0.png", "img/p1-1.png", "img/p1-2.png"]
-    },{
+    },
+        {
         id: 4,
         nombre: "Microsoft 365 (Vitalicia)",
         formato: "Credenciales",
@@ -90,6 +65,32 @@ etiqueta: "¡ACTIVA!",
         precio: "Desde COP $300.000",
         video: "https://webazure.dian.gov.co/consultarenta/",
         fotos: ["img/p11-0.png", "img/p11-1.png"]
+    },      
+{
+        id: 7,
+        nombre: "WiCONTABLE Lite",
+        formato: "Ejecutable .exe",
+        mostrarTecnica: true,
+etiqueta: "ACTIVA",
+        desc: "<b>REF001</b><p>La primera solución pensada para contadores y profesionales financieros que permite consultar de manera masiva en 4 plataformas claves: DIAN, PROCURADURIA, RUES Y SISBÉN.<p><b>Actualizada el 27-11-2025</b>",
+        caracteristicas: ["Ideal para temporada de Exogena podras validar los nombres asociados a los Nit ó cualquier tipo de documento que permitan las plataformas.", "Organiza tus obligaciones tributarias en el entorno calendario.", "Localmente podras convertir Imagen a PDF, Unir PDF y aplicar OCR.", "Accede aun repositorio contable amplio para estar al día."],
+        nota: "Para brindarle un soporte técnico oportuno, requerimos conectarnos de forma remota a su equipo a través de AnyDesk. Tenga en cuenta que este acceso quedará registrado de manera individual en cada computadora durante la instalación. Por su seguridad, nuestro equipo se comunicará exclusivamente al número de móvil que tiene registrado con nosotros. Asimismo, le recordamos que el funcionamiento de nuestra herramienta depende de plataformas de terceros integradas; cualquier cambio en los parámetros de dichas plataformas nos exime de responsabilidad sobre la continuidad del servicio.</b>",
+        precio: "COP $79.900",
+        video: "https://youtu.be/cVeRtfur7X4",
+        fotos: ["img/p7-0.png", "img/p7-1.png", "img/p7-2.png", "img/p7-3.png", "img/p7-4.png", "img/p7-5.png", "img/p7-6.png", "img/p7-7.png", "img/p7-8.png", "img/p7-9.png", "img/p7-10.png"]
+    },
+    {
+        id: 3,
+        nombre: "Consulta Datos NIT (DIAN)",
+        formato: "Extensión Web .crx",
+        mostrarTecnica: true,
+etiqueta: "ACTIVA",
+        desc: "<b>REF005</b><p>Verifica de forma masiva, automática y directamente en el portal DIAN el nombre asociado a los NIT de contribuyente Persona Juridica ó Persona Natural suscritos, sin procesos manuales ni captchas repetitivos.<p> <p>Ideal para temporada de exógena y validación de los formatos que requieran esta auditoria.<p><b>Actualizada el 05-01-2026</b>",
+        caracteristicas: ["Carga un archivo EXCEL ó pega directamente las identificaciones.", "Puedes decidir en consultar CON estado RUT, la cual te anexara si esta: ACTIVO, CANCELADO ó SUSPENDIDO; este proceso valida catpcha y depende si el portal web se encuentre estable.", "Puedes decidir en consultar SIN estado RUT, la cual es más ligero y estable; este proceso solo te indica si esta registrado o no en la DIAN."],
+        nota: "Para brindarle un soporte técnico oportuno, requerimos conectarnos de forma remota a su equipo a través de AnyDesk. Tenga en cuenta que este acceso quedará registrado de manera individual en cada computadora durante la instalación. Por su seguridad, nuestro equipo se comunicará exclusivamente al número de móvil que tiene registrado con nosotros. Asimismo, le recordamos que el funcionamiento de nuestra herramienta depende de plataformas de terceros integradas; cualquier cambio en los parámetros de dichas plataformas nos exime de responsabilidad sobre la continuidad del servicio.</b>",
+        precio: "COP $30.000",
+        video: "https://www.youtube.com/watch?v=1wLEFzIwj38",
+        fotos: ["img/p3-0.png", "img/p3-1.jpg"]
     },
     {
         id: 9,

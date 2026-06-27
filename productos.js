@@ -54,7 +54,7 @@ etiqueta: "NUEVO",
         fotos: ["img/p1-0.png", "img/p1-1.png", "img/p1-2.png"]
     },{
         id: 4,
-        nombre: "Microsoft 365",
+        nombre: "Microsoft 365 (Vitalicia)",
         formato: "Credenciales",
         mostrarTecnica: false,
 etiqueta: "¡NUEVO!",

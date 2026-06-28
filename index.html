@@ -139,6 +139,32 @@
             100% { background-position: 200% center; box-shadow: 0 0 8px rgba(17,153,142,0.4); }
         }
 
+/* 5. Agotado (Gris/Plata oscuro) */
+        .badge-agotado {
+            background: linear-gradient(90deg, #606060, #8f8f8f, #606060);
+            background-size: 200% auto;
+            box-shadow: 0 0 10px rgba(96, 96, 96, 0.5);
+            animation: glow-pulse-agotado 3s linear infinite;
+        }
+        @keyframes glow-pulse-agotado {
+            0% { background-position: 0% center; box-shadow: 0 0 8px rgba(96,96,96,0.4); }
+            50% { box-shadow: 0 0 15px rgba(143,143,143,0.8); }
+            100% { background-position: 200% center; box-shadow: 0 0 8px rgba(96,96,96,0.4); }
+        }
+
+        /* 6. Disponible (Cian/Turquesa vibrante) */
+        .badge-disponible {
+            background: linear-gradient(90deg, #00c6ff, #0072ff, #00c6ff);
+            background-size: 200% auto;
+            box-shadow: 0 0 10px rgba(0, 198, 255, 0.5);
+            animation: glow-pulse-disponible 2s linear infinite;
+        }
+        @keyframes glow-pulse-disponible {
+            0% { background-position: 0% center; box-shadow: 0 0 8px rgba(0,198,255,0.4); }
+            50% { box-shadow: 0 0 18px rgba(0,114,255,0.9); }
+            100% { background-position: 200% center; box-shadow: 0 0 8px rgba(0,198,255,0.4); }
+        }
+
         .card-img { 
             width: 100%; 
             height: 180px; 
@@ -230,6 +256,9 @@
         </div>
     </footer>
 
+
+
+
     <script src="productos.js"></script>
     <script>
         const container = document.getElementById('catalog');
@@ -252,10 +281,14 @@
                         badgeColorClass = 'badge-nuevo';
                     } else if (textUpper.includes('MANTENIMIENTO')) {
                         badgeColorClass = 'badge-manten';
-                    } else if (textUpper.includes('PRODUCCI')) { // Sirve para Producción o Produccion
+                    } else if (textUpper.includes('PRODUCCI')) { // Sirve para Producción
                         badgeColorClass = 'badge-prod';
-                    } else if (textUpper.includes('ACTIVA')) {
+                    } else if (textUpper.includes('ACTIVA') || textUpper.includes('ACTIVO')) { 
                         badgeColorClass = 'badge-activa';
+                    } else if (textUpper.includes('AGOTADO')) {
+                        badgeColorClass = 'badge-agotado';
+                    } else if (textUpper.includes('DISPONIBLE')) {
+                        badgeColorClass = 'badge-disponible';
                     }
 
                     badgeHTML = `<div class="badge-base ${badgeColorClass}">${p.etiqueta}</div>`;

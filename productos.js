@@ -92,6 +92,19 @@ etiqueta: "ACTIVA",
         video: "https://www.youtube.com/watch?v=1wLEFzIwj38",
         fotos: ["img/p3-0.png", "img/p3-1.jpg"]
     },
+{
+        id: 6,
+        nombre: "Gemini PRO (18 Meses)",
+        formato: "Credenciales",
+        mostrarTecnica: false,
+etiqueta: "NUEVO",
+        desc: "Disfruta de 18 meses completos de Gemini PRO, con acceso a las funciones avanzadas de inteligencia artificial de Google, además de los beneficios incluidos mediante la promoción de Jio.<p><b> </b><p>",
+        caracteristicas: ["Acceso a Gemini Pro.", "Modelos de IA avanzados para mayor rendimiento.", "Ayuda en redacción, programación, estudio y productividad.", "Generación de contenido y asistencia inteligente.", "Beneficios adicionales incluidos con la promoción de Jio 5TB de espacio.", "Beneficios adicionales incluidos con la promoción de Jio 5TB de espacio."],
+        nota: "Te encuenta las siguientes recomendaciones: <b>El enlace es de un solo uso.</b> Se recomienda canjearlo únicamente en la cuenta de Google donde deseas disfrutar el beneficio; Una vez activado correctamente, el servicio quedará asociado a tu cuenta. <b>Te realizamos acompañamiento vía Anydesk para una correcta activación</b>",
+        precio: "COP $30.000",
+        video: "",
+        fotos: ["img/p6-0.png", "img/p6-1.png", "img/p6-2.png", "img/p6-3.png", "img/p6-4.png", "img/p6-5.png"]
+    },      
     {
         id: 9,
         nombre: "Anydesk V.6.0",

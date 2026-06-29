@@ -51,7 +51,7 @@ etiqueta: "AGOTADO",
         desc: "Disfruta de acceso completo a las funciones avanzadas de Inteligencia Artificial con una cuenta lista para usar durante 30 días completos. Potencia tu productividad, crea contenido, analiza datos y accede a los modelos más rápidos y actualizados sin interrupciones.<p><b> </b><p>",
         caracteristicas: ["Datos de acceso: Se entrega un correo electrónico y su respectiva contraseña única.", "Garantía: Cobertura y soporte garantizado durante 20 días ante cualquier inconveniente.", "Compatibilidad: Acceso total desde el navegador de tu computadora, celulares y la aplicación oficial."],
         nota: "No cambiar los datos de la cuenta: Está totalmente prohibido modificar el correo, la contraseña o los métodos de pago asociados. <b>El incumplimiento de esta norma cancelará de forma inmediata la garantía de tu servicio sin derecho a reemplazo ni reembolso.</b>",
-        precio: "COP $30.000",
+        precio: "COP $40.000",
         video: "",
         fotos: ["img/p1-0.png", "img/p1-1.png", "img/p1-2.png"]
     },

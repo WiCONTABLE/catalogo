@@ -24,7 +24,8 @@ etiqueta: "ACTIVA",
         caracteristicas: ["No necesitas generar TOKEN, ni Certificado Digital DIAN para la descarga PDFs.","Carga un archivo EXCEL ó pega directamente los CUDE, CUDS, CUFE, CUNE.", "Procesa en tiempo de respuesta según captcha de 3, 6, 9 segundos por documento.", "Extra aplicativo (WiPDFs) para desbloquear vista previa, renombrar nómina y listar archivos."],
         nota: "Para brindarle un soporte técnico oportuno, requerimos conectarnos de forma remota a su equipo a través de AnyDesk. Tenga en cuenta que este acceso quedará registrado de manera individual en cada computadora durante la instalación. Por su seguridad, nuestro equipo se comunicará exclusivamente al número de móvil que tiene registrado con nosotros. Asimismo, le recordamos que el funcionamiento de nuestra herramienta depende de plataformas de terceros integradas; cualquier cambio en los parámetros de dichas plataformas nos exime de responsabilidad sobre la continuidad del servicio.</b>",
         precio: "COP $30.000",
-        video: "https://www.youtube.com/watch?v=hiZn2nFgtX4&t",
+        video: "video/Pdfs.mp4",
+        youtube: "https://youtu.be/hiZn2nFgtX4",
         fotos: ["img/p2-0.png", "img/p2-1.png", "img/p2-2.jpg","img/p2-3.png"]
     },
 {
@@ -37,7 +38,8 @@ etiqueta: "DISPONIBLE",
         caracteristicas: ["Acceso a Gemini Pro.", "Modelos de IA avanzados para mayor rendimiento.", "Ayuda en redacción, programación, estudio y productividad.", "Generación de contenido y asistencia inteligente.", "Beneficios adicionales incluidos con la promoción de Jio 5TB de espacio.", "Se entrega un link listo para canjear. Solo deberás abrir el enlace y seguir las instrucciones para activar tu beneficio." ,"Disponible desde navegador web, Android y dispositivos compatibles con los servicios de Google."],
         nota: "Te encuenta las siguientes recomendaciones: <b>El enlace es de un solo uso.</b> Se recomienda canjearlo únicamente en la cuenta de Google donde deseas disfrutar el beneficio; Una vez activado correctamente, el servicio quedará asociado a tu cuenta. <b>Te realizamos acompañamiento vía Anydesk para una correcta activación</b>",
         precio: "COP $30.000",
-        video: "",
+        video: "video/Gemini.mp4",
+        youtube: "https://youtu.be/IVZaqCdm5XY",
         fotos: ["img/p6-0.png", "img/p6-1.png", "img/p6-2.png", "img/p6-3.png", "img/p6-4.png", "img/p6-5.png"]
     },
 {
@@ -63,7 +65,8 @@ etiqueta: "¡AGOTADO!",
         caracteristicas: ["Activación en hasta 5 dispositivos.", "Compatible con PC / Android / iOS.", "100 GB de almacenamiento.", "IA vía web para mayor productividad", "Tendras acceso a PowerBI Service." , "Word,Excel, PowerPoint..."],
         nota: "Se entrega un correo corporativo con una clave temporal. El usuario es responsable de asignar su propia clave personalizada. La credencial tiene un costo de pago único. En caso de pérdida de la clave creada por el usuario, no será posible recuperar el acceso, <b>se brinda apoyo para la instalación de manera remota mediante AnyDesk.</b> (Recuerde guardar la contraseña que asignó para su respectiva garantía.)",
         precio: "COP $30.000",
-        video: "https://youtu.be/jKVPmmDu1-I",
+        video: "video/365.mp4",
+        youtube: "https://youtu.be/jKVPmmDu1-I",
         fotos: ["img/p4-0.png", "img/p4-1.png", "img/p4-2.png"]
     },
 {
@@ -102,7 +105,8 @@ etiqueta: "ACTIVA",
         caracteristicas: ["Ideal para temporada de Exogena podras validar los nombres asociados a los Nit ó cualquier tipo de documento que permitan las plataformas.", "Organiza tus obligaciones tributarias en el entorno calendario.", "Localmente podras convertir Imagen a PDF, Unir PDF y aplicar OCR.", "Accede aun repositorio contable amplio para estar al día."],
         nota: "Para brindarle un soporte técnico oportuno, requerimos conectarnos de forma remota a su equipo a través de AnyDesk. Tenga en cuenta que este acceso quedará registrado de manera individual en cada computadora durante la instalación. Por su seguridad, nuestro equipo se comunicará exclusivamente al número de móvil que tiene registrado con nosotros. Asimismo, le recordamos que el funcionamiento de nuestra herramienta depende de plataformas de terceros integradas; cualquier cambio en los parámetros de dichas plataformas nos exime de responsabilidad sobre la continuidad del servicio.</b>",
         precio: "COP $79.900",
-        video: "https://youtu.be/cVeRtfur7X4",
+        video: "video/WiCONTABLELite.mp4",
+        youtube: "https://youtu.be/cVeRtfur7X4",
         fotos: ["img/p7-0.png", "img/p7-1.png", "img/p7-2.png", "img/p7-3.png", "img/p7-4.png", "img/p7-5.png", "img/p7-6.png", "img/p7-7.png", "img/p7-8.png", "img/p7-9.png", "img/p7-10.png"]
     },
     {
@@ -115,7 +119,8 @@ etiqueta: "ACTIVA",
         caracteristicas: ["Carga un archivo EXCEL ó pega directamente las identificaciones.", "Puedes decidir en consultar CON estado RUT, la cual te anexara si esta: ACTIVO, CANCELADO ó SUSPENDIDO; este proceso valida catpcha y depende si el portal web se encuentre estable.", "Puedes decidir en consultar SIN estado RUT, la cual es más ligero y estable; este proceso solo te indica si esta registrado o no en la DIAN."],
         nota: "Para brindarle un soporte técnico oportuno, requerimos conectarnos de forma remota a su equipo a través de AnyDesk. Tenga en cuenta que este acceso quedará registrado de manera individual en cada computadora durante la instalación. Por su seguridad, nuestro equipo se comunicará exclusivamente al número de móvil que tiene registrado con nosotros. Asimismo, le recordamos que el funcionamiento de nuestra herramienta depende de plataformas de terceros integradas; cualquier cambio en los parámetros de dichas plataformas nos exime de responsabilidad sobre la continuidad del servicio.</b>",
         precio: "COP $30.000",
-        video: "https://www.youtube.com/watch?v=1wLEFzIwj38",
+        video: "video/RUT2026.mp4",
+        youtube: "https://www.youtube.com/watch?v=1wLEFzIwj38",
         fotos: ["img/p3-0.png", "img/p3-1.jpg"]
     },      
     {

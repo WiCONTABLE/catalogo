@@ -57,7 +57,7 @@ etiqueta: "AGOTADO",
     },
 {
         id: 4,
-        nombre: "Microsoft 365 (Vitalicia)",
+        nombre: "Microsoft 365 (1 año)",
         formato: "Credenciales",
         mostrarTecnica: false,
 etiqueta: "¡AGOTADO!",

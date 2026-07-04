@@ -57,7 +57,7 @@ etiqueta: "AGOTADO",
     },
 {
         id: 4,
-        nombre: "Microsoft 365 (1 año)",
+        nombre: "Microsoft 365 Genuina (1 año)",
         formato: "Credenciales",
         mostrarTecnica: false,
 etiqueta: "DISPONIBLE",

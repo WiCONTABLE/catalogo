@@ -1,6 +1,20 @@
 const miTelefono = "573156016386";
 
 const productos = [
+        {
+        id: 0,
+        nombre: "WiCONTABLE Auditor F.E",
+        formato: "Extensión Web.crx",
+        mostrarTecnica: true,
+etiqueta: "¡PRODUCCION!",
+        desc: "Brindamos consultoría integral para la elaboración y presentación de tu declaración de renta, asegurando el cumplimiento legal y la optimización de tus impuestos.",
+        caracteristicas: [".", ".", ".", ".", ".", "."],
+        nota: "Para brindarle un soporte técnico oportuno, requerimos conectarnos de forma remota a su equipo a través de AnyDesk. Tenga en cuenta que este acceso quedará registrado de manera individual en cada computadora durante la instalación. Por su seguridad, nuestro equipo se comunicará exclusivamente al número de móvil que tiene registrado con nosotros. Asimismo, le recordamos que el funcionamiento de nuestra herramienta depende de plataformas de terceros integradas; <b>cualquier cambio en los parámetros de dichas plataformas nos exime de responsabilidad sobre la continuidad del servicio.</b>",
+        precio: "Desde COP $100.000",
+        video: "",    
+        youtube: "https://youtu.be/tWS24jBXEkc",
+        fotos: ["img/p0-0.png"]
+    },
     {
         id: 11,
         nombre: "Declaración de Renta",

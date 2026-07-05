@@ -7,11 +7,11 @@ const productos = [
         formato: "Extensión Web.crx",
         mostrarTecnica: true,
 etiqueta: "¡PRODUCCION!",
-        desc: "<b>REF003</b>Optimice la gestión tributaria y asegure el cumplimiento normativo de su empresa con nuestra herramienta avanzada para la validación masiva de eventos, el análisis de archivos XML y la descarga automatizada de facturas electrónicas directamente desde el portal de la DIAN. En el panorama fiscal actual, la gestión de los comprobantes electrónicos ha dejado de ser un simple requerimiento de facturación para convertirse en un pilar del flujo de caja corporativo y de la deducción de costos y gastos.<p><p>Nuestra plataforma le permite rastrear en tiempo real el ciclo de vida completo de cada documento, identificando al instante si una factura ha sido recibida, reclamada, aceptada, rechazada o si ya circula en el mercado financiero como título valor a través de la plataforma RADIAN."<p><b>Actualizada el 07-07-2026</b>",
+        desc: "<b>REF003</b><p>Optimice la gestión tributaria y asegure el cumplimiento normativo de su empresa con nuestra herramienta avanzada para la validación masiva de eventos, el análisis de archivos XML y la descarga automatizada de facturas electrónicas directamente desde el portal de la DIAN. En el panorama fiscal actual, la gestión de los comprobantes electrónicos ha dejado de ser un simple requerimiento de facturación para convertirse en un pilar del flujo de caja corporativo y de la deducción de costos y gastos.<p> <p>Nuestra plataforma le permite rastrear en tiempo real el ciclo de vida completo de cada documento, identificando al instante si una factura ha sido recibida, reclamada, aceptada, rechazada o si ya circula en el mercado financiero como título valor a través de la plataforma RADIAN.<p><b>Actualizada el 07-07-2026</b>",
         caracteristicas: [".", ".", ".", ".", ".", "."],
         nota: "Para brindarle un soporte técnico oportuno, requerimos conectarnos de forma remota a su equipo a través de AnyDesk. Tenga en cuenta que este acceso quedará registrado de manera individual en cada computadora durante la instalación. Por su seguridad, nuestro equipo se comunicará exclusivamente al número de móvil que tiene registrado con nosotros. Asimismo, le recordamos que el funcionamiento de nuestra herramienta depende de plataformas de terceros integradas; <b>cualquier cambio en los parámetros de dichas plataformas nos exime de responsabilidad sobre la continuidad del servicio.</b>",
         precio: "Desde COP $100.000",
-        video: "",    
+        video: " ",    
         youtube: "https://youtu.be/tWS24jBXEkc",
         fotos: ["img/p0-0.png"]
     },

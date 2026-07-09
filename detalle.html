@@ -235,6 +235,30 @@
 
             let formatoText = p.formato || "Software / Herramienta";
 
+
+            // --- ACTUALIZACIÓN DINÁMICA DE METAETIQUETAS PARA REDES SOCIALES ---
+            // 1. Cambia el título de la pestaña por el nombre del producto
+            document.title = `${p.nombre} - WiCONTABLE`;
+            
+            // 2. Modifica dinámicamente las etiquetas Open Graph para WhatsApp / Facebook
+            const ogTitle = document.querySelector('meta[property="og:title"]');
+            if (ogTitle) ogTitle.setAttribute('content', `${p.nombre} - WiCONTABLE Premium`);
+
+            const ogDesc = document.querySelector('meta[property="og:description"]');
+            if (ogDesc) ogDesc.setAttribute('content', p.desc.replace(/<[^>]*>/g, '').substring(0, 150) + '...');
+
+            const ogImage = document.querySelector('meta[property="og:image"]');
+            if (ogImage && p.fotos && p.fotos.length > 0) {
+                // Convierte la ruta relativa (img/p2-0.png) en una ruta absoluta real para WhatsApp
+                const urlAbsolutaFoto = window.location.origin + '/' + p.fotos[0];
+                ogImage.setAttribute('content', urlAbsolutaFoto);
+            }
+            
+            const ogUrl = document.querySelector('meta[property="og:url"]');
+            if (ogUrl) ogUrl.setAttribute('content', window.location.href);
+
+
+
             let seccionTecnicaHTML = "";
             if (p.mostrarTecnica === true) {
                 seccionTecnicaHTML = `

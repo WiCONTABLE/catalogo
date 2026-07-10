@@ -18,6 +18,7 @@ etiqueta: "¡PRODUCCION!",
     {
         id: 2,
         nombre: "PDFs Downloader (DIAN)",
+        url: "pdfs-downloader.html",
         formato: "Extensión Web .crx",
         mostrarTecnica: true,
 etiqueta: "ACTIVA",

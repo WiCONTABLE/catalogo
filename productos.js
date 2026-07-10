@@ -4,6 +4,7 @@ const productos = [
         {
         id: 0,
         nombre: "WiCONTABLE Auditor F.E (DIAN)",
+        url: "auditor-fe.html",
         formato: "Extensión Web .crx",
         mostrarTecnica: true,
 etiqueta: "¡PRODUCCION!",

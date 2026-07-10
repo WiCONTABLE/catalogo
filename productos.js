@@ -34,6 +34,7 @@ etiqueta: "ACTIVA",
 {
         id: 6,
         nombre: "Gemini PRO (18 Meses)",
+        url: "gemini-pro.html",
         formato: "Credenciales",
         mostrarTecnica: false,
 etiqueta: "DISPONIBLE",

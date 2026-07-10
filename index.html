@@ -283,26 +283,32 @@
                     badgeHTML = `<div class="badge-base ${badgeColorClass}">${p.etiqueta}</div>`;
                 }
 
-                const safeFoto = (p.fotos && p.fotos.length > 0) ? p.fotos[0] : "img/logowi.png";
+                
+const safeFoto = (p.fotos && p.fotos.length > 0) ? p.fotos[0] : "img/logowi.png";
                 const isAgotado = p.etiqueta && p.etiqueta.toUpperCase().includes('AGOTADO');
+                
+                // Si el producto tiene URL propia la usa, si no, usa detalle.html
+                const linkProducto = p.url || `detalle.html?id=${p.id}`;
                 
                 card.innerHTML = `
                     ${badgeHTML}
-                    <div style="cursor:pointer;" onclick="window.location.href='detalle.html?id=${p.id}'">
+                    <div style="cursor:pointer;" onclick="window.location.href='${linkProducto}'">
                         <img src="${safeFoto}" class="card-img" alt="${p.nombre}">
                     </div>
                     <div class="info">
-                        <h2 style="cursor:pointer;" onclick="window.location.href='detalle.html?id=${p.id}'">${p.nombre}</h2>
+                        <h2 style="cursor:pointer;" onclick="window.location.href='${linkProducto}'">${p.nombre}</h2>
                         <div class="price-tag">${p.precio}</div>
                         
                         <div class="card-buttons">
-                            <a href="detalle.html?id=${p.id}" class="btn-det">Detalles</a>
+                            <a href="${linkProducto}" class="btn-det">Detalles</a>
                             <button class="btn-add" ${isAgotado ? 'disabled' : ''} onclick="addToCart(${p.id})">
                                 ${isAgotado ? 'Agotado' : '🛒 Añadir'}
                             </button>
                         </div>
                     </div>
                 `;
+
+
                 container.appendChild(card);
             });
         }

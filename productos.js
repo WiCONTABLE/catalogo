@@ -49,6 +49,7 @@ etiqueta: "DISPONIBLE",
 {
         id: 4,
         nombre: "Microsoft 365 Genuina (1 año)",
+        url: "365-office.html",
         formato: "Credenciales",
         mostrarTecnica: false,
 etiqueta: "DISPONIBLE",

@@ -106,6 +106,7 @@ etiqueta: "AGOTADO",
 {
         id: 7,
         nombre: "WiCONTABLE Lite",
+        url: "wicontable-lite.html",
         formato: "Ejecutable .exe",
         mostrarTecnica: true,
 etiqueta: "ACTIVA",

@@ -136,6 +136,7 @@ etiqueta: "ACTIVA",
 {
         id: 11,
         nombre: "Declaración de Renta P.N.",
+        url: "declaracion-renta-pn.html",
         formato: "Consultoria Contable",
         mostrarTecnica: false,
 etiqueta: "¡DISPONIBLE!",

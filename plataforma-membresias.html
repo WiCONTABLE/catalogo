@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle - WiCONTABLE</title>
+    <link rel="icon" href="https://wicontable.com/img/logowi.png" type="image/png" sizes="48x48">
+    
+<meta property="og:title" content="Plataformas/Membresías">
+    <meta property="og:description" content="Te invitamos a visualizar nuestro catalogo de ocio, producción y entretenimiento con los mejores precios del mercado.">
+    <meta property="og:image" content="https://wicontable.com/img/p10-0.png">
+    <meta property="og:url" content="https://wicontable.com/plataforma-membresias.html">
+    <meta property="og:type" content="website">
+    
+    <style>
+        :root { 
+            --ws-green: #25D366; 
+            --ws-dark: #128C7E; 
+            --bg-gray: #f8f9fa; 
+            --card-shadow: 0 10px 25px rgba(0,0,0,0.08); 
+            --text-main: #333;
+            --fb-color: #1877F2; --li-color: #0077b5; --tk-color: #000000;
+            --yt-color: #FF0000; --ig-color: #E4405F;
+        }
+        
+        body { font-family: 'Calibri', 'Segoe UI', Tahoma, sans-serif; background: var(--bg-gray); margin: 0; position: relative; color: var(--text-main); font-size: 14px; }
+        body::before { content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: url('img/logowi.png'); background-repeat: no-repeat; background-position: center; background-size: 40%; opacity: 0.04; z-index: -1; pointer-events: none; }
+
+        .marquee-wrapper { width: 100%; overflow: hidden; background: white; padding: 12px 0; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 100; }
+        .marquee-content { display: inline-block; white-space: nowrap; padding-left: 100%; animation: scroll-text 30s linear infinite; font-weight: 600; color: #008f39; }
+        @keyframes scroll-text { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
+
+        .main-wrapper { max-width: 1100px; margin: 0 auto; padding: 20px; min-height: 80vh; }
+        
+        .breadcrumbs { font-size: 0.95rem; margin-bottom: 20px; color: #666; font-weight: 600; }
+        .breadcrumbs a { color: var(--ws-dark); text-decoration: none; }
+        .breadcrumbs a:hover { text-decoration: underline; }
+
+        .product-top-section { display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; margin-bottom: 40px; }
+        .mobile-only { display: none; }
+        
+        @media (max-width: 850px) { 
+            .product-top-section { grid-template-columns: 1fr; } 
+            .desktop-only { display: none; }
+            .mobile-only { display: block; }
+        }
+
+        .product-left { display: flex; flex-direction: column; gap: 20px; }
+        .carousel { position: relative; aspect-ratio: 4/5; overflow: hidden; background: #fff; border-radius: 20px; box-shadow: var(--card-shadow); }
+        .slides { display: flex; transition: 0.5s; height: 100%; }
+        .slides img { width: 100%; object-fit: contain; flex-shrink: 0; padding: 20px; box-sizing: border-box; }
+        
+        .important-note { background: #fffde7; padding: 25px; border-radius: 15px; border: 1px solid #fbc02d; font-size: 0.9rem; line-height: 1.5; box-shadow: 0 4px 10px rgba(0,0,0,0.03); color: green; }
+
+        .product-title { font-size: 2.2rem; margin: 0 0 10px 0; color: #000; font-weight: 800; }
+        .product-ref { font-size: 0.95rem; color: #666; font-weight: 600; margin-bottom: 25px; display: inline-block; background: #e0e0e0; padding: 4px 10px; border-radius: 5px; }
+        .product-desc { font-size: 1.05rem; line-height: 1.6; color: #444; margin-bottom: 20px; }
+        
+        .features-title { font-weight: 700; margin-bottom: 10px; display: block; color: #000; }
+        .features { list-style: none; padding: 0; margin: 0 0 25px 0; }
+        .features li { margin-bottom: 12px; display: flex; align-items: flex-start; line-height: 1.4; color: #333; }
+        .features li::before { content: "✅"; margin-right: 12px; font-size: 1.1rem; }
+
+        .tech-links { background: rgba(37, 211, 102, 0.05); padding: 20px; border-radius: 12px; border-left: 4px solid var(--ws-green); display: flex; flex-direction: column; gap: 12px; }
+        .tech-links-row { display: flex; align-items: center; font-size: 0.95rem; }
+        .tech-links-label { font-weight: 800; color: #128C7E; width: 130px; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.5px; }
+        .tech-link { color: #1877F2; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 5px; transition: 0.2s; cursor: pointer; }
+        .tech-link:hover { text-decoration: underline; color: #0000CD; }
+        .tech-value { font-weight: 600; color: #444; }
+
+        .nav-btn {
+            position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0, 0, 0, 0.4); color: white;
+            border: none; width: 40px; height: 40px; cursor: pointer; font-size: 1.2rem; border-radius: 50%; z-index: 10; transition: 0.3s;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .nav-btn:hover { background: var(--ws-green); box-shadow: 0 4px 10px rgba(37, 211, 102, 0.4); }
+        .prev { left: 10px; } .next { right: 10px; }
+
+        .product-middle-section { 
+            background: linear-gradient(145deg, #ffffff, #f4f7f6); border-radius: 20px; border: 1px solid rgba(18, 140, 126, 0.15); 
+            box-shadow: 0 10px 40px rgba(0,0,0,0.06); margin-bottom: 50px; overflow: hidden; position: relative;
+        }
+        .product-middle-section::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px;
+            background: linear-gradient(90deg, #25D366, #128C7E, #0000CD, #25D366); background-size: 200% auto; animation: gradient-glow 3s linear infinite;
+        }
+        @keyframes gradient-glow { 0% { background-position: 0% center; } 100% { background-position: 200% center; } }
+
+        .futuristic-tab-container { padding: 0 30px; border-bottom: 1px solid rgba(0,0,0,0.05); background: rgba(255,255,255,0.5); }
+        .futuristic-tab { display: inline-block; padding: 20px 0; font-size: 1.1rem; color: var(--ws-dark); font-weight: 800; text-transform: uppercase; letter-spacing: 1px; border-bottom: 3px solid var(--ws-green); margin-bottom: -1px; }
+        
+        .tab-content { padding: 40px 30px; }
+        .tab-content h3 { font-size: 1.6rem; color: #222; margin-top: 0; font-weight: 800; letter-spacing: -0.5px; }
+        .tab-content p { line-height: 1.7; color: #555; font-size: 1.05rem; }
+
+        .faq-title { text-align: center; color: #0000CD; margin: 50px 0 25px; font-size: 1.4rem; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; }
+        .faq-item { border: 1px solid #eee; margin-bottom: 10px; border-radius: 10px; overflow: hidden; background: white; transition: 0.3s; }
+        .faq-item:hover { box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .faq-question { padding: 18px 20px; background: #fff; cursor: pointer; display: flex; justify-content: space-between; font-weight: 700; color: #333; font-size: 0.95rem; user-select: none; }
+        .faq-answer { padding: 20px; background: #fafafa; display: none; color: #555; line-height: 1.6; border-top: 1px dashed #eee; font-size: 0.95rem; }
+
+        .action-buttons { margin-top: 35px; display: flex; align-items: center; gap: 15px; flex-wrap: wrap; }
+        .price-big { font-size: 2.6rem; font-weight: 900; color: #000; letter-spacing: -1px; margin-right: 15px; }
+        .btn-buy-large { display: inline-block; background: var(--ws-dark); color: white; border-radius: 12px; text-decoration: none; font-weight: 800; transition: 0.3s; padding: 15px 30px; font-size: 1.1rem; border: none; cursor: pointer; }
+        .btn-buy-large:hover { transform: translateY(-3px); background: #0e6b5c; }
+        .btn-add-cart-large { display: inline-block; background: var(--ws-green); color: white; border-radius: 12px; text-decoration: none; font-weight: 800; transition: 0.3s; padding: 15px 30px; font-size: 1.1rem; border: none; cursor: pointer; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); }
+        .btn-add-cart-large:hover { background: #1da852; transform: translateY(-3px); box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5); }
+
+        .scroll-section { margin: 40px 0; }
+        .scroll-container { display: flex; gap: 15px; overflow-x: auto; padding: 10px 0 20px; scrollbar-width: thin; }
+        .mini-card { flex: 0 0 160px; background: white; border-radius: 15px; padding: 15px 10px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05); text-decoration: none; color: inherit; border: 1px solid #eee; transition: 0.2s; display: flex; flex-direction: column; justify-content: space-between; align-items: center; position: relative; }
+        .mini-card:hover { transform: translateY(-5px); border-color: var(--ws-green); }
+        .mini-img { width: 100%; height: 80px; object-fit: contain; margin-bottom: 10px; }
+        .mini-card h4 { margin: 0 0 10px 0; font-size: 0.85rem; font-weight: 600; line-height: 1.2; }
+
+        .badge-base { position: absolute; top: 15px; right: 15px; color: white; font-size: 0.70rem; font-weight: 900; padding: 6px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px; z-index: 20; }
+        .badge-nuevo { background: linear-gradient(90deg, #ff0000, #ff8c00, #ff0000); background-size: 200% auto; box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); animation: glow-pulse-nuevo 2s linear infinite; }
+        @keyframes glow-pulse-nuevo { 0% { background-position: 0% center; box-shadow: 0 0 8px rgba(255,0,0,0.4); } 50% { box-shadow: 0 0 18px rgba(255,80,0,0.9); } 100% { background-position: 200% center; box-shadow: 0 0 8px rgba(255,0,0,0.4); } }
+        .badge-manten { background: linear-gradient(90deg, #e65c00, #F9D423, #e65c00); background-size: 200% auto; box-shadow: 0 0 10px rgba(230, 92, 0, 0.5); animation: glow-pulse-manten 2.5s linear infinite; }
+        @keyframes glow-pulse-manten { 0% { background-position: 0% center; box-shadow: 0 0 8px rgba(230,92,0,0.4); } 50% { box-shadow: 0 0 18px rgba(249,212,35,0.8); } 100% { background-position: 200% center; box-shadow: 0 0 8px rgba(230,92,0,0.4); } }
+        .badge-prod { background: linear-gradient(90deg, #FFB300, #FEE140, #FFB300); background-size: 200% auto; box-shadow: 0 0 10px rgba(255, 179, 0, 0.5); animation: glow-pulse-prod 3s linear infinite; color: #000; }
+        @keyframes glow-pulse-prod { 0% { background-position: 0% center; box-shadow: 0 0 8px rgba(255,179,0,0.4); } 50% { box-shadow: 0 0 18px rgba(254,225,64,0.9); } 100% { background-position: 200% center; box-shadow: 0 0 8px rgba(255,179,0,0.4); } }
+        .badge-activa { background: linear-gradient(90deg, #11998e, #38ef7d, #11998e); background-size: 200% auto; box-shadow: 0 0 10px rgba(56, 239, 125, 0.5); animation: glow-pulse-activa 2s linear infinite; }
+        @keyframes glow-pulse-activa { 0% { background-position: 0% center; box-shadow: 0 0 8px rgba(17,153,142,0.4); } 50% { box-shadow: 0 0 18px rgba(56,239,125,0.9); } 100% { background-position: 200% center; box-shadow: 0 0 8px rgba(17,153,142,0.4); } }
+        .badge-agotado { background: linear-gradient(90deg, #606060, #8f8f8f, #606060); background-size: 200% auto; box-shadow: 0 0 10px rgba(96, 96, 96, 0.5); animation: glow-pulse-agotado 3s linear infinite; color: white; }
+        @keyframes glow-pulse-agotado { 0% { background-position: 0% center; box-shadow: 0 0 8px rgba(96,96,96,0.4); } 50% { box-shadow: 0 0 15px rgba(143,143,143,0.8); } 100% { background-position: 200% center; box-shadow: 0 0 8px rgba(96,96,96,0.4); } }
+
+.badge-disponible { background: linear-gradient(90deg, #00c6ff, #0072ff, #00c6ff); background-size: 200% auto; box-shadow: 0 0 10px rgba(0, 198, 255, 0.5); animation: glow-pulse-disponible 2s linear infinite; }
+        @keyframes glow-pulse-disponible { 0% { background-position: 0% center; box-shadow: 0 0 8px rgba(0,198,255,0.4); } 50% { box-shadow: 0 0 18px rgba(0,114,255,0.9); } 100% { background-position: 200% center; box-shadow: 0 0 8px rgba(0,198,255,0.4); } }
+
+        /* AVISO CROMADO / SEMITRANSPARENTE (ADVERTENCIA DE PAGO) */
+        .notice-popup { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.75); z-index: 6000; align-items: center; justify-content: center; backdrop-filter: blur(5px); opacity: 0; transition: opacity 0.3s ease; }
+        .notice-popup.active { display: flex; opacity: 1; }
+        .notice-box { background: rgba(20, 31, 66, 0.9); border: 2px solid var(--ws-green); border-radius: 20px; width: 90%; max-width: 500px; padding: 35px 25px; text-align: center; color: white; box-shadow: 0 15px 40px rgba(0,0,0,0.6); box-sizing: border-box; }
+        .notice-box h3 { margin-top: 0; color: var(--ws-green); font-size: 1.5rem; font-weight: 800; letter-spacing: -0.5px; }
+        .notice-box p { line-height: 1.6; color: #e0e0e0; font-size: 1rem; margin-bottom: 25px; }
+        .btn-accept-notice { background: var(--ws-green); color: black; border: none; padding: 12px 30px; border-radius: 10px; font-weight: 800; font-size: 1rem; cursor: pointer; transition: 0.3s; box-shadow: 0 4px 15px rgba(37,211,102,0.4); }
+        .btn-accept-notice:hover { background: #1da852; transform: scale(1.05); }
+
+        .video-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 5000; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; }
+        .video-modal.active { display: flex; opacity: 1; }
+        .modal-content { position: relative; width: 90%; max-width: 800px; background: #000; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 2px solid var(--ws-green); }
+        .modal-content iframe, .modal-content video { width: 100%; display: block; aspect-ratio: 16/9; border: none; background: #000; outline: none; }
+        .close-modal { position: absolute; top: 10px; right: 15px; color: white; font-size: 2.5rem; font-weight: bold; cursor: pointer; z-index: 5100; transition: 0.2s; user-select: none; line-height: 1; }
+        .close-modal:hover { color: var(--ws-green); transform: scale(1.1); }
+
+        .main-footer { background: white; padding: 50px 20px; margin-top: 80px; text-align: center; border-top: 1px solid #eee; }
+        .footer-content { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+        .social-links { display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; margin: 10px 0; }
+        .social-btn { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .social-btn:hover { transform: translateY(-5px) scale(1.1); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+        .social-btn svg { width: 25px; height: 25px; fill: white; }
+        
+        .bg-fb { background-color: var(--fb-color); } .bg-ig { background-color: var(--ig-color); }
+        .bg-tk { background-color: var(--tk-color); } .bg-li { background-color: var(--li-color); }
+        .bg-yt { background-color: var(--yt-color); } .bg-no { background-color: #000000; }
+        
+        .copyright { font-size: 0.9rem; color: #999; margin-top: 15px; font-weight: 600; }
+
+        .floating-wa { position: fixed; bottom: 25px; left: 25px; background: #25D366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; box-shadow: 0 6px 20px rgba(37,211,102,0.4); text-decoration: none; z-index: 999; transition: 0.3s ease; }
+        .floating-wa:hover { transform: scale(1.1) rotate(5deg); }
+        .floating-cart { position: fixed; bottom: 25px; right: 25px; background: #128C7E; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; box-shadow: 0 6px 20px rgba(18,140,126,0.4); cursor: pointer; z-index: 999; transition: 0.3s ease; }
+        .floating-cart:hover { transform: scale(1.1); }
+        .cart-badge { position: absolute; top: -5px; right: -5px; background: #ff3b30; color: white; font-size: 0.85rem; font-weight: bold; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid white; }
+
+        .cart-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 9998; opacity: 0; visibility: hidden; transition: 0.3s; backdrop-filter: blur(3px); }
+        .cart-overlay.active { opacity: 1; visibility: visible; }
+        .cart-sidebar { position: fixed; top: 0; right: -400px; width: 100%; max-width: 380px; height: 100vh; background: white; z-index: 9999; box-shadow: -10px 0 30px rgba(0,0,0,0.1); transition: 0.3s ease-in-out; display: flex; flex-direction: column; }
+        .cart-sidebar.active { right: 0; }
+        .cart-header { padding: 25px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; background: #f8f9fa; }
+        .cart-header h2 { margin: 0; font-size: 1.4rem; color: var(--ws-dark); font-weight: 800; }
+        .close-cart { font-size: 2rem; font-weight: bold; cursor: pointer; color: #aaa; border: none; background: none; line-height: 1; }
+        .close-cart:hover { color: #333; }
+        .cart-body { padding: 25px; overflow-y: auto; flex-grow: 1; display: flex; flex-direction: column; gap: 15px; }
+        .cart-footer { padding: 25px; border-top: 1px solid #eee; background: white; margin-top: auto; }
+        .cart-total { display: flex; justify-content: space-between; font-size: 1.3rem; font-weight: 900; margin-bottom: 20px; color: #000; }
+        .btn-checkout { width: 100%; background: var(--ws-green); color: white; padding: 18px; border: none; border-radius: 12px; font-weight: bold; font-size: 1.05rem; cursor: pointer; transition: 0.3s; box-shadow: 0 4px 15px rgba(37,211,102,0.3); }
+        .btn-checkout:hover { background: #1da852; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37,211,102,0.4); }
+    </style>
+</head>
+<body>
+    <div class="notice-popup" id="noticePopup">
+        <div class="notice-box">
+            <h3>⚠️ Aviso Importante</h3>
+            <p>Estimad@, agradecemos el interés que tiene sobre el producto. Le recordamos que es de vital importancia que lea detenidamente cada detalle del producto antes de realizar el pago.</p>
+            <button class="btn-accept-notice" onclick="closeNotice()">Entendido, continuar →</button>
+        </div>
+    </div>
+
+    <div class="marquee-wrapper">
+        <div class="marquee-content">Somos tu mejor aliado para automatizar procesos que te ahorrarán tiempo, con HERRAMIENTAS CONTABLES 100% garantizadas.</div>
+    </div>
+
+    <div class="main-wrapper">
+        <div id="product-content"></div>
+
+        <div class="scroll-section">
+            <p style="font-weight: 800; font-size: 1.1rem; color:#000;">👇 OTRAS HERRAMIENTAS DISPONIBLES:</p>
+            <div class="scroll-container" id="product-scroll"></div>
+        </div>
+    </div>
+
+    <div class="video-modal" id="videoModal">
+        <span class="close-modal" onclick="closeVideo()">&times;</span>
+        <div class="modal-content"><div id="iframeContainer"></div></div>
+    </div>
+
+    <a href="#" id="waLink" target="_blank" class="floating-wa" title="Soporte WhatsApp Directo">💬</a>
+    <div class="floating-cart" onclick="openCart()" title="Ver mi pedido">🛒<div class="cart-badge" id="cartCount">0</div></div>
+
+    <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header"><h2>Mi Pedido 🛒</h2><button class="close-cart" onclick="closeCart()">&times;</button></div>
+        <div class="cart-body" id="cartItems"></div>
+        <div class="cart-footer">
+            <div class="cart-total"><span>Total:</span><span id="cartTotalText">COP $0</span></div>
+            <button class="btn-checkout" onclick="checkoutWhatsapp()">Confirmar Pedido por WhatsApp 📲</button>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p><strong>CONÉCTATE CON NOSOTROS EN REDES SOCIALES</strong></p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/wicontable" class="social-btn bg-fb" target="_blank" title="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                <a href="https://www.instagram.com/wicontable/" class="social-btn bg-ig" target="_blank" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+                <a href="https://www.tiktok.com/@wildersarriahernandez" class="social-btn bg-tk" target="_blank" title="TikTok"><svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.9-.32-1.98-.23-2.81.33-.85.51-1.44 1.42-1.58 2.4-.11.68-.03 1.37.18 2.03.35.81 1.05 1.48 1.88 1.76.71.21 1.48.21 2.19.04 1.02-.14 1.98-.77 2.56-1.6.43-.59.66-1.31.71-2.04.08-3.38.03-6.76.04-10.14z"/></svg></a>
+                <a href="https://www.linkedin.com/in/wildersarriahernandez" class="social-btn bg-li" target="_blank" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+                <a href="https://www.youtube.com/@wildersarriahernandez" class="social-btn bg-yt" target="_blank" title="YouTube Wilder Sarria H."><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                <a href="https://www.youtube.com/@wicontable" class="social-btn bg-yt" target="_blank" title="YouTube WiCONTABLE"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                
+            </div>
+            <p class="copyright">© 2026 WiCONTABLE. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="productos.js"></script>
+    <script>
+        let cart = JSON.parse(localStorage.getItem('wicontable_cart')) || [];
+
+        window.addEventListener('DOMContentLoaded', () => {
+            if (typeof productos === 'undefined') {
+                document.getElementById('product-content').innerHTML = `
+                    <div style="background: #ffebee; color: #c62828; padding: 35px 25px; border-radius: 15px; text-align: center; border: 2px solid #ef9a9a; margin-top: 20px;">
+                        <h2 style="margin-top:0; font-size: 1.8rem;">⚠️ Error de Base de Datos</h2>
+                        <p style="font-size: 1.1rem;">La pantalla aparece en blanco porque el catálogo no pudo leer la información de los productos.</p>
+                    </div>`;
+                return;
+            }
+
+            document.getElementById('noticePopup').classList.add('active');
+
+            const tel = typeof miTelefono !== 'undefined' ? miTelefono : '573156016386';
+            document.getElementById('waLink').href = `https://wa.me/${tel}?text=Hola,%20tengo%20una%20duda%20sobre%20sus%20herramientas.`;
+            updateCartUI();
+
+            const id = 10;
+            const p = productos.find(item => item.id === id);
+
+            function getYouTubeId(url) {
+                if (!url) return null;
+                const match = url.match(/^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/);
+                return (match && match[2].length === 11) ? match[2] : null;
+            }
+
+            if (p) {
+                let refText = ""; let cleanDesc = p.desc || "";
+                const refMatch = cleanDesc.match(/<b>(REF\d{3})<\/b>/);
+                if (refMatch) { refText = refMatch[1]; cleanDesc = cleanDesc.replace(/<b>REF\d{3}<\/b>\s*/, ''); }
+
+                const formatoText = p.formato || "Software / Herramienta";
+                const fotosSeguras = (p.fotos && p.fotos.length > 0) ? p.fotos : ["img/logowi.png"];
+
+                document.title = `${p.nombre} - WiCONTABLE`;
+                document.querySelector('meta[property="og:title"]')?.setAttribute('content', `${p.nombre} - WiCONTABLE`);
+                document.querySelector('meta[property="og:description"]')?.setAttribute('content', cleanDesc.replace(/<[^>]*>/g, '').substring(0, 120));
+                document.querySelector('meta[property="og:image"]')?.setAttribute('content', window.location.origin + '/' + fotosSeguras[0]);
+                document.querySelector('meta[property="og:url"]')?.setAttribute('content', window.location.href);
+
+                let seccionTecnicaHTML = "";
+                if (p.mostrarTecnica === true) {
+                    seccionTecnicaHTML = `
+                    <div class="product-middle-section">
+                        <div class="futuristic-tab-container">
+                            <div class="futuristic-tab">Descripción Técnica</div>
+                        </div>
+                        <div class="tab-content">
+                            <h3>Detalles Adicionales de la Herramienta</h3>
+                            <p>Creamos nuestras herramientas escuchando a las personas del gremio que, como tú, buscan la mejor manera de automatizar ese trabajo repetitivo del día a día.</p>
+                            <p><i>Nota: No necesitas realizar pagos recurrentes ni preocuparte por fechas de vencimiento. Te ofrecemos la herramienta mediante un pago único, la cual se mantendrá completamente funcional siempre que el origen de datos no aplique cambios estructurales en su plataforma. Si algún desarrollo deja de ser funcional obtendras el 50% una vez realicemos los ajustes de actualización.</i></p>
+                            
+                            <h4 class="faq-title">Preguntas Frecuentes</h4>
+                            <div class="faq-item">
+                                <div class="faq-question" onclick="toggleFaq(this)">¿Que requiero para instalar la herramienta, que pasos debo seguir? <span>▼</span></div>
+                                <div class="faq-answer">Para garantizar la mejor experiencia, es fundamental que visualice previamente el video tutorial de funcionamiento. Una vez confirmado el pago, nos pondremos en contacto con usted a través de WhatsApp y AnyDesk para realizar la instalación y activación del producto correspondiente. (<b>RECUERDE</b> que se requiere versión Windows 10 ó preferiblemente Windows 11 para un mejor rendimiento en los ejecutable .exe y Navegadores Chrome - Brave - Edge en las extensiones web .crx). Adicionalmente, brindaremos un espacio para resolver cualquier inquietud que no haya sido aclarada en el video de apoyo.</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question" onclick="toggleFaq(this)">¿Cuánto se demora el envío o instalación después de hacer el pago? <span>▼</span></div>
+                                <div class="faq-answer">La instalación suele ser inmediata o agendada en el transcurso del mismo día en que se realiza la confirmación del pago.</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question" onclick="toggleFaq(this)">¿Que horarios manejan para soporte? <span>▼</span></div>
+                                <div class="faq-answer">Colega, si Dios lo permite, estamos disponibles en el siguiente horario: Lunes a sábado de 7:00am a 09:00pm y Domingos y festivos 9:00am a 6:00pm</div>
+                            </div>
+                        </div>
+                    </div>`;
+                }
+
+                let badgeHTML = '';
+                if (p.etiqueta) {
+                    let textUpper = p.etiqueta.toUpperCase();
+                    let bCls = 'badge-activa';
+                    if (textUpper.includes('NUEVO')) bCls = 'badge-nuevo';
+                    else if (textUpper.includes('MANTENIMIENTO')) bCls = 'badge-manten';
+                    else if (textUpper.includes('PRODUCCI')) bCls = 'badge-prod';
+                    else if (textUpper.includes('AGOTADO')) bCls = 'badge-agotado';
+                    badgeHTML = `<div class="badge-base ${bCls}">${p.etiqueta}</div>`;
+                }
+
+                let videoAction = "";
+                if (p.video && p.video.trim() !== "#" && p.video.trim() !== "") {
+                    const ytId = getYouTubeId(p.video);
+                    if (ytId) videoAction = `href="#" onclick="openVideo('${ytId}'); return false;"`;
+                    else if (p.video.toLowerCase().endsWith('.mp4')) videoAction = `href="#" onclick="openLocalVideo('${p.video}', '${p.youtube||''}'); return false;"`;
+                    else videoAction = `href="${p.video}" target="_blank"`;
+                }
+
+                const isAgotado = p.etiqueta && p.etiqueta.toUpperCase().includes('AGOTADO');
+
+                document.getElementById('product-content').innerHTML = `
+                    <div class="breadcrumbs">
+                        <a href="index.html">🏠 Inicio Catálogo</a> > <span>${formatoText}</span> > <span style="color:#000;">${p.nombre}</span>
+                    </div>
+                    <div class="product-top-section">
+                        <div class="product-left">
+                            <div class="carousel">
+                                ${badgeHTML}
+                                <div class="slides" id="slides">${fotosSeguras.map(f => `<img src="${f}" alt="${p.nombre}">`).join('')}</div>
+                                ${fotosSeguras.length > 1 ? '<button class="nav-btn prev" onclick="moveSlide(-1)">❮</button><button class="nav-btn next" onclick="moveSlide(1)">❯</button>' : ''}
+                            </div>
+                            <div class="important-note desktop-only"><b>SOPORTE:</b><br><br>${p.nota || ''}</div>
+                        </div>
+                        <div class="product-right">
+                            <h1 class="product-title">${p.nombre}</h1>
+                            ${refText ? `<span class="product-ref">${refText}</span>` : ''}
+                            <div class="product-desc">${cleanDesc}</div>
+                            <span class="features-title">Podrás utilizarla de la siguiente manera:</span>
+                            <ul class="features">${(p.caracteristicas||[]).map(f => `<li>${f}</li>`).join('')}</ul>
+                            
+                            <div class="tech-links">
+                                <div class="tech-links-row">
+                                    <span class="tech-links-label">Compartir:</span>
+                                    <a href="https://wa.me/?text=Mira esta herramienta contable: ${encodeURIComponent(p.nombre)} - ${encodeURIComponent(window.location.href)}" class="tech-link" target="_blank">📲 Enviar por WhatsApp</a>
+                                </div>
+                                ${videoAction !== "" ? `<div class="tech-links-row"><span class="tech-links-label">Video:</span><a ${videoAction} class="tech-link">🎥 Ver funcionamiento</a></div>` : ''}
+                                <div class="tech-links-row"><span class="tech-links-label">Formato:</span><span class="tech-value">💻 ${formatoText}</span></div>
+                            </div>
+
+                            <div class="action-buttons">
+                                <div class="price-big">${p.precio || 'Consultar'}</div>
+                                ${isAgotado ? 
+                                    `<button class="btn-buy-large" style="background:#ccc; cursor:not-allowed;" disabled>No Disponible</button>` :
+                                    `<button class="btn-add-cart-large" onclick="addToCart(${p.id})">🛒 Añadir al Pedido</button>
+                                     <a href="https://wa.me/${tel}?text=¡Hola! lei detalladamente la referencia y quiero adquirir directamente: ${encodeURIComponent(p.nombre)}" class="btn-buy-large" target="_blank">Preguntar Asesor</a>`
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="important-note mobile-only" style="margin-bottom: 40px;"><b>SOPORTE:</b><br><br>${p.nota || ''}</div>
+                    
+                    ${seccionTecnicaHTML}
+                `;
+            }
+
+            const scrollBox = document.getElementById('product-scroll');
+            if (scrollBox) {
+                productos.forEach(prod => {
+                    if(prod.id !== id) {
+                        const m = document.createElement('a'); 
+                        m.className = 'mini-card'; 
+                        m.href = `detalle.html?id=${prod.id}`;
+                        m.style.position = 'relative'; 
+
+                        let miniBadgeHTML = '';
+                        if (prod.etiqueta) {
+                            let textUpper = prod.etiqueta.toUpperCase();
+                            let bCls = 'badge-activa';
+                            if (textUpper.includes('NUEVO')) bCls = 'badge-nuevo';
+                            else if (textUpper.includes('MANTENIMIENTO')) bCls = 'badge-manten';
+                            else if (textUpper.includes('PRODUCCI')) bCls = 'badge-prod';
+                            else if (textUpper.includes('ACTIVA') || textUpper.includes('ACTIVO')) bCls = 'badge-activa';
+                            else if (textUpper.includes('AGOTADO')) bCls = 'badge-agotado';
+                            else if (textUpper.includes('DISPONIBLE')) bCls = 'badge-disponible';
+                            
+                            miniBadgeHTML = `<div class="badge-base ${bCls}" style="transform: scale(0.7); transform-origin: top right; top: 10px; right: 10px;">${prod.etiqueta}</div>`;
+                        }
+
+                        const safeFoto = (prod.fotos && prod.fotos.length>0) ? prod.fotos[0] : "img/logowi.png";
+                        m.innerHTML = `${miniBadgeHTML}<img src="${safeFoto}" class="mini-img"><h4>${prod.nombre}</h4><div style="font-weight:900; color:#128C7E;">${prod.precio}</div>`;
+                        
+                        scrollBox.appendChild(m);
+                    }
+                });
+            }
+        });
+
+        function closeNotice() {
+            document.getElementById('noticePopup').classList.remove('active');
+        }
+
+        function toggleFaq(el) { const a = el.nextElementSibling; const i = el.querySelector('span'); if(a.style.display==="block"){a.style.display="none";i.textContent="▼";}else{a.style.display="block";i.textContent="▲";} }
+        let slideIndex = 0;
+        function moveSlide(dir) { const s = document.getElementById('slides'); const t = s.children.length; slideIndex+=dir; if(slideIndex<0)slideIndex=t-1; else if(slideIndex>=t)slideIndex=0; s.style.transform=`translateX(-${slideIndex*100}%)`; }
+
+        /* CARRITO LOGIC */
+        function parsePrice(str) { const num = String(str||"").replace(/\D/g, ''); return num ? parseInt(num) : 0; }
+        function addToCart(id) {
+            const prod = productos.find(p => p.id === id); if(!prod) return;
+            const ext = cart.find(i => i.id === id); if(ext) ext.cantidad++; else cart.push({...prod, cantidad: 1});
+            localStorage.setItem('wicontable_cart', JSON.stringify(cart)); updateCartUI(); openCart();
+        }
+        function removeFromCart(id) { cart = cart.filter(i => i.id !== id); localStorage.setItem('wicontable_cart', JSON.stringify(cart)); updateCartUI(); }
+        function openCart() { document.getElementById('cartSidebar').classList.add('active'); document.getElementById('cartOverlay').classList.add('active'); }
+        function closeCart() { document.getElementById('cartSidebar').classList.remove('active'); document.getElementById('cartOverlay').classList.remove('active'); }
+        function updateCartUI() {
+            document.getElementById('cartCount').innerText = cart.reduce((a, i) => a + i.cantidad, 0);
+            const box = document.getElementById('cartItems');
+            if(cart.length === 0) { box.innerHTML = '<p style="text-align:center; color:#888; margin-top:50px;">Carrito vacío 🛒</p>'; document.getElementById('cartTotalText').innerText="COP $0"; return; }
+            box.innerHTML = ''; let tot = 0;
+            cart.forEach(i => { tot += parsePrice(i.precio) * i.cantidad; box.innerHTML += `<div style="background:#f8f9fa; padding:15px; border-radius:10px; margin-bottom:10px; display:flex; justify-content:space-between; align-items:center; border:1px solid #eee;"><div><b>${i.nombre}</b><br><span style="color:#128C7E; font-weight:bold;">${i.cantidad} x ${i.precio}</span></div><button onclick="removeFromCart(${i.id})" style="color:red; background:none; border:none; font-weight:900; font-size:1.1rem; cursor:pointer;">✖</button></div>`; });
+            document.getElementById('cartTotalText').innerText = `COP $${tot.toLocaleString('es-CO')}`;
+        }
+        function checkoutWhatsapp() {
+            if(cart.length===0) return alert("Agrega herramientas al pedido.");
+            let msg = "¡Hola Wilder! 👋 Vengo de tu catálogo web y quiero confirmar el siguiente pedido:\n\n";
+            let tot = 0; cart.forEach(i => { tot += parsePrice(i.precio) * i.cantidad; msg += `🔸 *${i.cantidad}x* ${i.nombre} (${i.precio})\n`; });
+            msg += `\n*TOTAL APROXIMADO: COP $${tot.toLocaleString('es-CO')}*\n\n¿A dónde puedo transferir?`;
+            const tel = typeof miTelefono !== 'undefined' ? miTelefono : '573156016386'; window.open(`https://wa.me/${tel}?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
+        /* VIDEO MODALS */
+        function openVideo(yt) { document.getElementById('iframeContainer').innerHTML=`<iframe src="https://www.youtube.com/embed/${yt}?autoplay=1&rel=0" allowfullscreen></iframe><div style="text-align:center; padding:15px; background:#111;"><a href="https://youtu.be/${yt}" target="_blank" style="color:white; background:red; padding:10px 20px; border-radius:5px; text-decoration:none; font-weight:bold;">Ver en YouTube (Si hay error)</a></div>`; document.getElementById('videoModal').classList.add('active'); }
+        function openLocalVideo(vid, ytFallback) { document.getElementById('iframeContainer').innerHTML=`<video src="${vid}" controls autoplay style="width:100%; display:block; outline:none;"></video>` + (ytFallback ? `<div style="text-align:center; padding:15px; background:#111;"><a href="${ytFallback}" target="_blank" style="color:white; background:red; padding:10px 20px; border-radius:5px; text-decoration:none; font-weight:bold;">Ver de forma estable en YouTube</a></div>` : ''); document.getElementById('videoModal').classList.add('active'); }
+        function closeVideo() { document.getElementById('iframeContainer').innerHTML=""; document.getElementById('videoModal').classList.remove('active'); }
+    </script>
+</body>
+</html>

@@ -92,6 +92,7 @@ etiqueta: "DISPONIBLE",
 {
         id: 1,
         nombre: "ChatGPT PLUS (30 Días)",
+        url: "chatgpt-plus.html",
         formato: "Credenciales",
         mostrarTecnica: false,
 etiqueta: "AGOTADO",

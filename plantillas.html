@@ -31,9 +31,31 @@
         .back-btn { display: inline-block; margin-bottom: 30px; color: var(--ws-dark); font-weight: bold; text-decoration: none; font-size: 1.1rem; }
         .back-btn:hover { text-decoration: underline; }
         
-        header { margin-bottom: 50px; text-align: center; }
+        header { margin-bottom: 40px; text-align: center; }
         header h1 { font-size: 2.8rem; margin: 0 0 10px 0; font-weight: 900; letter-spacing: -1.5px; }
         header p { color: #666; font-size: 1.2rem; max-width: 600px; margin: 0 auto; }
+
+        /* ESTILOS DEL BUSCADOR */
+        .search-container {
+            max-width: 100%;
+            margin: 0 auto 30px auto;
+        }
+        #templateSearchInput {
+            width: 100%;
+            padding: 15px 20px;
+            font-size: 1.1rem;
+            border: 2px solid #ddd;
+            border-radius: 15px;
+            outline: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            box-sizing: border-box;
+            font-family: 'Calibri', sans-serif;
+        }
+        #templateSearchInput:focus {
+            border-color: var(--ws-green);
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.15);
+        }
 
         .cat-title { margin-top: 40px; font-size: 1.8rem; padding-bottom: 10px; font-weight: 800; letter-spacing: -0.5px; }
         
@@ -45,7 +67,6 @@
         .file-info h4 { margin: 0 0 5px 0; font-size: 1.3rem; color: #000; font-weight: 700; }
         .file-date { font-size: 0.85rem; color: #999; font-weight: bold; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
         
-        /* AQUÍ ESTÁ EL AJUSTE DEL TAMAÑO DE TEXTO (0.85rem) */
         .file-desc { font-size: 0.85rem; color: #555; line-height: 1.4; margin-bottom: 15px; }
         
         .card-actions { display: flex; gap: 12px; flex-shrink: 0; }
@@ -67,8 +88,6 @@
         .bg-fb { background-color: var(--fb-color); } .bg-ig { background-color: var(--ig-color); }
         .bg-tk { background-color: var(--tk-color); } .bg-li { background-color: var(--li-color); }
         .bg-yt { background-color: var(--yt-color); } .bg-no { background-color: #000000; }
-        
-        .copyright { font-size: 0.9rem; color: #999; margin-top: 15px; font-weight: 600; }
 
         .floating-wa { position: fixed; bottom: 25px; left: 25px; background: #25D366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; box-shadow: 0 6px 20px rgba(37,211,102,0.4); text-decoration: none; z-index: 999; transition: 0.3s ease; }
         .floating-wa:hover { transform: scale(1.1) rotate(5deg); }
@@ -85,6 +104,10 @@
             <h1>Plantillas Gratis</h1>
             <p>Si tienes algún documento libre que desees compartirnos, no dudes en contactarnos.</p>
         </header>
+
+        <div class="search-container">
+            <input type="text" id="templateSearchInput" onkeyup="searchTemplates()" placeholder="🔍 Buscar plantilla por título o palabra clave...">
+        </div>
 
         <h2 class="cat-title" style="color: #107c41; border-bottom: 3px solid #107c41;">📗 Documentos EXCEL</h2>
         <div class="file-grid">
@@ -152,5 +175,28 @@
             <p style="font-size: 0.8rem; color: #999; margin-top: 10px;">© 2026 WiCONTABLE</p>
         </div>
     </footer>
+
+    <script>
+        function searchTemplates() {
+            // 1. Convertimos el término buscado a minúsculas
+            const input = document.getElementById('templateSearchInput').value.toLowerCase();
+            
+            // 2. Obtenemos todas las tarjetas de plantillas
+            const cards = document.querySelectorAll('.file-card');
+            
+            // 3. Recorremos cada tarjeta para evaluar coincidencia
+            cards.forEach(card => {
+                const title = card.querySelector('h4').innerText.toLowerCase();
+                const desc = card.querySelector('.file-desc').innerText.toLowerCase();
+                
+                // Si el término está en el título o en la descripción, se muestra; de lo contrario, se oculta
+                if (title.includes(input) || desc.includes(input)) {
+                    card.style.display = ""; // Restaura el diseño flexible original
+                } else {
+                    card.style.display = "none"; // Oculta la tarjeta
+                }
+            });
+        }
+    </script>
 </body>
 </html>

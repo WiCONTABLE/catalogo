@@ -150,6 +150,7 @@ etiqueta: "¡DISPONIBLE!",
     {
         id: 10,
         nombre: "Plataformas/Membresías",
+        url: "plataforma-membresias.html",
         formato: "Credenciales",
         mostrarTecnica: false,
 etiqueta: "DISPONIBLE",

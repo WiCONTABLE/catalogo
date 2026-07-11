@@ -292,18 +292,17 @@ const safeFoto = (p.fotos && p.fotos.length > 0) ? p.fotos[0] : "img/logowi.png"
                 
                 card.innerHTML = `
                     ${badgeHTML}
-                    <div style="cursor:pointer;" onclick="window.location.href='${linkProducto}'">
+                    <a href="${linkProducto}" style="display: block; text-decoration: none;">
                         <img src="${safeFoto}" class="card-img" alt="${p.nombre}">
-                    </div>
+                    </a>
                     <div class="info">
-                        <h2 style="cursor:pointer;" onclick="window.location.href='${linkProducto}'">${p.nombre}</h2>
+                        <a href="${linkProducto}" style="text-decoration: none; color: inherit;">
+                            <h2 style="cursor: pointer;">${p.nombre}</h2>
+                        </a>
                         <div class="price-tag">${p.precio}</div>
                         
                         <div class="card-buttons">
-                            <a href="${linkProducto}" class="btn-det">Detalles</a>
-                            <button class="btn-add" ${isAgotado ? 'disabled' : ''} onclick="addToCart(${p.id})">
-                                ${isAgotado ? 'Agotado' : '🛒 Añadir'}
-                            </button>
+                            <a href="${linkProducto}" class="btn-det" style="width: 100%; text-align: center;">Detalles</a>
                         </div>
                     </div>
                 `;

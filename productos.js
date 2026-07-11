@@ -64,6 +64,7 @@ etiqueta: "DISPONIBLE",
 {
         id: 9,
         nombre: "Anydesk V.6.0 (Vitalicia)",
+        url: "anydesk-v6.html",
         formato: "Ejecutable .exe",
         mostrarTecnica: false,
 etiqueta: "DISPONIBLE",

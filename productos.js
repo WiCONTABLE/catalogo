@@ -121,6 +121,7 @@ etiqueta: "ACTIVA",
     {
         id: 3,
         nombre: "Consulta Datos NIT (DIAN)",
+        url: "consulta-datos-nit.html",
         formato: "Extensión Web .crx",
         mostrarTecnica: true,
 etiqueta: "ACTIVA",

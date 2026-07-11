@@ -78,6 +78,7 @@ etiqueta: "DISPONIBLE",
  {
         id: 8,
         nombre: "Windows 10/11 PRO (Vitalicia)",
+        url: "windows-10-11.html",
         formato: "Credenciales",
         mostrarTecnica: false,
 etiqueta: "DISPONIBLE",

@@ -1,6 +1,23 @@
 const miTelefono = "573156016386";
 
 const productos = [
+{
+        id: 12,
+        nombre: "WiCONTABLE Reportes Renta P.N",
+        url: "reporte-rentapn.html",
+        formato: "Extensión Web .crx",
+        mostrarTecnica: true,
+        etiqueta: "NUEVO",
+        desc: "<b>REF002</b><p>Ahorra tiempo en esta temporada de Renta de Personas Naturales (Año Gravable 2025). Descarga y renombra automáticamente tus listados de facturas electrónicas y exógena sugerida para una validación rápida, precisa y sin esfuerzo de reportes desde periodos 2013 a 2025.<p> <p>Además puedes iniciar el aplicativo y elegir las 3 opciones de descarga,mientras estas en la sesión del contribuyente.<p><b>Actualizada el 18-07-2026</b>",
+        caracteristicas: ["Iniciar sesión del contribuyente", "Descarga masiva de reportes sugeridas.", "Descarga masiva de reportes factura electronica.", "Descarga masiva de ambos reportes."],
+        nota: "Para brindarle un soporte técnico oportuno, requerimos conectarnos de forma remota a su equipo a través de AnyDesk. Tenga en cuenta que este acceso quedará registrado de manera individual en cada computadora durante la instalación. Por su seguridad, nuestro equipo se comunicará exclusivamente al número de móvil que tiene registrado con nosotros. Asimismo, le recordamos que el funcionamiento de nuestra herramienta depende de plataformas de terceros integradas; <b>cualquier cambio en los parámetros de dichas plataformas nos exime de responsabilidad sobre la continuidad del servicio.</b>",
+        precio: "COP $5.000",
+        video: "video/ReportePN.mp4",
+        youtube: "https://www.youtube.com/watch?v=tWS24jBXEkc",
+        fotos: ["img/p12-0.png", "img/p12-1.jpg"]
+    },
+
+        
         {
         id: 0,
         nombre: "WiCONTABLE Auditor F.E (DIAN)",

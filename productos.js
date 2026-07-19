@@ -15,9 +15,7 @@ const productos = [
         video: "video/ReportePN.mp4",
         youtube: "https://www.youtube.com/watch?v=tWS24jBXEkc",
         fotos: ["img/p12-0.png", "img/p12-1.jpg"]
-    },
-
-        
+    },       
         {
         id: 0,
         nombre: "WiCONTABLE Auditor F.E (DIAN)",

@@ -3,7 +3,7 @@ const miTelefono = "573156016386";
 const productos = [
 {
         id: 12,
-        nombre: "Reportes Renta P.N A.G2025",
+        nombre: "Reportes Renta P.N A.G2025 (DIAN)",
         url: "reporte-rentapn.html",
         formato: "Extensión Web .crx",
         mostrarTecnica: true,

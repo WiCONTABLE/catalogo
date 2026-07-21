@@ -68,7 +68,9 @@ etiqueta: "¡AGOTADO!",
         formato: "Credenciales",
         mostrarTecnica: false,
 etiqueta: "¡AGOTADO!",
-        desc: "<b>REF004</b><p>Activa de forma segura con credenciales corporativas y evita el uso de parches o cracks que comprometen la seguridad de tu PC.<p><b> </b>",
+        desc: "<b>REF004</b><p>Activa tu suite de Office de forma segura mediante credenciales corporativas y olvídate de parches o cracks que ponen en riesgo la seguridad de tu PC.
+
+Nota importante: Tu cuenta incluye beneficios adicionales como 100 GB de almacenamiento en la nube. Te sugerimos usar este espacio únicamente para archivos no críticos o temporales. El objetivo principal de esta credencial, y donde su efectividad está garantizada al 100 %, es para la activación y uso de Office en su versión de escritorio.<p><b> </b>",
         caracteristicas: ["Activación en hasta 5 dispositivos.", "Compatible con PC / MacOS / Android / iOS.", "IA vía web para mayor productividad", "Tendras acceso a PowerBI Service." , "Word, Excel, y PowerPoint"],
         nota: "Se entrega un correo corporativo con una clave temporal. El usuario es responsable de asignar su propia clave personalizada. La credencial tiene un costo de pago único. En caso de pérdida de la clave creada por el usuario, no será posible recuperar el acceso, <b>se brinda apoyo para la instalación de manera remota mediante AnyDesk.</b> (Recuerde guardar la contraseña que asignó para su respectiva garantía de 1 año.)",
         precio: "COP $30.000",

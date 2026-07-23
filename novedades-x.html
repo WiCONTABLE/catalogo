@@ -70,34 +70,21 @@
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.08);
             border: 1px solid #e0e0e0;
-            height: 650px;
-            box-sizing: border-box;
+            padding: 15px;
             display: flex;
             flex-direction: column;
-            overflow: hidden;
+            align-items: center;
         }
 
         .x-card-title {
-            padding: 12px 15px;
-            background: #f8f9fa;
+            width: 100%;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
             border-bottom: 1px solid #eee;
             font-weight: bold;
             font-size: 1rem;
             color: #128C7E;
-        }
-
-        .x-card-body {
-            flex: 1;
-            padding: 0; /* Quitamos el padding para que el iframe ocupe todo */
-            overflow: hidden; /* El iframe manejará su propio scroll */
-            background-color: #ffffff;
-        }
-        
-        /* Iframe adaptativo */
-        .x-card-body iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
+            text-align: left;
         }
     </style>
 </head>
@@ -109,40 +96,46 @@
     </div>
 
     <div class="info-text">
-        Desliza cada tarjeta para consultar las publicaciones oficiales en tiempo real.
+        Publicaciones destacadas e información de interés para la comunidad contable.
     </div>
 
     <div class="x-container">
         
         <div class="x-card">
-            <div class="x-card-title">Ámbito Jurídico</div>
-            <div class="x-card-body">
-                <iframe src="https://syndication.twitter.com/srv/timeline-profile/screen-name/AmbitoJuridico?theme=light&origin=https://wicontable.com" loading="lazy"></iframe>
-            </div>
+            <div class="x-card-title">📌 Destacado: Ámbito Jurídico</div>
+            
+            <blockquote class="twitter-tweet">
+                <a href="https://twitter.com/AmbitoJuridico/status/1815802263032594689"></a>
+            </blockquote>
         </div>
 
         <div class="x-card">
-            <div class="x-card-title">DIAN Colombia</div>
-            <div class="x-card-body">
-                <iframe src="https://syndication.twitter.com/srv/timeline-profile/screen-name/DIANColombia?theme=light&origin=https://wicontable.com" loading="lazy"></iframe>
-            </div>
+            <div class="x-card-title">📌 Destacado: DIAN Colombia</div>
+            
+            <blockquote class="twitter-tweet">
+                <a href="https://twitter.com/DIANColombia/status/1815776991395995810"></a>
+            </blockquote>
         </div>
 
         <div class="x-card">
-            <div class="x-card-title">Corte Constitucional</div>
-            <div class="x-card-body">
-                <iframe src="https://syndication.twitter.com/srv/timeline-profile/screen-name/CorteConst?theme=light&origin=https://wicontable.com" loading="lazy"></iframe>
-            </div>
+            <div class="x-card-title">📌 Destacado: Corte Constitucional</div>
+            
+            <blockquote class="twitter-tweet">
+                <a href="https://twitter.com/CorteConst/status/1815833446066221151"></a>
+            </blockquote>
         </div>
 
         <div class="x-card">
-            <div class="x-card-title">Consejo de Estado</div>
-            <div class="x-card-body">
-                <iframe src="https://syndication.twitter.com/srv/timeline-profile/screen-name/ConsejoEstado?theme=light&origin=https://wicontable.com" loading="lazy"></iframe>
-            </div>
+            <div class="x-card-title">📌 Destacado: Consejo de Estado</div>
+            
+            <blockquote class="twitter-tweet">
+                <a href="https://twitter.com/ConsejoEstado/status/1815746977759244304"></a>
+            </blockquote>
         </div>
 
     </div>
+
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 </body>
 </html>

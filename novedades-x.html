@@ -8,12 +8,14 @@
     
     <style>
         body {
-            font-family: 'Calibri', sans-serif;
+            font-family: 'Calibri', 'Segoe UI', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f6f8;
             color: #333;
         }
+        
+        /* ENCABEZADO WICONTABLE */
         .header {
             background-color: #25D366;
             color: white;
@@ -26,34 +28,40 @@
             top: 0;
             z-index: 100;
         }
-        .header h1 { margin: 0; font-size: 1.4rem; }
+        .header h1 { 
+            margin: 0; 
+            font-size: 1.4rem; 
+        }
         .btn-volver {
             background: white;
             color: #128C7E;
             text-decoration: none;
-            padding: 8px 15px;
+            padding: 8px 18px;
             border-radius: 20px;
             font-weight: bold;
             font-size: 0.9rem;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: all 0.2s;
+            transition: all 0.2s ease;
         }
-        .btn-volver:hover { transform: translateY(-2px); }
+        .btn-volver:hover { 
+            transform: translateY(-2px); 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15); 
+        }
         
         .info-text {
             text-align: center;
-            padding: 15px 20px;
+            padding: 15px 20px 5px;
             color: #555;
             font-size: 0.95rem;
         }
-        
+
         /* CUADRÍCULA DE PERFILES */
         .x-container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 15px 30px 15px;
+            padding: 15px 15px 30px 15px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
         }
         
@@ -62,38 +70,32 @@
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.08);
             border: 1px solid #e0e0e0;
-            height: 620px;
-            overflow-y: auto;
-            padding: 10px;
+            height: 650px;
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
+            overflow: hidden;
         }
 
-        .x-card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-bottom: 8px;
-            margin-bottom: 8px;
+        .x-card-title {
+            padding: 12px 15px;
+            background: #f8f9fa;
             border-bottom: 1px solid #eee;
-        }
-        .x-card-header strong { font-size: 0.95rem; color: #128C7E; }
-        .x-card-header a {
-            color: #000;
-            text-decoration: none;
-            font-size: 0.8rem;
             font-weight: bold;
-            background: #eef2f5;
-            padding: 4px 8px;
-            border-radius: 12px;
+            font-size: 1rem;
+            color: #128C7E;
         }
-        .x-card-header a:hover { background: #000; color: #fff; }
-        
-        /* Barra de desplazamiento estética */
-        .x-card::-webkit-scrollbar { width: 6px; }
-        .x-card::-webkit-scrollbar-thumb { background: #ccc; border-radius: 10px; }
-        .x-card::-webkit-scrollbar-track { background: #f1f1f1; }
+
+        .x-card-body {
+            flex: 1;
+            padding: 5px;
+            overflow-y: auto;
+        }
+
+        /* Estilo elegante para las barras de scroll */
+        .x-card-body::-webkit-scrollbar { width: 6px; }
+        .x-card-body::-webkit-scrollbar-thumb { background: #ccc; border-radius: 10px; }
+        .x-card-body::-webkit-scrollbar-track { background: #f1f1f1; }
     </style>
 </head>
 <body>
@@ -104,64 +106,58 @@
     </div>
 
     <div class="info-text">
-        Desliza cada tarjeta hacia abajo para ver las publicaciones recientes en vivo.
+        Desliza cada tarjeta para consultar las publicaciones oficiales en tiempo real.
     </div>
 
     <div class="x-container">
         
         <div class="x-card">
-            <div class="x-card-header">
-                <strong>Ámbito Jurídico</strong>
-                <a href="https://x.com/AmbitoJuridico" target="_blank">Ver en 𝕏 ↗</a>
+            <div class="x-card-title">Ámbito Jurídico</div>
+            <div class="x-card-body">
+                <a class="twitter-timeline" data-height="580" data-theme="light" href="https://twitter.com/AmbitoJuridico">
+                    Cargando publicaciones...
+                </a>
             </div>
-            <a class="twitter-timeline" data-height="540" href="https://twitter.com/AmbitoJuridico?ref_src=twsrc%5Etfw">
-                Cargando publicaciones de @AmbitoJuridico...
-            </a> 
         </div>
 
         <div class="x-card">
-            <div class="x-card-header">
-                <strong>DIAN Colombia</strong>
-                <a href="https://x.com/DIANColombia" target="_blank">Ver en 𝕏 ↗</a>
+            <div class="x-card-title">DIAN Colombia</div>
+            <div class="x-card-body">
+                <a class="twitter-timeline" data-height="580" data-theme="light" href="https://twitter.com/DIANColombia">
+                    Cargando publicaciones...
+                </a>
             </div>
-            <a class="twitter-timeline" data-height="540" href="https://twitter.com/DIANColombia?ref_src=twsrc%5Etfw">
-                Cargando publicaciones de @DIANColombia...
-            </a> 
         </div>
 
         <div class="x-card">
-            <div class="x-card-header">
-                <strong>Corte Constitucional</strong>
-                <a href="https://x.com/CorteConst" target="_blank">Ver en 𝕏 ↗</a>
+            <div class="x-card-title">Corte Constitucional</div>
+            <div class="x-card-body">
+                <a class="twitter-timeline" data-height="580" data-theme="light" href="https://twitter.com/CorteConst">
+                    Cargando publicaciones...
+                </a>
             </div>
-            <a class="twitter-timeline" data-height="540" href="https://twitter.com/CorteConst?ref_src=twsrc%5Etfw">
-                Cargando publicaciones de @CorteConst...
-            </a> 
         </div>
 
         <div class="x-card">
-            <div class="x-card-header">
-                <strong>Consejo de Estado</strong>
-                <a href="https://x.com/ConsejoEstado" target="_blank">Ver en 𝕏 ↗</a>
+            <div class="x-card-title">Consejo de Estado</div>
+            <div class="x-card-body">
+                <a class="twitter-timeline" data-height="580" data-theme="light" href="https://twitter.com/ConsejoEstado">
+                    Cargando publicaciones...
+                </a>
             </div>
-            <a class="twitter-timeline" data-height="540" href="https://twitter.com/ConsejoEstado?ref_src=twsrc%5Etfw">
-                Cargando publicaciones de @ConsejoEstado...
-            </a> 
         </div>
 
     </div>
 
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
     <script>
-        // Carga forzada de los widgets una vez que el DOM está listo
-        document.addEventListener("DOMContentLoaded", function() {
-            var checkTwitter = setInterval(function() {
-                if (window.twttr && window.twttr.widgets) {
-                    window.twttr.widgets.load();
-                    clearInterval(checkTwitter);
-                }
-            }, 500);
-        });
+        // Carga forzada y limpia del widget de Twitter
+        window.onload = function() {
+            if (window.twttr && window.twttr.widgets) {
+                window.twttr.widgets.load();
+            }
+        };
     </script>
 
 </body>

@@ -40,47 +40,23 @@
             text-align: center; padding: 15px 20px; color: #555; font-size: 0.95rem;
         }
 
-        /* CUADRÍCULA DE TARJETAS CON SCROLL INDEPENDIENTE */
-        .x-container {
-            max-width: 1400px;
+        /* CONTENEDOR CENTRAL DEL MURO DE NOTICIAS */
+        .muro-noticias {
+            max-width: 800px; /* Ancho ideal para leer como en una red social */
             margin: 0 auto;
-            padding: 10px 15px 40px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            padding: 10px 20px 40px;
+            min-height: 80vh;
         }
         
-        /* CADA TARJETA CON ALTURA FIJA Y SCROLL PROPIO */
+        /* Tarjeta blanca para darle el marco elegante */
         .x-card {
             background: white;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.08);
             border: 1px solid #e0e0e0;
-            height: 650px; /* Altura fija de cada tarjeta */
-            display: flex;
-            flex-direction: column;
             overflow: hidden;
-        }
-
-        .x-card-title {
-            padding: 12px 15px;
-            background: #f8f9fa;
-            border-bottom: 1px solid #eee;
-            font-weight: bold;
-            font-size: 1rem;
-            color: #128C7E;
-        }
-
-        .x-card-body {
-            flex: 1;
             padding: 10px;
-            overflow-y: auto; /* ESTO ACTIVA EL SCROLL INDIVIDUAL POR RECUADRO */
         }
-
-        /* Estilo estético para la barra de scroll */
-        .x-card-body::-webkit-scrollbar { width: 6px; }
-        .x-card-body::-webkit-scrollbar-thumb { background: #25D366; border-radius: 10px; }
-        .x-card-body::-webkit-scrollbar-track { background: #f1f1f1; }
     </style>
 </head>
 <body>
@@ -91,30 +67,15 @@
     </div>
 
     <div class="info-text">
-        Desliza dentro de cada recuadro para consultar las novedades oficiales.
+        Publicaciones oficiales de interés contable actualizadas en tiempo real.
     </div>
 
-    <div class="x-container">
-        
+    <div class="muro-noticias">
         <div class="x-card">
-            <div class="x-card-title">DIAN Colombia</div>
-            <div class="x-card-body">
-                <script type="text/javascript" src="https://www.juicer.io/embed/diancolombia/embed-code.js" async defer></script>
-                </div>
-        </div>
-
-        <div class="x-card">
-            <div class="x-card-title">Corte Constitucional</div>
-            <div class="x-card-body">
-                </div>
-        </div>
-
-        <div class="x-card">
-            <div class="x-card-title">Consejo de Estado</div>
-            <div class="x-card-body">
-                </div>
-        </div>
-
+            
+            <a class="twitter-timeline" href="https://x.com/wicontable/lists/2080405887584244154?ref_src=twsrc%5Etfw">An X List by wicontable</a> 
+            <script async src="https://platform.x.com/widgets.js" charset="utf-8"></script>
+            </div>
     </div>
 
 </body>

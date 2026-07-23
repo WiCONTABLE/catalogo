@@ -22,6 +22,9 @@
             align-items: center;
             justify-content: space-between;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
         .header h1 { margin: 0; font-size: 1.4rem; }
         .btn-volver {
@@ -33,41 +36,42 @@
             font-weight: bold;
             font-size: 0.9rem;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: all 0.2s;
         }
+        .btn-volver:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.15); }
+        
         .info-text {
             text-align: center;
             padding: 20px;
             color: #555;
             font-size: 1rem;
         }
+        
+        /* CUADRÍCULA DE PERFILES (Scroll Independiente) */
         .x-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 15px 30px 15px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
         }
+        
         .x-card {
             background: white;
             border-radius: 12px;
-            padding: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
             border: 1px solid #e0e0e0;
-            height: 600px;
-            overflow-y: auto;
-            display: flex;
-            justify-content: center;
+            height: 650px;
+            overflow-y: auto; /* Aquí está la magia del scroll individual */
+            padding: 0;
+            position: relative;
         }
         
-        /* Mensaje si el usuario usa Brave o bloqueador de anuncios */
-        .aviso-bloqueador {
-            text-align: center;
-            padding: 20px;
-            color: #888;
-            font-size: 0.9rem;
-            width: 100%;
-        }
+        /* Ocultar barra de scroll para un diseño más limpio */
+        .x-card::-webkit-scrollbar { width: 6px; }
+        .x-card::-webkit-scrollbar-thumb { background: #ccc; border-radius: 10px; }
+        .x-card::-webkit-scrollbar-track { background: #f1f1f1; }
     </style>
 </head>
 <body>
@@ -78,39 +82,45 @@
     </div>
 
     <div class="info-text">
-        Últimas actualizaciones en tiempo real. <br>
-        <span style="font-size: 0.85rem; color: #e74c3c;">(Si la pantalla está en blanco, desactiva el escudo de tu navegador o AdBlock).</span>
+        Desliza cada columna hacia abajo para leer las noticias en tiempo real.
     </div>
 
     <div class="x-container">
         
         <div class="x-card">
-            <a class="twitter-timeline" data-height="580" data-theme="light" href="https://twitter.com/AmbitoJuridico?ref_src=twsrc%5Etfw">
-                <div class="aviso-bloqueador">⏳ Conectando con 𝕏 / Twitter...</div>
-            </a>
+            <a class="twitter-timeline" href="https://twitter.com/AmbitoJuridico?ref_src=twsrc%5Etfw">Cargando @AmbitoJuridico...</a> 
         </div>
 
         <div class="x-card">
-            <a class="twitter-timeline" data-height="580" data-theme="light" href="https://twitter.com/DIANColombia?ref_src=twsrc%5Etfw">
-                <div class="aviso-bloqueador">⏳ Conectando con 𝕏 / Twitter...</div>
-            </a>
+            <a class="twitter-timeline" href="https://twitter.com/DIANColombia?ref_src=twsrc%5Etfw">Cargando @DIANColombia...</a> 
         </div>
 
         <div class="x-card">
-            <a class="twitter-timeline" data-height="580" data-theme="light" href="https://twitter.com/CorteConst?ref_src=twsrc%5Etfw">
-                <div class="aviso-bloqueador">⏳ Conectando con 𝕏 / Twitter...</div>
-            </a>
+            <a class="twitter-timeline" href="https://twitter.com/CorteConst?ref_src=twsrc%5Etfw">Cargando @CorteConst...</a> 
         </div>
 
         <div class="x-card">
-            <a class="twitter-timeline" data-height="580" data-theme="light" href="https://twitter.com/ConsejoEstado?ref_src=twsrc%5Etfw">
-                <div class="aviso-bloqueador">⏳ Conectando con 𝕏 / Twitter...</div>
-            </a>
+            <a class="twitter-timeline" href="https://twitter.com/ConsejoEstado?ref_src=twsrc%5Etfw">Cargando @ConsejoEstado...</a> 
         </div>
 
     </div>
 
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <script>
+        window.twttr = (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0],
+            t = window.twttr || {};
+            if (d.getElementById(id)) return t;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://platform.twitter.com/widgets.js";
+            fjs.parentNode.insertBefore(js, fjs);
+            t._e = [];
+            t.ready = function(f) {
+                t._e.push(f);
+            };
+            return t;
+        }(document, "script", "twitter-wjs"));
+    </script>
 
 </body>
 </html>

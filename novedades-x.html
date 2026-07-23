@@ -14,7 +14,6 @@
             background-color: #f4f6f8;
             color: #333;
         }
-        /* Encabezado estilo WiCONTABLE */
         .header {
             background-color: #25D366;
             color: white;
@@ -24,10 +23,7 @@
             justify-content: space-between;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        .header h1 {
-            margin: 0;
-            font-size: 1.4rem;
-        }
+        .header h1 { margin: 0; font-size: 1.4rem; }
         .btn-volver {
             background: white;
             color: #128C7E;
@@ -44,13 +40,12 @@
             color: #555;
             font-size: 1rem;
         }
-        /* Cuadrícula de perfiles */
         .x-container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 15px 30px 15px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
         }
         .x-card {
@@ -60,7 +55,18 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             border: 1px solid #e0e0e0;
             height: 600px;
-            overflow-y: auto; /* Scroll individual */
+            overflow-y: auto;
+            display: flex;
+            justify-content: center;
+        }
+        
+        /* Mensaje si el usuario usa Brave o bloqueador de anuncios */
+        .aviso-bloqueador {
+            text-align: center;
+            padding: 20px;
+            color: #888;
+            font-size: 0.9rem;
+            width: 100%;
         }
     </style>
 </head>
@@ -72,25 +78,34 @@
     </div>
 
     <div class="info-text">
-        Desliza en cada columna para consultar las últimas actualizaciones en tiempo real.
+        Últimas actualizaciones en tiempo real. <br>
+        <span style="font-size: 0.85rem; color: #e74c3c;">(Si la pantalla está en blanco, desactiva el escudo de tu navegador o AdBlock).</span>
     </div>
 
     <div class="x-container">
         
         <div class="x-card">
-            <a class="twitter-timeline" data-height="580" href="https://twitter.com/AmbitoJuridico?ref_src=twsrc%5Etfw">Tweets by @AmbitoJuridico</a>
+            <a class="twitter-timeline" data-height="580" data-theme="light" href="https://twitter.com/AmbitoJuridico?ref_src=twsrc%5Etfw">
+                <div class="aviso-bloqueador">⏳ Conectando con 𝕏 / Twitter...</div>
+            </a>
         </div>
 
         <div class="x-card">
-            <a class="twitter-timeline" data-height="580" href="https://twitter.com/DIANColombia?ref_src=twsrc%5Etfw">Tweets by @DIANColombia</a>
+            <a class="twitter-timeline" data-height="580" data-theme="light" href="https://twitter.com/DIANColombia?ref_src=twsrc%5Etfw">
+                <div class="aviso-bloqueador">⏳ Conectando con 𝕏 / Twitter...</div>
+            </a>
         </div>
 
         <div class="x-card">
-            <a class="twitter-timeline" data-height="580" href="https://twitter.com/CorteConst?ref_src=twsrc%5Etfw">Tweets by @CorteConst</a>
+            <a class="twitter-timeline" data-height="580" data-theme="light" href="https://twitter.com/CorteConst?ref_src=twsrc%5Etfw">
+                <div class="aviso-bloqueador">⏳ Conectando con 𝕏 / Twitter...</div>
+            </a>
         </div>
 
         <div class="x-card">
-            <a class="twitter-timeline" data-height="580" href="https://twitter.com/ConsejoEstado?ref_src=twsrc%5Etfw">Tweets by @ConsejoEstado</a>
+            <a class="twitter-timeline" data-height="580" data-theme="light" href="https://twitter.com/ConsejoEstado?ref_src=twsrc%5Etfw">
+                <div class="aviso-bloqueador">⏳ Conectando con 𝕏 / Twitter...</div>
+            </a>
         </div>
 
     </div>

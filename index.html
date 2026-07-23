@@ -22,122 +22,6 @@
 }
 </script>
 
-
-
-
-
-/* ==========================================
-   ESTILOS PARA NOVEDADES EN 𝕏 (TWITTER)
-   ========================================== */
-.btn-novedades-x {
-    background-color: #000000;
-    color: #ffffff;
-    border: 1px solid #333;
-    padding: 10px 20px;
-    border-radius: 25px;
-    font-weight: bold;
-    font-size: 0.95rem;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    font-family: 'Calibri', sans-serif;
-}
-
-.btn-novedades-x:hover {
-    background-color: #222222;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
-}
-
-.twitter-modal-overlay { 
-    display: none; 
-    position: fixed; 
-    top: 0; left: 0; 
-    width: 100%; height: 100%; 
-    background: rgba(0,0,0,0.75); 
-    z-index: 9999; 
-    align-items: center; 
-    justify-content: center; 
-    backdrop-filter: blur(4px); 
-}
-
-.twitter-modal-overlay.active { 
-    display: flex; 
-}
-
-.twitter-modal-content { 
-    background: white; 
-    width: 95%; 
-    max-width: 1150px; 
-    max-height: 90vh;
-    border-radius: 20px; 
-    overflow: hidden; 
-    box-shadow: 0 15px 40px rgba(0,0,0,0.3); 
-    border: 2px solid var(--ws-green); 
-    display: flex;
-    flex-direction: column;
-}
-
-.twitter-modal-header { 
-    padding: 15px 20px; 
-    background: #f8f9fa; 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    border-bottom: 1px solid #eee; 
-}
-
-.twitter-modal-header h3 { 
-    margin: 0; 
-    color: #128C7E; 
-    font-size: 1.2rem; 
-    font-weight: 800; 
-    font-family: 'Calibri', sans-serif; 
-}
-
-.close-twitter-modal { 
-    background: none; 
-    border: none; 
-    font-size: 1.8rem; 
-    font-weight: bold; 
-    cursor: pointer; 
-    color: #888; 
-}
-
-.close-twitter-modal:hover { 
-    color: #000; 
-}
-
-.twitter-modal-body { 
-    padding: 20px; 
-    overflow-y: auto; 
-    max-height: calc(90vh - 60px); 
-}
-
-.x-grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 15px;
-}
-
-.x-profile-card {
-    background: #f8f9fa;
-    border: 1px solid #e0e0e0;
-    border-radius: 12px;
-    padding: 8px;
-    height: 500px;
-    overflow-y: auto;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-}
-
-
-
-
-
-    
     <style>
         :root {
             --ws-green: #25D366;
@@ -289,10 +173,10 @@
                 <a href="plantillas.html" class="btn-subpage">🎁 Plantillas gratis</a>
                 <a href="#" onclick="alert('🚧 ¡Sección en construcción!\n\nEstamos preparando el mejor material para que Aprendas Excel. Pronto estará disponible.'); return false;" class="btn-subpage">📗 Aprende Excel</a>
                 <a href="#" onclick="alert('🚧 ¡Sección en construcción!\n\nEstamos preparando el mejor material para que Aprendas PowerBI. Pronto estará disponible.'); return false;" class="btn-subpage">📊 Aprende PowerBI</a>
-                <a href="https://chatgpt.com/g/g-vO0tKViyq-asistente-contable-colombia" target="_blank" class="btn-subpage">🤖 GPT Asistente Contable</a>
-                <a href="https://sites.google.com/view/estatuton-2024/inicio" target="_blank" class="btn-subpage">📁 Estatutón</a>
-                <a href="https://drive.google.com/drive/folders/12Wl1oNyj58xcgi5LF3PCHAhDyjsKjV-N" target="_blank" class="btn-subpage">📝 R.U.T CIAS</a>
-  
+            <a href="https://chatgpt.com/g/g-vO0tKViyq-asistente-contable-colombia" target="_blank" class="btn-subpage">🤖 GPT Asistente Contable</a>
+<a href="https://sites.google.com/view/estatuton-2024/inicio" target="_blank" class="btn-subpage">📁 Estatutón</a>
+<a href="https://drive.google.com/drive/folders/12Wl1oNyj58xcgi5LF3PCHAhDyjsKjV-N" target="_blank" class="btn-subpage">📝 R.U.T CIAS</a>
+                        
             </div>
         </header>
 
@@ -304,20 +188,6 @@
             <div class="filters-box" id="categoryFilters"></div>
         </div>
 
-
-
-
-<div style="text-align: center; margin: 15px 0;">
-    <button onclick="openTwitterModal()" class="btn-novedades-x">
-        📰 Novedades en 𝕏
-    </button>
-</div>
-
-
-
-
-
-        
         <div class="catalog-grid" id="catalog"></div>
     </div>
 
@@ -533,82 +403,6 @@ const safeFoto = (p.fotos && p.fotos.length > 0) ? p.fotos[0] : "img/logowi.png"
             const tel = typeof miTelefono !== 'undefined' ? miTelefono : '573156016386';
             window.open(`https://wa.me/${tel}?text=${encodeURIComponent(msg)}`, '_blank');
         }
-
-
-
-/* FUNCIONES PARA ABRIR Y CERRAR EL MODAL DE NOVEDADES EN X */
-function openTwitterModal() {
-    const modal = document.getElementById('twitterModal');
-    if (modal) {
-        modal.classList.add('active');
-        if (window.twttr && window.twttr.widgets) {
-            window.twttr.widgets.load();
-        }
-    }
-}
-
-function closeTwitterModal() {
-    const modal = document.getElementById('twitterModal');
-    if (modal) {
-        modal.classList.remove('active');
-    }
-}
-
-window.addEventListener('click', (e) => {
-    const modal = document.getElementById('twitterModal');
-    if (e.target === modal) {
-        closeTwitterModal();
-    }
-});
-
-
-
-        
-       
     </script>
-
-
-
-
-<div class="twitter-modal-overlay" id="twitterModal">
-    <div class="twitter-modal-content">
-        <div class="twitter-modal-header">
-            <h3>📰 Novedades Tributarias y Jurídicas en Vivo (𝕏)</h3>
-            <button class="close-twitter-modal" onclick="closeTwitterModal()">&times;</button>
-        </div>
-        
-        <div class="twitter-modal-body">
-            <p style="text-align: center; color: #555; margin-bottom: 15px; font-size: 0.9rem;">
-                Desliza individualmente en cada columna para consultar las últimas publicaciones oficiales:
-            </p>
-            
-            <div class="x-grid-container">
-                <div class="x-profile-card">
-                    <a class="twitter-timeline" data-height="480" href="https://twitter.com/AmbitoJuridico?ref_src=twsrc%5Etfw">Tweets de @AmbitoJuridico</a>
-                </div>
-
-                <div class="x-profile-card">
-                    <a class="twitter-timeline" data-height="480" href="https://twitter.com/DIANColombia?ref_src=twsrc%5Etfw">Tweets de @DIANColombia</a>
-                </div>
-
-                <div class="x-profile-card">
-                    <a class="twitter-timeline" data-height="480" href="https://twitter.com/CorteConst?ref_src=twsrc%5Etfw">Tweets de @CorteConst</a>
-                </div>
-
-                <div class="x-profile-card">
-                    <a class="twitter-timeline" data-height="480" href="https://twitter.com/ConsejoEstado?ref_src=twsrc%5Etfw">Tweets de @ConsejoEstado</a>
-                </div>
-            </div>
-            
-            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        </div>
-    </div>
-</div>
-
-
-    
-
-
-    
 </body>
 </html>

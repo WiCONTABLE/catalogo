@@ -3,143 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Novedades en 𝕏 - WiCONTABLE</title>
+    <title>Novedades Tributarias - WiCONTABLE</title>
     <link rel="icon" href="https://wicontable.com/img/logowi.png" type="image/png">
     
     <style>
         body {
             font-family: 'Calibri', 'Segoe UI', sans-serif;
-            margin: 0; padding: 0;
-            background-color: #f4f6f8; color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f6f8;
+            color: #333;
         }
+        
+        /* ENCABEZADO ESTILO WICONTABLE */
         .header {
-            background-color: #25D366; color: white;
-            padding: 15px 20px; display: flex;
-            align-items: center; justify-content: space-between;
+            background-color: #25D366;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky; top: 0; z-index: 100;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
         .header h1 { margin: 0; font-size: 1.4rem; }
         .btn-volver {
             background: white; color: #128C7E; text-decoration: none;
             padding: 8px 18px; border-radius: 20px; font-weight: bold; font-size: 0.9rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: all 0.2s ease;
         }
+        .btn-volver:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.15); }
+        
         .info-text {
-            text-align: center; padding: 15px 20px 5px; color: #555; font-size: 0.95rem;
+            text-align: center; padding: 15px 20px; color: #555; font-size: 0.95rem;
         }
-        .x-container {
-            max-width: 1400px; margin: 0 auto;
-            padding: 15px 15px 30px 15px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        .x-card {
-            background: white; border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            border: 1px solid #e0e0e0; height: 620px;
-            display: flex; flex-direction: column; overflow: hidden;
-        }
-        .x-card-title {
-            padding: 12px 15px; background: #f8f9fa;
-            border-bottom: 1px solid #eee; font-weight: bold;
-            font-size: 1rem; color: #128C7E;
-        }
-        .x-card-body {
-            flex: 1; padding: 10px 15px; overflow-y: auto;
-        }
-        .news-item {
-            padding: 10px 0; border-bottom: 1px dashed #eee;
-        }
-        .news-item a {
-            color: #000; text-decoration: none; font-weight: bold; font-size: 0.95rem; display: block;
-        }
-        .news-item a:hover { color: #128C7E; }
-        .news-date {
-            font-size: 0.75rem; color: #888; margin-top: 4px;
+
+        /* CONTENEDOR CENTRAL DEL MURO DE NOTICIAS */
+        .muro-noticias {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 10px 20px 40px;
+            min-height: 80vh;
         }
     </style>
 </head>
 <body>
 
     <div class="header">
-        <h1>📰 Novedades Tributarias y Jurídicas</h1>
+        <h1>📰 Novedades Tributarias</h1>
         <a href="index.html" class="btn-volver">⬅ Volver al Catálogo</a>
     </div>
 
     <div class="info-text">
-        Actualizaciones en tiempo real directamente desde las fuentes oficiales.
+        Publicaciones oficiales de interés contable actualizadas en tiempo real.
     </div>
 
-    <div class="x-container">
+    <div class="muro-noticias">
+<script type="text/javascript" src="https://www.juicer.io/embed/diancolombia/embed-code.js" async defer></script>
+
+
+
+
+
+
+
+
+
         
-        <div class="x-card">
-            <div class="x-card-title">Ámbito Jurídico</div>
-            <div class="x-card-body" id="feed-ambito">
-                ⏳ Cargando noticias...
-            </div>
+
+
+        
         </div>
-
-        <div class="x-card">
-            <div class="x-card-title">DIAN / Noticias Fiscales</div>
-            <div class="x-card-body" id="feed-dian">
-                ⏳ Cargando noticias...
-            </div>
-        </div>
-
-        <div class="x-card">
-            <div class="x-card-title">Corte Constitucional</div>
-            <div class="x-card-body" id="feed-corte">
-                ⏳ Cargando noticias...
-            </div>
-        </div>
-
-        <div class="x-card">
-            <div class="x-card-title">Consejo de Estado</div>
-            <div class="x-card-body" id="feed-consejo">
-                ⏳ Cargando noticias...
-            </div>
-        </div>
-
-    </div>
-
-    <script>
-        // Función para cargar noticias automáticas vía RSS-JSON
-        async function cargarFeed(urlFeed, containerId) {
-            const container = document.getElementById(containerId);
-            try {
-                const response = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(urlFeed)}`);
-                const data = await response.json();
-                
-                if (data.status === 'ok' && data.items.length > 0) {
-                    let html = '';
-                    data.items.slice(0, 10).forEach(item => {
-                        const fecha = new Date(item.pubDate).toLocaleDateString('es-CO', { day: '2-digit', month: 'short', year: 'numeric' });
-                        html += `
-                            <div class="news-item">
-                                <a href="${item.link}" target="_blank">${item.title}</a>
-                                <div class="news-date">📅 ${fecha}</div>
-                            </div>
-                        `;
-                    });
-                    container.innerHTML = html;
-                } else {
-                    container.innerHTML = '<p style="color:#888; font-size:0.85rem;">Consulta las actualizaciones directas en el portal oficial.</p>';
-                }
-            } catch (error) {
-                container.innerHTML = '<p style="color:#888; font-size:0.85rem;">Cargando novedades...</p>';
-            }
-        }
-
-        // Carga automática al abrir la página en GitHub Pages
-        document.addEventListener("DOMContentLoaded", () => {
-            cargarFeed('https://www.ambitojuridico.com/rss/noticias.xml', 'feed-ambito');
-            cargarFeed('https://www.dian.gov.co/rss/noticias.xml', 'feed-dian');
-            cargarFeed('https://www.corteconstitucional.gov.co/rss', 'feed-corte');
-            cargarFeed('https://www.consejodeestado.gov.co/rss', 'feed-consejo');
-        });
-    </script>
 
 </body>
 </html>

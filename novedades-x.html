@@ -38,23 +38,23 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             transition: all 0.2s;
         }
-        .btn-volver:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.15); }
+        .btn-volver:hover { transform: translateY(-2px); }
         
         .info-text {
             text-align: center;
-            padding: 20px;
+            padding: 15px 20px;
             color: #555;
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
         
-        /* CUADRÍCULA DE PERFILES (Scroll Independiente) */
+        /* CUADRÍCULA DE PERFILES */
         .x-container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 15px 30px 15px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
         }
         
         .x-card {
@@ -62,13 +62,35 @@
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.08);
             border: 1px solid #e0e0e0;
-            height: 650px;
-            overflow-y: auto; /* Aquí está la magia del scroll individual */
-            padding: 0;
-            position: relative;
+            height: 620px;
+            overflow-y: auto;
+            padding: 10px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
         }
+
+        .x-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 8px;
+            margin-bottom: 8px;
+            border-bottom: 1px solid #eee;
+        }
+        .x-card-header strong { font-size: 0.95rem; color: #128C7E; }
+        .x-card-header a {
+            color: #000;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: bold;
+            background: #eef2f5;
+            padding: 4px 8px;
+            border-radius: 12px;
+        }
+        .x-card-header a:hover { background: #000; color: #fff; }
         
-        /* Ocultar barra de scroll para un diseño más limpio */
+        /* Barra de desplazamiento estética */
         .x-card::-webkit-scrollbar { width: 6px; }
         .x-card::-webkit-scrollbar-thumb { background: #ccc; border-radius: 10px; }
         .x-card::-webkit-scrollbar-track { background: #f1f1f1; }
@@ -82,44 +104,64 @@
     </div>
 
     <div class="info-text">
-        Desliza cada columna hacia abajo para leer las noticias en tiempo real.
+        Desliza cada tarjeta hacia abajo para ver las publicaciones recientes en vivo.
     </div>
 
     <div class="x-container">
         
         <div class="x-card">
-            <a class="twitter-timeline" href="https://twitter.com/AmbitoJuridico?ref_src=twsrc%5Etfw">Cargando @AmbitoJuridico...</a> 
+            <div class="x-card-header">
+                <strong>Ámbito Jurídico</strong>
+                <a href="https://x.com/AmbitoJuridico" target="_blank">Ver en 𝕏 ↗</a>
+            </div>
+            <a class="twitter-timeline" data-height="540" href="https://twitter.com/AmbitoJuridico?ref_src=twsrc%5Etfw">
+                Cargando publicaciones de @AmbitoJuridico...
+            </a> 
         </div>
 
         <div class="x-card">
-            <a class="twitter-timeline" href="https://twitter.com/DIANColombia?ref_src=twsrc%5Etfw">Cargando @DIANColombia...</a> 
+            <div class="x-card-header">
+                <strong>DIAN Colombia</strong>
+                <a href="https://x.com/DIANColombia" target="_blank">Ver en 𝕏 ↗</a>
+            </div>
+            <a class="twitter-timeline" data-height="540" href="https://twitter.com/DIANColombia?ref_src=twsrc%5Etfw">
+                Cargando publicaciones de @DIANColombia...
+            </a> 
         </div>
 
         <div class="x-card">
-            <a class="twitter-timeline" href="https://twitter.com/CorteConst?ref_src=twsrc%5Etfw">Cargando @CorteConst...</a> 
+            <div class="x-card-header">
+                <strong>Corte Constitucional</strong>
+                <a href="https://x.com/CorteConst" target="_blank">Ver en 𝕏 ↗</a>
+            </div>
+            <a class="twitter-timeline" data-height="540" href="https://twitter.com/CorteConst?ref_src=twsrc%5Etfw">
+                Cargando publicaciones de @CorteConst...
+            </a> 
         </div>
 
         <div class="x-card">
-            <a class="twitter-timeline" href="https://twitter.com/ConsejoEstado?ref_src=twsrc%5Etfw">Cargando @ConsejoEstado...</a> 
+            <div class="x-card-header">
+                <strong>Consejo de Estado</strong>
+                <a href="https://x.com/ConsejoEstado" target="_blank">Ver en 𝕏 ↗</a>
+            </div>
+            <a class="twitter-timeline" data-height="540" href="https://twitter.com/ConsejoEstado?ref_src=twsrc%5Etfw">
+                Cargando publicaciones de @ConsejoEstado...
+            </a> 
         </div>
 
     </div>
 
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <script>
-        window.twttr = (function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0],
-            t = window.twttr || {};
-            if (d.getElementById(id)) return t;
-            js = d.createElement(s);
-            js.id = id;
-            js.src = "https://platform.twitter.com/widgets.js";
-            fjs.parentNode.insertBefore(js, fjs);
-            t._e = [];
-            t.ready = function(f) {
-                t._e.push(f);
-            };
-            return t;
-        }(document, "script", "twitter-wjs"));
+        // Carga forzada de los widgets una vez que el DOM está listo
+        document.addEventListener("DOMContentLoaded", function() {
+            var checkTwitter = setInterval(function() {
+                if (window.twttr && window.twttr.widgets) {
+                    window.twttr.widgets.load();
+                    clearInterval(checkTwitter);
+                }
+            }, 500);
+        });
     </script>
 
 </body>

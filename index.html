@@ -176,7 +176,7 @@
                 <a href="https://chatgpt.com/g/g-vO0tKViyq-asistente-contable-colombia" target="_blank" class="btn-subpage">🤖 GPT Asistente Contable</a>
                 <a href="https://sites.google.com/view/estatuton-2024/inicio" target="_blank" class="btn-subpage">📁 Estatutón</a>
                 <a href="https://drive.google.com/drive/folders/12Wl1oNyj58xcgi5LF3PCHAhDyjsKjV-N" target="_blank" class="btn-subpage">📝 R.U.T CIAS</a>
-     <a href="#" onclick="openTwitterModal(); return false;" class="btn-subpage">📢 Novedades en X</a>
+  
             </div>
         </header>
 
@@ -404,41 +404,6 @@ const safeFoto = (p.fotos && p.fotos.length > 0) ? p.fotos[0] : "img/logowi.png"
             window.open(`https://wa.me/${tel}?text=${encodeURIComponent(msg)}`, '_blank');
         }
 
-
-
-<div class="twitter-modal-overlay" id="twitterModal" onclick="closeTwitterModal()">
-    <div class="twitter-modal-content" onclick="event.stopPropagation()">
-        <div class="twitter-modal-header">
-            <h3>Últimas Novedades - WiCONTABLE</h3>
-            <button class="close-twitter-modal" onclick="closeTwitterModal()">&times;</button>
-        </div>
-        <div class="twitter-feed-container">
-            <a class="twitter-timeline" data-height="450" href="https://twitter.com/wicontable">Cargando publicaciones de WiCONTABLE...</a> 
-            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        </div>
-    </div>
-</div>
-
-<style>
-    /* Estilos profesionales para el Modal de X */
-    .twitter-modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 9999; align-items: center; justify-content: center; backdrop-filter: blur(4px); }
-    .twitter-modal-overlay.active { display: flex; }
-    .twitter-modal-content { background: white; width: 90%; max-width: 500px; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.3); border: 2px solid var(--ws-green); }
-    .twitter-modal-header { padding: 15px 20px; background: #f8f9fa; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; }
-    .twitter-modal-header h3 { margin: 0; color: #128C7E; font-size: 1.2rem; font-weight: 800; font-family: 'Calibri', sans-serif; }
-    .close-twitter-modal { background: none; border: none; font-size: 1.8rem; font-weight: bold; cursor: pointer; color: #777; line-height: 1; }
-    .close-twitter-modal:hover { color: #000; }
-    .twitter-feed-container { padding: 15px; max-height: 480px; overflow-y: auto; }
-</style>
-
-<script>
-    function openTwitterModal() {
-        document.getElementById('twitterModal').classList.add('active');
-    }
-    function closeTwitterModal() {
-        document.getElementById('twitterModal').classList.remove('active');
-    }
-</script>
 
 
         

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plantillas Gratis - WiCONTABLE</title>
+    <title>Plantillas Gratis - WiCONTABLE Cyber-Hub</title>
     <link rel="icon" href="https://wicontable.com/img/logowi.png" type="image/png">
     
     <meta property="og:title" content="Plantillas Gratis - WiCONTABLE">
@@ -14,289 +14,496 @@
         :root { 
             --ws-green: #25D366; 
             --ws-dark: #128C7E; 
-            --bg-gray: #f8f9fa; 
-            --card-shadow: 0 10px 25px rgba(0,0,0,0.08); 
+            --ws-neon: #00FF87;
+            --bg-cyber: #0f172a;
+            --bg-light: #f1f5f9; 
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); 
             --fb-color: #1877F2; --ig-color: #E4405F; --tk-color: #000000;
             --li-color: #0077b5; --yt-color: #FF0000;
         }
-        body { font-family: 'Calibri', 'Segoe UI', Tahoma, sans-serif; background: var(--bg-gray); margin: 0; padding: 0; color: #333; position: relative; font-size: 14px; }
-        
-        body::before { content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: url('img/logowi.png'); background-repeat: no-repeat; background-position: center; background-size: 40%; opacity: 0.04; z-index: -1; pointer-events: none; }
 
-        .marquee-wrapper { width: 100%; overflow: hidden; background: white; padding: 12px 0; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 1000; }
-        .marquee-content { display: inline-block; white-space: nowrap; padding-left: 100%; animation: scroll-text 30s linear infinite; font-weight: 600; color: #008f39; }
-        @keyframes scroll-text { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
+        * { box-sizing: border-box; }
 
-        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
-        .back-btn { display: inline-block; margin-bottom: 30px; color: var(--ws-dark); font-weight: bold; text-decoration: none; font-size: 1.1rem; }
-        .back-btn:hover { text-decoration: underline; }
-        
-        header { margin-bottom: 40px; text-align: center; }
-        header h1 { font-size: 2.8rem; margin: 0 0 10px 0; font-weight: 900; letter-spacing: -1.5px; }
-        header p { color: #666; font-size: 1.2rem; max-width: 600px; margin: 0 auto; }
-
-        /* ESTILOS DEL BUSCADOR */
-        .search-container {
-            max-width: 100%;
-            margin: 0 auto 30px auto;
+        body { 
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; 
+            margin: 0; padding: 0; 
+            background: #0d1322; 
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(18, 140, 126, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(37, 211, 102, 0.1) 0px, transparent 50%);
+            background-attachment: fixed;
+            color: #f1f5f9; 
+            min-height: 100vh;
         }
-        #templateSearchInput {
+
+        /* ENCABEZADO FUTURISTA */
+        header { 
+            background: rgba(15, 23, 42, 0.85); 
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(37, 211, 102, 0.25);
+            padding: 15px 30px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .brand-logo img {
+            height: 38px;
+            filter: drop-shadow(0 0 8px rgba(37, 211, 102, 0.6));
+        }
+
+        .brand-logo h1 {
+            margin: 0;
+            font-size: 1.3rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            background: linear-gradient(135deg, #ffffff 0%, var(--ws-neon) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn-volver { 
+            background: rgba(255, 255, 255, 0.05); 
+            color: var(--ws-neon); 
+            text-decoration: none; 
+            padding: 9px 22px; 
+            border-radius: 30px; 
+            font-weight: 700; 
+            font-size: 0.88rem; 
+            border: 1px solid rgba(0, 255, 135, 0.4);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(5px);
+        }
+
+        .btn-volver:hover { 
+            background: var(--ws-green); 
+            color: #0f172a; 
+            box-shadow: 0 0 20px rgba(37, 211, 102, 0.6);
+            transform: translateY(-2px);
+        }
+
+        /* HERO SECTION CON BÚSQUEDA FLOTANTE */
+        .hero-section {
+            text-align: center;
+            padding: 40px 20px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-size: 2.2rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: linear-gradient(90deg, #ffffff, var(--ws-green), #ffffff);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 4s linear infinite;
+        }
+
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+
+        .hero-subtitle {
+            color: #94a3b8;
+            font-size: 1rem;
+            margin-bottom: 30px;
+        }
+
+        /* BUSCADOR CIBERNÉTICO */
+        .search-box-container {
+            position: relative;
+            max-width: 650px;
+            margin: 0 auto 30px;
+        }
+
+        .search-box-container input {
             width: 100%;
-            padding: 15px 20px;
-            font-size: 1.1rem;
-            border: 2px solid #ddd;
-            border-radius: 15px;
+            padding: 16px 25px 16px 55px;
+            border-radius: 40px;
+            border: 1px solid rgba(37, 211, 102, 0.3);
+            background: rgba(15, 23, 42, 0.7);
+            color: #ffffff;
+            font-size: 1rem;
             outline: none;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-            box-sizing: border-box;
-            font-family: 'Calibri', sans-serif;
-        }
-        #templateSearchInput:focus {
-            border-color: var(--ws-green);
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.15);
         }
 
-        .cat-title { margin-top: 40px; font-size: 1.8rem; padding-bottom: 10px; font-weight: 800; letter-spacing: -0.5px; }
-        
-        .file-grid { display: flex; flex-direction: column; gap: 20px; }
-        .file-card { background: white; padding: 25px; border-radius: 20px; display: flex; align-items: center; gap: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); border: 1px solid #eee; transition: 0.3s; }
-        .file-card:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.06); }
-        .file-icon { width: 60px; height: 60px; object-fit: contain; flex-shrink: 0; }
-        .file-info { flex-grow: 1; }
-        .file-info h4 { margin: 0 0 5px 0; font-size: 1.3rem; color: #000; font-weight: 700; }
-        .file-date { font-size: 0.85rem; color: #999; font-weight: bold; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
-        
-        .file-desc { font-size: 0.85rem; color: #555; line-height: 1.4; margin-bottom: 15px; }
-        
-        .card-actions { display: flex; gap: 12px; flex-shrink: 0; }
-        .btn-action { padding: 12px 20px; border-radius: 12px; font-size: 12px; font-weight: bold; text-decoration: none; transition: 0.3s; display: inline-flex; align-items: center; gap: 5px; font-family: 'Calibri', sans-serif; }
-        .btn-download { background: var(--ws-dark); color: white; border: none; }
-        .btn-download:hover { background: #0e6b5c; transform: translateY(-2px); }
-        .btn-share { border: 2px solid var(--ws-green); color: var(--ws-green); background: white; }
-        .btn-share:hover { background: var(--ws-green); color: white; transform: translateY(-2px); }
-        
-        @media (max-width: 750px) { .file-card { flex-direction: column; text-align: center; } .card-actions { width: 100%; justify-content: center; flex-wrap: wrap; } }
+        .search-box-container input::placeholder {
+            color: #64748b;
+        }
 
-        .main-footer { background: white; padding: 50px 20px; margin-top: 80px; text-align: center; border-top: 1px solid #eee; }
-        .footer-content { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 20px; }
-        .social-links { display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; margin: 10px 0; }
-        .social-btn { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-        .social-btn:hover { transform: translateY(-5px) scale(1.1); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
-        .social-btn svg { width: 25px; height: 25px; fill: white; }
-        
-        .bg-fb { background-color: var(--fb-color); } .bg-ig { background-color: var(--ig-color); }
-        .bg-tk { background-color: var(--tk-color); } .bg-li { background-color: var(--li-color); }
-        .bg-yt { background-color: var(--yt-color); } .bg-no { background-color: #000000; }
-.bg-wa { background-color: var(--ws-green); }
-        
-        .floating-wa { position: fixed; bottom: 25px; left: 25px; background: #25D366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; box-shadow: 0 6px 20px rgba(37,211,102,0.4); text-decoration: none; z-index: 999; transition: 0.3s ease; }
-        .floating-wa:hover { transform: scale(1.1) rotate(5deg); }
+        .search-box-container input:focus {
+            border-color: var(--ws-neon);
+            box-shadow: 0 0 25px rgba(0, 255, 135, 0.35);
+            background: rgba(15, 23, 42, 0.95);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 22px;
+            height: 22px;
+            fill: var(--ws-green);
+        }
+
+        /* CONTENEDOR FLUIDO QUE APROVECHA EL 95% DE LA PANTALLA */
+        .main-container {
+            width: 95%;
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 10px 15px 60px;
+        }
+
+        /* GRID DE TARJETAS FUTURISTAS */
+        .file-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+            gap: 24px;
+        }
+
+        /* TARJETA CON EFECTO CRISTAL (GLASSMORPHISM) */
+        .file-card {
+            background: rgba(30, 41, 59, 0.6);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+            transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        /* Línea de brillo neón superior */
+        .file-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--ws-dark), var(--ws-neon));
+            opacity: 0.6;
+            transition: opacity 0.3s ease;
+        }
+
+        .file-card:hover {
+            transform: translateY(-8px) scale(1.01);
+            border-color: rgba(37, 211, 102, 0.5);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 20px rgba(37, 211, 102, 0.2);
+            background: rgba(30, 41, 59, 0.85);
+        }
+
+        .file-card:hover::before {
+            opacity: 1;
+        }
+
+        /* CABECERA DE LA TARJETA (TIPO Y BADGE) */
+        .card-header-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .file-badge {
+            font-size: 0.72rem;
+            font-weight: 800;
+            padding: 4px 10px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-excel { background: rgba(37, 211, 102, 0.15); color: var(--ws-neon); border: 1px solid rgba(37, 211, 102, 0.3); }
+        .badge-word { background: rgba(24, 119, 242, 0.15); color: #60a5fa; border: 1px solid rgba(24, 119, 242, 0.3); }
+        .badge-pdf { background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }
+
+        .file-icon {
+            width: 38px;
+            height: 38px;
+            padding: 8px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* TEXTOS */
+        .file-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0 0 10px 0;
+            line-height: 1.35;
+        }
+
+        .file-desc {
+            font-size: 0.88rem;
+            color: #94a3b8;
+            margin: 0 0 20px 0;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+
+        /* BOTÓN DE DESCARGA NEÓN */
+        .btn-download {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, var(--ws-dark) 0%, #0d5c52 100%);
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 255, 135, 0.3);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-download:hover {
+            background: linear-gradient(135deg, var(--ws-green) 0%, var(--ws-dark) 100%);
+            color: #0f172a;
+            box-shadow: 0 0 20px rgba(37, 211, 102, 0.5);
+            transform: scale(1.02);
+        }
+
+        .btn-download svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        /* MENSAJE SIN RESULTADOS */
+        .no-results {
+            display: none;
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 50px 20px;
+            color: #64748b;
+            font-size: 1.1rem;
+        }
+
+        /* FOOTER FUTURISTA */
+        footer {
+            background: rgba(15, 23, 42, 0.95);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 30px 20px;
+            text-align: center;
+            color: #64748b;
+            font-size: 0.85rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .social-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .social-icon:hover {
+            color: var(--ws-neon);
+            border-color: var(--ws-neon);
+            box-shadow: 0 0 15px rgba(0, 255, 135, 0.4);
+            transform: translateY(-3px);
+        }
     </style>
 </head>
 <body>
-    <div class="marquee-wrapper">
-        <div class="marquee-content">Descarga gratis plantillas y formatos formulados en Excel y Word creados por la comunidad WiCONTABLE.</div>
-    </div>
 
-    <div class="container">
-        <header>
-            <a href="index.html" class="back-btn">← Volver al Catálogo y Pedidos</a>
-            <h1>Plantillas Gratis</h1>
-            <p>Si tienes algún documento libre que desees compartirnos, no dudes en contactarnos.</p>
-        </header>
+    <header>
+        <a href="index.html" class="brand-logo">
+            <img src="https://wicontable.com/img/logowi.png" alt="WiCONTABLE Logo">
+            <h1>WiCONTABLE <span style="font-size:0.75rem; color:var(--ws-neon); font-weight:normal;">[HUB]</span></h1>
+        </a>
+        <a href="index.html" class="btn-volver">⬅ Volver al Catálogo</a>
+    </header>
 
-        <div class="search-container">
-            <input type="text" id="templateSearchInput" onkeyup="searchTemplates()" placeholder="🔍 Buscar plantilla por título o palabra clave...">
-        </div>
-
-        <h2 class="cat-title" style="color: #107c41; border-bottom: 3px solid #107c41;">📗 Documentos EXCEL</h2>
-        <div class="file-grid">
-            
-            <div class="file-card" style="border-left: 4px solid #107c41;">
-                <img src="img/excel-icon.png" class="file-icon" alt="Icono Excel">
-                <div class="file-info">
-                    <h4>Listado Proveedores Ficticios - DIAN</h4>
-                    <div class="file-date">Actualizada Al: 03/06/2026</div>
-                    <div class="file-desc">Subdirección de fiscalización tributaria resoluciones sanción declaratoria proveedor ficticio.</div>
-                </div>
-                <div class="card-actions">
-                    <a href="https://docs.google.com/spreadsheets/d/1TBncSbN4FKRBr1lt5e22QQAI5b6vPccK/export?format=xlsx" class="btn-action btn-download" download>📥 Descargar Excel</a>
-                    <a href="https://wa.me/?text=Mira%20esta%20plantilla%20gratis%20en%20WiCONTABLE:%20*Listado%20Proveedores%20Ficticios%20-%20DIAN*%20-%20https://wicontable.com/plantillas.html" class="btn-action btn-share" target="_blank">📲 Compartir</a>
-                </div>
-            </div>
-         
-                        <div class="file-card" style="border-left: 4px solid #107c41;">
-                <img src="img/excel-icon.png" class="file-icon" alt="Icono Excel">
-                <div class="file-info">
-                    <h4>CHECKLIST CALENDARIO - VENCIMIENTO DECLARACIÓN RENTA PERSONAS NATURALES AÑO GRAVABLE 2025, que se presenta en el 2026</h4>
-                    <div class="file-date">Publicado: 15/07/2026</div>
-                    <div class="file-desc">¡Que la temporada de impuestos no te tome por sorpresa!
-
-La temporada de Declaración de Renta de Personas Naturales (Año Gravable 2025) exige un control absoluto del tiempo y de la información. Esta plantilla de Checklist Calendario está diseñada para centralizar, organizar y monitorear cada etapa del proceso de preparación y presentación de impuestos durante el año 2026.</div>
-                </div>
-                <div class="card-actions">
-                    <a href="https://docs.google.com/spreadsheets/d/1qgBcFNb5ObF8dcE-5JTVy34vHij8MheT/export?format=xlsx" class="btn-action btn-download" download>📥 Descargar Excel</a>
-                    <a href="https://wa.me/?text=Mira%20esta%20plantilla%20gratis%20en%20WiCONTABLE:%20*Checklist%20Calendario%20Renta%20P.N%202026*%20https://wicontable.com/plantillas.html" class="btn-action btn-share" target="_blank">📲 Compartir</a>
-                </div>
-            </div>
-            
-            <div class="file-card" style="border-left: 4px solid #107c41;">
-                <img src="img/excel-icon.png" class="file-icon" alt="Icono Excel">
-                <div class="file-info">
-                    <h4>Horas extras, recargos nocturnos, dominicales y festivos</h4>
-                    <div class="file-date">Publicado: 11/07/2026</div>
-                    <div class="file-desc">Desde el 15 de julio hasta el 31 de diciembre de 2026, la jornada laboral ordinaria máxima en Colombia es de 42 horas semanales. Toda labor que exceda la jornada ordinaria pactada debe reconocerse como hora extra. La jornada nocturna comprende de 7:00 p. m. a 6:00 a. m. y genera recargo nocturno del 35%. Las horas extras se pagan con recargo del 25% si son diurnas y del 75% si son nocturnas. El trabajo en domingos, festivos o día de descanso obligatorio se paga con recargo del 90% sobre la hora ordinaria. Para liquidar, se toma como base el valor de la hora ordinaria y se aplican los recargos correspondientes según el horario y el día laborado.</div>
-                </div>
-                <div class="card-actions">
-                    <a href="https://docs.google.com/spreadsheets/d/1DZM0XuH1ZZfMtzZfOWUf3E3s8Q0pgk34/export?format=xlsx" class="btn-action btn-download" download>📥 Descargar Excel</a>
-                    <a href="https://wa.me/?text=Mira%20esta%20plantilla%20gratis%20en%20WiCONTABLE:%20*Horas%20Extras,%20Recargos%20Nocturnos,%20dominicales%20y%20festivos%20desde%20julio%2015%20hasta%20diciembre%2031%20de%202026*%20https://wicontable.com/plantillas.html" class="btn-action btn-share" target="_blank">📲 Compartir</a>
-                </div>
-            </div>
-
-                        <div class="file-card" style="border-left: 4px solid #107c41;">
-                <img src="img/excel-icon.png" class="file-icon" alt="Icono Excel">
-                <div class="file-info">
-                    <h4>Tabla Retefuente Que Aplica Desde El 01-Julio-2026 (UVT $52.374)</h4>
-                    <div class="file-date">Publicado: 11/07/2026</div>
-                    <div class="file-desc">Su vigencia desde el 1 de julio de 2026 obedece a que el Consejo de Estado revocó la suspensión provisional de los artículos 2 a 8 del Decreto 572 de 2025, permitiendo que vuelvan a producir efectos las reglas modificadas sobre bases y tarifas de retención y autorretención. En términos prácticos, la tabla sirve para que contadores y agentes retenedores identifiquen rápidamente concepto, base mínima, tarifa aplicable, valor en pesos y norma soporte, con fundamento en el Estatuto Tributario, el Decreto 1625 de 2016 y normas reglamentarias relacionadas.</div>
-                </div>
-                <div class="card-actions">
-                    <a href="https://docs.google.com/spreadsheets/d/1zFje_oQTPByPV9G02E9VlIO3iCIy6Yd1/export?format=xlsx" class="btn-action btn-download" download>📥 Descargar Excel</a>
-                    <a href="https://wa.me/?text=Mira%20esta%20plantilla%20gratis%20en%20WiCONTABLE:%20*Tabla%20Retefuente%20Que%20Aplica%20Desde%20El%2001-%20Julio-%201026%20(UVT$52.374%20*%20https://wicontable.com/plantillas.html" class="btn-action btn-share" target="_blank">📲 Compartir</a>
-                </div>
-            </div>
-
-                        <div class="file-card" style="border-left: 4px solid #107c41;">
-                <img src="img/excel-icon.png" class="file-icon" alt="Icono Excel">
-                <div class="file-info">
-                    <h4>Porrateo IVA 2026</h4>
-                    <div class="file-date">Publicado: 11/07/2026</div>
-                    <div class="file-desc">A partir de julio de 2026, el IVA descontable debe manejarse bajo un criterio de imputación directa y, únicamente cuando no sea posible identificar su destinación específica, debe aplicarse el prorrateo previsto en el artículo 490 del Estatuto Tributario. La entidad debe fortalecer sus auxiliares contables y documentales para separar adecuadamente el IVA generado, descontable directo, IVA común sujeto a prorrateo, IVA no descontable e IVA asociado a operaciones excluidas.</div>
-                </div>
-                <div class="card-actions">
-                    <a href="https://docs.google.com/spreadsheets/d/1jTJgpdR_DzsyrP6JOfI9fvmM5pTe7VzP/export?format=xlsx" class="btn-action btn-download" download>📥 Descargar Excel</a>
-                    <a href="https://wa.me/?text=Mira%20esta%20plantilla%20gratis%20en%20WiCONTABLE:%20*Porrateo%20IVA*%20https://wicontable.com/plantillas.html" class="btn-action btn-share" target="_blank">📲 Compartir</a>
-                </div>
-            </div>
-
-
-
-
-
-
-            
-        </div>
-
-        <h2 class="cat-title" style="color: #2b579a; border-bottom: 3px solid #2b579a; margin-top: 60px;">📘 Documentos WORD</h2>
-        <div class="file-grid">
-            
-            <div class="file-card" style="border-left: 4px solid #2b579a;">
-                <img src="img/word-icon.png" class="file-icon" alt="Icono Word">
-                <div class="file-info">
-                    <h4>Contrato de Prestación Servicios Colombia Ajustado A Julio 2026</h4>
-                    <div class="file-date">Publicado: 10/07/2026</div>
-                    <div class="file-desc">Puedes usar este contrato solo si el servicio será realmente autónomo. Si el contratista va a cumplir horario, recibir órdenes permanentes, pedir permisos, ocupar un cargo operativo de la empresa o ejecutar funciones permanentes bajo control directo, lo correcto es celebrar contrato de trabajo y aplicar toda la normativa laboral vigente.</div>
-                </div>
-                <div class="card-actions">
-                    <a href="https://docs.google.com/document/d/1O-ZGfqp4_XUoli4uQZ6h5NcHfNM_AYXi/export?format=docx" class="btn-action btn-download" download>📥 Descargar Word</a>
-                    <a href="https://wa.me/?text=Mira%20este%20contrato%20gratis%20en%20WiCONTABLE:%20*Contrato%20de%20Prestación%20Servicios%20Colombia%20Ajustado%20A%20Julio%202026*%20-%20https://wicontable.com/plantillas.html" class="btn-action btn-share" target="_blank">📲 Compartir</a>
-                </div>
-            </div>
-
-            <div class="file-card" style="border-left: 4px solid #2b579a;">
-                <img src="img/word-icon.png" class="file-icon" alt="Icono Word">
-                <div class="file-info">
-                    <h4>Contrato Trabajo Sector Privado Colombia A Julio 2026</h4>
-                    <div class="file-date">Publicado: 11/07/2026</div>
-                    <div class="file-desc">Verifiqué la renderización del documento antes de entregarlo. La plantilla se basó principalmente en la Ley 2466 de 2025, Ley 2101 de 2021, Código Sustantivo del Trabajo, Decreto 1072 de 2015, Ley 100 de 1993, Ley 1010 de 2006, Ley 2191 de 2022 y Ley 1581 de 2012.</div>
-                </div>
-                <div class="card-actions">
-                    <a href="https://docs.google.com/document/d/1joE6pQdPnbwyaxRD6K6uNuPqztE2aBQa/export?format=docx" class="btn-action btn-download" download>📥 Descargar Word</a>
-                    <a href="https://wa.me/?text=Mira%20este%20contrato%20gratis%20en%20WiCONTABLE:%20*Contrato%20Trabajo%20Sector%20Privado%20Colombia%20A%20A%20Julio%202026*%20https://wicontable.com/plantillas.html" class="btn-action btn-share" target="_blank">📲 Compartir</a>
-                </div>
-            </div>
-
-            <div class="file-card" style="border-left: 4px solid #2b579a;">
-                <img src="img/word-icon.png" class="file-icon" alt="Icono Word">
-                <div class="file-info">
-                    <h4>Contrato Prestacion Servicios Contables Independiente Colombia 2026</h4>
-                    <div class="file-date">Publicado: 20/07/2026</div>
-                    <div class="file-desc">Este modelo debe utilizarse únicamente cuando el contador conserve autonomía profesional, administrativa y organizativa, sin horario laboral, jefe disciplinario, permisos, exclusividad obligatoria ni control permanente sobre la forma de ejecutar el servicio. Cuando concurren prestación personal, remuneración y subordinación, existe contrato de trabajo independientemente del nombre que las partes hayan puesto al documento.</div>
-                </div>
-                <div class="card-actions">
-                    <a href="https://docs.google.com/document/d/1xEuKYUtYPZ9AN_9m_to3v6zT7f1a3Zu8/export?format=docx" class="btn-action btn-download" download>📥 Descargar Word</a>
-                    <a href="https://wa.me/?text=Mira%20este%20contrato%20gratis%20en%20WiCONTABLE:%20*Contrato%20Prestación%20Servicios%20Contables%20Independiente%20Colombia%202026*%20https://wicontable.com/plantillas.html" class="btn-action btn-share" target="_blank">📲 Compartir</a>
-                </div>
-            </div>
-
-            <div class="file-card" style="border-left: 4px solid #2b579a;">
-                <img src="img/word-icon.png" class="file-icon" alt="Icono Word">
-                <div class="file-info">
-                    <h4>Contrato Laboral Contador Termino Indefinido Colombia 2026</h4>
-                    <div class="file-date">Publicado: 20/07/2026</div>
-                    <div class="file-desc">Este modelo está estructurado como contrato laboral a término indefinido, porque esa es la modalidad general establecida por la Ley 2466 de 2025. Incluye subordinación, salario, prestaciones sociales, seguridad social, período de prueba opcional, jornada de 42 horas semanales desde el 16 de julio de 2026, derecho a la desconexión y reglas para trabajo suplementario, nocturno, dominical y festivo.</div>
-                </div>
-                <div class="card-actions">
-                    <a href="https://docs.google.com/document/d/1yOxZWTwrKNI1DBONzVM8VwmJm8f5MRZb/export?format=docx" class="btn-action btn-download" download>📥 Descargar Word</a>
-                    <a href="https://wa.me/?text=Mira%20este%20contrato%20gratis%20en%20WiCONTABLE:%20*Contrato%20Laboral%20Contador%20Termino%20Indefinido%20Colombia%202026*%20https://wicontable.com/plantillas.html" class="btn-action btn-share" target="_blank">📲 Compartir</a>
-                </div>
-            </div>
-
-
-
-
-
-
-
-
-
-            
-            
+    <div class="hero-section">
+        <div class="hero-title">⚡ Centro de Plantillas Gratis</div>
+        <div class="hero-subtitle">Descarga formatos formulados en Excel y Word creados para automatizar tu gestión contable y tributaria.</div>
+        
+        <div class="search-box-container">
+            <svg class="search-icon" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+            <input type="text" id="templateSearchInput" onkeyup="searchTemplates()" placeholder="Buscar plantilla (Ej: Retención, IVA, Nómina, Renta)...">
         </div>
     </div>
 
-    <a href="https://wa.me/573156016386?text=Hola Wilder,%20vengo%20de%20la%20sección%20de%20plantillas%20y%20tengo%20una%20duda." target="_blank" class="floating-wa" title="Soporte WhatsApp Directo">💬</a>
-
-    <footer class="main-footer">
-        <div class="footer-content">
-            <p><strong>CONÉCTATE CON NOSOTROS EN REDES SOCIALES</strong></p>
-            <div class="social-links">
-                <a href="https://whatsapp.com/channel/0029Va4o0RV2f3ENoTURyU40" class="social-btn bg-wa" target="_blank" title="Canal de WhatsApp"><svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.176.001 6.163 1.237 8.407 3.483 2.245 2.246 3.48 5.234 3.479 8.414-.004 6.597-5.342 11.945-11.893 11.945-1.996-.001-3.957-.503-5.69-1.462L0 24zm6.59-4.846c1.62.962 3.235 1.467 4.962 1.468 5.334 0 9.673-4.321 9.676-9.635.001-2.574-1.002-4.994-2.825-6.819C16.638 2.344 14.225 1.34 11.66 1.34 6.326 1.34 1.986 5.661 1.983 10.977c-.001 1.8.473 3.559 1.373 5.111l-.995 3.633 3.689-.967zM17.18 14.9c-.3-.15-1.77-.874-2.046-.975-.276-.102-.477-.152-.677.151-.202.303-.778.976-.953 1.178-.177.202-.353.228-.654.077-.3-.15-1.264-.465-2.41-1.487-.893-.795-1.494-1.778-1.67-2.079-.176-.3-.02-.463.13-.613.136-.134.3-.349.45-.524.15-.175.2-.299.3-.5.1-.201.05-.376-.025-.526-.075-.15-.677-1.633-.927-2.233-.243-.585-.49-.506-.677-.516-.174-.008-.375-.01-.576-.01-.2 0-.527.075-.802.375-.276.3-.1.575.451 1.226.55.65.9 1.326 1.05 1.526.15.2 2.054 3.136 4.975 4.393.695.299 1.238.478 1.66.614.698.222 1.334.19 1.838.115.56-.083 1.77-.724 2.022-1.424.252-.699.252-1.299.176-1.424-.075-.124-.275-.2-.575-.35z"/></svg></a>
-<a href="https://chat.whatsapp.com/FvYIDsoo7NR7PLwtd0Vhwv " class="social-btn bg-wa" target="_blank" title="Grupo de WhatsApp"><svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.176.001 6.163 1.237 8.407 3.483 2.245 2.246 3.48 5.234 3.479 8.414-.004 6.597-5.342 11.945-11.893 11.945-1.996-.001-3.957-.503-5.69-1.462L0 24zm6.59-4.846c1.62.962 3.235 1.467 4.962 1.468 5.334 0 9.673-4.321 9.676-9.635.001-2.574-1.002-4.994-2.825-6.819C16.638 2.344 14.225 1.34 11.66 1.34 6.326 1.34 1.986 5.661 1.983 10.977c-.001 1.8.473 3.559 1.373 5.111l-.995 3.633 3.689-.967zM17.18 14.9c-.3-.15-1.77-.874-2.046-.975-.276-.102-.477-.152-.677.151-.202.303-.778.976-.953 1.178-.177.202-.353.228-.654.077-.3-.15-1.264-.465-2.41-1.487-.893-.795-1.494-1.778-1.67-2.079-.176-.3-.02-.463.13-.613.136-.134.3-.349.45-.524.15-.175.2-.299.3-.5.1-.201.05-.376-.025-.526-.075-.15-.677-1.633-.927-2.233-.243-.585-.49-.506-.677-.516-.174-.008-.375-.01-.576-.01-.2 0-.527.075-.802.375-.276.3-.1.575.451 1.226.55.65.9 1.326 1.05 1.526.15.2 2.054 3.136 4.975 4.393.695.299 1.238.478 1.66.614.698.222 1.334.19 1.838.115.56-.083 1.77-.724 2.022-1.424.252-.699.252-1.299.176-1.424-.075-.124-.275-.2-.575-.35z"/></svg></a>
-                <a href="https://www.youtube.com/@wildersarriahernandez" class="social-btn bg-yt" target="_blank" title="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
-                <a href="https://www.youtube.com/@wicontable" class="social-btn bg-yt" target="_blank" title="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
-<a href="https://www.tiktok.com/@wildersarriahernandez" class="social-btn bg-tk" target="_blank" title="TikTok"><svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.9-.32-1.98-.23-2.81.33-.85.51-1.44 1.42-1.58 2.4-.11.68-.03 1.37.18 2.03.35.81 1.05 1.48 1.88 1.76.71.21 1.48.21 2.19.04 1.02-.14 1.98-.77 2.56-1.6.43-.59.66-1.31.71-2.04.08-3.38.03-6.76.04-10.14z"/></svg></a>
-                <a href="https://www.facebook.com/wicontable" class="social-btn bg-fb" target="_blank" title="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-                <a href="https://www.instagram.com/wicontable/" class="social-btn bg-ig" target="_blank" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
-                
-                <a href="https://www.linkedin.com/in/wildersarriahernandez" class="social-btn bg-li" target="_blank" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a> 
+    <div class="main-container">
+        <div class="file-grid" id="fileGrid">
+            
+            <div class="file-card">
+                <div>
+                    <div class="card-header-info">
+                        <span class="file-badge badge-excel">Excel (.XLSX)</span>
+                        <div class="file-icon">📊</div>
+                    </div>
+                    <h2 class="file-title">Liquidación de Nómina y Seguridad Social</h2>
+                    <p class="file-desc">Plantilla formulada para el cálculo automatizado de devengados, deducciones y aportes parafiscales conforme a la normativa vigente.</p>
+                </div>
+                <a href="#" class="btn-download" target="_blank">
+                    <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                    Descargar Gratis
+                </a>
             </div>
-            <p style="font-size: 0.8rem; color: #999; margin-top: 10px;">© 2026 WiCONTABLE</p>
+
+            <div class="file-card">
+                <div>
+                    <div class="card-header-info">
+                        <span class="file-badge badge-excel">Excel (.XLSX)</span>
+                        <div class="file-icon">💰</div>
+                    </div>
+                    <h2 class="file-title">Tabla de Retención en la Fuente 2026</h2>
+                    <p class="file-desc">Calculadora automatizada en UVT para compras, servicios, honorarios y salarios con porcentajes actualizados.</p>
+                </div>
+                <a href="#" class="btn-download" target="_blank">
+                    <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                    Descargar Gratis
+                </a>
+            </div>
+
+            <div class="file-card">
+                <div>
+                    <div class="card-header-info">
+                        <span class="file-badge badge-word">Word (.DOCX)</span>
+                        <div class="file-icon">📝</div>
+                    </div>
+                    <h2 class="file-title">Modelo de Contrato de Prestación de Servicios</h2>
+                    <p class="file-desc">Minuta editable ajustada al código de comercio para consultorías independientes y contadores públicos.</p>
+                </div>
+                <a href="#" class="btn-download" target="_blank">
+                    <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                    Descargar Gratis
+                </a>
+            </div>
+
+            <div class="file-card">
+                <div>
+                    <div class="card-header-info">
+                        <span class="file-badge badge-excel">Excel (.XLSX)</span>
+                        <div class="file-icon">🏛️</div>
+                    </div>
+                    <h2 class="file-title">Borrador Formulario 300 - Declaración IVA</h2>
+                    <p class="file-desc">Estructura para la conciliación de IVA generado y descontable por bimestres/cuatrimestres.</p>
+                </div>
+                <a href="#" class="btn-download" target="_blank">
+                    <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                    Descargar Gratis
+                </a>
+            </div>
+
+            <div class="file-card">
+                <div>
+                    <div class="card-header-info">
+                        <span class="file-badge badge-excel">Excel (.XLSX)</span>
+                        <div class="file-icon">👤</div>
+                    </div>
+                    <h2 class="file-title">Depuración de Renta Persona Natural</h2>
+                    <p class="file-desc">Simulador por cédulas (general, pensiones y dividendos) para determinar el impuesto estimado a pagar.</p>
+                </div>
+                <a href="#" class="btn-download" target="_blank">
+                    <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                    Descargar Gratis
+                </a>
+            </div>
+
+            <div class="file-card">
+                <div>
+                    <div class="card-header-info">
+                        <span class="file-badge badge-pdf">PDF Formato</span>
+                        <div class="file-icon">📄</div>
+                    </div>
+                    <h2 class="file-title">Checklist de Auditoría para Medios Magnéticos</h2>
+                    <p class="file-desc">Guía paso a paso para la verificación de inconsistencias antes de la transmisión a la DIAN.</p>
+                </div>
+                <a href="#" class="btn-download" target="_blank">
+                    <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                    Descargar Gratis
+                </a>
+            </div>
+
+            <div class="no-results" id="noResults">
+                🔍 No se encontraron plantillas que coincidan con tu búsqueda.
+            </div>
+
         </div>
+    </div>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://wa.me/573156016386" target="_blank" class="social-icon">💬</a>
+            <a href="https://wicontable.com" target="_blank" class="social-icon">🌐</a>
+        </div>
+        <p>© 2026 WiCONTABLE • Todos los derechos reservados</p>
     </footer>
 
     <script>
         function searchTemplates() {
-            // 1. Convertimos el término buscado a minúsculas
             const input = document.getElementById('templateSearchInput').value.toLowerCase();
-            
-            // 2. Obtenemos todas las tarjetas de plantillas
             const cards = document.querySelectorAll('.file-card');
-            
-            // 3. Recorremos cada tarjeta para evaluar coincidencia
+            let visibleCount = 0;
+
             cards.forEach(card => {
-                const title = card.querySelector('h4').innerText.toLowerCase();
+                const title = card.querySelector('.file-title').innerText.toLowerCase();
                 const desc = card.querySelector('.file-desc').innerText.toLowerCase();
-                
-                // Si el término está en el título o en la descripción, se muestra; de lo contrario, se oculta
-                if (title.includes(input) || desc.includes(input)) {
-                    card.style.display = ""; // Restaura el diseño flexible original
+                const badge = card.querySelector('.file-badge').innerText.toLowerCase();
+
+                if (title.includes(input) || desc.includes(input) || badge.includes(input)) {
+                    card.style.display = 'flex';
+                    visibleCount++;
                 } else {
-                    card.style.display = "none"; // Oculta la tarjeta
+                    card.style.display = 'none';
                 }
             });
+
+            const noResults = document.getElementById('noResults');
+            if (visibleCount === 0) {
+                noResults.style.display = 'block';
+            } else {
+                noResults.style.display = 'none';
+            }
         }
     </script>
+
 </body>
 </html>

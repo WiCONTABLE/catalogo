@@ -78,7 +78,7 @@ etiqueta: "¡AGOTADO!",
     },
 {
         id: 14,
-        nombre: "Microsoft 365 Familia (1 año) ADMIN ",
+        nombre: "Microsoft 365 Familia (1 año) ADMIN",
         url: "365-officefamilia.html",
         formato: "Credenciales",
         mostrarTecnica: false,

@@ -29,7 +29,7 @@ etiqueta: "¡EN PRODUCCION!",
         precio: "COP $100.000",
         video: "video/WiCONTABLE.mp4",    
         youtube: "https://www.youtube.com/watch?v=tWS24jBXEkc",
-        fotos: ["img/p13-0.png", "img/p13-1.png", "img/p13-2.png", "img/p13-3.png", "img/p13-4.png"]
+        fotos: ["img/p13-0.png", "img/p13-1.png", "img/p13-2.png", "img/p13-3.png", "img/p13-4.png", "img/p13-5.png"]
     },
     {
         id: 2,

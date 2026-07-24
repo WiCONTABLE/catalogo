@@ -116,7 +116,7 @@ etiqueta: "DISPONIBLE",
         nota: "No cambiar los datos de la cuenta: Está totalmente prohibido modificar el correo, la contraseña o los métodos de pago asociados. <b>El incumplimiento de esta norma cancelará de forma inmediata la garantía de tu servicio sin derecho a reemplazo ni reembolso.</b> Se garantiza durante 15 días ante cualquier inconveniente.",
         precio: "COP $40.000",
         video: "video/ChatGPTPlus.mp4",
-        fotos: ["img/p1-0.png", "img/p1-1.png", "img/p1-2.png"]
+        fotos: ["img/p1-0.png", "img/p1-1.png", "img/p1-2.png", "img/p1-3.png", "img/p1-4.png"]
     },
 {
         id: 7,

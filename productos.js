@@ -17,7 +17,7 @@ const productos = [
         fotos: ["img/p12-0.png", "img/p12-1.png", "img/p12-2.png", "img/p12-3.png"]
     },       
         {
-        id: 0,
+        id: 13,
         nombre: "WiCONTABLE Auditor F.E (DIAN)",
         url: "auditor-fe.html",
         formato: "Extensión Web .crx",
@@ -29,7 +29,7 @@ etiqueta: "¡EN PRODUCCION!",
         precio: "COP $100.000",
         video: "video/WiCONTABLE.mp4",    
         youtube: "https://www.youtube.com/watch?v=tWS24jBXEkc",
-        fotos: ["img/p0-0.png"]
+        fotos: ["img/p13-0.png"]
     },
     {
         id: 2,

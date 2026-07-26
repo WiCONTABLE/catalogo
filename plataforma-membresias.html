@@ -3,422 +3,249 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plataformas & Membresías - WiCONTABLE</title>
-    <link rel="icon" href="https://wicontable.com/img/logowi.png" type="image/png">
+    <title>Plataformas y Membresías - WiCONTABLE</title>
+    <link rel="icon" href="https://wicontable.com/img/logowi.png" type="image/png" sizes="48x48">
     
-    <meta property="og:title" content="Membresías & Plataformas - WiCONTABLE">
-    <meta property="og:description" content="Accede a cuentas de Streaming, Inteligencia Artificial, Antivirus y Software de Productividad con los mejores precios.">
-    <meta property="og:image" content="https://wicontable.com/img/logowi.png">
-
+    <meta property="og:title" content="Plataformas/Membresías">
+    <meta property="og:description" content="Te invitamos a visualizar nuestro catalogo de ocio, producción y entretenimiento con los mejores precios del mercado.">
+    <meta property="og:image" content="https://wicontable.com/img/p10-0.png">
+    <meta property="og:url" content="https://wicontable.com/plataforma-membresias.html">
+    <meta property="og:type" content="website">
+    
     <style>
-        :root {
-            --ws-green: #25D366;
-            --ws-dark: #128C7E;
-            --bg-gray: #f4f6f8;
-            --card-shadow: 0 8px 20px rgba(0,0,0,0.06);
-            --text-main: #222;
+        :root { 
+            --ws-green: #25D366; 
+            --ws-dark: #128C7E; 
+            --bg-gray: #f8f9fa; 
+            --card-shadow: 0 10px 25px rgba(0,0,0,0.08); 
+            --text-main: #333;
+            --fb-color: #1877F2; --li-color: #0077b5; --tk-color: #000000;
+            --yt-color: #FF0000; --ig-color: #E4405F;
         }
+        
+        body { font-family: 'Calibri', 'Segoe UI', Tahoma, sans-serif; background: var(--bg-gray); margin: 0; position: relative; color: var(--text-main); font-size: 14px; }
+        body::before { content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: url('img/logowi.png'); background-repeat: no-repeat; background-position: center; background-size: 40%; opacity: 0.04; z-index: -1; pointer-events: none; }
 
-        body {
-            font-family: 'Calibri', 'Segoe UI', Tahoma, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-gray);
-            color: var(--text-main);
-        }
+        .marquee-wrapper { width: 100%; overflow: hidden; background: white; padding: 12px 0; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 100; }
+        .marquee-content { display: inline-block; white-space: nowrap; padding-left: 100%; animation: scroll-text 30s linear infinite; font-weight: 600; color: #008f39; }
+        @keyframes scroll-text { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
 
-        /* ENCABEZADO */
-        .header {
-            background-color: var(--ws-green);
-            color: white;
-            padding: 15px 25px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .header h1 { margin: 0; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
-        .btn-volver {
-            background: white; color: var(--ws-dark); text-decoration: none;
-            padding: 8px 18px; border-radius: 20px; font-weight: bold; font-size: 0.9rem;
-            transition: all 0.2s ease; box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .btn-volver:hover { transform: translateY(-2px); }
+        .main-wrapper { max-width: 1100px; margin: 0 auto; padding: 20px; min-height: 80vh; }
+        
+        .breadcrumbs { font-size: 0.95rem; margin-bottom: 20px; color: #666; font-weight: 600; }
+        .breadcrumbs a { color: var(--ws-dark); text-decoration: none; }
+        .breadcrumbs a:hover { text-decoration: underline; }
 
-        /* HERO / INTRO */
-        .hero-banner {
-            text-align: center;
-            padding: 30px 20px 15px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        .hero-banner h2 { font-size: 2rem; margin: 0 0 10px; color: #111; }
-        .hero-banner p { color: #555; font-size: 1.05rem; margin: 0 0 20px; }
+        /* ==================================================
+           ESTILOS DEL CATÁLOGO DE MEMBRESÍAS
+           ================================================== */
+        .hero-banner { text-align: center; padding: 10px 20px 25px; }
+        .hero-banner h2 { font-size: 2.2rem; margin: 0 0 10px; color: #111; font-weight: 900; letter-spacing: -0.5px;}
+        .hero-banner p { color: #555; font-size: 1.1rem; margin: 0; }
 
-        /* FILTROS Y BUSCADOR */
-        .controls-container {
-            max-width: 1200px;
-            margin: 0 auto 30px;
-            padding: 0 20px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            justify-content: space-between;
-            align-items: center;
-        }
+        .controls-container { display: flex; flex-wrap: wrap; gap: 15px; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+        .search-box { flex: 1; min-width: 280px; }
+        .search-box input { width: 100%; padding: 14px 20px; border-radius: 25px; border: 2px solid #ddd; font-size: 1rem; outline: none; box-sizing: border-box; transition: 0.3s; font-family: 'Calibri', sans-serif; }
+        .search-box input:focus { border-color: var(--ws-green); box-shadow: 0 4px 15px rgba(37,211,102,0.15); }
+        .filter-buttons { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 5px; }
+        .filter-btn { background: white; border: 1px solid #ccc; padding: 8px 18px; border-radius: 20px; cursor: pointer; font-size: 0.9rem; font-weight: bold; color: #555; transition: 0.2s; white-space: nowrap; font-family: 'Calibri', sans-serif;}
+        .filter-btn.active, .filter-btn:hover { background: var(--ws-dark); color: white; border-color: var(--ws-dark); }
 
-        .search-box {
-            flex: 1;
-            min-width: 280px;
-        }
-        .search-box input {
-            width: 100%;
-            padding: 12px 20px;
-            border-radius: 25px;
-            border: 2px solid #ddd;
-            font-size: 1rem;
-            outline: none;
-            box-sizing: border-box;
-            transition: border-color 0.3s;
-        }
-        .search-box input:focus { border-color: var(--ws-green); }
+        .streaming-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 25px; margin-bottom: 50px; }
+        .platform-card { background: white; border-radius: 16px; overflow: hidden; box-shadow: var(--card-shadow); border: 1px solid #eaeaea; display: flex; flex-direction: column; justify-content: space-between; transition: 0.3s ease; }
+        .platform-card:hover { transform: translateY(-6px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); border-color: var(--ws-green); }
+        .img-container { width: 100%; height: 160px; background: #f0f0f0; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+        .img-container img { width: 100%; height: 100%; object-fit: cover; transition: 0.4s ease; }
+        .platform-card:hover .img-container img { transform: scale(1.05); }
+        .category-badge { position: absolute; top: 12px; right: 12px; background: rgba(0, 0, 0, 0.75); color: white; font-size: 0.75rem; padding: 4px 10px; border-radius: 12px; font-weight: bold; backdrop-filter: blur(4px); }
+        
+        .card-body { padding: 18px; flex-grow: 1; display: flex; flex-direction: column; }
+        .platform-title { font-size: 1.2rem; font-weight: 800; margin: 0 0 6px 0; color: #111; }
+        .platform-desc { font-size: 0.9rem; color: #666; margin: 0 0 15px 0; line-height: 1.4; flex-grow: 1; }
+        .price-tag { font-size: 1.4rem; font-weight: 900; color: var(--ws-dark); margin-bottom: 12px; letter-spacing: -0.5px;}
+        .price-tag span { font-size: 0.85rem; color: #888; font-weight: 600; }
+        .btn-add-cart { width: 100%; background: var(--ws-green); color: white; border: none; padding: 12px; border-radius: 10px; font-weight: bold; font-size: 0.95rem; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: 0.2s ease; font-family: 'Calibri', sans-serif;}
+        .btn-add-cart:hover { background: #1eb956; transform: scale(1.02); }
 
-        .filter-buttons {
-            display: flex;
-            gap: 8px;
-            overflow-x: auto;
-            padding-bottom: 5px;
-        }
-        .filter-btn {
-            background: white;
-            border: 1px solid #ccc;
-            padding: 8px 16px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 0.88rem;
-            font-weight: bold;
-            color: #555;
-            transition: all 0.2s;
-            white-space: nowrap;
-        }
-        .filter-btn.active, .filter-btn:hover {
-            background: var(--ws-dark);
-            color: white;
-            border-color: var(--ws-dark);
-        }
+        /* ==================================================
+           ESTILOS ORIGINALES (SCROLL, FOOTER, CARRITO)
+           ================================================== */
+        .scroll-section { margin: 60px 0 40px; padding-top: 30px; border-top: 2px dashed #ddd; }
+        .scroll-container { display: flex; gap: 15px; overflow-x: auto; padding: 10px 0 20px; scrollbar-width: thin; }
+        .mini-card { flex: 0 0 160px; background: white; border-radius: 15px; padding: 15px 10px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05); text-decoration: none; color: inherit; border: 1px solid #eee; transition: 0.2s; display: flex; flex-direction: column; justify-content: space-between; align-items: center; position: relative; }
+        .mini-card:hover { transform: translateY(-5px); border-color: var(--ws-green); }
+        .mini-img { width: 100%; height: 80px; object-fit: contain; margin-bottom: 10px; }
+        .mini-card h4 { margin: 0 0 10px 0; font-size: 0.85rem; font-weight: 600; line-height: 1.2; }
 
-        /* CUADRÍCULA DE PLATAFORMAS (GRID) */
-        .streaming-grid {
-            max-width: 1300px;
-            margin: 0 auto;
-            padding: 0 20px 60px;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 25px;
-        }
+        .badge-base { position: absolute; top: 15px; right: 15px; color: white; font-size: 0.70rem; font-weight: 900; padding: 6px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px; z-index: 20; }
+        .badge-nuevo { background: linear-gradient(90deg, #ff0000, #ff8c00, #ff0000); background-size: 200% auto; box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); animation: glow-pulse-nuevo 2s linear infinite; }
+        @keyframes glow-pulse-nuevo { 0% { background-position: 0% center; box-shadow: 0 0 8px rgba(255,0,0,0.4); } 50% { box-shadow: 0 0 18px rgba(255,80,0,0.9); } 100% { background-position: 200% center; box-shadow: 0 0 8px rgba(255,0,0,0.4); } }
+        .badge-manten { background: linear-gradient(90deg, #e65c00, #F9D423, #e65c00); background-size: 200% auto; box-shadow: 0 0 10px rgba(230, 92, 0, 0.5); animation: glow-pulse-manten 2.5s linear infinite; }
+        @keyframes glow-pulse-manten { 0% { background-position: 0% center; box-shadow: 0 0 8px rgba(230,92,0,0.4); } 50% { box-shadow: 0 0 18px rgba(249,212,35,0.8); } 100% { background-position: 200% center; box-shadow: 0 0 8px rgba(230,92,0,0.4); } }
+        .badge-prod { background: linear-gradient(90deg, #FFB300, #FEE140, #FFB300); background-size: 200% auto; box-shadow: 0 0 10px rgba(255, 179, 0, 0.5); animation: glow-pulse-prod 3s linear infinite; color: #000; }
+        @keyframes glow-pulse-prod { 0% { background-position: 0% center; box-shadow: 0 0 8px rgba(255,179,0,0.4); } 50% { box-shadow: 0 0 18px rgba(254,225,64,0.9); } 100% { background-position: 200% center; box-shadow: 0 0 8px rgba(255,179,0,0.4); } }
+        .badge-activa { background: linear-gradient(90deg, #11998e, #38ef7d, #11998e); background-size: 200% auto; box-shadow: 0 0 10px rgba(56, 239, 125, 0.5); animation: glow-pulse-activa 2s linear infinite; }
+        @keyframes glow-pulse-activa { 0% { background-position: 0% center; box-shadow: 0 0 8px rgba(17,153,142,0.4); } 50% { box-shadow: 0 0 18px rgba(56,239,125,0.9); } 100% { background-position: 200% center; box-shadow: 0 0 8px rgba(17,153,142,0.4); } }
+        .badge-agotado { background: linear-gradient(90deg, #606060, #8f8f8f, #606060); background-size: 200% auto; box-shadow: 0 0 10px rgba(96, 96, 96, 0.5); animation: glow-pulse-agotado 3s linear infinite; color: white; }
+        @keyframes glow-pulse-agotado { 0% { background-position: 0% center; box-shadow: 0 0 8px rgba(96,96,96,0.4); } 50% { box-shadow: 0 0 15px rgba(143,143,143,0.8); } 100% { background-position: 200% center; box-shadow: 0 0 8px rgba(96,96,96,0.4); } }
+        .badge-disponible { background: linear-gradient(90deg, #00c6ff, #0072ff, #00c6ff); background-size: 200% auto; box-shadow: 0 0 10px rgba(0, 198, 255, 0.5); animation: glow-pulse-disponible 2s linear infinite; }
+        @keyframes glow-pulse-disponible { 0% { background-position: 0% center; box-shadow: 0 0 8px rgba(0,198,255,0.4); } 50% { box-shadow: 0 0 18px rgba(0,114,255,0.9); } 100% { background-position: 200% center; box-shadow: 0 0 8px rgba(0,198,255,0.4); } }
 
-        /* TARJETA DE PLATAFORMA */
-        .platform-card {
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: var(--card-shadow);
-            border: 1px solid #eaeaea;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .platform-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 28px rgba(0,0,0,0.12);
-        }
+        .main-footer { background: white; padding: 50px 20px; margin-top: 40px; text-align: center; border-top: 1px solid #eee; }
+        .footer-content { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+        .social-links { display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; margin: 10px 0; }
+        .social-btn { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .social-btn:hover { transform: translateY(-5px) scale(1.1); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+        .social-btn svg { width: 25px; height: 25px; fill: white; }
+        
+        .bg-fb { background-color: var(--fb-color); } .bg-ig { background-color: var(--ig-color); }
+        .bg-tk { background-color: var(--tk-color); } .bg-li { background-color: var(--li-color); }
+        .bg-yt { background-color: var(--yt-color); } .bg-no { background-color: #000000; }
+        .bg-wa { background-color: var(--ws-green); }
+        .copyright { font-size: 0.9rem; color: #999; margin-top: 15px; font-weight: 600; }
 
-        .img-container {
-            width: 100%;
-            height: 160px;
-            background: #f0f0f0;
-            position: relative;
-            overflow: hidden;
-        }
-        .img-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-        .platform-card:hover .img-container img {
-            transform: scale(1.05);
-        }
+        .floating-wa { position: fixed; bottom: 25px; left: 25px; background: #25D366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; box-shadow: 0 6px 20px rgba(37,211,102,0.4); text-decoration: none; z-index: 999; transition: 0.3s ease; }
+        .floating-wa:hover { transform: scale(1.1) rotate(5deg); }
+        .floating-cart { position: fixed; bottom: 25px; right: 25px; background: #128C7E; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; box-shadow: 0 6px 20px rgba(18,140,126,0.4); cursor: pointer; z-index: 999; transition: 0.3s ease; }
+        .floating-cart:hover { transform: scale(1.1); }
+        .cart-badge { position: absolute; top: -5px; right: -5px; background: #ff3b30; color: white; font-size: 0.85rem; font-weight: bold; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid white; }
 
-        .category-badge {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            background: rgba(0, 0, 0, 0.75);
-            color: white;
-            font-size: 0.75rem;
-            padding: 4px 10px;
-            border-radius: 12px;
-            font-weight: bold;
-            backdrop-filter: blur(4px);
-        }
-
-        .card-body {
-            padding: 18px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .platform-title {
-            font-size: 1.15rem;
-            font-weight: bold;
-            margin: 0 0 6px 0;
-            color: #111;
-        }
-
-        .platform-desc {
-            font-size: 0.85rem;
-            color: #666;
-            margin: 0 0 15px 0;
-            line-height: 1.4;
-            flex-grow: 1;
-        }
-
-        .price-tag {
-            font-size: 1.25rem;
-            font-weight: 900;
-            color: var(--ws-dark);
-            margin-bottom: 12px;
-        }
-        .price-tag span {
-            font-size: 0.8rem;
-            color: #888;
-            font-weight: normal;
-        }
-
-        .btn-add-cart {
-            width: 100%;
-            background: var(--ws-green);
-            color: white;
-            border: none;
-            padding: 12px;
-            border-radius: 10px;
-            font-weight: bold;
-            font-size: 0.95rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            transition: background 0.2s ease, transform 0.1s;
-        }
-        .btn-add-cart:hover {
-            background: #1eb956;
-            transform: scale(1.02);
-        }
-
-        /* BARRA FLOTANTE DEL CARRITO EN LA CORNER */
-        .floating-cart-btn {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            background: var(--ws-dark);
-            color: white;
-            padding: 14px 22px;
-            border-radius: 30px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: bold;
-            cursor: pointer;
-            z-index: 999;
-            transition: all 0.3s;
-        }
-        .floating-cart-btn:hover { transform: scale(1.05); }
-        .cart-badge {
-            background: #ff3b30;
-            color: white;
-            border-radius: 50%;
-            width: 22px;
-            height: 22px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
-        }
-
-        /* MODAL CARRITO */
-        .cart-modal {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.6);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
-        }
-        .cart-modal.active { display: flex; }
-        .cart-content {
-            background: white;
-            width: 90%;
-            max-width: 450px;
-            border-radius: 20px;
-            padding: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            position: relative;
-        }
-        .cart-content h3 { margin-top: 0; color: var(--ws-dark); }
-        .cart-items-list { max-height: 250px; overflow-y: auto; margin: 15px 0; border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 10px 0; }
-        .cart-item-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
-        .btn-checkout {
-            width: 100%;
-            background: var(--ws-green);
-            color: white;
-            border: none;
-            padding: 14px;
-            border-radius: 12px;
-            font-weight: bold;
-            font-size: 1rem;
-            cursor: pointer;
-            text-align: center;
-            text-decoration: none;
-            display: block;
-            box-sizing: border-box;
-        }
-        .close-modal {
-            position: absolute; top: 15px; right: 20px; font-size: 1.5rem; cursor: pointer; color: #999;
-        }
+        .cart-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 9998; opacity: 0; visibility: hidden; transition: 0.3s; backdrop-filter: blur(3px); }
+        .cart-overlay.active { opacity: 1; visibility: visible; }
+        .cart-sidebar { position: fixed; top: 0; right: -400px; width: 100%; max-width: 380px; height: 100vh; background: white; z-index: 9999; box-shadow: -10px 0 30px rgba(0,0,0,0.1); transition: 0.3s ease-in-out; display: flex; flex-direction: column; }
+        .cart-sidebar.active { right: 0; }
+        .cart-header { padding: 25px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; background: #f8f9fa; }
+        .cart-header h2 { margin: 0; font-size: 1.4rem; color: var(--ws-dark); font-weight: 800; }
+        .close-cart { font-size: 2rem; font-weight: bold; cursor: pointer; color: #aaa; border: none; background: none; line-height: 1; }
+        .close-cart:hover { color: #333; }
+        .cart-body { padding: 25px; overflow-y: auto; flex-grow: 1; display: flex; flex-direction: column; gap: 15px; }
+        .cart-footer { padding: 25px; border-top: 1px solid #eee; background: white; margin-top: auto; }
+        .cart-total { display: flex; justify-content: space-between; font-size: 1.3rem; font-weight: 900; margin-bottom: 20px; color: #000; }
+        .btn-checkout { width: 100%; background: var(--ws-green); color: white; padding: 18px; border: none; border-radius: 12px; font-weight: bold; font-size: 1.05rem; cursor: pointer; transition: 0.3s; box-shadow: 0 4px 15px rgba(37,211,102,0.3); }
+        .btn-checkout:hover { background: #1da852; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37,211,102,0.4); }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <h1>🎬 Catálogo de Membresías & Cuentas</h1>
-        <a href="index.html" class="btn-volver">⬅ Volver al Catálogo Principal</a>
+    <div class="marquee-wrapper">
+        <div class="marquee-content">Accede a las mejores plataformas de entretenimiento, diseño e inteligencia artificial de forma segura y económica.</div>
     </div>
 
-    <div class="hero-banner">
-        <h2>Entretenimiento, IA y Herramientas Digitales</h2>
-        <p>Selecciona las plataformas de tu interés y recíbelas directamente en tu correo o WhatsApp de forma rápida y segura.</p>
-    </div>
-
-    <div class="controls-container">
-        <div class="search-box">
-            <input type="text" id="searchInput" onkeyup="filterPlatforms()" placeholder="🔍 Buscar cuenta (ej. ChatGPT, Netflix, Canva, Antivirus)...">
-        </div>
-        <div class="filter-buttons">
-            <button class="filter-btn active" onclick="setCategory('todas', this)">Todas</button>
-            <button class="filter-btn" onclick="setCategory('Streaming', this)">🍿 Streaming</button>
-            <button class="filter-btn" onclick="setCategory('IA', this)">🤖 Inteligencia Artificial</button>
-            <button class="filter-btn" onclick="setCategory('Diseño', this)">🎨 Diseño & Edición</button>
-            <button class="filter-btn" onclick="setCategory('Seguridad', this)">🛡️ Antivirus & VPN</button>
-        </div>
-    </div>
-
-    <div class="streaming-grid" id="platformsGrid">
+    <div class="main-wrapper">
+        <div class="breadcrumbs">
+            <a href="index.html">🏠 Inicio Catálogo</a> > <span>Membresías & Plataformas</span>
         </div>
 
-    <div class="floating-cart-btn" onclick="toggleCartModal()">
-        🛒 Mi Pedido
-        <div class="cart-badge" id="cartCount">0</div>
-    </div>
+        <div class="hero-banner">
+            <h2>Membresías & Cuentas Digitales</h2>
+            <p>Selecciona las plataformas de tu interés, agrégalas a tu pedido y recíbelas directamente en tu WhatsApp.</p>
+        </div>
 
-    <div class="cart-modal" id="cartModal">
-        <div class="cart-content">
-            <span class="close-modal" onclick="toggleCartModal()">&times;</span>
-            <h3>🛍️ Tu Pedido de Membresías</h3>
-            <div class="cart-items-list" id="cartItemsList">
-                <p style="text-align:center; color:#888;">El carrito está vacío.</p>
+        <div class="controls-container">
+            <div class="search-box">
+                <input type="text" id="searchInput" onkeyup="filterPlatforms()" placeholder="🔍 Buscar (ej. ChatGPT, Netflix, Canva)...">
             </div>
-            <div style="display:flex; justify-content:space-between; font-weight:bold; font-size:1.1rem; margin-bottom:15px;">
-                <span>Total Estimado:</span>
-                <span id="cartTotalText" style="color:var(--ws-dark);">COP $0</span>
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="setCategory('todas', this)">Todas</button>
+                <button class="filter-btn" onclick="setCategory('Streaming', this)">🍿 Streaming</button>
+                <button class="filter-btn" onclick="setCategory('IA', this)">🤖 Inteligencia Artificial</button>
+                <button class="filter-btn" onclick="setCategory('Diseño', this)">🎨 Diseño & Edición</button>
+                <button class="filter-btn" onclick="setCategory('Seguridad', this)">🛡️ Seguridad</button>
             </div>
-            <button class="btn-checkout" onclick="checkoutWhatsapp()">📲 Confirmar Pedido por WhatsApp</button>
+        </div>
+
+        <div class="streaming-grid" id="platformsGrid">
+            </div>
+
+        <div class="scroll-section">
+            <p style="font-weight: 900; font-size: 1.3rem; color:#000; margin-bottom: 20px;">👇 MIRA NUESTRAS OTRAS HERRAMIENTAS:</p>
+            <div class="scroll-container" id="product-scroll"></div>
         </div>
     </div>
+
+    <a href="#" id="waLink" target="_blank" class="floating-wa" title="Soporte WhatsApp Directo">💬</a>
+    <div class="floating-cart" onclick="openCart()" title="Ver mi pedido">🛒<div class="cart-badge" id="cartCount">0</div></div>
+
+    <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header"><h2>Mi Pedido 🛒</h2><button class="close-cart" onclick="closeCart()">&times;</button></div>
+        <div class="cart-body" id="cartItems"></div>
+        <div class="cart-footer">
+            <div class="cart-total"><span>Total Estimado:</span><span id="cartTotalText">COP $0</span></div>
+            <button class="btn-checkout" onclick="checkoutWhatsapp()">Confirmar Pedido por WhatsApp 📲</button>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p><strong>CONÉCTATE CON NOSOTROS EN REDES SOCIALES</strong></p>
+            <div class="social-links">
+                <a href="https://whatsapp.com/channel/0029Va4o0RV2f3ENoTURyU40" class="social-btn bg-wa" target="_blank" title="Canal de WhatsApp"><svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.176.001 6.163 1.237 8.407 3.483 2.245 2.246 3.48 5.234 3.479 8.414-.004 6.597-5.342 11.945-11.893 11.945-1.996-.001-3.957-.503-5.69-1.462L0 24zm6.59-4.846c1.62.962 3.235 1.467 4.962 1.468 5.334 0 9.673-4.321 9.676-9.635.001-2.574-1.002-4.994-2.825-6.819C16.638 2.344 14.225 1.34 11.66 1.34 6.326 1.34 1.986 5.661 1.983 10.977c-.001 1.8.473 3.559 1.373 5.111l-.995 3.633 3.689-.967zM17.18 14.9c-.3-.15-1.77-.874-2.046-.975-.276-.102-.477-.152-.677.151-.202.303-.778.976-.953 1.178-.177.202-.353.228-.654.077-.3-.15-1.264-.465-2.41-1.487-.893-.795-1.494-1.778-1.67-2.079-.176-.3-.02-.463.13-.613.136-.134.3-.349.45-.524.15-.175.2-.299.3-.5.1-.201.05-.376-.025-.526-.075-.15-.677-1.633-.927-2.233-.243-.585-.49-.506-.677-.516-.174-.008-.375-.01-.576-.01-.2 0-.527.075-.802.375-.276.3-.1.575.451 1.226.55.65.9 1.326 1.05 1.526.15.2 2.054 3.136 4.975 4.393.695.299 1.238.478 1.66.614.698.222 1.334.19 1.838.115.56-.083 1.77-.724 2.022-1.424.252-.699.252-1.299.176-1.424-.075-.124-.275-.2-.575-.35z"/></svg></a>
+                <a href="https://chat.whatsapp.com/FvYIDsoo7NR7PLwtd0Vhwv " class="social-btn bg-wa" target="_blank" title="Grupo de WhatsApp"><svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.176.001 6.163 1.237 8.407 3.483 2.245 2.246 3.48 5.234 3.479 8.414-.004 6.597-5.342 11.945-11.893 11.945-1.996-.001-3.957-.503-5.69-1.462L0 24zm6.59-4.846c1.62.962 3.235 1.467 4.962 1.468 5.334 0 9.673-4.321 9.676-9.635.001-2.574-1.002-4.994-2.825-6.819C16.638 2.344 14.225 1.34 11.66 1.34 6.326 1.34 1.986 5.661 1.983 10.977c-.001 1.8.473 3.559 1.373 5.111l-.995 3.633 3.689-.967zM17.18 14.9c-.3-.15-1.77-.874-2.046-.975-.276-.102-.477-.152-.677.151-.202.303-.778.976-.953 1.178-.177.202-.353.228-.654.077-.3-.15-1.264-.465-2.41-1.487-.893-.795-1.494-1.778-1.67-2.079-.176-.3-.02-.463.13-.613.136-.134.3-.349.45-.524.15-.175.2-.299.3-.5.1-.201.05-.376-.025-.526-.075-.15-.677-1.633-.927-2.233-.243-.585-.49-.506-.677-.516-.174-.008-.375-.01-.576-.01-.2 0-.527.075-.802.375-.276.3-.1.575.451 1.226.55.65.9 1.326 1.05 1.526.15.2 2.054 3.136 4.975 4.393.695.299 1.238.478 1.66.614.698.222 1.334.19 1.838.115.56-.083 1.77-.724 2.022-1.424.252-.699.252-1.299.176-1.424-.075-.124-.275-.2-.575-.35z"/></svg></a>
+                <a href="https://www.youtube.com/@wildersarriahernandez" class="social-btn bg-yt" target="_blank" title="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                <a href="https://www.youtube.com/@wicontable" class="social-btn bg-yt" target="_blank" title="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                <a href="https://www.tiktok.com/@wildersarriahernandez" class="social-btn bg-tk" target="_blank" title="TikTok"><svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.9-.32-1.98-.23-2.81.33-.85.51-1.44 1.42-1.58 2.4-.11.68-.03 1.37.18 2.03.35.81 1.05 1.48 1.88 1.76.71.21 1.48.21 2.19.04 1.02-.14 1.98-.77 2.56-1.6.43-.59.66-1.31.71-2.04.08-3.38.03-6.76.04-10.14z"/></svg></a>
+                <a href="https://www.facebook.com/wicontable" class="social-btn bg-fb" target="_blank" title="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                <a href="https://www.instagram.com/wicontable/" class="social-btn bg-ig" target="_blank" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+                <a href="https://www.linkedin.com/in/wildersarriahernandez" class="social-btn bg-li" target="_blank" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+            </div>
+            <p class="copyright">© 2026 WiCONTABLE. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="productos.js"></script>
 
     <script>
-        const miTelefono = "573156016386";
-
-        /* =================================================================
-           BASE DE DATOS DE MEMBRESÍAS
-           👉 Para agregar nuevas fotos, colócalas en la carpeta 'streaming/' 
-              y vincula su ruta aquí (ej: 'streaming/nombre-foto.png')
-           ================================================================= */
+        let cart = JSON.parse(localStorage.getItem('wicontable_cart')) || [];
+        const telBase = typeof miTelefono !== 'undefined' ? miTelefono : '573156016386';
+        
+        // BASE DE DATOS LOCAL DE MEMBRESÍAS
         const membresias = [
-            {
-                id: "m-01",
-                nombre: "ChatGPT PLUS",
-                categoria: "IA",
-                desc: "Acceso completo por 30 días a modelos GPT-4o, generación de imágenes y voz en tiempo real.",
-                precioNum: 25000,
-                precioTxt: "COP $25.000",
-                vigencia: "/ Mes",
-                imagen: "streaming/chatgpt.png"
-            },
-            {
-                id: "m-02",
-                nombre: "Netflix Perfil 4K Ultra HD",
-                categoria: "Streaming",
-                desc: "1 Perfil privado con PIN exclusivo en calidad 4K Ultra HD. Sin interrupciones.",
-                precioNum: 15000,
-                precioTxt: "COP $15.000",
-                vigencia: "/ Mes",
-                imagen: "streaming/netflix.png"
-            },
-            {
-                id: "m-03",
-                nombre: "Canva PRO Personal",
-                categoria: "Diseño",
-                desc: "Acceso a todo el catálogo Premium de plantillas, fotos, elementos y kit de marca.",
-                precioNum: 18000,
-                precioTxt: "COP $18.000",
-                vigencia: "/ Mes",
-                imagen: "streaming/canva.png"
-            },
-            {
-                id: "m-04",
-                nombre: "Disney+ Premium",
-                categoria: "Streaming",
-                desc: "Incluye deportes en vivo por ESPN y todo el catálogo de películas y series.",
-                precioNum: 14000,
-                precioTxt: "COP $14.000",
-                vigencia: "/ Mes",
-                imagen: "streaming/disney.png"
-            },
-            {
-                id: "m-05",
-                nombre: "YouTube Premium",
-                categoria: "Streaming",
-                desc: "Música e historias sin anuncios comerciales, reproducción en segundo plano y descargas.",
-                precioNum: 12000,
-                precioTxt: "COP $12.000",
-                vigencia: "/ Mes",
-                imagen: "streaming/youtube.png"
-            },
-            {
-                id: "m-06",
-                nombre: "Kaspersky Total Security",
-                categoria: "Seguridad",
-                desc: "Licencia de protección integral contra virus, malware y ransomware para PC o Celular.",
-                precioNum: 35000,
-                precioTxt: "COP $35.000",
-                vigencia: "/ Año",
-                imagen: "streaming/kaspersky.png"
-            }
+            { id: "m-01", nombre: "ChatGPT PLUS", categoria: "IA", desc: "Acceso completo por 30 días a modelos GPT-4o, generación de imágenes y voz en tiempo real.", precioTxt: "COP $25.000", vigencia: "/ Mes", imagen: "streaming/chatgpt.png" },
+            { id: "m-02", nombre: "Netflix Perfil 4K Ultra HD", categoria: "Streaming", desc: "1 Perfil privado con PIN exclusivo en calidad 4K Ultra HD. Sin interrupciones.", precioTxt: "COP $15.000", vigencia: "/ Mes", imagen: "streaming/netflix.png" },
+            { id: "m-03", nombre: "Canva PRO Personal", categoria: "Diseño", desc: "Acceso a todo el catálogo Premium de plantillas, fotos, elementos y kit de marca.", precioTxt: "COP $18.000", vigencia: "/ Mes", imagen: "streaming/canva.png" },
+            { id: "m-04", nombre: "Disney+ Premium", categoria: "Streaming", desc: "Incluye deportes en vivo por ESPN y todo el catálogo de películas y series.", precioTxt: "COP $14.000", vigencia: "/ Mes", imagen: "streaming/disney.png" },
+            { id: "m-05", nombre: "YouTube Premium", categoria: "Streaming", desc: "Música e historias sin anuncios comerciales, reproducción en segundo plano y descargas.", precioTxt: "COP $12.000", vigencia: "/ Mes", imagen: "streaming/youtube.png" },
+            { id: "m-06", nombre: "Kaspersky Total Security", categoria: "Seguridad", desc: "Licencia de protección integral contra virus, malware y ransomware para PC o Celular.", precioTxt: "COP $35.000", vigencia: "/ Año", imagen: "streaming/kaspersky.png" }
         ];
 
         let selectedCategory = "todas";
-        let localCart = JSON.parse(localStorage.getItem('wicontable_cart')) || [];
 
-        // RENDERIZAR CUADRÍCULA
+        window.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('waLink').href = `https://wa.me/${telBase}?text=Hola,%20tengo%20una%20duda%20sobre%20las%20Membresías.`;
+            renderGrid();
+            updateCartUI();
+
+            // CARGAR EL SCROLL DE HERRAMIENTAS (Usando productos.js original)
+            const scrollBox = document.getElementById('product-scroll');
+            if (scrollBox && typeof productos !== 'undefined') {
+                productos.forEach(prod => {
+                    if(prod.id !== 10) { // Omitimos la id 10 porque es esta misma página
+                        const m = document.createElement('a'); 
+                        m.className = 'mini-card'; 
+                        m.href = `detalle.html?id=${prod.id}`;
+                        
+                        let miniBadgeHTML = '';
+                        if (prod.etiqueta) {
+                            let textUpper = prod.etiqueta.toUpperCase();
+                            let bCls = 'badge-activa';
+                            if (textUpper.includes('NUEVO')) bCls = 'badge-nuevo';
+                            else if (textUpper.includes('MANTENIMIENTO')) bCls = 'badge-manten';
+                            else if (textUpper.includes('PRODUCCI')) bCls = 'badge-prod';
+                            else if (textUpper.includes('AGOTADO')) bCls = 'badge-agotado';
+                            else if (textUpper.includes('DISPONIBLE')) bCls = 'badge-disponible';
+                            miniBadgeHTML = `<div class="badge-base ${bCls}" style="transform: scale(0.7); transform-origin: top right; top: 10px; right: 10px;">${prod.etiqueta}</div>`;
+                        }
+
+                        const safeFoto = (prod.fotos && prod.fotos.length>0) ? prod.fotos[0] : "img/logowi.png";
+                        m.innerHTML = `${miniBadgeHTML}<img src="${safeFoto}" class="mini-img"><h4>${prod.nombre}</h4><div style="font-weight:900; color:#128C7E;">${prod.precio}</div>`;
+                        scrollBox.appendChild(m);
+                    }
+                });
+            }
+        });
+
+        // FUNCIONES DE LA TIENDA DE MEMBRESÍAS
         function renderGrid() {
             const grid = document.getElementById('platformsGrid');
             const searchVal = document.getElementById('searchInput').value.toLowerCase();
@@ -436,96 +263,21 @@
             }
 
             filtered.forEach(item => {
-                const card = document.createElement('div');
-                card.className = "platform-card";
-                card.innerHTML = `
-                    <div class="img-container">
-                        <img src="${item.imagen}" alt="${item.nombre}" onerror="this.src='https://via.placeholder.com/300x160/128C7E/ffffff?text=${encodeURIComponent(item.nombre)}'">
-                        <span class="category-badge">${item.categoria}</span>
-                    </div>
-                    <div class="card-body">
-                        <h3 class="platform-title">${item.nombre}</h3>
-                        <p class="platform-desc">${item.desc}</p>
-                        <div class="price-tag">${item.precioTxt} <span>${item.vigencia}</span></div>
-                        <button class="btn-add-cart" onclick="addToCart('${item.id}')">
-                            🛒 Agregar al Carrito
-                        </button>
+                grid.innerHTML += `
+                    <div class="platform-card">
+                        <div class="img-container">
+                            <img src="${item.imagen}" alt="${item.nombre}" onerror="this.src='https://via.placeholder.com/300x160/128C7E/ffffff?text=${encodeURIComponent(item.nombre)}'">
+                            <span class="category-badge">${item.categoria}</span>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="platform-title">${item.nombre}</h3>
+                            <p class="platform-desc">${item.desc}</p>
+                            <div class="price-tag">${item.precioTxt} <span>${item.vigencia}</span></div>
+                            <button class="btn-add-cart" onclick="addToCart('${item.id}')">🛒 Agregar al Carrito</button>
+                        </div>
                     </div>
                 `;
-                grid.appendChild(card);
             });
-
-            updateCartUI();
-        }
-
-        // AGREGAR AL CARRITO (COMPATIBLE CON EL DE INDEX.HTML)
-        function addToCart(itemId) {
-            const item = membresias.find(m => m.id === itemId);
-            if(!item) return;
-
-            const existingIndex = localCart.findIndex(c => c.nombre === item.nombre);
-            if(existingIndex > -1) {
-                localCart[existingIndex].cantidad += 1;
-            } else {
-                localCart.push({
-                    id: item.id,
-                    nombre: item.nombre,
-                    precio: item.precioTxt,
-                    cantidad: 1
-                });
-            }
-
-            localStorage.setItem('wicontable_cart', JSON.stringify(localCart));
-            updateCartUI();
-            
-            // Animación suave de confirmación
-            alert(`✅ Se agregó "${item.nombre}" a tu pedido.`);
-        }
-
-        // ACTUALIZAR BADGE Y CONTENIDO DEL CARRITO
-        function updateCartUI() {
-            localCart = JSON.parse(localStorage.getItem('wicontable_cart')) || [];
-            const cartCount = document.getElementById('cartCount');
-            const itemsList = document.getElementById('cartItemsList');
-            const totalText = document.getElementById('cartTotalText');
-
-            let totalItems = 0;
-            let sumTotal = 0;
-            itemsList.innerHTML = "";
-
-            if(localCart.length === 0) {
-                itemsList.innerHTML = `<p style="text-align:center; color:#888;">El carrito está vacío.</p>`;
-            } else {
-                localCart.forEach((item, index) => {
-                    totalItems += item.cantidad;
-                    // Limpieza simple del número de precio
-                    const numPrice = parseInt(item.precio.replace(/[^0-9]/g, '')) || 0;
-                    sumTotal += numPrice * item.cantidad;
-
-                    itemsList.innerHTML += `
-                        <div class="cart-item-row">
-                            <div>
-                                <b>${item.nombre}</b><br>
-                                <small style="color:var(--ws-dark);">${item.cantidad} x ${item.precio}</small>
-                            </div>
-                            <button onclick="removeFromCart(${index})" style="background:none; border:none; color:red; font-weight:bold; cursor:pointer;">&times;</button>
-                        </div>
-                    `;
-                });
-            }
-
-            cartCount.innerText = totalItems;
-            totalText.innerText = `COP $${sumTotal.toLocaleString('es-CO')}`;
-        }
-
-        function removeFromCart(index) {
-            localCart.splice(index, 1);
-            localStorage.setItem('wicontable_cart', JSON.stringify(localCart));
-            updateCartUI();
-        }
-
-        function toggleCartModal() {
-            document.getElementById('cartModal').classList.toggle('active');
         }
 
         function setCategory(cat, btn) {
@@ -534,34 +286,67 @@
             btn.classList.add('active');
             renderGrid();
         }
+        function filterPlatforms() { renderGrid(); }
 
-        function filterPlatforms() {
-            renderGrid();
-        }
-
-        // CERRAR PEDIDO POR WHATSAPP
-        function checkoutWhatsapp() {
-            if(localCart.length === 0) {
-                alert("Tu carrito está vacío. Elige primero una membresía.");
-                return;
+        /* FUNCIONES DEL CARRITO UNIFICADO (ORIGINAL) */
+        function parsePrice(str) { const num = String(str||"").replace(/\D/g, ''); return num ? parseInt(num) : 0; }
+        
+        function addToCart(id) {
+            // Busca en membresías (Esta página) o en productos.js (Si viniera de otro lado)
+            let prod = membresias.find(p => p.id === id); 
+            let nombreReal = ""; let precioReal = "";
+            
+            if(prod) {
+                nombreReal = prod.nombre; precioReal = prod.precioTxt;
+            } else if (typeof productos !== 'undefined') {
+                prod = productos.find(p => p.id === id);
+                if(prod) { nombreReal = prod.nombre; precioReal = prod.precio; }
             }
+            if(!prod) return;
 
-            let msg = "¡Hola Wilder! 👋 Vengo de tu página de Membresías y quiero solicitar las siguientes cuentas:\n\n";
-            let sumTotal = 0;
-
-            localCart.forEach(item => {
-                const numPrice = parseInt(item.precio.replace(/[^0-9]/g, '')) || 0;
-                sumTotal += numPrice * item.cantidad;
-                msg += `🔹 *${item.cantidad}x* ${item.nombre} (${item.precio})\n`;
-            });
-
-            msg += `\n*TOTAL APROXIMADO: COP $${sumTotal.toLocaleString('es-CO')}*\n\n¿Me confirmas disponibilidad para realizar la transferencia?`;
-
-            window.open(`https://wa.me/${miTelefono}?text=${encodeURIComponent(msg)}`, '_blank');
+            const ext = cart.find(i => i.id === id); 
+            if(ext) ext.cantidad++; else cart.push({id: id, nombre: nombreReal, precio: precioReal, cantidad: 1});
+            
+            localStorage.setItem('wicontable_cart', JSON.stringify(cart)); 
+            updateCartUI(); 
+            openCart();
         }
 
-        // Cargar por primera vez
-        document.addEventListener('DOMContentLoaded', renderGrid);
+        function removeFromCart(id) { 
+            cart = cart.filter(i => i.id !== id); 
+            localStorage.setItem('wicontable_cart', JSON.stringify(cart)); 
+            updateCartUI(); 
+        }
+        function openCart() { document.getElementById('cartSidebar').classList.add('active'); document.getElementById('cartOverlay').classList.add('active'); }
+        function closeCart() { document.getElementById('cartSidebar').classList.remove('active'); document.getElementById('cartOverlay').classList.remove('active'); }
+        
+        function updateCartUI() {
+            document.getElementById('cartCount').innerText = cart.reduce((a, i) => a + i.cantidad, 0);
+            const box = document.getElementById('cartItems');
+            if(cart.length === 0) { 
+                box.innerHTML = '<p style="text-align:center; color:#888; margin-top:50px;">Carrito vacío 🛒</p>'; 
+                document.getElementById('cartTotalText').innerText="COP $0"; 
+                return; 
+            }
+            box.innerHTML = ''; let tot = 0;
+            cart.forEach(i => { 
+                tot += parsePrice(i.precio) * i.cantidad; 
+                box.innerHTML += `<div style="background:#f8f9fa; padding:15px; border-radius:10px; margin-bottom:10px; display:flex; justify-content:space-between; align-items:center; border:1px solid #eee;"><div><b>${i.nombre}</b><br><span style="color:#128C7E; font-weight:bold;">${i.cantidad} x ${i.precio}</span></div><button onclick="removeFromCart('${i.id}')" style="color:red; background:none; border:none; font-weight:900; font-size:1.1rem; cursor:pointer;">✖</button></div>`; 
+            });
+            document.getElementById('cartTotalText').innerText = `COP $${tot.toLocaleString('es-CO')}`;
+        }
+
+        function checkoutWhatsapp() {
+            if(cart.length===0) return alert("Agrega herramientas o membresías al pedido primero.");
+            let msg = "¡Hola Wilder! 👋 Vengo de tu catálogo web y quiero confirmar el siguiente pedido:\n\n";
+            let tot = 0; 
+            cart.forEach(i => { 
+                tot += parsePrice(i.precio) * i.cantidad; 
+                msg += `🔸 *${i.cantidad}x* ${i.nombre} (${i.precio})\n`; 
+            });
+            msg += `\n*TOTAL APROXIMADO: COP $${tot.toLocaleString('es-CO')}*\n\n¿Me confirmas disponibilidad para transferir?`;
+            window.open(`https://wa.me/${telBase}?text=${encodeURIComponent(msg)}`, '_blank');
+        }
     </script>
 </body>
 </html>

@@ -1,6 +1,21 @@
 const miTelefono = "573156016386";
 
 const productos = [
+    {
+        id: 2,
+        nombre: "PDFs Downloader (DIAN)",
+        url: "pdfs-downloader.html",
+        formato: "Extensión Web .crx",
+        mostrarTecnica: true,
+etiqueta: "¡EN PRODUCCION!",
+        desc: "<b>REF006</b> <p>Accede y descarga cualquier documento electrónico en PDF directamente desde la DIAN de forma rápida, sencilla y sin procesos manuales innecesarios; ademas no tienes de que preocuparte por los catpchas ni contraseñas implementados por la DIAN.<p><b>Lanzamiento el 03-08-2026</b>",
+        caracteristicas: ["No necesitas generar TOKEN, ni comprar Certificado Digital DIAN para la descarga PDFs.","Carga un archivo EXCEL con los CUDE/CUDS/CUFE/CUNE y sus respectivo NIT para el módulo Descarga PRO; procesa en tiempo de respuesta según captcha de 3, 6, 9 segundos por PDF.", "Descarga de manera más rápida cada 0.5seg solo Facturas Electrónicas y Notas desde el Módulo Descarga F.E, sin catpcha, sin NIT.", "Además en el Módulo Tools podras renombrar, listar y exportar los datos de los PDFS de manera masiva."],
+        nota: "Para brindarle un soporte técnico oportuno, requerimos conectarnos de forma remota a su equipo a través de AnyDesk. Tenga en cuenta que este acceso quedará registrado de manera individual en cada computadora durante la instalación. Por su seguridad, nuestro equipo se comunicará exclusivamente al número de móvil que tiene registrado con nosotros. Asimismo, le recordamos que el funcionamiento de nuestra herramienta depende de plataformas de terceros integradas; <b>cualquier cambio en los parámetros de dichas plataformas nos exime de responsabilidad sobre la continuidad del servicio.</b>",
+        precio: "COP $30.000",
+        video: "video/Pdfs.mp4",
+        youtube: "https://youtu.be/hiZn2nFgtX4",
+        fotos: ["img/p2-0.png", "img/p2-1.png", "img/p2-2.jpg","img/p2-3.png"]
+    },           
 {
         id: 12,
         nombre: "Reportes Renta P.N A.G2025 (DIAN)",
@@ -15,22 +30,7 @@ const productos = [
         video: "video/ReportePN.mp4",
         youtube: "https://youtu.be/qa_wJjN3Nvo",
         fotos: ["img/p12-0.png", "img/p12-1.png", "img/p12-2.png", "img/p12-3.png"]
-    },     
-    {
-        id: 2,
-        nombre: "PDFs Downloader (DIAN)",
-        url: "pdfs-downloader.html",
-        formato: "Extensión Web .crx",
-        mostrarTecnica: true,
-etiqueta: "¡EN PRODUCCION!",
-        desc: "<b>REF006</b> <p>Accede y descarga cualquier documento electrónico en PDF directamente desde la DIAN de forma rápida, sencilla y sin procesos manuales innecesarios; ademas no tienes de que preocuparte por los catpchas ni contraseñas implementados por la DIAN.<p><b>Lanzamiento el XX-08-2026</b>",
-        caracteristicas: ["No necesitas generar TOKEN, ni Certificado Digital DIAN para la descarga PDFs.","Carga un archivo EXCEL ó pega directamente los CUDE, CUDS, CUFE, CUNE, con su respectivo NIT para el módulo Descarga PRO.", "Procesa en tiempo de respuesta según captcha de 3, 6, 9 segundos por documento.", "Descarga de manera más rápida solo Facturas Electrónicas desde el Módulo Descarga F.E, sin catpcha.", "Módulo Tools podras renombrar y listar de manera masiva los PDFs."],
-        nota: "Para brindarle un soporte técnico oportuno, requerimos conectarnos de forma remota a su equipo a través de AnyDesk. Tenga en cuenta que este acceso quedará registrado de manera individual en cada computadora durante la instalación. Por su seguridad, nuestro equipo se comunicará exclusivamente al número de móvil que tiene registrado con nosotros. Asimismo, le recordamos que el funcionamiento de nuestra herramienta depende de plataformas de terceros integradas; <b>cualquier cambio en los parámetros de dichas plataformas nos exime de responsabilidad sobre la continuidad del servicio.</b>",
-        precio: "COP $30.000",
-        video: "video/Pdfs.mp4",
-        youtube: "https://youtu.be/hiZn2nFgtX4",
-        fotos: ["img/p2-0.png", "img/p2-1.png", "img/p2-2.jpg","img/p2-3.png"]
-    },      
+    },        
 {
         id: 7,
         nombre: "WiCONTABLE Lite",

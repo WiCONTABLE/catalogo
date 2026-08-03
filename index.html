@@ -22,6 +22,24 @@
 }
 </script>
 
+
+/* AJUSTES PARA PANTALLAS MÓVILES (Celulares) */
+@media (max-width: 768px) {
+    /* 1. Reduce el espacio gris a los lados de la pantalla */
+    .container, .main-wrapper { 
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+    
+    /* 2. Fuerza a que la tarjeta ocupe el 100% del espacio disponible (1 sola columna) */
+    .file-grid, .product-grid, .streaming-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important; /* Reduce un poco la separación vertical entre tarjetas */
+    }
+}
+
+
+
     <style>
         :root {
             --ws-green: #25D366;

@@ -135,7 +135,7 @@ etiqueta: "DISPONIBLE",
         desc: "El software de escritorio remoto de alto rendimiento que permite compartir el escritorio sin latencia, un control remoto estable y una transmisión de datos rápida y segura entre dispositivos.<p><b> </b><p>",
         caracteristicas: ["Vea y controle la pantalla de otro dispositivo.", "No requiere licencia y puedes usarlo si formateas tu PC en el futuro.", "Acceda a su dispositivo remoto mediante contraseña sin tener que aceptar la sesión remota manualmente."],
         nota: "Se trata de una aplicación ejecutable (EXE) que ha sido ajustada para mantener siempre la sesión activa y sin limites de tiempo; la aplicación se mantiene operativa de forma indefinida. <b>Se recomienda no actualizar y mantener la versión inicial.</b> En caso que el usuario tenga alguna versión instalada anteriormente se recomienda limpiar los registros mediante regedit para el óptimo funcionamiento de esta versión.",
-        precio: "COP $20.000",
+        precio: "COP $20.000 // USDT $7",
         video: "",
         fotos: ["img/p9-0.png"]
     },

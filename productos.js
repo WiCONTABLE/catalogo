@@ -13,7 +13,7 @@ etiqueta: "¡EN PRODUCCION!",
         nota: "<p>Para brindarle un soporte técnico oportuno, requerimos conectarnos de forma remota a su equipo a través de AnyDesk.<p> <p>Tenga en cuenta que este acceso quedará registrado de manera individual en cada computadora durante la instalación. Por su seguridad, nuestro equipo se comunicará exclusivamente al número de móvil ó @usuario que tiene registrado con nosotros.<p> <p>Asimismo, le recordamos que el funcionamiento de nuestra herramienta depende de plataformas de terceros integradas; <b>cualquier cambio en los parámetros de dichas plataformas nos exime de responsabilidad sobre la continuidad del servicio.</b><p> <b><p>RECUERDE</b> que es importante ver el videotutorial antes de adquirir la herramienta. De esta manera, al finalizar la instalación, le será más fácil resolver cualquier duda que no se haya abordado en el video.</p>",
         precio: "COP $50.000",
         video: "video/Pdfs.mp4",
-        youtube: "https://youtu.be/hiZn2nFgtX4",
+        youtube: "https://youtu.be/S2DYfhnps-c",
         fotos: ["img/p2-0.png", "img/p2-1.png", "img/p2-2.png","img/p2-3.png","img/p2-4.png"]
     },           
 {

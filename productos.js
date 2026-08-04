@@ -14,7 +14,7 @@ etiqueta: "¡EN PRODUCCION!",
         precio: "COP $50.000",
         video: "video/Pdfs.mp4",
         youtube: "https://youtu.be/S2DYfhnps-c",
-        fotos: ["img/p2-0.png", "img/p2-1.png", "img/p2-2.png","img/p2-3.png","img/p2-4.png"]
+        fotos: ["img/p2-0.png", "img/p2-1.png", "img/p2-2.png","img/p2-3.png","img/p2-4.png","img/p2-5.jpg"]
     },           
 {
         id: 12,

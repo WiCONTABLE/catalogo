@@ -169,7 +169,7 @@ etiqueta: "DISPONIBLE",
     },
 {
         id: 11,
-        nombre: "Declaración de Renta P.N.",
+        nombre: "Declaración de Renta Persona Natural",
         url: "declaracion-renta-pn.html",
         formato: "Consultoria Contable",
         mostrarTecnica: false,

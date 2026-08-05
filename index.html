@@ -113,6 +113,36 @@
         .badge-disponible { background: linear-gradient(90deg, #00c6ff, #0072ff, #00c6ff); background-size: 200% auto; box-shadow: 0 0 10px rgba(0, 198, 255, 0.5); animation: glow-pulse-disponible 2s linear infinite; }
         @keyframes glow-pulse-disponible { 0% { background-position: 0% center; box-shadow: 0 0 8px rgba(0,198,255,0.4); } 50% { box-shadow: 0 0 18px rgba(0,114,255,0.9); } 100% { background-position: 200% center; box-shadow: 0 0 8px rgba(0,198,255,0.4); } }
 
+
+
+        /* 🌟 ANIMACIÓN PREMIUM PARA PRODUCTOS NUEVOS 🌟 */
+        
+        /* 1. Efecto Latido para la etiqueta */
+        .badge-nuevo { 
+            background: linear-gradient(90deg, #ff0000, #ff8c00, #ff0000); 
+            background-size: 200% auto; 
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); 
+            /* Se combinan el movimiento de color y el latido */
+            animation: glow-pulse-nuevo 2s linear infinite, latido-nuevo 1.5s ease-in-out infinite !important; 
+        }
+        @keyframes latido-nuevo {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+        }
+
+        /* 2. Efecto Resplandor (Neón) para la tarjeta entera */
+        .card-nuevo-highlight {
+            border: 2px solid rgba(255, 140, 0, 0.5) !important;
+            animation: card-neon-pulse 2s infinite alternate;
+        }
+        @keyframes card-neon-pulse {
+            0% { box-shadow: 0 4px 15px rgba(255, 140, 0, 0.1); }
+            100% { box-shadow: 0 10px 30px rgba(255, 140, 0, 0.4); transform: translateY(-3px); }
+        }
+
+
+
+
         /* 🔥 AJUSTE PARA COMPUTADOR (PC) */
         .card-img { width: 100%; height: 230px; object-fit: contain; margin-bottom: 15px; cursor: pointer; }
         
@@ -306,11 +336,16 @@
                 card.className = 'product-card';
                 
                 let badgeHTML = '';
-                if (p.etiqueta) {
+                                if (p.etiqueta) {
                     let textUpper = p.etiqueta.toUpperCase();
                     let badgeColorClass = 'badge-activa'; 
-                    if (textUpper.includes('NUEVO')) badgeColorClass = 'badge-nuevo';
+                    
+                    if (textUpper.includes('NUEVO')) {
+                        badgeColorClass = 'badge-nuevo';
+                        card.classList.add('card-nuevo-highlight'); // <--- ENCIENDE EL AURA DE LA TARJETA
+                    }
                     else if (textUpper.includes('MANTENIMIENTO')) badgeColorClass = 'badge-manten';
+
                     else if (textUpper.includes('PRODUCCI')) badgeColorClass = 'badge-prod';
                     else if (textUpper.includes('ACTIVA') || textUpper.includes('ACTIVO')) badgeColorClass = 'badge-activa';
                     else if (textUpper.includes('AGOTADO')) badgeColorClass = 'badge-agotado';

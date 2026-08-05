@@ -100,7 +100,20 @@
         .btn-add:disabled { background: #ccc; cursor: not-allowed; box-shadow: none; transform: none; }
 
         .badge-base { position: absolute; top: 15px; right: 15px; color: white; font-size: 0.70rem; font-weight: 900; padding: 6px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px; z-index: 10; }
-        .badge-nuevo { background: linear-gradient(90deg, #ff0000, #ff8c00, #ff0000); background-size: 200% auto; box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); animation: glow-pulse-nuevo 2s linear infinite; }
+        
+        /* 1. Efecto Latido y TAMAÑO MÁS GRANDE para la etiqueta NUEVO */
+        .badge-nuevo { 
+            background: linear-gradient(90deg, #ff0000, #ff8c00, #ff0000); 
+            background-size: 200% auto; 
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); 
+            animation: glow-pulse-nuevo 2s linear infinite, latido-nuevo 1.5s ease-in-out infinite !important; 
+            
+            /* 👇 ESTAS DOS LÍNEAS LO HACEN MÁS GRANDE 👇 */
+            font-size: 0.95rem !important; /* Aumenta el tamaño de la letra (antes era 0.70) */
+            padding: 8px 18px !important;  /* Hace la pastilla roja más ancha y alta */
+        }
+
+
         @keyframes glow-pulse-nuevo { 0% { background-position: 0% center; box-shadow: 0 0 8px rgba(255,0,0,0.4); } 50% { box-shadow: 0 0 18px rgba(255,80,0,0.9); } 100% { background-position: 200% center; box-shadow: 0 0 8px rgba(255,0,0,0.4); } }
         .badge-manten { background: linear-gradient(90deg, #e65c00, #F9D423, #e65c00); background-size: 200% auto; box-shadow: 0 0 10px rgba(230, 92, 0, 0.5); animation: glow-pulse-manten 2.5s linear infinite; }
         @keyframes glow-pulse-manten { 0% { background-position: 0% center; box-shadow: 0 0 8px rgba(230,92,0,0.4); } 50% { box-shadow: 0 0 18px rgba(249,212,35,0.8); } 100% { background-position: 200% center; box-shadow: 0 0 8px rgba(230,92,0,0.4); } }

@@ -30,22 +30,7 @@ const productos = [
         video: "video/ReportePN.mp4",
         youtube: "https://youtu.be/qa_wJjN3Nvo",
         fotos: ["img/p12-0.png", "img/p12-1.png", "img/p12-2.png", "img/p12-3.png"]
-    },        
-{
-        id: 7,
-        nombre: "WiCONTABLE Lite",
-        url: "wicontable-lite.html",
-        formato: "Ejecutable .exe",
-        mostrarTecnica: true,
-etiqueta: "¡EN PRODUCCION!",
-        desc: "<b>REF001</b><p>La primera solución pensada para contadores y profesionales financieros que permite consultar de manera masiva en 4 plataformas claves: DIAN, PROCURADURIA, RUES Y SISBÉN.<p><b>Actualizada el 27-11-2025</b>",
-        caracteristicas: ["Ideal para temporada de Exogena podras validar los nombres asociados a los Nit ó cualquier tipo de documento que permitan las plataformas.", "Organiza tus obligaciones tributarias en el entorno calendario.", "Localmente podras convertir Imagen a PDF, Unir PDF y aplicar OCR.", "Accede aun repositorio contable amplio para estar al día."],
-        nota: "<p>Para brindarle un soporte técnico oportuno, requerimos conectarnos de forma remota a su equipo a través de AnyDesk.<p> <p>Tenga en cuenta que este acceso quedará registrado de manera individual en cada computadora durante la instalación. Por su seguridad, nuestro equipo se comunicará exclusivamente al número de móvil ó @usuario que tiene registrado con nosotros.<p> <p>Asimismo, le recordamos que el funcionamiento de nuestra herramienta depende de plataformas de terceros integradas; <b>cualquier cambio en los parámetros de dichas plataformas nos exime de responsabilidad sobre la continuidad del servicio.</b><p> <b><p>RECUERDE</b> que es importante ver el videotutorial antes de adquirir la herramienta. De esta manera, al finalizar la instalación, le será más fácil resolver cualquier duda que no se haya abordado en el video.</p> <p>Le pedimos disponer de unos 15 minutos mientras realizamos la instalación y para las pruebas de funcionalidad una lista de NITs. Recuerde que la herramienta no tiene fecha de vencimiento; por ello, nos aseguramos de entregarla probada y funcionando correctamente al momento de su adquisición.</p>",
-        precio: "COP $79.900",
-        video: "video/WiCONTABLELite.mp4",
-        youtube: "https://youtu.be/cVeRtfur7X4",
-        fotos: ["img/p7-0.png", "img/p7-1.png", "img/p7-2.png", "img/p7-3.png", "img/p7-4.png", "img/p7-5.png", "img/p7-6.png", "img/p7-7.png", "img/p7-8.png", "img/p7-9.png", "img/p7-10.png"]
-    },        
+    },     
         {
         id: 13,
         nombre: "WiCONTABLE Auditor F.E (DIAN)",
@@ -60,7 +45,22 @@ etiqueta: "¡EN PRODUCCION!",
         video: "video/WiCONTABLE.mp4",    
         youtube: "https://www.youtube.com/watch?v=tWS24jBXEkc",
         fotos: ["img/p13-0.png", "img/p13-1.png", "img/p13-2.png", "img/p13-3.png", "img/p13-4.png", "img/p13-5.png"]
-    },
+    },   
+{
+        id: 7,
+        nombre: "WiCONTABLE Lite",
+        url: "wicontable-lite.html",
+        formato: "Ejecutable .exe",
+        mostrarTecnica: true,
+etiqueta: "¡EN PRODUCCION!",
+        desc: "<b>REF001</b><p>La primera solución pensada para contadores y profesionales financieros que permite consultar de manera masiva en 4 plataformas claves: DIAN, PROCURADURIA, RUES Y SISBÉN.<p><b>Actualizada el 27-11-2025</b>",
+        caracteristicas: ["Ideal para temporada de Exogena podras validar los nombres asociados a los Nit ó cualquier tipo de documento que permitan las plataformas.", "Organiza tus obligaciones tributarias en el entorno calendario.", "Localmente podras convertir Imagen a PDF, Unir PDF y aplicar OCR.", "Accede aun repositorio contable amplio para estar al día."],
+        nota: "<p>Para brindarle un soporte técnico oportuno, requerimos conectarnos de forma remota a su equipo a través de AnyDesk.<p> <p>Tenga en cuenta que este acceso quedará registrado de manera individual en cada computadora durante la instalación. Por su seguridad, nuestro equipo se comunicará exclusivamente al número de móvil ó @usuario que tiene registrado con nosotros.<p> <p>Asimismo, le recordamos que el funcionamiento de nuestra herramienta depende de plataformas de terceros integradas; <b>cualquier cambio en los parámetros de dichas plataformas nos exime de responsabilidad sobre la continuidad del servicio.</b><p> <b><p>RECUERDE</b> que es importante ver el videotutorial antes de adquirir la herramienta. De esta manera, al finalizar la instalación, le será más fácil resolver cualquier duda que no se haya abordado en el video.</p> <p>Le pedimos disponer de unos 15 minutos mientras realizamos la instalación y para las pruebas de funcionalidad una lista de NITs. Recuerde que la herramienta no tiene fecha de vencimiento; por ello, nos aseguramos de entregarla probada y funcionando correctamente al momento de su adquisición.</p>",
+        precio: "COP $79.900",
+        video: "video/WiCONTABLELite.mp4",
+        youtube: "https://youtu.be/cVeRtfur7X4",
+        fotos: ["img/p7-0.png", "img/p7-1.png", "img/p7-2.png", "img/p7-3.png", "img/p7-4.png", "img/p7-5.png", "img/p7-6.png", "img/p7-7.png", "img/p7-8.png", "img/p7-9.png", "img/p7-10.png"]
+    },       
     {
         id: 3,
         nombre: "Consulta Datos NIT (DIAN)",

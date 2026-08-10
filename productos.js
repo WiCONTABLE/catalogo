@@ -137,7 +137,7 @@ etiqueta: "DISPONIBLE",
         nota: "Se trata de una aplicación ejecutable (EXE) que ha sido ajustada para mantener siempre la sesión activa y sin limites de tiempo; la aplicación se mantiene operativa de forma indefinida. <b>Se recomienda no actualizar y mantener la versión inicial.</b> En caso que el usuario tenga alguna versión instalada anteriormente se recomienda limpiar los registros mediante regedit para el óptimo funcionamiento de esta versión. Precio en USDT $7",
         precio: "COP $20.000",
         video: "",
-        fotos: ["img/p9-0.png"]
+        fotos: ["img/p9-0.png", "img/p9-1.png"]
     },
  {
         id: 8,

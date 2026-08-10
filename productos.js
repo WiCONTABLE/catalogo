@@ -163,7 +163,7 @@ etiqueta: "DISPONIBLE",
         desc: "Disfruta de acceso completo a las funciones avanzadas de Inteligencia Artificial con una cuenta lista para usar durante 30 días completos. Potencia tu productividad, crea contenido, analiza datos y accede a los modelos más rápidos y actualizados sin interrupciones.<p><b> </b><p>",
         caracteristicas: ["Se entrega un correo electrónico, contraseña única y su respectiva url de código de autenticación.", "Cobertura y soporte garantizado durante 15 días ante cualquier inconveniente, si se activa el códex ya es bajo tu responsabilidad y pierdes garantía en tal caso de caida.", "Acceso total desde el navegador de tu computadora, celulares y la aplicación oficial."],
         nota: "No cambiar los datos de la cuenta: Está totalmente prohibido modificar el correo, la contraseña o los métodos de pago asociados. <b>El incumplimiento de esta norma cancelará de forma inmediata la garantía de tu servicio sin derecho a reemplazo ni reembolso.</b> Se garantiza durante 15 días ante cualquier inconveniente. Precio en USDT $12",
-        precio: "COP $40.000",
+        precio: "COP $35.000",
         video: "video/ChatGPTPlus.mp4",
         fotos: ["img/p1-0.png", "img/p1-1.png", "img/p1-2.png", "img/p1-3.png", "img/p1-4.png"]
     },

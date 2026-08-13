@@ -31,36 +31,7 @@ const productos = [
         youtube: "https://youtu.be/qa_wJjN3Nvo",
         fotos: ["img/p12-0.png", "img/p12-1.png", "img/p12-2.png", "img/p12-3.png"]
     },     
-        {
-        id: 13,
-        nombre: "WiCONTABLE Auditor F.E (DIAN)",
-        url: "auditor-fe.html",
-        formato: "Extensión Web .crx",
-        mostrarTecnica: true,
-etiqueta: "¡EN PRODUCCION!",
-        desc: "<b>REF003</b><p>Optimice la gestión tributaria y asegure el cumplimiento normativo de su empresa con nuestra herramienta avanzada para la validación masiva de eventos, el análisis de archivos XML y la descarga automatizada de facturas electrónicas directamente desde el portal de la DIAN.<p> <p><b>¿Te preocupan los nuevos bloqueos anti-bot de la DIAN y el impacto que tendrán en tus costos operativos? No te preocupes. Hemos diseñado un método exclusivo que te permite seguir operando con normalidad, sin la necesidad de comprar certificados adicionales. Protege tu presupuesto y simplifica tus procesos con nosotros.<p></b> <p>WiCONTABLE Auditor F.E (DIAN) le permite rastrear en tiempo real el ciclo de vida completo de cada documento, identificando al instante si una factura ha sido recibida, reclamada, aceptada, rechazada o si ya circula en el mercado financiero como título valor a través de la plataforma RADIAN. En el panorama fiscal actual, la gestión de los comprobantes electrónicos ha dejado de ser un simple requerimiento de facturación para convertirse en un pilar del flujo de caja corporativo y de la deducción de costos y gastos.<p> <p>Además de ahorrarle tiempo al determinar qué ítem, qué impuesto y qué datos están asociados a cada factura, la herramienta le permite visualizar todo el detalle directamente desde su equipo o desde la sesión del contribuyente a partir del archivo XML.<p><b>Lanzamiento el XX-08-2026</b>",
-        caracteristicas: ["Descargue los archivos PDF de sus F.E sin requerir Token ni Certificado Digital.", "Valide eventos asociados a documentos electrónicos sin requerir Token ni Certificado Digital.", "Renombre masivamente sus archivos XML y PDF al descargarlos.", "Realice una validación avanzada de eventos en sus F.E, aprovechando la conexión directa que le brinda su Token.", "Potencie la descarga de archivos PDF/XML de sus F.E utilizando su Token y realizandolo completamente por rangos.", "Olvídese de trámites complejos; nuestra solución trabaja sin Certificado Digital."],
-        nota: "<p>Para brindarle un soporte técnico oportuno, requerimos conectarnos de forma remota a su equipo a través de AnyDesk.<p> <p>Tenga en cuenta que este acceso quedará registrado de manera individual en cada computadora durante la instalación. Por su seguridad, nuestro equipo se comunicará exclusivamente al número de móvil ó @usuario que tiene registrado con nosotros.<p> <p>Asimismo, le recordamos que el funcionamiento de nuestra herramienta depende de plataformas de terceros integradas; <b>cualquier cambio en los parámetros de dichas plataformas nos exime de responsabilidad sobre la continuidad del servicio.</b><p> <b><p>RECUERDE</b> que es importante ver el videotutorial antes de adquirir la herramienta. De esta manera, al finalizar la instalación, le será más fácil resolver cualquier duda que no se haya abordado en el video.</p> <p>Le pedimos disponer de unos 15 minutos mientras realizamos la instalación y para las pruebas de funcionalidad un histórico DIAN con datos. Recuerde que la herramienta no tiene fecha de vencimiento; por ello, nos aseguramos de entregarla probada y funcionando correctamente al momento de su adquisición.</p>",
-        precio: "COP $100.000",
-        video: "video/WiCONTABLE.mp4",    
-        youtube: "https://www.youtube.com/watch?v=tWS24jBXEkc",
-        fotos: ["img/p13-0.png", "img/p13-1.png", "img/p13-2.png", "img/p13-3.png", "img/p13-4.png", "img/p13-5.png"]
-    },   
-{
-        id: 7,
-        nombre: "WiCONTABLE Lite",
-        url: "wicontable-lite.html",
-        formato: "Ejecutable .exe",
-        mostrarTecnica: true,
-etiqueta: "¡EN PRODUCCION!",
-        desc: "<b>REF001</b><p>La primera solución pensada para contadores y profesionales financieros que permite consultar de manera masiva en 4 plataformas claves: DIAN, PROCURADURIA, RUES Y SISBÉN.<p><b>Actualizada el 27-11-2025</b>",
-        caracteristicas: ["Ideal para temporada de Exogena podras validar los nombres asociados a los Nit ó cualquier tipo de documento que permitan las plataformas.", "Organiza tus obligaciones tributarias en el entorno calendario.", "Localmente podras convertir Imagen a PDF, Unir PDF y aplicar OCR.", "Accede aun repositorio contable amplio para estar al día."],
-        nota: "<p>Para brindarle un soporte técnico oportuno, requerimos conectarnos de forma remota a su equipo a través de AnyDesk.<p> <p>Tenga en cuenta que este acceso quedará registrado de manera individual en cada computadora durante la instalación. Por su seguridad, nuestro equipo se comunicará exclusivamente al número de móvil ó @usuario que tiene registrado con nosotros.<p> <p>Asimismo, le recordamos que el funcionamiento de nuestra herramienta depende de plataformas de terceros integradas; <b>cualquier cambio en los parámetros de dichas plataformas nos exime de responsabilidad sobre la continuidad del servicio.</b><p> <b><p>RECUERDE</b> que es importante ver el videotutorial antes de adquirir la herramienta. De esta manera, al finalizar la instalación, le será más fácil resolver cualquier duda que no se haya abordado en el video.</p> <p>Le pedimos disponer de unos 15 minutos mientras realizamos la instalación y para las pruebas de funcionalidad una lista de NITs. Recuerde que la herramienta no tiene fecha de vencimiento; por ello, nos aseguramos de entregarla probada y funcionando correctamente al momento de su adquisición.</p>",
-        precio: "COP $79.900",
-        video: "video/WiCONTABLELite.mp4",
-        youtube: "https://youtu.be/cVeRtfur7X4",
-        fotos: ["img/p7-0.png", "img/p7-1.png", "img/p7-2.png", "img/p7-3.png", "img/p7-4.png", "img/p7-5.png", "img/p7-6.png", "img/p7-7.png", "img/p7-8.png", "img/p7-9.png", "img/p7-10.png"]
-    },       
+            
     {
         id: 3,
         nombre: "Consulta Datos NIT (DIAN)",
@@ -153,20 +124,7 @@ etiqueta: "DISPONIBLE",
         video: "",
         fotos: ["img/p8-0.png", "img/p8-1.png"]
     },
-{
-        id: 1,
-        nombre: "ChatGPT PLUS (30 Días)",
-        url: "chatgpt-plus.html",
-        formato: "Credenciales",
-        mostrarTecnica: false,
-etiqueta: "DISPONIBLE",
-        desc: "Disfruta de acceso completo a las funciones avanzadas de Inteligencia Artificial con una cuenta lista para usar durante 30 días completos. Potencia tu productividad, crea contenido, analiza datos y accede a los modelos más rápidos y actualizados sin interrupciones.<p><b> </b><p>",
-        caracteristicas: ["Se entrega un correo electrónico, contraseña única y su respectiva url de código de autenticación.", "Cobertura y soporte garantizado durante 15 días ante cualquier inconveniente, si se activa el códex ya es bajo tu responsabilidad y pierdes garantía en tal caso de caida.", "Acceso total desde el navegador de tu computadora, celulares y la aplicación oficial."],
-        nota: "No cambiar los datos de la cuenta: Está totalmente prohibido modificar el correo, la contraseña o los métodos de pago asociados. <b>El incumplimiento de esta norma cancelará de forma inmediata la garantía de tu servicio sin derecho a reemplazo ni reembolso.</b> Se garantiza durante 15 días ante cualquier inconveniente. Precio en USDT $12",
-        precio: "COP $35.000",
-        video: "video/ChatGPTPlus.mp4",
-        fotos: ["img/p1-0.png", "img/p1-1.png", "img/p1-2.png", "img/p1-3.png", "img/p1-4.png"]
-    },
+
 {
         id: 11,
         nombre: "Declaración de Renta Persona Natural",

@@ -81,21 +81,7 @@ etiqueta: "DISPONIBLE",
         youtube: "https://youtu.be/jKVPmmDu1-I",
         fotos: ["img/p4-0.png", "img/p4-1.png", "img/p4-2.png"]
     },
-{
-        id: 14,
-        nombre: "Microsoft 365 Familia (1 año) ADMIN",
-        url: "365-officefamilia.html",
-        formato: "Credenciales",
-        mostrarTecnica: false,
-etiqueta: "¡AGOTADO!",
-        desc: "<b>REF004-1</b><p>Obtén acceso completo a la suite oficial de Microsoft, la solución ideal para potenciar tu productividad en el estudio o el trabajo. <b>Nota importante:</b> Tu cuenta incluye beneficios adicionales como 1 TB de almacenamiento en la nube, puedes invitar a 5 personas más. Desde la configuración de la cuenta principal, el Administrador puede enviar un enlace de invitación a hasta 5 familiares o amigos. Nadie puede ver los archivos o correos de los demás. El almacenamiento de OneDrive y los datos de Word/Excel son 100% privados para cada miembro. El objetivo principal de esta credencial, y donde su efectividad está garantizada al 100 %, es para la activación y uso de Office en su versión de escritorio.<p><b> </b>",
-        caracteristicas: ["Para PC, Mac, iPhone, iPad y teléfonos y tabletas Android", "Hasta 1 TB de almacenamiento en la nube", "Copilot Chat avanzado con mayor uso que la versión gratuita", "Usa Copilot en aplicaciones específicas con archivos de trabajo de forma segura" , "Mayor uso para crear imágenes de IA", "Videollamadas durante todo el día y Copilot en Teams" , "Disfruta de las últimas funciones y parches de seguridad durante todo el año de servicio."],
-        nota: "Se entrega un correo corporativo con su respectiva clave. La credencial tiene un costo de pago único. En caso de pérdida de la clave creada por el usuario, no será posible recuperar el acceso, <b>se brinda apoyo para la instalación de manera remota mediante AnyDesk.</b> (Recuerde guardar la contraseña que asignó para su respectiva garantía de 7 meses, para uso de Word, Excel y PowerPoint.) Precio en USDT $28",
-        precio: "COP $90.000",
-        video: "",
-        youtube: "",
-        fotos: ["img/p14-0.png", "img/p14-1.png", "img/p14-2.png"]
-    },
+
 {
         id: 9,
         nombre: "Anydesk V.6.0 (Vitalicia)",

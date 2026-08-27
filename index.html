@@ -3,271 +3,688 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo WiCONTABLE</title>
-    <link rel="icon" href="https://wicontable.com/img/logowi.png" type="image/png" sizes="48x48">
-    <meta property="og:title" content="Catálogo WiCONTABLE">
-    <meta property="og:description" content="Somos tu mejor aliado para automatizar procesos y optimizar tu gestión con herramientas contables 100% garantizadas.">
-    <meta property="og:image" content="https://wicontable.com/img/logowi.png">
-    <meta property="og:url" content="https://wicontable.com">
-    <meta property="og:type" content="website">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Catálogo WiCONTABLE",
-  "url": "https://wicontable.com",
-  "logo": "https://wicontable.com/img/logowi.png",
-  "description": "Somos tu mejor aliado para automatizar procesos, ahorrar tiempo y optimizar tu gestión con herramientas contables 100% garantizadas, sin pagos recurrentes."
-}
+    <title>Catálogo WiCONTABLE | Herramientas Contables y Tributarias</title>
     
-</script>
+    <!-- Favicon -->
+    <link rel="icon" href="img/logowi.png" type="image/png" sizes="48x48">
+    
+    <!-- Meta SEO -->
+    <meta name="description" content="Automatiza procesos contables, ahorra tiempo y optimiza tu gestión con herramientas y plantillas garantizadas, sin pagos recurrentes.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#25D366">
+
+    <!-- Open Graph / Redes Sociales -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Catálogo WiCONTABLE - Herramientas y Automatización Contable">
+    <meta property="og:description" content="Automatiza procesos contables y optimiza tu gestión con herramientas 100% garantizadas sin pagos recurrentes.">
+    <meta property="og:image" content="img/logowi.png">
+    <meta property="og:url" content="https://wicontable.com">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Catálogo WiCONTABLE">
+    <meta name="twitter:description" content="Automatiza procesos contables y optimiza tu gestión con herramientas 100% garantizadas.">
+    <meta name="twitter:image" content="img/logowi.png">
+
+    <!-- Datos Estructurados Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "WiCONTABLE",
+      "url": "https://wicontable.com",
+      "logo": "https://wicontable.com/img/logowi.png",
+      "description": "Automatización de procesos contables, tributarios y financieros sin pagos recurrentes.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+57-315-6016386",
+        "contactType": "customer service",
+        "areaServed": "CO",
+        "availableLanguage": "Spanish"
+      }
+    }
+    </script>
 
     <style>
         :root {
             --ws-green: #25D366;
+            --ws-green-hover: #1da852;
             --ws-dark: #128C7E;
+            --ws-dark-hover: #0e6b5c;
             --bg-gray: #f4f7f6;
-            --card-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            --fb-color: #1877F2; --li-color: #0077b5; --tk-color: #000000;
-            --yt-color: #FF0000; --ig-color: #E4405F;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-muted: #666666;
+            --card-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            --card-shadow-hover: 0 10px 25px rgba(0,0,0,0.12);
+            --border-color: #eaeaea;
+            
+            /* Colores de redes sociales */
+            --fb-color: #1877F2;
+            --li-color: #0077b5;
+            --tk-color: #000000;
+            --yt-color: #FF0000;
+            --ig-color: #E4405F;
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         body { 
             font-family: 'Calibri', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
             background-color: var(--bg-gray); 
             margin: 0; 
-            color: #333;
+            color: var(--text-main);
             font-size: 14px;
+            line-height: 1.5;
+            position: relative;
         }
 
+        /* Marca de agua de fondo */
         body::before {
-            content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background-image: url('img/logowi.png'); background-repeat: no-repeat;
-            background-position: center; background-size: 40%; opacity: 0.03; z-index: -1; pointer-events: none;
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('img/logowi.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 35%;
+            opacity: 0.03;
+            z-index: -1;
+            pointer-events: none;
         }
 
+        /* Barra superior de anuncios */
         .marquee-wrapper { 
-            width: 100%; overflow: hidden; background: white; padding: 10px 0;
-            border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 100;
+            width: 100%;
+            overflow: hidden;
+            background: #ffffff;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
         .marquee-content {
-            display: inline-block; white-space: nowrap; padding-left: 100%;
-            animation: scroll-text 35s linear infinite; font-weight: 600; color: #008f39;
+            display: inline-block;
+            white-space: nowrap;
+            padding-left: 100%;
+            animation: scroll-text 35s linear infinite;
+            font-weight: 600;
+            color: #008f39;
         }
-        @keyframes scroll-text { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
+        @keyframes scroll-text {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
 
-        .main-container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        .main-container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 30px 20px 60px; 
+        }
 
-        .header-section { text-align: center; margin-bottom: 40px; }
-        .header-icon { width: 55px; height: 55px; background-color: var(--ws-green); padding: 12px; border-radius: 15px; fill: white; margin-bottom: 15px; box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3); }
-        .header-section h1 { color: var(--ws-green); margin: 0; font-size: 2.2rem; font-weight: 700; }
-        .header-section p { margin: 5px 0; color: #666; }
+        /* Encabezado */
+        .header-section { 
+            text-align: center; 
+            margin-bottom: 35px; 
+        }
+        .header-icon { 
+            width: 55px; 
+            height: 55px; 
+            background-color: var(--ws-green); 
+            padding: 12px; 
+            border-radius: 15px; 
+            fill: white; 
+            margin-bottom: 12px; 
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3); 
+        }
+        .header-section h1 { 
+            color: var(--ws-green); 
+            margin: 0 0 8px 0; 
+            font-size: 2.2rem; 
+            font-weight: 800; 
+        }
+        .header-section p { 
+            margin: 4px 0; 
+            color: var(--text-muted); 
+        }
+        .support-link {
+            color: var(--ws-dark);
+            text-decoration: none;
+            font-weight: 700;
+        }
+        .support-link:hover {
+            text-decoration: underline;
+        }
+        .schedule-badge {
+            font-size: 0.85rem;
+            color: #555;
+            margin-top: 8px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            background: #ffffff;
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+        }
 
-        .subpages-nav { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 25px; }
+        /* Menú de accesos secundarios */
+        .subpages-nav { 
+            display: flex; 
+            justify-content: center; 
+            gap: 12px; 
+            flex-wrap: wrap; 
+            margin-top: 25px; 
+        }
         .btn-subpage {
-            background: white; color: var(--ws-dark); border: 2px solid var(--ws-green);
-            padding: 10px 20px; border-radius: 25px; font-size: 12px; font-weight: 700;
-            text-decoration: none; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(37, 211, 102, 0.05);
-            cursor: pointer; display: flex; align-items: center; gap: 8px; font-family: 'Calibri', sans-serif;
+            background: #ffffff; 
+            color: var(--ws-dark); 
+            border: 2px solid var(--ws-green);
+            padding: 9px 18px; 
+            border-radius: 25px; 
+            font-size: 12px; 
+            font-weight: 700;
+            text-decoration: none; 
+            transition: all 0.25s ease; 
+            box-shadow: 0 3px 8px rgba(37, 211, 102, 0.08);
+            cursor: pointer; 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 8px; 
         }
-        .btn-subpage:hover { background: var(--ws-green); color: white; transform: translateY(-3px); box-shadow: 0 6px 15px rgba(37, 211, 102, 0.3); }
+        .btn-subpage:hover { 
+            background: var(--ws-green); 
+            color: #ffffff; 
+            transform: translateY(-2px); 
+            box-shadow: 0 6px 15px rgba(37, 211, 102, 0.25); 
+        }
 
-        .controls-wrapper { margin-bottom: 40px; display: flex; flex-direction: column; align-items: center; gap: 15px; }
-        .search-box { width: 100%; max-width: 550px; display: flex; background: white; border-radius: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid rgba(0,0,0,0.03); }
-        .search-box input { flex: 1; padding: 15px 25px; border: none; outline: none; font-size: 1rem; color: #333; font-family: 'Calibri', sans-serif; }
-        .search-box button { background: var(--ws-dark); color: white; border: none; padding: 0 25px; font-weight: 700; cursor: pointer; transition: 0.3s; font-family: 'Calibri', sans-serif; }
-        .search-box button:hover { background: #0e6b5c; }
+        /* Controles de Búsqueda y Filtros */
+        .controls-wrapper { 
+            margin-bottom: 35px; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            gap: 16px; 
+        }
+        .search-box { 
+            width: 100%; 
+            max-width: 550px; 
+            display: flex; 
+            background: #ffffff; 
+            border-radius: 30px; 
+            box-shadow: var(--card-shadow); 
+            overflow: hidden; 
+            border: 1px solid var(--border-color); 
+        }
+        .search-box input { 
+            flex: 1; 
+            padding: 14px 22px; 
+            border: none; 
+            outline: none; 
+            font-size: 0.95rem; 
+            color: #333; 
+            font-family: inherit; 
+        }
+        .search-box button { 
+            background: var(--ws-dark); 
+            color: white; 
+            border: none; 
+            padding: 0 24px; 
+            font-weight: 700; 
+            cursor: pointer; 
+            transition: 0.2s; 
+            font-family: inherit; 
+        }
+        .search-box button:hover { 
+            background: var(--ws-dark-hover); 
+        }
         
-        .filters-box { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
-        .filter-btn { background: white; border: 1px solid #ddd; color: #555; padding: 8px 20px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer; transition: 0.3s; font-family: 'Calibri', sans-serif; }
-        .filter-btn:hover, .filter-btn.active { background: var(--ws-green); color: white; border-color: var(--ws-green); box-shadow: 0 4px 10px rgba(37,211,102,0.2); }
+        .filters-box { 
+            display: flex; 
+            gap: 8px; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+        }
+        .filter-btn { 
+            background: #ffffff; 
+            border: 1px solid #ddd; 
+            color: #555; 
+            padding: 7px 18px; 
+            border-radius: 20px; 
+            font-size: 12px; 
+            font-weight: 600; 
+            cursor: pointer; 
+            transition: 0.2s ease; 
+            font-family: inherit; 
+        }
+        .filter-btn:hover, .filter-btn.active { 
+            background: var(--ws-green); 
+            color: white; 
+            border-color: var(--ws-green); 
+            box-shadow: 0 4px 10px rgba(37,211,102,0.25); 
+        }
 
-        .catalog-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        /* Cuadrícula del Catálogo */
+        .catalog-grid { 
+            display: grid; 
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 24px; 
+        }
 
+        /* Tarjeta de Producto */
         .product-card {
-            background: white; border-radius: 40px; overflow: hidden;
-            box-shadow: var(--card-shadow); transition: transform 0.3s ease; 
-            text-align: center; padding: 20px 15px; border: 1px solid rgba(0,0,0,0.02);
-            display: flex; flex-direction: column; justify-content: space-between; position: relative; 
+            background: var(--card-bg); 
+            border-radius: 24px; 
+            overflow: hidden;
+            box-shadow: var(--card-shadow); 
+            transition: transform 0.25s ease, box-shadow 0.25s ease; 
+            text-align: center; 
+            padding: 20px 16px; 
+            border: 1px solid var(--border-color);
+            display: flex; 
+            flex-direction: column; 
+            justify-content: space-between; 
+            position: relative; 
         }
-        .product-card:hover { transform: translateY(-5px); }
+        .product-card:hover { 
+            transform: translateY(-5px); 
+            box-shadow: var(--card-shadow-hover); 
+        }
 
-        .card-buttons { display: flex; gap: 8px; margin-top: 15px; justify-content: center; }
-        .btn-det { flex: 1; background: transparent; border: 2px solid var(--ws-dark); color: var(--ws-dark); padding: 8px; border-radius: 20px; font-family: 'Calibri', sans-serif; font-weight: 700; cursor: pointer; transition: 0.3s; text-decoration: none; font-size: 12px; display: inline-flex; align-items: center; justify-content: center; }
-        .btn-det:hover { background: var(--ws-dark); color: white; }
-        .btn-add { flex: 1; background: var(--ws-green); border: none; color: black; padding: 8px; border-radius: 20px; font-family: 'Calibri', sans-serif; font-weight: 700; cursor: pointer; transition: 0.3s; font-size: 12px; box-shadow: 0 4px 10px rgba(37,211,102,0.2); display: inline-flex; align-items: center; justify-content: center; }
-        .btn-add:hover { background: #1da852; transform: translateY(-2px); }
-        .btn-add:disabled { background: #ccc; cursor: not-allowed; box-shadow: none; transform: none; }
+        /* Efecto de resplandor para productos nuevos */
+        .card-nuevo-highlight {
+            border: 2px solid rgba(255, 140, 0, 0.6);
+            animation: card-neon-pulse 2s infinite alternate ease-in-out;
+        }
+        @keyframes card-neon-pulse {
+            0% { box-shadow: 0 4px 15px rgba(255, 140, 0, 0.15); }
+            100% { box-shadow: 0 10px 25px rgba(255, 140, 0, 0.4); transform: translateY(-3px); }
+        }
 
-        .badge-base { position: absolute; top: 15px; right: 15px; color: white; font-size: 0.70rem; font-weight: 900; padding: 6px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px; z-index: 10; }
+        .card-img-link {
+            display: block;
+            text-decoration: none;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+        .card-img { 
+            width: 100%; 
+            height: 200px; 
+            object-fit: contain; 
+            margin-bottom: 12px; 
+            transition: transform 0.3s ease;
+        }
+        .product-card:hover .card-img {
+            transform: scale(1.03);
+        }
         
-        /* 1. Efecto Latido y TAMAÑO MÁS GRANDE para la etiqueta NUEVO */
+        .info h2 { 
+            font-size: 1.05rem; 
+            margin: 8px 0 6px; 
+            color: #111; 
+            font-weight: 700; 
+            line-height: 1.3;
+        }
+        .price-tag { 
+            color: var(--ws-dark); 
+            font-weight: 800; 
+            font-size: 1.15rem; 
+            margin-bottom: 12px; 
+        }
+
+        /* Botones de acción en tarjetas */
+        .card-buttons { 
+            display: flex; 
+            gap: 8px; 
+            margin-top: 10px; 
+        }
+        .btn-det { 
+            flex: 1; 
+            background: transparent; 
+            border: 2px solid var(--ws-dark); 
+            color: var(--ws-dark); 
+            padding: 8px 10px; 
+            border-radius: 20px; 
+            font-weight: 700; 
+            cursor: pointer; 
+            transition: 0.2s; 
+            text-decoration: none; 
+            font-size: 11.5px; 
+            display: inline-flex; 
+            align-items: center; 
+            justify-content: center; 
+        }
+        .btn-det:hover { 
+            background: var(--ws-dark); 
+            color: #ffffff; 
+        }
+        .btn-add { 
+            flex: 1; 
+            background: var(--ws-green); 
+            border: none; 
+            color: #ffffff; 
+            padding: 8px 10px; 
+            border-radius: 20px; 
+            font-weight: 700; 
+            cursor: pointer; 
+            transition: 0.2s; 
+            font-size: 11.5px; 
+            box-shadow: 0 3px 8px rgba(37,211,102,0.25); 
+            display: inline-flex; 
+            align-items: center; 
+            justify-content: center; 
+        }
+        .btn-add:hover { 
+            background: var(--ws-green-hover); 
+            transform: translateY(-2px); 
+        }
+        .btn-add:disabled { 
+            background: #cccccc; 
+            cursor: not-allowed; 
+            box-shadow: none; 
+            transform: none; 
+        }
+
+        /* Etiquetas (Badges) */
+        .badge-base { 
+            position: absolute; 
+            top: 12px; 
+            right: 12px; 
+            color: white; 
+            font-size: 0.70rem; 
+            font-weight: 800; 
+            padding: 5px 10px; 
+            border-radius: 20px; 
+            text-transform: uppercase; 
+            letter-spacing: 0.5px; 
+            z-index: 10; 
+        }
         .badge-nuevo { 
             background: linear-gradient(90deg, #ff0000, #ff8c00, #ff0000); 
             background-size: 200% auto; 
             box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); 
-            animation: glow-pulse-nuevo 2s linear infinite, latido-nuevo 1.5s ease-in-out infinite !important; 
-            
-            /* 👇 ESTAS DOS LÍNEAS LO HACEN MÁS GRANDE 👇 */
-            font-size: 0.95rem !important; /* Aumenta el tamaño de la letra (antes era 0.70) */
-            padding: 8px 18px !important;  /* Hace la pastilla roja más ancha y alta */
+            animation: glow-pulse-nuevo 2s linear infinite, latido-nuevo 1.5s ease-in-out infinite; 
+            font-size: 0.75rem; 
+            padding: 6px 14px; 
         }
-
-
-        @keyframes glow-pulse-nuevo { 0% { background-position: 0% center; box-shadow: 0 0 8px rgba(255,0,0,0.4); } 50% { box-shadow: 0 0 18px rgba(255,80,0,0.9); } 100% { background-position: 200% center; box-shadow: 0 0 8px rgba(255,0,0,0.4); } }
-        .badge-manten { background: linear-gradient(90deg, #e65c00, #F9D423, #e65c00); background-size: 200% auto; box-shadow: 0 0 10px rgba(230, 92, 0, 0.5); animation: glow-pulse-manten 2.5s linear infinite; }
-        @keyframes glow-pulse-manten { 0% { background-position: 0% center; box-shadow: 0 0 8px rgba(230,92,0,0.4); } 50% { box-shadow: 0 0 18px rgba(249,212,35,0.8); } 100% { background-position: 200% center; box-shadow: 0 0 8px rgba(230,92,0,0.4); } }
-        .badge-prod { background: linear-gradient(90deg, #FFB300, #FEE140, #FFB300); background-size: 200% auto; box-shadow: 0 0 10px rgba(255, 179, 0, 0.5); animation: glow-pulse-prod 3s linear infinite; color: #000; }
-        @keyframes glow-pulse-prod { 0% { background-position: 0% center; box-shadow: 0 0 8px rgba(255,179,0,0.4); } 50% { box-shadow: 0 0 18px rgba(254,225,64,0.9); } 100% { background-position: 200% center; box-shadow: 0 0 8px rgba(255,179,0,0.4); } }
-        .badge-activa { background: linear-gradient(90deg, #11998e, #38ef7d, #11998e); background-size: 200% auto; box-shadow: 0 0 10px rgba(56, 239, 125, 0.5); animation: glow-pulse-activa 2s linear infinite; }
-        @keyframes glow-pulse-activa { 0% { background-position: 0% center; box-shadow: 0 0 8px rgba(17,153,142,0.4); } 50% { box-shadow: 0 0 18px rgba(56,239,125,0.9); } 100% { background-position: 200% center; box-shadow: 0 0 8px rgba(17,153,142,0.4); } }
-        .badge-agotado { background: linear-gradient(90deg, #606060, #8f8f8f, #606060); background-size: 200% auto; box-shadow: 0 0 10px rgba(96, 96, 96, 0.5); animation: glow-pulse-agotado 3s linear infinite; }
-        @keyframes glow-pulse-agotado { 0% { background-position: 0% center; box-shadow: 0 0 8px rgba(96,96,96,0.4); } 50% { box-shadow: 0 0 15px rgba(143,143,143,0.8); } 100% { background-position: 200% center; box-shadow: 0 0 8px rgba(96,96,96,0.4); } }
-        .badge-disponible { background: linear-gradient(90deg, #00c6ff, #0072ff, #00c6ff); background-size: 200% auto; box-shadow: 0 0 10px rgba(0, 198, 255, 0.5); animation: glow-pulse-disponible 2s linear infinite; }
-        @keyframes glow-pulse-disponible { 0% { background-position: 0% center; box-shadow: 0 0 8px rgba(0,198,255,0.4); } 50% { box-shadow: 0 0 18px rgba(0,114,255,0.9); } 100% { background-position: 200% center; box-shadow: 0 0 8px rgba(0,198,255,0.4); } }
-
-
-
-        /* 🌟 ANIMACIÓN PREMIUM PARA PRODUCTOS NUEVOS 🌟 */
-        
-        /* 1. Efecto Latido para la etiqueta */
-        .badge-nuevo { 
-            background: linear-gradient(90deg, #ff0000, #ff8c00, #ff0000); 
-            background-size: 200% auto; 
-            box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); 
-            /* Se combinan el movimiento de color y el latido */
-            animation: glow-pulse-nuevo 2s linear infinite, latido-nuevo 1.5s ease-in-out infinite !important; 
+        @keyframes glow-pulse-nuevo { 
+            0% { background-position: 0% center; box-shadow: 0 0 6px rgba(255,0,0,0.4); } 
+            50% { box-shadow: 0 0 14px rgba(255,80,0,0.8); } 
+            100% { background-position: 200% center; box-shadow: 0 0 6px rgba(255,0,0,0.4); } 
         }
         @keyframes latido-nuevo {
             0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.15); }
+            50% { transform: scale(1.08); }
         }
 
-        /* 2. Efecto Resplandor (Neón) para la tarjeta entera */
-        .card-nuevo-highlight {
-            border: 2px solid rgba(255, 140, 0, 0.5) !important;
-            animation: card-neon-pulse 2s infinite alternate;
+        .badge-manten { background: linear-gradient(90deg, #e65c00, #F9D423, #e65c00); background-size: 200% auto; }
+        .badge-prod { background: linear-gradient(90deg, #FFB300, #FEE140, #FFB300); color: #000; }
+        .badge-activa { background: linear-gradient(90deg, #11998e, #38ef7d, #11998e); }
+        .badge-agotado { background: #757575; }
+        .badge-disponible { background: linear-gradient(90deg, #00c6ff, #0072ff, #00c6ff); }
+
+        /* Botón Carrito Flotante */
+        .floating-cart { 
+            position: fixed; 
+            bottom: 25px; 
+            right: 25px; 
+            background: var(--ws-dark); 
+            color: white; 
+            width: 60px; 
+            height: 60px; 
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-size: 1.5rem; 
+            box-shadow: 0 6px 20px rgba(18,140,126,0.45); 
+            cursor: pointer; 
+            z-index: 999; 
+            transition: transform 0.25s ease; 
         }
-        @keyframes card-neon-pulse {
-            0% { box-shadow: 0 4px 15px rgba(255, 140, 0, 0.1); }
-            100% { box-shadow: 0 10px 30px rgba(255, 140, 0, 0.4); transform: translateY(-3px); }
+        .floating-cart:hover { 
+            transform: scale(1.1); 
+        }
+        .cart-badge { 
+            position: absolute; 
+            top: -4px; 
+            right: -4px; 
+            background: #ff3b30; 
+            color: white; 
+            font-size: 0.75rem; 
+            font-weight: bold; 
+            width: 22px; 
+            height: 22px; 
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            border: 2px solid white; 
         }
 
+        /* Sidebar del Carrito */
+        .cart-overlay { 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            background: rgba(0,0,0,0.5); 
+            z-index: 9998; 
+            opacity: 0; 
+            visibility: hidden; 
+            transition: 0.3s ease; 
+            backdrop-filter: blur(2px); 
+        }
+        .cart-overlay.active { 
+            opacity: 1; 
+            visibility: visible; 
+        }
+        .cart-sidebar { 
+            position: fixed; 
+            top: 0; 
+            right: -420px; 
+            width: 100%; 
+            max-width: 380px; 
+            height: 100vh; 
+            background: white; 
+            z-index: 9999; 
+            box-shadow: -10px 0 30px rgba(0,0,0,0.15); 
+            transition: right 0.3s ease-in-out; 
+            display: flex; 
+            flex-direction: column; 
+        }
+        .cart-sidebar.active { 
+            right: 0; 
+        }
+        .cart-header { 
+            padding: 20px; 
+            border-bottom: 1px solid #eee; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            background: #f8f9fa; 
+        }
+        .cart-header h2 { 
+            margin: 0; 
+            font-size: 1.3rem; 
+            color: var(--ws-dark); 
+            font-weight: 800; 
+        }
+        .close-cart { 
+            font-size: 1.8rem; 
+            font-weight: bold; 
+            cursor: pointer; 
+            color: #999; 
+            border: none; 
+            background: none; 
+            line-height: 1; 
+        }
+        .close-cart:hover { 
+            color: #333; 
+        }
+        .cart-body { 
+            padding: 20px; 
+            overflow-y: auto; 
+            flex-grow: 1; 
+            display: flex; 
+            flex-direction: column; 
+            gap: 12px; 
+        }
+        .cart-footer { 
+            padding: 20px; 
+            border-top: 1px solid #eee; 
+            background: white; 
+            margin-top: auto; 
+        }
+        .cart-total { 
+            display: flex; 
+            justify-content: space-between; 
+            font-size: 1.25rem; 
+            font-weight: 900; 
+            margin-bottom: 16px; 
+            color: #111; 
+        }
+        .btn-checkout { 
+            width: 100%; 
+            background: var(--ws-green); 
+            color: white; 
+            padding: 16px; 
+            border: none; 
+            border-radius: 12px; 
+            font-weight: bold; 
+            font-size: 1rem; 
+            cursor: pointer; 
+            transition: 0.25s; 
+            box-shadow: 0 4px 12px rgba(37,211,102,0.3); 
+        }
+        .btn-checkout:hover { 
+            background: var(--ws-green-hover); 
+            transform: translateY(-2px); 
+        }
 
-
-
-        /* 🔥 AJUSTE PARA COMPUTADOR (PC) */
-        .card-img { width: 100%; height: 230px; object-fit: contain; margin-bottom: 15px; cursor: pointer; }
-        
-        .info h2 { font-size: 1.05rem; margin: 10px 0 5px; color: #000; font-weight: 700; cursor: pointer; }
-        .price-tag { color: var(--ws-dark); font-weight: 700; font-size: 1.1rem; margin-bottom: 8px; }
-
-        .main-footer { background: white; padding: 40px 20px; margin-top: 60px; text-align: center; border-top: 1px solid #eee; }
-        .social-links { display: flex; justify-content: center; gap: 15px; margin-top: 15px; }
-        .social-btn { width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: 0.3s; }
-        .social-btn:hover { transform: scale(1.1); }
-        .social-btn svg { width: 24px; height: 24px; fill: white; }
-
-        .bg-fb { background-color: var(--fb-color); } .bg-ig { background-color: var(--ig-color); }
-        .bg-tk { background-color: var(--tk-color); } .bg-li { background-color: var(--li-color); }
-        .bg-yt { background-color: var(--yt-color); } .bg-no { background-color: #000; }
+        /* Footer y Enlaces Sociales */
+        .main-footer { 
+            background: #ffffff; 
+            padding: 35px 20px; 
+            margin-top: 50px; 
+            text-align: center; 
+            border-top: 1px solid #eee; 
+        }
+        .social-links { 
+            display: flex; 
+            justify-content: center; 
+            gap: 12px; 
+            margin-top: 14px; 
+            flex-wrap: wrap; 
+        }
+        .social-btn { 
+            width: 42px; 
+            height: 42px; 
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            transition: transform 0.25s ease; 
+        }
+        .social-btn:hover { 
+            transform: scale(1.12); 
+        }
+        .social-btn svg { 
+            width: 22px; 
+            height: 22px; 
+            fill: white; 
+        }
         .bg-wa { background-color: var(--ws-green); }
+        .bg-yt { background-color: var(--yt-color); }
+        .bg-tk { background-color: var(--tk-color); }
+        .bg-fb { background-color: var(--fb-color); }
+        .bg-ig { background-color: var(--ig-color); }
+        .bg-li { background-color: var(--li-color); }
 
-        .floating-cart { position: fixed; bottom: 25px; right: 25px; background: #128C7E; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; box-shadow: 0 6px 20px rgba(18,140,126,0.4); cursor: pointer; z-index: 999; transition: 0.3s ease; }
-        .floating-cart:hover { transform: scale(1.1); }
-        .cart-badge { position: absolute; top: -5px; right: -5px; background: #ff3b30; color: white; font-size: 0.85rem; font-weight: bold; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid white; }
-
-        .cart-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 9998; opacity: 0; visibility: hidden; transition: 0.3s; backdrop-filter: blur(3px); }
-        .cart-overlay.active { opacity: 1; visibility: visible; }
-        .cart-sidebar { position: fixed; top: 0; right: -400px; width: 100%; max-width: 380px; height: 100vh; background: white; z-index: 9999; box-shadow: -10px 0 30px rgba(0,0,0,0.1); transition: 0.3s ease-in-out; display: flex; flex-direction: column; }
-        .cart-sidebar.active { right: 0; }
-        .cart-header { padding: 25px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; background: #f8f9fa; }
-        .cart-header h2 { margin: 0; font-size: 1.4rem; color: var(--ws-dark); font-weight: 800; }
-        .close-cart { font-size: 2rem; font-weight: bold; cursor: pointer; color: #aaa; border: none; background: none; line-height: 1; }
-        .close-cart:hover { color: #333; }
-        .cart-body { padding: 25px; overflow-y: auto; flex-grow: 1; display: flex; flex-direction: column; gap: 15px; }
-        .cart-footer { padding: 25px; border-top: 1px solid #eee; background: white; margin-top: auto; }
-        .cart-total { display: flex; justify-content: space-between; font-size: 1.3rem; font-weight: 900; margin-bottom: 20px; color: #000; }
-        .btn-checkout { width: 100%; background: var(--ws-green); color: white; padding: 18px; border: none; border-radius: 12px; font-weight: bold; font-size: 1.05rem; cursor: pointer; transition: 0.3s; box-shadow: 0 4px 15px rgba(37,211,102,0.3); }
-        .btn-checkout:hover { background: #1da852; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37,211,102,0.4); }
-
-        @media (max-width: 1024px) { .catalog-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 600px) { .catalog-grid { grid-template-columns: 1fr; } }
-        
-        /* 🔥 AJUSTES EXTREMOS PARA PANTALLAS MÓVILES (Celulares) */
-        @media (max-width: 768px) {
-            .main-container { 
-                padding-left: 8px !important;
-                padding-right: 8px !important;
-            }
-            .product-card {
-                padding: 15px 0px 20px 0px !important; /* Quitamos TODO el espacio blanco a los lados de la tarjeta */
-            }
-            .card-img {
-                width: 100% !important; 
-                height: auto !important; /* Le quitamos el límite de altura para que crezca todo lo que necesite */
-                object-fit: contain !important;
-                margin-top: -5px !important; /* Sube la foto un poco para matar el espacio blanco de arriba */
-            }
-            .info {
-                padding: 0 15px !important; /* Protegemos el texto y los botones para que no toquen el borde */
-            }
+        /* Media Queries Responsivas */
+        @media (max-width: 1024px) { 
+            .catalog-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; } 
+        }
+        @media (max-width: 600px) { 
+            .catalog-grid { grid-template-columns: 1fr; gap: 16px; } 
+            .main-container { padding: 15px 12px 50px; }
+            .header-section h1 { font-size: 1.8rem; }
+            .card-buttons { flex-direction: column; }
         }
     </style>
 </head>
 <body>
-    <div class="marquee-wrapper">
-        <div class="marquee-content">Somos tu mejor aliado para automatizar procesos, ahorrar tiempo y optimizar tu gestión con herramientas contables 100% garantizadas, sin pagos recurrentes.</div>
-    </div>
+
+    <!-- Marquesina Superior -->
+    <aside class="marquee-wrapper" aria-label="Anuncio principal">
+        <div class="marquee-content">
+            Somos tu mejor aliado para automatizar procesos, ahorrar tiempo y optimizar tu gestión con herramientas contables 100% garantizadas, sin pagos recurrentes.
+        </div>
+    </aside>
 
     <div class="main-container">
+        <!-- Encabezado Principal -->
         <header class="header-section">
-            <svg class="header-icon" viewBox="0 0 24 24"><path d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm0 10c-2.76 0-5-2.24-5-5h2c0 1.66 1.34 3 3 3s3-1.34 3-3h2c0 2.76-2.24 5-5 5z"/></svg>
+            <svg class="header-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm0 10c-2.76 0-5-2.24-5-5h2c0 1.66 1.34 3 3 3s3-1.34 3-3h2c0 2.76-2.24 5-5 5z"/>
+            </svg>
             <h1>Catálogo PREMIUM 2026</h1>
-            <p><b>Herramientas @WiCONTABLE para tu día a día.</b></p>
+            <p><strong>Herramientas @WiCONTABLE para tu día a día.</strong></p>
             <p>
-                Soporte ☎️ <a href="https://wa.me/573156016386?text=Saludos, soy cliente y requiero soporte." target="_blank" rel="noopener noreferrer">315 6016386</a> 
+                Soporte Oficial ☎️ <a href="https://wa.me/573156016386?text=Saludos,%20soy%20cliente%20y%20requiero%20soporte." class="support-link" target="_blank" rel="noopener noreferrer">315 6016386</a>
             </p>
 
-            <div style="font-size: 0.85rem; color: #555; margin-top: 4px; font-weight: 600; font-family: 'Calibri', sans-serif; display: flex; align-items: center; justify-content: center; gap: 4px;">
-    <span>⏰</span> Lunes a sábado de 7am a 9pm y Domingos/festivos 9am a 6pm
-</div>
+            <div class="schedule-badge">
+                <span>⏰</span> Lunes a sábado de 7:00 am a 9:00 pm | Domingos y festivos 9:00 am a 6:00 pm
+            </div>
             
-            <div class="subpages-nav">
+            <!-- Navegación de Subpáginas y Recursos -->
+            <nav class="subpages-nav" aria-label="Recursos adicionales">
                 <a href="plantillas.html" class="btn-subpage">🎁 Plantillas GRATIS</a>
-                <a href="novedades.html" class="boton-menu" style="display: none;">Novedades 𝕏</a>
+                <a href="novedades-x.html" class="btn-subpage">📰 Novedades 𝕏</a>
                 <a href="#" onclick="alert('🚧 ¡Sección en construcción!\n\nEstamos preparando el mejor material para que Aprendas Excel. Pronto estará disponible.'); return false;" class="btn-subpage">📗 Aprende Excel</a>
                 <a href="#" onclick="alert('🚧 ¡Sección en construcción!\n\nEstamos preparando el mejor material para que Aprendas PowerBI. Pronto estará disponible.'); return false;" class="btn-subpage">📊 Aprende PowerBI</a>
-                <a href="https://burly-darkness-70e.notion.site/WiCONTABLE-2ea95ee6323880ec8cbae8ba51b03831" target="_blank" class="btn-subpage">📚 Repositorio Contable</a>
-                <a href="https://chatgpt.com/g/g-vO0tKViyq-asistente-contable-colombia" target="_blank" class="btn-subpage">🤖 GPT Asistente Contable</a>
-                <a href="https://sites.google.com/view/estatuton-2024/inicio" target="_blank" class="btn-subpage">📁 Estatutón</a>
-                <a href="https://drive.google.com/drive/folders/12Wl1oNyj58xcgi5LF3PCHAhDyjsKjV-N" target="_blank" class="btn-subpage">📝 R.U.T CIAS</a>
-                
-         
-            </div>
+                <a href="https://burly-darkness-70e.notion.site/WiCONTABLE-2ea95ee6323880ec8cbae8ba51b03831" target="_blank" rel="noopener noreferrer" class="btn-subpage">📚 Repositorio Contable</a>
+                <a href="https://chatgpt.com/g/g-vO0tKViyq-asistente-contable-colombia" target="_blank" rel="noopener noreferrer" class="btn-subpage">🤖 GPT Asistente Contable</a>
+                <a href="https://sites.google.com/view/estatuton-2024/inicio" target="_blank" rel="noopener noreferrer" class="btn-subpage">📁 Estatutón</a>
+                <a href="https://drive.google.com/drive/folders/12Wl1oNyj58xcgi5LF3PCHAhDyjsKjV-N" target="_blank" rel="noopener noreferrer" class="btn-subpage">📝 R.U.T CIAS</a>
+            </nav>
         </header>
 
-        <div class="controls-wrapper">
+        <!-- Filtros y Búsqueda -->
+        <section class="controls-wrapper" aria-label="Búsqueda y filtros de herramientas">
             <div class="search-box">
-                <input type="text" id="searchInput" placeholder="🔍 Buscar herramienta (Ej. RUT, DIAN, Excel...)" onkeyup="filterProducts()">
-                <button onclick="filterProducts()">Buscar</button>
+                <input type="text" id="searchInput" placeholder="🔍 Buscar herramienta (Ej. RUT, DIAN, Excel...)" oninput="filterProducts()">
+                <button type="button" onclick="filterProducts()">Buscar</button>
             </div>
             <div class="filters-box" id="categoryFilters"></div>
-        </div>
+        </section>
 
-        <div class="catalog-grid" id="catalog"></div>
+        <!-- Listado de Catálogo -->
+        <main class="catalog-grid" id="catalog" aria-live="polite"></main>
     </div>
 
-    <div class="floating-cart" onclick="openCart()" title="Ver mi pedido">
-        🛒<div class="cart-badge" id="cartCount">0</div>
+    <!-- Botón Flotante de Carrito -->
+    <div class="floating-cart" onclick="openCart()" title="Ver mi pedido" role="button" tabindex="0" aria-label="Abrir carrito de compras">
+        🛒<span class="cart-badge" id="cartCount">0</span>
     </div>
 
+    <!-- Modal y Sidebar del Carrito -->
     <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
-    <div class="cart-sidebar" id="cartSidebar">
+    <aside class="cart-sidebar" id="cartSidebar" aria-labelledby="cartTitle">
         <div class="cart-header">
-            <h2>Mi Pedido 🛒</h2>
-            <button class="close-cart" onclick="closeCart()">&times;</button>
+            <h2 id="cartTitle">Mi Pedido 🛒</h2>
+            <button class="close-cart" onclick="closeCart()" aria-label="Cerrar carrito">&times;</button>
         </div>
         <div class="cart-body" id="cartItems"></div>
         <div class="cart-footer">
@@ -277,25 +694,41 @@
             </div>
             <button class="btn-checkout" onclick="checkoutWhatsapp()">Confirmar Pedido por WhatsApp 📲</button>
         </div>
-    </div>
+    </aside>
 
+    <!-- Footer -->
     <footer class="main-footer">
-        <div class="footer-content">
-            <p><strong>CONÉCTATE CON NOSOTROS</strong></p>
-            <div class="social-links">
-                <a href="https://whatsapp.com/channel/0029Va4o0RV2f3ENoTURyU40" class="social-btn bg-wa" target="_blank" title="Canal de WhatsApp"><svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.176.001 6.163 1.237 8.407 3.483 2.245 2.246 3.48 5.234 3.479 8.414-.004 6.597-5.342 11.945-11.893 11.945-1.996-.001-3.957-.503-5.69-1.462L0 24zm6.59-4.846c1.62.962 3.235 1.467 4.962 1.468 5.334 0 9.673-4.321 9.676-9.635.001-2.574-1.002-4.994-2.825-6.819C16.638 2.344 14.225 1.34 11.66 1.34 6.326 1.34 1.986 5.661 1.983 10.977c-.001 1.8.473 3.559 1.373 5.111l-.995 3.633 3.689-.967zM17.18 14.9c-.3-.15-1.77-.874-2.046-.975-.276-.102-.477-.152-.677.151-.202.303-.778.976-.953 1.178-.177.202-.353.228-.654.077-.3-.15-1.264-.465-2.41-1.487-.893-.795-1.494-1.778-1.67-2.079-.176-.3-.02-.463.13-.613.136-.134.3-.349.45-.524.15-.175.2-.299.3-.5.1-.201.05-.376-.025-.526-.075-.15-.677-1.633-.927-2.233-.243-.585-.49-.506-.677-.516-.174-.008-.375-.01-.576-.01-.2 0-.527.075-.802.375-.276.3-.1.575.451 1.226.55.65.9 1.326 1.05 1.526.15.2 2.054 3.136 4.975 4.393.695.299 1.238.478 1.66.614.698.222 1.334.19 1.838.115.56-.083 1.77-.724 2.022-1.424.252-.699.252-1.299.176-1.424-.075-.124-.275-.2-.575-.35z"/></svg></a>
-                <a href="https://chat.whatsapp.com/FvYIDsoo7NR7PLwtd0Vhwv " class="social-btn bg-wa" target="_blank" title="Grupo de WhatsApp"><svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.176.001 6.163 1.237 8.407 3.483 2.245 2.246 3.48 5.234 3.479 8.414-.004 6.597-5.342 11.945-11.893 11.945-1.996-.001-3.957-.503-5.69-1.462L0 24zm6.59-4.846c1.62.962 3.235 1.467 4.962 1.468 5.334 0 9.673-4.321 9.676-9.635.001-2.574-1.002-4.994-2.825-6.819C16.638 2.344 14.225 1.34 11.66 1.34 6.326 1.34 1.986 5.661 1.983 10.977c-.001 1.8.473 3.559 1.373 5.111l-.995 3.633 3.689-.967zM17.18 14.9c-.3-.15-1.77-.874-2.046-.975-.276-.102-.477-.152-.677.151-.202.303-.778.976-.953 1.178-.177.202-.353.228-.654.077-.3-.15-1.264-.465-2.41-1.487-.893-.795-1.494-1.778-1.67-2.079-.176-.3-.02-.463.13-.613.136-.134.3-.349.45-.524.15-.175.2-.299.3-.5.1-.201.05-.376-.025-.526-.075-.15-.677-1.633-.927-2.233-.243-.585-.49-.506-.677-.516-.174-.008-.375-.01-.576-.01-.2 0-.527.075-.802.375-.276.3-.1.575.451 1.226.55.65.9 1.326 1.05 1.526.15.2 2.054 3.136 4.975 4.393.695.299 1.238.478 1.66.614.698.222 1.334.19 1.838.115.56-.083 1.77-.724 2.022-1.424.252-.699.252-1.299.176-1.424-.075-.124-.275-.2-.575-.35z"/></svg></a>
-                <a href="https://www.youtube.com/@wildersarriahernandez" class="social-btn bg-yt" target="_blank" title="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
-                <a href="https://www.youtube.com/@wicontable" class="social-btn bg-yt" target="_blank" title="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
-                <a href="https://www.tiktok.com/@wildersarriahernandez" class="social-btn bg-tk" target="_blank" title="TikTok"><svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.9-.32-1.98-.23-2.81.33-.85.51-1.44 1.42-1.58 2.4-.11.68-.03 1.37.18 2.03.35.81 1.05 1.48 1.88 1.76.71.21 1.48.21 2.19.04 1.02-.14 1.98-.77 2.56-1.6.43-.59.66-1.31.71-2.04.08-3.38.03-6.76.04-10.14z"/></svg></a>
-                <a href="https://www.facebook.com/wicontable" class="social-btn bg-fb" target="_blank" title="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-                <a href="https://www.instagram.com/wicontable/" class="social-btn bg-ig" target="_blank" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
-                <a href="https://www.linkedin.com/in/wildersarriahernandez" class="social-btn bg-li" target="_blank" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
-                </div>
-            <p style="font-size: 0.8rem; color: #999; margin-top: 10px;">© 2026 WiCONTABLE</p>
+        <p><strong>CONÉCTATE CON NOSOTROS</strong></p>
+        <div class="social-links">
+            <a href="https://whatsapp.com/channel/0029Va4o0RV2f3ENoTURyU40" class="social-btn bg-wa" target="_blank" rel="noopener noreferrer" title="Canal de WhatsApp">
+                <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.176.001 6.163 1.237 8.407 3.483 2.245 2.246 3.48 5.234 3.479 8.414-.004 6.597-5.342 11.945-11.893 11.945-1.996-.001-3.957-.503-5.69-1.462L0 24zm6.59-4.846c1.62.962 3.235 1.467 4.962 1.468 5.334 0 9.673-4.321 9.676-9.635.001-2.574-1.002-4.994-2.825-6.819C16.638 2.344 14.225 1.34 11.66 1.34 6.326 1.34 1.986 5.661 1.983 10.977c-.001 1.8.473 3.559 1.373 5.111l-.995 3.633 3.689-.967zM17.18 14.9c-.3-.15-1.77-.874-2.046-.975-.276-.102-.477-.152-.677.151-.202.303-.778.976-.953 1.178-.177.202-.353.228-.654.077-.3-.15-1.264-.465-2.41-1.487-.893-.795-1.494-1.778-1.67-2.079-.176-.3-.02-.463.13-.613.136-.134.3-.349.45-.524.15-.175.2-.299.3-.5.1-.201.05-.376-.025-.526-.075-.15-.677-1.633-.927-2.233-.243-.585-.49-.506-.677-.516-.174-.008-.375-.01-.576-.01-.2 0-.527.075-.802.375-.276.3-.1.575.451 1.226.55.65.9 1.326 1.05 1.526.15.2 2.054 3.136 4.975 4.393.695.299 1.238.478 1.66.614.698.222 1.334.19 1.838.115.56-.083 1.77-.724 2.022-1.424.252-.699.252-1.299.176-1.424-.075-.124-.275-.2-.575-.35z"/></svg>
+            </a>
+            <a href="https://chat.whatsapp.com/FvYIDsoo7NR7PLwtd0Vhwv" class="social-btn bg-wa" target="_blank" rel="noopener noreferrer" title="Grupo de WhatsApp">
+                <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.176.001 6.163 1.237 8.407 3.483 2.245 2.246 3.48 5.234 3.479 8.414-.004 6.597-5.342 11.945-11.893 11.945-1.996-.001-3.957-.503-5.69-1.462L0 24zm6.59-4.846c1.62.962 3.235 1.467 4.962 1.468 5.334 0 9.673-4.321 9.676-9.635.001-2.574-1.002-4.994-2.825-6.819C16.638 2.344 14.225 1.34 11.66 1.34 6.326 1.34 1.986 5.661 1.983 10.977c-.001 1.8.473 3.559 1.373 5.111l-.995 3.633 3.689-.967zM17.18 14.9c-.3-.15-1.77-.874-2.046-.975-.276-.102-.477-.152-.677.151-.202.303-.778.976-.953 1.178-.177.202-.353.228-.654.077-.3-.15-1.264-.465-2.41-1.487-.893-.795-1.494-1.778-1.67-2.079-.176-.3-.02-.463.13-.613.136-.134.3-.349.45-.524.15-.175.2-.299.3-.5.1-.201.05-.376-.025-.526-.075-.15-.677-1.633-.927-2.233-.243-.585-.49-.506-.677-.516-.174-.008-.375-.01-.576-.01-.2 0-.527.075-.802.375-.276.3-.1.575.451 1.226.55.65.9 1.326 1.05 1.526.15.2 2.054 3.136 4.975 4.393.695.299 1.238.478 1.66.614.698.222 1.334.19 1.838.115.56-.083 1.77-.724 2.022-1.424.252-.699.252-1.299.176-1.424-.075-.124-.275-.2-.575-.35z"/></svg>
+            </a>
+            <a href="https://www.youtube.com/@wildersarriahernandez" class="social-btn bg-yt" target="_blank" rel="noopener noreferrer" title="YouTube Wilder Sarria">
+                <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+            <a href="https://www.youtube.com/@wicontable" class="social-btn bg-yt" target="_blank" rel="noopener noreferrer" title="YouTube WiCONTABLE">
+                <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+            <a href="https://www.tiktok.com/@wildersarriahernandez" class="social-btn bg-tk" target="_blank" rel="noopener noreferrer" title="TikTok">
+                <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.9-.32-1.98-.23-2.81.33-.85.51-1.44 1.42-1.58 2.4-.11.68-.03 1.37.18 2.03.35.81 1.05 1.48 1.88 1.76.71.21 1.48.21 2.19.04 1.02-.14 1.98-.77 2.56-1.6.43-.59.66-1.31.71-2.04.08-3.38.03-6.76.04-10.14z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/wicontable" class="social-btn bg-fb" target="_blank" rel="noopener noreferrer" title="Facebook">
+                <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/wicontable/" class="social-btn bg-ig" target="_blank" rel="noopener noreferrer" title="Instagram">
+                <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/wildersarriahernandez" class="social-btn bg-li" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
         </div>
+        <p style="font-size: 0.8rem; color: #999; margin-top: 15px;">© 2026 WiCONTABLE. Todos los derechos reservados.</p>
     </footer>
 
+    <!-- Scripts -->
     <script src="productos.js"></script>
     <script>
         const container = document.getElementById('catalog');
@@ -304,7 +737,12 @@
         
         window.addEventListener('DOMContentLoaded', () => {
             if (typeof productos === 'undefined') {
-                container.innerHTML = '<div style="grid-column: 1/-1; text-align: center; background: #fffde7; padding: 30px; border-radius: 20px; border: 2px solid #fbc02d;"><h2 style="color: red; margin: 0;">⚠️ ¡Aviso Importante!</h2><p style="font-size: 1.1rem; color: #333;">Hay un error de lectura o tu navegador guardó una versión antigua.</p><p><b>Solución:</b> Por favor, presiona <b>Ctrl + F5</b> en tu teclado (o limpia el caché de tu navegador) para cargar los productos correctamente.</p></div>';
+                container.innerHTML = `
+                    <div style="grid-column: 1/-1; text-align: center; background: #fffde7; padding: 30px; border-radius: 20px; border: 2px solid #fbc02d;">
+                        <h2 style="color: #d32f2f; margin: 0 0 10px;">⚠️ ¡Aviso Importante!</h2>
+                        <p style="font-size: 1.05rem; color: #333;">No se pudieron cargar los productos o el navegador tiene una versión en caché antigua.</p>
+                        <p><b>Solución:</b> Por favor, presiona <b>Ctrl + F5</b> en tu teclado o limpia la memoria caché para actualizar.</p>
+                    </div>`;
                 return;
             }
             initCategories();
@@ -316,6 +754,8 @@
         function initCategories() {
             const filtersContainer = document.getElementById('categoryFilters');
             const formatos = ['Todas', ...new Set(productos.map(p => p.formato || 'Otros'))];
+            
+            filtersContainer.innerHTML = '';
             formatos.forEach(cat => {
                 const btn = document.createElement('button');
                 btn.className = `filter-btn ${cat === 'Todas' ? 'active' : ''}`;
@@ -331,66 +771,70 @@
         }
 
         function filterProducts() {
-            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const searchTerm = (document.getElementById('searchInput').value || '').toLowerCase().trim();
             container.innerHTML = '';
 
             const filtered = productos.filter(p => {
                 const matchCat = currentCategory === 'Todas' || (p.formato || 'Otros') === currentCategory;
-                const matchSearch = (p.nombre || '').toLowerCase().includes(searchTerm) || (p.desc || '').toLowerCase().includes(searchTerm);
+                const matchSearch = (p.nombre || '').toLowerCase().includes(searchTerm) || 
+                                    (p.desc || '').toLowerCase().includes(searchTerm) ||
+                                    (p.formato || '').toLowerCase().includes(searchTerm);
                 return matchCat && matchSearch;
             });
 
             if(filtered.length === 0) {
-                container.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 40px; color: #777;">No se encontraron herramientas con esa búsqueda.</div>`;
+                container.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 50px 20px; color: #777; font-size: 1.1rem;">No se encontraron herramientas que coincidan con la búsqueda.</div>`;
                 return;
             }
 
             filtered.forEach(p => {
-                const card = document.createElement('div');
+                const card = document.createElement('article');
                 card.className = 'product-card';
                 
                 let badgeHTML = '';
-                                if (p.etiqueta) {
-                    let textUpper = p.etiqueta.toUpperCase();
-                    let badgeColorClass = 'badge-activa'; 
+                if (p.etiqueta) {
+                    const textUpper = p.etiqueta.toUpperCase();
+                    let badgeClass = 'badge-activa'; 
                     
                     if (textUpper.includes('NUEVO')) {
-                        badgeColorClass = 'badge-nuevo';
-                        card.classList.add('card-nuevo-highlight'); // <--- ENCIENDE EL AURA DE LA TARJETA
+                        badgeClass = 'badge-nuevo';
+                        card.classList.add('card-nuevo-highlight');
+                    } else if (textUpper.includes('MANTENIMIENTO')) {
+                        badgeClass = 'badge-manten';
+                    } else if (textUpper.includes('PRODUCCI')) {
+                        badgeClass = 'badge-prod';
+                    } else if (textUpper.includes('AGOTADO')) {
+                        badgeClass = 'badge-agotado';
+                    } else if (textUpper.includes('DISPONIBLE')) {
+                        badgeClass = 'badge-disponible';
                     }
-                    else if (textUpper.includes('MANTENIMIENTO')) badgeColorClass = 'badge-manten';
-
-                    else if (textUpper.includes('PRODUCCI')) badgeColorClass = 'badge-prod';
-                    else if (textUpper.includes('ACTIVA') || textUpper.includes('ACTIVO')) badgeColorClass = 'badge-activa';
-                    else if (textUpper.includes('AGOTADO')) badgeColorClass = 'badge-agotado';
-                    else if (textUpper.includes('DISPONIBLE')) badgeColorClass = 'badge-disponible';
-                    badgeHTML = `<div class="badge-base ${badgeColorClass}">${p.etiqueta}</div>`;
+                    badgeHTML = `<div class="badge-base ${badgeClass}">${p.etiqueta}</div>`;
                 }
 
-                
-const safeFoto = (p.fotos && p.fotos.length > 0) ? p.fotos[0] : "img/logowi.png";
+                const safeFoto = (p.fotos && p.fotos.length > 0) ? p.fotos[0] : "img/logowi.png";
                 const isAgotado = p.etiqueta && p.etiqueta.toUpperCase().includes('AGOTADO');
-                
-                // Si el producto tiene URL propia la usa, si no, usa detalle.html
                 const linkProducto = p.url || `detalle.html?id=${p.id}`;
                 
                 card.innerHTML = `
                     ${badgeHTML}
-                    <a href="${linkProducto}" style="display: block; text-decoration: none;">
-                        <img src="${safeFoto}" class="card-img" alt="${p.nombre}">
+                    <a href="${linkProducto}" class="card-img-link" aria-label="Ver detalles de ${p.nombre}">
+                        <img src="${safeFoto}" class="card-img" alt="${p.nombre}" loading="lazy">
                     </a>
                     <div class="info">
                         <a href="${linkProducto}" style="text-decoration: none; color: inherit;">
-                            <h2 style="cursor: pointer;">${p.nombre}</h2>
+                            <h2>${p.nombre}</h2>
                         </a>
-                        <div class="price-tag">${p.precio}</div>
+                        <div class="price-tag">${p.precio || 'Consultar'}</div>
                         
                         <div class="card-buttons">
-                            <a href="${linkProducto}" class="btn-det" style="width: 100%; text-align: center;">→ Ver Detalles</a>
+                            <a href="${linkProducto}" class="btn-det">→ Ver Detalles</a>
+                            ${isAgotado 
+                                ? `<button class="btn-add" disabled>Agotado</button>` 
+                                : `<button class="btn-add" onclick="addToCart(${p.id})">🛒 Añadir</button>`
+                            }
                         </div>
                     </div>
                 `;
-
 
                 container.appendChild(card);
             });
@@ -398,20 +842,38 @@ const safeFoto = (p.fotos && p.fotos.length > 0) ? p.fotos[0] : "img/logowi.png"
 
         // 2. SISTEMA DE CARRITO DE COMPRAS
         function parsePrice(priceStr) {
-            const num = String(priceStr || "").replace(/\D/g, ''); 
-            return num ? parseInt(num) : 0;
+            if (!priceStr) return 0;
+            const num = String(priceStr).replace(/\D/g, ''); 
+            return num ? parseInt(num, 10) : 0;
         }
 
         function addToCart(id) {
             const prod = productos.find(p => p.id === id);
             if(!prod) return;
+            
             const existing = cart.find(i => i.id === id);
-            if(existing) existing.cantidad++;
-            else cart.push({...prod, cantidad: 1});
+            if(existing) {
+                existing.cantidad++;
+            } else {
+                cart.push({ ...prod, cantidad: 1 });
+            }
             
             localStorage.setItem('wicontable_cart', JSON.stringify(cart));
             updateCartUI();
             openCart(); 
+        }
+
+        function changeQuantity(id, delta) {
+            const item = cart.find(i => i.id === id);
+            if (!item) return;
+            
+            item.cantidad += delta;
+            if (item.cantidad <= 0) {
+                removeFromCart(id);
+                return;
+            }
+            localStorage.setItem('wicontable_cart', JSON.stringify(cart));
+            updateCartUI();
         }
 
         function removeFromCart(id) {
@@ -423,11 +885,19 @@ const safeFoto = (p.fotos && p.fotos.length > 0) ? p.fotos[0] : "img/logowi.png"
         function openCart() { 
             document.getElementById('cartSidebar').classList.add('active'); 
             document.getElementById('cartOverlay').classList.add('active'); 
+            document.body.style.overflow = 'hidden';
         }
+
         function closeCart() { 
             document.getElementById('cartSidebar').classList.remove('active'); 
             document.getElementById('cartOverlay').classList.remove('active'); 
+            document.body.style.overflow = '';
         }
+
+        // Cerrar con tecla Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeCart();
+        });
 
         function updateCartUI() {
             const countBox = document.getElementById('cartCount');
@@ -438,7 +908,7 @@ const safeFoto = (p.fotos && p.fotos.length > 0) ? p.fotos[0] : "img/logowi.png"
             countBox.innerText = totalItems;
 
             if(cart.length === 0) {
-                itemsBox.innerHTML = '<p style="text-align:center; color:#888; margin-top:60px;">Tu carrito está vacío 🛒</p>';
+                itemsBox.innerHTML = '<p style="text-align:center; color:#888; margin-top:50px;">Tu carrito está vacío 🛒</p>';
                 totalText.innerText = "COP $0";
                 return;
             }
@@ -449,12 +919,17 @@ const safeFoto = (p.fotos && p.fotos.length > 0) ? p.fotos[0] : "img/logowi.png"
                 const numPrice = parsePrice(item.precio);
                 sumTotal += numPrice * item.cantidad;
                 itemsBox.innerHTML += `
-                    <div style="display:flex; justify-content:space-between; margin-bottom:15px; background:#f8f9fa; padding:18px; border-radius:12px; align-items:center; border:1px solid #eee;">
-                        <div>
-                            <b style="font-size:0.95rem; color:#000;">${item.nombre}</b><br>
-                            <span style="color:#128C7E; font-weight:bold; font-size:0.95rem;">${item.cantidad} x ${item.precio}</span>
+                    <div style="display:flex; justify-content:space-between; background:#f8f9fa; padding:12px 14px; border-radius:12px; align-items:center; border:1px solid #eee;">
+                        <div style="flex:1; padding-right:10px;">
+                            <b style="font-size:0.9rem; color:#000; display:block; line-height:1.2;">${item.nombre}</b>
+                            <span style="color:#128C7E; font-weight:bold; font-size:0.85rem;">${item.precio}</span>
+                            <div style="margin-top:6px; display:inline-flex; align-items:center; gap:8px;">
+                                <button onclick="changeQuantity(${item.id}, -1)" style="padding:2px 8px; border:1px solid #ccc; background:#fff; border-radius:4px; cursor:pointer;">-</button>
+                                <span style="font-weight:bold; font-size:0.85rem;">${item.cantidad}</span>
+                                <button onclick="changeQuantity(${item.id}, 1)" style="padding:2px 8px; border:1px solid #ccc; background:#fff; border-radius:4px; cursor:pointer;">+</button>
+                            </div>
                         </div>
-                        <button onclick="removeFromCart(${item.id})" style="background:none; border:none; color:#ff3b30; cursor:pointer; font-weight:900; font-size:1.3rem; line-height:1;">&times;</button>
+                        <button onclick="removeFromCart(${item.id})" style="background:none; border:none; color:#ff3b30; cursor:pointer; font-weight:900; font-size:1.3rem; line-height:1;" title="Eliminar del pedido">&times;</button>
                     </div>
                 `;
             });
@@ -462,7 +937,10 @@ const safeFoto = (p.fotos && p.fotos.length > 0) ? p.fotos[0] : "img/logowi.png"
         }
 
         function checkoutWhatsapp() {
-            if(cart.length === 0) { alert("Agrega herramientas al pedido primero."); return; }
+            if(cart.length === 0) {
+                alert("Agrega herramientas al pedido primero.");
+                return;
+            }
             
             let msg = "¡Hola Wilder! 👋 Vengo de tu catálogo web y quiero confirmar el siguiente pedido:\n\n";
             let sumTotal = 0;

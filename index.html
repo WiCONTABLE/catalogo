@@ -110,10 +110,9 @@
             animation: glow-pulse-nuevo 2s linear infinite, latido-nuevo 1.5s ease-in-out infinite !important; 
             
             /* 👇 ESTAS DOS LÍNEAS LO HACEN MÁS GRANDE 👇 */
-            font-size: 0.95rem !important; /* Aumenta el tamaño de la letra (antes era 0.70) */
-            padding: 8px 18px !important;  /* Hace la pastilla roja más ancha y alta */
+            font-size: 0.95rem !important;
+            padding: 8px 18px !important;
         }
-
 
         @keyframes glow-pulse-nuevo { 0% { background-position: 0% center; box-shadow: 0 0 8px rgba(255,0,0,0.4); } 50% { box-shadow: 0 0 18px rgba(255,80,0,0.9); } 100% { background-position: 200% center; box-shadow: 0 0 8px rgba(255,0,0,0.4); } }
         .badge-manten { background: linear-gradient(90deg, #e65c00, #F9D423, #e65c00); background-size: 200% auto; box-shadow: 0 0 10px rgba(230, 92, 0, 0.5); animation: glow-pulse-manten 2.5s linear infinite; }
@@ -127,16 +126,11 @@
         .badge-disponible { background: linear-gradient(90deg, #00c6ff, #0072ff, #00c6ff); background-size: 200% auto; box-shadow: 0 0 10px rgba(0, 198, 255, 0.5); animation: glow-pulse-disponible 2s linear infinite; }
         @keyframes glow-pulse-disponible { 0% { background-position: 0% center; box-shadow: 0 0 8px rgba(0,198,255,0.4); } 50% { box-shadow: 0 0 18px rgba(0,114,255,0.9); } 100% { background-position: 200% center; box-shadow: 0 0 8px rgba(0,198,255,0.4); } }
 
-
-
         /* 🌟 ANIMACIÓN PREMIUM PARA PRODUCTOS NUEVOS 🌟 */
-        
-        /* 1. Efecto Latido para la etiqueta */
         .badge-nuevo { 
             background: linear-gradient(90deg, #ff0000, #ff8c00, #ff0000); 
             background-size: 200% auto; 
             box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); 
-            /* Se combinan el movimiento de color y el latido */
             animation: glow-pulse-nuevo 2s linear infinite, latido-nuevo 1.5s ease-in-out infinite !important; 
         }
         @keyframes latido-nuevo {
@@ -144,7 +138,6 @@
             50% { transform: scale(1.15); }
         }
 
-        /* 2. Efecto Resplandor (Neón) para la tarjeta entera */
         .card-nuevo-highlight {
             border: 2px solid rgba(255, 140, 0, 0.5) !important;
             animation: card-neon-pulse 2s infinite alternate;
@@ -153,9 +146,6 @@
             0% { box-shadow: 0 4px 15px rgba(255, 140, 0, 0.1); }
             100% { box-shadow: 0 10px 30px rgba(255, 140, 0, 0.4); transform: translateY(-3px); }
         }
-
-
-
 
         /* 🔥 AJUSTE PARA COMPUTADOR (PC) */
         .card-img { width: 100%; height: 230px; object-fit: contain; margin-bottom: 15px; cursor: pointer; }
@@ -202,16 +192,16 @@
                 padding-right: 8px !important;
             }
             .product-card {
-                padding: 15px 0px 20px 0px !important; /* Quitamos TODO el espacio blanco a los lados de la tarjeta */
+                padding: 15px 0px 20px 0px !important;
             }
             .card-img {
                 width: 100% !important; 
-                height: auto !important; /* Le quitamos el límite de altura para que crezca todo lo que necesite */
+                height: auto !important; 
                 object-fit: contain !important;
-                margin-top: -5px !important; /* Sube la foto un poco para matar el espacio blanco de arriba */
+                margin-top: -5px !important; 
             }
             .info {
-                padding: 0 15px !important; /* Protegemos el texto y los botones para que no toquen el borde */
+                padding: 0 15px !important; 
             }
         }
     </style>
@@ -243,8 +233,6 @@
                 <a href="https://chatgpt.com/g/g-vO0tKViyq-asistente-contable-colombia" target="_blank" class="btn-subpage">🤖 GPT Asistente Contable</a>
                 <a href="https://sites.google.com/view/estatuton-2024/inicio" target="_blank" class="btn-subpage">📁 Estatutón</a>
                 <a href="https://drive.google.com/drive/folders/12Wl1oNyj58xcgi5LF3PCHAhDyjsKjV-N" target="_blank" class="btn-subpage">📝 R.U.T CIAS</a>
-                
-         
             </div>
         </header>
 
@@ -350,16 +338,15 @@
                 card.className = 'product-card';
                 
                 let badgeHTML = '';
-                                if (p.etiqueta) {
+                if (p.etiqueta) {
                     let textUpper = p.etiqueta.toUpperCase();
                     let badgeColorClass = 'badge-activa'; 
                     
                     if (textUpper.includes('NUEVO')) {
                         badgeColorClass = 'badge-nuevo';
-                        card.classList.add('card-nuevo-highlight'); // <--- ENCIENDE EL AURA DE LA TARJETA
+                        card.classList.add('card-nuevo-highlight');
                     }
                     else if (textUpper.includes('MANTENIMIENTO')) badgeColorClass = 'badge-manten';
-
                     else if (textUpper.includes('PRODUCCI')) badgeColorClass = 'badge-prod';
                     else if (textUpper.includes('ACTIVA') || textUpper.includes('ACTIVO')) badgeColorClass = 'badge-activa';
                     else if (textUpper.includes('AGOTADO')) badgeColorClass = 'badge-agotado';
@@ -367,12 +354,18 @@
                     badgeHTML = `<div class="badge-base ${badgeColorClass}">${p.etiqueta}</div>`;
                 }
 
-                
-const safeFoto = (p.fotos && p.fotos.length > 0) ? p.fotos[0] : "img/logowi.png";
+                const safeFoto = (p.fotos && p.fotos.length > 0) ? p.fotos[0] : "img/logowi.png";
                 const isAgotado = p.etiqueta && p.etiqueta.toUpperCase().includes('AGOTADO');
-                
-                // Si el producto tiene URL propia la usa, si no, usa detalle.html
                 const linkProducto = p.url || `detalle.html?id=${p.id}`;
+                
+                // Extraer la REF desde p.desc
+                let refText = `REF: ${p.id}`; // Valor por defecto si no encuentra la etiqueta
+                if (p.desc) {
+                    const match = p.desc.match(/<b>(REF[a-zA-Z0-9]+)<\/b>/i);
+                    if (match) {
+                        refText = match[1]; // Toma exactamente "REF006" o lo que contenga
+                    }
+                }
                 
                 card.innerHTML = `
                     ${badgeHTML}
@@ -380,9 +373,9 @@ const safeFoto = (p.fotos && p.fotos.length > 0) ? p.fotos[0] : "img/logowi.png"
                         <img src="${safeFoto}" class="card-img" alt="${p.nombre}">
                     </a>
                     <div class="info">
-                        <!-- Etiqueta REF agregada aquí -->
+                        <!-- Etiqueta REF extraída de la descripción -->
                         <span style="font-size: 0.75rem; color: #7f8c8d; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">
-                            REF: ${p.ref || p.id}
+                            ${refText}
                         </span>
                         
                         <a href="${linkProducto}" style="text-decoration: none; color: inherit;">
@@ -395,7 +388,6 @@ const safeFoto = (p.fotos && p.fotos.length > 0) ? p.fotos[0] : "img/logowi.png"
                         </div>
                     </div>
                 `;
-
 
                 container.appendChild(card);
             });

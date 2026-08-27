@@ -108,9 +108,12 @@
             background-size: 200% auto; 
             box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); 
             animation: glow-pulse-nuevo 2s linear infinite, latido-nuevo 1.5s ease-in-out infinite !important; 
-            font-size: 0.95rem !important;
-            padding: 8px 18px !important;
+            
+            /* 👇 ESTAS DOS LÍNEAS LO HACEN MÁS GRANDE 👇 */
+            font-size: 0.95rem !important; /* Aumenta el tamaño de la letra (antes era 0.70) */
+            padding: 8px 18px !important;  /* Hace la pastilla roja más ancha y alta */
         }
+
 
         @keyframes glow-pulse-nuevo { 0% { background-position: 0% center; box-shadow: 0 0 8px rgba(255,0,0,0.4); } 50% { box-shadow: 0 0 18px rgba(255,80,0,0.9); } 100% { background-position: 200% center; box-shadow: 0 0 8px rgba(255,0,0,0.4); } }
         .badge-manten { background: linear-gradient(90deg, #e65c00, #F9D423, #e65c00); background-size: 200% auto; box-shadow: 0 0 10px rgba(230, 92, 0, 0.5); animation: glow-pulse-manten 2.5s linear infinite; }
@@ -124,6 +127,23 @@
         .badge-disponible { background: linear-gradient(90deg, #00c6ff, #0072ff, #00c6ff); background-size: 200% auto; box-shadow: 0 0 10px rgba(0, 198, 255, 0.5); animation: glow-pulse-disponible 2s linear infinite; }
         @keyframes glow-pulse-disponible { 0% { background-position: 0% center; box-shadow: 0 0 8px rgba(0,198,255,0.4); } 50% { box-shadow: 0 0 18px rgba(0,114,255,0.9); } 100% { background-position: 200% center; box-shadow: 0 0 8px rgba(0,198,255,0.4); } }
 
+
+
+        /* 🌟 ANIMACIÓN PREMIUM PARA PRODUCTOS NUEVOS 🌟 */
+        
+        /* 1. Efecto Latido para la etiqueta */
+        .badge-nuevo { 
+            background: linear-gradient(90deg, #ff0000, #ff8c00, #ff0000); 
+            background-size: 200% auto; 
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); 
+            /* Se combinan el movimiento de color y el latido */
+            animation: glow-pulse-nuevo 2s linear infinite, latido-nuevo 1.5s ease-in-out infinite !important; 
+        }
+        @keyframes latido-nuevo {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+        }
+
         /* 2. Efecto Resplandor (Neón) para la tarjeta entera */
         .card-nuevo-highlight {
             border: 2px solid rgba(255, 140, 0, 0.5) !important;
@@ -134,22 +154,13 @@
             100% { box-shadow: 0 10px 30px rgba(255, 140, 0, 0.4); transform: translateY(-3px); }
         }
 
+
+
+
         /* 🔥 AJUSTE PARA COMPUTADOR (PC) */
         .card-img { width: 100%; height: 230px; object-fit: contain; margin-bottom: 15px; cursor: pointer; }
         
         .info h2 { font-size: 1.05rem; margin: 10px 0 5px; color: #000; font-weight: 700; cursor: pointer; }
-        
-        .product-ref { 
-            font-size: 0.85rem; 
-            color: #666; 
-            font-weight: 600; 
-            margin-bottom: 8px; 
-            display: inline-block; 
-            background: #e0e0e0; 
-            padding: 3px 8px; 
-            border-radius: 5px; 
-        }
-
         .price-tag { color: var(--ws-dark); font-weight: 700; font-size: 1.1rem; margin-bottom: 8px; }
 
         .main-footer { background: white; padding: 40px 20px; margin-top: 60px; text-align: center; border-top: 1px solid #eee; }
@@ -191,16 +202,16 @@
                 padding-right: 8px !important;
             }
             .product-card {
-                padding: 15px 0px 20px 0px !important;
+                padding: 15px 0px 20px 0px !important; /* Quitamos TODO el espacio blanco a los lados de la tarjeta */
             }
             .card-img {
                 width: 100% !important; 
-                height: auto !important;
+                height: auto !important; /* Le quitamos el límite de altura para que crezca todo lo que necesite */
                 object-fit: contain !important;
-                margin-top: -5px !important;
+                margin-top: -5px !important; /* Sube la foto un poco para matar el espacio blanco de arriba */
             }
             .info {
-                padding: 0 15px !important;
+                padding: 0 15px !important; /* Protegemos el texto y los botones para que no toquen el borde */
             }
         }
     </style>
@@ -220,8 +231,8 @@
             </p>
 
             <div style="font-size: 0.85rem; color: #555; margin-top: 4px; font-weight: 600; font-family: 'Calibri', sans-serif; display: flex; align-items: center; justify-content: center; gap: 4px;">
-                <span>⏰</span> Lunes a sábado de 7am a 9pm y Domingos/festivos 9am a 6pm
-            </div>
+    <span>⏰</span> Lunes a sábado de 7am a 9pm y Domingos/festivos 9am a 6pm
+</div>
             
             <div class="subpages-nav">
                 <a href="plantillas.html" class="btn-subpage">🎁 Plantillas GRATIS</a>
@@ -232,6 +243,8 @@
                 <a href="https://chatgpt.com/g/g-vO0tKViyq-asistente-contable-colombia" target="_blank" class="btn-subpage">🤖 GPT Asistente Contable</a>
                 <a href="https://sites.google.com/view/estatuton-2024/inicio" target="_blank" class="btn-subpage">📁 Estatutón</a>
                 <a href="https://drive.google.com/drive/folders/12Wl1oNyj58xcgi5LF3PCHAhDyjsKjV-N" target="_blank" class="btn-subpage">📝 R.U.T CIAS</a>
+                
+         
             </div>
         </header>
 
@@ -273,12 +286,12 @@
                 <a href="https://whatsapp.com/channel/0029Va4o0RV2f3ENoTURyU40" class="social-btn bg-wa" target="_blank" title="Canal de WhatsApp"><svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.176.001 6.163 1.237 8.407 3.483 2.245 2.246 3.48 5.234 3.479 8.414-.004 6.597-5.342 11.945-11.893 11.945-1.996-.001-3.957-.503-5.69-1.462L0 24zm6.59-4.846c1.62.962 3.235 1.467 4.962 1.468 5.334 0 9.673-4.321 9.676-9.635.001-2.574-1.002-4.994-2.825-6.819C16.638 2.344 14.225 1.34 11.66 1.34 6.326 1.34 1.986 5.661 1.983 10.977c-.001 1.8.473 3.559 1.373 5.111l-.995 3.633 3.689-.967zM17.18 14.9c-.3-.15-1.77-.874-2.046-.975-.276-.102-.477-.152-.677.151-.202.303-.778.976-.953 1.178-.177.202-.353.228-.654.077-.3-.15-1.264-.465-2.41-1.487-.893-.795-1.494-1.778-1.67-2.079-.176-.3-.02-.463.13-.613.136-.134.3-.349.45-.524.15-.175.2-.299.3-.5.1-.201.05-.376-.025-.526-.075-.15-.677-1.633-.927-2.233-.243-.585-.49-.506-.677-.516-.174-.008-.375-.01-.576-.01-.2 0-.527.075-.802.375-.276.3-.1.575.451 1.226.55.65.9 1.326 1.05 1.526.15.2 2.054 3.136 4.975 4.393.695.299 1.238.478 1.66.614.698.222 1.334.19 1.838.115.56-.083 1.77-.724 2.022-1.424.252-.699.252-1.299.176-1.424-.075-.124-.275-.2-.575-.35z"/></svg></a>
                 <a href="https://chat.whatsapp.com/FvYIDsoo7NR7PLwtd0Vhwv " class="social-btn bg-wa" target="_blank" title="Grupo de WhatsApp"><svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.176.001 6.163 1.237 8.407 3.483 2.245 2.246 3.48 5.234 3.479 8.414-.004 6.597-5.342 11.945-11.893 11.945-1.996-.001-3.957-.503-5.69-1.462L0 24zm6.59-4.846c1.62.962 3.235 1.467 4.962 1.468 5.334 0 9.673-4.321 9.676-9.635.001-2.574-1.002-4.994-2.825-6.819C16.638 2.344 14.225 1.34 11.66 1.34 6.326 1.34 1.986 5.661 1.983 10.977c-.001 1.8.473 3.559 1.373 5.111l-.995 3.633 3.689-.967zM17.18 14.9c-.3-.15-1.77-.874-2.046-.975-.276-.102-.477-.152-.677.151-.202.303-.778.976-.953 1.178-.177.202-.353.228-.654.077-.3-.15-1.264-.465-2.41-1.487-.893-.795-1.494-1.778-1.67-2.079-.176-.3-.02-.463.13-.613.136-.134.3-.349.45-.524.15-.175.2-.299.3-.5.1-.201.05-.376-.025-.526-.075-.15-.677-1.633-.927-2.233-.243-.585-.49-.506-.677-.516-.174-.008-.375-.01-.576-.01-.2 0-.527.075-.802.375-.276.3-.1.575.451 1.226.55.65.9 1.326 1.05 1.526.15.2 2.054 3.136 4.975 4.393.695.299 1.238.478 1.66.614.698.222 1.334.19 1.838.115.56-.083 1.77-.724 2.022-1.424.252-.699.252-1.299.176-1.424-.075-.124-.275-.2-.575-.35z"/></svg></a>
                 <a href="https://www.youtube.com/@wildersarriahernandez" class="social-btn bg-yt" target="_blank" title="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
-                <a href="https://www.youtube.com/@wicontable" class="social-btn bg-yt" target="_blank" title="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                <a href="https://www.youtube.com/@wicontable" class="social-btn bg-yt" target="_blank" title="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
                 <a href="https://www.tiktok.com/@wildersarriahernandez" class="social-btn bg-tk" target="_blank" title="TikTok"><svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.9-.32-1.98-.23-2.81.33-.85.51-1.44 1.42-1.58 2.4-.11.68-.03 1.37.18 2.03.35.81 1.05 1.48 1.88 1.76.71.21 1.48.21 2.19.04 1.02-.14 1.98-.77 2.56-1.6.43-.59.66-1.31.71-2.04.08-3.38.03-6.76.04-10.14z"/></svg></a>
                 <a href="https://www.facebook.com/wicontable" class="social-btn bg-fb" target="_blank" title="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
                 <a href="https://www.instagram.com/wicontable/" class="social-btn bg-ig" target="_blank" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
                 <a href="https://www.linkedin.com/in/wildersarriahernandez" class="social-btn bg-li" target="_blank" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
-            </div>
+                </div>
             <p style="font-size: 0.8rem; color: #999; margin-top: 10px;">© 2026 WiCONTABLE</p>
         </div>
     </footer>
@@ -301,4 +314,173 @@
 
         // 1. FILTROS Y BÚSQUEDA
         function initCategories() {
-            const filters
+            const filtersContainer = document.getElementById('categoryFilters');
+            const formatos = ['Todas', ...new Set(productos.map(p => p.formato || 'Otros'))];
+            formatos.forEach(cat => {
+                const btn = document.createElement('button');
+                btn.className = `filter-btn ${cat === 'Todas' ? 'active' : ''}`;
+                btn.innerText = cat;
+                btn.onclick = () => {
+                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    currentCategory = cat;
+                    filterProducts();
+                };
+                filtersContainer.appendChild(btn);
+            });
+        }
+
+        function filterProducts() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            container.innerHTML = '';
+
+            const filtered = productos.filter(p => {
+                const matchCat = currentCategory === 'Todas' || (p.formato || 'Otros') === currentCategory;
+                const matchSearch = (p.nombre || '').toLowerCase().includes(searchTerm) || (p.desc || '').toLowerCase().includes(searchTerm);
+                return matchCat && matchSearch;
+            });
+
+            if(filtered.length === 0) {
+                container.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 40px; color: #777;">No se encontraron herramientas con esa búsqueda.</div>`;
+                return;
+            }
+
+            filtered.forEach(p => {
+                const card = document.createElement('div');
+                card.className = 'product-card';
+                
+                let badgeHTML = '';
+                                if (p.etiqueta) {
+                    let textUpper = p.etiqueta.toUpperCase();
+                    let badgeColorClass = 'badge-activa'; 
+                    
+                    if (textUpper.includes('NUEVO')) {
+                        badgeColorClass = 'badge-nuevo';
+                        card.classList.add('card-nuevo-highlight'); // <--- ENCIENDE EL AURA DE LA TARJETA
+                    }
+                    else if (textUpper.includes('MANTENIMIENTO')) badgeColorClass = 'badge-manten';
+
+                    else if (textUpper.includes('PRODUCCI')) badgeColorClass = 'badge-prod';
+                    else if (textUpper.includes('ACTIVA') || textUpper.includes('ACTIVO')) badgeColorClass = 'badge-activa';
+                    else if (textUpper.includes('AGOTADO')) badgeColorClass = 'badge-agotado';
+                    else if (textUpper.includes('DISPONIBLE')) badgeColorClass = 'badge-disponible';
+                    badgeHTML = `<div class="badge-base ${badgeColorClass}">${p.etiqueta}</div>`;
+                }
+
+                
+const safeFoto = (p.fotos && p.fotos.length > 0) ? p.fotos[0] : "img/logowi.png";
+                const isAgotado = p.etiqueta && p.etiqueta.toUpperCase().includes('AGOTADO');
+                
+                // Si el producto tiene URL propia la usa, si no, usa detalle.html
+                const linkProducto = p.url || `detalle.html?id=${p.id}`;
+                
+                card.innerHTML = `
+                    ${badgeHTML}
+                    <a href="${linkProducto}" style="display: block; text-decoration: none;">
+                        <img src="${safeFoto}" class="card-img" alt="${p.nombre}">
+                    </a>
+                    <div class="info">
+                        <!-- Etiqueta REF agregada aquí -->
+                        <span style="font-size: 0.75rem; color: #7f8c8d; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">
+                            REF: ${p.ref || p.id}
+                        </span>
+                        
+                        <a href="${linkProducto}" style="text-decoration: none; color: inherit;">
+                            <h2 style="cursor: pointer;">${p.nombre}</h2>
+                        </a>
+                        <div class="price-tag">${p.precio}</div>
+                        
+                        <div class="card-buttons">
+                            <a href="${linkProducto}" class="btn-det" style="width: 100%; text-align: center;">→ Ver Detalles</a>
+                        </div>
+                    </div>
+                `;
+
+
+                container.appendChild(card);
+            });
+        }
+
+        // 2. SISTEMA DE CARRITO DE COMPRAS
+        function parsePrice(priceStr) {
+            const num = String(priceStr || "").replace(/\D/g, ''); 
+            return num ? parseInt(num) : 0;
+        }
+
+        function addToCart(id) {
+            const prod = productos.find(p => p.id === id);
+            if(!prod) return;
+            const existing = cart.find(i => i.id === id);
+            if(existing) existing.cantidad++;
+            else cart.push({...prod, cantidad: 1});
+            
+            localStorage.setItem('wicontable_cart', JSON.stringify(cart));
+            updateCartUI();
+            openCart(); 
+        }
+
+        function removeFromCart(id) {
+            cart = cart.filter(i => i.id !== id);
+            localStorage.setItem('wicontable_cart', JSON.stringify(cart));
+            updateCartUI();
+        }
+
+        function openCart() { 
+            document.getElementById('cartSidebar').classList.add('active'); 
+            document.getElementById('cartOverlay').classList.add('active'); 
+        }
+        function closeCart() { 
+            document.getElementById('cartSidebar').classList.remove('active'); 
+            document.getElementById('cartOverlay').classList.remove('active'); 
+        }
+
+        function updateCartUI() {
+            const countBox = document.getElementById('cartCount');
+            const itemsBox = document.getElementById('cartItems');
+            const totalText = document.getElementById('cartTotalText');
+
+            const totalItems = cart.reduce((acc, i) => acc + i.cantidad, 0);
+            countBox.innerText = totalItems;
+
+            if(cart.length === 0) {
+                itemsBox.innerHTML = '<p style="text-align:center; color:#888; margin-top:60px;">Tu carrito está vacío 🛒</p>';
+                totalText.innerText = "COP $0";
+                return;
+            }
+
+            itemsBox.innerHTML = '';
+            let sumTotal = 0;
+            cart.forEach(item => {
+                const numPrice = parsePrice(item.precio);
+                sumTotal += numPrice * item.cantidad;
+                itemsBox.innerHTML += `
+                    <div style="display:flex; justify-content:space-between; margin-bottom:15px; background:#f8f9fa; padding:18px; border-radius:12px; align-items:center; border:1px solid #eee;">
+                        <div>
+                            <b style="font-size:0.95rem; color:#000;">${item.nombre}</b><br>
+                            <span style="color:#128C7E; font-weight:bold; font-size:0.95rem;">${item.cantidad} x ${item.precio}</span>
+                        </div>
+                        <button onclick="removeFromCart(${item.id})" style="background:none; border:none; color:#ff3b30; cursor:pointer; font-weight:900; font-size:1.3rem; line-height:1;">&times;</button>
+                    </div>
+                `;
+            });
+            totalText.innerText = `COP $${sumTotal.toLocaleString('es-CO')}`;
+        }
+
+        function checkoutWhatsapp() {
+            if(cart.length === 0) { alert("Agrega herramientas al pedido primero."); return; }
+            
+            let msg = "¡Hola Wilder! 👋 Vengo de tu catálogo web y quiero confirmar el siguiente pedido:\n\n";
+            let sumTotal = 0;
+            cart.forEach(item => {
+                const numPrice = parsePrice(item.precio);
+                sumTotal += numPrice * item.cantidad;
+                msg += `🔸 *${item.cantidad}x* ${item.nombre} (${item.precio})\n`;
+            });
+            msg += `\n*TOTAL APROXIMADO: COP $${sumTotal.toLocaleString('es-CO')}*\n\n¿A dónde puedo transferir para proceder?`;
+            
+            const tel = typeof miTelefono !== 'undefined' ? miTelefono : '573156016386';
+            window.open(`https://wa.me/${tel}?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+    </script>
+</body>
+</html>

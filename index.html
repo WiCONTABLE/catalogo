@@ -152,6 +152,17 @@
         
         .info h2 { font-size: 1.05rem; margin: 10px 0 5px; color: #000; font-weight: 700; cursor: pointer; }
         .price-tag { color: var(--ws-dark); font-weight: 700; font-size: 1.1rem; margin-bottom: 8px; }
+        
+        /* Estilo base para el texto REF */
+        .ref-tag {
+            font-size: 0.75rem; 
+            color: #7f8c8d; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            letter-spacing: 0.5px; 
+            display: block; 
+            margin-bottom: 2px;
+        }
 
         .main-footer { background: white; padding: 40px 20px; margin-top: 60px; text-align: center; border-top: 1px solid #eee; }
         .social-links { display: flex; justify-content: center; gap: 15px; margin-top: 15px; }
@@ -188,11 +199,11 @@
         /* 🔥 AJUSTES EXTREMOS PARA PANTALLAS MÓVILES (Celulares) */
         @media (max-width: 768px) {
             .main-container { 
-                padding-left: 8px !important;
-                padding-right: 8px !important;
+                padding-left: 10px !important;
+                padding-right: 10px !important;
             }
             .product-card {
-                padding: 15px 0px 20px 0px !important;
+                padding: 20px 0px 25px 0px !important;
             }
             .card-img {
                 width: 100% !important; 
@@ -201,7 +212,26 @@
                 margin-top: -5px !important; 
             }
             .info {
-                padding: 0 15px !important; 
+                padding: 0 20px !important; 
+            }
+            /* Aumentar tamaño de textos y botones en celulares */
+            .info h2 {
+                font-size: 1.4rem !important;
+                margin-top: 15px !important;
+                margin-bottom: 10px !important;
+            }
+            .price-tag {
+                font-size: 1.5rem !important;
+                margin-bottom: 15px !important;
+            }
+            .ref-tag {
+                font-size: 1rem !important;
+                margin-bottom: 5px !important;
+            }
+            .btn-det, .btn-add {
+                font-size: 1.15rem !important;
+                padding: 12px !important;
+                border-radius: 25px !important;
             }
         }
     </style>
@@ -358,12 +388,12 @@
                 const isAgotado = p.etiqueta && p.etiqueta.toUpperCase().includes('AGOTADO');
                 const linkProducto = p.url || `detalle.html?id=${p.id}`;
                 
-                // Extraer la REF desde p.desc, si no existe no creamos la etiqueta
+                // Extraer la REF desde p.desc
                 let refHTML = ''; 
                 if (p.desc) {
                     const match = p.desc.match(/<b>(REF[a-zA-Z0-9]+)<\/b>/i);
                     if (match) {
-                        refHTML = `<span style="font-size: 0.75rem; color: #7f8c8d; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">${match[1]}</span>`;
+                        refHTML = `<span class="ref-tag">${match[1]}</span>`;
                     }
                 }
                 

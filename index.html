@@ -358,12 +358,12 @@
                 const isAgotado = p.etiqueta && p.etiqueta.toUpperCase().includes('AGOTADO');
                 const linkProducto = p.url || `detalle.html?id=${p.id}`;
                 
-                // Extraer la REF desde p.desc
-                let refText = `REF: ${p.id}`; // Valor por defecto si no encuentra la etiqueta
+                // Extraer la REF desde p.desc, si no existe no creamos la etiqueta
+                let refHTML = ''; 
                 if (p.desc) {
                     const match = p.desc.match(/<b>(REF[a-zA-Z0-9]+)<\/b>/i);
                     if (match) {
-                        refText = match[1]; // Toma exactamente "REF006" o lo que contenga
+                        refHTML = `<span style="font-size: 0.75rem; color: #7f8c8d; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">${match[1]}</span>`;
                     }
                 }
                 
@@ -373,11 +373,7 @@
                         <img src="${safeFoto}" class="card-img" alt="${p.nombre}">
                     </a>
                     <div class="info">
-                        <!-- Etiqueta REF extraída de la descripción -->
-                        <span style="font-size: 0.75rem; color: #7f8c8d; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">
-                            ${refText}
-                        </span>
-                        
+                        ${refHTML}
                         <a href="${linkProducto}" style="text-decoration: none; color: inherit;">
                             <h2 style="cursor: pointer;">${p.nombre}</h2>
                         </a>

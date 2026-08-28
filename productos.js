@@ -110,7 +110,20 @@ etiqueta: "DISPONIBLE",
         video: "",
         fotos: ["img/p8-0.png", "img/p8-1.png"]
     },
-
+        {
+        id: 10,
+        nombre: "Plataformas/Membresías",
+        url: "plataforma-membresias.html",
+        formato: "Credenciales",
+        mostrarTecnica: false,
+etiqueta: "DISPONIBLE",
+        desc: "Te invitamos a visualizar nuestro catalogo de ocio, producción y entretenimiento con los mejores precios del mercado.<p><b> </b><p>",
+        caracteristicas: ["Plataformas Streaming.", "Antivirus.", "IA.", "VPN.", "Diseño.", "Cursos.", "Juegos"],
+        nota: "(En ver videotutorial encontrarás lista de precios y plataformas) Las membresias son en la mayoria mensuales y otras con oferta de hasta 3 y 12 meses. <b>Escribenos y podemos ampliar la información de interes.</b>",
+        precio: "Desde COP $1.500",
+        video: "https://acortar.link/Plataformax",
+        fotos: ["img/p10-0.png"]
+    },
 {
         id: 11,
         nombre: "Declaración de Renta Persona Natural",
@@ -124,19 +137,6 @@ etiqueta: "AGOTADO",
         precio: "Desde COP $300.000",
         video: "",
         fotos: ["img/p11-0.png", "img/p11-1.png"]
-    },    
-    {
-        id: 10,
-        nombre: "Plataformas/Membresías",
-        url: "plataforma-membresias.html",
-        formato: "Credenciales",
-        mostrarTecnica: false,
-etiqueta: "DISPONIBLE",
-        desc: "Te invitamos a visualizar nuestro catalogo de ocio, producción y entretenimiento con los mejores precios del mercado.<p><b> </b><p>",
-        caracteristicas: ["Plataformas Streaming.", "Antivirus.", "IA.", "VPN.", "Diseño.", "Cursos.", "Juegos"],
-        nota: "(En ver videotutorial encontrarás lista de precios y plataformas) Las membresias son en la mayoria mensuales y otras con oferta de hasta 3 y 12 meses. <b>Escribenos y podemos ampliar la información de interes.</b>",
-        precio: "Desde COP $1.500",
-        video: "https://acortar.link/Plataformax",
-        fotos: ["img/p10-0.png"]
-    }
+    }    
+
 ];

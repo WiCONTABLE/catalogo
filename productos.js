@@ -12,8 +12,8 @@ const productos = [
         caracteristicas: ["<p>Música sin anuncios.</p>","<p>Reproducción de cualquier canción.</p>", "<p>Cambios de canción sin límites.</p>", "<p>Descargas para escuchar sin internet.</p>", "<p>Excelente calidad de audio</p>"],
         nota: "<b><p>RECUERDE</b> que es importante ver el videotutorial antes de adquirir la credencial, de esta manera le será más fácil despejar dudas de funcionamiento.</p> <p>Las credenciales toman un tiempo 15 minuto para la entrega una vez hayas realizado el respectivo pago.</p>",
         precio: "COP $5.000",
-        video: "video/Pdfs.mp4",
-        youtube: "https://youtu.be/S2DYfhnps-c",
+        video: "video/Spotify.mp4",
+        youtube: "",
         fotos: ["img/p1-0.png", "img/p1-1.png", "img/p1-2.png"]
     },
     {

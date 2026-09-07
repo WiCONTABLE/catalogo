@@ -8,10 +8,10 @@ const productos = [
         formato: "Credenciales",
         mostrarTecnica: true,
         etiqueta: "NUEVO",
-        desc: "<p>Recibe una cuenta Premium lista para usar, con su respectivo correo y contraseña.</p><p>¿Ya tienes una cuenta gratuita con tus playlists favoritas? ¡No las pierdes! Comparte el enlace de tus listas con la cuenta Premium, guárdalas allí y disfruta durante 3 meses premium.</p>",
+        desc: "<p>Recibe una cuenta Premium lista para usar, con su respectivo correo y contraseña.</p><p>¿Ya tienes una cuenta gratuita con tus playlists favoritas? ¡No las pierdes! Comparte el enlace de tus listas con la cuenta Premium, guárdalas allí y disfruta durante 3 meses premium; La oferta termina el 23 de septiembre de 2026.</p>",
         caracteristicas: ["<p>Música sin anuncios.</p>","<p>Reproducción de cualquier canción.</p>", "<p>Cambios de canción sin límites.</p>", "<p>Descargas para escuchar sin internet.</p>", "<p>Excelente calidad de audio</p>"],
         nota: "<b><p>RECUERDE</b> que es importante ver el videotutorial antes de adquirir la credencial, de esta manera le será más fácil despejar dudas de funcionamiento.</p> <p>Las credenciales toman un tiempo 15 minuto para la entrega una vez hayas realizado el respectivo pago.</p>",
-        precio: "COP $8.000",
+        precio: "COP $5.000",
         video: "video/Pdfs.mp4",
         youtube: "https://youtu.be/S2DYfhnps-c",
         fotos: ["img/p1-0.png", "img/p1-1.png", "img/p1-2.png"]

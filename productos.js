@@ -14,7 +14,7 @@ const productos = [
         precio: "COP $8.000",
         video: "video/Pdfs.mp4",
         youtube: "https://youtu.be/S2DYfhnps-c",
-        fotos: ["img/p1-0.png"]
+        fotos: ["img/p1-0.png", "img/p1-1.png", "img/p1-2.png"]
     },
     {
         id: 2,

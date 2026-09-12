@@ -13,7 +13,7 @@ etiqueta: "¡NUEVO!",
         nota: "Se trata de una aplicación ejecutable (EXE) que ha sido ajustada para mantener siempre la sesión activa y sin limites de tiempo; la aplicación se mantiene operativa de forma indefinida. <b>Se recomienda no actualizar y mantener la versión inicial.</b> En caso que el usuario tenga alguna versión instalada anteriormente se recomienda limpiar los registros mediante regedit para el óptimo funcionamiento de esta versión. Precio en USDT $7 mediante Binance.",
         precio: "COP $20.000",
         video: "video/pdfextractpro.mp4",
-        youtube: "",
+        youtube: "https://youtu.be/Oi_HuA9jlL0",
         fotos: ["img/p14-0.png", "img/p14-1.png", "img/p14-2.png"]
     },
     {

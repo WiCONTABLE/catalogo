@@ -12,7 +12,7 @@ etiqueta: "¡NUEVO!",
         caracteristicas: ["Conversión avanzada a Excel: Es su función más destacada. Permite seleccionar tablas manualmente o usar detección automática para exportar datos limpios a .xlsx o .csv, ajustando filas, columnas y delimitadores antes de convertir.", "Múltiples formatos de salida: Convierte archivos PDF a Word, PowerPoint, AutoCAD (DWG/DXF), HTML, imágenes y texto plano.", "Motor OCR integrado: Reconoce y extrae texto o tablas desde documentos escaneados o imágenes fotográficas en varios idiomas." , "Procesamiento por lotes (Batch): Permite convertir carpetas enteras de archivos PDF de manera simultánea sin intervención manual paso a paso.", "Edición y seguridad: Incluye herramientas para modificar texto directamente en el PDF, agregar páginas, crear formularios interactivos, añadir firmas digitales y cifrar con contraseñas."],
         nota: "Se trata de una aplicación ejecutable (EXE) que ha sido ajustada para mantener siempre la sesión activa y sin limites de tiempo; la aplicación se mantiene operativa de forma indefinida. <b>Se recomienda no actualizar y mantener la versión inicial.</b> En caso que el usuario tenga alguna versión instalada anteriormente se recomienda limpiar los registros mediante regedit para el óptimo funcionamiento de esta versión. Precio en USDT $7 mediante Binance.",
         precio: "COP $20.000",
-        video: "video/pdfextractpro.mp4",
+        video: "video/PDFExtractPRO.avi",
         youtube: "",
         fotos: ["img/p14-0.png", "img/p14-1.png", "img/p14-2.png"]
     },

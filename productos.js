@@ -28,7 +28,7 @@ etiqueta: "¡NUEVO!",
         nota: "Te en cuenta las siguientes recomendaciones: <b>El enlace es de un solo uso.</b> Se recomienda canjearlo únicamente en la sesión iniciada donde deseas disfrutar el beneficio; Una vez activado correctamente, el servicio quedará asociado a tu cuenta. <p><b>Te realizamos acompañamiento vía Anydesk, para ello tenerlo instalado para poder proceder y para validar una correcta activación, es importante que estes en un PC, no es válido ni en Tablet, ni celular para el acompañamiento.</b></p> <p>Manejamos pago local COP y Binance USDT.</p> <p><b>Tener en cuenta que se brinda garantía si se procede asistir vía anydesk, de lo contrario no hay garantía.</b> Precio en USDT $10 mediante Binance.<p/>",
         precio: "COP $15.000",
         video: "video/superduo.mp4",
-        youtube: "",
+        youtube: "https://youtu.be/JDlt_Eu4lrQ",
         fotos: ["img/p15-0.png", "img/p15-1.png", "img/p15-2.png", "img/p15-3.png"]
     },   
     {

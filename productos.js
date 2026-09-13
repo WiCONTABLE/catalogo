@@ -29,7 +29,7 @@ etiqueta: "¡NUEVO!",
         precio: "COP $20.000",
         video: "",
         youtube: "",
-        fotos: ["img/p15-0.png", "img/p15-1.png", "img/p15-2.png"]
+        fotos: ["img/p15-0.png", "img/p15-1.png", "img/p15-2.png", "img/p15-3.png"]
     },   
     {
         id: 2,

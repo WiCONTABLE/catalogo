@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="dark">
+<html lang="es" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -2255,10 +2255,16 @@
                 border-radius: var(--radius-lg);
             }
             .card-image-box {
-                height: 250px;
+                height: clamp(215px, 60vw, 245px);
                 padding: 4px 6px;
                 border-radius: var(--radius-md);
                 margin-bottom: 16px;
+            }
+            .card-image-box img {
+                transform: scale(1.20) translateY(-2.5%);
+            }
+            .product-card:hover .card-image-box img {
+                transform: scale(1.22) translateY(-2.5%);
             }
             .card-title {
                 font-size: 1.15rem;
@@ -2315,8 +2321,11 @@
         /* Extra Small Devices (<= 380px) */
         @media (max-width: 380px) {
             .card-image-box {
-                height: 220px;
+                height: 205px;
                 padding: 4px 4px;
+            }
+            .card-image-box img {
+                transform: scale(1.20) translateY(-2.5%);
             }
             .filter-btn {
                 padding: 6px 10px;
@@ -2719,7 +2728,7 @@
            1. THEME SWITCHER (DARK / LIGHT LUXE)
            ========================================================================== */
         const htmlEl = document.documentElement;
-        const savedTheme = localStorage.getItem('wicontable_theme') || 'dark';
+        const savedTheme = localStorage.getItem('wicontable_theme') || 'light';
         htmlEl.setAttribute('data-theme', savedTheme);
 
         function toggleTheme() {

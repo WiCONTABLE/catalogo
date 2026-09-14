@@ -1053,6 +1053,7 @@
             align-items: center;
             gap: 12px;
             flex-wrap: wrap;
+            margin-bottom: 24px;
         }
 
         .tech-chip-action {
@@ -2262,6 +2263,17 @@
                             </ul>
                         </div>
 
+                        <!-- Technical Quick Chips -->
+                        <div class="tech-spec-bar">
+                            <a href="https://wa.me/?text=Mira%20esta%20herramienta%20contable:%20*${encodeURIComponent(p.nombre)}*%20${encodeURIComponent(window.location.href)}" target="_blank" class="tech-chip-action">
+                                <span>📲 Compartir en WhatsApp</span>
+                            </a>
+                            ${videoBtnHTML}
+                            <div class="tech-chip-action" style="cursor:default;">
+                                <span>💻 Formato: ${formatText}</span>
+                            </div>
+                        </div>
+
                         <!-- Purchase Bar -->
                         <div class="purchase-bar">
                             <div class="price-group">
@@ -2278,17 +2290,6 @@
                                         <span>Preguntar a Wilder</span>
                                     </a>
                                 `}
-                            </div>
-                        </div>
-
-                        <!-- Technical Quick Chips -->
-                        <div class="tech-spec-bar">
-                            <a href="https://wa.me/?text=Mira%20esta%20herramienta%20contable:%20*${encodeURIComponent(p.nombre)}*%20${encodeURIComponent(window.location.href)}" target="_blank" class="tech-chip-action">
-                                <span>📲 Compartir en WhatsApp</span>
-                            </a>
-                            ${videoBtnHTML}
-                            <div class="tech-chip-action" style="cursor:default;">
-                                <span>💻 Formato: ${formatText}</span>
                             </div>
                         </div>
 

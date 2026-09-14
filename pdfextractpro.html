@@ -834,6 +834,24 @@
             box-shadow: var(--card-shadow);
         }
 
+        .support-card.support-mobile {
+            display: none;
+        }
+
+        .support-card.support-desktop {
+            display: block;
+        }
+
+        @media (max-width: 960px) {
+            .support-card.support-desktop {
+                display: none !important;
+            }
+            .support-card.support-mobile {
+                display: block !important;
+                margin-top: 24px;
+            }
+        }
+
         .support-card-header {
             display: flex;
             align-items: center;
@@ -2212,8 +2230,8 @@
                             </div>
                         ` : ''}
 
-                        <!-- Support Card -->
-                        <div class="support-card">
+                        <!-- Support Card (Desktop: en PC queda debajo de la galería) -->
+                        <div class="support-card support-desktop">
                             <div class="support-card-header">
                                 <span>🛡️</span>
                                 <span>Soporte</span>
@@ -2272,6 +2290,17 @@
                             ${videoBtnHTML}
                             <div class="tech-chip-action" style="cursor:default;">
                                 <span>💻 Formato: ${formatText}</span>
+                            </div>
+                        </div>
+
+                        <!-- Support Card (Móvil: en celulares queda después de los botones) -->
+                        <div class="support-card support-mobile">
+                            <div class="support-card-header">
+                                <span>🛡️</span>
+                                <span>Soporte</span>
+                            </div>
+                            <div class="support-card-text">
+                                ${p.nota || 'Para brindarte un soporte técnico oportuno y asegurar el correcto funcionamiento, realizamos acompañamiento remoto vía AnyDesk durante la instalación y entrega de tu solución.'}
                             </div>
                         </div>
                     </div>

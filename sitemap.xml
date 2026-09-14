@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://wicontable.com/</loc>
     <lastmod>2026-09-14</lastmod>
@@ -17,54 +18,110 @@
     <lastmod>2026-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/S2DYfhnps-c/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Demostración en Video: PDFs Downloader (DIAN) - WiCONTABLE</video:title>
+      <video:description>Tutorial y demostración de descarga masiva de facturas electrónicas, notas débito y crédito directamente desde el portal DIAN a Excel sin límites.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/S2DYfhnps-c</video:player_loc>
+      <video:publication_date>2026-01-01T00:00:00+00:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
   </url>
   <url>
     <loc>https://wicontable.com/pdfextractpro.html</loc>
     <lastmod>2026-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/Oi_HuA9jlL0/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Demostración en Video: PDF Extract PRO - WiCONTABLE</video:title>
+      <video:description>Extracción y estructuración automatizada de tablas e información atrapada en documentos PDF hacia archivos Excel listos para análisis contable.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/Oi_HuA9jlL0</video:player_loc>
+      <video:publication_date>2026-01-01T00:00:00+00:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
   </url>
   <url>
     <loc>https://wicontable.com/reporte-rentapn.html</loc>
     <lastmod>2026-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/qa_wJjN3Nvo/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Demostración en Video: Reportes Renta Persona Natural DIAN - WiCONTABLE</video:title>
+      <video:description>Automatización del descargue del reporte de información exógena de personas naturales desde el portal DIAN con WiCONTABLE.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/qa_wJjN3Nvo</video:player_loc>
+      <video:publication_date>2026-01-01T00:00:00+00:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
   </url>
   <url>
     <loc>https://wicontable.com/consulta-datos-nit.html</loc>
     <lastmod>2026-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://wicontable.com/declaracion-renta-pn.html</loc>
-    <lastmod>2026-09-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/1wLEFzIwj38/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Demostración en Video: Consulta Datos NIT (DIAN) - WiCONTABLE</video:title>
+      <video:description>Consulta masiva de información en la DIAN por NIT o Cédula: razón social, estado, responsabilidades fiscales y dígito de verificación.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/1wLEFzIwj38</video:player_loc>
+      <video:publication_date>2026-01-01T00:00:00+00:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
   </url>
   <url>
     <loc>https://wicontable.com/gemini-pro.html</loc>
     <lastmod>2026-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/IVZaqCdm5XY/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Demostración en Video: Gemini PRO IA - WiCONTABLE</video:title>
+      <video:description>Activación y funcionamiento de Google Gemini PRO con inteligencia artificial avanzada para contabilidad y productividad.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/IVZaqCdm5XY</video:player_loc>
+      <video:publication_date>2026-01-01T00:00:00+00:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
   </url>
   <url>
     <loc>https://wicontable.com/365-office.html</loc>
     <lastmod>2026-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/jKVPmmDu1-I/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Demostración en Video: Microsoft 365 Genuina - WiCONTABLE</video:title>
+      <video:description>Instalación y activación de Microsoft Office 365 genuina con soporte y almacenamiento en la nube garantizado.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/jKVPmmDu1-I</video:player_loc>
+      <video:publication_date>2026-01-01T00:00:00+00:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
   </url>
   <url>
     <loc>https://wicontable.com/duolingosuper.html</loc>
     <lastmod>2026-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/JDlt_Eu4lrQ/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Demostración en Video: Duolingo Super - WiCONTABLE</video:title>
+      <video:description>Aprende idiomas sin anuncios con vidas ilimitadas y práctica personalizada con Duolingo Super 1 Año.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/JDlt_Eu4lrQ</video:player_loc>
+      <video:publication_date>2026-01-01T00:00:00+00:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
   </url>
   <url>
     <loc>https://wicontable.com/spotify3meses.html</loc>
     <lastmod>2026-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://wicontable.com/declaracion-renta-pn.html</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://wicontable.com/windows-10-11.html</loc>

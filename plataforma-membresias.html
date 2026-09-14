@@ -1,215 +1,1775 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plataformas y Membresías - WiCONTABLE</title>
+    <title>Plataformas & Membresías Digitales - WiCONTABLE</title>
     <link rel="icon" href="https://wicontable.com/img/logowi.png" type="image/png" sizes="48x48">
     
-    <meta property="og:title" content="Plataformas/Membresías">
-    <meta property="og:description" content="Te invitamos a visualizar nuestro catalogo de ocio, producción y entretenimiento con los mejores precios del mercado.">
+    <meta property="og:title" content="Plataformas & Membresías Digitales - WiCONTABLE">
+    <meta property="og:description" content="Catálogo completo de entretenimiento, streaming, herramientas de diseño, inteligencia artificial y cursos con soporte 100% garantizado.">
     <meta property="og:image" content="https://wicontable.com/img/p10-0.png">
     <meta property="og:url" content="https://wicontable.com/plataforma-membresias.html">
     <meta property="og:type" content="website">
-    
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
-        :root { 
-            --ws-green: #25D366; 
-            --ws-dark: #128C7E; 
-            --bg-gray: #f8f9fa; 
-            --card-shadow: 0 10px 25px rgba(0,0,0,0.08); 
-            --text-main: #333;
-            --fb-color: #1877F2; --li-color: #0077b5; --tk-color: #000000;
-            --yt-color: #FF0000; --ig-color: #E4405F;
+        :root {
+            --brand-green: #10B981;
+            --brand-green-hover: #059669;
+            --brand-green-light: rgba(16, 185, 129, 0.12);
+            --brand-teal: #0F766E;
+            --brand-teal-dark: #128C7E;
+            --brand-cyan: #06B6D4;
+            --brand-gradient: linear-gradient(135deg, #10B981 0%, #06B6D4 100%);
+            --brand-gradient-hover: linear-gradient(135deg, #059669 0%, #0891B2 100%);
+
+            --font-heading: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+            --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+
+            --tr-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            --tr-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            --tr-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 20px;
+            --radius-xl: 28px;
+            --radius-full: 9999px;
         }
-        
-        body { font-family: 'Calibri', 'Segoe UI', Tahoma, sans-serif; background: var(--bg-gray); margin: 0; position: relative; color: var(--text-main); font-size: 14px; }
-        body::before { content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: url('img/logowi.png'); background-repeat: no-repeat; background-position: center; background-size: 40%; opacity: 0.04; z-index: -1; pointer-events: none; }
 
-        .marquee-wrapper { width: 100%; overflow: hidden; background: white; padding: 12px 0; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 100; }
-        .marquee-content { display: inline-block; white-space: nowrap; padding-left: 100%; animation: scroll-text 30s linear infinite; font-weight: 600; color: #008f39; }
-        @keyframes scroll-text { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
+        [data-theme="dark"] {
+            --bg-base: #080C14;
+            --bg-surface: #0E1524;
+            --bg-surface-elevated: #151F33;
+            --bg-card: rgba(15, 23, 42, 0.65);
+            --bg-card-hover: rgba(23, 33, 56, 0.85);
+            --bg-input: rgba(15, 23, 42, 0.8);
+            
+            --border-subtle: rgba(255, 255, 255, 0.08);
+            --border-medium: rgba(255, 255, 255, 0.15);
+            --border-active: rgba(16, 185, 129, 0.5);
 
-        .main-wrapper { max-width: 1100px; margin: 0 auto; padding: 20px; min-height: 80vh; }
-        
-        .breadcrumbs { font-size: 0.95rem; margin-bottom: 20px; color: #666; font-weight: 600; }
-        .breadcrumbs a { color: var(--ws-dark); text-decoration: none; }
-        .breadcrumbs a:hover { text-decoration: underline; }
+            --text-primary: #F8FAFC;
+            --text-secondary: #94A3B8;
+            --text-muted: #64748B;
+            
+            --nav-bg: rgba(8, 12, 20, 0.88);
+            --nav-border: rgba(255, 255, 255, 0.06);
 
-        /* ==================================================
-           ESTILOS DEL CATÁLOGO DE MEMBRESÍAS
-           ================================================== */
-        .hero-banner { text-align: center; padding: 10px 20px 25px; }
-        .hero-banner h2 { font-size: 2.2rem; margin: 0 0 10px; color: #111; font-weight: 900; letter-spacing: -0.5px;}
-        .hero-banner p { color: #555; font-size: 1.1rem; margin: 0; }
+            --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
+            --card-shadow-hover: 0 20px 40px -10px rgba(0, 0, 0, 0.7), 0 0 25px rgba(16, 185, 129, 0.18), 0 0 0 1px rgba(16, 185, 129, 0.3);
+            --glow-orb: rgba(16, 185, 129, 0.07);
+        }
 
-        .controls-container { display: flex; flex-wrap: wrap; gap: 15px; justify-content: space-between; align-items: center; margin-bottom: 30px; }
-        .search-box { flex: 1; min-width: 280px; }
-        .search-box input { width: 100%; padding: 14px 20px; border-radius: 25px; border: 2px solid #ddd; font-size: 1rem; outline: none; box-sizing: border-box; transition: 0.3s; font-family: 'Calibri', sans-serif; }
-        .search-box input:focus { border-color: var(--ws-green); box-shadow: 0 4px 15px rgba(37,211,102,0.15); }
-        .filter-buttons { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 5px; }
-        .filter-btn { background: white; border: 1px solid #ccc; padding: 8px 18px; border-radius: 20px; cursor: pointer; font-size: 0.9rem; font-weight: bold; color: #555; transition: 0.2s; white-space: nowrap; font-family: 'Calibri', sans-serif;}
-        .filter-btn.active, .filter-btn:hover { background: var(--ws-dark); color: white; border-color: var(--ws-dark); }
+        [data-theme="light"] {
+            --bg-base: #F8FAFC;
+            --bg-surface: #FFFFFF;
+            --bg-surface-elevated: #F1F5F9;
+            --bg-card: #FFFFFF;
+            --bg-card-hover: #FFFFFF;
+            --bg-input: #F8FAFC;
 
-        .streaming-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 25px; margin-bottom: 50px; }
-        .platform-card { background: white; border-radius: 16px; overflow: hidden; box-shadow: var(--card-shadow); border: 1px solid #eaeaea; display: flex; flex-direction: column; justify-content: space-between; transition: 0.3s ease; }
-        .platform-card:hover { transform: translateY(-6px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); border-color: var(--ws-green); }
-        .img-container { width: 100%; height: 160px; background: white; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
-        .img-container img { width: 100px; height: 100px; object-fit: contain; transition: 0.4s ease; }
-        .platform-card:hover .img-container img { transform: scale(1.05); }
-        .category-badge { position: absolute; top: 12px; right: 12px; background: rgba(0, 0, 0, 0.75); color: white; font-size: 0.75rem; padding: 4px 10px; border-radius: 12px; font-weight: bold; backdrop-filter: blur(4px); }
-        
-        .card-body { padding: 18px; flex-grow: 1; display: flex; flex-direction: column; }
-        .platform-title { font-size: 1.2rem; font-weight: 800; margin: 0 0 6px 0; color: #111; }
-        .platform-desc { font-size: 0.9rem; color: #666; margin: 0 0 15px 0; line-height: 1.4; flex-grow: 1; }
-        .price-tag { font-size: 1.4rem; font-weight: 900; color: var(--ws-dark); margin-bottom: 12px; letter-spacing: -0.5px;}
-        .price-tag span { font-size: 0.85rem; color: #888; font-weight: 600; }
-        .btn-add-cart { width: 100%; background: var(--ws-green); color: white; border: none; padding: 12px; border-radius: 10px; font-weight: bold; font-size: 0.95rem; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: 0.2s ease; font-family: 'Calibri', sans-serif;}
-        .btn-add-cart:hover { background: #1eb956; transform: scale(1.02); }
+            --border-subtle: rgba(0, 0, 0, 0.07);
+            --border-medium: rgba(0, 0, 0, 0.14);
+            --border-active: rgba(16, 185, 129, 0.6);
 
-        /* ==================================================
-           ESTILOS ORIGINALES (SCROLL, FOOTER, CARRITO)
-           ================================================== */
-        .scroll-section { margin: 60px 0 40px; padding-top: 30px; border-top: 2px dashed #ddd; }
-        .scroll-container { display: flex; gap: 15px; overflow-x: auto; padding: 10px 0 20px; scrollbar-width: thin; }
-        .mini-card { flex: 0 0 160px; background: white; border-radius: 15px; padding: 15px 10px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05); text-decoration: none; color: inherit; border: 1px solid #eee; transition: 0.2s; display: flex; flex-direction: column; justify-content: space-between; align-items: center; position: relative; }
-        .mini-card:hover { transform: translateY(-5px); border-color: var(--ws-green); }
-        .mini-img { width: 100%; height: 80px; object-fit: contain; margin-bottom: 10px; }
-        .mini-card h4 { margin: 0 0 10px 0; font-size: 0.85rem; font-weight: 600; line-height: 1.2; }
+            --text-primary: #0F172A;
+            --text-secondary: #475569;
+            --text-muted: #8E9CAE;
 
-        .badge-base { position: absolute; top: 15px; right: 15px; color: white; font-size: 0.70rem; font-weight: 900; padding: 6px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px; z-index: 20; }
-        .badge-nuevo { background: linear-gradient(90deg, #ff0000, #ff8c00, #ff0000); background-size: 200% auto; box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); animation: glow-pulse-nuevo 2s linear infinite; }
-        @keyframes glow-pulse-nuevo { 0% { background-position: 0% center; box-shadow: 0 0 8px rgba(255,0,0,0.4); } 50% { box-shadow: 0 0 18px rgba(255,80,0,0.9); } 100% { background-position: 200% center; box-shadow: 0 0 8px rgba(255,0,0,0.4); } }
-        .badge-manten { background: linear-gradient(90deg, #e65c00, #F9D423, #e65c00); background-size: 200% auto; box-shadow: 0 0 10px rgba(230, 92, 0, 0.5); animation: glow-pulse-manten 2.5s linear infinite; }
-        @keyframes glow-pulse-manten { 0% { background-position: 0% center; box-shadow: 0 0 8px rgba(230,92,0,0.4); } 50% { box-shadow: 0 0 18px rgba(249,212,35,0.8); } 100% { background-position: 200% center; box-shadow: 0 0 8px rgba(230,92,0,0.4); } }
-        .badge-prod { background: linear-gradient(90deg, #FFB300, #FEE140, #FFB300); background-size: 200% auto; box-shadow: 0 0 10px rgba(255, 179, 0, 0.5); animation: glow-pulse-prod 3s linear infinite; color: #000; }
-        @keyframes glow-pulse-prod { 0% { background-position: 0% center; box-shadow: 0 0 8px rgba(255,179,0,0.4); } 50% { box-shadow: 0 0 18px rgba(254,225,64,0.9); } 100% { background-position: 200% center; box-shadow: 0 0 8px rgba(255,179,0,0.4); } }
-        .badge-activa { background: linear-gradient(90deg, #11998e, #38ef7d, #11998e); background-size: 200% auto; box-shadow: 0 0 10px rgba(56, 239, 125, 0.5); animation: glow-pulse-activa 2s linear infinite; }
-        @keyframes glow-pulse-activa { 0% { background-position: 0% center; box-shadow: 0 0 8px rgba(17,153,142,0.4); } 50% { box-shadow: 0 0 18px rgba(56,239,125,0.9); } 100% { background-position: 200% center; box-shadow: 0 0 8px rgba(17,153,142,0.4); } }
-        .badge-agotado { background: linear-gradient(90deg, #606060, #8f8f8f, #606060); background-size: 200% auto; box-shadow: 0 0 10px rgba(96, 96, 96, 0.5); animation: glow-pulse-agotado 3s linear infinite; color: white; }
-        @keyframes glow-pulse-agotado { 0% { background-position: 0% center; box-shadow: 0 0 8px rgba(96,96,96,0.4); } 50% { box-shadow: 0 0 15px rgba(143,143,143,0.8); } 100% { background-position: 200% center; box-shadow: 0 0 8px rgba(96,96,96,0.4); } }
-        .badge-disponible { background: linear-gradient(90deg, #00c6ff, #0072ff, #00c6ff); background-size: 200% auto; box-shadow: 0 0 10px rgba(0, 198, 255, 0.5); animation: glow-pulse-disponible 2s linear infinite; }
-        @keyframes glow-pulse-disponible { 0% { background-position: 0% center; box-shadow: 0 0 8px rgba(0,198,255,0.4); } 50% { box-shadow: 0 0 18px rgba(0,114,255,0.9); } 100% { background-position: 200% center; box-shadow: 0 0 8px rgba(0,198,255,0.4); } }
+            --nav-bg: rgba(255, 255, 255, 0.92);
+            --nav-border: rgba(0, 0, 0, 0.06);
 
-        .main-footer { background: white; padding: 50px 20px; margin-top: 40px; text-align: center; border-top: 1px solid #eee; }
-        .footer-content { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 20px; }
-        .social-links { display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; margin: 10px 0; }
-        .social-btn { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-        .social-btn:hover { transform: translateY(-5px) scale(1.1); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
-        .social-btn svg { width: 25px; height: 25px; fill: white; }
-        
-        .bg-fb { background-color: var(--fb-color); } .bg-ig { background-color: var(--ig-color); }
-        .bg-tk { background-color: var(--tk-color); } .bg-li { background-color: var(--li-color); }
-        .bg-yt { background-color: var(--yt-color); } .bg-no { background-color: #000000; }
-        .bg-wa { background-color: var(--ws-green); }
-        .copyright { font-size: 0.9rem; color: #999; margin-top: 15px; font-weight: 600; }
+            --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(0, 0, 0, 0.05);
+            --card-shadow-hover: 0 20px 40px -10px rgba(16, 185, 129, 0.12), 0 4px 16px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(16, 185, 129, 0.35);
+            --glow-orb: rgba(16, 185, 129, 0.05);
+        }
 
-        .floating-wa { position: fixed; bottom: 25px; left: 25px; background: #25D366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; box-shadow: 0 6px 20px rgba(37,211,102,0.4); text-decoration: none; z-index: 999; transition: 0.3s ease; }
-        .floating-wa:hover { transform: scale(1.1) rotate(5deg); }
-        .floating-cart { position: fixed; bottom: 25px; right: 25px; background: #128C7E; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; box-shadow: 0 6px 20px rgba(18,140,126,0.4); cursor: pointer; z-index: 999; transition: 0.3s ease; }
-        .floating-cart:hover { transform: scale(1.1); }
-        .cart-badge { position: absolute; top: -5px; right: -5px; background: #ff3b30; color: white; font-size: 0.85rem; font-weight: bold; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid white; }
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-        .cart-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 9998; opacity: 0; visibility: hidden; transition: 0.3s; backdrop-filter: blur(3px); }
-        .cart-overlay.active { opacity: 1; visibility: visible; }
-        .cart-sidebar { position: fixed; top: 0; right: -400px; width: 100%; max-width: 380px; height: 100vh; background: white; z-index: 9999; box-shadow: -10px 0 30px rgba(0,0,0,0.1); transition: 0.3s ease-in-out; display: flex; flex-direction: column; }
-        .cart-sidebar.active { right: 0; }
-        .cart-header { padding: 25px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; background: #f8f9fa; }
-        .cart-header h2 { margin: 0; font-size: 1.4rem; color: var(--ws-dark); font-weight: 800; }
-        .close-cart { font-size: 2rem; font-weight: bold; cursor: pointer; color: #aaa; border: none; background: none; line-height: 1; }
-        .close-cart:hover { color: #333; }
-        .cart-body { padding: 25px; overflow-y: auto; flex-grow: 1; display: flex; flex-direction: column; gap: 15px; }
-        .cart-footer { padding: 25px; border-top: 1px solid #eee; background: white; margin-top: auto; }
-        .cart-total { display: flex; justify-content: space-between; font-size: 1.3rem; font-weight: 900; margin-bottom: 20px; color: #000; }
-        .btn-checkout { width: 100%; background: var(--ws-green); color: white; padding: 18px; border: none; border-radius: 12px; font-weight: bold; font-size: 1.05rem; cursor: pointer; transition: 0.3s; box-shadow: 0 4px 15px rgba(37,211,102,0.3); }
-        .btn-checkout:hover { background: #1da852; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37,211,102,0.4); }
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-base);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: clip;
+            transition: background-color var(--tr-smooth), color var(--tr-smooth);
+            position: relative;
+            min-height: 100vh;
+            padding-top: 118px;
+        }
+
+        /* Watermark Brand Logo Background */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image: url('img/logowi.png');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: min(540px, 65vw, 65vh);
+            opacity: 0.08;
+            z-index: 0;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font-family: inherit;
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+
+        /* Ambient Glow */
+        .ambient-glow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .ambient-glow::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            right: -10%;
+            width: 50vw;
+            height: 50vw;
+            background: radial-gradient(circle, var(--glow-orb) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(80px);
+        }
+
+        /* Pinned Header */
+        .top-nav-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: var(--nav-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .top-ticker {
+            background: linear-gradient(90deg, #042f2e 0%, #064e3b 50%, #042f2e 100%);
+            color: #A7F3D0;
+            font-size: 0.775rem;
+            font-weight: 700;
+            letter-spacing: 0.6px;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(16, 185, 129, 0.2);
+            overflow: hidden;
+            white-space: nowrap;
+            display: flex;
+            position: relative;
+            mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+        }
+
+        .ticker-track {
+            display: inline-flex;
+            width: max-content;
+            animation: tickerMarqueeSlide 32s linear infinite;
+        }
+
+        .ticker-track:hover {
+            animation-play-state: paused;
+        }
+
+        .ticker-text {
+            display: inline-block;
+            padding-right: 50px;
+            flex-shrink: 0;
+        }
+
+        @keyframes tickerMarqueeSlide {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .navbar {
+            border-bottom: 1px solid var(--nav-border);
+        }
+
+        .navbar-container {
+            max-width: 1360px;
+            margin: 0 auto;
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.04);
+            padding: 4px;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .brand-name {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 1.35rem;
+            letter-spacing: -0.5px;
+            color: var(--text-primary);
+        }
+
+        .brand-name span {
+            background: var(--brand-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-link {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            padding: 8px 14px;
+            border-radius: var(--radius-full);
+            transition: all var(--tr-fast);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
+        }
+
+        .nav-link:hover {
+            color: var(--brand-green);
+            background: var(--brand-green-light);
+        }
+
+        .nav-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .nav-dropdown-btn {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            padding: 8px 14px;
+            border-radius: var(--radius-full);
+            transition: all var(--tr-fast);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
+        }
+
+        .nav-dropdown-btn:hover, .nav-dropdown.active .nav-dropdown-btn {
+            color: var(--brand-green);
+            background: var(--brand-green-light);
+        }
+
+        .dropdown-arrow {
+            font-size: 0.75rem;
+            transition: transform var(--tr-fast);
+        }
+
+        .nav-dropdown.active .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: calc(100% + 8px);
+            right: 0;
+            width: 280px;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-medium);
+            border-radius: var(--radius-lg);
+            padding: 8px;
+            box-shadow: var(--card-shadow-hover);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(8px);
+            transition: all var(--tr-fast);
+            z-index: 1000;
+        }
+
+        .nav-dropdown.active .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 14px;
+            border-radius: var(--radius-md);
+            color: var(--text-primary);
+            font-size: 0.875rem;
+            transition: background var(--tr-fast);
+        }
+
+        .dropdown-item:hover {
+            background: var(--brand-green-light);
+            color: var(--brand-green);
+        }
+
+        .dropdown-item small {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .dropdown-icon {
+            font-size: 1.15rem;
+            flex-shrink: 0;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+
+        .btn-theme-toggle {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-full);
+            background: var(--bg-surface-elevated);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--tr-fast);
+        }
+
+        .btn-theme-toggle:hover {
+            color: var(--brand-green);
+            border-color: var(--brand-green);
+            transform: scale(1.05);
+        }
+
+        .theme-icon-sun, .theme-icon-moon { width: 19px; height: 19px; stroke-width: 2; }
+        [data-theme="dark"] .theme-icon-sun { display: block; }
+        [data-theme="dark"] .theme-icon-moon { display: none; }
+        [data-theme="light"] .theme-icon-sun { display: none; }
+        [data-theme="light"] .theme-icon-moon { display: block; }
+
+        .btn-nav-cart {
+            background: var(--brand-gradient);
+            color: #042f2e;
+            font-weight: 700;
+            font-size: 0.875rem;
+            padding: 9px 18px;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.25);
+            transition: transform var(--tr-fast), box-shadow var(--tr-fast);
+            white-space: nowrap;
+        }
+
+        .btn-nav-cart:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.35);
+        }
+
+        .cart-pill {
+            background: #042f2e;
+            color: #A7F3D0;
+            font-size: 0.725rem;
+            font-weight: 800;
+            padding: 2px 7px;
+            border-radius: var(--radius-full);
+        }
+
+        .btn-mobile-menu {
+            display: none;
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-full);
+            background: var(--bg-surface-elevated);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-primary);
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (max-width: 992px) {
+            .nav-links { display: none; }
+            .btn-mobile-menu { display: flex; }
+            .cart-btn-label { display: none; }
+        }
+
+        /* Mobile Drawer */
+        .mobile-nav-drawer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 320px;
+            max-width: 85%;
+            height: 100vh;
+            background: var(--bg-surface);
+            border-right: 1px solid var(--border-medium);
+            z-index: 3000;
+            box-shadow: 10px 0 35px rgba(0, 0, 0, 0.4);
+            transform: translateX(-100%);
+            visibility: hidden;
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mobile-nav-drawer.active {
+            transform: translateX(0);
+            visibility: visible;
+        }
+
+        .mobile-nav-header {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .btn-close-mobile {
+            font-size: 1.6rem;
+            color: var(--text-muted);
+            line-height: 1;
+        }
+
+        .mobile-nav-content {
+            padding: 16px;
+            overflow-y: auto;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .mobile-nav-group-title {
+            font-size: 0.725rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--text-muted);
+            margin: 14px 10px 6px;
+        }
+
+        .mobile-nav-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 12px;
+            border-radius: var(--radius-md);
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .mobile-nav-item:hover {
+            background: var(--brand-green-light);
+            color: var(--brand-green);
+        }
+
+        .mobile-nav-icon {
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .mobile-nav-info small {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .mobile-nav-footer {
+            padding: 16px 20px 24px;
+            border-top: 1px solid var(--border-subtle);
+            background: var(--bg-surface-elevated);
+        }
+
+        .mobile-nav-schedule {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .mobile-btn-wa {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 11px 16px;
+            background: #25D366;
+            color: #000;
+            font-weight: 800;
+            font-size: 0.85rem;
+            border-radius: var(--radius-full);
+            text-decoration: none;
+        }
+
+        .drawer-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            z-index: 2500;
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--tr-smooth);
+        }
+
+        .drawer-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* ==========================================================================
+           MEMBERSHIPS PAGE HERO & CONTROLS
+           ========================================================================== */
+        .wrapper-main {
+            max-width: 1360px;
+            margin: 0 auto;
+            padding: 36px 24px 80px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .breadcrumbs {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-bottom: 28px;
+        }
+
+        .breadcrumbs a {
+            color: var(--text-secondary);
+            transition: color var(--tr-fast);
+        }
+
+        .breadcrumbs a:hover {
+            color: var(--brand-green);
+        }
+
+        .breadcrumbs-sep {
+            opacity: 0.4;
+        }
+
+        .memberships-hero {
+            text-align: center;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .badge-hero {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            border-radius: var(--radius-full);
+            background: var(--brand-green-light);
+            color: var(--brand-green);
+            font-size: 0.85rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 16px;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        .memberships-title {
+            font-family: var(--font-heading);
+            font-size: clamp(2.2rem, 4vw, 3.2rem);
+            font-weight: 900;
+            letter-spacing: -1.2px;
+            line-height: 1.15;
+            margin-bottom: 14px;
+        }
+
+        .memberships-title span {
+            background: var(--brand-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .memberships-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Search & Filter Bar */
+        .filter-controls-box {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-medium);
+            border-radius: var(--radius-xl);
+            padding: 24px;
+            margin-bottom: 40px;
+            box-shadow: var(--card-shadow);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .search-row {
+            position: relative;
+            width: 100%;
+        }
+
+        .search-input {
+            width: 100%;
+            background: var(--bg-base);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-full);
+            padding: 16px 24px 16px 52px;
+            font-size: 1rem;
+            color: var(--text-primary);
+            transition: all var(--tr-fast);
+            outline: none;
+        }
+
+        .search-input:focus {
+            border-color: var(--brand-green);
+            box-shadow: 0 0 0 3px var(--brand-green-light);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            pointer-events: none;
+            width: 20px;
+            height: 20px;
+        }
+
+        .category-pills-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            overflow-x: auto;
+            padding-bottom: 4px;
+            scrollbar-width: none;
+        }
+
+        .category-pill {
+            padding: 8px 18px;
+            border-radius: var(--radius-full);
+            font-size: 0.875rem;
+            font-weight: 700;
+            color: var(--text-secondary);
+            background: var(--bg-surface-elevated);
+            border: 1px solid var(--border-subtle);
+            transition: all var(--tr-fast);
+            white-space: nowrap;
+        }
+
+        .category-pill:hover {
+            color: var(--brand-green);
+            border-color: var(--border-medium);
+        }
+
+        .category-pill.active {
+            background: var(--brand-gradient);
+            color: #042f2e;
+            border-color: transparent;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.25);
+        }
+
+        .results-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        /* Grid of Membership Cards */
+        .memberships-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .member-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: var(--card-shadow);
+            transition: all var(--tr-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .member-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--brand-green);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .card-top {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .member-icon-box {
+            width: 60px;
+            height: 60px;
+            border-radius: var(--radius-md);
+            background: var(--bg-base);
+            border: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            padding: 8px;
+        }
+
+        .member-icon-box img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .member-cat-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 3px 8px;
+            border-radius: var(--radius-full);
+            background: var(--brand-green-light);
+            color: var(--brand-green);
+            margin-bottom: 4px;
+        }
+
+        .member-name {
+            font-family: var(--font-heading);
+            font-size: 1.05rem;
+            font-weight: 800;
+            line-height: 1.3;
+            color: var(--text-primary);
+        }
+
+        .member-desc {
+            font-size: 0.825rem;
+            color: var(--text-secondary);
+            line-height: 1.45;
+            margin-bottom: 18px;
+            min-height: 38px;
+        }
+
+        .card-bottom {
+            border-top: 1px solid var(--border-subtle);
+            padding-top: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .price-vigencia-row {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+        }
+
+        .member-price {
+            font-family: var(--font-heading);
+            font-size: 1.35rem;
+            font-weight: 900;
+            color: var(--brand-green);
+            letter-spacing: -0.5px;
+        }
+
+        .member-vigencia {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .card-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+
+        .btn-card-add {
+            background: var(--brand-gradient);
+            color: #042f2e;
+            font-weight: 800;
+            font-size: 0.8rem;
+            padding: 10px;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            transition: all var(--tr-fast);
+        }
+
+        .btn-card-add:hover {
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.35);
+        }
+
+        .btn-card-wa {
+            background: #25D366;
+            color: #000;
+            font-weight: 800;
+            font-size: 0.8rem;
+            padding: 10px;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            transition: all var(--tr-fast);
+        }
+
+        .btn-card-wa:hover {
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.35);
+        }
+
+        /* Support Note Card */
+        .support-banner {
+            background: var(--bg-surface);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            border-radius: var(--radius-xl);
+            padding: 32px;
+            margin-bottom: 60px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            box-shadow: var(--card-shadow);
+        }
+
+        @media (max-width: 768px) {
+            .support-banner { flex-direction: column; text-align: center; }
+        }
+
+        .support-banner-icon {
+            font-size: 3rem;
+            flex-shrink: 0;
+        }
+
+        .support-banner-content h3 {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--brand-green);
+            margin-bottom: 8px;
+        }
+
+        .support-banner-content p {
+            font-size: 0.925rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Related Tools Scroller */
+        .related-tools-sec {
+            margin-bottom: 60px;
+        }
+
+        .related-tools-title {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tools-scroller {
+            display: flex;
+            gap: 18px;
+            overflow-x: auto;
+            padding-bottom: 16px;
+            scrollbar-width: thin;
+        }
+
+        .tool-mini-card {
+            flex: 0 0 240px;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            padding: 16px;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all var(--tr-smooth);
+        }
+
+        .tool-mini-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--brand-green);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .tool-mini-img {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .tool-mini-img img {
+            max-width: 80%;
+            max-height: 80%;
+            object-fit: contain;
+        }
+
+        .tool-mini-name {
+            font-family: var(--font-heading);
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .tool-mini-price {
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: var(--brand-green);
+        }
+
+        /* Cart Drawer */
+        .cart-drawer {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 440px;
+            max-width: 100%;
+            height: 100vh;
+            background: var(--bg-surface);
+            border-left: 1px solid var(--border-medium);
+            z-index: 3000;
+            box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
+            transform: translateX(100%);
+            visibility: hidden;
+            pointer-events: none;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-drawer.active {
+            transform: translateX(0);
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        .cart-header {
+            padding: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .cart-title {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-close-cart {
+            font-size: 1.8rem;
+            color: var(--text-muted);
+            line-height: 1;
+            transition: color var(--tr-fast);
+        }
+
+        .btn-close-cart:hover {
+            color: var(--brand-green);
+        }
+
+        .cart-items-box {
+            flex: 1;
+            padding: 24px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .cart-item-row {
+            background: var(--bg-base);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 14px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .cart-item-info strong {
+            font-size: 0.925rem;
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .cart-item-info span {
+            font-size: 0.85rem;
+            color: var(--brand-green);
+            font-weight: 700;
+        }
+
+        .btn-remove-item {
+            color: #EF4444;
+            font-size: 1.25rem;
+            font-weight: 900;
+            padding: 4px;
+            transition: transform var(--tr-fast);
+        }
+
+        .btn-remove-item:hover {
+            transform: scale(1.2);
+        }
+
+        .cart-footer {
+            padding: 24px;
+            border-top: 1px solid var(--border-subtle);
+            background: var(--bg-surface-elevated);
+        }
+
+        .cart-total-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 1.1rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .cart-total-val {
+            color: var(--brand-green);
+            font-size: 1.35rem;
+        }
+
+        .btn-checkout-wa {
+            width: 100%;
+            background: #25D366;
+            color: #000;
+            font-weight: 800;
+            font-size: 1rem;
+            padding: 16px;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all var(--tr-smooth);
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-checkout-wa:hover {
+            background: #20BA56;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
+        }
+
+        /* Course Notice Modal */
+        .modal-notice {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(5px);
+            z-index: 3500;
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--tr-smooth);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-notice.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-notice-box {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-medium);
+            border-radius: var(--radius-xl);
+            max-width: 480px;
+            width: 100%;
+            padding: 36px;
+            text-align: center;
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        /* Footer */
+        .main-footer {
+            background: var(--bg-surface);
+            border-top: 1px solid var(--border-subtle);
+            padding: 60px 24px 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-container {
+            max-width: 1360px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+
+        @media (max-width: 850px) {
+            .footer-container { grid-template-columns: 1fr; gap: 32px; }
+        }
+
+        .footer-brand p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 12px;
+            max-width: 380px;
+        }
+
+        .footer-social-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .social-link {
+            width: 38px;
+            height: 38px;
+            border-radius: var(--radius-full);
+            background: var(--bg-surface-elevated);
+            border: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--tr-smooth);
+            position: relative;
+        }
+
+        /* WhatsApp */
+        .social-link.wa {
+            color: #25D366;
+            background: rgba(37, 211, 102, 0.12);
+            border-color: rgba(37, 211, 102, 0.35);
+        }
+        .social-link.wa:hover {
+            background: #25D366;
+            color: #FFFFFF;
+            border-color: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 22px rgba(37, 211, 102, 0.45);
+        }
+
+        /* YouTube */
+        .social-link.yt {
+            color: #FF0000;
+            background: rgba(255, 0, 0, 0.10);
+            border-color: rgba(255, 0, 0, 0.35);
+        }
+        .social-link.yt:hover {
+            background: #FF0000;
+            color: #FFFFFF;
+            border-color: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 22px rgba(255, 0, 0, 0.45);
+        }
+
+        /* TikTok */
+        .social-link.tk {
+            color: #0F172A;
+            background: rgba(15, 23, 42, 0.08);
+            border-color: rgba(15, 23, 42, 0.25);
+        }
+        .social-link.tk svg {
+            filter: drop-shadow(-1.5px -1px 0 #25F4EE) drop-shadow(1.5px 1px 0 #FE2C55);
+        }
+        [data-theme="dark"] .social-link.tk {
+            color: #FFFFFF;
+            background: rgba(255, 255, 255, 0.10);
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+        .social-link.tk:hover {
+            background: #010101;
+            color: #FFFFFF;
+            border-color: #25F4EE;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 22px rgba(37, 244, 238, 0.4), 0 0 14px rgba(254, 44, 85, 0.5);
+        }
+
+        /* Facebook */
+        .social-link.fb {
+            color: #1877F2;
+            background: rgba(24, 119, 242, 0.12);
+            border-color: rgba(24, 119, 242, 0.35);
+        }
+        .social-link.fb:hover {
+            background: #1877F2;
+            color: #FFFFFF;
+            border-color: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 22px rgba(24, 119, 242, 0.45);
+        }
+
+        /* Instagram */
+        .social-link.ig {
+            color: #E4405F;
+            background: rgba(228, 64, 95, 0.12);
+            border-color: rgba(228, 64, 95, 0.35);
+        }
+        .social-link.ig:hover {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: #FFFFFF;
+            border-color: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 22px rgba(220, 39, 67, 0.45);
+        }
+
+        /* LinkedIn */
+        .social-link.li {
+            color: #0A66C2;
+            background: rgba(10, 102, 194, 0.12);
+            border-color: rgba(10, 102, 194, 0.35);
+        }
+        .social-link.li:hover {
+            background: #0A66C2;
+            color: #FFFFFF;
+            border-color: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 22px rgba(10, 102, 194, 0.45);
+        }
+
+        .footer-col h4 {
+            font-family: var(--font-heading);
+            font-size: 0.95rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 18px;
+            color: var(--text-primary);
+        }
+
+        .footer-links-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-links-list a {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            transition: color var(--tr-fast);
+        }
+
+        .footer-links-list a:hover {
+            color: var(--brand-green);
+        }
+
+        .footer-bottom {
+            max-width: 1360px;
+            margin: 0 auto;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-subtle);
+            text-align: center;
+            font-size: 0.825rem;
+        }
+
+        /* Modal Aviso Importante */
+        .product-notice-overlay {
+            position: fixed;
+            inset: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(4, 8, 16, 0.78);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .product-notice-overlay.active {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        .product-notice-modal {
+            background: #131b31;
+            border: 2px solid #10B981;
+            border-radius: 24px;
+            max-width: 520px;
+            width: 100%;
+            padding: 36px 32px 32px;
+            text-align: center;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), 0 0 35px rgba(16, 185, 129, 0.25);
+            transform: scale(0.92);
+            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        [data-theme="light"] .product-notice-modal {
+            background: #131b31;
+            color: #F8FAFC;
+        }
+
+        .product-notice-overlay.active .product-notice-modal {
+            transform: scale(1);
+        }
+
+        .product-notice-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .product-notice-icon {
+            font-size: 1.6rem;
+            line-height: 1;
+        }
+
+        .product-notice-title {
+            font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #10B981;
+            margin: 0;
+            letter-spacing: -0.3px;
+        }
+
+        .product-notice-text {
+            font-size: 1rem;
+            color: #CBD5E1;
+            line-height: 1.65;
+            margin-bottom: 28px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        [data-theme="light"] .product-notice-text {
+            color: #CBD5E1;
+        }
+
+        .btn-product-notice-confirm {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: #10B981;
+            color: #042f2e;
+            font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
+            font-size: 1.05rem;
+            font-weight: 800;
+            padding: 14px 36px;
+            border-radius: 14px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 24px rgba(16, 185, 129, 0.45);
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .btn-product-notice-confirm:hover {
+            background: #059669;
+            color: #FFFFFF;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(16, 185, 129, 0.6);
+        }
     </style>
 </head>
 <body>
+    <div class="ambient-glow"></div>
 
-    <div class="marquee-wrapper">
-        <div class="marquee-content">Accede a las mejores plataformas de entretenimiento, diseño e inteligencia artificial de forma segura y económica; Ten en cuenta que si la cuenta se cae por mal manejo no habra garantia.</div>
+    <!-- Pinned Header -->
+    <div class="top-nav-wrapper">
+        <div class="top-ticker">
+            <div class="ticker-track">
+                <span class="ticker-text">⚡ MEMBRESÍAS DIGITALES Y STREAMING CON ENTREGA INMEDIATA &bull; GARANTÍA DURANTE TODA LA VIGENCIA &bull; ATENCIÓN DIRECTA LUNES A SÁBADO 7AM-9PM &bull; DOMINGOS Y FESTIVOS 9AM-6PM &bull; WHATSAPP: +57 315 601 6386</span>
+                <span class="ticker-text">⚡ MEMBRESÍAS DIGITALES Y STREAMING CON ENTREGA INMEDIATA &bull; GARANTÍA DURANTE TODA LA VIGENCIA &bull; ATENCIÓN DIRECTA LUNES A SÁBADO 7AM-9PM &bull; DOMINGOS Y FESTIVOS 9AM-6PM &bull; WHATSAPP: +57 315 601 6386</span>
+            </div>
+        </div>
+        <header class="navbar">
+            <div class="navbar-container">
+                <a href="index.html" class="brand-logo" title="Volver al Catálogo WiCONTABLE">
+                    <img src="img/logowi.png" alt="WiCONTABLE Logo" class="logo-img">
+                    <div class="brand-name">Wi<span>CONTABLE</span></div>
+                </a>
+
+                <nav class="nav-links">
+                    <a href="plantillas.html" class="nav-link"><span>🎁</span> Plantillas GRATIS</a>
+                    <a href="https://burly-darkness-70e.notion.site/WiCONTABLE-2ea95ee6323880ec8cbae8ba51b03831" target="_blank" rel="noopener noreferrer" class="nav-link"><span>📚</span> Repositorio</a>
+                    <a href="https://chatgpt.com/g/g-vO0tKViyq-asistente-contable-colombia" target="_blank" rel="noopener noreferrer" class="nav-link"><span>🤖</span> GPT Asistente</a>
+                    <div class="nav-dropdown" id="navDropdown">
+                        <button class="nav-dropdown-btn" onclick="toggleNavDropdown(event)">
+                            <span>📁 Más Recursos</span>
+                            <span class="dropdown-arrow">▾</span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="https://sites.google.com/view/estatuton-2024/inicio" target="_blank" rel="noopener noreferrer" class="dropdown-item">
+                                <span class="dropdown-icon">📁</span>
+                                <div>
+                                    <strong>Estatutón Contable</strong>
+                                    <small>Estatuto tributario online y doctrina</small>
+                                </div>
+                            </a>
+                            <a href="https://drive.google.com/drive/folders/12Wl1oNyj58xcgi5LF3PCHAhDyjsKjV-N" target="_blank" rel="noopener noreferrer" class="dropdown-item">
+                                <span class="dropdown-icon">📝</span>
+                                <div>
+                                    <strong>R.U.T CIAS</strong>
+                                    <small>Formatos RUT para compañías en Drive</small>
+                                </div>
+                            </a>
+                            <a href="#" onclick="showCourseNotice('Excel'); return false;" class="dropdown-item">
+                                <span class="dropdown-icon">📗</span>
+                                <div>
+                                    <strong>Aprende Excel</strong>
+                                    <small>Automatización y fórmulas tributarias</small>
+                                </div>
+                            </a>
+                            <a href="#" onclick="showCourseNotice('PowerBI'); return false;" class="dropdown-item">
+                                <span class="dropdown-icon">📊</span>
+                                <div>
+                                    <strong>Aprende PowerBI</strong>
+                                    <small>Dashboards e inteligencia de datos</small>
+                                </div>
+                            </a>
+                            <a href="https://www.tiktok.com/@wildersarria" target="_blank" rel="noopener noreferrer" class="dropdown-item">
+                                <span class="dropdown-icon">🎵</span>
+                                <div>
+                                    <strong>TikTok Formación</strong>
+                                    <small>Tutoriales rápidos y cápsulas contables</small>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="nav-actions">
+                    <button class="btn-theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Cambiar tema">
+                        <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                        <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                    </button>
+                    <button class="btn-nav-cart" onclick="openCart()" title="Abrir pedido">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                        <span class="cart-btn-label">Pedido</span>
+                        <span class="cart-pill" id="cartCount">0</span>
+                    </button>
+                    <button class="btn-mobile-menu" onclick="openMobileMenu()" title="Menú">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+                    </button>
+                </div>
+            </div>
+        </header>
     </div>
 
-    <div class="main-wrapper">
+    <!-- Mobile Drawer -->
+    <div class="drawer-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
+    <aside class="mobile-nav-drawer" id="mobileDrawer">
+        <div class="mobile-nav-header">
+            <div class="brand-logo">
+                <img src="img/logowi.png" alt="WiCONTABLE" class="logo-img">
+                <div class="brand-name">Wi<span>CONTABLE</span></div>
+            </div>
+            <button class="btn-close-mobile" onclick="closeMobileMenu()">&times;</button>
+        </div>
+        <div class="mobile-nav-content">
+            <a href="index.html" class="mobile-nav-item" onclick="closeMobileMenu()">
+                <span class="mobile-nav-icon">🏠</span>
+                <div class="mobile-nav-info">
+                    <strong>Inicio Catálogo</strong>
+                    <small>Todas las herramientas contables</small>
+                </div>
+            </a>
+            <a href="plantillas.html" class="mobile-nav-item" onclick="closeMobileMenu()">
+                <span class="mobile-nav-icon">🎁</span>
+                <div class="mobile-nav-info">
+                    <strong>Plantillas GRATIS</strong>
+                    <small>Descargas contables sin costo</small>
+                </div>
+            </a>
+            <div class="mobile-nav-group-title">Recursos y Utilidades</div>
+            <a href="https://burly-darkness-70e.notion.site/WiCONTABLE-2ea95ee6323880ec8cbae8ba51b03831" target="_blank" class="mobile-nav-item" onclick="closeMobileMenu()">
+                <span class="mobile-nav-icon">📚</span>
+                <div class="mobile-nav-info">
+                    <strong>Repositorio Contable</strong>
+                    <small>Base oficial en Notion</small>
+                </div>
+            </a>
+            <a href="https://chatgpt.com/g/g-vO0tKViyq-asistente-contable-colombia" target="_blank" class="mobile-nav-item" onclick="closeMobileMenu()">
+                <span class="mobile-nav-icon">🤖</span>
+                <div class="mobile-nav-info">
+                    <strong>GPT Asistente Colombia</strong>
+                    <small>IA para consultas contables</small>
+                </div>
+            </a>
+            <a href="https://sites.google.com/view/estatuton-2024/inicio" target="_blank" class="mobile-nav-item" onclick="closeMobileMenu()">
+                <span class="mobile-nav-icon">📁</span>
+                <div class="mobile-nav-info">
+                    <strong>Estatutón Contable</strong>
+                    <small>Estatuto tributario online</small>
+                </div>
+            </a>
+            <a href="https://drive.google.com/drive/folders/12Wl1oNyj58xcgi5LF3PCHAhDyjsKjV-N" target="_blank" class="mobile-nav-item" onclick="closeMobileMenu()">
+                <span class="mobile-nav-icon">📝</span>
+                <div class="mobile-nav-info">
+                    <strong>R.U.T CIAS</strong>
+                    <small>Formatos RUT en Drive</small>
+                </div>
+            </a>
+            <div class="mobile-nav-group-title">Formación</div>
+            <a href="#" onclick="showCourseNotice('Excel'); closeMobileMenu(); return false;" class="mobile-nav-item">
+                <span class="mobile-nav-icon">📗</span>
+                <div class="mobile-nav-info">
+                    <strong>Aprende Excel</strong>
+                    <small>Automatización tributaria</small>
+                </div>
+            </a>
+            <a href="#" onclick="showCourseNotice('PowerBI'); closeMobileMenu(); return false;" class="mobile-nav-item">
+                <span class="mobile-nav-icon">📊</span>
+                <div class="mobile-nav-info">
+                    <strong>Aprende PowerBI</strong>
+                    <small>Dashboards contables</small>
+                </div>
+            </a>
+        </div>
+        <div class="mobile-nav-footer">
+            <div class="mobile-nav-schedule">⏰ Lun-Sáb 7am-9pm | Dom/Fest 9am-6pm</div>
+            <a href="https://wa.me/573156016386?text=Hola,%20soy%20cliente%20y%20requiero%20soporte." target="_blank" rel="noopener noreferrer" class="mobile-btn-wa">
+                <span>WhatsApp Soporte 315 6016386</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="wrapper-main">
         <div class="breadcrumbs">
-            <a href="index.html">🏠 Inicio Catálogo</a> > <span>Membresías & Plataformas</span>
+            <a href="index.html">Catálogo</a>
+            <span class="breadcrumbs-sep">/</span>
+            <span>Membresías & Cuentas Digitales</span>
         </div>
 
-        <div class="hero-banner">
-            <h2>Membresías & Cuentas Digitales</h2>
-            <p>Selecciona las plataformas de tu interés, agrégalas a tu pedido y recíbelas directamente en tu WhatsApp.</p>
-        </div>
+        <section class="memberships-hero">
+            <div class="badge-hero">🎬 Ocio, Producción & Streaming</div>
+            <h1 class="memberships-title">Membresías & <span>Cuentas Digitales</span></h1>
+            <p class="memberships-subtitle">Selecciona las plataformas de tu interés, agrégalas a tu pedido y recíbelas directamente en tu WhatsApp.</p>
+        </section>
 
-        <div class="controls-container">
-            <div class="search-box">
-                <input type="text" id="searchInput" onkeyup="filterPlatforms()" placeholder="🔍 Buscar (ej. ChatGPT, Netflix, Canva)...">
+        <!-- Search and Filter Controls -->
+        <section class="filter-controls-box">
+            <div class="search-row">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                <input type="text" id="searchInput" class="search-input" placeholder="Buscar por plataforma o plan (ej. Disney, Canva, ChatGPT, Netflix, Win+)..." oninput="filterMembresias()">
             </div>
-            <div class="filter-buttons">
-                <button class="filter-btn active" onclick="setCategory('todas', this)">Todas</button>
-                <button class="filter-btn" onclick="setCategory('IA', this)">🤖 Inteligencia Artificial</button>
-                <button class="filter-btn" onclick="setCategory('Diseño', this)">🎨 Diseño & Edición</button>
-                <button class="filter-btn" onclick="setCategory('Seguridad', this)">🛡️ Seguridad</button>
-                <button class="filter-btn" onclick="setCategory('Cursos', this)">🧑‍🏫 Cursos</button>     
-                <button class="filter-btn" onclick="setCategory('Streaming', this)">🍿 Streaming</button>
+            <div class="category-pills-row">
+                <button class="category-pill active" onclick="setCategory('Todas', this)">✨ Todas</button>
+                <button class="category-pill" onclick="setCategory('Streaming', this)">🎬 Streaming</button>
+                <button class="category-pill" onclick="setCategory('Diseño', this)">🎨 Diseño</button>
+                <button class="category-pill" onclick="setCategory('IA', this)">🤖 IA</button>
+                <button class="category-pill" onclick="setCategory('Cursos', this)">📚 Cursos</button>
+            </div>
+            <div class="results-meta" id="resultsCount">Mostrando todas las membresías disponibles</div>
+        </section>
+
+        <!-- Memberships Grid -->
+        <div class="memberships-grid" id="membersGrid"></div>
+
+        <!-- Guarantee & Support Banner -->
+        <div class="support-banner">
+            <div class="support-banner-icon">🛡️</div>
+            <div class="support-banner-content">
+                <h3>Garantía de Reposición y Soporte Técnico</h3>
+                <p>Las membresías son en su mayoría mensuales y otras con ofertas especiales de hasta 3 y 12 meses. Una vez confirmado tu pago, las credenciales se entregan en menos de 15 minutos vía WhatsApp con garantía activa durante el periodo contratado. Si tienes alguna duda, escríbenos directamente a nuestro WhatsApp oficial.</p>
             </div>
         </div>
 
-        <div class="streaming-grid" id="platformsGrid">
+        <!-- Related Accounting Software Scroller -->
+        <section class="related-tools-sec">
+            <h2 class="related-tools-title">
+                <span>⚡</span>
+                <span>Software & Herramientas Contables</span>
+            </h2>
+            <div class="tools-scroller" id="toolsScroller"></div>
+        </section>
+    </main>
+
+    <!-- Cart Drawer -->
+    <div class="drawer-overlay" id="cartOverlay" onclick="closeCart()"></div>
+    <aside class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <div class="cart-title">
+                <span>🛒</span>
+                <span>Mi Pedido</span>
             </div>
-
-
-<div style="text-align: center; margin-top: 30px; margin-bottom: 30px;">
-    <a href="https://docs.google.com/spreadsheets/d/1iYRx73vGsbI_vVUqfLhs2VhaHk4Acg08rTGlx3Bt_Iw/edit?gid=0#gid=0" target="_blank" style="background: #107c41; color: white; padding: 14px 30px; border-radius: 25px; text-decoration: none; font-weight: bold; font-size: 1.1rem; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 6px 15px rgba(16, 124, 65, 0.3); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-        📊 TIPs a tener en cuenta..
-    </a>
-</div>
-
-
-        
-        <div class="scroll-section">
-            <p style="font-weight: 900; font-size: 1.3rem; color:#000; margin-bottom: 20px;">👇 MIRA NUESTRAS OTRAS HERRAMIENTAS:</p>
-            <div class="scroll-container" id="product-scroll"></div>
+            <button class="btn-close-cart" onclick="closeCart()">&times;</button>
         </div>
-    </div>
-    
-    <a href="#" id="waLink" target="_blank" class="floating-wa" title="Soporte WhatsApp Directo">💬</a>
-    <div class="floating-cart" onclick="openCart()" title="Ver mi pedido">🛒<div class="cart-badge" id="cartCount">0</div></div>
-
-    <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
-    <div class="cart-sidebar" id="cartSidebar">
-        <div class="cart-header"><h2>Mi Pedido 🛒</h2><button class="close-cart" onclick="closeCart()">&times;</button></div>
-        <div class="cart-body" id="cartItems"></div>
+        <div class="cart-items-box" id="cartItemsList"></div>
         <div class="cart-footer">
-            <div class="cart-total"><span>Total Estimado:</span><span id="cartTotalText">COP $0</span></div>
-            <button class="btn-checkout" onclick="checkoutWhatsapp()">Confirmar Pedido por WhatsApp 📲</button>
+            <div class="cart-total-row">
+                <span>Total Estimado:</span>
+                <span class="cart-total-val" id="cartTotalVal">COP $0</span>
+            </div>
+            <button class="btn-checkout-wa" onclick="checkoutWhatsapp()">
+                <span>Confirmar Pedido por WhatsApp</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.176.001 6.163 1.237 8.407 3.483 2.245 2.246 3.48 5.234 3.479 8.414-.004 6.597-5.342 11.945-11.893 11.945-1.996-.001-3.957-.503-5.69-1.462L0 24zm6.59-4.846c1.62.962 3.235 1.467 4.962 1.468 5.334 0 9.673-4.321 9.676-9.635.001-2.574-1.002-4.994-2.825-6.819C16.638 2.344 14.225 1.34 11.66 1.34 6.326 1.34 1.986 5.661 1.983 10.977c-.001 1.8.473 3.559 1.373 5.111l-.995 3.633 3.689-.967z"/></svg>
+            </button>
+        </div>
+    </aside>
+
+    <!-- Course Notice Modal -->
+    <div class="modal-notice" id="noticeModal">
+        <div class="modal-notice-box">
+            <h3 style="font-family:var(--font-heading); font-size:1.35rem; font-weight:800; margin-bottom:12px;" id="noticeTitle">Formación Especializada</h3>
+            <p style="font-size:0.95rem; color:var(--text-secondary); margin-bottom:24px; line-height:1.6;" id="noticeText"></p>
+            <div style="display:flex; gap:10px; justify-content:center;">
+                <button onclick="closeCourseNotice()" style="background:var(--bg-surface-elevated); color:var(--text-primary); padding:10px 20px; border-radius:var(--radius-full); font-weight:700;">Cerrar</button>
+                <a id="noticeWaBtn" href="#" target="_blank" style="background:#25D366; color:#000; padding:10px 20px; border-radius:var(--radius-full); font-weight:800;">Consultar Cupo</a>
+            </div>
         </div>
     </div>
 
-    <footer class="main-footer">
-        <div class="footer-content">
-            <p><strong>CONÉCTATE CON NOSOTROS EN REDES SOCIALES</strong></p>
-            <div class="social-links">
-                <a href="https://whatsapp.com/channel/0029Va4o0RV2f3ENoTURyU40" class="social-btn bg-wa" target="_blank" title="Canal de WhatsApp"><svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.176.001 6.163 1.237 8.407 3.483 2.245 2.246 3.48 5.234 3.479 8.414-.004 6.597-5.342 11.945-11.893 11.945-1.996-.001-3.957-.503-5.69-1.462L0 24zm6.59-4.846c1.62.962 3.235 1.467 4.962 1.468 5.334 0 9.673-4.321 9.676-9.635.001-2.574-1.002-4.994-2.825-6.819C16.638 2.344 14.225 1.34 11.66 1.34 6.326 1.34 1.986 5.661 1.983 10.977c-.001 1.8.473 3.559 1.373 5.111l-.995 3.633 3.689-.967zM17.18 14.9c-.3-.15-1.77-.874-2.046-.975-.276-.102-.477-.152-.677.151-.202.303-.778.976-.953 1.178-.177.202-.353.228-.654.077-.3-.15-1.264-.465-2.41-1.487-.893-.795-1.494-1.778-1.67-2.079-.176-.3-.02-.463.13-.613.136-.134.3-.349.45-.524.15-.175.2-.299.3-.5.1-.201.05-.376-.025-.526-.075-.15-.677-1.633-.927-2.233-.243-.585-.49-.506-.677-.516-.174-.008-.375-.01-.576-.01-.2 0-.527.075-.802.375-.276.3-.1.575.451 1.226.55.65.9 1.326 1.05 1.526.15.2 2.054 3.136 4.975 4.393.695.299 1.238.478 1.66.614.698.222 1.334.19 1.838.115.56-.083 1.77-.724 2.022-1.424.252-.699.252-1.299.176-1.424-.075-.124-.275-.2-.575-.35z"/></svg></a>
-                <a href="https://chat.whatsapp.com/FvYIDsoo7NR7PLwtd0Vhwv " class="social-btn bg-wa" target="_blank" title="Grupo de WhatsApp"><svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.176.001 6.163 1.237 8.407 3.483 2.245 2.246 3.48 5.234 3.479 8.414-.004 6.597-5.342 11.945-11.893 11.945-1.996-.001-3.957-.503-5.69-1.462L0 24zm6.59-4.846c1.62.962 3.235 1.467 4.962 1.468 5.334 0 9.673-4.321 9.676-9.635.001-2.574-1.002-4.994-2.825-6.819C16.638 2.344 14.225 1.34 11.66 1.34 6.326 1.34 1.986 5.661 1.983 10.977c-.001 1.8.473 3.559 1.373 5.111l-.995 3.633 3.689-.967zM17.18 14.9c-.3-.15-1.77-.874-2.046-.975-.276-.102-.477-.152-.677.151-.202.303-.778.976-.953 1.178-.177.202-.353.228-.654.077-.3-.15-1.264-.465-2.41-1.487-.893-.795-1.494-1.778-1.67-2.079-.176-.3-.02-.463.13-.613.136-.134.3-.349.45-.524.15-.175.2-.299.3-.5.1-.201.05-.376-.025-.526-.075-.15-.677-1.633-.927-2.233-.243-.585-.49-.506-.677-.516-.174-.008-.375-.01-.576-.01-.2 0-.527.075-.802.375-.276.3-.1.575.451 1.226.55.65.9 1.326 1.05 1.526.15.2 2.054 3.136 4.975 4.393.695.299 1.238.478 1.66.614.698.222 1.334.19 1.838.115.56-.083 1.77-.724 2.022-1.424.252-.699.252-1.299.176-1.424-.075-.124-.275-.2-.575-.35z"/></svg></a>
-                <a href="https://www.youtube.com/@wildersarriahernandez" class="social-btn bg-yt" target="_blank" title="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
-                <a href="https://www.youtube.com/@wicontable" class="social-btn bg-yt" target="_blank" title="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
-                <a href="https://www.tiktok.com/@wildersarriahernandez" class="social-btn bg-tk" target="_blank" title="TikTok"><svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.9-.32-1.98-.23-2.81.33-.85.51-1.44 1.42-1.58 2.4-.11.68-.03 1.37.18 2.03.35.81 1.05 1.48 1.88 1.76.71.21 1.48.21 2.19.04 1.02-.14 1.98-.77 2.56-1.6.43-.59.66-1.31.71-2.04.08-3.38.03-6.76.04-10.14z"/></svg></a>
-                <a href="https://www.facebook.com/wicontable" class="social-btn bg-fb" target="_blank" title="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-                <a href="https://www.instagram.com/wicontable/" class="social-btn bg-ig" target="_blank" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
-                <a href="https://www.linkedin.com/in/wildersarriahernandez" class="social-btn bg-li" target="_blank" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+    <!-- Modal Aviso Importante -->
+    <div class="product-notice-overlay" id="productNoticeOverlay">
+        <div class="product-notice-modal">
+            <div class="product-notice-header">
+                <span class="product-notice-icon">⚠️</span>
+                <h3 class="product-notice-title">Aviso Importante</h3>
             </div>
-            <p class="copyright">© 2026 WiCONTABLE. Todos los derechos reservados.</p>
+            <p class="product-notice-text">
+                Estimad@, agradecemos el interés que tiene sobre el producto. Le recordamos que es de vital importancia que lea detenidamente cada detalle del producto antes de realizar el pago.
+            </p>
+            <button type="button" class="btn-product-notice-confirm" onclick="closeProductNotice()">
+                <span>Entendido, continuar &rarr;</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="brand-logo">
+                    <img src="img/logowi.png" alt="WiCONTABLE Logo" class="logo-img">
+                    <div class="brand-name">Wi<span>CONTABLE</span></div>
+                </div>
+                <p>Herramientas y automatizaciones contables de alta precisión. Diseñadas para simplificar tareas repetitivas y maximizar tu productividad tributaria en Colombia.</p>
+                <div class="footer-social-row">
+                    <a href="https://whatsapp.com/channel/0029Va4o0RV2f3ENoTURyU40" target="_blank" rel="noopener noreferrer" class="social-link wa" title="Canal WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.176.001 6.163 1.237 8.407 3.483 2.245 2.246 3.48 5.234 3.479 8.414-.004 6.597-5.342 11.945-11.893 11.945-1.996-.001-3.957-.503-5.69-1.462L0 24zm6.59-4.846c1.62.962 3.235 1.467 4.962 1.468 5.334 0 9.673-4.321 9.676-9.635.001-2.574-1.002-4.994-2.825-6.819C16.638 2.344 14.225 1.34 11.66 1.34 6.326 1.34 1.986 5.661 1.983 10.977c-.001 1.8.473 3.559 1.373 5.111l-.995 3.633 3.689-.967z"/></svg></a>
+                    <a href="https://chat.whatsapp.com/FvYIDsoo7NR7PLwtd0Vhwv" target="_blank" rel="noopener noreferrer" class="social-link wa" title="Grupo WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 0 0-10.4 18l-1.6 6 6.1-1.6A12 12 0 1 0 12 0z"/></svg></a>
+                    <a href="https://www.youtube.com/@wildersarriahernandez" target="_blank" rel="noopener noreferrer" class="social-link yt" title="YouTube Wilder"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                    <a href="https://www.youtube.com/@wicontable" target="_blank" rel="noopener noreferrer" class="social-link yt" title="YouTube WiCONTABLE"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                    <a href="https://www.tiktok.com/@wildersarriahernandez" target="_blank" rel="noopener noreferrer" class="social-link tk" title="TikTok"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.9-.32-1.98-.23-2.81.33-.85.51-1.44 1.42-1.58 2.4-.11.68-.03 1.37.18 2.03.35.81 1.05 1.48 1.88 1.76.71.21 1.48.21 2.19.04 1.02-.14 1.98-.77 2.56-1.6.43-.59.66-1.31.71-2.04.08-3.38.03-6.76.04-10.14z"/></svg></a>
+                    <a href="https://www.facebook.com/wicontable" target="_blank" rel="noopener noreferrer" class="social-link fb" title="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                    <a href="https://www.instagram.com/wicontable/" target="_blank" rel="noopener noreferrer" class="social-link ig" title="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+                    <a href="https://www.linkedin.com/in/wildersarriahernandez" target="_blank" rel="noopener noreferrer" class="social-link li" title="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Atención & Soporte</h4>
+                <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 12px;">
+                    Lunes a Sábado: 7:00 AM – 9:00 PM<br>
+                    Domingos y Festivos: 9:00 AM – 6:00 PM
+                </p>
+                <p style="font-size: 0.875rem; color: var(--text-secondary);">
+                    WhatsApp Asistencia:<br>
+                    <a href="https://wa.me/573156016386" target="_blank" style="color:var(--brand-green); font-weight:700;">+57 315 601 6386</a>
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 WiCONTABLE &bull; Desarrollado por Wilder Sarria Hernández &bull; Cali, Colombia</p>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="productos.js"></script>
-
     <script>
-        let cart = JSON.parse(localStorage.getItem('wicontable_cart')) || [];
-        const telBase = typeof miTelefono !== 'undefined' ? miTelefono : '573156016386';
-        
-        // BASE DE DATOS LOCAL DE MEMBRESÍAS
         const membresias = [
             { id: "m-01", nombre: "Amazon Prime Completa", categoria: "Streaming", desc: "", precioTxt: "COP $9.000", vigencia: "/ 1 Mes", imagen: "streaming/PrimeVideo.png" },
             { id: "m-02", nombre: "Amazon Prime Original Pantalla", categoria: "Streaming", desc: "", precioTxt: "COP $4.500", vigencia: "/ 1 Mes", imagen: "streaming/PrimeVideo.png" },
@@ -287,144 +1847,316 @@
             
         ];
 
-        let selectedCategory = "todas";
+        let selectedCategory = 'Todas';
+        let cart = JSON.parse(localStorage.getItem('wicontable_cart')) || [];
 
-        window.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('waLink').href = `https://wa.me/${telBase}?text=Hola,%20tengo%20una%20duda%20sobre%20las%20Membresías.`;
-            renderGrid();
+        document.addEventListener('DOMContentLoaded', () => {
+            initTheme();
             updateCartUI();
-
-            // CARGAR EL SCROLL DE HERRAMIENTAS (Usando productos.js original)
-            const scrollBox = document.getElementById('product-scroll');
-            if (scrollBox && typeof productos !== 'undefined') {
-                productos.forEach(prod => {
-                    if(prod.id !== 10) { // Omitimos la id 10 porque es esta misma página
-                        const m = document.createElement('a'); 
-                        m.className = 'mini-card'; 
-                        m.href = `detalle.html?id=${prod.id}`;
-                        
-                        let miniBadgeHTML = '';
-                        if (prod.etiqueta) {
-                            let textUpper = prod.etiqueta.toUpperCase();
-                            let bCls = 'badge-activa';
-                            if (textUpper.includes('NUEVO')) bCls = 'badge-nuevo';
-                            else if (textUpper.includes('MANTENIMIENTO')) bCls = 'badge-manten';
-                            else if (textUpper.includes('PRODUCCI')) bCls = 'badge-prod';
-                            else if (textUpper.includes('AGOTADO')) bCls = 'badge-agotado';
-                            else if (textUpper.includes('DISPONIBLE')) bCls = 'badge-disponible';
-                            miniBadgeHTML = `<div class="badge-base ${bCls}" style="transform: scale(0.7); transform-origin: top right; top: 10px; right: 10px;">${prod.etiqueta}</div>`;
-                        }
-
-                        const safeFoto = (prod.fotos && prod.fotos.length>0) ? prod.fotos[0] : "img/logowi.png";
-                        m.innerHTML = `${miniBadgeHTML}<img src="${safeFoto}" class="mini-img"><h4>${prod.nombre}</h4><div style="font-weight:900; color:#128C7E;">${prod.precio}</div>`;
-                        scrollBox.appendChild(m);
-                    }
-                });
-            }
+            renderMembresias(membresias);
+            renderAccountingTools();
         });
-
-        // FUNCIONES DE LA TIENDA DE MEMBRESÍAS
-        function renderGrid() {
-            const grid = document.getElementById('platformsGrid');
-            const searchVal = document.getElementById('searchInput').value.toLowerCase();
-            grid.innerHTML = "";
-
-            const filtered = membresias.filter(item => {
-                const matchesCat = (selectedCategory === "todas" || item.categoria === selectedCategory);
-                const matchesSearch = item.nombre.toLowerCase().includes(searchVal) || item.desc.toLowerCase().includes(searchVal);
-                return matchesCat && matchesSearch;
-            });
-
-            if(filtered.length === 0) {
-                grid.innerHTML = `<div style="grid-column: 1/-1; text-align:center; padding: 40px; color:#888;">🔍 No se encontraron membresías con ese criterio.</div>`;
-                return;
-            }
-
-            filtered.forEach(item => {
-                grid.innerHTML += `
-                    <div class="platform-card">
-                        <div class="img-container">
-                            <img src="${item.imagen}" alt="${item.nombre}" onerror="this.src='https://via.placeholder.com/300x160/128C7E/ffffff?text=${encodeURIComponent(item.nombre)}'">
-                            <span class="category-badge">${item.categoria}</span>
-                        </div>
-                        <div class="card-body">
-                            <h3 class="platform-title">${item.nombre}</h3>
-                            <p class="platform-desc">${item.desc}</p>
-                            <div class="price-tag">${item.precioTxt} <span>${item.vigencia}</span></div>
-                            <button class="btn-add-cart" onclick="addToCart('${item.id}')">🛒 Agregar al Carrito</button>
-                        </div>
-                    </div>
-                `;
-            });
-        }
 
         function setCategory(cat, btn) {
             selectedCategory = cat;
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            renderGrid();
+            document.querySelectorAll('.category-pill').forEach(p => p.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+            filterMembresias();
         }
-        function filterPlatforms() { renderGrid(); }
 
-        /* FUNCIONES DEL CARRITO UNIFICADO (ORIGINAL) */
-        function parsePrice(str) { const num = String(str||"").replace(/\D/g, ''); return num ? parseInt(num) : 0; }
-        
-        function addToCart(id) {
-            // Busca en membresías (Esta página) o en productos.js (Si viniera de otro lado)
-            let prod = membresias.find(p => p.id === id); 
-            let nombreReal = ""; let precioReal = "";
-            
-            if(prod) {
-                nombreReal = prod.nombre; precioReal = prod.precioTxt;
-            } else if (typeof productos !== 'undefined') {
-                prod = productos.find(p => p.id === id);
-                if(prod) { nombreReal = prod.nombre; precioReal = prod.precio; }
+        function filterMembresias() {
+            const query = (document.getElementById('searchInput')?.value || '').toLowerCase().trim();
+            const filtered = membresias.filter(m => {
+                const matchesCat = (selectedCategory === 'Todas') || (m.categoria && m.categoria.toLowerCase() === selectedCategory.toLowerCase());
+                const matchesQuery = !query || 
+                    m.nombre.toLowerCase().includes(query) || 
+                    (m.desc && m.desc.toLowerCase().includes(query)) ||
+                    (m.categoria && m.categoria.toLowerCase().includes(query));
+                return matchesCat && matchesQuery;
+            });
+
+            renderMembresias(filtered);
+            const countBox = document.getElementById('resultsCount');
+            if (countBox) {
+                countBox.innerText = `Mostrando ${filtered.length} membresías ${selectedCategory !== 'Todas' ? `en ${selectedCategory}` : ''} ${query ? `para "${query}"` : ''}`;
             }
-            if(!prod) return;
+        }
 
-            const ext = cart.find(i => i.id === id); 
-            if(ext) ext.cantidad++; else cart.push({id: id, nombre: nombreReal, precio: precioReal, cantidad: 1});
-            
-            localStorage.setItem('wicontable_cart', JSON.stringify(cart)); 
-            updateCartUI(); 
+        function renderMembresias(list) {
+            const container = document.getElementById('membersGrid');
+            if (!container) return;
+
+            if (list.length === 0) {
+                container.innerHTML = `
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px; color: var(--text-muted);">
+                        <p style="font-size: 1.2rem; font-weight: 700; margin-bottom: 8px;">No encontramos membresías con ese criterio.</p>
+                        <p style="font-size: 0.9rem;">Prueba buscando otra palabra clave o selecciona la categoría 'Todas'.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = '';
+            list.forEach(m => {
+                const card = document.createElement('div');
+                card.className = 'member-card';
+
+                const imgSafe = m.imagen ? m.imagen : 'img/logowi.png';
+                const cleanDesc = (m.desc || '').replace(/<[^>]*>/g, ' ').trim();
+
+                card.innerHTML = `
+                    <div>
+                        <div class="card-top">
+                            <div class="member-icon-box">
+                                <img src="${imgSafe}" alt="${m.nombre}" loading="lazy">
+                            </div>
+                            <div>
+                                <span class="member-cat-tag">${m.categoria || 'Streaming'}</span>
+                                <h3 class="member-name">${m.nombre}</h3>
+                            </div>
+                        </div>
+                        <p class="member-desc">${cleanDesc || 'Acceso premium con entrega garantizada y soporte oportuno.'}</p>
+                    </div>
+
+                    <div class="card-bottom">
+                        <div class="price-vigencia-row">
+                            <span class="member-price">${m.precioTxt || 'Consultar'}</span>
+                            <span class="member-vigencia">${m.vigencia || ''}</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-card-add" onclick="addMembershipToCart('${m.id}')">
+                                <span>🛒 Pedir</span>
+                            </button>
+                            <a href="https://wa.me/573156016386?text=¡Hola%20Wilder!%20Me%20interesa%20adquirir%20la%20cuenta:%20*${encodeURIComponent(m.nombre)}*%20(${encodeURIComponent(m.precioTxt || '')})" target="_blank" class="btn-card-wa">
+                                <span>WhatsApp</span>
+                            </a>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function renderAccountingTools() {
+            const box = document.getElementById('toolsScroller');
+            if (!box || typeof productos === 'undefined') return;
+            box.innerHTML = '';
+
+            productos.slice(0, 8).forEach(p => {
+                const el = document.createElement('a');
+                el.className = 'tool-mini-card';
+                el.href = p.url || `producto-${p.id}.html`;
+
+                const safeImg = (p.fotos && p.fotos.length > 0) ? p.fotos[0] : 'img/logowi.png';
+
+                el.innerHTML = `
+                    <div class="tool-mini-img">
+                        <img src="${safeImg}" alt="${p.nombre}">
+                    </div>
+                    <div>
+                        <div class="tool-mini-name">${p.nombre}</div>
+                        <div class="tool-mini-price">${p.precio || 'Consultar'}</div>
+                    </div>
+                `;
+                box.appendChild(el);
+            });
+        }
+
+        // Cart Logic
+        function parsePrice(str) {
+            const num = String(str || "").replace(/\D/g, '');
+            return num ? parseInt(num, 10) : 0;
+        }
+
+        function addMembershipToCart(mId) {
+            const m = membresias.find(item => item.id === mId);
+            if (!m) return;
+
+            const existing = cart.find(item => item.id === m.id);
+            if (existing) {
+                existing.cantidad++;
+            } else {
+                cart.push({
+                    id: m.id,
+                    nombre: m.nombre,
+                    precio: m.precioTxt,
+                    cantidad: 1
+                });
+            }
+
+            localStorage.setItem('wicontable_cart', JSON.stringify(cart));
+            updateCartUI();
             openCart();
         }
 
-        function removeFromCart(id) { 
-            cart = cart.filter(i => i.id !== id); 
-            localStorage.setItem('wicontable_cart', JSON.stringify(cart)); 
-            updateCartUI(); 
+        function removeFromCart(id) {
+            cart = cart.filter(item => String(item.id) !== String(id));
+            localStorage.setItem('wicontable_cart', JSON.stringify(cart));
+            updateCartUI();
         }
-        function openCart() { document.getElementById('cartSidebar').classList.add('active'); document.getElementById('cartOverlay').classList.add('active'); }
-        function closeCart() { document.getElementById('cartSidebar').classList.remove('active'); document.getElementById('cartOverlay').classList.remove('active'); }
-        
+
+        function openCart() {
+            document.getElementById('cartDrawer').classList.add('active');
+            document.getElementById('cartOverlay').classList.add('active');
+        }
+
+        function closeCart() {
+            document.getElementById('cartDrawer').classList.remove('active');
+            document.getElementById('cartOverlay').classList.remove('active');
+        }
+
         function updateCartUI() {
-            document.getElementById('cartCount').innerText = cart.reduce((a, i) => a + i.cantidad, 0);
-            const box = document.getElementById('cartItems');
-            if(cart.length === 0) { 
-                box.innerHTML = '<p style="text-align:center; color:#888; margin-top:50px;">Carrito vacío 🛒</p>'; 
-                document.getElementById('cartTotalText').innerText="COP $0"; 
-                return; 
+            const countPills = document.querySelectorAll('#cartCount');
+            const totalCount = cart.reduce((acc, item) => acc + item.cantidad, 0);
+            countPills.forEach(p => p.innerText = totalCount);
+
+            const list = document.getElementById('cartItemsList');
+            const totalVal = document.getElementById('cartTotalVal');
+            if (!list || !totalVal) return;
+
+            if (cart.length === 0) {
+                list.innerHTML = `
+                    <div style="text-align: center; padding: 40px 10px; color: var(--text-muted);">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin-bottom: 8px; opacity: 0.5;"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                        <p style="font-size: 0.95rem; font-weight: 600;">Tu pedido está vacío.</p>
+                        <p style="font-size: 0.8rem;">Selecciona membresías o herramientas para añadirlas.</p>
+                    </div>`;
+                totalVal.innerText = 'COP $0';
+                return;
             }
-            box.innerHTML = ''; let tot = 0;
-            cart.forEach(i => { 
-                tot += parsePrice(i.precio) * i.cantidad; 
-                box.innerHTML += `<div style="background:#f8f9fa; padding:15px; border-radius:10px; margin-bottom:10px; display:flex; justify-content:space-between; align-items:center; border:1px solid #eee;"><div><b>${i.nombre}</b><br><span style="color:#128C7E; font-weight:bold;">${i.cantidad} x ${i.precio}</span></div><button onclick="removeFromCart('${i.id}')" style="color:red; background:none; border:none; font-weight:900; font-size:1.1rem; cursor:pointer;">✖</button></div>`; 
+
+            list.innerHTML = '';
+            let sum = 0;
+            cart.forEach(item => {
+                const num = parsePrice(item.precio);
+                sum += num * item.cantidad;
+
+                const row = document.createElement('div');
+                row.className = 'cart-item-row';
+                row.innerHTML = `
+                    <div class="cart-item-info">
+                        <strong>${item.nombre}</strong>
+                        <span>${item.cantidad} x ${item.precio}</span>
+                    </div>
+                    <button class="btn-remove-item" onclick="removeFromCart('${item.id}')" title="Quitar item">&times;</button>
+                `;
+                list.appendChild(row);
             });
-            document.getElementById('cartTotalText').innerText = `COP $${tot.toLocaleString('es-CO')}`;
+
+            totalVal.innerText = `COP $${sum.toLocaleString('es-CO')}`;
         }
 
         function checkoutWhatsapp() {
-            if(cart.length===0) return alert("Agrega herramientas o membresías al pedido primero.");
-            let msg = "¡Hola Wilder! 👋 Vengo de tu catálogo web y quiero confirmar el siguiente pedido:\n\n";
-            let tot = 0; 
-            cart.forEach(i => { 
-                tot += parsePrice(i.precio) * i.cantidad; 
-                msg += `🔸 *${i.cantidad}x* ${i.nombre} (${i.precio})\n`; 
+            if (cart.length === 0) {
+                alert('Añade membresías o herramientas a tu pedido primero.');
+                return;
+            }
+
+            let text = "¡Hola Wilder! 👋 Vengo de tu catálogo web de *WiCONTABLE* y deseo adquirir los siguientes productos:\n\n";
+            let sum = 0;
+
+            cart.forEach(item => {
+                const num = parsePrice(item.precio);
+                sum += num * item.cantidad;
+                text += `🔸 *${item.cantidad}x* ${item.nombre} - ${item.precio}\n`;
             });
-            msg += `\n*TOTAL APROXIMADO: COP $${tot.toLocaleString('es-CO')}*\n\n¿Me confirmas disponibilidad para transferir?`;
-            window.open(`https://wa.me/${telBase}?text=${encodeURIComponent(msg)}`, '_blank');
+
+            text += `\n💵 *TOTAL ESTIMADO: COP $${sum.toLocaleString('es-CO')}*\n\n¿Me confirmas disponibilidad y cuentas para transferir?`;
+
+            const url = `https://wa.me/573156016386?text=${encodeURIComponent(text)}`;
+            window.open(url, '_blank');
         }
+
+        // Course Notice
+        function showCourseNotice(type) {
+            const modal = document.getElementById('noticeModal');
+            const title = document.getElementById('noticeTitle');
+            const text = document.getElementById('noticeText');
+            const btn = document.getElementById('noticeWaBtn');
+
+            if (type === 'Excel') {
+                title.innerText = 'Curso Práctico de Excel Contable';
+                text.innerText = 'Aprende formulación avanzada, automatización de macros, conciliaciones bancarias masivas y liquidación tributaria.';
+                btn.href = 'https://wa.me/573156016386?text=¡Hola%20Wilder!%20Me%20interesa%20información%20del%20curso%20de%20Excel%20Contable.';
+            } else {
+                title.innerText = 'Curso de PowerBI para Contadores';
+                text.innerText = 'Construye dashboards financieros interactivos, análisis de costos en tiempo real y reportería gerencial impactante.';
+                btn.href = 'https://wa.me/573156016386?text=¡Hola%20Wilder!%20Me%20interesa%20información%20del%20curso%20de%20PowerBI%20Financiero.';
+            }
+
+            modal.classList.add('active');
+        }
+
+        function closeCourseNotice() {
+            const modal = document.getElementById('noticeModal');
+            if (modal) modal.classList.remove('active');
+        }
+
+        // Mobile Menu
+        function openMobileMenu() {
+            document.getElementById('mobileDrawer').classList.add('active');
+            document.getElementById('mobileOverlay').classList.add('active');
+        }
+
+        function closeMobileMenu() {
+            document.getElementById('mobileDrawer').classList.remove('active');
+            document.getElementById('mobileOverlay').classList.remove('active');
+        }
+
+        // Dropdown
+        function toggleNavDropdown(e) {
+            e.stopPropagation();
+            document.getElementById('navDropdown').classList.toggle('active');
+        }
+
+        document.addEventListener('click', () => {
+            const drop = document.getElementById('navDropdown');
+            if (drop) drop.classList.remove('active');
+        });
+
+        // Theme
+        function initTheme() {
+            const saved = localStorage.getItem('wicontable_theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', saved);
+        }
+
+        function toggleTheme() {
+            const current = document.documentElement.getAttribute('data-theme') || 'dark';
+            const next = current === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', next);
+            localStorage.setItem('wicontable_theme', next);
+        }
+
+        // Aviso Importante Modal
+        function openProductNotice() {
+            const overlay = document.getElementById('productNoticeOverlay');
+            if (overlay) {
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeProductNotice() {
+            const overlay = document.getElementById('productNoticeOverlay');
+            if (overlay) {
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Mostrar aviso importante automáticamente al ingresar al producto
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(openProductNotice, 250);
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeProductNotice();
+        });
+
+        document.addEventListener('click', (e) => {
+            const overlay = document.getElementById('productNoticeOverlay');
+            if (e.target === overlay) closeProductNotice();
+        });
     </script>
 </body>
 </html>

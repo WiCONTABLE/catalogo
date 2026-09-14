@@ -1,341 +1,1224 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plantillas Gratis - WiCONTABLE</title>
-    <link rel="icon" href="https://wicontable.com/img/logowi.png" type="image/png">
+    <title>Plantillas y Formatos Gratuitos 2026 | WiCONTABLE</title>
+    <link rel="icon" href="img/logowi.png" type="image/png" sizes="48x48">
+    <meta name="description" content="Descarga gratis formatos y plantillas tributarias y laborales en Excel, Word y PDF formuladas por la comunidad WiCONTABLE.">
     
-    <meta property="og:title" content="Plantillas Gratis - WiCONTABLE">
-    <meta property="og:description" content="Descarga gratis formatos formulados en Excel y Word creados por la comunidad WiCONTABLE para automatizar tu gestión.">
-    <meta property="og:image" content="https://wicontable.com/img/logowi.png">
-    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
     <style>
-        :root { 
-            --ws-green: #25D366; 
-            --ws-dark: #128C7E; 
-            --bg-gray: #f8f9fa; 
-            --card-shadow: 0 10px 25px rgba(0,0,0,0.08); 
-            --fb-color: #1877F2; --ig-color: #E4405F; --tk-color: #000000;
-            --li-color: #0077b5; --yt-color: #FF0000;
+        :root {
+            --brand-green: #10B981;
+            --brand-green-hover: #059669;
+            --brand-green-light: rgba(16, 185, 129, 0.12);
+            --brand-cyan: #06B6D4;
+            --brand-gradient: linear-gradient(135deg, #10B981 0%, #06B6D4 100%);
+
+            --font-heading: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+            --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+
+            --tr-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            --tr-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            --radius-md: 14px;
+            --radius-lg: 20px;
+            --radius-xl: 28px;
+            --radius-full: 9999px;
         }
-        body { font-family: 'Calibri', 'Segoe UI', Tahoma, sans-serif; background: var(--bg-gray); margin: 0; padding: 0; color: #333; position: relative; font-size: 14px; }
-        
-        body::before { content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: url('img/logowi.png'); background-repeat: no-repeat; background-position: center; background-size: 40%; opacity: 0.04; z-index: -1; pointer-events: none; }
 
-        .marquee-wrapper { width: 100%; overflow: hidden; background: white; padding: 12px 0; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 1000; }
-        .marquee-content { display: inline-block; white-space: nowrap; padding-left: 100%; animation: scroll-text 30s linear infinite; font-weight: 600; color: #008f39; }
-        @keyframes scroll-text { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
-
-        /* Contenedor más ancho para que quepan los recuadros en PC */
-        .container { max-width: 1300px; margin: 0 auto; padding: 40px 20px; }
-        .back-btn { display: inline-block; margin-bottom: 30px; color: var(--ws-dark); font-weight: bold; text-decoration: none; font-size: 1.1rem; }
-        .back-btn:hover { text-decoration: underline; }
-        
-        header { margin-bottom: 40px; text-align: center; }
-        header h1 { font-size: 2.8rem; margin: 0 0 10px 0; font-weight: 900; letter-spacing: -1.5px; }
-        header p { color: #666; font-size: 1.2rem; max-width: 600px; margin: 0 auto; }
-
-        /* ESTILOS DEL BUSCADOR */
-        .search-container {
-            max-width: 800px; /* Centrado y no tan estirado */
-            margin: 0 auto 30px auto;
+        [data-theme="dark"] {
+            --bg-base: #080C14;
+            --bg-surface: #0E1524;
+            --bg-surface-elevated: #151F33;
+            --bg-card: rgba(15, 23, 42, 0.65);
+            --bg-input: rgba(15, 23, 42, 0.8);
+            --border-subtle: rgba(255, 255, 255, 0.08);
+            --border-medium: rgba(255, 255, 255, 0.15);
+            --text-primary: #F8FAFC;
+            --text-secondary: #94A3B8;
+            --text-muted: #64748B;
+            --nav-bg: rgba(8, 12, 20, 0.85);
+            --nav-border: rgba(255, 255, 255, 0.06);
+            --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
+            --glow-orb: rgba(16, 185, 129, 0.07);
         }
-        #templateSearchInput {
+
+        [data-theme="light"] {
+            --bg-base: #F8FAFC;
+            --bg-surface: #FFFFFF;
+            --bg-surface-elevated: #F1F5F9;
+            --bg-card: #FFFFFF;
+            --bg-input: #F8FAFC;
+            --border-subtle: rgba(0, 0, 0, 0.07);
+            --border-medium: rgba(0, 0, 0, 0.14);
+            --text-primary: #0F172A;
+            --text-secondary: #475569;
+            --text-muted: #8E9CAE;
+            --nav-bg: rgba(255, 255, 255, 0.88);
+            --nav-border: rgba(0, 0, 0, 0.06);
+            --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(0, 0, 0, 0.05);
+            --glow-orb: rgba(16, 185, 129, 0.05);
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: var(--font-body); background-color: var(--bg-base); color: var(--text-primary); line-height: 1.6; overflow-x: clip; transition: background-color var(--tr-smooth), color var(--tr-smooth); position: relative; min-height: 100vh; padding-top: 105px; }
+        
+        /* Watermark Brand Logo Background */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image: url('img/logowi.png');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: min(540px, 65vw, 65vh);
+            opacity: 0.08;
+            z-index: 0;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .ambient-glow { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 0; }
+        .ambient-glow::before { content: ''; position: absolute; top: -150px; left: 50%; transform: translateX(-50%); width: 800px; height: 500px; background: radial-gradient(circle, var(--glow-orb) 0%, transparent 70%); filter: blur(90px); }
+        a { color: inherit; text-decoration: none; }
+        button { font-family: inherit; border: none; outline: none; cursor: pointer; background: none; }
+
+        /* ==========================================================================
+           PINNED HEADER & TICKER
+           ========================================================================== */
+        .top-nav-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            padding: 15px 20px;
-            font-size: 1.1rem;
-            border: 2px solid #ddd;
-            border-radius: 15px;
-            outline: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-            box-sizing: border-box;
-            font-family: 'Calibri', sans-serif;
-        }
-        #templateSearchInput:focus {
-            border-color: var(--ws-green);
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.15);
+            z-index: 1000;
+            background: var(--nav-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
         }
 
-        .cat-title { margin-top: 40px; font-size: 1.8rem; padding-bottom: 10px; font-weight: 800; letter-spacing: -0.5px; }
-        
-        /* CUADRÍCULA PARA LOS RECUADROS */
-        .file-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); 
-            gap: 25px; 
-        }
-        
-        /* DISEÑO DE CADA RECUADRO */
-        .file-card { 
-            background: white; 
-            padding: 25px; 
-            border-radius: 20px; 
-            display: flex; 
-            flex-direction: column; /* Organiza los elementos de arriba hacia abajo */
-            align-items: flex-start; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03); 
-            border: 1px solid #eee; 
-            transition: 0.3s; 
-            height: 100%; /* Asegura que todos los recuadros midan lo mismo */
-            box-sizing: border-box;
-        }
-        .file-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.06); }
-        
-        .file-icon { width: 55px; height: 55px; object-fit: contain; margin-bottom: 15px; }
-        
-        .file-info { flex-grow: 1; display: flex; flex-direction: column; width: 100%; }
-        .file-info h4 { margin: 0 0 8px 0; font-size: 1.25rem; color: #000; font-weight: 700; line-height: 1.2; }
-        .file-date { font-size: 0.85rem; color: #999; font-weight: bold; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
-        .file-desc { font-size: 0.85rem; color: #555; line-height: 1.4; flex-grow: 1; } /* El flex-grow empuja los botones hacia abajo */
-        
-        .card-actions { display: flex; gap: 10px; width: 100%; margin-top: 20px; }
-        .btn-action { flex: 1; justify-content: center; text-align: center; padding: 12px 10px; border-radius: 12px; font-size: 12px; font-weight: bold; text-decoration: none; transition: 0.3s; display: inline-flex; align-items: center; gap: 5px; font-family: 'Calibri', sans-serif; }
-        .btn-download { background: var(--ws-dark); color: white; border: none; }
-        .btn-download:hover { background: #0e6b5c; transform: translateY(-2px); }
-        .btn-share { border: 2px solid var(--ws-green); color: var(--ws-green); background: white; }
-        .btn-share:hover { background: var(--ws-green); color: white; transform: translateY(-2px); }
-        
-        @media (max-width: 750px) { 
-            .card-actions { flex-direction: column; } 
+        .top-ticker {
+            background: linear-gradient(90deg, #042f2e 0%, #064e3b 50%, #042f2e 100%);
+            color: #A7F3D0;
+            font-size: 0.775rem;
+            font-weight: 700;
+            letter-spacing: 0.6px;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(16, 185, 129, 0.2);
+            overflow: hidden;
+            white-space: nowrap;
+            display: flex;
+            position: relative;
+            mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
         }
 
-        /* FOOTER ORIGINAL (INTACTO) */
-        .main-footer { background: white; padding: 50px 20px; margin-top: 80px; text-align: center; border-top: 1px solid #eee; }
-        .footer-content { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 20px; }
-        .social-links { display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; margin: 10px 0; }
-        .social-btn { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-        .social-btn:hover { transform: translateY(-5px) scale(1.1); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
-        .social-btn svg { width: 25px; height: 25px; fill: white; }
-        
-        .bg-fb { background-color: var(--fb-color); } .bg-ig { background-color: var(--ig-color); }
-        .bg-tk { background-color: var(--tk-color); } .bg-li { background-color: var(--li-color); }
-        .bg-yt { background-color: var(--yt-color); } .bg-no { background-color: #000000; }
-        .bg-wa { background-color: var(--ws-green); }
-        
-        .floating-wa { position: fixed; bottom: 25px; left: 25px; background: #25D366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; box-shadow: 0 6px 20px rgba(37,211,102,0.4); text-decoration: none; z-index: 999; transition: 0.3s ease; }
-        .floating-wa:hover { transform: scale(1.1) rotate(5deg); }
+        .ticker-track {
+            display: inline-flex;
+            width: max-content;
+            animation: tickerMarqueeSlide 32s linear infinite;
+        }
+
+        .ticker-track:hover {
+            animation-play-state: paused;
+        }
+
+        .ticker-text {
+            display: inline-block;
+            padding-right: 50px;
+            flex-shrink: 0;
+        }
+
+        @keyframes tickerMarqueeSlide {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .navbar {
+            border-bottom: 1px solid var(--nav-border);
+        }
+
+        .navbar-container {
+            max-width: 1360px;
+            margin: 0 auto;
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.04);
+            padding: 4px;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .brand-name {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 1.35rem;
+            letter-spacing: -0.5px;
+            color: var(--text-primary);
+        }
+
+        .brand-name span {
+            background: var(--brand-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-link {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            padding: 8px 14px;
+            border-radius: var(--radius-full);
+            transition: all var(--tr-fast);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--brand-green);
+            background: var(--brand-green-light);
+        }
+
+        .nav-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .nav-dropdown-btn {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            padding: 8px 14px;
+            border-radius: var(--radius-full);
+            transition: all var(--tr-fast);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
+            cursor: pointer;
+        }
+
+        .nav-dropdown-btn:hover, .nav-dropdown.active .nav-dropdown-btn {
+            color: var(--brand-green);
+            background: var(--brand-green-light);
+        }
+
+        .dropdown-arrow {
+            font-size: 0.75rem;
+            transition: transform var(--tr-fast);
+        }
+
+        .nav-dropdown.active .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: calc(100% + 8px);
+            right: 0;
+            width: 280px;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-medium);
+            border-radius: var(--radius-lg);
+            padding: 8px;
+            box-shadow: var(--card-shadow);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(8px);
+            transition: all var(--tr-fast);
+            z-index: 1000;
+        }
+
+        .nav-dropdown.active .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 14px;
+            border-radius: var(--radius-md);
+            color: var(--text-primary);
+            font-size: 0.875rem;
+            transition: background var(--tr-fast);
+        }
+
+        .dropdown-item:hover {
+            background: var(--brand-green-light);
+            color: var(--brand-green);
+        }
+
+        .dropdown-item small {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .dropdown-icon {
+            font-size: 1.15rem;
+            flex-shrink: 0;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+
+        .btn-theme-toggle {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-full);
+            background: var(--bg-surface-elevated);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--tr-fast);
+            cursor: pointer;
+        }
+
+        .btn-theme-toggle:hover {
+            color: var(--brand-green);
+            border-color: var(--brand-green);
+            transform: scale(1.05);
+        }
+
+        .theme-icon-sun, .theme-icon-moon { width: 19px; height: 19px; stroke-width: 2; }
+        [data-theme="dark"] .theme-icon-sun { display: block; }
+        [data-theme="dark"] .theme-icon-moon { display: none; }
+        [data-theme="light"] .theme-icon-sun { display: none; }
+        [data-theme="light"] .theme-icon-moon { display: block; }
+
+        .btn-wa-header {
+            background: #25D366;
+            color: #042f2e;
+            font-weight: 800;
+            font-size: 0.875rem;
+            padding: 9px 18px;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.25);
+            transition: transform var(--tr-fast), box-shadow var(--tr-fast);
+            white-space: nowrap;
+        }
+
+        .btn-wa-header:hover {
+            transform: translateY(-2px);
+            background: #1eb857;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-mobile-menu {
+            display: none;
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-full);
+            background: var(--bg-surface-elevated);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-primary);
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        @media (max-width: 992px) {
+            .nav-links { display: none; }
+            .btn-mobile-menu { display: flex; }
+            .btn-wa-header span { display: none; }
+            .btn-wa-header { padding: 9px 12px; }
+        }
+
+        /* Mobile Drawer */
+        .mobile-nav-drawer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 320px;
+            max-width: 85%;
+            height: 100vh;
+            background: var(--bg-surface);
+            border-right: 1px solid var(--border-medium);
+            z-index: 3000;
+            box-shadow: 10px 0 35px rgba(0, 0, 0, 0.4);
+            transform: translateX(-100%);
+            visibility: hidden;
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mobile-nav-drawer.active {
+            transform: translateX(0);
+            visibility: visible;
+        }
+
+        .mobile-nav-header {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .btn-close-mobile {
+            font-size: 1.6rem;
+            color: var(--text-muted);
+            line-height: 1;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .mobile-nav-content {
+            padding: 16px;
+            overflow-y: auto;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .mobile-nav-group-title {
+            font-size: 0.725rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--text-muted);
+            margin: 14px 10px 6px;
+        }
+
+        .mobile-nav-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 12px;
+            border-radius: var(--radius-md);
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .mobile-nav-item:hover {
+            background: var(--brand-green-light);
+            color: var(--brand-green);
+        }
+
+        .mobile-nav-icon {
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .mobile-nav-info small {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .mobile-nav-footer {
+            padding: 16px 20px 24px;
+            border-top: 1px solid var(--border-subtle);
+            background: var(--bg-surface-elevated);
+        }
+
+        .mobile-btn-wa {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 12px 16px;
+            background: #25D366;
+            color: #042f2e;
+            font-weight: 800;
+            font-size: 0.9rem;
+            border-radius: var(--radius-full);
+            text-decoration: none;
+        }
+
+        .drawer-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            z-index: 2500;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+
+        .drawer-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Hero */
+        .templates-hero { text-align: center; padding: 70px 24px 40px; max-width: 850px; margin: 0 auto; position: relative; z-index: 1; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; padding: 5px 16px; border-radius: var(--radius-full); background: var(--brand-green-light); color: var(--brand-green); font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; }
+        .hero-title { font-family: var(--font-heading); font-size: clamp(2.2rem, 4.5vw, 3.25rem); font-weight: 900; letter-spacing: -1px; line-height: 1.15; margin-bottom: 16px; }
+        .hero-desc { color: var(--text-secondary); font-size: 1.05rem; line-height: 1.6; }
+
+        /* Search & Filter Controls */
+        .templates-controls { max-width: 1320px; margin: 0 auto 50px; padding: 0 24px; position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+        .search-box-large { width: 100%; max-width: 680px; position: relative; }
+        .search-input-large { width: 100%; background: var(--bg-surface); border: 1px solid var(--border-subtle); color: var(--text-primary); padding: 16px 20px 16px 52px; border-radius: var(--radius-full); font-size: 1rem; outline: none; box-shadow: var(--card-shadow); transition: all var(--tr-fast); font-family: inherit; }
+        .search-input-large:focus { border-color: var(--brand-green); box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.15); }
+        .search-icon-pos { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); width: 20px; height: 20px; color: var(--text-muted); pointer-events: none; }
+        .filter-tabs-row { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+        .filter-tab-btn { background: var(--bg-surface); border: 1px solid var(--border-subtle); color: var(--text-secondary); font-size: 0.85rem; font-weight: 700; padding: 9px 20px; border-radius: var(--radius-full); cursor: pointer; transition: all var(--tr-fast); }
+        .filter-tab-btn:hover { color: var(--text-primary); border-color: var(--border-medium); }
+        .filter-tab-btn.active { background: var(--brand-gradient); color: #042f2e; border-color: transparent; }
+
+        /* Grid */
+        .templates-grid-section { max-width: 1320px; margin: 0 auto 100px; padding: 0 24px; position: relative; z-index: 1; }
+        .category-group-title { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; margin: 40px 0 24px; display: flex; align-items: center; gap: 10px; padding-bottom: 12px; border-bottom: 1px solid var(--border-subtle); }
+        .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 24px; }
+        @media (max-width: 720px) { .cards-grid { grid-template-columns: 1fr; } }
+
+        .template-card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); padding: 26px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: var(--card-shadow); transition: all var(--tr-smooth); }
+        .template-card:hover { transform: translateY(-6px); border-color: rgba(16, 185, 129, 0.4); box-shadow: 0 20px 40px -15px rgba(0,0,0,0.3); }
+
+        .card-top { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 16px; }
+        .doc-icon-badge {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: transform var(--tr-smooth);
+        }
+        .template-card:hover .doc-icon-badge {
+            transform: scale(1.08) translateY(-2px);
+        }
+        .doc-format-icon {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.12));
+        }
+
+        .doc-meta { display: flex; flex-direction: column; }
+        .doc-date { font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+        .doc-title { font-family: var(--font-heading); font-size: 1.15rem; font-weight: 800; color: var(--text-primary); line-height: 1.3; }
+
+        .doc-desc { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.55; margin-bottom: 24px; flex-grow: 1; }
+
+        .card-btn-row { display: grid; grid-template-columns: 1.4fr 1fr; gap: 10px; margin-top: auto; border-top: 1px solid var(--border-subtle); padding-top: 18px; }
+        .btn-download-doc { background: var(--brand-gradient); color: #042f2e; font-weight: 800; font-size: 0.8125rem; padding: 11px; border-radius: var(--radius-md); text-align: center; display: flex; align-items: center; justify-content: center; gap: 6px; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2); transition: all var(--tr-fast); }
+        .btn-download-doc:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(16, 185, 129, 0.35); }
+        .btn-share-doc { background: var(--bg-surface); border: 1px solid var(--border-subtle); color: var(--text-secondary); font-weight: 700; font-size: 0.8125rem; padding: 11px; border-radius: var(--radius-md); text-align: center; display: flex; align-items: center; justify-content: center; gap: 6px; transition: all var(--tr-fast); }
+        .btn-share-doc:hover { color: var(--brand-green); border-color: var(--brand-green); }
+
+        /* ==========================================================================
+           MAIN FOOTER (AGENCY STYLE & BRAND COLORS)
+           ========================================================================== */
+        .main-footer {
+            background: var(--bg-surface);
+            border-top: 1px solid var(--border-subtle);
+            padding: 60px 24px 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-container {
+            max-width: 1360px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+
+        @media (max-width: 850px) {
+            .footer-container { grid-template-columns: 1fr; gap: 32px; }
+        }
+
+        .footer-brand p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 12px;
+            max-width: 380px;
+            line-height: 1.6;
+        }
+
+        .footer-social-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .social-link {
+            width: 38px;
+            height: 38px;
+            border-radius: var(--radius-full);
+            background: var(--bg-surface-elevated);
+            border: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--tr-smooth);
+            position: relative;
+        }
+
+        /* WhatsApp */
+        .social-link.wa {
+            color: #25D366;
+            background: rgba(37, 211, 102, 0.12);
+            border-color: rgba(37, 211, 102, 0.35);
+        }
+        .social-link.wa:hover {
+            background: #25D366;
+            color: #FFFFFF;
+            border-color: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 22px rgba(37, 211, 102, 0.45);
+        }
+
+        /* YouTube */
+        .social-link.yt {
+            color: #FF0000;
+            background: rgba(255, 0, 0, 0.10);
+            border-color: rgba(255, 0, 0, 0.35);
+        }
+        .social-link.yt:hover {
+            background: #FF0000;
+            color: #FFFFFF;
+            border-color: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 22px rgba(255, 0, 0, 0.45);
+        }
+
+        /* TikTok */
+        .social-link.tk {
+            color: #0F172A;
+            background: rgba(15, 23, 42, 0.08);
+            border-color: rgba(15, 23, 42, 0.25);
+        }
+        .social-link.tk svg {
+            filter: drop-shadow(-1.5px -1px 0 #25F4EE) drop-shadow(1.5px 1px 0 #FE2C55);
+        }
+        [data-theme="dark"] .social-link.tk {
+            color: #FFFFFF;
+            background: rgba(255, 255, 255, 0.10);
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+        .social-link.tk:hover {
+            background: #010101;
+            color: #FFFFFF;
+            border-color: #25F4EE;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 22px rgba(37, 244, 238, 0.4), 0 0 14px rgba(254, 44, 85, 0.5);
+        }
+
+        /* Facebook */
+        .social-link.fb {
+            color: #1877F2;
+            background: rgba(24, 119, 242, 0.12);
+            border-color: rgba(24, 119, 242, 0.35);
+        }
+        .social-link.fb:hover {
+            background: #1877F2;
+            color: #FFFFFF;
+            border-color: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 22px rgba(24, 119, 242, 0.45);
+        }
+
+        /* Instagram */
+        .social-link.ig {
+            color: #E4405F;
+            background: rgba(228, 64, 95, 0.12);
+            border-color: rgba(228, 64, 95, 0.35);
+        }
+        .social-link.ig:hover {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: #FFFFFF;
+            border-color: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 22px rgba(220, 39, 67, 0.45);
+        }
+
+        /* LinkedIn */
+        .social-link.li {
+            color: #0A66C2;
+            background: rgba(10, 102, 194, 0.12);
+            border-color: rgba(10, 102, 194, 0.35);
+        }
+        .social-link.li:hover {
+            background: #0A66C2;
+            color: #FFFFFF;
+            border-color: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 22px rgba(10, 102, 194, 0.45);
+        }
+
+        .footer-col h4 {
+            font-family: var(--font-heading);
+            font-size: 0.95rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 18px;
+            color: var(--text-primary);
+        }
+
+        .footer-links-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-links-list a {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            transition: color var(--tr-fast);
+        }
+
+        .footer-links-list a:hover {
+            color: var(--brand-green);
+        }
+
+        .footer-bottom {
+            max-width: 1360px;
+            margin: 0 auto;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-subtle);
+            text-align: center;
+            font-size: 0.825rem;
+            color: var(--text-muted);
+        }
     </style>
 </head>
 <body>
-    <div class="marquee-wrapper">
-        <div class="marquee-content">Descarga gratis plantillas y formatos formulados en Excel, Word y PDF creados por la comunidad WiCONTABLE.</div>
-    </div>
+    <div class="ambient-glow"></div>
 
-    <div class="container">
-        <header>
-            <a href="index.html" class="back-btn">← Volver al Catálogo y Pedidos</a>
-            <h1>Plantillas Gratis</h1>
-            <p>Si tienes algún documento libre que desees compartirnos, no dudes en contactarnos.</p>
+    <!-- Pinned Header -->
+    <div class="top-nav-wrapper">
+        <div class="top-ticker">
+            <div class="ticker-track">
+                <span class="ticker-text">⚡Descarga gratis plantillas y formatos formulados en Excel, Word y PDF creados por la comunidad WiCONTABLE.</span>
+                <span class="ticker-text">⚡Descarga gratis plantillas y formatos formulados en Excel, Word y PDF creados por la comunidad WiCONTABLE.</span>
+            </div>
+        </div>
+        <header class="navbar">
+            <div class="navbar-container">
+                <a href="index.html" class="brand-logo" title="Volver al Catálogo WiCONTABLE">
+                    <img src="img/logowi.png" alt="WiCONTABLE Logo" class="logo-img">
+                    <div class="brand-name">Wi<span>CONTABLE</span></div>
+                </a>
+
+                <nav class="nav-links">
+                    <a href="index.html" class="nav-link"><span>🏠</span> Catálogo</a>
+                    
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="nav-actions">
+                    <button class="btn-theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Cambiar tema">
+                        <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                        <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                    </button>
+                    <a href="https://wa.me/573156016386" target="_blank" rel="noopener noreferrer" class="btn-wa-header" title="Atención WhatsApp">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.176.001 6.163 1.237 8.407 3.483 2.245 2.246 3.48 5.234 3.479 8.414-.004 6.597-5.342 11.945-11.893 11.945-1.996-.001-3.957-.503-5.69-1.462L0 24zm6.59-4.846c1.62.962 3.235 1.467 4.962 1.468 5.334 0 9.673-4.321 9.676-9.635.001-2.574-1.002-4.994-2.825-6.819C16.638 2.344 14.225 1.34 11.66 1.34 6.326 1.34 1.986 5.661 1.983 10.977c-.001 1.8.473 3.559 1.373 5.111l-.995 3.633 3.689-.967z"/></svg>
+                        <span>WhatsApp</span>
+                    </a>
+                    <button class="btn-mobile-menu" onclick="openMobileMenu()" title="Menú">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+                    </button>
+                </div>
+            </div>
         </header>
-
-        <div class="search-container">
-            <input type="text" id="templateSearchInput" onkeyup="searchTemplates()" placeholder="🔍 Buscar plantilla por título o palabra clave...">
-        </div>
-
-        <h2 class="cat-title" style="color: #107c41; border-bottom: 3px solid #107c41;">📗 Documentos EXCEL</h2>
-        <div class="file-grid">
-            
-            <div class="file-card" style="border-left: 4px solid #107c41;">
-                <img src="img/excel-icon.png" class="file-icon" alt="Icono Excel">
-                <div class="file-info">
-                    <h4>Listado Proveedores Ficticios - DIAN</h4>
-                    <div class="file-date">Actualizada Al: 08/09/2026</div>
-                    <div class="file-desc">Subdirección de fiscalización tributaria resoluciones sanción declaratoria proveedor ficticio.</div>
-                </div>
-                <div class="card-actions">
-                    <a href="https://docs.google.com/spreadsheets/d/1TBncSbN4FKRBr1lt5e22QQAI5b6vPccK/export?format=xlsx" class="btn-action btn-download" download>📥 Descargar Excel</a>
-                    <a href="https://wa.me/?text=Mira%20esta%20plantilla%20gratis%20en%20WiCONTABLE:%20*Listado%20Proveedores%20Ficticios%20-%20DIAN*%20-%20https://wicontable.com/plantillas.html" class="btn-action btn-share" target="_blank">📲 Compartir</a>
-                </div>
-            </div>
-         
-            <div class="file-card" style="border-left: 4px solid #107c41;">
-                <img src="img/excel-icon.png" class="file-icon" alt="Icono Excel">
-                <div class="file-info">
-                    <h4>CHECKLIST CALENDARIO - VENCIMIENTO DECLARACIÓN RENTA PERSONAS NATURALES AÑO GRAVABLE 2025, que se presenta en el 2026</h4>
-                    <div class="file-date">Publicado: 15/07/2026</div>
-                    <div class="file-desc">¡Que la temporada de impuestos no te tome por sorpresa! La temporada de Declaración de Renta de Personas Naturales (Año Gravable 2025) exige un control absoluto del tiempo y de la información. Esta plantilla de Checklist Calendario está diseñada para centralizar, organizar y monitorear cada etapa del proceso de preparación y presentación de impuestos durante el año 2026.</div>
-                </div>
-                <div class="card-actions">
-                    <a href="https://docs.google.com/spreadsheets/d/1qgBcFNb5ObF8dcE-5JTVy34vHij8MheT/export?format=xlsx" class="btn-action btn-download" download>📥 Descargar Excel</a>
-                    <a href="https://wa.me/?text=Mira%20esta%20plantilla%20gratis%20en%20WiCONTABLE:%20*Checklist%20Calendario%20Renta%20P.N%202026*%20https://wicontable.com/plantillas.html" class="btn-action btn-share" target="_blank">📲 Compartir</a>
-                </div>
-            </div>
-            
-            <div class="file-card" style="border-left: 4px solid #107c41;">
-                <img src="img/excel-icon.png" class="file-icon" alt="Icono Excel">
-                <div class="file-info">
-                    <h4>Horas extras, recargos nocturnos, dominicales y festivos</h4>
-                    <div class="file-date">Publicado: 11/07/2026</div>
-                    <div class="file-desc">Desde el 15 de julio hasta el 31 de diciembre de 2026, la jornada laboral ordinaria máxima en Colombia es de 42 horas semanales. Toda labor que exceda la jornada ordinaria pactada debe reconocerse como hora extra. La jornada nocturna comprende de 7:00 p. m. a 6:00 a. m. y genera recargo nocturno del 35%. Las horas extras se pagan con recargo del 25% si son diurnas y del 75% si son nocturnas. El trabajo en domingos, festivos o día de descanso obligatorio se paga con recargo del 90% sobre la hora ordinaria. Para liquidar, se toma como base el valor de la hora ordinaria y se aplican los recargos correspondientes según el horario y el día laborado.</div>
-                </div>
-                <div class="card-actions">
-                    <a href="https://docs.google.com/spreadsheets/d/1DZM0XuH1ZZfMtzZfOWUf3E3s8Q0pgk34/export?format=xlsx" class="btn-action btn-download" download>📥 Descargar Excel</a>
-                    <a href="https://wa.me/?text=Mira%20esta%20plantilla%20gratis%20en%20WiCONTABLE:%20*Horas%20Extras,%20Recargos%20Nocturnos,%20dominicales%20y%20festivos%20desde%20julio%2015%20hasta%20diciembre%2031%20de%202026*%20https://wicontable.com/plantillas.html" class="btn-action btn-share" target="_blank">📲 Compartir</a>
-                </div>
-            </div>
-
-            <div class="file-card" style="border-left: 4px solid #107c41;">
-                <img src="img/excel-icon.png" class="file-icon" alt="Icono Excel">
-                <div class="file-info">
-                    <h4>Tabla Retefuente Que Aplica Desde El 01-Julio-2026 (UVT $52.374)</h4>
-                    <div class="file-date">Publicado: 11/07/2026</div>
-                    <div class="file-desc">Su vigencia desde el 1 de julio de 2026 obedece a que el Consejo de Estado revocó la suspensión provisional de los artículos 2 a 8 del Decreto 572 de 2025, permitiendo que vuelvan a producir efectos las reglas modificadas sobre bases y tarifas de retención y autorretención. En términos prácticos, la tabla sirve para que contadores y agentes retenedores identifiquen rápidamente concepto, base mínima, tarifa aplicable, valor en pesos y norma soporte, con fundamento en el Estatuto Tributario, el Decreto 1625 de 2016 y normas reglamentarias relacionadas.</div>
-                </div>
-                <div class="card-actions">
-                    <a href="https://docs.google.com/spreadsheets/d/1zFje_oQTPByPV9G02E9VlIO3iCIy6Yd1/export?format=xlsx" class="btn-action btn-download" download>📥 Descargar Excel</a>
-                    <a href="https://wa.me/?text=Mira%20esta%20plantilla%20gratis%20en%20WiCONTABLE:%20*Tabla%20Retefuente%20Que%20Aplica%20Desde%20El%2001-%20Julio-%201026%20(UVT$52.374%20*%20https://wicontable.com/plantillas.html" class="btn-action btn-share" target="_blank">📲 Compartir</a>
-                </div>
-            </div>
-
-            <div class="file-card" style="border-left: 4px solid #107c41;">
-                <img src="img/excel-icon.png" class="file-icon" alt="Icono Excel">
-                <div class="file-info">
-                    <h4>Porrateo IVA 2026</h4>
-                    <div class="file-date">Publicado: 11/07/2026</div>
-                    <div class="file-desc">A partir de julio de 2026, el IVA descontable debe manejarse bajo un criterio de imputación directa y, únicamente cuando no sea posible identificar su destinación específica, debe aplicarse el prorrateo previsto en el artículo 490 del Estatuto Tributario. La entidad debe fortalecer sus auxiliares contables y documentales para separar adecuadamente el IVA generado, descontable directo, IVA común sujeto a prorrateo, IVA no descontable e IVA asociado a operaciones excluidas.</div>
-                </div>
-                <div class="card-actions">
-                    <a href="https://docs.google.com/spreadsheets/d/1jTJgpdR_DzsyrP6JOfI9fvmM5pTe7VzP/export?format=xlsx" class="btn-action btn-download" download>📥 Descargar Excel</a>
-                    <a href="https://wa.me/?text=Mira%20esta%20plantilla%20gratis%20en%20WiCONTABLE:%20*Porrateo%20IVA*%20https://wicontable.com/plantillas.html" class="btn-action btn-share" target="_blank">📲 Compartir</a>
-                </div>
-            </div>
-        </div>
-
-        <h2 class="cat-title" style="color: #2b579a; border-bottom: 3px solid #2b579a; margin-top: 60px;">📘 Documentos WORD</h2>
-        <div class="file-grid">
-            
-            <div class="file-card" style="border-left: 4px solid #2b579a;">
-                <img src="img/word-icon.png" class="file-icon" alt="Icono Word">
-                <div class="file-info">
-                    <h4>Contrato de Prestación Servicios Colombia Ajustado A Julio 2026</h4>
-                    <div class="file-date">Publicado: 10/07/2026</div>
-                    <div class="file-desc">Puedes usar este contrato solo si el servicio será realmente autónomo. Si el contratista va a cumplir horario, recibir órdenes permanentes, pedir permisos, ocupar un cargo operativo de la empresa o ejecutar funciones permanentes bajo control directo, lo correcto es celebrar contrato de trabajo y aplicar toda la normativa laboral vigente.</div>
-                </div>
-                <div class="card-actions">
-                    <a href="https://docs.google.com/document/d/1O-ZGfqp4_XUoli4uQZ6h5NcHfNM_AYXi/export?format=docx" class="btn-action btn-download" download>📥 Descargar Word</a>
-                    <a href="https://wa.me/?text=Mira%20este%20contrato%20gratis%20en%20WiCONTABLE:%20*Contrato%20de%20Prestación%20Servicios%20Colombia%20Ajustado%20A%20Julio%202026*%20-%20https://wicontable.com/plantillas.html" class="btn-action btn-share" target="_blank">📲 Compartir</a>
-                </div>
-            </div>
-
-            <div class="file-card" style="border-left: 4px solid #2b579a;">
-                <img src="img/word-icon.png" class="file-icon" alt="Icono Word">
-                <div class="file-info">
-                    <h4>Contrato Trabajo Sector Privado Colombia A Julio 2026</h4>
-                    <div class="file-date">Publicado: 11/07/2026</div>
-                    <div class="file-desc">Verifiqué la renderización del documento antes de entregarlo. La plantilla se basó principalmente en la Ley 2466 de 2025, Ley 2101 de 2021, Código Sustantivo del Trabajo, Decreto 1072 de 2015, Ley 100 de 1993, Ley 1010 de 2006, Ley 2191 de 2022 y Ley 1581 de 2012.</div>
-                </div>
-                <div class="card-actions">
-                    <a href="https://docs.google.com/document/d/1joE6pQdPnbwyaxRD6K6uNuPqztE2aBQa/export?format=docx" class="btn-action btn-download" download>📥 Descargar Word</a>
-                    <a href="https://wa.me/?text=Mira%20este%20contrato%20gratis%20en%20WiCONTABLE:%20*Contrato%20Trabajo%20Sector%20Privado%20Colombia%20A%20Julio%202026*%20https://wicontable.com/plantillas.html" class="btn-action btn-share" target="_blank">📲 Compartir</a>
-                </div>
-            </div>
-
-            <div class="file-card" style="border-left: 4px solid #2b579a;">
-                <img src="img/word-icon.png" class="file-icon" alt="Icono Word">
-                <div class="file-info">
-                    <h4>Contrato Prestacion Servicios Contables Independiente Colombia 2026</h4>
-                    <div class="file-date">Publicado: 20/07/2026</div>
-                    <div class="file-desc">Este modelo debe utilizarse únicamente cuando el contador conserve autonomía profesional, administrativa y organizativa, sin horario laboral, jefe disciplinario, permisos, exclusividad obligatoria ni control permanente sobre la forma de ejecutar el servicio. Cuando concurren prestación personal, remuneración y subordinación, existe contrato de trabajo independientemente del nombre que las partes hayan puesto al documento.</div>
-                </div>
-                <div class="card-actions">
-                    <a href="https://docs.google.com/document/d/1xEuKYUtYPZ9AN_9m_to3v6zT7f1a3Zu8/export?format=docx" class="btn-action btn-download" download>📥 Descargar Word</a>
-                    <a href="https://wa.me/?text=Mira%20este%20contrato%20gratis%20en%20WiCONTABLE:%20*Contrato%20Prestación%20Servicios%20Contables%20Independiente%20Colombia%202026*%20https://wicontable.com/plantillas.html" class="btn-action btn-share" target="_blank">📲 Compartir</a>
-                </div>
-            </div>
-
-            <div class="file-card" style="border-left: 4px solid #2b579a;">
-                <img src="img/word-icon.png" class="file-icon" alt="Icono Word">
-                <div class="file-info">
-                    <h4>Contrato Laboral Contador Termino Indefinido Colombia 2026</h4>
-                    <div class="file-date">Publicado: 20/07/2026</div>
-                    <div class="file-desc">Este modelo está estructurado como contrato laboral a término indefinido, porque esa es la modalidad general establecida por la Ley 2466 de 2025. Incluye subordinación, salario, prestaciones sociales, seguridad social, período de prueba opcional, jornada de 42 horas semanales desde el 16 de julio de 2026, derecho a la desconexión y reglas para trabajo suplementario, nocturno, dominical y festivo.</div>
-                </div>
-                <div class="card-actions">
-                    <a href="https://docs.google.com/document/d/1yOxZWTwrKNI1DBONzVM8VwmJm8f5MRZb/export?format=docx" class="btn-action btn-download" download>📥 Descargar Word</a>
-                    <a href="https://wa.me/?text=Mira%20este%20contrato%20gratis%20en%20WiCONTABLE:%20*Contrato%20Laboral%20Contador%20Termino%20Indefinido%20Colombia%202026*%20https://wicontable.com/plantillas.html" class="btn-action btn-share" target="_blank">📲 Compartir</a>
-                </div>
-            </div>
-
-            <div class="file-card" style="border-left: 4px solid #2b579a;">
-                <img src="img/word-icon.png" class="file-icon" alt="Icono Word">
-                <div class="file-info">
-                    <h4>Contrato Prestacion Servicios Contables Básico Colombia 2026</h4>
-                    <div class="file-date">Publicado: 03/09/2026</div>
-                    <div class="file-desc">Este modelo debe utilizarse únicamente cuando el contador conserve autonomía profesional, administrativa y organizativa, sin horario laboral, jefe disciplinario, permisos, exclusividad obligatoria ni control permanente sobre la forma de ejecutar el servicio. Cuando concurren prestación personal, remuneración y subordinación, existe contrato de trabajo independientemente del nombre que las partes hayan puesto al documento.</div>
-                </div>
-                <div class="card-actions">
-                    <a href="https://docs.google.com/document/d/1zWKteZfzoLn9YaPUR1FgX-yH4EVy61jw/export?format=docx" class="btn-action btn-download" download>📥 Descargar Word</a>
-                    <a href="https://wa.me/?text=Mira%20este%20contrato%20gratis%20en%20WiCONTABLE:%20*Contrato%20Prestación%20Servicios%20Contables%20Básico%20Colombia%202026*%20https://wicontable.com/plantillas.html" class="btn-action btn-share" target="_blank">📲 Compartir</a>
-                </div>
-            </div>
-        </div>
-
-        
-        <h2 class="cat-title" style="color: #d24726; border-bottom: 3px solid #d24726; margin-top: 60px;">📕 Documentos PDF</h2>
-        <div class="file-grid">
-            
-            <div class="file-card" style="border-left: 4px solid #d24726;">
-                <img src="img/pdf-icon.png" class="file-icon" alt="Icono PDF" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg'">
-                <div class="file-info">
-                    <h4>Entrevista Declaración RENTA P.N AG 2025</h4>
-                    <div class="file-date">Publicado: 11/07/2026</div>
-                    <div class="file-desc">El documento es una entrevista previa y lista de verificación para preparar la declaración de renta de una persona natural por el año gravable 2025, que se presentará en 2026. Reúne los documentos necesarios para revisar la identificación tributaria, ingresos, patrimonio, deudas, consignaciones, compras, consumos con tarjetas, retenciones, deducciones y rentas exentas del contribuyente.</div>
-                </div>
-                <div class="card-actions">
-                    <a href="https://drive.google.com/uc?export=download&id=19fgbwEVLfqb1-p3pCSUoz7Pw4NrfMKNJ" class="btn-action btn-download" style="background: #d24726;">📥 Descargar PDF</a>
-                    <a href="https://wa.me/?text=Mira%20esta%20guía%20gratis%20en%20WiCONTABLE:%20*Entrevista%20Declaración%20RENTA%20A.G2025*%20https://wicontable.com/plantillas.html" class="btn-action btn-share" style="color: #d24726; border-color: #d24726;" target="_blank">📲 Compartir</a>
-                </div>
-            </div>
-
-            <div class="file-card" style="border-left: 4px solid #d24726;">
-                <img src="img/pdf-icon.png" class="file-icon" alt="Icono PDF" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg'">
-                <div class="file-info">
-                    <h4>Formato 001 DIAN Editable</h4>
-                    <div class="file-date">Publicado: 04/09/2026</div>
-                    <div class="file-desc">El Formato 001 de la DIAN es el RUT (Registro Único Tributario). Funciona como tu identificación fiscal oficial en Colombia. Es muy útil como borrador para saber qué datos te van a pedir, pero recuerda que el documento con validez legal solo se genera y formaliza directamente en la plataforma oficial de la DIAN.</div>
-                </div>
-                <div class="card-actions">
-                    <a href="https://drive.google.com/uc?export=download&id=1ORf5txgth5cv2jDid05DLulQg4cMVWtX" class="btn-action btn-download" style="background: #d24726;">📥 Descargar PDF</a>
-                    <a href="https://wa.me/?text=Mira%20esta%20guía%20gratis%20en%20WiCONTABLE:%20*Plantilla%20001%20Editable%20DIAN*%20https://wicontable.com/plantillas.html" class="btn-action btn-share" style="color: #d24726; border-color: #d24726;" target="_blank">📲 Compartir</a>
-                </div>
-            </div>
     </div>
 
-    <a href="https://wa.me/573156016386?text=Hola Wilder,%20vengo%20de%20la%20sección%20de%20plantillas%20y%20tengo%20una%20duda." target="_blank" class="floating-wa" title="Soporte WhatsApp Directo">💬</a>
-
-    <footer class="main-footer">
-        <div class="footer-content">
-            <p><strong>CONÉCTATE CON NOSOTROS EN REDES SOCIALES</strong></p>
-            <div class="social-links">
-                <a href="https://whatsapp.com/channel/0029Va4o0RV2f3ENoTURyU40" class="social-btn bg-wa" target="_blank" title="Canal de WhatsApp"><svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.176.001 6.163 1.237 8.407 3.483 2.245 2.246 3.48 5.234 3.479 8.414-.004 6.597-5.342 11.945-11.893 11.945-1.996-.001-3.957-.503-5.69-1.462L0 24zm6.59-4.846c1.62.962 3.235 1.467 4.962 1.468 5.334 0 9.673-4.321 9.676-9.635.001-2.574-1.002-4.994-2.825-6.819C16.638 2.344 14.225 1.34 11.66 1.34 6.326 1.34 1.986 5.661 1.983 10.977c-.001 1.8.473 3.559 1.373 5.111l-.995 3.633 3.689-.967zM17.18 14.9c-.3-.15-1.77-.874-2.046-.975-.276-.102-.477-.152-.677.151-.202.303-.778.976-.953 1.178-.177.202-.353.228-.654.077-.3-.15-1.264-.465-2.41-1.487-.893-.795-1.494-1.778-1.67-2.079-.176-.3-.02-.463.13-.613.136-.134.3-.349.45-.524.15-.175.2-.299.3-.5.1-.201.05-.376-.025-.526-.075-.15-.677-1.633-.927-2.233-.243-.585-.49-.506-.677-.516-.174-.008-.375-.01-.576-.01-.2 0-.527.075-.802.375-.276.3-.1.575.451 1.226.55.65.9 1.326 1.05 1.526.15.2 2.054 3.136 4.975 4.393.695.299 1.238.478 1.66.614.698.222 1.334.19 1.838.115.56-.083 1.77-.724 2.022-1.424.252-.699.252-1.299.176-1.424-.075-.124-.275-.2-.575-.35z"/></svg></a>
-                <a href="https://chat.whatsapp.com/FvYIDsoo7NR7PLwtd0Vhwv " class="social-btn bg-wa" target="_blank" title="Grupo de WhatsApp"><svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.176.001 6.163 1.237 8.407 3.483 2.245 2.246 3.48 5.234 3.479 8.414-.004 6.597-5.342 11.945-11.893 11.945-1.996-.001-3.957-.503-5.69-1.462L0 24zm6.59-4.846c1.62.962 3.235 1.467 4.962 1.468 5.334 0 9.673-4.321 9.676-9.635.001-2.574-1.002-4.994-2.825-6.819C16.638 2.344 14.225 1.34 11.66 1.34 6.326 1.34 1.986 5.661 1.983 10.977c-.001 1.8.473 3.559 1.373 5.111l-.995 3.633 3.689-.967zM17.18 14.9c-.3-.15-1.77-.874-2.046-.975-.276-.102-.477-.152-.677.151-.202.303-.778.976-.953 1.178-.177.202-.353.228-.654.077-.3-.15-1.264-.465-2.41-1.487-.893-.795-1.494-1.778-1.67-2.079-.176-.3-.02-.463.13-.613.136-.134.3-.349.45-.524.15-.175.2-.299.3-.5.1-.201.05-.376-.025-.526-.075-.15-.677-1.633-.927-2.233-.243-.585-.49-.506-.677-.516-.174-.008-.375-.01-.576-.01-.2 0-.527.075-.802.375-.276.3-.1.575.451 1.226.55.65.9 1.326 1.05 1.526.15.2 2.054 3.136 4.975 4.393.695.299 1.238.478 1.66.614.698.222 1.334.19 1.838.115.56-.083 1.77-.724 2.022-1.424.252-.699.252-1.299.176-1.424-.075-.124-.275-.2-.575-.35z"/></svg></a>
-                <a href="https://www.youtube.com/@wildersarriahernandez" class="social-btn bg-yt" target="_blank" title="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
-                <a href="https://www.youtube.com/@wicontable" class="social-btn bg-yt" target="_blank" title="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
-                <a href="https://www.tiktok.com/@wildersarriahernandez" class="social-btn bg-tk" target="_blank" title="TikTok"><svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.9-.32-1.98-.23-2.81.33-.85.51-1.44 1.42-1.58 2.4-.11.68-.03 1.37.18 2.03.35.81 1.05 1.48 1.88 1.76.71.21 1.48.21 2.19.04 1.02-.14 1.98-.77 2.56-1.6.43-.59.66-1.31.71-2.04.08-3.38.03-6.76.04-10.14z"/></svg></a>
-                <a href="https://www.facebook.com/wicontable" class="social-btn bg-fb" target="_blank" title="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-                <a href="https://www.instagram.com/wicontable/" class="social-btn bg-ig" target="_blank" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
-                <a href="https://www.linkedin.com/in/wildersarriahernandez" class="social-btn bg-li" target="_blank" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a> 
+    <!-- Mobile Navigation Drawer -->
+    <div class="drawer-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
+    <aside class="mobile-nav-drawer" id="mobileDrawer">
+        <div class="mobile-nav-header">
+            <div class="brand-logo">
+                <img src="img/logowi.png" alt="WiCONTABLE" class="logo-img">
+                <div class="brand-name">Wi<span>CONTABLE</span></div>
             </div>
-            <p style="font-size: 0.8rem; color: #999; margin-top: 10px;">© 2026 WiCONTABLE</p>
+            <button class="btn-close-mobile" onclick="closeMobileMenu()">&times;</button>
+        </div>
+        <div class="mobile-nav-content">
+            <div class="mobile-nav-group-title">Navegación</div>
+            <a href="index.html" class="mobile-nav-item" onclick="closeMobileMenu()">
+                <span class="mobile-nav-icon">🏠</span>
+                <div class="mobile-nav-info">
+                    <strong>Catálogo Principal</strong>
+                    <small>Herramientas y automatizaciones</small>
+                </div>
+            </a>
+            <a href="plataforma-membresias.html" class="mobile-nav-item" onclick="closeMobileMenu()">
+                <span class="mobile-nav-icon">🎬</span>
+                <div class="mobile-nav-info">
+                    <strong>Plataformas & Membresías</strong>
+                    <small>Streaming, diseño e inteligencia artificial</small>
+                </div>
+            </a>
+            <div class="mobile-nav-group-title">Recursos</div>
+            <a href="https://burly-darkness-70e.notion.site/WiCONTABLE-2ea95ee6323880ec8cbae8ba51b03831" target="_blank" rel="noopener noreferrer" class="mobile-nav-item">
+                <span class="mobile-nav-icon">📚</span>
+                <div class="mobile-nav-info">
+                    <strong>Repositorio Notion</strong>
+                    <small>Base de conocimiento oficial</small>
+                </div>
+            </a>
+            <a href="https://chatgpt.com/g/g-vO0tKViyq-asistente-contable-colombia" target="_blank" rel="noopener noreferrer" class="mobile-nav-item">
+                <span class="mobile-nav-icon">🤖</span>
+                <div class="mobile-nav-info">
+                    <strong>GPT Asistente Colombia</strong>
+                    <small>Consultas contables y tributarias</small>
+                </div>
+            </a>
+            <a href="https://sites.google.com/view/estatuton-2024/inicio" target="_blank" rel="noopener noreferrer" class="mobile-nav-item">
+                <span class="mobile-nav-icon">📁</span>
+                <div class="mobile-nav-info">
+                    <strong>Estatutón Contable</strong>
+                    <small>Estatuto tributario online</small>
+                </div>
+            </a>
+            <a href="Actualidad Contable/CALENDARIO TRIBUTARIO 2026.pdf" target="_blank" class="mobile-nav-item">
+                <span class="mobile-nav-icon">📅</span>
+                <div class="mobile-nav-info">
+                    <strong>Calendario Tributario 2026</strong>
+                    <small>Vencimientos oficiales DIAN</small>
+                </div>
+            </a>
+            <a href="https://chat.whatsapp.com/FvYIDsoo7NR7PLwtd0Vhwv" target="_blank" rel="noopener noreferrer" class="mobile-nav-item">
+                <span class="mobile-nav-icon">👥</span>
+                <div class="mobile-nav-info">
+                    <strong>Comunidad WhatsApp</strong>
+                    <small>Grupo de apoyo profesional</small>
+                </div>
+            </a>
+        </div>
+        <div class="mobile-nav-footer">
+            <a href="https://wa.me/573156016386" target="_blank" rel="noopener noreferrer" class="mobile-btn-wa">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.176.001 6.163 1.237 8.407 3.483 2.245 2.246 3.48 5.234 3.479 8.414-.004 6.597-5.342 11.945-11.893 11.945-1.996-.001-3.957-.503-5.69-1.462L0 24zm6.59-4.846c1.62.962 3.235 1.467 4.962 1.468 5.334 0 9.673-4.321 9.676-9.635.001-2.574-1.002-4.994-2.825-6.819C16.638 2.344 14.225 1.34 11.66 1.34 6.326 1.34 1.986 5.661 1.983 10.977c-.001 1.8.473 3.559 1.373 5.111l-.995 3.633 3.689-.967z"/></svg>
+                <span>WhatsApp Soporte</span>
+            </a>
+        </div>
+    </aside>
+
+    <header class="templates-hero">
+        <span class="hero-badge">Recursos Comunitarios 2026</span>
+        <h1 class="hero-title">Plantillas y Formatos Contables Gratuitos</h1>
+        <p class="hero-desc">Si tienes algún documento libre que desees compartirnos, no dudes en contactarnos.</p>
+    </header>
+
+    <section class="templates-controls">
+        <div class="search-box-large">
+            <input type="text" id="searchInput" class="search-input-large" placeholder="🔍 Buscar plantilla por título o temática (ej. Renta, UVT, Retefuente, Horas Extras, Contrato...)" onkeyup="filterTemplates()">
+            <svg class="search-icon-pos" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </div>
+        <div class="filter-tabs-row">
+            <button class="filter-tab-btn active" onclick="setDocFilter('all', this)">Todas las Plantillas</button>
+            <button class="filter-tab-btn" onclick="setDocFilter('excel', this)">📗 Formatos Excel</button>
+            <button class="filter-tab-btn" onclick="setDocFilter('word', this)">📘 Minutas Word</button>
+            <button class="filter-tab-btn" onclick="setDocFilter('pdf', this)">📕 Guías PDF</button>
+        </div>
+    </section>
+
+    <main class="templates-grid-section" id="templatesGrid">
+        <!-- EXCEL SECTION -->
+        <div class="doc-category" data-cat="excel">
+            <h2 class="category-group-title" style="color: #107C41;">📗 Documentos EXCEL</h2>
+            <div class="cards-grid">
+                
+                <div class="template-card" data-format="excel">
+                    <div class="card-top">
+                        <div class="doc-icon-badge">
+                            <img src="img/excel-icon.png" alt="Excel" class="doc-format-icon">
+                        </div>
+                        <div class="doc-meta">
+                            <span class="doc-date">Actualizado: 08/09/2026</span>
+                            <h3 class="doc-title">Listado Proveedores Ficticios - DIAN</h3>
+                        </div>
+                    </div>
+                    <p class="doc-desc">Subdirección de fiscalización tributaria resoluciones sanción declaratoria proveedor ficticio. Consulta ágil y cruce de terceros.</p>
+                    <div class="card-btn-row">
+                        <a href="https://docs.google.com/spreadsheets/d/1TBncSbN4FKRBr1lt5e22QQAI5b6vPccK/export?format=xlsx" class="btn-download-doc">📥 Descargar (.xlsx)</a>
+                        <a href="https://wa.me/?text=Descarga%20esta%20plantilla%20gratis%20en%20WiCONTABLE:%20Listado%20Proveedores%20Ficticios%20DIAN%20-%20https://wicontable.com/plantillas.html" target="_blank" class="btn-share-doc">📲 Compartir</a>
+                    </div>
+                </div>
+
+                <div class="template-card" data-format="excel">
+                    <div class="card-top">
+                        <div class="doc-icon-badge">
+                            <img src="img/excel-icon.png" alt="Excel" class="doc-format-icon">
+                        </div>
+                        <div class="doc-meta">
+                            <span class="doc-date">Publicado: 15/07/2026</span>
+                            <h3 class="doc-title">Checklist Calendario - Vencimiento Declaración Renta Personas Naturales Año Gravable 2025, que se presenta en el 2026</h3>
+                        </div>
+                    </div>
+                    <p class="doc-desc">¡Que la temporada de impuestos no te tome por sorpresa! La temporada de Declaración de Renta de Personas Naturales (Año Gravable 2025) exige un control absoluto del tiempo y de la información. Esta plantilla de Checklist Calendario está diseñada para centralizar, organizar y monitorear cada etapa del proceso de preparación y presentación de impuestos durante el año 2026.</p>
+                    <div class="card-btn-row">
+                        <a href="https://docs.google.com/spreadsheets/d/1qgBcFNb5ObF8dcE-5JTVy34vHij8MheT/export?format=xlsx" class="btn-download-doc">📥 Descargar (.xlsx)</a>
+                        <a href="https://wa.me/?text=Descarga%20esta%20plantilla%20gratis%20en%20WiCONTABLE:%20Checklist%20Calendario%20Renta%20P.N%202026%20-%20https://wicontable.com/plantillas.html" target="_blank" class="btn-share-doc">📲 Compartir</a>
+                    </div>
+                </div>
+
+                <div class="template-card" data-format="excel">
+                    <div class="card-top">
+                        <div class="doc-icon-badge">
+                            <img src="img/excel-icon.png" alt="Excel" class="doc-format-icon">
+                        </div>
+                        <div class="doc-meta">
+                            <span class="doc-date">Publicado: 11/07/2026</span>
+                            <h3 class="doc-title">Horas Extras, Recargos Nocturnos, Dominicales y Festivos (Jornada 42h)</h3>
+                        </div>
+                    </div>
+                    <p class="doc-desc">Desde el 15 de julio hasta el 31 de diciembre de 2026, la jornada laboral ordinaria máxima en Colombia es de 42 horas semanales. Toda labor que exceda la jornada ordinaria pactada debe reconocerse como hora extra. La jornada nocturna comprende de 7:00 p. m. a 6:00 a. m. y genera recargo nocturno del 35%. Las horas extras se pagan con recargo del 25% si son diurnas y del 75% si son nocturnas. El trabajo en domingos, festivos o día de descanso obligatorio se paga con recargo del 90% sobre la hora ordinaria. Para liquidar, se toma como base el valor de la hora ordinaria y se aplican los recargos correspondientes según el horario y el día laborado.</p>
+                    <div class="card-btn-row">
+                        <a href="https://docs.google.com/spreadsheets/d/1DZM0XuH1ZZfMtzZfOWUf3E3s8Q0pgk34/export?format=xlsx" class="btn-download-doc">📥 Descargar (.xlsx)</a>
+                        <a href="https://wa.me/?text=Descarga%20esta%20plantilla%20gratis%20en%20WiCONTABLE:%20Horas%20Extras%20y%20Recargos%202026%20-%20https://wicontable.com/plantillas.html" target="_blank" class="btn-share-doc">📲 Compartir</a>
+                    </div>
+                </div>
+
+                <div class="template-card" data-format="excel">
+                    <div class="card-top">
+                        <div class="doc-icon-badge">
+                            <img src="img/excel-icon.png" alt="Excel" class="doc-format-icon">
+                        </div>
+                        <div class="doc-meta">
+                            <span class="doc-date">Publicado: 11/07/2026</span>
+                            <h3 class="doc-title">Tabla Retefuente Vigente Desde Julio 2026 (UVT $52.374)</h3>
+                        </div>
+                    </div>
+                    <p class="doc-desc">Su vigencia desde el 1 de julio de 2026 obedece a que el Consejo de Estado revocó la suspensión provisional de los artículos 2 a 8 del Decreto 572 de 2025, permitiendo que vuelvan a producir efectos las reglas modificadas sobre bases y tarifas de retención y autorretención. En términos prácticos, la tabla sirve para que contadores y agentes retenedores identifiquen rápidamente concepto, base mínima, tarifa aplicable, valor en pesos y norma soporte, con fundamento en el Estatuto Tributario, el Decreto 1625 de 2016 y normas reglamentarias relacionadas.</p>
+                    <div class="card-btn-row">
+                        <a href="https://docs.google.com/spreadsheets/d/1zFje_oQTPByPV9G02E9VlIO3iCIy6Yd1/export?format=xlsx" class="btn-download-doc">📥 Descargar (.xlsx)</a>
+                        <a href="https://wa.me/?text=Descarga%20esta%20plantilla%20gratis%20en%20WiCONTABLE:%20Tabla%20Retefuente%202026%20-%20https://wicontable.com/plantillas.html" target="_blank" class="btn-share-doc">📲 Compartir</a>
+                    </div>
+                </div>
+
+                <div class="template-card" data-format="excel">
+                    <div class="card-top">
+                        <div class="doc-icon-badge">
+                            <img src="img/excel-icon.png" alt="Excel" class="doc-format-icon">
+                        </div>
+                        <div class="doc-meta">
+                            <span class="doc-date">Publicado: 11/07/2026</span>
+                            <h3 class="doc-title">Prorrateo IVA 2026 (Art. 490 E.T.)</h3>
+                        </div>
+                    </div>
+                    <p class="doc-desc">A partir de julio de 2026, el IVA descontable debe manejarse bajo un criterio de imputación directa y, únicamente cuando no sea posible identificar su destinación específica, debe aplicarse el prorrateo previsto en el artículo 490 del Estatuto Tributario. La entidad debe fortalecer sus auxiliares contables y documentales para separar adecuadamente el IVA generado, descontable directo, IVA común sujeto a prorrateo, IVA no descontable e IVA asociado a operaciones excluidas.</p>
+                    <div class="card-btn-row">
+                        <a href="https://docs.google.com/spreadsheets/d/1jTJgpdR_DzsyrP6JOfI9fvmM5pTe7VzP/export?format=xlsx" class="btn-download-doc">📥 Descargar (.xlsx)</a>
+                        <a href="https://wa.me/?text=Descarga%20esta%20plantilla%20gratis%20en%20WiCONTABLE:%20Prorrateo%20IVA%20-%20https://wicontable.com/plantillas.html" target="_blank" class="btn-share-doc">📲 Compartir</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- WORD SECTION -->
+        <div class="doc-category" data-cat="word">
+            <h2 class="category-group-title" style="color: #2B579A; margin-top: 60px;">📘 Documentos WORD</h2>
+            <div class="cards-grid">
+                
+                <div class="template-card" data-format="word">
+                    <div class="card-top">
+                        <div class="doc-icon-badge">
+                            <img src="img/word-icon.png" alt="Word" class="doc-format-icon">
+                        </div>
+                        <div class="doc-meta">
+                            <span class="doc-date">Publicado: 10/07/2026</span>
+                            <h3 class="doc-title">Contrato de Prestación de Servicios Colombia Ajustado A Julio 2026</h3>
+                        </div>
+                    </div>
+                    <p class="doc-desc">Puedes usar este contrato solo si el servicio será realmente autónomo. Si el contratista va a cumplir horario, recibir órdenes permanentes, pedir permisos, ocupar un cargo operativo de la empresa o ejecutar funciones permanentes bajo control directo, lo correcto es celebrar contrato de trabajo y aplicar toda la normativa laboral vigente.</p>
+                    <div class="card-btn-row">
+                        <a href="https://docs.google.com/document/d/1O-ZGfqp4_XUoli4uQZ6h5NcHfNM_AYXi/export?format=docx" class="btn-download-doc">📥 Descargar (.docx)</a>
+                        <a href="https://wa.me/?text=Descarga%20este%20contrato%20gratis%20en%20WiCONTABLE:%20Contrato%20Prestación%20Servicios%20-%20https://wicontable.com/plantillas.html" target="_blank" class="btn-share-doc">📲 Compartir</a>
+                    </div>
+                </div>
+
+                <div class="template-card" data-format="word">
+                    <div class="card-top">
+                        <div class="doc-icon-badge">
+                            <img src="img/word-icon.png" alt="Word" class="doc-format-icon">
+                        </div>
+                        <div class="doc-meta">
+                            <span class="doc-date">Publicado: 11/07/2026</span>
+                            <h3 class="doc-title">Contrato de Trabajo Sector Privado Colombia A Julio 2026 (Ley 2466 de 2025)</h3>
+                        </div>
+                    </div>
+                    <p class="doc-desc">Verifiqué la renderización del documento antes de entregarlo. La plantilla se basó principalmente en la Ley 2466 de 2025, Ley 2101 de 2021, Código Sustantivo del Trabajo, Decreto 1072 de 2015, Ley 100 de 1993, Ley 1010 de 2006, Ley 2191 de 2022 y Ley 1581 de 2012.</p>
+                    <div class="card-btn-row">
+                        <a href="https://docs.google.com/document/d/1joE6pQdPnbwyaxRD6K6uNuPqztE2aBQa/export?format=docx" class="btn-download-doc">📥 Descargar (.docx)</a>
+                        <a href="https://wa.me/?text=Descarga%20este%20contrato%20gratis%20en%20WiCONTABLE:%20Contrato%20Trabajo%20Sector%20Privado%20-%20https://wicontable.com/plantillas.html" target="_blank" class="btn-share-doc">📲 Compartir</a>
+                    </div>
+                </div>
+
+                <div class="template-card" data-format="word">
+                    <div class="card-top">
+                        <div class="doc-icon-badge">
+                            <img src="img/word-icon.png" alt="Word" class="doc-format-icon">
+                        </div>
+                        <div class="doc-meta">
+                            <span class="doc-date">Publicado: 20/07/2026</span>
+                            <h3 class="doc-title">Contrato Prestación Servicios Contables Independiente Colombia 2026</h3>
+                        </div>
+                    </div>
+                    <p class="doc-desc">Este modelo debe utilizarse únicamente cuando el contador conserve autonomía profesional, administrativa y organizativa, sin horario laboral, jefe disciplinario, permisos, exclusividad obligatoria ni control permanente sobre la forma de ejecutar el servicio. Cuando concurren prestación personal, remuneración y subordinación, existe contrato de trabajo independientemente del nombre que las partes hayan puesto al documento.</p>
+                    <div class="card-btn-row">
+                        <a href="https://docs.google.com/document/d/1xEuKYUtYPZ9AN_9m_to3v6zT7f1a3Zu8/export?format=docx" class="btn-download-doc">📥 Descargar (.docx)</a>
+                        <a href="https://wa.me/?text=Descarga%20este%20contrato%20gratis%20en%20WiCONTABLE:%20Contrato%20Contador%20Independiente%20-%20https://wicontable.com/plantillas.html" target="_blank" class="btn-share-doc">📲 Compartir</a>
+                    </div>
+                </div>
+
+                <div class="template-card" data-format="word">
+                    <div class="card-top">
+                        <div class="doc-icon-badge">
+                            <img src="img/word-icon.png" alt="Word" class="doc-format-icon">
+                        </div>
+                        <div class="doc-meta">
+                            <span class="doc-date">Publicado: 20/07/2026</span>
+                            <h3 class="doc-title">Contrato Laboral Contador Término Indefinido Colombia 2026</h3>
+                        </div>
+                    </div>
+                    <p class="doc-desc">Este modelo está estructurado como contrato laboral a término indefinido, porque esa es la modalidad general establecida por la Ley 2466 de 2025. Incluye subordinación, salario, prestaciones sociales, seguridad social, período de prueba opcional, jornada de 42 horas semanales desde el 16 de julio de 2026, derecho a la desconexión y reglas para trabajo suplementario, nocturno, dominical y festivo.</p>
+                    <div class="card-btn-row">
+                        <a href="https://docs.google.com/document/d/1yOxZWTwrKNI1DBONzVM8VwmJm8f5MRZb/export?format=docx" class="btn-download-doc">📥 Descargar (.docx)</a>
+                        <a href="https://wa.me/?text=Descarga%20este%20contrato%20gratis%20en%20WiCONTABLE:%20Contrato%20Laboral%20Contador%20-%20https://wicontable.com/plantillas.html" target="_blank" class="btn-share-doc">📲 Compartir</a>
+                    </div>
+                </div>
+
+                <div class="template-card" data-format="word">
+                    <div class="card-top">
+                        <div class="doc-icon-badge">
+                            <img src="img/word-icon.png" alt="Word" class="doc-format-icon">
+                        </div>
+                        <div class="doc-meta">
+                            <span class="doc-date">Publicado: 03/09/2026</span>
+                            <h3 class="doc-title">Contrato Prestación Servicios Contables Básico</h3>
+                        </div>
+                    </div>
+                    <p class="doc-desc">Este modelo debe utilizarse únicamente cuando el contador conserve autonomía profesional, administrativa y organizativa, sin horario laboral, jefe disciplinario, permisos, exclusividad obligatoria ni control permanente sobre la forma de ejecutar el servicio. Cuando concurren prestación personal, remuneración y subordinación, existe contrato de trabajo independientemente del nombre que las partes hayan puesto al documento.</p>
+                    <div class="card-btn-row">
+                        <a href="https://docs.google.com/document/d/1zWKteZfzoLn9YaPUR1FgX-yH4EVy61jw/export?format=docx" class="btn-download-doc">📥 Descargar (.docx)</a>
+                        <a href="https://wa.me/?text=Descarga%20este%20contrato%20gratis%20en%20WiCONTABLE:%20Contrato%20Servicios%20Básico%20-%20https://wicontable.com/plantillas.html" target="_blank" class="btn-share-doc">📲 Compartir</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- PDF SECTION -->
+        <div class="doc-category" data-cat="pdf">
+            <h2 class="category-group-title" style="color: #D24726; margin-top: 60px;">📕 Documentos PDF</h2>
+            <div class="cards-grid">
+                
+                <div class="template-card" data-format="pdf">
+                    <div class="card-top">
+                        <div class="doc-icon-badge">
+                            <img src="img/pdf-icon.png" alt="PDF" class="doc-format-icon">
+                        </div>
+                        <div class="doc-meta">
+                            <span class="doc-date">Publicado: 11/07/2026</span>
+                            <h3 class="doc-title">Entrevista & Checklist Declaración RENTA P.N AG 2025</h3>
+                        </div>
+                    </div>
+                    <p class="doc-desc">El documento es una entrevista previa y lista de verificación para preparar la declaración de renta de una persona natural por el año gravable 2025, que se presentará en 2026. Reúne los documentos necesarios para revisar la identificación tributaria, ingresos, patrimonio, deudas, consignaciones, compras, consumos con tarjetas, retenciones, deducciones y rentas exentas del contribuyente.</p>
+                    <div class="card-btn-row">
+                        <a href="https://drive.google.com/uc?export=download&id=19fgbwEVLfqb1-p3pCSUoz7Pw4NrfMKNJ" class="btn-download-doc">📥 Descargar (.pdf)</a>
+                        <a href="https://wa.me/?text=Descarga%20esta%20guía%20gratis%20en%20WiCONTABLE:%20Entrevista%20Renta%20P.N%20-%20https://wicontable.com/plantillas.html" target="_blank" class="btn-share-doc">📲 Compartir</a>
+                    </div>
+                </div>
+
+                <div class="template-card" data-format="pdf">
+                    <div class="card-top">
+                        <div class="doc-icon-badge">
+                            <img src="img/pdf-icon.png" alt="PDF" class="doc-format-icon">
+                        </div>
+                        <div class="doc-meta">
+                            <span class="doc-date">Publicado: 04/09/2026</span>
+                            <h3 class="doc-title">Formato 001 DIAN Editable (Borrador RUT)</h3>
+                        </div>
+                    </div>
+                    <p class="doc-desc">El Formato 001 de la DIAN es el RUT (Registro Único Tributario). Funciona como tu identificación fiscal oficial en Colombia. Es muy útil como borrador para saber qué datos te van a pedir, pero recuerda que el documento con validez legal solo se genera y formaliza directamente en la plataforma oficial de la DIAN.</p>
+                    <div class="card-btn-row">
+                        <a href="https://drive.google.com/uc?export=download&id=1ORf5txgth5cv2jDid05DLulQg4cMVWtX" class="btn-download-doc">📥 Descargar (.pdf)</a>
+                        <a href="https://wa.me/?text=Descarga%20este%20formato%20gratis%20en%20WiCONTABLE:%20Formato%20001%20DIAN%20Editable%20-%20https://wicontable.com/plantillas.html" target="_blank" class="btn-share-doc">📲 Compartir</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Main Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="brand-logo">
+                    <img src="img/logowi.png" alt="WiCONTABLE Logo" class="logo-img">
+                    <div class="brand-name">Wi<span>CONTABLE</span></div>
+                </div>
+                <p>Herramientas y automatizaciones contables de alta precisión. Diseñadas para simplificar tareas repetitivas y maximizar tu productividad tributaria en Colombia.</p>
+                <div class="footer-social-row">
+                    <a href="https://whatsapp.com/channel/0029Va4o0RV2f3ENoTURyU40" target="_blank" rel="noopener noreferrer" class="social-link wa" title="Canal WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.176.001 6.163 1.237 8.407 3.483 2.245 2.246 3.48 5.234 3.479 8.414-.004 6.597-5.342 11.945-11.893 11.945-1.996-.001-3.957-.503-5.69-1.462L0 24zm6.59-4.846c1.62.962 3.235 1.467 4.962 1.468 5.334 0 9.673-4.321 9.676-9.635.001-2.574-1.002-4.994-2.825-6.819C16.638 2.344 14.225 1.34 11.66 1.34 6.326 1.34 1.986 5.661 1.983 10.977c-.001 1.8.473 3.559 1.373 5.111l-.995 3.633 3.689-.967z"/></svg></a>
+                    <a href="https://chat.whatsapp.com/FvYIDsoo7NR7PLwtd0Vhwv" target="_blank" rel="noopener noreferrer" class="social-link wa" title="Grupo WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 0 0-10.4 18l-1.6 6 6.1-1.6A12 12 0 1 0 12 0z"/></svg></a>
+                    <a href="https://www.youtube.com/@wildersarriahernandez" target="_blank" rel="noopener noreferrer" class="social-link yt" title="YouTube Wilder"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                    <a href="https://www.youtube.com/@wicontable" target="_blank" rel="noopener noreferrer" class="social-link yt" title="YouTube WiCONTABLE"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                    <a href="https://www.tiktok.com/@wildersarriahernandez" target="_blank" rel="noopener noreferrer" class="social-link tk" title="TikTok"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.9-.32-1.98-.23-2.81.33-.85.51-1.44 1.42-1.58 2.4-.11.68-.03 1.37.18 2.03.35.81 1.05 1.48 1.88 1.76.71.21 1.48.21 2.19.04 1.02-.14 1.98-.77 2.56-1.6.43-.59.66-1.31.71-2.04.08-3.38.03-6.76.04-10.14z"/></svg></a>
+                    <a href="https://www.facebook.com/wicontable" target="_blank" rel="noopener noreferrer" class="social-link fb" title="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                    <a href="https://www.instagram.com/wicontable/" target="_blank" rel="noopener noreferrer" class="social-link ig" title="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+                    <a href="https://www.linkedin.com/in/wildersarriahernandez" target="_blank" rel="noopener noreferrer" class="social-link li" title="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Enlaces Rápidos</h4>
+                <ul class="footer-links-list">
+                    <li><a href="index.html">Catálogo Completo</a></li>
+                    <li><a href="declaracion-renta-pn.html">Declaración de Renta Persona Natural</a></li>
+                    <li><a href="anydesk-v6.html">Anydesk V.6.0 (Vitalicia)</a></li>
+                    <li><a href="https://burly-darkness-70e.notion.site/WiCONTABLE-2ea95ee6323880ec8cbae8ba51b03831" target="_blank" rel="noopener noreferrer">Repositorio</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Atención & Soporte</h4>
+                <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 12px;">
+                    Lunes a Sábado: 7:00 AM – 9:00 PM<br>
+                    Domingos y Festivos: 9:00 AM – 6:00 PM
+                </p>
+                <p style="font-size: 0.875rem; color: var(--text-secondary);">
+                    WhatsApp Asistencia:<br>
+                    <a href="https://wa.me/573156016386" target="_blank" style="color:var(--brand-green); font-weight:700;">+57 315 601 6386</a>
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 WiCONTABLE &bull; Cali, Colombia</p>
         </div>
     </footer>
 
     <script>
-        function searchTemplates() {
-            const input = document.getElementById('templateSearchInput').value.toLowerCase();
-            const cards = document.querySelectorAll('.file-card');
-            
+        const htmlEl = document.documentElement;
+        const savedTheme = localStorage.getItem('wicontable_theme') || 'dark';
+        htmlEl.setAttribute('data-theme', savedTheme);
+
+        function toggleTheme() {
+            const next = htmlEl.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            htmlEl.setAttribute('data-theme', next);
+            localStorage.setItem('wicontable_theme', next);
+        }
+
+        // Nav Dropdown
+        function toggleNavDropdown(e) {
+            e.stopPropagation();
+            document.getElementById('navDropdown').classList.toggle('active');
+        }
+
+        document.addEventListener('click', () => {
+            const dropdown = document.getElementById('navDropdown');
+            if (dropdown) dropdown.classList.remove('active');
+        });
+
+        // Mobile Menu
+        function openMobileMenu() {
+            document.getElementById('mobileDrawer').classList.add('active');
+            document.getElementById('mobileOverlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileMenu() {
+            document.getElementById('mobileDrawer').classList.remove('active');
+            document.getElementById('mobileOverlay').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        let activeCatFilter = 'all';
+
+        function setDocFilter(cat, btn) {
+            document.querySelectorAll('.filter-tab-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            activeCatFilter = cat;
+            filterTemplates();
+        }
+
+        function filterTemplates() {
+            const query = (document.getElementById('searchInput').value || '').toLowerCase().trim();
+            const cards = document.querySelectorAll('.template-card');
+            const categories = document.querySelectorAll('.doc-category');
+
             cards.forEach(card => {
-                const title = card.querySelector('h4').innerText.toLowerCase();
-                const desc = card.querySelector('.file-desc').innerText.toLowerCase();
-                
-                // Con la estructura "Grid", display="" hace que vuelva a aparecer correctamente
-                if (title.includes(input) || desc.includes(input)) {
-                    card.style.display = ""; 
+                const format = card.getAttribute('data-format');
+                const title = card.querySelector('.doc-title').innerText.toLowerCase();
+                const desc = card.querySelector('.doc-desc').innerText.toLowerCase();
+
+                const matchCat = (activeCatFilter === 'all' || format === activeCatFilter);
+                const matchQuery = title.includes(query) || desc.includes(query);
+
+                if (matchCat && matchQuery) {
+                    card.style.display = 'flex';
                 } else {
-                    card.style.display = "none"; 
+                    card.style.display = 'none';
+                }
+            });
+
+            // Hide empty category headers if no visible cards inside
+            categories.forEach(catEl => {
+                const visibleInCat = catEl.querySelectorAll('.template-card[style*="display: flex"], .template-card:not([style*="display: none"])');
+                const catType = catEl.getAttribute('data-cat');
+                if (activeCatFilter !== 'all' && activeCatFilter !== catType) {
+                    catEl.style.display = 'none';
+                } else if (query !== '' && visibleInCat.length === 0) {
+                    catEl.style.display = 'none';
+                } else {
+                    catEl.style.display = 'block';
                 }
             });
         }

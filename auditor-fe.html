@@ -1170,6 +1170,14 @@
             scrollbar-width: thin;
         }
 
+        .related-card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            min-height: 24px;
+        }
+
         .related-card {
             flex: 0 0 240px;
             background: var(--bg-surface);
@@ -2398,11 +2406,37 @@
                 el.className = 'related-card';
                 el.href = item.url || `producto-${item.id}.html`;
 
+                let badgeHTML = '';
+                if (item.etiqueta) {
+                    const upper = item.etiqueta.toUpperCase();
+                    let badgeClass = 'badge-status-activa';
+                    if (upper.includes('NUEVO')) badgeClass = 'badge-status-nuevo';
+                    else if (upper.includes('MANTEN')) badgeClass = 'badge-status-manten';
+                    else if (upper.includes('PROD')) badgeClass = 'badge-status-prod';
+                    else if (upper.includes('AGOTADO')) badgeClass = 'badge-status-agotado';
+                    else if (upper.includes('DISPONIBLE')) badgeClass = 'badge-status-disponible';
+                    badgeHTML = `<span class="badge-status ${badgeClass}">${item.etiqueta}</span>`;
+                }
+
+                let refHTML = '';
+                if (item.desc) {
+                    const match = item.desc.match(/<b>(REF[a-zA-Z0-9]+)<\/b>/i);
+                    if (match) {
+                        refHTML = `<span class="ref-code-badge" style="font-size:0.7rem; padding:2px 8px;">${match[1]}</span>`;
+                    }
+                }
+
                 const safeImg = (item.fotos && item.fotos.length > 0) ? item.fotos[0] : 'img/logowi.png';
 
                 el.innerHTML = `
-                    <div class="related-img-box">
-                        <img src="${safeImg}" alt="${item.nombre}">
+                    <div>
+                        <div class="related-card-header">
+                            ${refHTML ? refHTML : '<span></span>'}
+                            ${badgeHTML}
+                        </div>
+                        <div class="related-img-box">
+                            <img src="${safeImg}" alt="${item.nombre}">
+                        </div>
                     </div>
                     <div>
                         <div class="related-name">${item.nombre}</div>

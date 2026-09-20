@@ -30,6 +30,21 @@ etiqueta: "¡NUEVO!",
         youtube: "https://youtu.be/Oi_HuA9jlL0",
         fotos: ["img/p14-0.png", "img/p14-1.png", "img/p14-2.png"]
     },
+    {
+        id: 2,
+        nombre: "PDFs Downloader (DIAN)",
+        url: "pdfs-downloader.html",
+        formato: "Extensión Web .crx",
+        mostrarTecnica: true,
+        etiqueta: "ACTIVA",
+        desc: "<b>REF006</b> <p>Accede, descarga y analiza documentos electrónicos en PDF directamente desde la DIAN de forma sencilla,  masiva y sin procesos manuales. Dile adiós a las interrupciones; nuestra herramienta se encarga de validar los captchas y de ingresar el NIT correspondiente, optimizando tu flujo de trabajo al máximo sin límite de empresas.<p><br><b>Publicada el 06-08-2026</b>",
+        caracteristicas: ["<p><b>Cero trámites adicionales:</b> No necesitas generar Token ni adquirir un Certificado Digital de la DIAN para descargar tus PDFs.</p>","<p><b>Módulo Descarga PRO (Multidocumento):</b> Carga tu plantilla de Excel con los códigos (CUDE, CUDS, CUFE, CUNE) y su respectivo NIT. El sistema procesa de forma automatizada (entre 3 y 9 segundos por documento) validando los captchas y entregando los PDFs listos para visualizar, sin contraseñas.</p>", "<p><b>Módulo Descarga F.E. (Ultrarrápido):</b> Descarga masiva de Facturas Electrónicas y Notas a una velocidad increíble de 0.5 segundos por documento. Sin captchas, sin NIT y sin contraseñas. Solo carga tu Excel o pega los CUFES directamente.</p>", "<p><b>Módulo Tools (Gestión y Exportación):</b> Toma el control total de tus archivos. Renombra tus PDFs F.E de forma masiva, extrae la información clave, lístala y expórtala directamente a Excel para tus cruces e informes.</p>"],
+        nota: "<p>Para brindarle un soporte técnico oportuno, requerimos conectarnos de forma remota a su equipo a través de AnyDesk.<p> <br><p>Tenga en cuenta que este acceso quedará registrado de manera individual en cada computadora durante la instalación. Por su seguridad, nuestro equipo se comunicará exclusivamente al número de móvil ó @usuario que tiene registrado con nosotros.<p> <br><p>Asimismo, le recordamos que el funcionamiento de nuestra herramienta depende de plataformas de terceros integradas; <b>cualquier cambio en los parámetros de dichas plataformas nos exime de responsabilidad sobre la continuidad del servicio.</b><p> <br><b><p>RECUERDE</b> que es importante ver el videotutorial antes de adquirir la herramienta. De esta manera, al finalizar la instalación, le será más fácil resolver cualquier duda que no se haya abordado en el video.</p> <br><p>Le pedimos disponer de unos 15 minutos mientras realizamos la instalación y para las pruebas de funcionalidad un histórico DIAN con datos. Recuerde que la herramienta no tiene fecha de vencimiento; por ello, nos aseguramos de entregarla probada y funcionando correctamente al momento de su adquisición.</p>",
+        precio: "COP $50.000",
+        video: "video/Pdfs.mp4",
+        youtube: "https://youtu.be/S2DYfhnps-c",
+        fotos: ["img/p2-0.png", "img/p2-1.png", "img/p2-2.png","img/p2-3.png","img/p2-4.png","img/p2-5.jpg"]
+    }, 
      {
         id: 15,
         nombre: "Duolingo Super (1 AÑO)",
@@ -45,22 +60,7 @@ etiqueta: "¡NUEVO!",
         youtube: "https://youtu.be/JDlt_Eu4lrQ",
         fotos: ["img/p15-0.png", "img/p15-1.png", "img/p15-2.png", "img/p15-3.png"]
     },   
-    {
-        id: 2,
-        nombre: "PDFs Downloader (DIAN)",
-        url: "pdfs-downloader.html",
-        formato: "Extensión Web .crx",
-        mostrarTecnica: true,
-        etiqueta: "ACTIVA",
-        desc: "<b>REF006</b> <p>Accede, descarga y analiza documentos electrónicos en PDF directamente desde la DIAN de forma sencilla,  masiva y sin procesos manuales. Dile adiós a las interrupciones; nuestra herramienta se encarga de validar los captchas y de ingresar el NIT correspondiente, optimizando tu flujo de trabajo al máximo sin límite de empresas.<p><br><b>Publicada el 06-08-2026</b>",
-        caracteristicas: ["<p><b>Cero trámites adicionales:</b> No necesitas generar Token ni adquirir un Certificado Digital de la DIAN para descargar tus PDFs.</p>","<p><b>Módulo Descarga PRO (Multidocumento):</b> Carga tu plantilla de Excel con los códigos (CUDE, CUDS, CUFE, CUNE) y su respectivo NIT. El sistema procesa de forma automatizada (entre 3 y 9 segundos por documento) validando los captchas y entregando los PDFs listos para visualizar, sin contraseñas.</p>", "<p><b>Módulo Descarga F.E. (Ultrarrápido):</b> Descarga masiva de Facturas Electrónicas y Notas a una velocidad increíble de 0.5 segundos por documento. Sin captchas, sin NIT y sin contraseñas. Solo carga tu Excel o pega los CUFES directamente.</p>", "<p><b>Módulo Tools (Gestión y Exportación):</b> Toma el control total de tus archivos. Renombra tus PDFs F.E de forma masiva, extrae la información clave, lístala y expórtala directamente a Excel para tus cruces e informes.</p>"],
-        nota: "<p>Para brindarle un soporte técnico oportuno, requerimos conectarnos de forma remota a su equipo a través de AnyDesk.<p> <br><p>Tenga en cuenta que este acceso quedará registrado de manera individual en cada computadora durante la instalación. Por su seguridad, nuestro equipo se comunicará exclusivamente al número de móvil ó @usuario que tiene registrado con nosotros.<p> <br><p>Asimismo, le recordamos que el funcionamiento de nuestra herramienta depende de plataformas de terceros integradas; <b>cualquier cambio en los parámetros de dichas plataformas nos exime de responsabilidad sobre la continuidad del servicio.</b><p> <br><b><p>RECUERDE</b> que es importante ver el videotutorial antes de adquirir la herramienta. De esta manera, al finalizar la instalación, le será más fácil resolver cualquier duda que no se haya abordado en el video.</p> <br><p>Le pedimos disponer de unos 15 minutos mientras realizamos la instalación y para las pruebas de funcionalidad un histórico DIAN con datos. Recuerde que la herramienta no tiene fecha de vencimiento; por ello, nos aseguramos de entregarla probada y funcionando correctamente al momento de su adquisición.</p>",
-        precio: "COP $50.000",
-        video: "video/Pdfs.mp4",
-        youtube: "https://youtu.be/S2DYfhnps-c",
-        fotos: ["img/p2-0.png", "img/p2-1.png", "img/p2-2.png","img/p2-3.png","img/p2-4.png","img/p2-5.jpg"]
-    },           
-{
+     {
         id: 12,
         nombre: "Reportes Renta P.N A.G2025 (DIAN)",
         url: "reporte-rentapn.html",

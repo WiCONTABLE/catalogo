@@ -694,7 +694,9 @@
             right: 0;
             width: 100%;
             max-width: 460px;
-            height: 100vh;
+            height: 100%;
+            height: 100dvh;
+            max-height: 100dvh;
             background: var(--bg-surface);
             border-left: 1px solid var(--border-subtle);
             z-index: 9999;
@@ -705,6 +707,9 @@
             transition: transform var(--tr-smooth), visibility var(--tr-smooth);
             display: flex;
             flex-direction: column;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior: contain;
         }
 
         .cart-drawer.active {
@@ -714,12 +719,16 @@
         }
 
         .cart-drawer-header {
-            padding: 24px;
+            padding: 20px 24px;
             border-bottom: 1px solid var(--border-subtle);
             display: flex;
             align-items: center;
             justify-content: space-between;
             background: var(--bg-surface-elevated);
+            flex-shrink: 0;
+            position: sticky;
+            top: 0;
+            z-index: 5;
         }
 
         .cart-drawer-title {
@@ -750,12 +759,14 @@
         }
 
         .cart-drawer-body {
-            padding: 24px;
-            flex-grow: 1;
+            padding: 20px 24px;
+            flex: 1 1 auto;
+            min-height: 0;
             overflow-y: auto;
             display: flex;
             flex-direction: column;
             gap: 16px;
+            overscroll-behavior: contain;
         }
 
         .cart-empty-state {
@@ -860,12 +871,15 @@
         }
 
         .cart-drawer-footer {
-            padding: 24px;
+            padding: 20px 24px;
+            padding-bottom: max(20px, env(safe-area-inset-bottom, 20px));
             border-top: 1px solid var(--border-subtle);
             background: var(--bg-surface-elevated);
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 14px;
+            flex-shrink: 0;
+            margin-top: auto;
         }
 
         .cart-summary-row {
@@ -1593,6 +1607,33 @@
 
         /* Mobile Devices & Small Tablets (<= 680px) */
         @media (max-width: 680px) {
+            .cart-drawer-header {
+                padding: 16px 20px;
+            }
+            .cart-drawer-body {
+                padding: 16px 20px;
+                gap: 12px;
+            }
+            .cart-drawer-footer {
+                padding: 16px 20px;
+                padding-bottom: max(16px, env(safe-area-inset-bottom, 16px));
+                gap: 10px;
+            }
+            .btn-checkout-wa, .btn-checkout-tg {
+                padding: 13px 16px;
+                font-size: 0.95rem;
+            }
+            .cart-total-value {
+                font-size: 1.4rem;
+            }
+            .cart-empty-state {
+                padding: 24px 16px;
+            }
+            .cart-empty-state svg {
+                width: 52px;
+                height: 52px;
+                margin-bottom: 12px;
+            }
             .catalog-section {
                 padding: 0 16px;
                 margin: 10px auto 50px;
@@ -2218,16 +2259,39 @@
             transition: all var(--tr-fast);
         }
 
+        .tech-chip-action svg {
+            flex-shrink: 0;
+            transition: transform var(--tr-fast);
+        }
+
+        .tech-chip-action:hover svg {
+            transform: scale(1.15);
+        }
+
         .tech-chip-action:hover {
             color: var(--brand-green);
             border-color: var(--brand-green);
             background: var(--brand-green-light);
         }
 
+        .tech-chip-action.tech-chip-wa:hover {
+            color: #25D366;
+            border-color: #25D366;
+            background: rgba(37, 211, 102, 0.12);
+        }
+
+        .tech-chip-action.tech-chip-wa svg {
+            color: #25D366;
+        }
+
         .tech-chip-action.tech-chip-tg:hover {
             color: #0088cc;
             border-color: #0088cc;
             background: rgba(0, 136, 204, 0.12);
+        }
+
+        .tech-chip-action.tech-chip-tg svg {
+            color: #0088cc;
         }
 
         /* Technical FAQ Section */
@@ -3221,16 +3285,15 @@ function getYouTubeId(url) {
 
                         <!-- Technical Quick Chips -->
                         <div class="tech-spec-bar">
-                            <a href="https://wa.me/?text=Mira%20esta%20herramienta%20contable:%20*${encodeURIComponent(p.nombre)}*%20${encodeURIComponent(window.location.href)}" target="_blank" class="tech-chip-action">
-                                <span>📲 Compartir en WhatsApp</span>
+                            <a href="https://wa.me/?text=Mira%20esta%20herramienta%20contable:%20*${encodeURIComponent(p.nombre)}*%20${encodeURIComponent(window.location.href)}" target="_blank" rel="noopener noreferrer" class="tech-chip-action tech-chip-wa" title="Compartir en WhatsApp">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.176.001 6.163 1.237 8.407 3.483 2.245 2.246 3.48 5.234 3.479 8.414-.004 6.597-5.342 11.945-11.893 11.945-1.996-.001-3.957-.503-5.69-1.462L0 24zm6.59-4.846c1.62.962 3.235 1.467 4.962 1.468 5.334 0 9.673-4.321 9.676-9.635.001-2.574-1.002-4.994-2.825-6.819C16.638 2.344 14.225 1.34 11.66 1.34 6.326 1.34 1.986 5.661 1.983 10.977c-.001 1.8.473 3.559 1.373 5.111l-.995 3.633 3.689-.967z"/></svg>
+                                <span>Compartir en WhatsApp</span>
                             </a>
-                            <a href="https://telegram.me/wicontable" target="_blank" rel="noopener noreferrer" class="tech-chip-action tech-chip-tg">
-                                <span>✈️ Telegram</span>
+                            <a href="https://t.me/share/url?url=${encodeURIComponent(window.location.href)}&text=Mira%20esta%20herramienta%20contable:%20*${encodeURIComponent(p.nombre)}*" target="_blank" rel="noopener noreferrer" class="tech-chip-action tech-chip-tg" title="Compartir en Telegram">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 11.944 0zm5.666 8.163l-1.925 9.074c-.145.641-.527.798-1.066.496l-2.955-2.18-1.426 1.374c-.157.158-.29.29-.593.29l.212-3.02 5.5-4.97c.239-.213-.052-.332-.372-.119L8.19 13.342l-2.928-.916c-.636-.2-.65-.636.133-.942l11.442-4.41c.53-.193.994.125.807 1.089z"/></svg>
+                                <span>Compartir en Telegram</span>
                             </a>
                             ${videoBtnHTML}
-                            <button type="button" onclick="openProductNotice()" class="tech-chip-action" title="Leer aviso importante del producto">
-                                <span>⚠️ Aviso Importante</span>
-                            </button>
                             <div class="tech-chip-action" style="cursor:default;">
                                 <span>💻 Formato: ${formatText}</span>
                             </div>
@@ -3243,19 +3306,13 @@ function getYouTubeId(url) {
                             </div>
                             <div class="cta-buttons-row">
                                 ${isAgotado ? `
-                                    <button class="btn-add-cart-large" style="background:var(--bg-surface-elevated); color:var(--text-muted); cursor:not-allowed;" disabled>No Disponible</button>
-                                    <a href="https://wa.me/573156016386?text=¡Hola!%20Deseo%20consultar%20sobre%20${encodeURIComponent(p.nombre)}" target="_blank" class="btn-wa-direct">
-                                        <span>Preguntar a Wilder</span>
-                                    </a>
-                                    <a href="https://telegram.me/wicontable" target="_blank" rel="noopener noreferrer" class="btn-tg-direct">
-                                        <span>Preguntar en Telegram</span>
-                                    </a>
+                                    <button class="btn-add-cart-large" style="background:var(--bg-surface-elevated); color:var(--text-muted); cursor:not-allowed;" disabled>Agotado</button>
                                 ` : `
                                     <button class="btn-add-cart-large" onclick="addToCart(${p.id})">
                                         <span>🛒 Añadir al Pedido</span>
                                     </button>
                                     <a href="https://wa.me/573156016386?text=¡Hola!%20Deseo%20adquirir%20la%20herramienta%20${encodeURIComponent(p.nombre)}" target="_blank" class="btn-wa-direct">
-                                        <span>Preguntar a Wilder</span>
+                                        <span>Preguntar en Whatsapp</span>
                                     </a>
                                     <a href="https://telegram.me/wicontable" target="_blank" rel="noopener noreferrer" class="btn-tg-direct">
                                         <span>Preguntar en Telegram</span>

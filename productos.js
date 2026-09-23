@@ -14,7 +14,7 @@ etiqueta: "AGOTADO",
         nota: "El valor del servicio puede variar según la complejidad de la realidad financiera del contribuyente (cantidad de cruce cedular, inversiones, etc.). <br><br><b>¡Contáctanos para una cotización personalizada!</b>",
         precio: "Desde COP $300.000",
         video: "",
-        fotos: ["img/p11-0.png", "img/p11-1.png"]
+        fotos: ["img/p11-0.png", "img/p11-1.png", "img/p11-2.png", "img/p11-3.png"]
     },   
     {
         id: 14,

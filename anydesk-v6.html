@@ -561,6 +561,22 @@
             text-decoration: none;
         }
 
+        .mobile-btn-tg {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 11px 16px;
+            background: #0088cc;
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 0.85rem;
+            border-radius: var(--radius-full);
+            text-decoration: none;
+            margin-top: 8px;
+        }
+
         .drawer-overlay {
             position: fixed;
             top: 0;
@@ -1047,6 +1063,29 @@
             box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
         }
 
+        .btn-tg-direct {
+            flex: 1;
+            min-width: 200px;
+            background: #0088cc;
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 1.05rem;
+            padding: 16px 28px;
+            border-radius: var(--radius-full);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all var(--tr-smooth);
+            box-shadow: 0 4px 18px rgba(0, 136, 204, 0.25);
+        }
+
+        .btn-tg-direct:hover {
+            transform: translateY(-2px);
+            background: #0077b5;
+            box-shadow: 0 8px 25px rgba(0, 136, 204, 0.4);
+        }
+
         /* Tech quick chips */
         .tech-spec-bar {
             display: flex;
@@ -1074,6 +1113,12 @@
             color: var(--brand-green);
             border-color: var(--brand-green);
             background: var(--brand-green-light);
+        }
+
+        .tech-chip-action.tech-chip-tg:hover {
+            color: #0088cc;
+            border-color: #0088cc;
+            background: rgba(0, 136, 204, 0.12);
         }
 
         /* Technical FAQ Section */
@@ -1379,6 +1424,29 @@
             background: #20BA56;
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
+        }
+
+        .btn-checkout-tg {
+            width: 100%;
+            background: #0088cc;
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 1rem;
+            padding: 16px;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all var(--tr-smooth);
+            box-shadow: 0 4px 15px rgba(0, 136, 204, 0.3);
+            margin-top: 10px;
+        }
+
+        .btn-checkout-tg:hover {
+            background: #0077b5;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 136, 204, 0.45);
         }
 
         /* Video modal */
@@ -1780,6 +1848,20 @@
             box-shadow: 0 8px 22px rgba(10, 102, 194, 0.45);
         }
 
+        /* Telegram */
+        .social-link.tg {
+            color: #0088cc;
+            background: rgba(0, 136, 204, 0.12);
+            border-color: rgba(0, 136, 204, 0.35);
+        }
+        .social-link.tg:hover {
+            background: #0088cc;
+            color: #FFFFFF;
+            border-color: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 22px rgba(0, 136, 204, 0.45);
+        }
+
         .footer-col h4 {
             font-family: var(--font-heading);
             font-size: 0.95rem;
@@ -1825,8 +1907,8 @@
     <div class="top-nav-wrapper">
         <div class="top-ticker">
             <div class="ticker-track">
-                <span class="ticker-text">⚡ HERRAMIENTAS CONTABLES PROFESIONALES SIN PAGOS RECURRENTES NI MENSUALIDADES &bull; 100% GARANTIZADAS CON ACOMPAÑAMIENTO REMOTO PERSONALIZADO VÍA ANYDESK &bull; ATENCIÓN DIRECTA LUNES A SÁBADO 7AM-9PM &bull; DOMINGOS Y FESTIVOS 9AM-6PM &bull; WHATSAPP: +57 315 601 6386</span>
-                <span class="ticker-text">⚡ HERRAMIENTAS CONTABLES PROFESIONALES SIN PAGOS RECURRENTES NI MENSUALIDADES &bull; 100% GARANTIZADAS CON ACOMPAÑAMIENTO REMOTO PERSONALIZADO VÍA ANYDESK &bull; ATENCIÓN DIRECTA LUNES A SÁBADO 7AM-9PM &bull; DOMINGOS Y FESTIVOS 9AM-6PM &bull; WHATSAPP: +57 315 601 6386</span>
+                <span class="ticker-text">⚡ HERRAMIENTAS CONTABLES PROFESIONALES SIN PAGOS RECURRENTES NI MENSUALIDADES &bull; 100% GARANTIZADAS CON ACOMPAÑAMIENTO REMOTO PERSONALIZADO VÍA ANYDESK &bull; ATENCIÓN DIRECTA LUNES A SÁBADO 7AM-9PM &bull; DOMINGOS Y FESTIVOS 9AM-6PM &bull; WHATSAPP: +57 315 601 6386 &bull; TELEGRAM: @wicontable</span>
+                <span class="ticker-text">⚡ HERRAMIENTAS CONTABLES PROFESIONALES SIN PAGOS RECURRENTES NI MENSUALIDADES &bull; 100% GARANTIZADAS CON ACOMPAÑAMIENTO REMOTO PERSONALIZADO VÍA ANYDESK &bull; ATENCIÓN DIRECTA LUNES A SÁBADO 7AM-9PM &bull; DOMINGOS Y FESTIVOS 9AM-6PM &bull; WHATSAPP: +57 315 601 6386 &bull; TELEGRAM: @wicontable</span>
             </div>
         </div>
         <header class="navbar">
@@ -1972,11 +2054,22 @@
                     <small>Dashboards contables</small>
                 </div>
             </a>
+            <a href="https://telegram.me/wicontable" target="_blank" rel="noopener noreferrer" class="mobile-nav-item">
+                <span class="mobile-nav-icon">✈️</span>
+                <div class="mobile-nav-info">
+                    <strong>Canal Telegram</strong>
+                    <small>Soporte y actualizaciones @wicontable</small>
+                </div>
+            </a>
         </div>
         <div class="mobile-nav-footer">
             <div class="mobile-nav-schedule">⏰ Lun-Sáb 7am-9pm | Dom/Fest 9am-6pm</div>
             <a href="https://wa.me/573156016386?text=Hola,%20soy%20cliente%20y%20requiero%20soporte." target="_blank" rel="noopener noreferrer" class="mobile-btn-wa">
                 <span>WhatsApp Soporte 315 6016386</span>
+            </a>
+            <a href="https://telegram.me/wicontable" target="_blank" rel="noopener noreferrer" class="mobile-btn-tg">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.458c.538-.196 1.006.128.832.943z"/></svg>
+                <span>Telegram Soporte @wicontable</span>
             </a>
         </div>
     </aside>
@@ -2017,6 +2110,10 @@
                 <span>Confirmar Pedido por WhatsApp</span>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.176.001 6.163 1.237 8.407 3.483 2.245 2.246 3.48 5.234 3.479 8.414-.004 6.597-5.342 11.945-11.893 11.945-1.996-.001-3.957-.503-5.69-1.462L0 24zm6.59-4.846c1.62.962 3.235 1.467 4.962 1.468 5.334 0 9.673-4.321 9.676-9.635.001-2.574-1.002-4.994-2.825-6.819C16.638 2.344 14.225 1.34 11.66 1.34 6.326 1.34 1.986 5.661 1.983 10.977c-.001 1.8.473 3.559 1.373 5.111l-.995 3.633 3.689-.967z"/></svg>
             </button>
+            <button class="btn-checkout-tg" onclick="checkoutTelegram()">
+                <span>Confirmar Pedido por Telegram</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.458c.538-.196 1.006.128.832.943z"/></svg>
+            </button>
         </div>
     </aside>
 
@@ -2035,9 +2132,10 @@
             <div class="notice-icon" id="noticeIcon">🎓</div>
             <h3 class="modal-notice-title" id="noticeTitle">Formación Especializada</h3>
             <p class="modal-notice-text" id="noticeText"></p>
-            <div style="display:flex; gap:10px; justify-content:center;">
+            <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
                 <button onclick="closeCourseNotice()" style="background:var(--bg-surface-elevated); color:var(--text-primary); padding:10px 20px; border-radius:var(--radius-full); font-weight:700;">Cerrar</button>
-                <a id="noticeWaBtn" href="#" target="_blank" style="background:#25D366; color:#000; padding:10px 20px; border-radius:var(--radius-full); font-weight:800; display:inline-flex; align-items:center; gap:6px;">Consultar Cupo</a>
+                <a id="noticeWaBtn" href="#" target="_blank" style="background:#25D366; color:#000; padding:10px 20px; border-radius:var(--radius-full); font-weight:800; display:inline-flex; align-items:center; gap:6px;">WhatsApp Cupo</a>
+                <a href="https://telegram.me/wicontable" target="_blank" rel="noopener noreferrer" style="background:#0088cc; color:#fff; padding:10px 20px; border-radius:var(--radius-full); font-weight:800; display:inline-flex; align-items:center; gap:6px;">Telegram Cupo</a>
             </div>
         </div>
     </div>
@@ -2070,6 +2168,7 @@
                 <div class="footer-social-row">
                     <a href="https://whatsapp.com/channel/0029Va4o0RV2f3ENoTURyU40" target="_blank" rel="noopener noreferrer" class="social-link wa" title="Canal WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.176.001 6.163 1.237 8.407 3.483 2.245 2.246 3.48 5.234 3.479 8.414-.004 6.597-5.342 11.945-11.893 11.945-1.996-.001-3.957-.503-5.69-1.462L0 24zm6.59-4.846c1.62.962 3.235 1.467 4.962 1.468 5.334 0 9.673-4.321 9.676-9.635.001-2.574-1.002-4.994-2.825-6.819C16.638 2.344 14.225 1.34 11.66 1.34 6.326 1.34 1.986 5.661 1.983 10.977c-.001 1.8.473 3.559 1.373 5.111l-.995 3.633 3.689-.967z"/></svg></a>
                     <a href="https://chat.whatsapp.com/FvYIDsoo7NR7PLwtd0Vhwv" target="_blank" rel="noopener noreferrer" class="social-link wa" title="Grupo WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 0 0-10.4 18l-1.6 6 6.1-1.6A12 12 0 1 0 12 0z"/></svg></a>
+                    <a href="https://telegram.me/wicontable" target="_blank" rel="noopener noreferrer" class="social-link tg" title="Telegram @wicontable"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.458c.538-.196 1.006.128.832.943z"/></svg></a>
                     <a href="https://www.youtube.com/@wildersarriahernandez" target="_blank" rel="noopener noreferrer" class="social-link yt" title="YouTube Wilder"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
                     <a href="https://www.youtube.com/@wicontable" target="_blank" rel="noopener noreferrer" class="social-link yt" title="YouTube WiCONTABLE"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
                     <a href="https://www.tiktok.com/@wildersarriahernandez" target="_blank" rel="noopener noreferrer" class="social-link tk" title="TikTok"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.9-.32-1.98-.23-2.81.33-.85.51-1.44 1.42-1.58 2.4-.11.68-.03 1.37.18 2.03.35.81 1.05 1.48 1.88 1.76.71.21 1.48.21 2.19.04 1.02-.14 1.98-.77 2.56-1.6.43-.59.66-1.31.71-2.04.08-3.38.03-6.76.04-10.14z"/></svg></a>
@@ -2088,6 +2187,10 @@
                 <p style="font-size: 0.875rem; color: var(--text-secondary);">
                     WhatsApp Asistencia:<br>
                     <a href="https://wa.me/573156016386" target="_blank" style="color:var(--brand-green); font-weight:700;">+57 315 601 6386</a>
+                </p>
+                <p style="font-size: 0.875rem; color: var(--text-secondary); margin-top: 8px;">
+                    Telegram Asistencia:<br>
+                    <a href="https://telegram.me/wicontable" target="_blank" rel="noopener noreferrer" style="color:#0088cc; font-weight:700;">@wicontable</a>
                 </p>
             </div>
         </div>
@@ -2276,6 +2379,9 @@
                             <a href="https://wa.me/?text=Mira%20esta%20herramienta%20contable:%20*${encodeURIComponent(p.nombre)}*%20${encodeURIComponent(window.location.href)}" target="_blank" class="tech-chip-action">
                                 <span>📲 Compartir en WhatsApp</span>
                             </a>
+                            <a href="https://telegram.me/wicontable" target="_blank" rel="noopener noreferrer" class="tech-chip-action tech-chip-tg">
+                                <span>✈️ Telegram</span>
+                            </a>
                             ${videoBtnHTML}
                             <div class="tech-chip-action" style="cursor:default;">
                                 <span>💻 Formato: ${formatText}</span>
@@ -2296,6 +2402,9 @@
                                     </button>
                                     <a href="https://wa.me/573156016386?text=¡Hola!%20Deseo%20adquirir%20la%20herramienta%20${encodeURIComponent(p.nombre)}" target="_blank" class="btn-wa-direct">
                                         <span>Preguntar a Wilder</span>
+                                    </a>
+                                    <a href="https://telegram.me/wicontable" target="_blank" rel="noopener noreferrer" class="btn-tg-direct">
+                                        <span>Preguntar en Telegram</span>
                                     </a>
                                 `}
                             </div>
@@ -2542,6 +2651,30 @@
 
             const url = `https://wa.me/573156016386?text=${encodeURIComponent(text)}`;
             window.open(url, '_blank');
+        }
+
+        function checkoutTelegram() {
+            if (cart.length === 0) {
+                alert("Tu pedido está vacío. Añade una solución primero.");
+                return;
+            }
+
+            let text = "¡Hola Wilder! 👋 Vengo de la tienda web de WiCONTABLE y quiero confirmar el siguiente pedido:\n\n";
+            let sum = 0;
+
+            cart.forEach(item => {
+                const num = parsePrice(item.precio);
+                sum += num * item.cantidad;
+                text += `🔸 ${item.cantidad}x ${item.nombre} - ${item.precio}\n`;
+            });
+
+            text += `\n💵 TOTAL ESTIMADO: COP $${sum.toLocaleString('es-CO')}\n\n¿Cuáles son las opciones de pago (Bancolombia, Nequi, Binance) para coordinar la instalación?`;
+
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).catch(() => {});
+            }
+
+            window.open('https://telegram.me/wicontable', '_blank');
         }
 
                 // 3. Modals & Interactivity

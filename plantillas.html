@@ -371,6 +371,27 @@
             box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
         }
 
+        .btn-tg-header {
+            background: #0088cc;
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 0.875rem;
+            padding: 9px 18px;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(0, 136, 204, 0.25);
+            transition: transform var(--tr-fast), box-shadow var(--tr-fast);
+            white-space: nowrap;
+        }
+
+        .btn-tg-header:hover {
+            transform: translateY(-2px);
+            background: #0077b5;
+            box-shadow: 0 6px 20px rgba(0, 136, 204, 0.4);
+        }
+
         .btn-mobile-menu {
             display: none;
             width: 40px;
@@ -387,8 +408,8 @@
         @media (max-width: 992px) {
             .nav-links { display: none; }
             .btn-mobile-menu { display: flex; }
-            .btn-wa-header span { display: none; }
-            .btn-wa-header { padding: 9px 12px; }
+            .btn-wa-header span, .btn-tg-header span { display: none; }
+            .btn-wa-header, .btn-tg-header { padding: 9px 12px; }
         }
 
         /* Mobile Drawer */
@@ -499,6 +520,22 @@
             text-decoration: none;
         }
 
+        .mobile-btn-tg {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 12px 16px;
+            background: #0088cc;
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 0.9rem;
+            border-radius: var(--radius-full);
+            text-decoration: none;
+            margin-top: 8px;
+        }
+
         .drawer-overlay {
             position: fixed;
             top: 0;
@@ -571,11 +608,16 @@
 
         .doc-desc { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.55; margin-bottom: 24px; flex-grow: 1; }
 
-        .card-btn-row { display: grid; grid-template-columns: 1.4fr 1fr; gap: 10px; margin-top: auto; border-top: 1px solid var(--border-subtle); padding-top: 18px; }
-        .btn-download-doc { background: var(--brand-gradient); color: #042f2e; font-weight: 800; font-size: 0.8125rem; padding: 11px; border-radius: var(--radius-md); text-align: center; display: flex; align-items: center; justify-content: center; gap: 6px; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2); transition: all var(--tr-fast); }
+        .card-btn-row { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 8px; margin-top: auto; border-top: 1px solid var(--border-subtle); padding-top: 18px; }
+        @media (max-width: 420px) {
+            .card-btn-row { grid-template-columns: 1fr; }
+        }
+        .btn-download-doc { background: var(--brand-gradient); color: #042f2e; font-weight: 800; font-size: 0.8125rem; padding: 11px 8px; border-radius: var(--radius-md); text-align: center; display: flex; align-items: center; justify-content: center; gap: 6px; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2); transition: all var(--tr-fast); white-space: nowrap; }
         .btn-download-doc:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(16, 185, 129, 0.35); }
-        .btn-share-doc { background: var(--bg-surface); border: 1px solid var(--border-subtle); color: var(--text-secondary); font-weight: 700; font-size: 0.8125rem; padding: 11px; border-radius: var(--radius-md); text-align: center; display: flex; align-items: center; justify-content: center; gap: 6px; transition: all var(--tr-fast); }
+        .btn-share-doc { background: var(--bg-surface); border: 1px solid var(--border-subtle); color: var(--text-secondary); font-weight: 700; font-size: 0.8125rem; padding: 11px 8px; border-radius: var(--radius-md); text-align: center; display: flex; align-items: center; justify-content: center; gap: 6px; transition: all var(--tr-fast); white-space: nowrap; }
         .btn-share-doc:hover { color: var(--brand-green); border-color: var(--brand-green); }
+        .btn-share-tg { background: rgba(0, 136, 204, 0.1); border: 1px solid rgba(0, 136, 204, 0.35); color: #0088cc; font-weight: 700; font-size: 0.8125rem; padding: 11px 8px; border-radius: var(--radius-md); text-align: center; display: flex; align-items: center; justify-content: center; gap: 6px; transition: all var(--tr-fast); white-space: nowrap; }
+        .btn-share-tg:hover { background: #0088cc; color: #ffffff; border-color: #0088cc; transform: translateY(-2px); }
 
         /* ==========================================================================
            MAIN FOOTER (AGENCY STYLE & BRAND COLORS)
@@ -722,6 +764,20 @@
             box-shadow: 0 8px 22px rgba(10, 102, 194, 0.45);
         }
 
+        /* Telegram */
+        .social-link.tg {
+            color: #0088cc;
+            background: rgba(0, 136, 204, 0.12);
+            border-color: rgba(0, 136, 204, 0.35);
+        }
+        .social-link.tg:hover {
+            background: #0088cc;
+            color: #FFFFFF;
+            border-color: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 22px rgba(0, 136, 204, 0.45);
+        }
+
         .footer-col h4 {
             font-family: var(--font-heading);
             font-size: 0.95rem;
@@ -767,8 +823,8 @@
     <div class="top-nav-wrapper">
         <div class="top-ticker">
             <div class="ticker-track">
-                <span class="ticker-text">⚡Descarga gratis plantillas y formatos formulados en Excel, Word y PDF creados por la comunidad WiCONTABLE.</span>
-                <span class="ticker-text">⚡Descarga gratis plantillas y formatos formulados en Excel, Word y PDF creados por la comunidad WiCONTABLE.</span>
+                <span class="ticker-text">⚡Descarga gratis plantillas y formatos formulados en Excel, Word y PDF creados por la comunidad WiCONTABLE &bull; TELEGRAM: @wicontable.</span>
+                <span class="ticker-text">⚡Descarga gratis plantillas y formatos formulados en Excel, Word y PDF creados por la comunidad WiCONTABLE &bull; TELEGRAM: @wicontable.</span>
             </div>
         </div>
         <header class="navbar">
@@ -787,12 +843,16 @@
 
                 <div class="nav-actions">
                     <button class="btn-theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Cambiar tema">
-                        <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                        <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M18.36 5.64l1.42-1.42"/></svg>
                         <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
                     </button>
                     <a href="https://wa.me/573156016386" target="_blank" rel="noopener noreferrer" class="btn-wa-header" title="Atención WhatsApp">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.176.001 6.163 1.237 8.407 3.483 2.245 2.246 3.48 5.234 3.479 8.414-.004 6.597-5.342 11.945-11.893 11.945-1.996-.001-3.957-.503-5.69-1.462L0 24zm6.59-4.846c1.62.962 3.235 1.467 4.962 1.468 5.334 0 9.673-4.321 9.676-9.635.001-2.574-1.002-4.994-2.825-6.819C16.638 2.344 14.225 1.34 11.66 1.34 6.326 1.34 1.986 5.661 1.983 10.977c-.001 1.8.473 3.559 1.373 5.111l-.995 3.633 3.689-.967z"/></svg>
                         <span>WhatsApp</span>
+                    </a>
+                    <a href="https://telegram.me/wicontable" target="_blank" rel="noopener noreferrer" class="btn-tg-header" title="Atención Telegram">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.458c.538-.196 1.006.128.832.943z"/></svg>
+                        <span>Telegram</span>
                     </a>
                     <button class="btn-mobile-menu" onclick="openMobileMenu()" title="Menú">
                         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -864,11 +924,22 @@
                     <small>Grupo de apoyo profesional</small>
                 </div>
             </a>
+            <a href="https://telegram.me/wicontable" target="_blank" rel="noopener noreferrer" class="mobile-nav-item">
+                <span class="mobile-nav-icon">✈️</span>
+                <div class="mobile-nav-info">
+                    <strong>Canal Telegram</strong>
+                    <small>Soporte y actualizaciones @wicontable</small>
+                </div>
+            </a>
         </div>
         <div class="mobile-nav-footer">
             <a href="https://wa.me/573156016386" target="_blank" rel="noopener noreferrer" class="mobile-btn-wa">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.176.001 6.163 1.237 8.407 3.483 2.245 2.246 3.48 5.234 3.479 8.414-.004 6.597-5.342 11.945-11.893 11.945-1.996-.001-3.957-.503-5.69-1.462L0 24zm6.59-4.846c1.62.962 3.235 1.467 4.962 1.468 5.334 0 9.673-4.321 9.676-9.635.001-2.574-1.002-4.994-2.825-6.819C16.638 2.344 14.225 1.34 11.66 1.34 6.326 1.34 1.986 5.661 1.983 10.977c-.001 1.8.473 3.559 1.373 5.111l-.995 3.633 3.689-.967z"/></svg>
                 <span>WhatsApp Soporte</span>
+            </a>
+            <a href="https://telegram.me/wicontable" target="_blank" rel="noopener noreferrer" class="mobile-btn-tg">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.458c.538-.196 1.006.128.832.943z"/></svg>
+                <span>Telegram Soporte</span>
             </a>
         </div>
     </aside>
@@ -911,7 +982,8 @@
                     <p class="doc-desc">Subdirección de fiscalización tributaria resoluciones sanción declaratoria proveedor ficticio. Consulta ágil y cruce de terceros.</p>
                     <div class="card-btn-row">
                         <a href="https://docs.google.com/spreadsheets/d/1TBncSbN4FKRBr1lt5e22QQAI5b6vPccK/export?format=xlsx" class="btn-download-doc">📥 Descargar (.xlsx)</a>
-                        <a href="https://wa.me/?text=Descarga%20esta%20plantilla%20gratis%20en%20WiCONTABLE:%20Listado%20Proveedores%20Ficticios%20DIAN%20-%20https://wicontable.com/plantillas.html" target="_blank" class="btn-share-doc">📲 Compartir</a>
+                        <a href="https://wa.me/?text=Descarga%20esta%20plantilla%20gratis%20en%20WiCONTABLE:%20Listado%20Proveedores%20Ficticios%20DIAN%20-%20https://wicontable.com/plantillas.html" target="_blank" class="btn-share-doc" title="Compartir en WhatsApp">📲 WhatsApp</a>
+                        <a href="https://telegram.me/wicontable" target="_blank" rel="noopener noreferrer" class="btn-share-tg" title="Consultar en Telegram">✈️ Telegram</a>
                     </div>
                 </div>
 
@@ -928,7 +1000,8 @@
                     <p class="doc-desc">¡Que la temporada de impuestos no te tome por sorpresa! La temporada de Declaración de Renta de Personas Naturales (Año Gravable 2025) exige un control absoluto del tiempo y de la información. Esta plantilla de Checklist Calendario está diseñada para centralizar, organizar y monitorear cada etapa del proceso de preparación y presentación de impuestos durante el año 2026.</p>
                     <div class="card-btn-row">
                         <a href="https://docs.google.com/spreadsheets/d/1qgBcFNb5ObF8dcE-5JTVy34vHij8MheT/export?format=xlsx" class="btn-download-doc">📥 Descargar (.xlsx)</a>
-                        <a href="https://wa.me/?text=Descarga%20esta%20plantilla%20gratis%20en%20WiCONTABLE:%20Checklist%20Calendario%20Renta%20P.N%202026%20-%20https://wicontable.com/plantillas.html" target="_blank" class="btn-share-doc">📲 Compartir</a>
+                        <a href="https://wa.me/?text=Descarga%20esta%20plantilla%20gratis%20en%20WiCONTABLE:%20Checklist%20Calendario%20Renta%20P.N%202026%20-%20https://wicontable.com/plantillas.html" target="_blank" class="btn-share-doc" title="Compartir en WhatsApp">📲 WhatsApp</a>
+                        <a href="https://telegram.me/wicontable" target="_blank" rel="noopener noreferrer" class="btn-share-tg" title="Consultar en Telegram">✈️ Telegram</a>
                     </div>
                 </div>
 
@@ -945,7 +1018,8 @@
                     <p class="doc-desc">Desde el 15 de julio hasta el 31 de diciembre de 2026, la jornada laboral ordinaria máxima en Colombia es de 42 horas semanales. Toda labor que exceda la jornada ordinaria pactada debe reconocerse como hora extra. La jornada nocturna comprende de 7:00 p. m. a 6:00 a. m. y genera recargo nocturno del 35%. Las horas extras se pagan con recargo del 25% si son diurnas y del 75% si son nocturnas. El trabajo en domingos, festivos o día de descanso obligatorio se paga con recargo del 90% sobre la hora ordinaria. Para liquidar, se toma como base el valor de la hora ordinaria y se aplican los recargos correspondientes según el horario y el día laborado.</p>
                     <div class="card-btn-row">
                         <a href="https://docs.google.com/spreadsheets/d/1DZM0XuH1ZZfMtzZfOWUf3E3s8Q0pgk34/export?format=xlsx" class="btn-download-doc">📥 Descargar (.xlsx)</a>
-                        <a href="https://wa.me/?text=Descarga%20esta%20plantilla%20gratis%20en%20WiCONTABLE:%20Horas%20Extras%20y%20Recargos%202026%20-%20https://wicontable.com/plantillas.html" target="_blank" class="btn-share-doc">📲 Compartir</a>
+                        <a href="https://wa.me/?text=Descarga%20esta%20plantilla%20gratis%20en%20WiCONTABLE:%20Horas%20Extras%20y%20Recargos%202026%20-%20https://wicontable.com/plantillas.html" target="_blank" class="btn-share-doc" title="Compartir en WhatsApp">📲 WhatsApp</a>
+                        <a href="https://telegram.me/wicontable" target="_blank" rel="noopener noreferrer" class="btn-share-tg" title="Consultar en Telegram">✈️ Telegram</a>
                     </div>
                 </div>
 
@@ -962,7 +1036,8 @@
                     <p class="doc-desc">Su vigencia desde el 1 de julio de 2026 obedece a que el Consejo de Estado revocó la suspensión provisional de los artículos 2 a 8 del Decreto 572 de 2025, permitiendo que vuelvan a producir efectos las reglas modificadas sobre bases y tarifas de retención y autorretención. En términos prácticos, la tabla sirve para que contadores y agentes retenedores identifiquen rápidamente concepto, base mínima, tarifa aplicable, valor en pesos y norma soporte, con fundamento en el Estatuto Tributario, el Decreto 1625 de 2016 y normas reglamentarias relacionadas.</p>
                     <div class="card-btn-row">
                         <a href="https://docs.google.com/spreadsheets/d/1zFje_oQTPByPV9G02E9VlIO3iCIy6Yd1/export?format=xlsx" class="btn-download-doc">📥 Descargar (.xlsx)</a>
-                        <a href="https://wa.me/?text=Descarga%20esta%20plantilla%20gratis%20en%20WiCONTABLE:%20Tabla%20Retefuente%202026%20-%20https://wicontable.com/plantillas.html" target="_blank" class="btn-share-doc">📲 Compartir</a>
+                        <a href="https://wa.me/?text=Descarga%20esta%20plantilla%20gratis%20en%20WiCONTABLE:%20Tabla%20Retefuente%202026%20-%20https://wicontable.com/plantillas.html" target="_blank" class="btn-share-doc" title="Compartir en WhatsApp">📲 WhatsApp</a>
+                        <a href="https://telegram.me/wicontable" target="_blank" rel="noopener noreferrer" class="btn-share-tg" title="Consultar en Telegram">✈️ Telegram</a>
                     </div>
                 </div>
 
@@ -979,7 +1054,8 @@
                     <p class="doc-desc">A partir de julio de 2026, el IVA descontable debe manejarse bajo un criterio de imputación directa y, únicamente cuando no sea posible identificar su destinación específica, debe aplicarse el prorrateo previsto en el artículo 490 del Estatuto Tributario. La entidad debe fortalecer sus auxiliares contables y documentales para separar adecuadamente el IVA generado, descontable directo, IVA común sujeto a prorrateo, IVA no descontable e IVA asociado a operaciones excluidas.</p>
                     <div class="card-btn-row">
                         <a href="https://docs.google.com/spreadsheets/d/1jTJgpdR_DzsyrP6JOfI9fvmM5pTe7VzP/export?format=xlsx" class="btn-download-doc">📥 Descargar (.xlsx)</a>
-                        <a href="https://wa.me/?text=Descarga%20esta%20plantilla%20gratis%20en%20WiCONTABLE:%20Prorrateo%20IVA%20-%20https://wicontable.com/plantillas.html" target="_blank" class="btn-share-doc">📲 Compartir</a>
+                        <a href="https://wa.me/?text=Descarga%20esta%20plantilla%20gratis%20en%20WiCONTABLE:%20Prorrateo%20IVA%20-%20https://wicontable.com/plantillas.html" target="_blank" class="btn-share-doc" title="Compartir en WhatsApp">📲 WhatsApp</a>
+                        <a href="https://telegram.me/wicontable" target="_blank" rel="noopener noreferrer" class="btn-share-tg" title="Consultar en Telegram">✈️ Telegram</a>
                     </div>
                 </div>
 
@@ -1004,7 +1080,8 @@
                     <p class="doc-desc">Puedes usar este contrato solo si el servicio será realmente autónomo. Si el contratista va a cumplir horario, recibir órdenes permanentes, pedir permisos, ocupar un cargo operativo de la empresa o ejecutar funciones permanentes bajo control directo, lo correcto es celebrar contrato de trabajo y aplicar toda la normativa laboral vigente.</p>
                     <div class="card-btn-row">
                         <a href="https://docs.google.com/document/d/1O-ZGfqp4_XUoli4uQZ6h5NcHfNM_AYXi/export?format=docx" class="btn-download-doc">📥 Descargar (.docx)</a>
-                        <a href="https://wa.me/?text=Descarga%20este%20contrato%20gratis%20en%20WiCONTABLE:%20Contrato%20Prestación%20Servicios%20-%20https://wicontable.com/plantillas.html" target="_blank" class="btn-share-doc">📲 Compartir</a>
+                        <a href="https://wa.me/?text=Descarga%20este%20contrato%20gratis%20en%20WiCONTABLE:%20Contrato%20Prestación%20Servicios%20-%20https://wicontable.com/plantillas.html" target="_blank" class="btn-share-doc" title="Compartir en WhatsApp">📲 WhatsApp</a>
+                        <a href="https://telegram.me/wicontable" target="_blank" rel="noopener noreferrer" class="btn-share-tg" title="Consultar en Telegram">✈️ Telegram</a>
                     </div>
                 </div>
 
@@ -1021,7 +1098,8 @@
                     <p class="doc-desc">Verifiqué la renderización del documento antes de entregarlo. La plantilla se basó principalmente en la Ley 2466 de 2025, Ley 2101 de 2021, Código Sustantivo del Trabajo, Decreto 1072 de 2015, Ley 100 de 1993, Ley 1010 de 2006, Ley 2191 de 2022 y Ley 1581 de 2012.</p>
                     <div class="card-btn-row">
                         <a href="https://docs.google.com/document/d/1joE6pQdPnbwyaxRD6K6uNuPqztE2aBQa/export?format=docx" class="btn-download-doc">📥 Descargar (.docx)</a>
-                        <a href="https://wa.me/?text=Descarga%20este%20contrato%20gratis%20en%20WiCONTABLE:%20Contrato%20Trabajo%20Sector%20Privado%20-%20https://wicontable.com/plantillas.html" target="_blank" class="btn-share-doc">📲 Compartir</a>
+                        <a href="https://wa.me/?text=Descarga%20este%20contrato%20gratis%20en%20WiCONTABLE:%20Contrato%20Trabajo%20Sector%20Privado%20-%20https://wicontable.com/plantillas.html" target="_blank" class="btn-share-doc" title="Compartir en WhatsApp">📲 WhatsApp</a>
+                        <a href="https://telegram.me/wicontable" target="_blank" rel="noopener noreferrer" class="btn-share-tg" title="Consultar en Telegram">✈️ Telegram</a>
                     </div>
                 </div>
 
@@ -1038,7 +1116,8 @@
                     <p class="doc-desc">Este modelo debe utilizarse únicamente cuando el contador conserve autonomía profesional, administrativa y organizativa, sin horario laboral, jefe disciplinario, permisos, exclusividad obligatoria ni control permanente sobre la forma de ejecutar el servicio. Cuando concurren prestación personal, remuneración y subordinación, existe contrato de trabajo independientemente del nombre que las partes hayan puesto al documento.</p>
                     <div class="card-btn-row">
                         <a href="https://docs.google.com/document/d/1xEuKYUtYPZ9AN_9m_to3v6zT7f1a3Zu8/export?format=docx" class="btn-download-doc">📥 Descargar (.docx)</a>
-                        <a href="https://wa.me/?text=Descarga%20este%20contrato%20gratis%20en%20WiCONTABLE:%20Contrato%20Contador%20Independiente%20-%20https://wicontable.com/plantillas.html" target="_blank" class="btn-share-doc">📲 Compartir</a>
+                        <a href="https://wa.me/?text=Descarga%20este%20contrato%20gratis%20en%20WiCONTABLE:%20Contrato%20Contador%20Independiente%20-%20https://wicontable.com/plantillas.html" target="_blank" class="btn-share-doc" title="Compartir en WhatsApp">📲 WhatsApp</a>
+                        <a href="https://telegram.me/wicontable" target="_blank" rel="noopener noreferrer" class="btn-share-tg" title="Consultar en Telegram">✈️ Telegram</a>
                     </div>
                 </div>
 
@@ -1055,7 +1134,8 @@
                     <p class="doc-desc">Este modelo está estructurado como contrato laboral a término indefinido, porque esa es la modalidad general establecida por la Ley 2466 de 2025. Incluye subordinación, salario, prestaciones sociales, seguridad social, período de prueba opcional, jornada de 42 horas semanales desde el 16 de julio de 2026, derecho a la desconexión y reglas para trabajo suplementario, nocturno, dominical y festivo.</p>
                     <div class="card-btn-row">
                         <a href="https://docs.google.com/document/d/1yOxZWTwrKNI1DBONzVM8VwmJm8f5MRZb/export?format=docx" class="btn-download-doc">📥 Descargar (.docx)</a>
-                        <a href="https://wa.me/?text=Descarga%20este%20contrato%20gratis%20en%20WiCONTABLE:%20Contrato%20Laboral%20Contador%20-%20https://wicontable.com/plantillas.html" target="_blank" class="btn-share-doc">📲 Compartir</a>
+                        <a href="https://wa.me/?text=Descarga%20este%20contrato%20gratis%20en%20WiCONTABLE:%20Contrato%20Laboral%20Contador%20-%20https://wicontable.com/plantillas.html" target="_blank" class="btn-share-doc" title="Compartir en WhatsApp">📲 WhatsApp</a>
+                        <a href="https://telegram.me/wicontable" target="_blank" rel="noopener noreferrer" class="btn-share-tg" title="Consultar en Telegram">✈️ Telegram</a>
                     </div>
                 </div>
 
@@ -1072,7 +1152,8 @@
                     <p class="doc-desc">Este modelo debe utilizarse únicamente cuando el contador conserve autonomía profesional, administrativa y organizativa, sin horario laboral, jefe disciplinario, permisos, exclusividad obligatoria ni control permanente sobre la forma de ejecutar el servicio. Cuando concurren prestación personal, remuneración y subordinación, existe contrato de trabajo independientemente del nombre que las partes hayan puesto al documento.</p>
                     <div class="card-btn-row">
                         <a href="https://docs.google.com/document/d/1zWKteZfzoLn9YaPUR1FgX-yH4EVy61jw/export?format=docx" class="btn-download-doc">📥 Descargar (.docx)</a>
-                        <a href="https://wa.me/?text=Descarga%20este%20contrato%20gratis%20en%20WiCONTABLE:%20Contrato%20Servicios%20Básico%20-%20https://wicontable.com/plantillas.html" target="_blank" class="btn-share-doc">📲 Compartir</a>
+                        <a href="https://wa.me/?text=Descarga%20este%20contrato%20gratis%20en%20WiCONTABLE:%20Contrato%20Servicios%20Básico%20-%20https://wicontable.com/plantillas.html" target="_blank" class="btn-share-doc" title="Compartir en WhatsApp">📲 WhatsApp</a>
+                        <a href="https://telegram.me/wicontable" target="_blank" rel="noopener noreferrer" class="btn-share-tg" title="Consultar en Telegram">✈️ Telegram</a>
                     </div>
                 </div>
 
@@ -1097,7 +1178,8 @@
                     <p class="doc-desc">El documento es una entrevista previa y lista de verificación para preparar la declaración de renta de una persona natural por el año gravable 2025, que se presentará en 2026. Reúne los documentos necesarios para revisar la identificación tributaria, ingresos, patrimonio, deudas, consignaciones, compras, consumos con tarjetas, retenciones, deducciones y rentas exentas del contribuyente.</p>
                     <div class="card-btn-row">
                         <a href="https://drive.google.com/uc?export=download&id=19fgbwEVLfqb1-p3pCSUoz7Pw4NrfMKNJ" class="btn-download-doc">📥 Descargar (.pdf)</a>
-                        <a href="https://wa.me/?text=Descarga%20esta%20guía%20gratis%20en%20WiCONTABLE:%20Entrevista%20Renta%20P.N%20-%20https://wicontable.com/plantillas.html" target="_blank" class="btn-share-doc">📲 Compartir</a>
+                        <a href="https://wa.me/?text=Descarga%20esta%20guía%20gratis%20en%20WiCONTABLE:%20Entrevista%20Renta%20P.N%20-%20https://wicontable.com/plantillas.html" target="_blank" class="btn-share-doc" title="Compartir en WhatsApp">📲 WhatsApp</a>
+                        <a href="https://telegram.me/wicontable" target="_blank" rel="noopener noreferrer" class="btn-share-tg" title="Consultar en Telegram">✈️ Telegram</a>
                     </div>
                 </div>
 
@@ -1114,7 +1196,8 @@
                     <p class="doc-desc">El Formato 001 de la DIAN es el RUT (Registro Único Tributario). Funciona como tu identificación fiscal oficial en Colombia. Es muy útil como borrador para saber qué datos te van a pedir, pero recuerda que el documento con validez legal solo se genera y formaliza directamente en la plataforma oficial de la DIAN.</p>
                     <div class="card-btn-row">
                         <a href="https://drive.google.com/uc?export=download&id=1ORf5txgth5cv2jDid05DLulQg4cMVWtX" class="btn-download-doc">📥 Descargar (.pdf)</a>
-                        <a href="https://wa.me/?text=Descarga%20este%20formato%20gratis%20en%20WiCONTABLE:%20Formato%20001%20DIAN%20Editable%20-%20https://wicontable.com/plantillas.html" target="_blank" class="btn-share-doc">📲 Compartir</a>
+                        <a href="https://wa.me/?text=Descarga%20este%20formato%20gratis%20en%20WiCONTABLE:%20Formato%20001%20DIAN%20Editable%20-%20https://wicontable.com/plantillas.html" target="_blank" class="btn-share-doc" title="Compartir en WhatsApp">📲 WhatsApp</a>
+                        <a href="https://telegram.me/wicontable" target="_blank" rel="noopener noreferrer" class="btn-share-tg" title="Consultar en Telegram">✈️ Telegram</a>
                     </div>
                 </div>
 
@@ -1134,6 +1217,7 @@
                 <div class="footer-social-row">
                     <a href="https://whatsapp.com/channel/0029Va4o0RV2f3ENoTURyU40" target="_blank" rel="noopener noreferrer" class="social-link wa" title="Canal WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.176.001 6.163 1.237 8.407 3.483 2.245 2.246 3.48 5.234 3.479 8.414-.004 6.597-5.342 11.945-11.893 11.945-1.996-.001-3.957-.503-5.69-1.462L0 24zm6.59-4.846c1.62.962 3.235 1.467 4.962 1.468 5.334 0 9.673-4.321 9.676-9.635.001-2.574-1.002-4.994-2.825-6.819C16.638 2.344 14.225 1.34 11.66 1.34 6.326 1.34 1.986 5.661 1.983 10.977c-.001 1.8.473 3.559 1.373 5.111l-.995 3.633 3.689-.967z"/></svg></a>
                     <a href="https://chat.whatsapp.com/FvYIDsoo7NR7PLwtd0Vhwv" target="_blank" rel="noopener noreferrer" class="social-link wa" title="Grupo WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 0 0-10.4 18l-1.6 6 6.1-1.6A12 12 0 1 0 12 0z"/></svg></a>
+                    <a href="https://telegram.me/wicontable" target="_blank" rel="noopener noreferrer" class="social-link tg" title="Telegram @wicontable"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.458c.538-.196 1.006.128.832.943z"/></svg></a>
                     <a href="https://www.youtube.com/@wildersarriahernandez" target="_blank" rel="noopener noreferrer" class="social-link yt" title="YouTube Wilder"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
                     <a href="https://www.youtube.com/@wicontable" target="_blank" rel="noopener noreferrer" class="social-link yt" title="YouTube WiCONTABLE"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
                     <a href="https://www.tiktok.com/@wildersarriahernandez" target="_blank" rel="noopener noreferrer" class="social-link tk" title="TikTok"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.9-.32-1.98-.23-2.81.33-.85.51-1.44 1.42-1.58 2.4-.11.68-.03 1.37.18 2.03.35.81 1.05 1.48 1.88 1.76.71.21 1.48.21 2.19.04 1.02-.14 1.98-.77 2.56-1.6.43-.59.66-1.31.71-2.04.08-3.38.03-6.76.04-10.14z"/></svg></a>
@@ -1161,6 +1245,11 @@
                     WhatsApp Asistencia:<br>
                     <a href="https://wa.me/573156016386" target="_blank" style="color:var(--brand-green); font-weight:700;">+57 315 601 6386</a>
                 </p>
+                <p style="font-size: 0.875rem; color: var(--text-secondary); margin-top: 8px;">
+                    Telegram Asistencia:<br>
+                    <a href="https://telegram.me/wicontable" target="_blank" rel="noopener noreferrer" style="color:#0088cc; font-weight:700;">@wicontable</a>
+                </p>
+            </div>
             </div>
         </div>
         <div class="footer-bottom">

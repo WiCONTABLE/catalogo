@@ -1,4 +1,5 @@
 const miTelefono = "573156016386";
+const miTelegram = "https://telegram.me/wicontable";
 
 const productos = [
     {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="dark">
+<html lang="es" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,8 +17,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+    <!-- Theme Initialization to prevent flickering (FOUC) -->
+    <script>
+        (function() {
+            var t = localStorage.getItem('wicontable_theme') || 'light';
+            document.documentElement.setAttribute('data-theme', t);
+        })();
+    </script>
+
     <style>
+/* ==========================================================================
+           1. CSS VARIABLES & THEMES (AGENCY LUXE)
+           ========================================================================== */
         :root {
+            /* Brand Core */
             --brand-green: #10B981;
             --brand-green-hover: #059669;
             --brand-green-light: rgba(16, 185, 129, 0.12);
@@ -28,13 +40,16 @@
             --brand-gradient: linear-gradient(135deg, #10B981 0%, #06B6D4 100%);
             --brand-gradient-hover: linear-gradient(135deg, #059669 0%, #0891B2 100%);
 
+            /* Typography */
             --font-heading: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
             --font-body: 'Inter', system-ui, -apple-system, sans-serif;
 
+            /* Transitions */
             --tr-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
             --tr-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
             --tr-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 
+            /* Radii */
             --radius-sm: 8px;
             --radius-md: 14px;
             --radius-lg: 20px;
@@ -42,6 +57,7 @@
             --radius-full: 9999px;
         }
 
+        /* DARK THEME (DEFAULT LUXE) */
         [data-theme="dark"] {
             --bg-base: #080C14;
             --bg-surface: #0E1524;
@@ -58,7 +74,7 @@
             --text-secondary: #94A3B8;
             --text-muted: #64748B;
             
-            --nav-bg: rgba(8, 12, 20, 0.88);
+            --nav-bg: rgba(8, 12, 20, 0.8);
             --nav-border: rgba(255, 255, 255, 0.06);
 
             --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
@@ -66,6 +82,7 @@
             --glow-orb: rgba(16, 185, 129, 0.07);
         }
 
+        /* LIGHT THEME (CLEAN MINIMALIST) */
         [data-theme="light"] {
             --bg-base: #F8FAFC;
             --bg-surface: #FFFFFF;
@@ -82,7 +99,7 @@
             --text-secondary: #475569;
             --text-muted: #8E9CAE;
 
-            --nav-bg: rgba(255, 255, 255, 0.92);
+            --nav-bg: rgba(255, 255, 255, 0.85);
             --nav-border: rgba(0, 0, 0, 0.06);
 
             --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(0, 0, 0, 0.05);
@@ -90,6 +107,9 @@
             --glow-orb: rgba(16, 185, 129, 0.05);
         }
 
+/* ==========================================================================
+           2. BASE RESETS & TYPOGRAPHY
+           ========================================================================== */
         *, *::before, *::after {
             box-sizing: border-box;
             margin: 0;
@@ -110,7 +130,7 @@
             transition: background-color var(--tr-smooth), color var(--tr-smooth);
             position: relative;
             min-height: 100vh;
-            padding-top: 118px;
+            padding-top: 118px; /* Offset for unified fixed header */
         }
 
         /* Watermark Brand Logo Background */
@@ -128,18 +148,6 @@
             user-select: none;
         }
 
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        button {
-            font-family: inherit;
-            cursor: pointer;
-            border: none;
-            background: none;
-        }
-
         /* Ambient Glow Mesh */
         .ambient-glow {
             position: fixed;
@@ -155,59 +163,148 @@
         .ambient-glow::before {
             content: '';
             position: absolute;
-            top: -15%;
-            left: -10%;
-            width: 50vw;
-            height: 50vw;
+            top: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 900px;
+            height: 600px;
             background: radial-gradient(circle, var(--glow-orb) 0%, transparent 70%);
-            border-radius: 50%;
             filter: blur(80px);
         }
 
-        /* Unified Fixed Top Header */
-        .top-nav-wrapper {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            background: var(--nav-bg);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        .ambient-glow::after {
+            content: '';
+            position: absolute;
+            bottom: 10%;
+            right: -150px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.04) 0%, transparent 70%);
+            filter: blur(100px);
         }
 
-        /* Continuous Marquee Ticker */
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font-family: inherit;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            background: none;
+        }
+
+/* ==========================================================================
+           3. TOP TICKER & ANNOUNCEMENT BAR (CONTINUOUS MARQUEE)
+           ========================================================================== */
         .top-ticker {
-            background: linear-gradient(90deg, #042f2e 0%, #064e3b 50%, #042f2e 100%);
-            color: #A7F3D0;
-            font-size: 0.775rem;
-            font-weight: 700;
-            letter-spacing: 0.6px;
-            padding: 8px 0;
-            border-bottom: 1px solid rgba(16, 185, 129, 0.2);
-            overflow: hidden;
-            white-space: nowrap;
-            display: flex;
+            background: var(--bg-surface);
+            border-bottom: 1px solid var(--border-subtle);
+            font-size: 0.8125rem;
             position: relative;
-            mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
-            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+            z-index: 101;
+            overflow: hidden;
+            height: 38px;
+            display: flex;
+            align-items: center;
         }
 
-        .ticker-track {
-            display: inline-flex;
-            width: max-content;
-            animation: tickerMarqueeSlide 32s linear infinite;
+        .ticker-inner {
+            width: 100%;
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
         }
 
-        .ticker-track:hover {
-            animation-play-state: paused;
-        }
-
-        .ticker-text {
-            display: inline-block;
-            padding-right: 50px;
+        .ticker-badge-col {
             flex-shrink: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .ticker-pill {
+            background: var(--brand-green-light);
+            color: var(--brand-green);
+            font-weight: 700;
+            font-size: 0.7rem;
+            padding: 3px 10px;
+            border-radius: var(--radius-full);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
+        }
+
+        .ticker-pill::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--brand-green);
+            border-radius: 50%;
+            animation: pulse-dot 1.8s infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(0.8); }
+        }
+
+        /* Continuous Right-to-Left Marquee Box */
+        .ticker-marquee-box {
+            flex: 1;
+            min-width: 0;
+            overflow: hidden;
+            position: relative;
+            white-space: nowrap;
+            mask-image: linear-gradient(to right, transparent 0%, black 20px, black calc(100% - 20px), transparent 100%);
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 20px, black calc(100% - 20px), transparent 100%);
+        }
+
+        .ticker-marquee-track {
+            display: inline-flex;
+            align-items: center;
+            white-space: nowrap;
+            animation: tickerMarqueeSlide 32s linear infinite;
+            will-change: transform;
+        }
+
+        .ticker-marquee-track:hover {
+            animation-play-state: paused;
+            cursor: default;
+        }
+
+        .ticker-msg-chunk {
+            display: inline-flex;
+            align-items: center;
+            gap: 16px;
+            padding-right: 36px;
+        }
+
+        .ticker-item {
+            font-size: 0.8125rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .ticker-item strong {
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
+        .ticker-sep {
+            color: var(--brand-green);
+            font-size: 0.75rem;
+            opacity: 0.85;
+            user-select: none;
         }
 
         @keyframes tickerMarqueeSlide {
@@ -215,26 +312,81 @@
             100% { transform: translateX(-50%); }
         }
 
-        /* Navbar Bar */
+        .ticker-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-shrink: 0;
+        }
+
+        .ticker-schedule {
+            color: var(--text-muted);
+            font-size: 0.775rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
+        }
+
+        .ticker-support-link {
+            color: var(--brand-green);
+            font-weight: 600;
+            font-size: 0.8125rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: color var(--tr-fast);
+            white-space: nowrap;
+        }
+
+        .ticker-support-link:hover {
+            color: var(--brand-cyan);
+            text-decoration: underline;
+        }
+
+        .ticker-support-link.ticker-tg-link {
+            color: #0088cc;
+        }
+
+        .ticker-support-link.ticker-tg-link:hover {
+            color: #229ED9;
+        }
+
+/* ==========================================================================
+           4. UNIFIED FIXED SITE HEADER (TOP TICKER + NAVBAR)
+           ========================================================================== */
+        .fixed-site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
         .navbar {
+            background: var(--nav-bg);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
             border-bottom: 1px solid var(--nav-border);
+            transition: background-color var(--tr-smooth), border-color var(--tr-smooth);
         }
 
         .navbar-container {
-            max-width: 1360px;
+            max-width: 1440px;
             margin: 0 auto;
-            padding: 12px 24px;
+            padding: 10px 20px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 16px;
+            gap: 12px;
         }
 
         .brand-logo {
             display: flex;
             align-items: center;
-            gap: 12px;
-            text-decoration: none;
+            gap: 10px;
+            cursor: pointer;
             flex-shrink: 0;
         }
 
@@ -244,16 +396,30 @@
             object-fit: contain;
             border-radius: 12px;
             background: rgba(255, 255, 255, 0.04);
-            padding: 4px;
+            padding: 3px;
             border: 1px solid var(--border-subtle);
+            transition: transform var(--tr-bounce), box-shadow var(--tr-smooth);
+        }
+
+        .brand-logo:hover .logo-img {
+            transform: scale(1.05) rotate(-2deg);
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.35);
+        }
+
+        .brand-title-group {
+            display: flex;
+            flex-direction: column;
         }
 
         .brand-name {
             font-family: var(--font-heading);
             font-weight: 800;
-            font-size: 1.35rem;
+            font-size: 1.25rem;
             letter-spacing: -0.5px;
-            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            line-height: 1.1;
         }
 
         .brand-name span {
@@ -262,112 +428,143 @@
             -webkit-text-fill-color: transparent;
         }
 
+        .brand-subtitle {
+            font-size: 0.6875rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+        }
+
+        /* Nav links row */
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 5px;
+            flex-shrink: 1;
+            min-width: 0;
         }
 
         .nav-link {
-            font-size: 0.875rem;
+            font-size: 0.8125rem;
             font-weight: 600;
             color: var(--text-secondary);
-            padding: 8px 14px;
+            padding: 7px 11px;
             border-radius: var(--radius-full);
+            white-space: nowrap;
             transition: all var(--tr-fast);
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            white-space: nowrap;
+            gap: 5px;
+            cursor: pointer;
         }
 
         .nav-link:hover {
-            color: var(--brand-green);
-            background: var(--brand-green-light);
+            color: var(--text-primary);
+            background: var(--border-subtle);
         }
 
-        /* Dropdown */
+        .nav-link.highlight {
+            color: var(--brand-green);
+            background: var(--brand-green-light);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+        }
+
+        .nav-link.highlight:hover {
+            background: rgba(16, 185, 129, 0.2);
+            color: #fff;
+        }
+
+        /* Nav Dropdown for Secondary Resources */
         .nav-dropdown {
             position: relative;
             display: inline-block;
         }
 
         .nav-dropdown-btn {
-            font-size: 0.875rem;
-            font-weight: 600;
-            color: var(--text-secondary);
-            padding: 8px 14px;
-            border-radius: var(--radius-full);
-            transition: all var(--tr-fast);
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            white-space: nowrap;
+            gap: 5px;
+            cursor: pointer;
         }
 
-        .nav-dropdown-btn:hover, .nav-dropdown.active .nav-dropdown-btn {
-            color: var(--brand-green);
-            background: var(--brand-green-light);
-        }
-
-        .dropdown-arrow {
-            font-size: 0.75rem;
+        .dropdown-chevron {
             transition: transform var(--tr-fast);
         }
 
-        .nav-dropdown.active .dropdown-arrow {
+        .nav-dropdown:hover .dropdown-chevron,
+        .nav-dropdown.active .dropdown-chevron {
             transform: rotate(180deg);
         }
 
-        .dropdown-menu {
+        .nav-dropdown-menu {
             position: absolute;
             top: calc(100% + 8px);
             right: 0;
-            width: 280px;
+            width: 250px;
             background: var(--bg-surface);
-            border: 1px solid var(--border-medium);
+            border: 1px solid var(--border-subtle);
             border-radius: var(--radius-lg);
-            padding: 8px;
-            box-shadow: var(--card-shadow-hover);
+            box-shadow: 0 14px 40px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.05);
+            padding: 6px;
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
             opacity: 0;
             visibility: hidden;
             transform: translateY(8px);
             transition: all var(--tr-fast);
-            z-index: 1000;
+            z-index: 1050;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
         }
 
-        .nav-dropdown.active .dropdown-menu {
+        .nav-dropdown:hover .nav-dropdown-menu,
+        .nav-dropdown-menu.show {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
+            pointer-events: auto;
         }
 
         .dropdown-item {
             display: flex;
             align-items: center;
-            gap: 12px;
-            padding: 10px 14px;
+            gap: 10px;
+            padding: 8px 10px;
             border-radius: var(--radius-md);
             color: var(--text-primary);
-            font-size: 0.875rem;
-            transition: background var(--tr-fast);
+            transition: all var(--tr-fast);
+            text-align: left;
         }
 
         .dropdown-item:hover {
             background: var(--brand-green-light);
             color: var(--brand-green);
+            transform: translateX(3px);
         }
 
-        .dropdown-item small {
-            display: block;
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            font-weight: 400;
-        }
-
-        .dropdown-icon {
-            font-size: 1.15rem;
+        .dropdown-item-icon {
+            font-size: 1.1rem;
             flex-shrink: 0;
+        }
+
+        .dropdown-item-text strong {
+            display: block;
+            font-size: 0.8125rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .dropdown-item-text small {
+            display: block;
+            font-size: 0.6875rem;
+            color: var(--text-muted);
+        }
+
+        .dropdown-item:hover .dropdown-item-text small {
+            color: var(--brand-green);
+            opacity: 0.85;
         }
 
         .nav-actions {
@@ -377,132 +574,868 @@
             flex-shrink: 0;
         }
 
+        /* Theme Toggle Button */
         .btn-theme-toggle {
             width: 40px;
             height: 40px;
             border-radius: var(--radius-full);
-            background: var(--bg-surface-elevated);
+            background: var(--bg-surface);
             border: 1px solid var(--border-subtle);
             color: var(--text-secondary);
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all var(--tr-fast);
+            transition: transform var(--tr-bounce), border-color var(--tr-fast), color var(--tr-fast);
+            flex-shrink: 0;
         }
 
         .btn-theme-toggle:hover {
+            transform: rotate(20deg) scale(1.05);
             color: var(--brand-green);
-            border-color: var(--brand-green);
-            transform: scale(1.05);
+            border-color: var(--border-medium);
         }
 
-        .theme-icon-sun, .theme-icon-moon { width: 19px; height: 19px; stroke-width: 2; }
+        .theme-icon-sun, .theme-icon-moon {
+            width: 20px;
+            height: 20px;
+            stroke-width: 2;
+        }
+
         [data-theme="dark"] .theme-icon-sun { display: block; }
         [data-theme="dark"] .theme-icon-moon { display: none; }
         [data-theme="light"] .theme-icon-sun { display: none; }
         [data-theme="light"] .theme-icon-moon { display: block; }
 
+        /* Cart Nav Trigger */
         .btn-nav-cart {
+            position: relative;
             background: var(--brand-gradient);
             color: #042f2e;
             font-weight: 700;
-            font-size: 0.875rem;
-            padding: 9px 18px;
+            font-size: 0.84rem;
+            padding: 8px 16px;
             border-radius: var(--radius-full);
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 7px;
+            transition: transform var(--tr-smooth), box-shadow var(--tr-smooth);
             box-shadow: 0 4px 15px rgba(16, 185, 129, 0.25);
-            transition: transform var(--tr-fast), box-shadow var(--tr-fast);
+            flex-shrink: 0;
             white-space: nowrap;
         }
 
         .btn-nav-cart:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.35);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
         }
 
-        .cart-pill {
-            background: #042f2e;
-            color: #A7F3D0;
-            font-size: 0.725rem;
+        .nav-cart-badge {
+            background: #0F172A;
+            color: #10B981;
+            font-size: 0.75rem;
             font-weight: 800;
             padding: 2px 7px;
             border-radius: var(--radius-full);
+            min-width: 18px;
+            text-align: center;
         }
 
+        /* Mobile Hamburger Button */
         .btn-mobile-menu {
             display: none;
             width: 40px;
             height: 40px;
             border-radius: var(--radius-full);
-            background: var(--bg-surface-elevated);
+            background: var(--bg-surface);
             border: 1px solid var(--border-subtle);
             color: var(--text-primary);
             align-items: center;
             justify-content: center;
+            cursor: pointer;
+            transition: all var(--tr-fast);
+            flex-shrink: 0;
         }
 
-        @media (max-width: 992px) {
-            .nav-links { display: none; }
-            .btn-mobile-menu { display: flex; }
-            .cart-btn-label { display: none; }
+        .btn-mobile-menu:hover {
+            color: var(--brand-green);
+            border-color: var(--brand-green);
+            background: var(--brand-green-light);
+            transform: scale(1.05);
         }
 
-        /* Mobile Drawer */
-        .mobile-nav-drawer {
+/* ==========================================================================
+           11. SLIDE-OVER SHOPPING CART DRAWER
+           ========================================================================== */
+        .cart-overlay {
             position: fixed;
             top: 0;
             left: 0;
-            width: 320px;
-            max-width: 85%;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 9998;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity var(--tr-smooth), visibility var(--tr-smooth);
+        }
+
+        .cart-overlay.active {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        .cart-drawer {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            max-width: 460px;
             height: 100vh;
             background: var(--bg-surface);
-            border-right: 1px solid var(--border-medium);
-            z-index: 3000;
-            box-shadow: 10px 0 35px rgba(0, 0, 0, 0.4);
-            transform: translateX(-100%);
+            border-left: 1px solid var(--border-subtle);
+            z-index: 9999;
+            box-shadow: -20px 0 50px rgba(0, 0, 0, 0.5);
+            transform: translateX(100%);
             visibility: hidden;
-            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s;
+            pointer-events: none;
+            transition: transform var(--tr-smooth), visibility var(--tr-smooth);
             display: flex;
             flex-direction: column;
         }
 
-        .mobile-nav-drawer.active {
+        .cart-drawer.active {
             transform: translateX(0);
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        .cart-drawer-header {
+            padding: 24px;
+            border-bottom: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--bg-surface-elevated);
+        }
+
+        .cart-drawer-title {
+            font-family: var(--font-heading);
+            font-size: 1.35rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-close-cart {
+            width: 36px;
+            height: 36px;
+            border-radius: var(--radius-full);
+            background: var(--border-subtle);
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all var(--tr-fast);
+        }
+
+        .btn-close-cart:hover {
+            color: var(--text-primary);
+            background: var(--border-medium);
+        }
+
+        .cart-drawer-body {
+            padding: 24px;
+            flex-grow: 1;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .cart-empty-state {
+            margin: auto;
+            text-align: center;
+            color: var(--text-muted);
+            padding: 40px 20px;
+        }
+
+        .cart-empty-state svg {
+            width: 64px;
+            height: 64px;
+            stroke: var(--text-muted);
+            opacity: 0.4;
+            margin-bottom: 16px;
+        }
+
+        .cart-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            transition: border-color var(--tr-fast);
+        }
+
+        .cart-item:hover {
+            border-color: var(--border-medium);
+        }
+
+        .cart-item-img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            background: var(--bg-surface-elevated);
+            border-radius: var(--radius-sm);
+            padding: 4px;
+        }
+
+        .cart-item-details {
+            flex-grow: 1;
+        }
+
+        .cart-item-title {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-bottom: 4px;
+            line-height: 1.3;
+        }
+
+        .cart-item-price {
+            color: var(--brand-green);
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .cart-qty-controls {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .btn-qty {
+            width: 26px;
+            height: 26px;
+            border-radius: var(--radius-sm);
+            background: var(--bg-surface-elevated);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .btn-qty:hover {
+            background: var(--brand-green-light);
+            color: var(--brand-green);
+        }
+
+        .cart-qty-val {
+            font-weight: 700;
+            font-size: 0.875rem;
+            min-width: 18px;
+            text-align: center;
+        }
+
+        .btn-remove-item {
+            color: var(--text-muted);
+            padding: 6px;
+            border-radius: var(--radius-sm);
+            transition: color var(--tr-fast);
+        }
+
+        .btn-remove-item:hover {
+            color: #EF4444;
+        }
+
+        .cart-drawer-footer {
+            padding: 24px;
+            border-top: 1px solid var(--border-subtle);
+            background: var(--bg-surface-elevated);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .cart-summary-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-total-label {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        .cart-total-value {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--brand-green);
+            letter-spacing: -0.5px;
+        }
+
+        .btn-checkout-wa {
+            background: #25D366;
+            color: #042f2e;
+            font-weight: 800;
+            font-size: 1rem;
+            padding: 16px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+            transition: all var(--tr-smooth);
+        }
+
+        .btn-checkout-wa:hover {
+            transform: translateY(-2px);
+            background: #1eb857;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.5);
+        }
+
+        .btn-checkout-tg {
+            background: #0088cc;
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 1rem;
+            padding: 16px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 6px 20px rgba(0, 136, 204, 0.35);
+            transition: all var(--tr-smooth);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-checkout-tg:hover {
+            transform: translateY(-2px);
+            background: #0077b5;
+            box-shadow: 0 10px 25px rgba(0, 136, 204, 0.5);
+        }
+
+        /* Floating Cart FAB */
+        .cart-fab {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            width: 62px;
+            height: 62px;
+            border-radius: var(--radius-full);
+            background: var(--brand-gradient);
+            color: #042f2e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);
+            cursor: pointer;
+            z-index: 99;
+            transition: transform var(--tr-smooth), box-shadow var(--tr-smooth);
+        }
+
+        .cart-fab:hover {
+            transform: scale(1.1);
+            box-shadow: 0 14px 40px rgba(16, 185, 129, 0.55);
+        }
+
+        .cart-fab-badge {
+            position: absolute;
+            top: -4px;
+            right: -4px;
+            background: #EF4444;
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: 800;
+            width: 24px;
+            height: 24px;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--bg-surface);
+        }
+
+        /* Floating WhatsApp Support Button */
+        .wa-support-fab {
+            position: fixed;
+            bottom: 28px;
+            left: 28px;
+            width: 56px;
+            height: 56px;
+            border-radius: var(--radius-full);
+            background: #25D366;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.35);
+            cursor: pointer;
+            z-index: 99;
+            transition: transform var(--tr-smooth);
+        }
+
+        .wa-support-fab:hover {
+            transform: scale(1.1) rotate(6deg);
+        }
+
+        /* Floating Telegram Support Button */
+        .tg-support-fab {
+            position: fixed;
+            bottom: 94px;
+            left: 28px;
+            width: 56px;
+            height: 56px;
+            border-radius: var(--radius-full);
+            background: #0088cc;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(0, 136, 204, 0.35);
+            cursor: pointer;
+            z-index: 99;
+            transition: transform var(--tr-smooth);
+            text-decoration: none;
+        }
+
+        .tg-support-fab:hover {
+            transform: scale(1.1) rotate(6deg);
+        }
+
+/* ==========================================================================
+           12. VIDEO MODAL (PREMIUM CINEMATIC PLAYER)
+           ========================================================================== */
+        .video-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(12px);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity var(--tr-smooth), visibility var(--tr-smooth);
+            padding: 20px;
+        }
+
+        .video-modal.active {
+            opacity: 1;
             visibility: visible;
         }
 
+        .video-modal-box {
+            width: 100%;
+            max-width: 900px;
+            background: #000;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            border: 1px solid var(--border-medium);
+            position: relative;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+        }
+
+        .video-player-container {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: #000;
+        }
+
+        .video-player-container iframe,
+        .video-player-container video {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        .btn-close-video {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            z-index: 10;
+            cursor: pointer;
+            backdrop-filter: blur(6px);
+            transition: background var(--tr-fast);
+        }
+
+        .btn-close-video:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+/* ==========================================================================
+           13. AGENCY FOOTER
+           ========================================================================== */
+        .main-footer {
+            background: var(--bg-surface);
+            border-top: 1px solid var(--border-subtle);
+            padding: 70px 24px 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-container {
+            max-width: 1320px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1.1fr 1.3fr;
+            gap: 48px;
+            margin-bottom: 50px;
+        }
+
+        @media (max-width: 992px) {
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 36px;
+            }
+            .footer-brand {
+                grid-column: 1 / -1;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+        }
+
+        .footer-brand h2 {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 1.5rem;
+            margin-bottom: 14px;
+        }
+
+        .footer-brand p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 24px;
+            max-width: 360px;
+        }
+
+        .footer-column h4 {
+            font-family: var(--font-heading);
+            font-size: 0.95rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 14px;
+            color: var(--text-primary);
+        }
+
+        .footer-links-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .footer-links-list a {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            transition: color var(--tr-fast);
+            line-height: 1.35;
+        }
+
+        .footer-links-list a:hover {
+            color: var(--brand-green);
+        }
+
+        .footer-contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .contact-entry {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .contact-label {
+            color: var(--text-primary);
+            font-weight: 700;
+            font-size: 0.875rem;
+            line-height: 1.3;
+        }
+
+        .contact-phone {
+            color: var(--brand-green);
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: color var(--tr-fast);
+            line-height: 1.3;
+        }
+
+        .contact-phone:hover {
+            color: var(--brand-cyan);
+            text-decoration: underline;
+        }
+
+        .contact-schedule {
+            color: var(--text-muted);
+            font-size: 0.825rem;
+            line-height: 1.4;
+            white-space: nowrap;
+        }
+
+        .social-buttons-row {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .social-icon-btn {
+            width: 42px;
+            height: 42px;
+            border-radius: var(--radius-full);
+            background: var(--bg-surface-elevated);
+            border: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--tr-smooth);
+            position: relative;
+        }
+
+        /* WhatsApp */
+        .social-icon-btn.wa {
+            color: #25D366;
+            background: rgba(37, 211, 102, 0.12);
+            border-color: rgba(37, 211, 102, 0.35);
+        }
+        .social-icon-btn.wa:hover {
+            background: #25D366;
+            color: #FFFFFF;
+            border-color: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 22px rgba(37, 211, 102, 0.45);
+        }
+
+        /* YouTube */
+        .social-icon-btn.yt {
+            color: #FF0000;
+            background: rgba(255, 0, 0, 0.10);
+            border-color: rgba(255, 0, 0, 0.35);
+        }
+        .social-icon-btn.yt:hover {
+            background: #FF0000;
+            color: #FFFFFF;
+            border-color: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 22px rgba(255, 0, 0, 0.45);
+        }
+
+        /* TikTok */
+        .social-icon-btn.tk {
+            color: #0F172A;
+            background: rgba(15, 23, 42, 0.08);
+            border-color: rgba(15, 23, 42, 0.25);
+        }
+        .social-icon-btn.tk svg {
+            filter: drop-shadow(-1.5px -1px 0 #25F4EE) drop-shadow(1.5px 1px 0 #FE2C55);
+        }
+        [data-theme="dark"] .social-icon-btn.tk {
+            color: #FFFFFF;
+            background: rgba(255, 255, 255, 0.10);
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+        .social-icon-btn.tk:hover {
+            background: #010101;
+            color: #FFFFFF;
+            border-color: #25F4EE;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 22px rgba(37, 244, 238, 0.4), 0 0 14px rgba(254, 44, 85, 0.5);
+        }
+
+        /* Facebook */
+        .social-icon-btn.fb {
+            color: #1877F2;
+            background: rgba(24, 119, 242, 0.12);
+            border-color: rgba(24, 119, 242, 0.35);
+        }
+        .social-icon-btn.fb:hover {
+            background: #1877F2;
+            color: #FFFFFF;
+            border-color: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 22px rgba(24, 119, 242, 0.45);
+        }
+
+        /* Instagram */
+        .social-icon-btn.ig {
+            color: #E4405F;
+            background: rgba(228, 64, 95, 0.12);
+            border-color: rgba(228, 64, 95, 0.35);
+        }
+        .social-icon-btn.ig:hover {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: #FFFFFF;
+            border-color: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 22px rgba(220, 39, 67, 0.45);
+        }
+
+        /* LinkedIn */
+        .social-icon-btn.li {
+            color: #0A66C2;
+            background: rgba(10, 102, 194, 0.12);
+            border-color: rgba(10, 102, 194, 0.35);
+        }
+        .social-icon-btn.li:hover {
+            background: #0A66C2;
+            color: #FFFFFF;
+            border-color: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 22px rgba(10, 102, 194, 0.45);
+        }
+
+        /* Telegram */
+        .social-icon-btn.tg {
+            color: #0088cc;
+            background: rgba(0, 136, 204, 0.12);
+            border-color: rgba(0, 136, 204, 0.35);
+        }
+        .social-icon-btn.tg:hover {
+            background: #0088cc;
+            color: #FFFFFF;
+            border-color: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 22px rgba(0, 136, 204, 0.45);
+        }
+
+        .footer-bottom {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding-top: 30px;
+            border-top: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+            color: var(--text-muted);
+            font-size: 0.8125rem;
+        }
+
+/* ==========================================================================
+           12. MOBILE NAVIGATION DRAWER & ADVANCED RESPONSIVENESS
+           ========================================================================== */
+        .mobile-nav-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.65);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            z-index: 1999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity var(--tr-smooth), visibility var(--tr-smooth);
+        }
+
+        .mobile-nav-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-nav-drawer {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 340px;
+            max-width: 88vw;
+            height: 100vh;
+            background: var(--bg-surface);
+            border-left: 1px solid var(--border-medium);
+            box-shadow: -10px 0 35px rgba(0, 0, 0, 0.35);
+            z-index: 2000;
+            display: flex;
+            flex-direction: column;
+            transform: translateX(100%);
+            transition: transform var(--tr-smooth);
+        }
+
+        .mobile-nav-drawer.open {
+            transform: translateX(0);
+        }
+
         .mobile-nav-header {
-            padding: 20px;
+            padding: 16px 20px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             border-bottom: 1px solid var(--border-subtle);
         }
 
-        .btn-close-mobile {
-            font-size: 1.6rem;
+        .btn-close-mobile-nav {
+            width: 36px;
+            height: 36px;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
             color: var(--text-muted);
-            line-height: 1;
+            cursor: pointer;
+            transition: all var(--tr-fast);
         }
 
-        .mobile-nav-content {
-            padding: 16px;
-            overflow-y: auto;
+        .btn-close-mobile-nav:hover {
+            color: var(--text-primary);
+            background: var(--border-subtle);
+        }
+
+        .mobile-nav-body {
             flex: 1;
+            overflow-y: auto;
+            padding: 16px;
             display: flex;
             flex-direction: column;
-            gap: 6px;
+            gap: 4px;
         }
 
         .mobile-nav-group-title {
-            font-size: 0.725rem;
-            font-weight: 800;
+            font-size: 0.6875rem;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.8px;
+            letter-spacing: 1px;
             color: var(--text-muted);
-            margin: 14px 10px 6px;
+            padding: 12px 10px 4px;
         }
 
         .mobile-nav-item {
@@ -512,12 +1445,19 @@
             padding: 10px 12px;
             border-radius: var(--radius-md);
             color: var(--text-primary);
-            font-size: 0.9rem;
-            font-weight: 600;
+            transition: all var(--tr-fast);
+            text-decoration: none;
         }
 
-        .mobile-nav-item:hover {
+        .mobile-nav-item:hover, .mobile-nav-item:active {
+            background: var(--bg-surface-elevated);
+            color: var(--brand-green);
+            transform: translateX(4px);
+        }
+
+        .mobile-nav-item.highlight {
             background: var(--brand-green-light);
+            border: 1px solid rgba(16, 185, 129, 0.25);
             color: var(--brand-green);
         }
 
@@ -526,23 +1466,41 @@
             flex-shrink: 0;
         }
 
+        .mobile-nav-info strong {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
         .mobile-nav-info small {
             display: block;
-            font-size: 0.75rem;
+            font-size: 0.725rem;
             color: var(--text-muted);
-            font-weight: 400;
+        }
+
+        .mobile-nav-badge {
+            margin-left: auto;
+            font-size: 0.65rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            padding: 2px 8px;
+            border-radius: var(--radius-full);
+            background: var(--brand-green);
+            color: #042f2e;
         }
 
         .mobile-nav-footer {
-            padding: 16px 20px 24px;
+            padding: 16px 20px;
             border-top: 1px solid var(--border-subtle);
-            background: var(--bg-surface-elevated);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
         }
 
         .mobile-nav-schedule {
             font-size: 0.75rem;
-            color: var(--text-secondary);
-            margin-bottom: 12px;
+            color: var(--text-muted);
             text-align: center;
         }
 
@@ -551,36 +1509,203 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
-            width: 100%;
-            padding: 11px 16px;
             background: #25D366;
-            color: #000;
-            font-weight: 800;
-            font-size: 0.85rem;
+            color: #FFFFFF;
+            font-weight: 700;
+            font-size: 0.8125rem;
+            padding: 11px;
             border-radius: var(--radius-full);
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            transition: transform var(--tr-fast);
+        }
+
+        .mobile-btn-wa:hover {
+            transform: scale(1.02);
+        }
+
+        .mobile-btn-tg {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: #0088cc;
+            color: #FFFFFF;
+            font-weight: 700;
+            font-size: 0.8125rem;
+            padding: 11px;
+            border-radius: var(--radius-full);
+            box-shadow: 0 4px 15px rgba(0, 136, 204, 0.3);
             text-decoration: none;
+            transition: transform var(--tr-fast), background var(--tr-fast);
         }
 
-        .drawer-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(4px);
-            z-index: 2500;
-            opacity: 0;
-            visibility: hidden;
-            transition: all var(--tr-smooth);
+        .mobile-btn-tg:hover {
+            transform: scale(1.02);
+            background: #0077b5;
         }
 
-        .drawer-overlay.active {
-            opacity: 1;
-            visibility: visible;
+/* ==========================================================================
+           RESPONSIVE BREAKPOINTS (NO OVERFLOWS / NO TRUNCATION)
+           ========================================================================== */
+        /* Large Desktop (>= 1321px): Direct buttons */
+        @media (min-width: 1321px) {
+            .nav-link-desktop-only {
+                display: inline-flex;
+            }
+            .nav-dropdown {
+                display: none !important;
+            }
+        }
+
+        /* Laptop & Medium Screens (993px to 1320px): Primary links + Dropdown */
+        @media (max-width: 1320px) {
+            .nav-link-desktop-only {
+                display: none !important;
+            }
+            .nav-dropdown {
+                display: inline-block;
+            }
+        }
+
+        /* Tablets & Medium Screens (<= 992px) */
+        @media (max-width: 992px) {
+            .nav-links {
+                display: none !important;
+            }
+            .btn-mobile-menu {
+                display: flex;
+            }
+            .ticker-schedule {
+                display: none;
+            }
+            .cart-drawer {
+                max-width: 100%;
+            }
+            .card-image-box {
+                height: 260px;
+                padding: 6px 8px;
+            }
+            .trust-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+        }
+
+        /* Mobile Devices & Small Tablets (<= 680px) */
+        @media (max-width: 680px) {
+            .catalog-section {
+                padding: 0 16px;
+                margin: 10px auto 50px;
+            }
+            .controls-panel {
+                padding: 16px 14px;
+                border-radius: var(--radius-lg);
+                gap: 14px;
+                margin-bottom: 24px;
+            }
+            .search-input {
+                padding: 13px 16px 13px 44px;
+                font-size: 0.9rem;
+            }
+            .search-icon {
+                left: 16px;
+                width: 18px;
+                height: 18px;
+            }
+            .filter-btn {
+                padding: 7px 14px;
+                font-size: 0.775rem;
+            }
+            .product-card {
+                padding: 18px 16px;
+                border-radius: var(--radius-lg);
+            }
+            .card-image-box {
+                height: clamp(215px, 60vw, 245px);
+                padding: 4px 6px;
+                border-radius: var(--radius-md);
+                margin-bottom: 16px;
+            }
+            .card-image-box img {
+                transform: scale(1.20) translateY(-2.5%);
+            }
+            .product-card:hover .card-image-box img {
+                transform: scale(1.22) translateY(-2.5%);
+            }
+            .card-title {
+                font-size: 1.15rem;
+            }
+            .price-amount {
+                font-size: 1.35rem;
+            }
+            .trust-section {
+                padding: 0 16px;
+                margin: 40px auto 60px;
+            }
+            .trust-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            .trust-card {
+                padding: 22px 18px;
+            }
+        }
+
+        /* Small Mobile Phones (<= 640px) */
+        @media (max-width: 640px) {
+            body {
+                padding-top: 104px;
+            }
+            .brand-subtitle {
+                display: none;
+            }
+            .brand-name {
+                font-size: 1.15rem;
+            }
+            .btn-cart-text {
+                display: none;
+            }
+            .btn-nav-cart {
+                padding: 8px 12px;
+            }
+            .navbar-container {
+                padding: 8px 12px;
+            }
+            .ticker-support-link span {
+                display: none;
+            }
+            .ticker-support-link {
+                padding: 4px 8px;
+                background: var(--brand-green-light);
+                border-radius: var(--radius-full);
+            }
+            .ticker-support-link.ticker-tg-link {
+                background: rgba(0, 136, 204, 0.12);
+            }
+            .main-footer {
+                padding: 50px 16px 30px;
+            }
+        }
+
+        /* Extra Small Devices (<= 380px) */
+        @media (max-width: 380px) {
+            .card-image-box {
+                height: 205px;
+                padding: 4px 4px;
+            }
+            .card-image-box img {
+                transform: scale(1.20) translateY(-2.5%);
+            }
+            .filter-btn {
+                padding: 6px 10px;
+                font-size: 0.725rem;
+            }
         }
 
         /* ==========================================================================
+           PRODUCT DETAIL SPECIFIC STYLES & MODALS
+           ========================================================================== */
+/* ==========================================================================
            PRODUCT DETAIL LAYOUT
            ========================================================================== */
         .detail-wrapper {
@@ -1047,6 +2172,29 @@
             box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
         }
 
+        .btn-tg-direct {
+            flex: 1;
+            min-width: 200px;
+            background: #0088cc;
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 1.05rem;
+            padding: 16px 28px;
+            border-radius: var(--radius-full);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all var(--tr-smooth);
+            box-shadow: 0 4px 18px rgba(0, 136, 204, 0.25);
+        }
+
+        .btn-tg-direct:hover {
+            transform: translateY(-2px);
+            background: #0077b5;
+            box-shadow: 0 8px 25px rgba(0, 136, 204, 0.4);
+        }
+
         /* Tech quick chips */
         .tech-spec-bar {
             display: flex;
@@ -1074,6 +2222,12 @@
             color: var(--brand-green);
             border-color: var(--brand-green);
             background: var(--brand-green-light);
+        }
+
+        .tech-chip-action.tech-chip-tg:hover {
+            color: #0088cc;
+            border-color: #0088cc;
+            background: rgba(0, 136, 204, 0.12);
         }
 
         /* Technical FAQ Section */
@@ -1239,149 +2393,7 @@
             color: var(--brand-green);
         }
 
-        /* ==========================================================================
-           CART DRAWER (Zero accidental trigger)
-           ========================================================================== */
-        .cart-drawer {
-            position: fixed;
-            top: 0;
-            right: 0;
-            width: 440px;
-            max-width: 100%;
-            height: 100vh;
-            background: var(--bg-surface);
-            border-left: 1px solid var(--border-medium);
-            z-index: 3000;
-            box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
-            transform: translateX(100%);
-            visibility: hidden;
-            pointer-events: none;
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .cart-drawer.active {
-            transform: translateX(0);
-            visibility: visible;
-            pointer-events: auto;
-        }
-
-        .cart-header {
-            padding: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-bottom: 1px solid var(--border-subtle);
-        }
-
-        .cart-title {
-            font-family: var(--font-heading);
-            font-weight: 800;
-            font-size: 1.25rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .btn-close-cart {
-            font-size: 1.8rem;
-            color: var(--text-muted);
-            line-height: 1;
-            transition: color var(--tr-fast);
-        }
-
-        .btn-close-cart:hover {
-            color: var(--brand-green);
-        }
-
-        .cart-items-box {
-            flex: 1;
-            padding: 24px;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .cart-item-row {
-            background: var(--bg-base);
-            border: 1px solid var(--border-subtle);
-            border-radius: var(--radius-md);
-            padding: 14px 18px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .cart-item-info strong {
-            font-size: 0.925rem;
-            color: var(--text-primary);
-            display: block;
-            margin-bottom: 2px;
-        }
-
-        .cart-item-info span {
-            font-size: 0.85rem;
-            color: var(--brand-green);
-            font-weight: 700;
-        }
-
-        .btn-remove-item {
-            color: #EF4444;
-            font-size: 1.25rem;
-            font-weight: 900;
-            padding: 4px;
-            transition: transform var(--tr-fast);
-        }
-
-        .btn-remove-item:hover {
-            transform: scale(1.2);
-        }
-
-        .cart-footer {
-            padding: 24px;
-            border-top: 1px solid var(--border-subtle);
-            background: var(--bg-surface-elevated);
-        }
-
-        .cart-total-row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            font-size: 1.1rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-        }
-
-        .cart-total-val {
-            color: var(--brand-green);
-            font-size: 1.35rem;
-        }
-
-        .btn-checkout-wa {
-            width: 100%;
-            background: #25D366;
-            color: #000;
-            font-weight: 800;
-            font-size: 1rem;
-            padding: 16px;
-            border-radius: var(--radius-full);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            transition: all var(--tr-smooth);
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-        }
-
-        .btn-checkout-wa:hover {
-            background: #20BA56;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
-        }
-
-        /* Video modal */
+/* Video modal */
         .video-modal {
             position: fixed;
             top: 0;
@@ -1637,351 +2649,163 @@
             transform: translateY(-2px);
             box-shadow: 0 12px 30px rgba(16, 185, 129, 0.6);
         }
-
-        /* Footer */
-        .main-footer {
-            background: var(--bg-surface);
-            border-top: 1px solid var(--border-subtle);
-            padding: 60px 24px 30px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .footer-container {
-            max-width: 1320px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 48px;
-            margin-bottom: 48px;
-        }
-
-        @media (max-width: 850px) {
-            .footer-container { grid-template-columns: 1fr; gap: 32px; }
-        }
-
-        .footer-brand p {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            margin-top: 12px;
-            max-width: 380px;
-        }
-
-        .footer-social-row {
-            display: flex;
-            gap: 10px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-
-        .social-link {
-            width: 38px;
-            height: 38px;
-            border-radius: var(--radius-full);
-            background: var(--bg-surface-elevated);
-            border: 1px solid var(--border-subtle);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all var(--tr-smooth);
-            position: relative;
-        }
-
-        /* WhatsApp */
-        .social-link.wa {
-            color: #25D366;
-            background: rgba(37, 211, 102, 0.12);
-            border-color: rgba(37, 211, 102, 0.35);
-        }
-        .social-link.wa:hover {
-            background: #25D366;
-            color: #FFFFFF;
-            border-color: transparent;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 22px rgba(37, 211, 102, 0.45);
-        }
-
-        /* YouTube */
-        .social-link.yt {
-            color: #FF0000;
-            background: rgba(255, 0, 0, 0.10);
-            border-color: rgba(255, 0, 0, 0.35);
-        }
-        .social-link.yt:hover {
-            background: #FF0000;
-            color: #FFFFFF;
-            border-color: transparent;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 22px rgba(255, 0, 0, 0.45);
-        }
-
-        /* TikTok */
-        .social-link.tk {
-            color: #0F172A;
-            background: rgba(15, 23, 42, 0.08);
-            border-color: rgba(15, 23, 42, 0.25);
-        }
-        .social-link.tk svg {
-            filter: drop-shadow(-1.5px -1px 0 #25F4EE) drop-shadow(1.5px 1px 0 #FE2C55);
-        }
-        [data-theme="dark"] .social-link.tk {
-            color: #FFFFFF;
-            background: rgba(255, 255, 255, 0.10);
-            border-color: rgba(255, 255, 255, 0.25);
-        }
-        .social-link.tk:hover {
-            background: #010101;
-            color: #FFFFFF;
-            border-color: #25F4EE;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 22px rgba(37, 244, 238, 0.4), 0 0 14px rgba(254, 44, 85, 0.5);
-        }
-
-        /* Facebook */
-        .social-link.fb {
-            color: #1877F2;
-            background: rgba(24, 119, 242, 0.12);
-            border-color: rgba(24, 119, 242, 0.35);
-        }
-        .social-link.fb:hover {
-            background: #1877F2;
-            color: #FFFFFF;
-            border-color: transparent;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 22px rgba(24, 119, 242, 0.45);
-        }
-
-        /* Instagram */
-        .social-link.ig {
-            color: #E4405F;
-            background: rgba(228, 64, 95, 0.12);
-            border-color: rgba(228, 64, 95, 0.35);
-        }
-        .social-link.ig:hover {
-            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-            color: #FFFFFF;
-            border-color: transparent;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 22px rgba(220, 39, 67, 0.45);
-        }
-
-        /* LinkedIn */
-        .social-link.li {
-            color: #0A66C2;
-            background: rgba(10, 102, 194, 0.12);
-            border-color: rgba(10, 102, 194, 0.35);
-        }
-        .social-link.li:hover {
-            background: #0A66C2;
-            color: #FFFFFF;
-            border-color: transparent;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 22px rgba(10, 102, 194, 0.45);
-        }
-
-        .footer-col h4 {
-            font-family: var(--font-heading);
-            font-size: 0.95rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 18px;
-            color: var(--text-primary);
-        }
-
-        .footer-links-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .footer-links-list a {
-            font-size: 0.875rem;
-            color: var(--text-secondary);
-            transition: color var(--tr-fast);
-        }
-
-        .footer-links-list a:hover {
-            color: var(--brand-green);
-        }
-
-        .footer-bottom {
-            max-width: 1320px;
-            margin: 0 auto;
-            padding-top: 24px;
-            border-top: 1px solid var(--border-subtle);
-            text-align: center;
-            font-size: 0.825rem;
-            color: var(--text-muted);
-        }
     </style>
 </head>
 <body>
     <div class="ambient-glow"></div>
 
-    <!-- Pinned Top Header -->
-    <div class="top-nav-wrapper">
+    <!-- UNIFIED FIXED SITE HEADER (Continuous Top Ticker Marquee + Modern Responsive Navbar) -->
+<header class="fixed-site-header">
+        <!-- 1. Top Announcement Ticker with Right-to-Left Continuous Scrolling -->
         <div class="top-ticker">
-            <div class="ticker-track">
-                <span class="ticker-text">⚡ HERRAMIENTAS CONTABLES PROFESIONALES SIN PAGOS RECURRENTES NI MENSUALIDADES &bull; 100% GARANTIZADAS CON ACOMPAÑAMIENTO REMOTO PERSONALIZADO VÍA ANYDESK &bull; ATENCIÓN DIRECTA LUNES A SÁBADO 7AM-9PM &bull; DOMINGOS Y FESTIVOS 9AM-6PM &bull; WHATSAPP: +57 315 601 6386</span>
-                <span class="ticker-text">⚡ HERRAMIENTAS CONTABLES PROFESIONALES SIN PAGOS RECURRENTES NI MENSUALIDADES &bull; 100% GARANTIZADAS CON ACOMPAÑAMIENTO REMOTO PERSONALIZADO VÍA ANYDESK &bull; ATENCIÓN DIRECTA LUNES A SÁBADO 7AM-9PM &bull; DOMINGOS Y FESTIVOS 9AM-6PM &bull; WHATSAPP: +57 315 601 6386</span>
+            <div class="ticker-inner">
+                <div class="ticker-badge-col">
+                    <span class="ticker-pill">Garantía 100%</span>
+                </div>
+
+                <!-- Continuous Marquee Box (Right to Left) -->
+                <div class="ticker-marquee-box" title="Mensaje informativo WiCONTABLE">
+                    <div class="ticker-marquee-track">
+                        <div class="ticker-msg-chunk">
+                            <span class="ticker-item">⚡ <strong>WiCONTABLE:</strong> Herramientas contables profesionales sin pagos recurrentes ni suscripciones ocultas.</span>
+                            <span class="ticker-sep">✦</span>
+                            <span class="ticker-item">🛡️ Asistencia remota garantizada e instalación personalizada vía AnyDesk.</span>
+                            <span class="ticker-sep">✦</span>
+                            <span class="ticker-item">🎁 Formatos en Excel, minutas Word y guías PDF oficiales descargables 2026.</span>
+                            <span class="ticker-sep">✦</span>
+                        </div>
+                        <!-- Duplicate chunk for seamless infinite right-to-left loop -->
+                        <div class="ticker-msg-chunk" aria-hidden="true">
+                            <span class="ticker-item">⚡ <strong>WiCONTABLE:</strong> Herramientas contables profesionales sin pagos recurrentes ni suscripciones ocultas.</span>
+                            <span class="ticker-sep">✦</span>
+                            <span class="ticker-item">🛡️ Asistencia remota garantizada e instalación personalizada vía AnyDesk.</span>
+                            <span class="ticker-sep">✦</span>
+                            <span class="ticker-item">🎁 Formatos en Excel, minutas Word y guías PDF oficiales descargables 2026.</span>
+                            <span class="ticker-sep">✦</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ticker-actions">
+                    <div class="ticker-schedule">
+                        <span>⏰ Lun-Sáb 7am-9pm | Dom/Fest 9am-6pm</span>
+                    </div>
+                    <a href="https://wa.me/573156016386?text=Hola,%20soy%20cliente%20y%20requiero%20soporte." target="_blank" rel="noopener noreferrer" class="ticker-support-link" title="Contactar soporte por WhatsApp">
+                        <span>WhatsApp📲</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <a href="https://telegram.me/wicontable?text=Hola,%20soy%20cliente%20y%20requiero%20soporte." target="_blank" rel="noopener noreferrer" class="ticker-support-link ticker-tg-link" title="Contactar soporte por Telegram">
+                        <span>Telegram📲</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 11.944 0zm5.666 8.163l-1.925 9.074c-.145.641-.527.798-1.066.496l-2.955-2.18-1.426 1.374c-.157.158-.29.29-.593.29l.212-3.02 5.5-4.97c.239-.213-.052-.332-.372-.119L8.19 13.342l-2.928-.916c-.636-.2-.65-.636.133-.942l11.442-4.41c.53-.193.994.125.807 1.089z"/></svg>
+                    </a>
+                </div>
             </div>
         </div>
-        <header class="navbar">
+
+        <!-- 2. Main Navbar with Responsive Adaptive Buttons -->
+        <nav class="navbar">
             <div class="navbar-container">
-                <a href="index.html" class="brand-logo" title="Volver al Catálogo WiCONTABLE">
+                <a href="index.html" class="brand-logo" title="WiCONTABLE Inicio">
                     <img src="img/logowi.png" alt="WiCONTABLE Logo" class="logo-img">
-                    <div class="brand-name">Wi<span>CONTABLE</span></div>
+                    <div class="brand-title-group">
+                        <div class="brand-name">Wi<span>CONTABLE</span></div>
+                        <span class="brand-subtitle">Soluciones Profesionales</span>
+                    </div>
                 </a>
 
-                <nav class="nav-links">
-                    <a href="plantillas.html" class="nav-link"><span>🎁</span> Plantillas GRATIS</a>
-                    <a href="https://burly-darkness-70e.notion.site/WiCONTABLE-2ea95ee6323880ec8cbae8ba51b03831" target="_blank" rel="noopener noreferrer" class="nav-link"><span>📚</span> Repositorio</a>
-                    <a href="https://chatgpt.com/g/g-vO0tKViyq-asistente-contable-colombia" target="_blank" rel="noopener noreferrer" class="nav-link"><span>🤖</span> GPT Asistente</a>
-                    <div class="nav-dropdown" id="navDropdown">
-                        <button class="nav-dropdown-btn" onclick="toggleNavDropdown(event)">
+                <!-- Responsive Buttons List: Never cut off / Zero truncations -->
+                <div class="nav-links">
+                    <a href="plantillas.html" class="nav-link highlight">🎁 Plantillas GRATIS</a>
+                    <a href="https://burly-darkness-70e.notion.site/WiCONTABLE-2ea95ee6323880ec8cbae8ba51b03831" target="_blank" class="nav-link">📚 Repositorio</a>
+                    <a href="https://chatgpt.com/g/g-vO0tKViyq-asistente-contable-colombia" target="_blank" class="nav-link">🤖 GPT Asistente</a>
+
+                    <!-- Direct buttons visible on large desktop screens (>= 1321px) -->
+                    <a href="https://sites.google.com/view/estatuton-2024/inicio" target="_blank" class="nav-link nav-link-desktop-only">📁 Estatutón</a>
+                    <a href="https://drive.google.com/drive/folders/12Wl1oNyj58xcgi5LF3PCHAhDyjsKjV-N" target="_blank" class="nav-link nav-link-desktop-only">📝 R.U.T CIAS</a>
+                    <a href="#" onclick="showCourseNotice('Excel'); return false;" class="nav-link nav-link-desktop-only">📗 Aprende Excel</a>
+                    <a href="#" onclick="showCourseNotice('PowerBI'); return false;" class="nav-link nav-link-desktop-only">📊 Aprende PowerBI</a>
+
+                    <!-- Compact Dropdown automatically shown on medium / laptop screens (993px to 1320px) -->
+                    <div class="nav-dropdown" id="navMoreDropdown">
+                        <button class="nav-link nav-dropdown-btn" onclick="toggleNavDropdown(event)" aria-expanded="false" title="Más herramientas y recursos">
                             <span>📁 Más Recursos</span>
-                            <span class="dropdown-arrow">▾</span>
+                            <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         </button>
-                        <div class="dropdown-menu">
-                            <a href="https://sites.google.com/view/estatuton-2024/inicio" target="_blank" rel="noopener noreferrer" class="dropdown-item">
-                                <span class="dropdown-icon">📁</span>
-                                <div>
+                        <div class="nav-dropdown-menu" id="navDropdownMenu">
+                            <a href="https://sites.google.com/view/estatuton-2024/inicio" target="_blank" class="dropdown-item">
+                                <span class="dropdown-item-icon">📁</span>
+                                <div class="dropdown-item-text">
                                     <strong>Estatutón Contable</strong>
-                                    <small>Estatuto tributario online y doctrina</small>
+                                    <small>Estatuto tributario online</small>
                                 </div>
                             </a>
-                            <a href="https://drive.google.com/drive/folders/12Wl1oNyj58xcgi5LF3PCHAhDyjsKjV-N" target="_blank" rel="noopener noreferrer" class="dropdown-item">
-                                <span class="dropdown-icon">📝</span>
-                                <div>
+                            <a href="https://drive.google.com/drive/folders/12Wl1oNyj58xcgi5LF3PCHAhDyjsKjV-N" target="_blank" class="dropdown-item">
+                                <span class="dropdown-item-icon">📝</span>
+                                <div class="dropdown-item-text">
                                     <strong>R.U.T CIAS</strong>
-                                    <small>Formatos RUT para compañías en Google Drive</small>
+                                    <small>Formatos RUT para empresas</small>
                                 </div>
                             </a>
-                            <a href="#" onclick="showCourseNotice('Excel'); return false;" class="dropdown-item">
-                                <span class="dropdown-icon">📗</span>
-                                <div>
+                            <a href="#" onclick="showCourseNotice('Excel'); closeNavDropdown(); return false;" class="dropdown-item">
+                                <span class="dropdown-item-icon">📗</span>
+                                <div class="dropdown-item-text">
                                     <strong>Aprende Excel</strong>
-                                    <small>Automatización y fórmulas tributarias</small>
+                                    <small>Trucos y fórmulas contables</small>
                                 </div>
                             </a>
-                            <a href="#" onclick="showCourseNotice('PowerBI'); return false;" class="dropdown-item">
-                                <span class="dropdown-icon">📊</span>
-                                <div>
+                            <a href="#" onclick="showCourseNotice('PowerBI'); closeNavDropdown(); return false;" class="dropdown-item">
+                                <span class="dropdown-item-icon">📊</span>
+                                <div class="dropdown-item-text">
                                     <strong>Aprende PowerBI</strong>
                                     <small>Dashboards e inteligencia de datos</small>
                                 </div>
                             </a>
-                            <a href="https://www.tiktok.com/@wildersarria" target="_blank" rel="noopener noreferrer" class="dropdown-item">
-                                <span class="dropdown-icon">🎵</span>
-                                <div>
-                                    <strong>TikTok Formación</strong>
-                                    <small>Tutoriales rápidos y cápsulas contables</small>
-                                </div>
-                            </a>
                         </div>
                     </div>
-                </nav>
+                </div>
 
                 <div class="nav-actions">
-                    <button class="btn-theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Cambiar tema">
-                        <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-                        <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                    <!-- Theme Toggle Button -->
+                    <button class="btn-theme-toggle" id="themeToggleBtn" onclick="toggleTheme()" title="Cambiar a Modo Claro / Oscuro" aria-label="Cambiar Tema">
+                        <!-- Sun Icon (for dark mode) -->
+                        <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="21" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <!-- Moon Icon (for light mode) -->
+                        <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
                     </button>
-                    <button class="btn-nav-cart" onclick="openCart()" title="Abrir pedido">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-                        <span class="cart-btn-label">Pedido</span>
-                        <span class="cart-pill" id="cartCount">0</span>
+
+                    <!-- Cart Button -->
+                    <button class="btn-nav-cart" onclick="openCart()" title="Ver pedido">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                        <span class="btn-cart-text">Pedido</span>
+                        <span class="nav-cart-badge" id="navCartCount">0</span>
                     </button>
-                    <button class="btn-mobile-menu" onclick="openMobileMenu()" title="Menú">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+
+                    <!-- Mobile Hamburger Button (<= 992px) -->
+                    <button class="btn-mobile-menu" onclick="openMobileMenu()" aria-label="Abrir Menú de Navegación" title="Menú">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
                     </button>
                 </div>
             </div>
-        </header>
-    </div>
+        </nav>
+    </header>
 
-    <!-- Mobile Drawer -->
-    <div class="drawer-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
-    <aside class="mobile-nav-drawer" id="mobileDrawer">
-        <div class="mobile-nav-header">
-            <div class="brand-logo">
-                <img src="img/logowi.png" alt="WiCONTABLE" class="logo-img">
-                <div class="brand-name">Wi<span>CONTABLE</span></div>
-            </div>
-            <button class="btn-close-mobile" onclick="closeMobileMenu()">&times;</button>
-        </div>
-        <div class="mobile-nav-content">
-            <a href="index.html" class="mobile-nav-item" onclick="closeMobileMenu()">
-                <span class="mobile-nav-icon">🏠</span>
-                <div class="mobile-nav-info">
-                    <strong>Inicio Catálogo</strong>
-                    <small>Todas las soluciones disponibles</small>
-                </div>
-            </a>
-            <a href="plantillas.html" class="mobile-nav-item" onclick="closeMobileMenu()">
-                <span class="mobile-nav-icon">🎁</span>
-                <div class="mobile-nav-info">
-                    <strong>Plantillas GRATIS</strong>
-                    <small>Descargas contables sin costo</small>
-                </div>
-            </a>
-            <div class="mobile-nav-group-title">Recursos y Utilidades</div>
-            <a href="https://burly-darkness-70e.notion.site/WiCONTABLE-2ea95ee6323880ec8cbae8ba51b03831" target="_blank" class="mobile-nav-item" onclick="closeMobileMenu()">
-                <span class="mobile-nav-icon">📚</span>
-                <div class="mobile-nav-info">
-                    <strong>Repositorio Contable</strong>
-                    <small>Base oficial en Notion</small>
-                </div>
-            </a>
-            <a href="https://chatgpt.com/g/g-vO0tKViyq-asistente-contable-colombia" target="_blank" class="mobile-nav-item" onclick="closeMobileMenu()">
-                <span class="mobile-nav-icon">🤖</span>
-                <div class="mobile-nav-info">
-                    <strong>GPT Asistente Colombia</strong>
-                    <small>IA para consultas contables</small>
-                </div>
-            </a>
-            <a href="https://sites.google.com/view/estatuton-2024/inicio" target="_blank" class="mobile-nav-item" onclick="closeMobileMenu()">
-                <span class="mobile-nav-icon">📁</span>
-                <div class="mobile-nav-info">
-                    <strong>Estatutón Contable</strong>
-                    <small>Estatuto tributario online</small>
-                </div>
-            </a>
-            <a href="https://drive.google.com/drive/folders/12Wl1oNyj58xcgi5LF3PCHAhDyjsKjV-N" target="_blank" class="mobile-nav-item" onclick="closeMobileMenu()">
-                <span class="mobile-nav-icon">📝</span>
-                <div class="mobile-nav-info">
-                    <strong>R.U.T CIAS</strong>
-                    <small>Formatos RUT en Drive</small>
-                </div>
-            </a>
-            <div class="mobile-nav-group-title">Formación</div>
-            <a href="#" onclick="showCourseNotice('Excel'); closeMobileMenu(); return false;" class="mobile-nav-item">
-                <span class="mobile-nav-icon">📗</span>
-                <div class="mobile-nav-info">
-                    <strong>Aprende Excel</strong>
-                    <small>Automatización tributaria</small>
-                </div>
-            </a>
-            <a href="#" onclick="showCourseNotice('PowerBI'); closeMobileMenu(); return false;" class="mobile-nav-item">
-                <span class="mobile-nav-icon">📊</span>
-                <div class="mobile-nav-info">
-                    <strong>Aprende PowerBI</strong>
-                    <small>Dashboards contables</small>
-                </div>
-            </a>
-        </div>
-        <div class="mobile-nav-footer">
-            <div class="mobile-nav-schedule">⏰ Lun-Sáb 7am-9pm | Dom/Fest 9am-6pm</div>
-            <a href="https://wa.me/573156016386?text=Hola,%20soy%20cliente%20y%20requiero%20soporte." target="_blank" rel="noopener noreferrer" class="mobile-btn-wa">
-                <span>WhatsApp Soporte 315 6016386</span>
-            </a>
-        </div>
-    </aside>
-
-    <!-- Main Content Container -->
+    <!-- Product Detail Container -->
     <main class="detail-wrapper" id="detailRoot">
         <!-- Rendered by JS dynamically for id=11 -->
     </main>
@@ -1991,36 +2815,154 @@
         <section class="related-section">
             <h2 class="related-title">
                 <span>⚡</span>
-                <span>Otras Soluciones Disponibles</span>
+                <span>Otras Soluciones Recomendadas</span>
             </h2>
-            <div class="related-scroller" id="relatedContainer"></div>
+            <div class="related-scroller" id="relatedContainer">
+                <!-- Rendered by JS dynamically -->
+            </div>
         </section>
     </div>
 
-    <!-- Cart Drawer -->
-    <div class="drawer-overlay" id="cartOverlay" onclick="closeCart()"></div>
+    <!-- Floating Action Buttons (FABs) -->
+    <div class="cart-fab" onclick="openCart()" title="Ver pedido">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+        <div class="cart-fab-badge" id="cartFabCount">0</div>
+    </div>
+
+<a href="https://telegram.me/wicontable?text=¡Hola!%20Vengo%20de%20la%20web%20y%20tengo%20una%20consulta." target="_blank" rel="noopener noreferrer" class="tg-support-fab" title="Chat de Telegram">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 11.944 0zm5.666 8.163l-1.925 9.074c-.145.641-.527.798-1.066.496l-2.955-2.18-1.426 1.374c-.157.158-.29.29-.593.29l.212-3.02 5.5-4.97c.239-.213-.052-.332-.372-.119L8.19 13.342l-2.928-.916c-.636-.2-.65-.636.133-.942l11.442-4.41c.53-.193.994.125.807 1.089z"/></svg>
+    </a>
+
+<a href="https://wa.me/573156016386?text=¡Hola!%20Vengo%20de%20la%20web%20y%20tengo%20una%20consulta." target="_blank" class="wa-support-fab" title="Chat de WhatsApp">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.176.001 6.163 1.237 8.407 3.483 2.245 2.246 3.48 5.234 3.479 8.414-.004 6.597-5.342 11.945-11.893 11.945-1.996-.001-3.957-.503-5.69-1.462L0 24zm6.59-4.846c1.62.962 3.235 1.467 4.962 1.468 5.334 0 9.673-4.321 9.676-9.635.001-2.574-1.002-4.994-2.825-6.819C16.638 2.344 14.225 1.34 11.66 1.34 6.326 1.34 1.986 5.661 1.983 10.977c-.001 1.8.473 3.559 1.373 5.111l-.995 3.633 3.689-.967z"/></svg>
+    </a>
+
+
+
+    <!-- Slide-over Cart Drawer -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
     <aside class="cart-drawer" id="cartDrawer">
-        <div class="cart-header">
-            <div class="cart-title">
-                <span>🛒</span>
+        <div class="cart-drawer-header">
+            <div class="cart-drawer-title">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
                 <span>Mi Pedido</span>
             </div>
             <button class="btn-close-cart" onclick="closeCart()">&times;</button>
         </div>
-        <div class="cart-items-box" id="cartItemsList"></div>
-        <div class="cart-footer">
-            <div class="cart-total-row">
-                <span>Total Estimado:</span>
-                <span class="cart-total-val" id="cartTotalVal">COP $0</span>
+
+        <div class="cart-drawer-body" id="cartItems"></div>
+
+        <div class="cart-drawer-footer">
+            <div class="cart-summary-row">
+                <span class="cart-total-label">Total Aproximado:</span>
+                <span class="cart-total-value" id="cartTotalText">COP $0</span>
             </div>
             <button class="btn-checkout-wa" onclick="checkoutWhatsapp()">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.176.001 6.163 1.237 8.407 3.483 2.245 2.246 3.48 5.234 3.479 8.414-.004 6.597-5.342 11.945-11.893 11.945-1.996-.001-3.957-.503-5.69-1.462L0 24zm6.59-4.846c1.62.962 3.235 1.467 4.962 1.468 5.334 0 9.673-4.321 9.676-9.635.001-2.574-1.002-4.994-2.825-6.819C16.638 2.344 14.225 1.34 11.66 1.34 6.326 1.34 1.986 5.661 1.983 10.977c-.001 1.8.473 3.559 1.373 5.111l-.995 3.633 3.689-.967z"/></svg>
                 <span>Confirmar Pedido por WhatsApp</span>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.176.001 6.163 1.237 8.407 3.483 2.245 2.246 3.48 5.234 3.479 8.414-.004 6.597-5.342 11.945-11.893 11.945-1.996-.001-3.957-.503-5.69-1.462L0 24zm6.59-4.846c1.62.962 3.235 1.467 4.962 1.468 5.334 0 9.673-4.321 9.676-9.635.001-2.574-1.002-4.994-2.825-6.819C16.638 2.344 14.225 1.34 11.66 1.34 6.326 1.34 1.986 5.661 1.983 10.977c-.001 1.8.473 3.559 1.373 5.111l-.995 3.633 3.689-.967z"/></svg>
+            </button>
+            <button class="btn-checkout-tg" onclick="checkoutTelegram()">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 11.944 0zm5.666 8.163l-1.925 9.074c-.145.641-.527.798-1.066.496l-2.955-2.18-1.426 1.374c-.157.158-.29.29-.593.29l.212-3.02 5.5-4.97c.239-.213-.052-.332-.372-.119L8.19 13.342l-2.928-.916c-.636-.2-.65-.636.133-.942l11.442-4.41c.53-.193.994.125.807 1.089z"/></svg>
+                <span>Confirmar Pedido por Telegram</span>
             </button>
         </div>
     </aside>
 
-    <!-- Video Demonstration Modal -->
+    <!-- Mobile Navigation Drawer -->
+<div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="closeMobileMenu()"></div>
+    <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-label="Menú de Navegación">
+        <div class="mobile-nav-header">
+            <a href="index.html" class="brand-logo" onclick="closeMobileMenu()">
+                <img src="img/logowi.png" alt="WiCONTABLE" class="logo-img">
+                <div class="brand-title-group">
+                    <div class="brand-name">Wi<span>CONTABLE</span></div>
+                    <span class="brand-subtitle">Soluciones Profesionales</span>
+                </div>
+            </a>
+            <button class="btn-close-mobile-nav" onclick="closeMobileMenu()" aria-label="Cerrar Menú">&times;</button>
+        </div>
+
+        <div class="mobile-nav-body">
+            <div class="mobile-nav-group-title">Navegación Principal</div>
+            <a href="#catalogo" class="mobile-nav-item" onclick="closeMobileMenu()">
+                <span class="mobile-nav-icon">🏷️</span>
+                <div class="mobile-nav-info">
+                    <strong>Catálogo de Herramientas</strong>
+                    <small>Explorar todas las soluciones disponibles</small>
+                </div>
+            </a>
+            <a href="plantillas.html" class="mobile-nav-item highlight" onclick="closeMobileMenu()">
+                <span class="mobile-nav-icon">🎁</span>
+                <div class="mobile-nav-info">
+                    <strong>Plantillas GRATIS</strong>
+                    <small>Formatos en Excel, Word y PDF</small>
+                </div>
+                <span class="mobile-nav-badge">Gratis</span>
+            </a>
+
+            <div class="mobile-nav-group-title">Recursos y Utilidades</div>
+            <a href="https://burly-darkness-70e.notion.site/WiCONTABLE-2ea95ee6323880ec8cbae8ba51b03831" target="_blank" class="mobile-nav-item" onclick="closeMobileMenu()">
+                <span class="mobile-nav-icon">📚</span>
+                <div class="mobile-nav-info">
+                    <strong>Repositorio Contable</strong>
+                    <small>Base de conocimiento oficial en Notion</small>
+                </div>
+            </a>
+            <a href="https://chatgpt.com/g/g-vO0tKViyq-asistente-contable-colombia" target="_blank" class="mobile-nav-item" onclick="closeMobileMenu()">
+                <span class="mobile-nav-icon">🤖</span>
+                <div class="mobile-nav-info">
+                    <strong>GPT Asistente Colombia</strong>
+                    <small>IA para consultas contables y tributarias</small>
+                </div>
+            </a>
+            <a href="https://sites.google.com/view/estatuton-2024/inicio" target="_blank" class="mobile-nav-item" onclick="closeMobileMenu()">
+                <span class="mobile-nav-icon">📁</span>
+                <div class="mobile-nav-info">
+                    <strong>Estatutón Contable</strong>
+                    <small>Estatuto tributario online y doctrina</small>
+                </div>
+            </a>
+            <a href="https://drive.google.com/drive/folders/12Wl1oNyj58xcgi5LF3PCHAhDyjsKjV-N" target="_blank" class="mobile-nav-item" onclick="closeMobileMenu()">
+                <span class="mobile-nav-icon">📝</span>
+                <div class="mobile-nav-info">
+                    <strong>R.U.T CIAS</strong>
+                    <small>Formatos RUT para compañías en Google Drive</small>
+                </div>
+            </a>
+
+            <div class="mobile-nav-group-title">Formación Especializada</div>
+            <a href="#" onclick="showCourseNotice('Excel'); closeMobileMenu(); return false;" class="mobile-nav-item">
+                <span class="mobile-nav-icon">📗</span>
+                <div class="mobile-nav-info">
+                    <strong>Aprende Excel</strong>
+                    <small>Automatización y fórmulas tributarias</small>
+                </div>
+            </a>
+            <a href="#" onclick="showCourseNotice('PowerBI'); closeMobileMenu(); return false;" class="mobile-nav-item">
+                <span class="mobile-nav-icon">📊</span>
+                <div class="mobile-nav-info">
+                    <strong>Aprende PowerBI</strong>
+                    <small>Dashboards e inteligencia de datos</small>
+                </div>
+            </a>
+        </div>
+
+        <div class="mobile-nav-footer">
+            <div class="mobile-nav-schedule">
+                <span>⏰ Lun-Sáb 7am-9pm | Dom/Fest 9am-6pm</span>
+            </div>
+            <a href="https://wa.me/573156016386?text=Hola,%20soy%20cliente%20y%20requiero%20soporte." target="_blank" rel="noopener noreferrer" class="mobile-btn-wa">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.176.001 6.163 1.237 8.407 3.483 2.245 2.246 3.48 5.234 3.479 8.414-.004 6.597-5.342 11.945-11.893 11.945-1.996-.001-3.957-.503-5.69-1.462L0 24zm6.59-4.846c1.62.962 3.235 1.467 4.962 1.468 5.334 0 9.673-4.321 9.676-9.635.001-2.574-1.002-4.994-2.825-6.819C16.638 2.344 14.225 1.34 11.66 1.34 6.326 1.34 1.986 5.661 1.983 10.977c-.001 1.8.473 3.559 1.373 5.111l-.995 3.633 3.689-.967z"/></svg>
+                <span>WhatsApp Soporte 315 6016386</span>
+            </a>
+            <a href="https://telegram.me/wicontableINFO" target="_blank" rel="noopener noreferrer" class="mobile-btn-tg">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 11.944 0zm5.666 8.163l-1.925 9.074c-.145.641-.527.798-1.066.496l-2.955-2.18-1.426 1.374c-.157.158-.29.29-.593.29l.212-3.02 5.5-4.97c.239-.213-.052-.332-.372-.119L8.19 13.342l-2.928-.916c-.636-.2-.65-.636.133-.942l11.442-4.41c.53-.193.994.125.807 1.089z"/></svg>
+                <span>Telegram Soporte @wicontable</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Video Modal Player -->
     <div class="video-modal" id="videoModal">
         <div class="video-modal-box">
             <button class="btn-close-video" onclick="closeVideoModal()">&times;</button>
@@ -2029,20 +2971,21 @@
         </div>
     </div>
 
-    <!-- Course Notice Modal -->
+    <!-- Modal Notice (Cursos) -->
     <div class="modal-notice" id="noticeModal">
         <div class="modal-notice-box">
             <div class="notice-icon" id="noticeIcon">🎓</div>
             <h3 class="modal-notice-title" id="noticeTitle">Formación Especializada</h3>
             <p class="modal-notice-text" id="noticeText"></p>
-            <div style="display:flex; gap:10px; justify-content:center;">
+            <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
                 <button onclick="closeCourseNotice()" style="background:var(--bg-surface-elevated); color:var(--text-primary); padding:10px 20px; border-radius:var(--radius-full); font-weight:700;">Cerrar</button>
-                <a id="noticeWaBtn" href="#" target="_blank" style="background:#25D366; color:#000; padding:10px 20px; border-radius:var(--radius-full); font-weight:800; display:inline-flex; align-items:center; gap:6px;">Consultar Cupo</a>
+                <a id="noticeWaBtn" href="#" target="_blank" style="background:#25D366; color:#000; padding:10px 20px; border-radius:var(--radius-full); font-weight:800; display:inline-flex; align-items:center; gap:6px;">WhatsApp Cupo</a>
+                <a href="https://telegram.me/wicontable" target="_blank" rel="noopener noreferrer" style="background:#0088cc; color:#fff; padding:10px 20px; border-radius:var(--radius-full); font-weight:800; display:inline-flex; align-items:center; gap:6px;">Telegram Cupo</a>
             </div>
         </div>
     </div>
 
-    <!-- Modal Aviso Importante -->
+    <!-- Modal Aviso Importante (Revisar detalles antes de comprar) -->
     <div class="product-notice-overlay" id="productNoticeOverlay">
         <div class="product-notice-modal">
             <div class="product-notice-header">
@@ -2059,91 +3002,96 @@
     </div>
 
     <!-- Main Footer -->
-    <footer class="main-footer">
+<footer class="main-footer">
         <div class="footer-container">
             <div class="footer-brand">
-                <div class="brand-logo">
-                    <img src="img/logowi.png" alt="WiCONTABLE Logo" class="logo-img">
-                    <div class="brand-name">Wi<span>CONTABLE</span></div>
-                </div>
-                <p>Herramientas y automatizaciones contables de alta precisión. Diseñadas para simplificar tareas repetitivas y maximizar tu productividad tributaria en Colombia.</p>
-                <div class="footer-social-row">
-                    <a href="https://whatsapp.com/channel/0029Va4o0RV2f3ENoTURyU40" target="_blank" rel="noopener noreferrer" class="social-link wa" title="Canal WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.176.001 6.163 1.237 8.407 3.483 2.245 2.246 3.48 5.234 3.479 8.414-.004 6.597-5.342 11.945-11.893 11.945-1.996-.001-3.957-.503-5.69-1.462L0 24zm6.59-4.846c1.62.962 3.235 1.467 4.962 1.468 5.334 0 9.673-4.321 9.676-9.635.001-2.574-1.002-4.994-2.825-6.819C16.638 2.344 14.225 1.34 11.66 1.34 6.326 1.34 1.986 5.661 1.983 10.977c-.001 1.8.473 3.559 1.373 5.111l-.995 3.633 3.689-.967z"/></svg></a>
-                    <a href="https://chat.whatsapp.com/FvYIDsoo7NR7PLwtd0Vhwv" target="_blank" rel="noopener noreferrer" class="social-link wa" title="Grupo WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 0 0-10.4 18l-1.6 6 6.1-1.6A12 12 0 1 0 12 0z"/></svg></a>
-                    <a href="https://www.youtube.com/@wildersarriahernandez" target="_blank" rel="noopener noreferrer" class="social-link yt" title="YouTube Wilder"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
-                    <a href="https://www.youtube.com/@wicontable" target="_blank" rel="noopener noreferrer" class="social-link yt" title="YouTube WiCONTABLE"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
-                    <a href="https://www.tiktok.com/@wildersarriahernandez" target="_blank" rel="noopener noreferrer" class="social-link tk" title="TikTok"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.9-.32-1.98-.23-2.81.33-.85.51-1.44 1.42-1.58 2.4-.11.68-.03 1.37.18 2.03.35.81 1.05 1.48 1.88 1.76.71.21 1.48.21 2.19.04 1.02-.14 1.98-.77 2.56-1.6.43-.59.66-1.31.71-2.04.08-3.38.03-6.76.04-10.14z"/></svg></a>
-                    <a href="https://www.facebook.com/wicontable" target="_blank" rel="noopener noreferrer" class="social-link fb" title="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-                    <a href="https://www.instagram.com/wicontable/" target="_blank" rel="noopener noreferrer" class="social-link ig" title="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
-                    <a href="https://www.linkedin.com/in/wildersarriahernandez" target="_blank" rel="noopener noreferrer" class="social-link li" title="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+                <a href="index.html" class="brand-logo" style="margin-bottom: 16px;">
+                    <img src="img/logowi.png" alt="WiCONTABLE" class="logo-img">
+                    <div class="brand-title-group">
+                        <div class="brand-name">Wi<span>CONTABLE</span></div>
+                        <span class="brand-subtitle">Wilder Sarria Hernández</span>
+                    </div>
+                </a>
+                <p>Somos tu mejor aliado para automatizar procesos, ahorrar tiempo y optimizar tu gestión tributaria con herramientas contables 100% garantizadas.</p>
+                <div class="social-buttons-row">
+                    <a href="https://whatsapp.com/channel/0029Va4o0RV2f3ENoTURyU40" class="social-icon-btn wa" target="_blank" title="Canal de WhatsApp"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.176.001 6.163 1.237 8.407 3.483 2.245 2.246 3.48 5.234 3.479 8.414-.004 6.597-5.342 11.945-11.893 11.945-1.996-.001-3.957-.503-5.69-1.462L0 24zm6.59-4.846c1.62.962 3.235 1.467 4.962 1.468 5.334 0 9.673-4.321 9.676-9.635.001-2.574-1.002-4.994-2.825-6.819C16.638 2.344 14.225 1.34 11.66 1.34 6.326 1.34 1.986 5.661 1.983 10.977c-.001 1.8.473 3.559 1.373 5.111l-.995 3.633 3.689-.967z"/></svg></a>
+                    <a href="https://chat.whatsapp.com/FvYIDsoo7NR7PLwtd0Vhwv" class="social-icon-btn wa" target="_blank" title="Grupo WhatsApp"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 0 0-10.4 18l-1.6 6 6.1-1.6A12 12 0 1 0 12 0z"/></svg></a>
+                    <a href="https://www.youtube.com/@wildersarriahernandez" class="social-icon-btn yt" target="_blank" title="YouTube Wilder"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                    <a href="https://www.youtube.com/@wicontable" class="social-icon-btn yt" target="_blank" title="YouTube WiCONTABLE"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                    <a href="https://www.tiktok.com/@wildersarriahernandez" class="social-icon-btn tk" target="_blank" title="TikTok"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.9-.32-1.98-.23-2.81.33-.85.51-1.44 1.42-1.58 2.4-.11.68-.03 1.37.18 2.03.35.81 1.05 1.48 1.88 1.76.71.21 1.48.21 2.19.04 1.02-.14 1.98-.77 2.56-1.6.43-.59.66-1.31.71-2.04.08-3.38.03-6.76.04-10.14z"/></svg></a>
+                    <a href="https://www.facebook.com/wicontable" class="social-icon-btn fb" target="_blank" title="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                    <a href="https://www.instagram.com/wicontable/" class="social-icon-btn ig" target="_blank" title="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+                    <a href="https://www.linkedin.com/in/wildersarriahernandez" class="social-icon-btn li" target="_blank" title="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+                    <a href="https://telegram.me/wicontableINFO" class="social-icon-btn tg" target="_blank" title="Telegram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 11.944 0zm5.666 8.163l-1.925 9.074c-.145.641-.527.798-1.066.496l-2.955-2.18-1.426 1.374c-.157.158-.29.29-.593.29l.212-3.02 5.5-4.97c.239-.213-.052-.332-.372-.119L8.19 13.342l-2.928-.916c-.636-.2-.65-.636.133-.942l11.442-4.41c.53-.193.994.125.807 1.089z"/></svg></a>
                 </div>
             </div>
-            
-            <div class="footer-col">
-                <h4>Atención & Soporte</h4>
-                <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 12px;">
-                    Lunes a Sábado: 7:00 AM – 9:00 PM<br>
-                    Domingos y Festivos: 9:00 AM – 6:00 PM
-                </p>
-                <p style="font-size: 0.875rem; color: var(--text-secondary);">
-                    WhatsApp Asistencia:<br>
-                    <a href="https://wa.me/573156016386" target="_blank" style="color:var(--brand-green); font-weight:700;">+57 315 601 6386</a>
-                </p>
+
+            <div class="footer-column">
+                <h4>Comunidad & IA</h4>
+                <ul class="footer-links-list">
+                    <li><a href="https://chatgpt.com/g/g-vO0tKViyq-asistente-contable-colombia" target="_blank">GPT Asistente Contable</a></li>
+                    <li><a href="https://whatsapp.com/channel/0029Va4o0RV2f3ENoTURyU40" target="_blank">Canal de Noticias WhatsApp</a></li>
+                    <li><a href="https://chat.whatsapp.com/FvYIDsoo7NR7PLwtd0Vhwv" target="_blank">Grupo de Colegas WhatsApp</a></li>
+                    <li><a href="https://telegram.me/wicontableINFO" target="_blank">Canal Oficial Telegram</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Atención & Contacto</h4>
+                <div class="footer-contact-info">
+                    <div class="contact-entry">
+                        <span class="contact-label">WhatsApp / Telegram:</span>
+                        <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center;">
+                            <a href="https://wa.me/573156016386" target="_blank" class="contact-phone">+57 315 6016386</a>
+                            <span style="color:var(--text-muted);">|</span>
+                            <a href="https://telegram.me/wicontable" target="_blank" class="contact-phone" style="color:#0088cc;">@wicontable</a>
+                        </div>
+                    </div>
+                    <div class="contact-entry">
+                        <span class="contact-label">Horario de Soporte:</span>
+                        <span class="contact-schedule">Lun a Sáb: 7:00 am - 9:00 pm</span>
+                        <span class="contact-schedule">Dom y Festivos: 9:00 am - 6:00 pm</span>
+                    </div>
+                </div>
             </div>
         </div>
+
         <div class="footer-bottom">
-            <p>© 2026 WiCONTABLE &bull; Desarrollado por Wilder Sarria Hernández &bull; Cali, Colombia</p>
+            <p>© 2026 WiCONTABLE &bull; Desarrollado para la comunidad contable de Colombia.</p>
+            <p>Todos los derechos reservados.</p>
         </div>
     </footer>
 
     <!-- Scripts -->
     <script src="productos.js"></script>
     <script>
+
+        /* ==========================================================================
+           1. THEME SWITCHER (DARK / LIGHT LUXE)
+           ========================================================================== */
+        const htmlEl = document.documentElement;
+        const savedTheme = localStorage.getItem('wicontable_theme') || 'light';
+        htmlEl.setAttribute('data-theme', savedTheme);
+
+        function toggleTheme() {
+            const current = htmlEl.getAttribute('data-theme');
+            const next = current === 'dark' ? 'light' : 'dark';
+            htmlEl.setAttribute('data-theme', next);
+            localStorage.setItem('wicontable_theme', next);
+        }
+
+        /* ==========================================================================
+           2. PRODUCT DETAIL STATE & CONFIG
+           ========================================================================== */
         const currentProductId = 11;
         let currentSlide = 0;
         let totalSlides = 1;
         let cart = JSON.parse(localStorage.getItem('wicontable_cart')) || [];
 
-        // 1. Initialize Detail Page
-        document.addEventListener('DOMContentLoaded', () => {
-            initTheme();
-            updateCartUI();
-
-            if (typeof productos === 'undefined') {
-                document.getElementById('detailRoot').innerHTML = `
-                    <div style="text-align:center; padding: 60px 20px;">
-                        <h2>⚠️ Error cargando datos</h2>
-                        <p>No se encontró la lista de productos.</p>
-                        <a href="index.html" style="color:var(--brand-green); font-weight:bold;">Volver al Catálogo</a>
-                    </div>
-                `;
-                return;
-            }
-
-            // Find product by hardcoded currentProductId or fallback
-            let p = productos.find(item => item.id === currentProductId);
-            if (!p) {
-                const urlParams = new URLSearchParams(window.location.search);
-                const qId = parseInt(urlParams.get('id'));
-                if (qId) p = productos.find(item => item.id === qId);
-            }
-
-            if (!p) {
-                document.getElementById('detailRoot').innerHTML = `
-                    <div style="text-align:center; padding: 80px 20px;">
-                        <h2 style="font-size:1.8rem; margin-bottom:12px;">Solución no encontrada</h2>
-                        <p style="color:var(--text-secondary); margin-bottom:24px;">Esta herramienta fue actualizada o movida en el catálogo.</p>
-                        <a href="index.html" style="display:inline-block; background:var(--brand-gradient); color:#042f2e; padding:12px 24px; border-radius:var(--radius-full); font-weight:800;">Explorar Catálogo Completo</a>
-                    </div>
-                `;
-                return;
-            }
-
-            renderProduct(p);
-            renderRelated(p.id);
-        });
-
-        function getYouTubeId(url) {
+        /* ==========================================================================
+           3. PRODUCT RENDERING & SLIDER LOGIC (PRESERVED 100%)
+           ========================================================================== */
+function getYouTubeId(url) {
             if (!url) return null;
             const match = url.match(/^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/);
             return (match && match[2].length === 11) ? match[2] : null;
@@ -2276,7 +3224,13 @@
                             <a href="https://wa.me/?text=Mira%20esta%20herramienta%20contable:%20*${encodeURIComponent(p.nombre)}*%20${encodeURIComponent(window.location.href)}" target="_blank" class="tech-chip-action">
                                 <span>📲 Compartir en WhatsApp</span>
                             </a>
+                            <a href="https://telegram.me/wicontable" target="_blank" rel="noopener noreferrer" class="tech-chip-action tech-chip-tg">
+                                <span>✈️ Telegram</span>
+                            </a>
                             ${videoBtnHTML}
+                            <button type="button" onclick="openProductNotice()" class="tech-chip-action" title="Leer aviso importante del producto">
+                                <span>⚠️ Aviso Importante</span>
+                            </button>
                             <div class="tech-chip-action" style="cursor:default;">
                                 <span>💻 Formato: ${formatText}</span>
                             </div>
@@ -2290,12 +3244,21 @@
                             <div class="cta-buttons-row">
                                 ${isAgotado ? `
                                     <button class="btn-add-cart-large" style="background:var(--bg-surface-elevated); color:var(--text-muted); cursor:not-allowed;" disabled>No Disponible</button>
+                                    <a href="https://wa.me/573156016386?text=¡Hola!%20Deseo%20consultar%20sobre%20${encodeURIComponent(p.nombre)}" target="_blank" class="btn-wa-direct">
+                                        <span>Preguntar a Wilder</span>
+                                    </a>
+                                    <a href="https://telegram.me/wicontable" target="_blank" rel="noopener noreferrer" class="btn-tg-direct">
+                                        <span>Preguntar en Telegram</span>
+                                    </a>
                                 ` : `
                                     <button class="btn-add-cart-large" onclick="addToCart(${p.id})">
                                         <span>🛒 Añadir al Pedido</span>
                                     </button>
                                     <a href="https://wa.me/573156016386?text=¡Hola!%20Deseo%20adquirir%20la%20herramienta%20${encodeURIComponent(p.nombre)}" target="_blank" class="btn-wa-direct">
                                         <span>Preguntar a Wilder</span>
+                                    </a>
+                                    <a href="https://telegram.me/wicontable" target="_blank" rel="noopener noreferrer" class="btn-tg-direct">
+                                        <span>Preguntar en Telegram</span>
                                     </a>
                                 `}
                             </div>
@@ -2440,9 +3403,12 @@
         }
 
         // 2. Shopping Cart Logic
+        /* ==========================================================================
+           4. SHOPPING CART ENGINE (SYNCHRONIZED WITH INDEX.HTML)
+           ========================================================================== */
         function parsePrice(str) {
             const num = String(str || "").replace(/\D/g, '');
-            return num ? parseInt(num, 10) : 0;
+            return parseInt(num, 10) || 0;
         }
 
         function addToCart(id) {
@@ -2457,6 +3423,7 @@
                     id: prod.id,
                     nombre: prod.nombre,
                     precio: prod.precio,
+                    fotos: prod.fotos,
                     cantidad: 1
                 });
             }
@@ -2466,85 +3433,178 @@
             openCart();
         }
 
+        function updateCartQty(id, delta) {
+            const item = cart.find(i => i.id === id);
+            if (!item) return;
+            item.cantidad += delta;
+            if (item.cantidad <= 0) {
+                cart = cart.filter(i => i.id !== id);
+            }
+            localStorage.setItem('wicontable_cart', JSON.stringify(cart));
+            updateCartUI();
+        }
+
         function removeFromCart(id) {
-            cart = cart.filter(item => item.id !== id);
+            cart = cart.filter(i => i.id !== id);
             localStorage.setItem('wicontable_cart', JSON.stringify(cart));
             updateCartUI();
         }
 
         function openCart() {
-            document.getElementById('cartDrawer').classList.add('active');
-            document.getElementById('cartOverlay').classList.add('active');
+            const drawer = document.getElementById('cartDrawer');
+            const overlay = document.getElementById('cartOverlay');
+            if (drawer) drawer.classList.add('active');
+            if (overlay) overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
         }
 
         function closeCart() {
-            document.getElementById('cartDrawer').classList.remove('active');
-            document.getElementById('cartOverlay').classList.remove('active');
+            const drawer = document.getElementById('cartDrawer');
+            const overlay = document.getElementById('cartOverlay');
+            if (drawer) drawer.classList.remove('active');
+            if (overlay) overlay.classList.remove('active');
+            document.body.style.overflow = '';
         }
 
         function updateCartUI() {
-            const countPills = document.querySelectorAll('#cartCount');
-            const totalCount = cart.reduce((acc, item) => acc + item.cantidad, 0);
-            countPills.forEach(p => p.innerText = totalCount);
+            const totalCount = cart.reduce((sum, item) => sum + item.cantidad, 0);
+            const navCartCount = document.getElementById('navCartCount');
+            const cartFabCount = document.getElementById('cartFabCount');
+            if (navCartCount) navCartCount.innerText = totalCount;
+            if (cartFabCount) cartFabCount.innerText = totalCount;
 
-            const list = document.getElementById('cartItemsList');
-            const totalVal = document.getElementById('cartTotalVal');
-            if (!list || !totalVal) return;
+            const itemsContainer = document.getElementById('cartItems');
+            const totalText = document.getElementById('cartTotalText');
+            if (!itemsContainer || !totalText) return;
 
             if (cart.length === 0) {
-                list.innerHTML = `
-                    <div style="text-align: center; padding: 40px 10px; color: var(--text-muted);">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin-bottom: 8px; opacity: 0.5;"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-                        <p style="font-size: 0.95rem; font-weight: 600;">Tu pedido está vacío.</p>
-                        <p style="font-size: 0.8rem;">Selecciona herramientas del catálogo para añadirlas.</p>
+                itemsContainer.innerHTML = `
+                    <div class="cart-empty-state">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                        <p style="font-size: 1.1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 6px;">Tu pedido está vacío</p>
+                        <p style="font-size: 0.85rem;">Explora el catálogo y añade las herramientas que necesites.</p>
                     </div>`;
-                totalVal.innerText = 'COP $0';
+                totalText.innerText = 'COP $0';
                 return;
             }
 
-            list.innerHTML = '';
-            let sum = 0;
-            cart.forEach(item => {
-                const num = parsePrice(item.precio);
-                sum += num * item.cantidad;
+            itemsContainer.innerHTML = '';
+            let totalAmount = 0;
 
-                const row = document.createElement('div');
-                row.className = 'cart-item-row';
-                row.innerHTML = `
-                    <div class="cart-item-info">
-                        <strong>${item.nombre}</strong>
-                        <span>${item.cantidad} x ${item.precio}</span>
+            cart.forEach(item => {
+                const numericPrice = parsePrice(item.precio);
+                totalAmount += numericPrice * item.cantidad;
+                const safeImg = (item.fotos && item.fotos.length > 0) ? item.fotos[0] : 'img/logowi.png';
+
+                itemsContainer.innerHTML += `
+                    <div class="cart-item">
+                        <img src="${safeImg}" alt="${item.nombre}" class="cart-item-img">
+                        <div class="cart-item-details">
+                            <div class="cart-item-title">${item.nombre}</div>
+                            <div class="cart-item-price">${item.precio}</div>
+                            <div class="cart-qty-controls">
+                                <button class="btn-qty" onclick="updateCartQty(${item.id}, -1)">-</button>
+                                <span class="cart-qty-val">${item.cantidad}</span>
+                                <button class="btn-qty" onclick="updateCartQty(${item.id}, 1)">+</button>
+                            </div>
+                        </div>
+                        <button class="btn-remove-item" onclick="removeFromCart(${item.id})" title="Eliminar">&times;</button>
                     </div>
-                    <button class="btn-remove-item" onclick="removeFromCart(${item.id})" title="Quitar item">&times;</button>
                 `;
-                list.appendChild(row);
             });
 
-            totalVal.innerText = `COP $${sum.toLocaleString('es-CO')}`;
+            totalText.innerText = `COP $${totalAmount.toLocaleString('es-CO')}`;
         }
 
         function checkoutWhatsapp() {
             if (cart.length === 0) {
-                alert('Añade alguna herramienta o solución antes de confirmar tu pedido.');
+                alert("Agrega herramientas a tu pedido primero.");
                 return;
             }
 
-            let text = "¡Hola Wilder! 👋 Vengo de la tienda web de *WiCONTABLE* y quiero confirmar el siguiente pedido:\n\n";
-            let sum = 0;
+            let msg = "¡Hola Wilder! 👋 Vengo de tu catálogo web WiCONTABLE y deseo confirmar el siguiente pedido:\n\n";
+            let totalAmount = 0;
 
             cart.forEach(item => {
-                const num = parsePrice(item.precio);
-                sum += num * item.cantidad;
-                text += `🔸 *${item.cantidad}x* ${item.nombre} - ${item.precio}\n`;
+                const numericPrice = parsePrice(item.precio);
+                totalAmount += numericPrice * item.cantidad;
+                msg += `🔸 *${item.cantidad}x* ${item.nombre} (${item.precio})\n`;
             });
 
-            text += `\n💵 *TOTAL ESTIMADO: COP $${sum.toLocaleString('es-CO')}*\n\n¿Cuáles son las opciones de pago (Bancolombia, Nequi, Binance) para coordinar la instalación?`;
+            msg += `\n*TOTAL ESTIMADO: COP $${totalAmount.toLocaleString('es-CO')}*\n\n¿A qué medio de pago puedo transferir para coordinar la instalación y entrega?`;
 
-            const url = `https://wa.me/573156016386?text=${encodeURIComponent(text)}`;
-            window.open(url, '_blank');
+            const phone = typeof miTelefono !== 'undefined' ? miTelefono : '573156016386';
+            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank');
         }
 
-                // 3. Modals & Interactivity
+        function checkoutTelegram() {
+            if (cart.length === 0) {
+                alert("Agrega herramientas a tu pedido primero.");
+                return;
+            }
+
+            let msg = "¡Hola Wilder! 👋 Vengo de tu catálogo web WiCONTABLE y deseo confirmar el siguiente pedido:\n\n";
+            let totalAmount = 0;
+
+            cart.forEach(item => {
+                const numericPrice = parsePrice(item.precio);
+                totalAmount += numericPrice * item.cantidad;
+                msg += `🔸 *${item.cantidad}x* ${item.nombre} (${item.precio})\n`;
+            });
+
+            msg += `\n*TOTAL ESTIMADO: COP $${totalAmount.toLocaleString('es-CO')}*\n\n¿A qué medio de pago puedo transferir para coordinar la instalación y entrega?`;
+
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(msg).catch(() => {});
+            }
+            const tg = typeof miTelegram !== 'undefined' ? miTelegram : 'https://telegram.me/wicontable';
+            window.open(tg, '_blank');
+        }
+
+        /* ==========================================================================
+           5. RESPONSIVE DROPDOWN & MOBILE MENU HANDLERS
+           ========================================================================== */
+        function toggleNavDropdown(e) {
+            if (e) e.stopPropagation();
+            const menu = document.getElementById('navDropdownMenu');
+            const dropdown = document.getElementById('navMoreDropdown');
+            if (menu) {
+                const isOpen = menu.classList.contains('show');
+                menu.classList.toggle('show', !isOpen);
+                if (dropdown) dropdown.classList.toggle('active', !isOpen);
+            }
+        }
+
+        function closeNavDropdown() {
+            const menu = document.getElementById('navDropdownMenu');
+            const dropdown = document.getElementById('navMoreDropdown');
+            if (menu) menu.classList.remove('show');
+            if (dropdown) dropdown.classList.remove('active');
+        }
+
+        function openMobileMenu() {
+            const drawer = document.getElementById('mobileNavDrawer');
+            const overlay = document.getElementById('mobileNavOverlay');
+            if (drawer && overlay) {
+                drawer.classList.add('open');
+                overlay.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeMobileMenu() {
+            const drawer = document.getElementById('mobileNavDrawer');
+            const overlay = document.getElementById('mobileNavOverlay');
+            if (drawer && overlay) {
+                drawer.classList.remove('open');
+                overlay.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+        }
+
+        /* ==========================================================================
+           6. MODALS: VIDEO, COURSE NOTICE & PRODUCT NOTICE
+           ========================================================================== */
         function openVideoModal(ytId, localMp4, ytUrl) {
             const modal = document.getElementById('videoModal');
             const container = document.getElementById('videoContainer');
@@ -2563,7 +3623,7 @@
             if (footer) {
                 if (ytUrl && ytUrl.trim() !== '') {
                     footer.style.display = 'flex';
-                    footer.innerHTML = `<a href="${ytUrl}" target="_blank" rel="noopener noreferrer" class="btn-yt-modal-cta">Ver de forma estable en YouTube</a>`;
+                    footer.innerHTML = `<a href="${ytUrl}" target="_blank" rel="noopener noreferrer" class="btn-yt-modal-cta">Ver en YouTube Oficial</a>`;
                 } else {
                     footer.style.display = 'none';
                     footer.innerHTML = '';
@@ -2599,6 +3659,8 @@
             const btn = document.getElementById('noticeWaBtn');
             const icon = document.getElementById('noticeIcon');
 
+            if (!modal) return;
+
             if (type === 'Excel') {
                 icon.innerText = '📗';
                 title.innerText = 'Curso Práctico de Excel Contable';
@@ -2606,11 +3668,10 @@
                 btn.href = 'https://wa.me/573156016386?text=¡Hola%20Wilder!%20Me%20interesa%20información%20del%20curso%20de%20Excel%20Contable.';
             } else {
                 icon.innerText = '📊';
-                title.innerText = 'Curso de PowerBI para Contadores';
-                text.innerText = 'Construye dashboards financieros interactivos, análisis de costos en tiempo real y reportería gerencial impactante.';
-                btn.href = 'https://wa.me/573156016386?text=¡Hola%20Wilder!%20Me%20interesa%20información%20del%20curso%20de%20PowerBI%20Financiero.';
+                title.innerText = 'Curso Intensivo de PowerBI';
+                text.innerText = 'Construye tableros gerenciales, balances interactivos y automatiza la extracción de datos desde sistemas contables.';
+                btn.href = 'https://wa.me/573156016386?text=¡Hola%20Wilder!%20Me%20interesa%20información%20del%20curso%20de%20PowerBI%20para%20Contadores.';
             }
-
             modal.classList.add('active');
         }
 
@@ -2619,7 +3680,6 @@
             if (modal) modal.classList.remove('active');
         }
 
-        // 3.1 Aviso Importante Modal
         function openProductNotice() {
             const overlay = document.getElementById('productNoticeOverlay');
             if (overlay) {
@@ -2636,59 +3696,86 @@
             }
         }
 
-        // Mostrar aviso importante automáticamente al ingresar al producto
-        window.addEventListener('DOMContentLoaded', () => {
-            setTimeout(openProductNotice, 250);
+        /* ==========================================================================
+           7. LIFECYCLE & DOM EVENT LISTENERS
+           ========================================================================== */
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCartUI();
+
+            if (typeof productos === 'undefined') {
+                const root = document.getElementById('detailRoot');
+                if (root) {
+                    root.innerHTML = `<div style="text-align:center; padding:60px 20px; color:var(--text-muted);">
+                        <p>Error cargando la base de datos de productos.</p>
+                        <a href="index.html" style="color:var(--brand-green); font-weight:700;">Volver al Catálogo</a>
+                    </div>`;
+                }
+                return;
+            }
+
+            let p = productos.find(item => item.id === currentProductId);
+            const urlParams = new URLSearchParams(window.location.search);
+            const qId = parseInt(urlParams.get('id'));
+            if (!isNaN(qId)) {
+                const customP = productos.find(item => item.id === qId);
+                if (customP) p = customP;
+            }
+
+            if (!p) {
+                const root = document.getElementById('detailRoot');
+                if (root) {
+                    root.innerHTML = `<div style="text-align:center; padding:60px 20px; color:var(--text-muted);">
+                        <h2>Producto no encontrado</h2>
+                        <p style="margin:16px 0;">La herramienta seleccionada no existe o fue retirada.</p>
+                        <a href="index.html" style="display:inline-block; background:var(--brand-green); color:#000; padding:12px 24px; border-radius:var(--radius-full); font-weight:800;">Ver Catálogo Completo</a>
+                    </div>`;
+                }
+                return;
+            }
+
+            renderProduct(p);
+            renderRelated(p.id);
         });
 
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
+        // Close dropdown & modals when clicking outside
+        document.addEventListener('click', (e) => {
+            const dropdown = document.getElementById('navMoreDropdown');
+            if (dropdown && !dropdown.contains(e.target)) {
+                closeNavDropdown();
+            }
+
+            const overlay = document.getElementById('productNoticeOverlay');
+            if (e.target === overlay) {
                 closeProductNotice();
+            }
+
+            const videoMod = document.getElementById('videoModal');
+            if (e.target === videoMod) {
                 closeVideoModal();
+            }
+
+            const noticeMod = document.getElementById('noticeModal');
+            if (e.target === noticeMod) {
+                closeCourseNotice();
             }
         });
 
-        document.addEventListener('click', (e) => {
-            const overlay = document.getElementById('productNoticeOverlay');
-            if (e.target === overlay) closeProductNotice();
-            const videoMod = document.getElementById('videoModal');
-            if (e.target === videoMod) closeVideoModal();
+        // Keyboard navigation (Escape to close, Arrows for carousel)
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeNavDropdown();
+                closeMobileMenu();
+                closeCart();
+                closeVideoModal();
+                closeProductNotice();
+                closeCourseNotice();
+            } else if (e.key === 'ArrowLeft') {
+                moveSlide(-1);
+            } else if (e.key === 'ArrowRight') {
+                moveSlide(1);
+            }
         });
 
-        // 4. Mobile Menu
-        function openMobileMenu() {
-            document.getElementById('mobileDrawer').classList.add('active');
-            document.getElementById('mobileOverlay').classList.add('active');
-        }
-
-        function closeMobileMenu() {
-            document.getElementById('mobileDrawer').classList.remove('active');
-            document.getElementById('mobileOverlay').classList.remove('active');
-        }
-
-        // 5. Dropdown
-        function toggleNavDropdown(e) {
-            e.stopPropagation();
-            document.getElementById('navDropdown').classList.toggle('active');
-        }
-
-        document.addEventListener('click', () => {
-            const drop = document.getElementById('navDropdown');
-            if (drop) drop.classList.remove('active');
-        });
-
-        // 6. Dark / Light Theme Toggle
-        function initTheme() {
-            const saved = localStorage.getItem('wicontable_theme') || 'dark';
-            document.documentElement.setAttribute('data-theme', saved);
-        }
-
-        function toggleTheme() {
-            const current = document.documentElement.getAttribute('data-theme') || 'dark';
-            const next = current === 'dark' ? 'light' : 'dark';
-            document.documentElement.setAttribute('data-theme', next);
-            localStorage.setItem('wicontable_theme', next);
-        }
     </script>
 </body>
 </html>

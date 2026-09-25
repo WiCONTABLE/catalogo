@@ -18,9 +18,9 @@ etiqueta: "DISPONIBLE",
         "Acompañamiento paso a paso para evitar errores y validar el trámite con éxito."
     ],
     nota: "El valor del servicio puede variar según el estado de la cuenta en el portal de la DIAN o la cantidad de modificaciones requeridas. <br><br><b>¡Contáctanos para gestionar tu trámite de forma rápida y segura!</b>",
-        precio: "COP $50.000",
+        precio: "COP $60.000",
         video: "",
-        fotos: ["img/p13-0.png", "img/p13-1.png", "img/p13-2.png", "img/p13-3.png", "img/p13-4.png"]
+        fotos: ["img/.png", "img/p13-1.png", "img/p13-2.png", "img/p13-3.png", "img/p13-4.png"]
     },  
     {
         id: 11,

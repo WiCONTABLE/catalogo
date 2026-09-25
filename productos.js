@@ -12,8 +12,8 @@ etiqueta: "DISPONIBLE",
         desc: "Facilitamos la gestión y formalización de tus trámites ante la DIAN, garantizando la actualización de tu RUT, el restablecimiento de contraseñas y la activación de tu firma electrónica para cumplir con tus obligaciones sin complicaciones.",
     caracteristicas: [
         "Descarga copia del RUT solo con #cedula (Persona Natural).",
-        "Gestión de contraseña vencida y restablecimiento seguro de acceso al portal.",
-        "Generación y activación de la Firma Electrónica (Firma Digital) en línea.",
+        "Gestión de contraseña vencida y restablecimiento aunque no tengas como acceder al correo registrado ó Móvil.",
+        "Generación y activación de la Firma Electrónica (Firma Digital).",
         "Actualización integral de datos en el RUT (actividad económica, ubicación y responsabilidades).",
         "Acompañamiento paso a paso para evitar errores y validar el trámite con éxito."
     ],

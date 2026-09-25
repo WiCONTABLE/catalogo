@@ -3,6 +3,26 @@ const miTelegram = "https://telegram.me/wicontable";
 
 const productos = [
     {
+        id: 13,
+        nombre: "Trámites Digitales (DIAN)",
+        url: "tramites-pn.html",
+        formato: "Consultoria Contable",
+        mostrarTecnica: false,
+etiqueta: "DISPONIBLE",
+        desc: "Facilitamos la gestión y formalización de tus trámites ante la DIAN, garantizando la actualización de tu RUT, el restablecimiento de contraseñas y la activación de tu firma electrónica para cumplir con tus obligaciones sin complicaciones.",
+    caracteristicas: [
+        "Descarga y obtención de copia del RUT actualizada (Persona Natural).",
+        "Gestión de contraseña vencida y restablecimiento seguro de acceso al portal.",
+        "Generación y activación de la Firma Electrónica (Firma Digital) en línea.",
+        "Actualización integral de datos en el RUT (actividad económica, ubicación y responsabilidades).",
+        "Acompañamiento paso a paso para evitar errores y validar el trámite con éxito."
+    ],
+    nota: "El valor del servicio puede variar según el estado de la cuenta en el portal de la DIAN o la cantidad de modificaciones requeridas. <br><br><b>¡Contáctanos para gestionar tu trámite de forma rápida y segura!</b>",
+        precio: "COP $50.000",
+        video: "",
+        fotos: ["img/p13-0.png", "img/p13-1.png", "img/p13-2.png", "img/p13-3.png", "img/p13-4.png"]
+    },  
+    {
         id: 11,
         nombre: "Declaración de Renta Persona Natural",
         url: "declaracion-renta-pn.html",

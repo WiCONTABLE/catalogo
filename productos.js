@@ -11,7 +11,7 @@ const productos = [
 etiqueta: "DISPONIBLE",
         desc: "Facilitamos la gestión y formalización de tus trámites ante la DIAN, garantizando la actualización de tu RUT, el restablecimiento de contraseñas y la activación de tu firma electrónica para cumplir con tus obligaciones sin complicaciones.",
     caracteristicas: [
-        "Descarga y obtención de copia del RUT actualizada (Persona Natural).",
+        "Descarga copia del RUT solo con #cedula (Persona Natural).",
         "Gestión de contraseña vencida y restablecimiento seguro de acceso al portal.",
         "Generación y activación de la Firma Electrónica (Firma Digital) en línea.",
         "Actualización integral de datos en el RUT (actividad económica, ubicación y responsabilidades).",

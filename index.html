@@ -1703,51 +1703,123 @@
             border: 2px solid var(--bg-surface);
         }
 
-        /* Floating WhatsApp Support Button */
-        .wa-support-fab {
+        /* ==========================================================================
+           11.5 FLOATING SOCIAL MEDIA DOCK (LATERAL IZQUIERDO)
+           ========================================================================== */
+        .floating-social-dock {
             position: fixed;
-            bottom: 28px;
-            left: 28px;
-            width: 56px;
-            height: 56px;
-            border-radius: var(--radius-full);
-            background: #25D366;
-            color: #fff;
+            bottom: 24px;
+            left: 18px;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.35);
-            cursor: pointer;
+            gap: 7px;
             z-index: 99;
+            padding: 8px 6px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(226, 232, 240, 0.9);
+            border-radius: 40px;
+            box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12), 0 2px 8px rgba(0, 0, 0, 0.04);
+            transition: transform var(--tr-smooth), box-shadow var(--tr-smooth);
+        }
+
+        [data-theme="dark"] .floating-social-dock {
+            background: rgba(15, 23, 42, 0.85);
+            border-color: rgba(255, 255, 255, 0.12);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .floating-social-dock .social-icon-btn {
+            width: 38px;
+            height: 38px;
+            position: relative;
+        }
+
+        .floating-social-dock .social-icon-btn svg {
+            width: 20px;
+            height: 20px;
             transition: transform var(--tr-smooth);
         }
 
-        .wa-support-fab:hover {
-            transform: scale(1.1) rotate(6deg);
+        .floating-social-dock .social-icon-btn:hover {
+            transform: scale(1.12) translateX(3px) !important;
         }
 
-        /* Floating Telegram Support Button */
-        .tg-support-fab {
-            position: fixed;
-            bottom: 94px;
-            left: 28px;
-            width: 56px;
-            height: 56px;
-            border-radius: var(--radius-full);
-            background: #0088cc;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 10px 25px rgba(0, 136, 204, 0.35);
-            cursor: pointer;
-            z-index: 99;
-            transition: transform var(--tr-smooth);
-            text-decoration: none;
+        /* Dock Tooltips */
+        .floating-social-dock .social-icon-btn .dock-tooltip {
+            position: absolute;
+            left: calc(100% + 10px);
+            top: 50%;
+            transform: translateY(-50%) translateX(-6px);
+            background: #0F172A;
+            color: #FFFFFF;
+            font-size: 0.75rem;
+            font-weight: 600;
+            line-height: 1;
+            padding: 6px 10px;
+            border-radius: 6px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            visibility: hidden;
+            transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.2s;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+            z-index: 100;
         }
 
-        .tg-support-fab:hover {
-            transform: scale(1.1) rotate(6deg);
+        .floating-social-dock .social-icon-btn .dock-tooltip::before {
+            content: '';
+            position: absolute;
+            right: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent #0F172A transparent transparent;
+        }
+
+        [data-theme="dark"] .floating-social-dock .social-icon-btn .dock-tooltip {
+            background: #1E293B;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        [data-theme="dark"] .floating-social-dock .social-icon-btn .dock-tooltip::before {
+            border-color: transparent #1E293B transparent transparent;
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+            .floating-social-dock .social-icon-btn:hover .dock-tooltip {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(-50%) translateX(0);
+            }
+        }
+
+        @media (max-width: 680px) {
+            .floating-social-dock {
+                bottom: 16px;
+                left: 10px;
+                gap: 5px;
+                padding: 6px 4px;
+                max-height: calc(100vh - 120px);
+                overflow-y: auto;
+                overflow-x: hidden;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+            }
+            .floating-social-dock::-webkit-scrollbar {
+                display: none;
+            }
+            .floating-social-dock .social-icon-btn {
+                width: 32px;
+                height: 32px;
+            }
+            .floating-social-dock .social-icon-btn svg {
+                width: 17px;
+                height: 17px;
+            }
         }
 
         /* ==========================================================================
@@ -2964,13 +3036,54 @@
         <div class="cart-fab-badge" id="cartFabCount">0</div>
     </div>
 
-    <a href="https://telegram.me/wicontable?text=¡Hola!%20Vengo%20de%20la%20web%20y%20tengo%20una%20consulta." target="_blank" rel="noopener noreferrer" class="tg-support-fab" title="Chat de Telegram">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 11.944 0zm5.666 8.163l-1.925 9.074c-.145.641-.527.798-1.066.496l-2.955-2.18-1.426 1.374c-.157.158-.29.29-.593.29l.212-3.02 5.5-4.97c.239-.213-.052-.332-.372-.119L8.19 13.342l-2.928-.916c-.636-.2-.65-.636.133-.942l11.442-4.41c.53-.193.994.125.807 1.089z"/></svg>
-    </a>
-
-    <a href="https://wa.me/573156016386?text=¡Hola!%20Vengo%20de%20la%20web%20y%20tengo%20una%20consulta." target="_blank" class="wa-support-fab" title="Chat de WhatsApp">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.176.001 6.163 1.237 8.407 3.483 2.245 2.246 3.48 5.234 3.479 8.414-.004 6.597-5.342 11.945-11.893 11.945-1.996-.001-3.957-.503-5.69-1.462L0 24zm6.59-4.846c1.62.962 3.235 1.467 4.962 1.468 5.334 0 9.673-4.321 9.676-9.635.001-2.574-1.002-4.994-2.825-6.819C16.638 2.344 14.225 1.34 11.66 1.34 6.326 1.34 1.986 5.661 1.983 10.977c-.001 1.8.473 3.559 1.373 5.111l-.995 3.633 3.689-.967z"/></svg>
-    </a>
+    <!-- Floating Social Media Dock (Lateral Izquierdo) -->
+    <nav class="floating-social-dock" aria-label="Redes Sociales y Canales de Contacto">
+       <!-- WhatsApp Canal -->
+        <a href="https://whatsapp.com/channel/0029Va4o0RV2f3ENoTURyU40" class="social-icon-btn wa" target="_blank" rel="noopener noreferrer" title="Canal de WhatsApp" aria-label="Canal de WhatsApp">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.176.001 6.163 1.237 8.407 3.483 2.245 2.246 3.48 5.234 3.479 8.414-.004 6.597-5.342 11.945-11.893 11.945-1.996-.001-3.957-.503-5.69-1.462L0 24zm6.59-4.846c1.62.962 3.235 1.467 4.962 1.468 5.334 0 9.673-4.321 9.676-9.635.001-2.574-1.002-4.994-2.825-6.819C16.638 2.344 14.225 1.34 11.66 1.34 6.326 1.34 1.986 5.661 1.983 10.977c-.001 1.8.473 3.559 1.373 5.111l-.995 3.633 3.689-.967z"/></svg>
+            <span class="dock-tooltip">Canal de WhatsApp</span>
+        </a>
+        <!-- WhatsApp Grupo -->
+        <a href="https://chat.whatsapp.com/FvYIDsoo7NR7PLwtd0Vhwv" class="social-icon-btn wa" target="_blank" rel="noopener noreferrer" title="Grupo WhatsApp Colegas" aria-label="Grupo WhatsApp Colegas">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 0 0-10.4 18l-1.6 6 6.1-1.6A12 12 0 1 0 12 0z"/></svg>
+            <span class="dock-tooltip">Grupo WhatsApp</span>
+        </a>
+        <!-- Telegram -->
+        <a href="https://telegram.me/wicontableINFO" class="social-icon-btn tg" target="_blank" rel="noopener noreferrer" title="Canal Telegram WiCONTABLE" aria-label="Canal Telegram WiCONTABLE">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 11.944 0zm5.666 8.163l-1.925 9.074c-.145.641-.527.798-1.066.496l-2.955-2.18-1.426 1.374c-.157.158-.29.29-.593.29l.212-3.02 5.5-4.97c.239-.213-.052-.332-.372-.119L8.19 13.342l-2.928-.916c-.636-.2-.65-.636.133-.942l11.442-4.41c.53-.193.994.125.807 1.089z"/></svg>
+            <span class="dock-tooltip">Telegram WiCONTABLE</span>
+        </a>
+        <!-- YouTube Wilder -->
+        <a href="https://www.youtube.com/@wildersarriahernandez" class="social-icon-btn yt" target="_blank" rel="noopener noreferrer" title="YouTube Wilder Sarria" aria-label="YouTube Wilder Sarria">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            <span class="dock-tooltip">YouTube Wilder</span>
+        </a>
+        <!-- YouTube WiCONTABLE -->
+        <a href="https://www.youtube.com/@wicontable" class="social-icon-btn yt" target="_blank" rel="noopener noreferrer" title="YouTube WiCONTABLE" aria-label="YouTube WiCONTABLE">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            <span class="dock-tooltip">YouTube WiCONTABLE</span>
+        </a>
+        <!-- TikTok -->
+        <a href="https://www.tiktok.com/@wildersarriahernandez" class="social-icon-btn tk" target="_blank" rel="noopener noreferrer" title="TikTok" aria-label="TikTok">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.9-.32-1.98-.23-2.81.33-.85.51-1.44 1.42-1.58 2.4-.11.68-.03 1.37.18 2.03.35.81 1.05 1.48 1.88 1.76.71.21 1.48.21 2.19.04 1.02-.14 1.98-.77 2.56-1.6.43-.59.66-1.31.71-2.04.08-3.38.03-6.76.04-10.14z"/></svg>
+            <span class="dock-tooltip">TikTok</span>
+        </a>
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/wicontable" class="social-icon-btn fb" target="_blank" rel="noopener noreferrer" title="Facebook" aria-label="Facebook">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            <span class="dock-tooltip">Facebook</span>
+        </a>
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/wicontable/" class="social-icon-btn ig" target="_blank" rel="noopener noreferrer" title="Instagram" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            <span class="dock-tooltip">Instagram</span>
+        </a>
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/wildersarriahernandez" class="social-icon-btn li" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            <span class="dock-tooltip">LinkedIn</span>
+        </a>
+    </nav>
 
     <!-- 9. Slide-Over Cart Drawer -->
     <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
@@ -3165,17 +3278,6 @@
                     </div>
                 </a>
                 <p>Somos tu mejor aliado para automatizar procesos, ahorrar tiempo y optimizar tu gestión tributaria con herramientas contables 100% garantizadas.</p>
-                <div class="social-buttons-row">
-                    <a href="https://whatsapp.com/channel/0029Va4o0RV2f3ENoTURyU40" class="social-icon-btn wa" target="_blank" title="Canal de WhatsApp"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.176.001 6.163 1.237 8.407 3.483 2.245 2.246 3.48 5.234 3.479 8.414-.004 6.597-5.342 11.945-11.893 11.945-1.996-.001-3.957-.503-5.69-1.462L0 24zm6.59-4.846c1.62.962 3.235 1.467 4.962 1.468 5.334 0 9.673-4.321 9.676-9.635.001-2.574-1.002-4.994-2.825-6.819C16.638 2.344 14.225 1.34 11.66 1.34 6.326 1.34 1.986 5.661 1.983 10.977c-.001 1.8.473 3.559 1.373 5.111l-.995 3.633 3.689-.967z"/></svg></a>
-                    <a href="https://chat.whatsapp.com/FvYIDsoo7NR7PLwtd0Vhwv" class="social-icon-btn wa" target="_blank" title="Grupo WhatsApp"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 0 0-10.4 18l-1.6 6 6.1-1.6A12 12 0 1 0 12 0z"/></svg></a>
-                    <a href="https://www.youtube.com/@wildersarriahernandez" class="social-icon-btn yt" target="_blank" title="YouTube Wilder"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
-                    <a href="https://www.youtube.com/@wicontable" class="social-icon-btn yt" target="_blank" title="YouTube WiCONTABLE"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
-                    <a href="https://www.tiktok.com/@wildersarriahernandez" class="social-icon-btn tk" target="_blank" title="TikTok"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.9-.32-1.98-.23-2.81.33-.85.51-1.44 1.42-1.58 2.4-.11.68-.03 1.37.18 2.03.35.81 1.05 1.48 1.88 1.76.71.21 1.48.21 2.19.04 1.02-.14 1.98-.77 2.56-1.6.43-.59.66-1.31.71-2.04.08-3.38.03-6.76.04-10.14z"/></svg></a>
-                    <a href="https://www.facebook.com/wicontable" class="social-icon-btn fb" target="_blank" title="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-                    <a href="https://www.instagram.com/wicontable/" class="social-icon-btn ig" target="_blank" title="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
-                    <a href="https://www.linkedin.com/in/wildersarriahernandez" class="social-icon-btn li" target="_blank" title="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
-                    <a href="https://telegram.me/wicontableINFO" class="social-icon-btn tg" target="_blank" title="Telegram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 11.944 0zm5.666 8.163l-1.925 9.074c-.145.641-.527.798-1.066.496l-2.955-2.18-1.426 1.374c-.157.158-.29.29-.593.29l.212-3.02 5.5-4.97c.239-.213-.052-.332-.372-.119L8.19 13.342l-2.928-.916c-.636-.2-.65-.636.133-.942l11.442-4.41c.53-.193.994.125.807 1.089z"/></svg></a>
-                </div>
             </div>
 
             <div class="footer-column">
@@ -3689,7 +3791,7 @@
 
         // Trigger floating notice modal smoothly on initial page open
         window.addEventListener('load', () => {
-           // setTimeout(openNoticeModal, 400);
+            //setTimeout(openNoticeModal, 400);
         });
     </script>
 </body>

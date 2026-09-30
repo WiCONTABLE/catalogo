@@ -1822,6 +1822,75 @@
             }
         }
 
+        /* Drag Handle & Interactivity */
+        .dock-drag-handle {
+            width: 28px;
+            height: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: grab;
+            touch-action: none;
+            color: var(--text-muted);
+            border-radius: 6px;
+            margin-bottom: 2px;
+            user-select: none;
+            -webkit-user-select: none;
+            transition: color var(--tr-smooth), background-color var(--tr-smooth);
+        }
+
+        .dock-drag-handle:hover {
+            color: var(--text-primary);
+            background: rgba(0, 0, 0, 0.06);
+        }
+
+        [data-theme="dark"] .dock-drag-handle:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .floating-social-dock.is-dragging {
+            cursor: grabbing !important;
+            user-select: none;
+            -webkit-user-select: none;
+            transition: none !important;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25), 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+            opacity: 0.95;
+            transform: scale(1.02);
+        }
+
+        .floating-social-dock.is-dragging .dock-drag-handle {
+            cursor: grabbing !important;
+        }
+
+        .floating-social-dock.is-dragging .dock-tooltip {
+            display: none !important;
+        }
+
+        /* Right-side alignment when dragged to right screen half */
+        .floating-social-dock.dock-align-right .social-icon-btn .dock-tooltip {
+            left: auto;
+            right: calc(100% + 10px);
+            transform: translateY(-50%) translateX(6px);
+        }
+
+        .floating-social-dock.dock-align-right .social-icon-btn:hover .dock-tooltip {
+            transform: translateY(-50%) translateX(0);
+        }
+
+        .floating-social-dock.dock-align-right .social-icon-btn .dock-tooltip::before {
+            right: auto;
+            left: 100%;
+            border-color: transparent transparent transparent #0F172A;
+        }
+
+        [data-theme="dark"] .floating-social-dock.dock-align-right .social-icon-btn .dock-tooltip::before {
+            border-color: transparent transparent transparent #1E293B;
+        }
+
+        .floating-social-dock.dock-align-right .social-icon-btn:hover {
+            transform: scale(1.12) translateX(-3px) !important;
+        }
+
         /* ==========================================================================
            12. VIDEO MODAL (PREMIUM CINEMATIC PLAYER)
            ========================================================================== */
@@ -3038,13 +3107,24 @@
 
     <!-- Floating Social Media Dock (Lateral Izquierdo) -->
     <nav class="floating-social-dock" aria-label="Redes Sociales y Canales de Contacto">
-       <!-- WhatsApp Canal -->
+        <!-- Drag Handle for repositioning (PC click & drag / Mobile touch & drag) -->
+        <div class="dock-drag-handle" title="Arrastrar para mover">
+            <svg width="14" height="10" viewBox="0 0 16 10" fill="currentColor">
+                <circle cx="4" cy="3" r="1.5"></circle>
+                <circle cx="8" cy="3" r="1.5"></circle>
+                <circle cx="12" cy="3" r="1.5"></circle>
+                <circle cx="4" cy="7" r="1.5"></circle>
+                <circle cx="8" cy="7" r="1.5"></circle>
+                <circle cx="12" cy="7" r="1.5"></circle>
+            </svg>
+        </div>
+        <!-- WhatsApp Canal -->
         <a href="https://whatsapp.com/channel/0029Va4o0RV2f3ENoTURyU40" class="social-icon-btn wa" target="_blank" rel="noopener noreferrer" title="Canal de WhatsApp" aria-label="Canal de WhatsApp">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.176.001 6.163 1.237 8.407 3.483 2.245 2.246 3.48 5.234 3.479 8.414-.004 6.597-5.342 11.945-11.893 11.945-1.996-.001-3.957-.503-5.69-1.462L0 24zm6.59-4.846c1.62.962 3.235 1.467 4.962 1.468 5.334 0 9.673-4.321 9.676-9.635.001-2.574-1.002-4.994-2.825-6.819C16.638 2.344 14.225 1.34 11.66 1.34 6.326 1.34 1.986 5.661 1.983 10.977c-.001 1.8.473 3.559 1.373 5.111l-.995 3.633 3.689-.967z"/></svg>
             <span class="dock-tooltip">Canal de WhatsApp</span>
         </a>
         <!-- WhatsApp Grupo -->
-        <a href="https://chat.whatsapp.com/FvYIDsoo7NR7PLwtd0Vhwv" class="social-icon-btn wa" target="_blank" rel="noopener noreferrer" title="Grupo WhatsApp Colegas" aria-label="Grupo WhatsApp Colegas">
+        <a href="https://chat.whatsapp.com/HwfY2wD4G5C4TipWlkPIvl" class="social-icon-btn wa" target="_blank" rel="noopener noreferrer" title="Grupo WhatsApp Colegas" aria-label="Grupo WhatsApp Colegas">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 0 0-10.4 18l-1.6 6 6.1-1.6A12 12 0 1 0 12 0z"/></svg>
             <span class="dock-tooltip">Grupo WhatsApp</span>
         </a>
@@ -3793,6 +3873,141 @@
         window.addEventListener('load', () => {
             //setTimeout(openNoticeModal, 400);
         });
+
+        /* ==========================================================================
+           8. DRAGGABLE SOCIAL DOCK (MOUSE / TOUCH / PEN VIA POINTER EVENTS)
+           ========================================================================== */
+        (function initDraggableDock() {
+            const dock = document.querySelector('.floating-social-dock');
+            const handle = document.querySelector('.dock-drag-handle');
+            if (!dock) return;
+
+            let isDragging = false;
+            let startX = 0, startY = 0;
+            let initialLeft = 0, initialTop = 0;
+            let hasMoved = false;
+            const DRAG_THRESHOLD = 5; // px
+
+            // Restore saved position if valid
+            try {
+                const savedPos = localStorage.getItem('wicontable_dock_pos');
+                if (savedPos) {
+                    const { xPercent, yPercent } = JSON.parse(savedPos);
+                    const dockW = dock.offsetWidth || 50;
+                    const dockH = dock.offsetHeight || 380;
+                    const clampX = Math.max(10, Math.min(window.innerWidth - dockW - 10, (xPercent / 100) * window.innerWidth));
+                    const clampY = Math.max(10, Math.min(window.innerHeight - dockH - 10, (yPercent / 100) * window.innerHeight));
+                    dock.style.bottom = 'auto';
+                    dock.style.left = `${clampX}px`;
+                    dock.style.top = `${clampY}px`;
+                    updateDockSide(clampX);
+                }
+            } catch (e) {}
+
+            function updateDockSide(x) {
+                const dockW = dock.offsetWidth || 50;
+                if (x + dockW / 2 > window.innerWidth / 2) {
+                    dock.classList.add('dock-align-right');
+                } else {
+                    dock.classList.remove('dock-align-right');
+                }
+            }
+
+            function onPointerDown(e) {
+                if (e.button !== undefined && e.button !== 0) return;
+
+                isDragging = false;
+                hasMoved = false;
+                startX = e.clientX;
+                startY = e.clientY;
+
+                const rect = dock.getBoundingClientRect();
+                initialLeft = rect.left;
+                initialTop = rect.top;
+
+                window.addEventListener('pointermove', onPointerMove, { passive: false });
+                window.addEventListener('pointerup', onPointerUp);
+                window.addEventListener('pointercancel', onPointerUp);
+            }
+
+            function onPointerMove(e) {
+                const dx = e.clientX - startX;
+                const dy = e.clientY - startY;
+
+                if (!isDragging) {
+                    if (Math.hypot(dx, dy) >= DRAG_THRESHOLD) {
+                        isDragging = true;
+                        dock.classList.add('is-dragging');
+                        dock.style.bottom = 'auto';
+                    } else {
+                        return;
+                    }
+                }
+
+                e.preventDefault();
+
+                const dockWidth = dock.offsetWidth;
+                const dockHeight = dock.offsetHeight;
+                const maxLeft = Math.max(8, window.innerWidth - dockWidth - 8);
+                const maxTop = Math.max(8, window.innerHeight - dockHeight - 8);
+
+                const newLeft = Math.max(8, Math.min(maxLeft, initialLeft + dx));
+                const newTop = Math.max(8, Math.min(maxTop, initialTop + dy));
+
+                dock.style.left = `${newLeft}px`;
+                dock.style.top = `${newTop}px`;
+                updateDockSide(newLeft);
+                hasMoved = true;
+            }
+
+            function onPointerUp() {
+                window.removeEventListener('pointermove', onPointerMove);
+                window.removeEventListener('pointerup', onPointerUp);
+                window.removeEventListener('pointercancel', onPointerUp);
+
+                if (isDragging) {
+                    dock.classList.remove('is-dragging');
+                    isDragging = false;
+
+                    try {
+                        const rect = dock.getBoundingClientRect();
+                        const xPercent = (rect.left / window.innerWidth) * 100;
+                        const yPercent = (rect.top / window.innerHeight) * 100;
+                        localStorage.setItem('wicontable_dock_pos', JSON.stringify({ xPercent, yPercent }));
+                    } catch (err) {}
+                }
+            }
+
+            // Suppress link click if dragging occurred
+            dock.addEventListener('click', function(e) {
+                if (hasMoved) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    hasMoved = false;
+                }
+            }, true);
+
+            // Handle acts as dedicated drag trigger
+            if (handle) {
+                handle.addEventListener('pointerdown', onPointerDown);
+            }
+            // Dock container also allows drag if dragged past threshold
+            dock.addEventListener('pointerdown', onPointerDown);
+
+            // Keep within bounds on resize
+            window.addEventListener('resize', () => {
+                if (dock.style.top && dock.style.top !== 'auto') {
+                    const rect = dock.getBoundingClientRect();
+                    const maxLeft = Math.max(8, window.innerWidth - rect.width - 8);
+                    const maxTop = Math.max(8, window.innerHeight - rect.height - 8);
+                    const clampX = Math.max(8, Math.min(maxLeft, rect.left));
+                    const clampY = Math.max(8, Math.min(maxTop, rect.top));
+                    dock.style.left = `${clampX}px`;
+                    dock.style.top = `${clampY}px`;
+                    updateDockSide(clampX);
+                }
+            });
+        })();
     </script>
 </body>
 </html>

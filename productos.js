@@ -2,6 +2,21 @@ const miTelefono = "573156016386";
 const miTelegram = "https://telegram.me/wicontable";
 
 const productos = [
+     {
+        id: 3,
+        nombre: "Consulta Datos NIT (DIAN)",
+        url: "consulta-datos-nit.html",
+        formato: "Extensión Web .crx",
+        mostrarTecnica: true,
+etiqueta: "ACTIVA",
+        desc: "<b>REF005</b><p>Verifica de forma masiva, automática y directamente en el portal DIAN el nombre asociado a los NIT de contribuyente Persona Jurídica ó Persona Natural suscritos, sin procesos manuales ni captchas repetitivos.<p> <br><p>Ideal para temporada de exógena y validación de los formatos que requieran esta auditoría.<p><br><b>Publicada el 05-01-2026</b>",
+        caracteristicas: ["Carga un archivo EXCEL ó pega directamente los Nits (Sin punto ni comas).", "Puedes decidir en consultar CON estado RUT, la cual te anexara si esta: ACTIVO, CANCELADO ó SUSPENDIDO; este proceso valida catpcha y depende si el portal web se encuentre estable.", "Puedes decidir en consultar SIN estado RUT, la cual es más ligero y estable; este proceso solo te indica si está registrado o no en la DIAN mediante el módulo inconsisitencias RUT."],
+        nota: "<p>Para brindarle un soporte técnico oportuno, requerimos conectarnos de forma remota a su equipo a través de AnyDesk.<p> <br><p>Tenga en cuenta que este acceso quedará registrado de manera individual en cada computadora durante la instalación. Por su seguridad, nuestro equipo se comunicará exclusivamente al número de móvil ó @usuario que tiene registrado con nosotros.<p> <br><p>Asimismo, le recordamos que el funcionamiento de nuestra herramienta depende de plataformas de terceros integradas; <b>cualquier cambio en los parámetros de dichas plataformas nos exime de responsabilidad sobre la continuidad del servicio.</b><p> <br><b><p>RECUERDE</b> que es importante ver el videotutorial antes de adquirir la herramienta. De esta manera, al finalizar la instalación, le será más fácil resolver cualquier duda que no se haya abordado en el video.</p> <br><p>Le pedimos disponer de unos 15 minutos mientras realizamos la instalación y para las pruebas de funcionalidad tener un listado de nit a consultar. Recuerde que la herramienta no tiene fecha de vencimiento; por ello, nos aseguramos de entregarla probada y funcionando correctamente al momento de su adquisición.</p>",
+        precio: "COP $30.000",
+        video: "video/RUT2026.mp4",
+        youtube: "https://www.youtube.com/watch?v=1wLEFzIwj38",
+        fotos: ["img/p3-0.png", "img/p3-1.jpg"]
+    }, 
     {
         id: 14,
         nombre: "PDF Extract PRO",
@@ -97,21 +112,7 @@ etiqueta: "¡NUEVO!",
         youtube: "https://youtu.be/qa_wJjN3Nvo",
         fotos: ["img/p12-0.png", "img/p12-1.png", "img/p12-2.png", "img/p12-3.png"]
     },     
- {
-        id: 3,
-        nombre: "Consulta Datos NIT (DIAN)",
-        url: "consulta-datos-nit.html",
-        formato: "Extensión Web .crx",
-        mostrarTecnica: true,
-etiqueta: "ACTIVA",
-        desc: "<b>REF005</b><p>Verifica de forma masiva, automática y directamente en el portal DIAN el nombre asociado a los NIT de contribuyente Persona Jurídica ó Persona Natural suscritos, sin procesos manuales ni captchas repetitivos.<p> <br><p>Ideal para temporada de exógena y validación de los formatos que requieran esta auditoría.<p><br><b>Publicada el 05-01-2026</b>",
-        caracteristicas: ["Carga un archivo EXCEL ó pega directamente los Nits (Sin punto ni comas).", "Puedes decidir en consultar CON estado RUT, la cual te anexara si esta: ACTIVO, CANCELADO ó SUSPENDIDO; este proceso valida catpcha y depende si el portal web se encuentre estable.", "Puedes decidir en consultar SIN estado RUT, la cual es más ligero y estable; este proceso solo te indica si está registrado o no en la DIAN mediante el módulo inconsisitencias RUT."],
-        nota: "<p>Para brindarle un soporte técnico oportuno, requerimos conectarnos de forma remota a su equipo a través de AnyDesk.<p> <br><p>Tenga en cuenta que este acceso quedará registrado de manera individual en cada computadora durante la instalación. Por su seguridad, nuestro equipo se comunicará exclusivamente al número de móvil ó @usuario que tiene registrado con nosotros.<p> <br><p>Asimismo, le recordamos que el funcionamiento de nuestra herramienta depende de plataformas de terceros integradas; <b>cualquier cambio en los parámetros de dichas plataformas nos exime de responsabilidad sobre la continuidad del servicio.</b><p> <br><b><p>RECUERDE</b> que es importante ver el videotutorial antes de adquirir la herramienta. De esta manera, al finalizar la instalación, le será más fácil resolver cualquier duda que no se haya abordado en el video.</p> <br><p>Le pedimos disponer de unos 15 minutos mientras realizamos la instalación y para las pruebas de funcionalidad tener un listado de nit a consultar. Recuerde que la herramienta no tiene fecha de vencimiento; por ello, nos aseguramos de entregarla probada y funcionando correctamente al momento de su adquisición.</p>",
-        precio: "COP $30.000",
-        video: "video/RUT2026.mp4",
-        youtube: "https://www.youtube.com/watch?v=1wLEFzIwj38",
-        fotos: ["img/p3-0.png", "img/p3-1.jpg"]
-    },        
+       
 {
         id: 6,
         nombre: "Gemini PRO (18 Meses)",

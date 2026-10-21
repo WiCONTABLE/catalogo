@@ -584,38 +584,6 @@
             flex-shrink: 0;
         }
 
-        /* Theme Toggle Button */
-        .btn-theme-toggle {
-            width: 40px;
-            height: 40px;
-            border-radius: var(--radius-full);
-            background: var(--bg-surface);
-            border: 1px solid var(--border-subtle);
-            color: var(--text-secondary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: transform var(--tr-bounce), border-color var(--tr-fast), color var(--tr-fast);
-            flex-shrink: 0;
-        }
-
-        .btn-theme-toggle:hover {
-            transform: rotate(20deg) scale(1.05);
-            color: var(--brand-green);
-            border-color: var(--border-medium);
-        }
-
-        .theme-icon-sun, .theme-icon-moon {
-            width: 20px;
-            height: 20px;
-            stroke-width: 2;
-        }
-
-        [data-theme="dark"] .theme-icon-sun { display: block; }
-        [data-theme="dark"] .theme-icon-moon { display: none; }
-        [data-theme="light"] .theme-icon-sun { display: none; }
-        [data-theme="light"] .theme-icon-moon { display: block; }
-
         /* Cart Nav Trigger */
         .btn-nav-cart {
             position: relative;
@@ -1137,6 +1105,59 @@
             background: rgba(148, 163, 184, 0.15);
             color: #94A3B8;
             border: 1px solid rgba(148, 163, 184, 0.25);
+        }
+
+        
+        /* ==========================================================================
+           ANIMATED MARCHING ANTS BORDER FOR "NUEVO" PRODUCTS
+           ========================================================================== */
+        .product-card.product-card-nuevo {
+            border-color: rgba(16, 185, 129, 0.35);
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.12), var(--card-shadow);
+        }
+
+        .product-card.product-card-nuevo:hover {
+            box-shadow: 0 0 30px rgba(16, 185, 129, 0.25), var(--card-shadow-hover);
+        }
+
+        .marching-ants-svg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 5;
+            overflow: visible;
+        }
+
+        .marching-ants-rect {
+            width: calc(100% - 3px);
+            height: calc(100% - 3px);
+            fill: none;
+            stroke: #10B981;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-dasharray: 6 7;
+            filter: drop-shadow(0 0 3px rgba(16, 185, 129, 0.55));
+            animation: marchingAntsBorder 1.2s linear infinite;
+            rx: 28px;
+            ry: 28px;
+        }
+
+        @keyframes marchingAntsBorder {
+            from {
+                stroke-dashoffset: 0;
+            }
+            to {
+                stroke-dashoffset: 26;
+            }
+        }
+
+        @media (max-width: 680px) {
+            .marching-ants-rect {
+                rx: 20px;
+                ry: 20px;
+            }
         }
 
         /* Card Image Box */
@@ -3012,25 +3033,6 @@
                 </div>
 
                 <div class="nav-actions">
-                    <!-- Theme Toggle Button -->
-                    <button class="btn-theme-toggle" id="themeToggleBtn" onclick="toggleTheme()" title="Cambiar a Modo Claro / Oscuro" aria-label="Cambiar Tema">
-                        <!-- Sun Icon (for dark mode) -->
-                        <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <circle cx="12" cy="12" r="5"></circle>
-                            <line x1="12" y1="1" x2="12" y2="3"></line>
-                            <line x1="12" y1="21" x2="12" y2="23"></line>
-                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                            <line x1="1" y1="12" x2="3" y2="12"></line>
-                            <line x1="21" y1="21" x2="23" y2="12"></line>
-                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                        </svg>
-                        <!-- Moon Icon (for light mode) -->
-                        <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                        </svg>
-                    </button>
 
                     <!-- Cart Button -->
                     <button class="btn-nav-cart" onclick="openCart()" title="Ver pedido">
@@ -3400,18 +3402,11 @@
     <script src="productos.js"></script>
     <script>
         /* ==========================================================================
-           1. THEME SWITCHER (DARK / LIGHT LUXE)
+           1. THEME: MODO CLARO EXCLUSIVO
            ========================================================================== */
         const htmlEl = document.documentElement;
-        const savedTheme = localStorage.getItem('wicontable_theme') || 'light';
-        htmlEl.setAttribute('data-theme', savedTheme);
-
-        function toggleTheme() {
-            const current = htmlEl.getAttribute('data-theme');
-            const next = current === 'dark' ? 'light' : 'dark';
-            htmlEl.setAttribute('data-theme', next);
-            localStorage.setItem('wicontable_theme', next);
-        }
+        htmlEl.setAttribute('data-theme', 'light');
+        localStorage.removeItem('wicontable_theme');
 
         /* ==========================================================================
            2. CATALOG RENDERING & FILTERING
@@ -3477,7 +3472,8 @@
 
             filtered.forEach(p => {
                 const card = document.createElement('div');
-                card.className = 'product-card reveal-on-scroll';
+                const isNuevo = p.etiqueta && p.etiqueta.toUpperCase().includes('NUEVO');
+                card.className = 'product-card reveal-on-scroll' + (isNuevo ? ' product-card-nuevo' : '');
 
                 // Extract REF code
                 let refHTML = '';
@@ -3508,7 +3504,13 @@
                 // Clean description
                 let cleanDesc = (p.desc || '').replace(/<b>REF[a-zA-Z0-9]+<\/b>/gi, '').replace(/<[^>]*>/g, ' ').trim();
 
+                const antsSVG = isNuevo ? `
+                    <svg class="marching-ants-svg" aria-hidden="true">
+                        <rect class="marching-ants-rect" x="1.5" y="1.5" rx="28" ry="28"></rect>
+                    </svg>` : '';
+
                 card.innerHTML = `
+                    ${antsSVG}
                     <div class="card-header-bar">
                         ${refHTML ? refHTML : '<span></span>'}
                         ${badgeHTML}

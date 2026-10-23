@@ -1991,7 +1991,7 @@
 
     </style>
 </head>
-<body>
+<body oncontextmenu="return false;">
     <div class="ambient-glow"></div>
 
     <!-- Pinned Top Header -->
@@ -2294,6 +2294,16 @@
         let currentSlide = 0;
         let totalSlides = 1;
         let cart = JSON.parse(localStorage.getItem('wicontable_cart')) || [];
+
+        // Bloqueo de clic derecho y atajos de inspección
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        document.addEventListener('keydown', e => {
+            if (e.key === 'F12' || 
+               (e.ctrlKey && (e.key === 'u' || e.key === 'U')) || 
+               (e.ctrlKey && e.shiftKey && ['I', 'i', 'J', 'j', 'C', 'c'].includes(e.key))) {
+                e.preventDefault();
+            }
+        });
 
         // 1. Initialize Detail Page
         document.addEventListener('DOMContentLoaded', () => {

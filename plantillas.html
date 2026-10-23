@@ -874,7 +874,7 @@
         }
     </style>
 </head>
-<body>
+<body oncontextmenu="return false;">
     <div class="ambient-glow"></div>
 
     <!-- Pinned Header -->
@@ -1300,6 +1300,15 @@
     </footer>
 
     <script>
+        // Bloqueo de clic derecho y atajos de inspección
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        document.addEventListener('keydown', e => {
+            if (e.key === 'F12' || 
+               (e.ctrlKey && (e.key === 'u' || e.key === 'U')) || 
+               (e.ctrlKey && e.shiftKey && ['I', 'i', 'J', 'j', 'C', 'c'].includes(e.key))) {
+                e.preventDefault();
+            }
+        });
         const htmlEl = document.documentElement;
         htmlEl.setAttribute('data-theme', 'light');
         localStorage.removeItem('wicontable_theme');

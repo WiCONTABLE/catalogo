@@ -2917,7 +2917,7 @@
         }
     </style>
 </head>
-<body>
+<body oncontextmenu="return false;">
 
     <!-- Ambient Lighting Glow Orbs -->
     <div class="ambient-glow"></div>
@@ -3415,6 +3415,16 @@
         let currentCategory = 'Todas';
         let cart = JSON.parse(localStorage.getItem('wicontable_cart')) || [];
 
+        // Bloqueo de clic derecho y atajos de inspección
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        document.addEventListener('keydown', e => {
+            if (e.key === 'F12' || 
+               (e.ctrlKey && (e.key === 'u' || e.key === 'U')) || 
+               (e.ctrlKey && e.shiftKey && ['I', 'i', 'J', 'j', 'C', 'c'].includes(e.key))) {
+                e.preventDefault();
+            }
+        });
+
         window.addEventListener('DOMContentLoaded', () => {
             if (typeof productos === 'undefined') {
                 catalogContainer.innerHTML = `
@@ -3755,7 +3765,8 @@
             if (navigator.clipboard && navigator.clipboard.writeText) {
                 navigator.clipboard.writeText(msg).catch(() => {});
             }
-            const tg = typeof miTelegram !== 'undefined' ? miTelegram : 'https://telegram.me/wicontable';
+            const tgBase = typeof miTelegram !== 'undefined' ? miTelegram : 'https://t.me/wicontable';
+            const tg = `${tgBase}?text=${encodeURIComponent(msg)}`;
             window.open(tg, '_blank');
         }
 

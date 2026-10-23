@@ -2768,7 +2768,8 @@
                 navigator.clipboard.writeText(text).catch(() => {});
             }
 
-            window.open('https://telegram.me/wicontable', '_blank');
+            const tgUrl = `https://t.me/wicontable?text=${encodeURIComponent(text)}`;
+            window.open(tgUrl, '_blank');
         }
 
                 // 3. Modals & Interactivity

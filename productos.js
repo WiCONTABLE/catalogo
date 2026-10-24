@@ -96,7 +96,39 @@ etiqueta: "AGOTADO",
         video: "video/ReportePN.mp4",
         youtube: "https://youtu.be/qa_wJjN3Nvo",
         fotos: ["img/p12-0.png", "img/p12-1.png", "img/p12-2.png", "img/p12-3.png"]
-    },     
+    },    
+ {
+        id: 4,
+        nombre: "Microsoft 365 Genuina (1 año)",
+        url: "365-office.html",
+        formato: "Credenciales",
+        mostrarTecnica: false,
+etiqueta: "DISPONIBLE",
+        desc: "<b>REF004</b><p>Activa tu suite de Office de forma segura mediante credenciales corporativas y olvídate de parches o cracks que ponen en riesgo la seguridad de tu PC. <br><br><b>Nota importante:</b> Tu cuenta incluye beneficios adicionales como 100 GB de almacenamiento en la nube. Te sugerimos usar este espacio únicamente para archivos no críticos o temporales. <br><br>El objetivo principal de esta credencial, y donde su efectividad está garantizada al 100 %, es para la activación y uso de Office en su versión de escritorio.<p><b> </b>",
+        caracteristicas: ["Activación en hasta 5 dispositivos.", "Compatible con PC / MacOS / Android / iOS.", "IA vía web para mayor productividad", "Tendrás acceso a PowerBI Service." , "Word, Excel, y PowerPoint", "No incluye Copilot ni complementos en la suite."],
+        nota: "Se entrega un correo corporativo con una clave temporal. El usuario es responsable de asignar su propia clave personalizada. La credencial tiene un costo de pago único. <br><br>En caso de pérdida de la clave creada por el usuario, no será posible recuperar el acceso, <b>se brinda apoyo para la instalación de manera remota mediante AnyDesk.</b> <br><br><b>Recuerde:</b> guardar la contraseña que asignó para su respectiva garantía de 1 año, para uso de Word, Excel y PowerPoint. <br><br>Precio en USDT $10 mediante Binance.",
+        precio: "COP $25.000",
+        video: "video/365.mp4",
+        youtube: "https://youtu.be/jKVPmmDu1-I",
+        fotos: ["img/p4-0.png", "img/p4-1.png", "img/p4-2.png"]
+    },
+ {
+        id: 8,
+        nombre: "Windows 10/11 PRO (Vitalicia)",
+        url: "windows-10-11.html",
+        formato: "Credenciales",
+        mostrarTecnica: false,
+etiqueta: "DISPONIBLE",
+        desc: "<b>REF000</b><p>Activa de forma segura con credenciales corporativas y evita el uso de parches o cracks que comprometen la seguridad de tu PC.<p><b> </b>",
+        caracteristicas: ["Ingresa la clave digital asignada y listo."],
+        nota: "Se entrega la clave al usuario final, quien es responsable de su buen uso. La clave permanece operativa de manera indefinida, garantizando acceso continuo y seguridad en todo momento. <b>único pago.</b> se brinda apoyo para la instalación de manera remota mediante AnyDesk. <br><br>Precio en USDT $7 mediante Binance.",
+        precio: "COP $20.000",
+        video: "",
+        fotos: ["img/p8-0.png", "img/p8-1.png"]
+    },
+
+
+         
          
      {
         id: 15,
@@ -128,22 +160,7 @@ etiqueta: "DISPONIBLE",
         youtube: "https://youtu.be/IVZaqCdm5XY",
         fotos: ["img/p6-0.png", "img/p6-1.png", "img/p6-2.png", "img/p6-3.png", "img/p6-4.png", "img/p6-5.png", "img/p6-6.png"]
     },
-   {
-        id: 4,
-        nombre: "Microsoft 365 Genuina (1 año)",
-        url: "365-office.html",
-        formato: "Credenciales",
-        mostrarTecnica: false,
-etiqueta: "DISPONIBLE",
-        desc: "<b>REF004</b><p>Activa tu suite de Office de forma segura mediante credenciales corporativas y olvídate de parches o cracks que ponen en riesgo la seguridad de tu PC. <br><br><b>Nota importante:</b> Tu cuenta incluye beneficios adicionales como 100 GB de almacenamiento en la nube. Te sugerimos usar este espacio únicamente para archivos no críticos o temporales. <br><br>El objetivo principal de esta credencial, y donde su efectividad está garantizada al 100 %, es para la activación y uso de Office en su versión de escritorio.<p><b> </b>",
-        caracteristicas: ["Activación en hasta 5 dispositivos.", "Compatible con PC / MacOS / Android / iOS.", "IA vía web para mayor productividad", "Tendrás acceso a PowerBI Service." , "Word, Excel, y PowerPoint", "No incluye Copilot ni complementos en la suite."],
-        nota: "Se entrega un correo corporativo con una clave temporal. El usuario es responsable de asignar su propia clave personalizada. La credencial tiene un costo de pago único. <br><br>En caso de pérdida de la clave creada por el usuario, no será posible recuperar el acceso, <b>se brinda apoyo para la instalación de manera remota mediante AnyDesk.</b> <br><br><b>Recuerde:</b> guardar la contraseña que asignó para su respectiva garantía de 1 año, para uso de Word, Excel y PowerPoint. <br><br>Precio en USDT $10 mediante Binance.",
-        precio: "COP $25.000",
-        video: "video/365.mp4",
-        youtube: "https://youtu.be/jKVPmmDu1-I",
-        fotos: ["img/p4-0.png", "img/p4-1.png", "img/p4-2.png"]
-    },
-{
+  {
         id: 9,
         nombre: "Anydesk V.6.0 (Vitalicia)",
         url: "anydesk-v6.html",
@@ -157,21 +174,7 @@ etiqueta: "DISPONIBLE",
         video: "",
         fotos: ["img/p9-0.png", "img/p9-1.png"]
     },
- {
-        id: 8,
-        nombre: "Windows 10/11 PRO (Vitalicia)",
-        url: "windows-10-11.html",
-        formato: "Credenciales",
-        mostrarTecnica: false,
-etiqueta: "DISPONIBLE",
-        desc: "<b>REF000</b><p>Activa de forma segura con credenciales corporativas y evita el uso de parches o cracks que comprometen la seguridad de tu PC.<p><b> </b>",
-        caracteristicas: ["Ingresa la clave digital asignada y listo."],
-        nota: "Se entrega la clave al usuario final, quien es responsable de su buen uso. La clave permanece operativa de manera indefinida, garantizando acceso continuo y seguridad en todo momento. <b>único pago.</b> se brinda apoyo para la instalación de manera remota mediante AnyDesk. <br><br>Precio en USDT $7 mediante Binance.",
-        precio: "COP $20.000",
-        video: "",
-        fotos: ["img/p8-0.png", "img/p8-1.png"]
-    },
-        {
+{
         id: 10,
         nombre: "Plataformas/Membresías",
         url: "plataforma-membresias.html",

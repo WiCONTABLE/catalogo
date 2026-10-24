@@ -2145,6 +2145,59 @@
             font-size: 0.825rem;
             color: var(--text-muted);
         }
+            /* ==========================================================================
+           ACTION BUTTON: VER FUNCIONAMIENTO (PULSE & GLOW)
+           ========================================================================== */
+        .video-action-row {
+            margin: 8px 0 20px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .btn-ver-funcionamiento {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 24px;
+            border-radius: var(--radius-full);
+            background: rgba(16, 185, 129, 0.08);
+            border: 1.5px solid var(--brand-green);
+            color: #047857;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            outline: none;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: soft-pulse-glow 2.5s infinite ease-in-out;
+            box-shadow: 0 2px 8px rgba(16, 185, 129, 0.15);
+        }
+
+        .btn-ver-funcionamiento:hover {
+            background: var(--brand-green);
+            color: #ffffff;
+            border-color: var(--brand-green);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(16, 185, 129, 0.45);
+            animation: none;
+        }
+
+        .btn-ver-funcionamiento:active {
+            transform: translateY(0);
+        }
+
+        @keyframes soft-pulse-glow {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.25), 0 2px 8px rgba(16, 185, 129, 0.12);
+                border-color: rgba(16, 185, 129, 0.6);
+            }
+            50% {
+                box-shadow: 0 0 18px 4px rgba(16, 185, 129, 0.45), 0 4px 14px rgba(16, 185, 129, 0.25);
+                border-color: rgba(16, 185, 129, 1);
+            }
+        }
+
     </style>
 </head>
 <body oncontextmenu="return false;">
@@ -2582,12 +2635,12 @@
             }
 
             if (hasLocalMp4) {
-                videoBtnHTML = `<button onclick="openVideoModal(null, '${p.video}', '${ytUrl}')" class="tech-chip-action">🎥 Ver Funcionamiento</button>`;
+                videoBtnHTML = `<button onclick="openVideoModal(null, '${p.video}', '${ytUrl}')" class="btn-ver-funcionamiento">🎥 Ver Funcionamiento</button>`;
             } else if (localYt || extraYt) {
                 const targetYtId = localYt || extraYt;
-                videoBtnHTML = `<button onclick="openVideoModal('${targetYtId}', null, '${ytUrl}')" class="tech-chip-action">🎥 Ver Funcionamiento</button>`;
+                videoBtnHTML = `<button onclick="openVideoModal('${targetYtId}', null, '${ytUrl}')" class="btn-ver-funcionamiento">🎥 Ver Funcionamiento</button>`;
             } else if (p.video && p.video.trim() !== '' && p.video.trim() !== '#') {
-                videoBtnHTML = `<a href="${p.video}" target="_blank" class="tech-chip-action">🎥 Ver Enlace de Demostración</a>`;
+                videoBtnHTML = `<a href="${p.video}" target="_blank" class="btn-ver-funcionamiento">🎥 Ver Funcionamiento</a>`;
             }
 
             root.innerHTML = `
@@ -2647,6 +2700,11 @@
                         </div>
 
                         <h1 class="detail-title">${p.nombre}</h1>
+                        ${videoBtnHTML ? `
+                        <div class="video-action-row">
+                            ${videoBtnHTML}
+                        </div>
+                        ` : ''}
                         <div class="detail-desc">${cleanDesc}</div>
 
                         <!-- Features -->

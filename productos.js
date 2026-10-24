@@ -60,6 +60,7 @@ etiqueta: "DISPONIBLE",
         "Gestión de contraseña vencida y restablecimiento.",
         "Generación y activación de la Firma Electrónica (Firma Digital) aunque no tengas como acceder al correo registrado ó Móvil.",
         "Actualización integral de datos en el RUT (actividad económica, ubicación y responsabilidades).",
+        "Actualización integral de datos en el RUT (telefono y correo).",
         "Acompañamiento paso a paso para evitar errores y validar el trámite con éxito."
     ],
     nota: "El valor del servicio puede variar según el estado de la cuenta en el portal de la DIAN o la cantidad de modificaciones requeridas. <br><br><b>¡Contáctanos para gestionar tu trámite de forma rápida y segura!</b>",

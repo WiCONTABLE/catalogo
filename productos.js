@@ -70,7 +70,7 @@ etiqueta: "DISPONIBLE",
     },  
      {
         id: 11,
-        nombre: "Declaración de Renta Persona Natural",
+        nombre: "Declaración de Renta Persona Natural (DIAN)",
         url: "declaracion-renta-pn.html",
         formato: "Consultoria Contable",
         mostrarTecnica: false,

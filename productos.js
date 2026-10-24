@@ -54,7 +54,7 @@ etiqueta: "ACTIVA",
         formato: "Consultoria Contable",
         mostrarTecnica: false,
 etiqueta: "DISPONIBLE",
-        desc: "Facilitamos la gestión y formalización de tus trámites ante la DIAN, garantizando la actualización de tu RUT, el restablecimiento de contraseñas y la activación de tu firma electrónica para cumplir con tus obligaciones sin complicaciones.",
+        desc: "<b>REF010</b> Facilitamos la gestión y formalización de tus trámites ante la DIAN, garantizando la actualización de tu RUT, el restablecimiento de contraseñas y la activación de tu firma electrónica para cumplir con tus obligaciones sin complicaciones.",
     caracteristicas: [
         "Descarga copia del RUT solo con #cedula (Persona Natural).",
         "Gestión de contraseña vencida y restablecimiento.",

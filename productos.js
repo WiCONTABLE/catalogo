@@ -17,7 +17,7 @@ const productos = [
         youtube: "https://youtu.be/jwaJ-Z9O5Y0",
         fotos: ["img/p2-0.png", "img/p2-1.png", "img/p2-2.png","img/p2-3.png","img/p2-4.png","img/p2-5.jpg"]
     }, 
-             {
+     {
         id: 14,
         nombre: "PDF Extract PRO",
         url: "pdfextractpro.html",
@@ -47,7 +47,7 @@ etiqueta: "ACTIVA",
         youtube: "https://www.youtube.com/watch?v=1wLEFzIwj38",
         fotos: ["img/p3-0.png", "img/p3-1.jpg"]
     }, 
-    {
+     {
         id: 13,
         nombre: "Trámites Digitales (DIAN)",
         url: "tramites-pn.html",
@@ -68,7 +68,7 @@ etiqueta: "DISPONIBLE",
         video: "",
         fotos: ["img/p13-0.png", "img/p13-1.png", "img/p13-2.png", "img/p13-3.png", "img/p13-4.png"]
     },  
-    {
+     {
         id: 11,
         nombre: "Declaración de Renta Persona Natural",
         url: "declaracion-renta-pn.html",
@@ -82,7 +82,22 @@ etiqueta: "AGOTADO",
         video: "",
         fotos: ["img/p11-0.png", "img/p11-1.png", "img/p11-2.png", "img/p11-3.png", "img/p11-4.png"]
     },   
-    
+    {
+        id: 12,
+        nombre: "Reportes Renta P.N A.G2025 (DIAN)",
+        url: "reporte-rentapn.html",
+        formato: "Extensión Web .crx",
+        mostrarTecnica: true,
+        etiqueta: "ACTIVA",
+        desc: "<b>REF002</b><p>Ahorra tiempo en esta temporada de Renta de Personas Naturales (Año Gravable 2025). Descarga y renombra automáticamente tus listados de facturas electrónicas y exógena sugerida para una validación rápida, precisa y sin esfuerzo de reportes desde periodos 2013 a 2025.<p> <br><p>Además, puedes iniciar el aplicativo y elegir las 3 opciones de descarga, mientras estas en la sesión del contribuyente.<p><br><b>Publicada el 21-07-2026</b>",
+        caracteristicas: ["Inicia sesión del contribuyente.", "Puedes descargar masivamente reportes de exógena sugerida.", "Puedes descargar masivamente reportes factura electrónica y sus PDF's.", "Puedes descargar masivamente formularios 110/210 presentados.","Analizador tributario de exógena", "Esta herramienta es de apoyo para la temporada Agto a Oct 2026."],
+        nota: "<p>Para brindarle un soporte técnico oportuno, requerimos conectarnos de forma remota a su equipo a través de AnyDesk.<p> <br><p>Tenga en cuenta que este acceso quedará registrado de manera individual en cada computadora durante la instalación. Por su seguridad, nuestro equipo se comunicará exclusivamente al número de móvil ó @usuario que tiene registrado con nosotros.<p> <br><p>Asimismo, le recordamos que el funcionamiento de nuestra herramienta depende de plataformas de terceros integradas; <b>cualquier cambio en los parámetros de dichas plataformas nos exime de responsabilidad sobre la continuidad del servicio.</b><p> <br><b><p>RECUERDE</b> que es importante ver el videotutorial antes de adquirir la herramienta. De esta manera, al finalizar la instalación, le será más fácil resolver cualquier duda que no se haya abordado en el video.</p> <br><p>Le pedimos disponer de unos 15 minutos mientras realizamos la instalación y para las pruebas de funcionalidad ingresar aun perfil de contribuyente. Recuerde que la herramienta no tiene fecha de vencimiento; por ello, nos aseguramos de entregarla probada y funcionando correctamente al momento de su adquisición.</p>",
+        precio: "COP $20.000",
+        video: "video/ReportePN.mp4",
+        youtube: "https://youtu.be/qa_wJjN3Nvo",
+        fotos: ["img/p12-0.png", "img/p12-1.png", "img/p12-2.png", "img/p12-3.png"]
+    },     
+         
      {
         id: 15,
         nombre: "Duolingo Super (1 AÑO)",
@@ -113,22 +128,7 @@ etiqueta: "DISPONIBLE",
         youtube: "https://youtu.be/IVZaqCdm5XY",
         fotos: ["img/p6-0.png", "img/p6-1.png", "img/p6-2.png", "img/p6-3.png", "img/p6-4.png", "img/p6-5.png", "img/p6-6.png"]
     },
-     {
-        id: 12,
-        nombre: "Reportes Renta P.N A.G2025 (DIAN)",
-        url: "reporte-rentapn.html",
-        formato: "Extensión Web .crx",
-        mostrarTecnica: true,
-        etiqueta: "ACTIVA",
-        desc: "<b>REF002</b><p>Ahorra tiempo en esta temporada de Renta de Personas Naturales (Año Gravable 2025). Descarga y renombra automáticamente tus listados de facturas electrónicas y exógena sugerida para una validación rápida, precisa y sin esfuerzo de reportes desde periodos 2013 a 2025.<p> <br><p>Además, puedes iniciar el aplicativo y elegir las 3 opciones de descarga, mientras estas en la sesión del contribuyente.<p><br><b>Publicada el 21-07-2026</b>",
-        caracteristicas: ["Inicia sesión del contribuyente.", "Puedes descargar masivamente reportes de exógena sugerida.", "Puedes descargar masivamente reportes factura electrónica y sus PDF's.", "Puedes descargar masivamente formularios 110/210 presentados.","Analizador tributario de exógena", "Esta herramienta es de apoyo para la temporada Agto a Oct 2026."],
-        nota: "<p>Para brindarle un soporte técnico oportuno, requerimos conectarnos de forma remota a su equipo a través de AnyDesk.<p> <br><p>Tenga en cuenta que este acceso quedará registrado de manera individual en cada computadora durante la instalación. Por su seguridad, nuestro equipo se comunicará exclusivamente al número de móvil ó @usuario que tiene registrado con nosotros.<p> <br><p>Asimismo, le recordamos que el funcionamiento de nuestra herramienta depende de plataformas de terceros integradas; <b>cualquier cambio en los parámetros de dichas plataformas nos exime de responsabilidad sobre la continuidad del servicio.</b><p> <br><b><p>RECUERDE</b> que es importante ver el videotutorial antes de adquirir la herramienta. De esta manera, al finalizar la instalación, le será más fácil resolver cualquier duda que no se haya abordado en el video.</p> <br><p>Le pedimos disponer de unos 15 minutos mientras realizamos la instalación y para las pruebas de funcionalidad ingresar aun perfil de contribuyente. Recuerde que la herramienta no tiene fecha de vencimiento; por ello, nos aseguramos de entregarla probada y funcionando correctamente al momento de su adquisición.</p>",
-        precio: "COP $20.000",
-        video: "video/ReportePN.mp4",
-        youtube: "https://youtu.be/qa_wJjN3Nvo",
-        fotos: ["img/p12-0.png", "img/p12-1.png", "img/p12-2.png", "img/p12-3.png"]
-    },     
-{
+   {
         id: 4,
         nombre: "Microsoft 365 Genuina (1 año)",
         url: "365-office.html",

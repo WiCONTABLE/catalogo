@@ -222,21 +222,22 @@
             border-bottom: 1px solid var(--nav-border);
         }
 
-        .navbar-container {
-            max-width: 1360px;
+                .navbar-container {
+            max-width: 1440px;
             margin: 0 auto;
-            padding: 12px 24px;
+            padding: 10px 20px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 16px;
+            gap: 12px;
         }
 
         .brand-logo {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             text-decoration: none;
+            cursor: pointer;
             flex-shrink: 0;
         }
 
@@ -246,16 +247,31 @@
             object-fit: contain;
             border-radius: 12px;
             background: rgba(255, 255, 255, 0.04);
-            padding: 4px;
+            padding: 3px;
             border: 1px solid var(--border-subtle);
+            transition: transform var(--tr-bounce), box-shadow var(--tr-smooth);
+        }
+
+        .brand-logo:hover .logo-img {
+            transform: scale(1.05) rotate(-2deg);
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.35);
+        }
+
+        .brand-title-group {
+            display: flex;
+            flex-direction: column;
         }
 
         .brand-name {
             font-family: var(--font-heading);
             font-weight: 800;
-            font-size: 1.35rem;
+            font-size: 1.25rem;
             letter-spacing: -0.5px;
             color: var(--text-primary);
+            line-height: 1.1;
+            display: flex;
+            align-items: center;
+            gap: 2px;
         }
 
         .brand-name span {
@@ -264,112 +280,175 @@
             -webkit-text-fill-color: transparent;
         }
 
+        .brand-subtitle {
+            font-size: 0.6875rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+        }
+
+        /* Nav links row */
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 5px;
+            flex-shrink: 1;
+            min-width: 0;
         }
 
         .nav-link {
-            font-size: 0.875rem;
+            font-size: 0.8125rem;
             font-weight: 600;
             color: var(--text-secondary);
-            padding: 8px 14px;
+            padding: 7px 11px;
             border-radius: var(--radius-full);
+            white-space: nowrap;
             transition: all var(--tr-fast);
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            white-space: nowrap;
+            gap: 5px;
+            cursor: pointer;
         }
 
         .nav-link:hover {
-            color: var(--brand-green);
-            background: var(--brand-green-light);
+            color: var(--text-primary);
+            background: var(--border-subtle);
         }
 
-        /* Dropdown */
+        .nav-link.highlight {
+            color: var(--brand-green);
+            background: var(--brand-green-light);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+        }
+
+        .nav-link.highlight:hover {
+            background: rgba(16, 185, 129, 0.2);
+            color: #fff;
+        }
+
+        /* Large Desktop Screens (>= 1321px): All links visible */
+        @media (min-width: 1321px) {
+            .nav-link-desktop-only {
+                display: inline-flex;
+            }
+            .nav-dropdown {
+                display: none !important;
+            }
+        }
+
+        /* Laptop & Medium Screens (993px to 1320px): Dropdown visible */
+        @media (max-width: 1320px) {
+            .nav-link-desktop-only {
+                display: none !important;
+            }
+            .nav-dropdown {
+                display: inline-block;
+            }
+        }
+
+        /* Nav Dropdown for Secondary Resources */
         .nav-dropdown {
             position: relative;
             display: inline-block;
         }
 
         .nav-dropdown-btn {
-            font-size: 0.875rem;
+            font-size: 0.8125rem;
             font-weight: 600;
             color: var(--text-secondary);
-            padding: 8px 14px;
+            padding: 7px 11px;
             border-radius: var(--radius-full);
-            transition: all var(--tr-fast);
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            white-space: nowrap;
+            gap: 5px;
+            cursor: pointer;
+            transition: all var(--tr-fast);
         }
 
-        .nav-dropdown-btn:hover, .nav-dropdown.active .nav-dropdown-btn {
+        .nav-dropdown-btn:hover,
+        .nav-dropdown.active .nav-dropdown-btn {
             color: var(--brand-green);
             background: var(--brand-green-light);
         }
 
-        .dropdown-arrow {
-            font-size: 0.75rem;
+        .dropdown-chevron {
             transition: transform var(--tr-fast);
         }
 
-        .nav-dropdown.active .dropdown-arrow {
+        .nav-dropdown:hover .dropdown-chevron,
+        .nav-dropdown.active .dropdown-chevron {
             transform: rotate(180deg);
         }
 
-        .dropdown-menu {
+        .nav-dropdown-menu {
             position: absolute;
             top: calc(100% + 8px);
             right: 0;
-            width: 280px;
+            width: 250px;
             background: var(--bg-surface);
-            border: 1px solid var(--border-medium);
+            border: 1px solid var(--border-subtle);
             border-radius: var(--radius-lg);
-            padding: 8px;
-            box-shadow: var(--card-shadow-hover);
+            box-shadow: 0 14px 40px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05);
+            padding: 6px;
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
             opacity: 0;
             visibility: hidden;
             transform: translateY(8px);
             transition: all var(--tr-fast);
-            z-index: 1000;
+            z-index: 1050;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
         }
 
-        .nav-dropdown.active .dropdown-menu {
+        .nav-dropdown:hover .nav-dropdown-menu,
+        .nav-dropdown-menu.show {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
+            pointer-events: auto;
         }
 
         .dropdown-item {
             display: flex;
             align-items: center;
-            gap: 12px;
-            padding: 10px 14px;
+            gap: 10px;
+            padding: 8px 10px;
             border-radius: var(--radius-md);
             color: var(--text-primary);
-            font-size: 0.875rem;
-            transition: background var(--tr-fast);
+            transition: all var(--tr-fast);
+            text-align: left;
         }
 
         .dropdown-item:hover {
             background: var(--brand-green-light);
             color: var(--brand-green);
+            transform: translateX(3px);
         }
 
-        .dropdown-item small {
-            display: block;
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            font-weight: 400;
-        }
-
-        .dropdown-icon {
-            font-size: 1.15rem;
+        .dropdown-item-icon {
+            font-size: 1.1rem;
             flex-shrink: 0;
+        }
+
+        .dropdown-item-text strong {
+            display: block;
+            font-size: 0.8125rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .dropdown-item-text small {
+            display: block;
+            font-size: 0.6875rem;
+            color: var(--text-muted);
+        }
+
+        .dropdown-item:hover .dropdown-item-text small {
+            color: var(--brand-green);
+            opacity: 0.85;
         }
 
         .nav-actions {
@@ -379,43 +458,20 @@
             flex-shrink: 0;
         }
 
-        .btn-theme-toggle {
-            width: 40px;
-            height: 40px;
-            border-radius: var(--radius-full);
-            background: var(--bg-surface-elevated);
-            border: 1px solid var(--border-subtle);
-            color: var(--text-secondary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all var(--tr-fast);
-        }
-
-        .btn-theme-toggle:hover {
-            color: var(--brand-green);
-            border-color: var(--brand-green);
-            transform: scale(1.05);
-        }
-
-        .theme-icon-sun, .theme-icon-moon { width: 19px; height: 19px; stroke-width: 2; }
-        [data-theme="dark"] .theme-icon-sun { display: block; }
-        [data-theme="dark"] .theme-icon-moon { display: none; }
-        [data-theme="light"] .theme-icon-sun { display: none; }
-        [data-theme="light"] .theme-icon-moon { display: block; }
-
         .btn-nav-cart {
+            position: relative;
             background: var(--brand-gradient);
             color: #042f2e;
             font-weight: 700;
-            font-size: 0.875rem;
-            padding: 9px 18px;
+            font-size: 0.84rem;
+            padding: 8px 16px;
             border-radius: var(--radius-full);
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 7px;
+            transition: transform var(--tr-smooth), box-shadow var(--tr-smooth);
             box-shadow: 0 4px 15px rgba(16, 185, 129, 0.25);
-            transition: transform var(--tr-fast), box-shadow var(--tr-fast);
+            flex-shrink: 0;
             white-space: nowrap;
         }
 
@@ -2004,52 +2060,67 @@
         </div>
         <header class="navbar">
             <div class="navbar-container">
-                <a href="https://wicontable.com/" class="brand-logo" title="Volver al Catálogo WiCONTABLE">
+                <a href="https://wicontable.com/" class="brand-logo" title="WiCONTABLE Inicio">
                     <img src="img/logowi.png" alt="WiCONTABLE Logo" class="logo-img">
-                    <div class="brand-name">Wi<span>CONTABLE</span></div>
+                    <div class="brand-title-group">
+                        <div class="brand-name">Wi<span>CONTABLE</span></div>
+                        <span class="brand-subtitle">Soluciones Profesionales</span>
+                    </div>
                 </a>
 
-                <nav class="nav-links">
-                    <a href="plantillas.html" class="nav-link"><span>🎁</span> Plantillas GRATIS</a>
-                    <a href="https://burly-darkness-70e.notion.site/WiCONTABLE-2ea95ee6323880ec8cbae8ba51b03831" target="_blank" rel="noopener noreferrer" class="nav-link"><span>📚</span> Repositorio</a>
-                    <a href="https://chatgpt.com/g/g-vO0tKViyq-asistente-contable-colombia" target="_blank" rel="noopener noreferrer" class="nav-link"><span>🤖</span> GPT Asistente</a>
-                    <div class="nav-dropdown" id="navDropdown">
-                        <button class="nav-dropdown-btn" onclick="toggleNavDropdown(event)">
+                <!-- Responsive Buttons List: Never cut off / Zero truncations -->
+                <div class="nav-links">
+                    <!-- Always visible pill button -->
+                    <a href="plantillas.html" class="nav-link highlight">🎁 Plantillas GRATIS</a>
+
+                    <!-- Direct buttons visible on normal desktops (>= 993px) -->
+                    <a href="https://burly-darkness-70e.notion.site/WiCONTABLE-2ea95ee6323880ec8cbae8ba51b03831" target="_blank" rel="noopener noreferrer" class="nav-link">📚 Repositorio</a>
+                    <a href="https://chatgpt.com/g/g-vO0tKViyq-asistente-contable-colombia" target="_blank" rel="noopener noreferrer" class="nav-link">🤖 GPT Asistente</a>
+
+                    <!-- Direct buttons visible on large desktop screens (>= 1321px) -->
+                    <a href="https://sites.google.com/view/estatuton-2024/inicio" target="_blank" rel="noopener noreferrer" class="nav-link nav-link-desktop-only">📁 Estatutón</a>
+                    <a href="https://drive.google.com/drive/folders/12Wl1oNyj58xcgi5LF3PCHAhDyjsKjV-N" target="_blank" rel="noopener noreferrer" class="nav-link nav-link-desktop-only">📝 R.U.T CIAS</a>
+                    <a href="#" onclick="showCourseNotice('Excel'); return false;" class="nav-link nav-link-desktop-only">📗 Aprende Excel</a>
+                    <a href="#" onclick="showCourseNotice('PowerBI'); return false;" class="nav-link nav-link-desktop-only">📊 Aprende PowerBI</a>
+
+                    <!-- Compact Dropdown automatically shown on medium / laptop screens (993px to 1320px) -->
+                    <div class="nav-dropdown" id="navMoreDropdown">
+                        <button class="nav-link nav-dropdown-btn" onclick="toggleNavDropdown(event)" aria-expanded="false" title="Más herramientas y recursos">
                             <span>📁 Más Recursos</span>
-                            <span class="dropdown-arrow">▾</span>
+                            <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         </button>
-                        <div class="dropdown-menu">
+                        <div class="nav-dropdown-menu" id="navDropdownMenu">
                             <a href="https://sites.google.com/view/estatuton-2024/inicio" target="_blank" rel="noopener noreferrer" class="dropdown-item">
-                                <span class="dropdown-icon">📁</span>
-                                <div>
+                                <span class="dropdown-item-icon">📁</span>
+                                <div class="dropdown-item-text">
                                     <strong>Estatutón Contable</strong>
-                                    <small>Estatuto tributario online y doctrina</small>
+                                    <small>Estatuto tributario online</small>
                                 </div>
                             </a>
                             <a href="https://drive.google.com/drive/folders/12Wl1oNyj58xcgi5LF3PCHAhDyjsKjV-N" target="_blank" rel="noopener noreferrer" class="dropdown-item">
-                                <span class="dropdown-icon">📝</span>
-                                <div>
+                                <span class="dropdown-item-icon">📝</span>
+                                <div class="dropdown-item-text">
                                     <strong>R.U.T CIAS</strong>
-                                    <small>Formatos RUT para compañías en Google Drive</small>
+                                    <small>Formatos RUT para empresas</small>
                                 </div>
                             </a>
-                            <a href="#" onclick="showCourseNotice('Excel'); return false;" class="dropdown-item">
-                                <span class="dropdown-icon">📗</span>
-                                <div>
+                            <a href="#" onclick="showCourseNotice('Excel'); closeNavDropdown(); return false;" class="dropdown-item">
+                                <span class="dropdown-item-icon">📗</span>
+                                <div class="dropdown-item-text">
                                     <strong>Aprende Excel</strong>
-                                    <small>Automatización y fórmulas tributarias</small>
+                                    <small>Trucos y fórmulas contables</small>
                                 </div>
                             </a>
-                            <a href="#" onclick="showCourseNotice('PowerBI'); return false;" class="dropdown-item">
-                                <span class="dropdown-icon">📊</span>
-                                <div>
+                            <a href="#" onclick="showCourseNotice('PowerBI'); closeNavDropdown(); return false;" class="dropdown-item">
+                                <span class="dropdown-item-icon">📊</span>
+                                <div class="dropdown-item-text">
                                     <strong>Aprende PowerBI</strong>
                                     <small>Dashboards e inteligencia de datos</small>
                                 </div>
                             </a>
                         </div>
                     </div>
-                </nav>
+                </div>
 
                 <div class="nav-actions">
 
@@ -2820,26 +2891,10 @@
             }
         }
 
-        function showCourseNotice(type) {
-            const modal = document.getElementById('noticeModal');
-            const title = document.getElementById('noticeTitle');
-            const text = document.getElementById('noticeText');
-            const btn = document.getElementById('noticeWaBtn');
-            const icon = document.getElementById('noticeIcon');
+        function showCourseNotice(name) {
+            alert(`🚧 ¡Sección en desarrollo!
 
-            if (type === 'Excel') {
-                icon.innerText = '📗';
-                title.innerText = 'Curso Práctico de Excel Contable';
-                text.innerText = 'Aprende formulación avanzada, automatización de macros, conciliaciones bancarias masivas y liquidación tributaria.';
-                btn.href = 'https://wa.me/573156016386?text=¡Hola%20Wilder!%20Me%20interesa%20información%20del%20curso%20de%20Excel%20Contable.';
-            } else {
-                icon.innerText = '📊';
-                title.innerText = 'Curso de PowerBI para Contadores';
-                text.innerText = 'Construye dashboards financieros interactivos, análisis de costos en tiempo real y reportería gerencial impactante.';
-                btn.href = 'https://wa.me/573156016386?text=¡Hola%20Wilder!%20Me%20interesa%20información%20del%20curso%20de%20PowerBI%20Financiero.';
-            }
-
-            modal.classList.add('active');
+Estamos estructurando el módulo formativo para que domines ${name} aplicado al ámbito contable. ¡Pronto estará disponible!`);
         }
 
         function closeCourseNotice() {
@@ -2896,13 +2951,28 @@
 
         // 5. Dropdown
         function toggleNavDropdown(e) {
-            e.stopPropagation();
-            document.getElementById('navDropdown').classList.toggle('active');
+            if (e) e.stopPropagation();
+            const menu = document.getElementById('navDropdownMenu');
+            const dropdown = document.getElementById('navMoreDropdown');
+            if (menu) {
+                const isOpen = menu.classList.contains('show');
+                menu.classList.toggle('show', !isOpen);
+                if (dropdown) dropdown.classList.toggle('active', !isOpen);
+            }
         }
 
-        document.addEventListener('click', () => {
-            const drop = document.getElementById('navDropdown');
-            if (drop) drop.classList.remove('active');
+        function closeNavDropdown() {
+            const menu = document.getElementById('navDropdownMenu');
+            const dropdown = document.getElementById('navMoreDropdown');
+            if (menu) menu.classList.remove('show');
+            if (dropdown) dropdown.classList.remove('active');
+        }
+
+        document.addEventListener('click', (e) => {
+            const dropdown = document.getElementById('navMoreDropdown');
+            if (dropdown && !dropdown.contains(e.target)) {
+                closeNavDropdown();
+            }
         });
 
         // 6. Dark / Light Theme Toggle

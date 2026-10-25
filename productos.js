@@ -126,7 +126,20 @@ etiqueta: "DISPONIBLE",
         video: "",
         fotos: ["img/p8-0.png", "img/p8-1.png"]
     },
-
+  {
+        id: 9,
+        nombre: "Anydesk V.6.0 (Vitalicia)",
+        url: "anydesk-v6.html",
+        formato: "Ejecutable .exe",
+        mostrarTecnica: false,
+etiqueta: "DISPONIBLE",
+        desc: "<b>REF008</b>El software de escritorio remoto de alto rendimiento que permite compartir el escritorio sin latencia, un control remoto estable y una transmisión de datos rápida y segura entre dispositivos.<p><b> </b><p>",
+        caracteristicas: ["Vea y controle la pantalla de otro dispositivo.", "No requiere licencia y puedes usarlo incluso si formateas tu PC en el futuro."],
+        nota: "Se trata de una aplicación ejecutable (EXE) que ha sido ajustada para mantener siempre la sesión activa y sin limites de tiempo; la aplicación se mantiene operativa de forma indefinida. <br><br><b>Se recomienda no actualizar y mantener la versión inicial.</b> En caso que el usuario tenga alguna versión instalada anteriormente se recomienda limpiar los registros mediante regedit para el óptimo funcionamiento de esta versión. <br><br>Precio en USDT $7 mediante Binance.",
+        precio: "COP $20.000",
+        video: "",
+        fotos: ["img/p9-0.png", "img/p9-1.png"]
+    },
 
          
          
@@ -160,34 +173,6 @@ etiqueta: "DISPONIBLE",
         youtube: "https://youtu.be/IVZaqCdm5XY",
         fotos: ["img/p6-0.png", "img/p6-1.png", "img/p6-2.png", "img/p6-3.png", "img/p6-4.png", "img/p6-5.png", "img/p6-6.png"]
     },
-  {
-        id: 9,
-        nombre: "Anydesk V.6.0 (Vitalicia)",
-        url: "anydesk-v6.html",
-        formato: "Ejecutable .exe",
-        mostrarTecnica: false,
-etiqueta: "DISPONIBLE",
-        desc: "El software de escritorio remoto de alto rendimiento que permite compartir el escritorio sin latencia, un control remoto estable y una transmisión de datos rápida y segura entre dispositivos.<p><b> </b><p>",
-        caracteristicas: ["Vea y controle la pantalla de otro dispositivo.", "No requiere licencia y puedes usarlo incluso si formateas tu PC en el futuro."],
-        nota: "Se trata de una aplicación ejecutable (EXE) que ha sido ajustada para mantener siempre la sesión activa y sin limites de tiempo; la aplicación se mantiene operativa de forma indefinida. <br><br><b>Se recomienda no actualizar y mantener la versión inicial.</b> En caso que el usuario tenga alguna versión instalada anteriormente se recomienda limpiar los registros mediante regedit para el óptimo funcionamiento de esta versión. <br><br>Precio en USDT $7 mediante Binance.",
-        precio: "COP $20.000",
-        video: "",
-        fotos: ["img/p9-0.png", "img/p9-1.png"]
-    },
-{
-        id: 10,
-        nombre: "Plataformas/Membresías",
-        url: "plataforma-membresias.html",
-        formato: "Credenciales",
-        mostrarTecnica: false,
-etiqueta: "DISPONIBLE",
-        desc: "Te invitamos a visualizar nuestro catalogo de ocio, producción y entretenimiento con los mejores precios del mercado.<p><b> </b><p>",
-        caracteristicas: ["Plataformas Streaming.", "Antivirus.", "IA.", "VPN.", "Diseño.", "Cursos.", "Juegos"],
-        nota: "(En ver videotutorial encontrarás lista de precios y plataformas) Las membresias son en la mayoria mensuales y otras con oferta de hasta 3 y 12 meses. <b>Escribenos y podemos ampliar la información de interes.</b>",
-        precio: "Desde COP $1.500",
-        video: "https://acortar.link/Plataformax",
-        fotos: ["img/p10-0.png"]
-    },
 {
         id: 1,
         nombre: "Spotify (3 Meses)",
@@ -202,7 +187,22 @@ etiqueta: "DISPONIBLE",
         video: "video/Spotify.mp4",
         youtube: "",
         fotos: ["img/p1-0.png", "img/p1-1.png", "img/p1-2.png"]
+    },         
+{
+        id: 10,
+        nombre: "Plataformas/Membresías",
+        url: "plataforma-membresias.html",
+        formato: "Credenciales",
+        mostrarTecnica: false,
+etiqueta: "DISPONIBLE",
+        desc: "Te invitamos a visualizar nuestro catalogo de ocio, producción y entretenimiento con los mejores precios del mercado.<p><b> </b><p>",
+        caracteristicas: ["Plataformas Streaming.", "Antivirus.", "IA.", "VPN.", "Diseño.", "Cursos.", "Juegos"],
+        nota: "(En ver videotutorial encontrarás lista de precios y plataformas) Las membresias son en la mayoria mensuales y otras con oferta de hasta 3 y 12 meses. <b>Escribenos y podemos ampliar la información de interes.</b>",
+        precio: "Desde COP $1.500",
+        video: "https://acortar.link/Plataformax",
+        fotos: ["img/p10-0.png"]
     }
+
  
 
 ];

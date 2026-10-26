@@ -97,6 +97,14 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- 9. WiCONTABLE Lite -->
+  <url>
+    <loc>https://wicontable.com/wicontable-lite.html</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- 9. Plataformas & Membresías Digitales -->
   <url>
     <loc>https://wicontable.com/plataforma-membresias.html</loc>

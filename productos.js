@@ -37,7 +37,7 @@ const productos = [
         nombre: "PDF Extract PRO",
         url: "pdfextractpro.html",
         formato: "Ejecutable .exe",
-        mostrarTecnica: false,
+        mostrarTecnica: true,
 etiqueta: "ACTIVA",
         desc: "<b>REF009</b><p><b>Concilias Bancos?</b>; esta es una herramienta orientada principalmente a profesionales de finanzas, contabilidad, ingeniería y análisis de datos que requieren estructurar información tabular atrapada en archivos PDF. <br><br><b>Nota importante:</b> Incluye beneficios que todo aquel que analiza datos debe tener si tu día a día es conciliar bancos, garantizando la privacidad y manejando informacion cofidencial de manera local sin exponer en la web.</b>",
         caracteristicas: ["<p><b>Conversión avanzada a Excel:</b> Es su función más destacada. Permite seleccionar tablas manualmente o usar detección automática para exportar datos limpios a .xlsx o .csv, ajustando filas, columnas y delimitadores antes de convertir.</p>","<p><b>Múltiples formatos de salida:</b> Convierte archivos PDF a Word, PowerPoint, AutoCAD (DWG/DXF), HTML, imágenes y texto plano.</p>", "<p><b>Motor OCR integrado:</b> Reconoce y extrae texto o tablas desde documentos escaneados o imágenes fotográficas en varios idiomas.</p>" , "<p><b>Procesamiento por lotes (Batch):</b> Permite convertir carpetas enteras de archivos PDF de manera simultánea sin intervención manual paso a paso.</p>", "<p><b>Edición y seguridad:</b> Incluye herramientas para modificar texto directamente en el PDF, agregar páginas, crear formularios interactivos, añadir firmas digitales y cifrar con contraseñas.</p>"],

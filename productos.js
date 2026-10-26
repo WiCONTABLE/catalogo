@@ -3,6 +3,21 @@ const miTelegram = "https://telegram.me/wicontable";
 
 const productos = [
          {
+        id: 7,
+        nombre: "WiCONTABLE Lite",
+        url: "wicontable-lite.html",
+        formato: "Ejecutable .exe",
+        mostrarTecnica: true,
+        etiqueta: "¡EN PRODUCCION!",
+        desc: "<b>REF001</b><p>La primera solución pensada para contadores y profesionales financieros que permite consultar de manera masiva en 10 plataformas claves: REGISTRADURIA, PROCURADURIA, SISBÉN, DIAN, POLICIA, RUAF, SISPRO, RUES, SIMIT, FOSYGA.<p><b>Actualizada el XX-11-2026</b>",
+        caracteristicas: ["Ideal para temporada de Exogena podras validar los nombres asociados a los Nit ó cualquier tipo de documento que permitan las plataformas.", ""],
+        nota: "<p>Para brindarle un soporte técnico oportuno, requerimos conectarnos de forma remota a su equipo a través de AnyDesk.<p> <br><p>Tenga en cuenta que este acceso quedará registrado de manera individual en cada computadora durante la instalación. Por su seguridad, nuestro equipo se comunicará exclusivamente al número de móvil ó @usuario que tiene registrado con nosotros.<p> <br><p>Asimismo, le recordamos que el funcionamiento de nuestra herramienta depende de plataformas de terceros integradas; <b>cualquier cambio en los parámetros de dichas plataformas nos exime de responsabilidad sobre la continuidad del servicio.</b><p> <br><b><p>RECUERDE</b> que es importante ver el videotutorial antes de adquirir la herramienta. De esta manera, al finalizar la instalación, le será más fácil resolver cualquier duda que no se haya abordado en el video.</p> <br><p>Le pedimos disponer de unos 15 minutos mientras realizamos la instalación y para las pruebas de funcionalidad un listado de NIT ó Número documento para consultar. Recuerde que la herramienta no tiene fecha de vencimiento; por ello, nos aseguramos de entregarla probada y funcionando correctamente al momento de su adquisición.</p>",
+        precio: "COP $69.900",
+        video: "",
+        youtube: "",
+        fotos: ["img/p0-0.png"]
+    },   
+         {
         id: 2,
         nombre: "PDFs Downloader (DIAN)",
         url: "pdfs-downloader.html",

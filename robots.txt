@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-
-# Sitemap oficial de WiCONTABLE
-Sitemap: https://wicontable.com/sitemap.xml

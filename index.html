@@ -1905,6 +1905,21 @@
                 opacity: 0;
             }
 
+            /* Rotating Globe Animation for Mobile Speed-Dial FAB */
+            .floating-social-dock:not(.is-expanded) .icon-share svg {
+                animation: spinGlobe 12s linear infinite;
+                transform-origin: center center;
+            }
+
+            @keyframes spinGlobe {
+                from {
+                    transform: rotate(0deg);
+                }
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+
             /* Pulse Halo on Trigger when closed */
             .floating-social-dock:not(.is-expanded) .dock-mobile-trigger::after {
                 content: '';
@@ -3356,12 +3371,10 @@
         <!-- Mobile Speed-Dial Trigger FAB -->
         <button class="dock-mobile-trigger" id="dockMobileTrigger" type="button" aria-label="Canales y Redes Sociales" title="Redes Sociales" onclick="toggleMobileDock()">
             <span class="dock-trigger-icon icon-share">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="18" cy="5" r="3"></circle>
-                    <circle cx="6" cy="12" r="3"></circle>
-                    <circle cx="18" cy="19" r="3"></circle>
-                    <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
-                    <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
                 </svg>
             </span>
             <span class="dock-trigger-icon icon-close">

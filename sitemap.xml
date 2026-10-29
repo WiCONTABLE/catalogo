@@ -161,14 +161,6 @@
     </video:video>
   </url>
 
-  <!-- 13. Spotify (3 Meses) -->
-  <url>
-    <loc>https://wicontable.com/spotify3meses.html</loc>
-    <lastmod>2026-10-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
   <!-- 14. Windows 10/11 PRO (Vitalicia) -->
   <url>
     <loc>https://wicontable.com/windows-10-11.html</loc>

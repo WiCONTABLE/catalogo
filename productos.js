@@ -15,7 +15,7 @@ etiqueta: "¡NUEVO!",
         precio: "COP $30.000",
         video: "video/Gemini.mp4",
         youtube: "https://youtu.be/f1pKdYerHxg",
-        fotos: ["img/p6-0.png", "img/p6-1.png", "img/p6-2.png", "img/p6-3.png", "img/p6-4.png", "img/p6-5.png", "img/p6-6.png"]
+        fotos: ["img/p6-0.png", "img/p6-1.png", "img/p6-2.png", "img/p6-3.png", "img/p6-4.png", "img/p6-5.png"]
     },
          {
         id: 7,

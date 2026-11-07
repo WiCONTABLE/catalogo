@@ -4,13 +4,13 @@ const miTelegram = "https://telegram.me/wicontable";
 const productos = [
           {
         id: 6,
-        nombre: "Gemini PRO (18 Meses)",
+        nombre: "Gemini PRO (12 Meses)",
         url: "gemini-pro.html",
         formato: "Credenciales",
         mostrarTecnica: false,
 etiqueta: "¡NUEVO!",
-        desc: "Disfruta de 18 meses completos de Gemini PRO, con acceso a las funciones avanzadas de inteligencia artificial de Google, además de los beneficios incluidos con la promoción de Jio.<p><b> </b><p>",
-        caracteristicas: ["Acceso a Gemini Pro", "Modelos de IA avanzados para mayor rendimiento (Chat / Spark).", "Ayuda en redacción, programación, estudio y productividad.", "Generación de contenido y asistencia inteligente.", "Beneficios adicionales incluidos con la promoción de Jio 5TB de espacio.", "Se entrega un link vía anydesk listo para canjear el beneficio." ,"Disponible desde navegador web, Android y dispositivos compatibles con los servicios de Google."],
+        desc: "Disfruta de 12 meses completos de Gemini PRO, con acceso a las funciones avanzadas de inteligencia artificial de Google, además de los beneficios incluidos con la promoción de estudiante.<p><b> </b><p>",
+        caracteristicas: ["Acceso a Gemini Pro", "Modelos de IA avanzados para mayor rendimiento (Chat / Spark).", "Ayuda en redacción, programación, estudio y productividad.", "Generación de contenido y asistencia inteligente.", "Beneficios adicionales incluidos con la promoción estudiantil 5TB de espacio.", "Se asiste vía anydesk para canjear el beneficio." ,"Disponible desde navegador web, Android y dispositivos compatibles con los servicios de Google."],
         nota: "Te en cuenta las siguientes recomendaciones: <b>El enlace es de un solo uso.</b> Se recomienda canjearlo únicamente en la cuenta de Google donde deseas disfrutar el beneficio; Una vez activado correctamente, el servicio quedará asociado a tu cuenta Gmail. <p><br><b>Te realizamos acompañamiento vía Anydesk, para ello tenerlo instalado para poder proceder y para validar una correcta activación, es importante que estes en un PC, no es válido ni en Tablet, ni celular para el acompañamiento.</b></p> <br><p>Manejamos pago local COP y Binance USDT.</p> <br><p><b>Tener en cuenta que se brinda garantía por 3 meses y que solo se procede si podemos asistir vía anydesk, de lo contrario no hay garantía.</b> Precio en USDT $10 mediante Binance.<p/>",
         precio: "COP $30.000",
         video: "video/Gemini.mp4",

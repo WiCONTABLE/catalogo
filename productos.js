@@ -30,7 +30,7 @@ etiqueta: "¡NUEVO!",
         precio: "COP $69.900",
         video: "video/WiCONTABLE.mp4",
         youtube: "",
-        fotos: ["img/p0-0.png"]
+        fotos: ["img/p0-0.png", "img/p0-1.png"]
     },   
          {
         id: 2,

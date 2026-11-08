@@ -3114,12 +3114,198 @@
                 font-size: 0.875rem;
             }
         }
-    </style>
+    
+        /* ==========================================================================
+           FESTIVIDADES DE DICIEMBRE & CARGA INMEDIATA DE PRODUCTOS
+           ========================================================================== */
+        /* Carga Inmediata de Productos (Cero retraso, cero animación de carga) */
+        .product-card {
+            opacity: 1 !important;
+            transform: none !important;
+            animation: none !important;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px) !important;
+            box-shadow: var(--card-shadow-hover) !important;
+        }
+
+        .product-card.product-card-nuevo:hover {
+            box-shadow: 0 0 30px rgba(16, 185, 129, 0.25), var(--card-shadow-hover) !important;
+        }
+
+        /* Nieve Navideña Flotante */
+        .holiday-snow {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none !important;
+            z-index: 999;
+            overflow: hidden;
+        }
+
+        .snowflake {
+            position: absolute;
+            top: -30px;
+            left: var(--left, 50%);
+            font-size: var(--size, 14px);
+            color: rgba(255, 255, 255, 0.95);
+            text-shadow: 0 0 6px rgba(16, 185, 129, 0.4), 0 0 12px rgba(255, 255, 255, 0.85);
+            opacity: var(--opacity, 0.6);
+            user-select: none;
+            pointer-events: none !important;
+            will-change: transform;
+            animation: holidaySnowfall var(--dur, 12s) linear infinite;
+            animation-delay: var(--delay, 0s);
+        }
+
+        @keyframes holidaySnowfall {
+            0% {
+                transform: translate3d(0, -30px, 0) rotate(0deg);
+            }
+            50% {
+                transform: translate3d(24px, 50vh, 0) rotate(180deg);
+            }
+            100% {
+                transform: translate3d(-18px, calc(100vh + 40px), 0) rotate(360deg);
+            }
+        }
+
+        /* Guirnalda de Luces Navideñas */
+        .holiday-lights-strand {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            height: 8px;
+            width: 100%;
+            position: relative;
+            z-index: 102;
+            pointer-events: none;
+            overflow: hidden;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, transparent 100%);
+            padding: 0 8px;
+        }
+
+        .holiday-bulb {
+            width: 6px;
+            height: 7px;
+            border-radius: 50% 50% 45% 45%;
+            position: relative;
+            animation: holidayBulbGlow 1.8s ease-in-out infinite alternate;
+        }
+
+        .holiday-bulb.red {
+            background: #EF4444;
+            box-shadow: 0 0 8px rgba(239, 68, 68, 0.85), 0 0 14px rgba(239, 68, 68, 0.4);
+            animation-delay: 0s;
+        }
+
+        .holiday-bulb.green {
+            background: #10B981;
+            box-shadow: 0 0 8px rgba(16, 185, 129, 0.85), 0 0 14px rgba(16, 185, 129, 0.4);
+            animation-delay: 0.45s;
+        }
+
+        .holiday-bulb.gold {
+            background: #F59E0B;
+            box-shadow: 0 0 8px rgba(245, 158, 11, 0.85), 0 0 14px rgba(245, 158, 11, 0.4);
+            animation-delay: 0.9s;
+        }
+
+        .holiday-bulb.blue {
+            background: #06B6D4;
+            box-shadow: 0 0 8px rgba(6, 182, 212, 0.85), 0 0 14px rgba(6, 182, 212, 0.4);
+            animation-delay: 1.35s;
+        }
+
+        @keyframes holidayBulbGlow {
+            0% { opacity: 0.35; transform: scale(0.85); }
+            100% { opacity: 1; transform: scale(1.15); }
+        }
+
+        /* Gorrito Navideño en el Logo */
+        .brand-logo-holiday {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .holiday-santa-hat {
+            position: absolute;
+            top: -10px;
+            left: -6px;
+            pointer-events: none;
+            z-index: 2;
+            transform-origin: bottom center;
+            animation: holidayHatSway 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes holidayHatSway {
+            0% { transform: rotate(-6deg) scale(0.96); }
+            100% { transform: rotate(4deg) scale(1.04); }
+        }
+
+        /* Insignia Navideña en Catálogo */
+        .holiday-badge {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(239, 68, 68, 0.1) 100%) !important;
+            border-color: rgba(16, 185, 129, 0.35) !important;
+            color: #065F46 !important;
+        }
+
+        .holiday-badge-icon {
+            display: inline-block;
+            animation: holidayTreeBounce 2.5s ease-in-out infinite;
+        }
+
+        @keyframes holidayTreeBounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.22) rotate(8deg); }
+        }
+
+        .holiday-badge-sparkle {
+            display: inline-block;
+            animation: holidaySparkle 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes holidaySparkle {
+            0% { opacity: 0.4; transform: scale(0.85); }
+            100% { opacity: 1; transform: scale(1.2); }
+        }
+</style>
 </head>
 <body oncontextmenu="return false;">
 
     <!-- Ambient Lighting Glow Orbs -->
     <div class="ambient-glow"></div>
+
+    <!-- Festividades de Diciembre: Nieve Navideña Flotante -->
+    <div class="holiday-snow" aria-hidden="true">
+        <span class="snowflake" style="--left: 3%; --delay: -2s; --dur: 11s; --size: 14px; --opacity: 0.7;">❄</span>
+        <span class="snowflake" style="--left: 8%; --delay: -7s; --dur: 14s; --size: 10px; --opacity: 0.5;">•</span>
+        <span class="snowflake" style="--left: 14%; --delay: -4s; --dur: 10s; --size: 16px; --opacity: 0.65;">❅</span>
+        <span class="snowflake" style="--left: 20%; --delay: -11s; --dur: 13s; --size: 12px; --opacity: 0.4;">✻</span>
+        <span class="snowflake" style="--left: 26%; --delay: -1s; --dur: 15s; --size: 18px; --opacity: 0.6;">❄</span>
+        <span class="snowflake" style="--left: 32%; --delay: -8s; --dur: 12s; --size: 11px; --opacity: 0.5;">•</span>
+        <span class="snowflake" style="--left: 38%; --delay: -5s; --dur: 9s; --size: 15px; --opacity: 0.7;">❅</span>
+        <span class="snowflake" style="--left: 44%; --delay: -13s; --dur: 16s; --size: 13px; --opacity: 0.45;">✻</span>
+        <span class="snowflake" style="--left: 50%; --delay: -3s; --dur: 11s; --size: 17px; --opacity: 0.7;">❄</span>
+        <span class="snowflake" style="--left: 56%; --delay: -9s; --dur: 14s; --size: 9px; --opacity: 0.5;">•</span>
+        <span class="snowflake" style="--left: 62%; --delay: -6s; --dur: 12s; --size: 16px; --opacity: 0.65;">❅</span>
+        <span class="snowflake" style="--left: 68%; --delay: -12s; --dur: 15s; --size: 12px; --opacity: 0.4;">✻</span>
+        <span class="snowflake" style="--left: 74%; --delay: -2s; --dur: 10s; --size: 19px; --opacity: 0.65;">❄</span>
+        <span class="snowflake" style="--left: 80%; --delay: -10s; --dur: 13s; --size: 10px; --opacity: 0.5;">•</span>
+        <span class="snowflake" style="--left: 86%; --delay: -4s; --dur: 11s; --size: 15px; --opacity: 0.7;">❅</span>
+        <span class="snowflake" style="--left: 92%; --delay: -8s; --dur: 16s; --size: 13px; --opacity: 0.45;">✻</span>
+        <span class="snowflake" style="--left: 97%; --delay: -1s; --dur: 12s; --size: 16px; --opacity: 0.6;">❄</span>
+        <span class="snowflake" style="--left: 6%; --delay: -9s; --dur: 17s; --size: 11px; --opacity: 0.35;">•</span>
+        <span class="snowflake" style="--left: 18%; --delay: -3s; --dur: 13s; --size: 14px; --opacity: 0.55;">❅</span>
+        <span class="snowflake" style="--left: 35%; --delay: -14s; --dur: 18s; --size: 10px; --opacity: 0.3;">•</span>
+        <span class="snowflake" style="--left: 48%; --delay: -7s; --dur: 12s; --size: 15px; --opacity: 0.6;">❄</span>
+        <span class="snowflake" style="--left: 65%; --delay: -15s; --dur: 16s; --size: 12px; --opacity: 0.4;">✻</span>
+        <span class="snowflake" style="--left: 78%; --delay: -5s; --dur: 14s; --size: 13px; --opacity: 0.55;">❅</span>
+        <span class="snowflake" style="--left: 90%; --delay: -11s; --dur: 18s; --size: 9px; --opacity: 0.35;">•</span>
+    </div>
 
     <!-- Unified Fixed Header (Never lost on scroll) -->
     <header class="fixed-site-header">
@@ -3134,7 +3320,9 @@
                 <div class="ticker-marquee-box" title="Mensaje informativo WiCONTABLE">
                     <div class="ticker-marquee-track">
                         <div class="ticker-msg-chunk">
-                            <span class="ticker-item">⚡ <strong>WiCONTABLE:</strong> Herramientas contables profesionales sin pagos recurrentes ni suscripciones ocultas.</span>
+                            <span class="ticker-item">🎄 <strong>¡Felices Fiestas!</strong> WiCONTABLE te acompaña en el cierre contable y tributario de fin de año.</span>
+                            <span class="ticker-sep">✦</span>
+                            <span class="ticker-item">⚡ <strong>Herramientas 100% garantizadas:</strong> Sin pagos recurrentes ni suscripciones ocultas.</span>
                             <span class="ticker-sep">✦</span>
                             <span class="ticker-item">🛡️ Asistencia remota garantizada e instalación personalizada vía AnyDesk.</span>
                             <span class="ticker-sep">✦</span>
@@ -3143,7 +3331,9 @@
                         </div>
                         <!-- Duplicate chunk for seamless infinite right-to-left loop -->
                         <div class="ticker-msg-chunk" aria-hidden="true">
-                            <span class="ticker-item">⚡ <strong>WiCONTABLE:</strong> Herramientas contables profesionales sin pagos recurrentes ni suscripciones ocultas.</span>
+                            <span class="ticker-item">🎄 <strong>¡Felices Fiestas!</strong> WiCONTABLE te acompaña en el cierre contable y tributario de fin de año.</span>
+                            <span class="ticker-sep">✦</span>
+                            <span class="ticker-item">⚡ <strong>Herramientas 100% garantizadas:</strong> Sin pagos recurrentes ni suscripciones ocultas.</span>
                             <span class="ticker-sep">✦</span>
                             <span class="ticker-item">🛡️ Asistencia remota garantizada e instalación personalizada vía AnyDesk.</span>
                             <span class="ticker-sep">✦</span>
@@ -3173,7 +3363,17 @@
         <nav class="navbar">
             <div class="navbar-container">
                 <a href="https://wicontable.com/" class="brand-logo" title="WiCONTABLE Inicio">
-                    <img src="img/logowi.png" alt="WiCONTABLE Logo" class="logo-img">
+                    <div class="brand-logo-holiday">
+                        <span class="holiday-santa-hat" title="¡Felices Fiestas!">
+                            <svg width="24" height="24" viewBox="0 0 36 36" fill="none">
+                                <path d="M7 25C10 14 21 7 30 9C27 15 25 20 26 25Z" fill="#E11D48"/>
+                                <path d="M28 9C32 10 34 14 33 17C32 18 30 17 29 15Z" fill="#BE123C"/>
+                                <rect x="5" y="23" width="25" height="6.5" rx="3.25" fill="#FFFFFF" stroke="#F1F5F9" stroke-width="0.5"/>
+                                <circle cx="31" cy="10" r="4" fill="#FFFFFF" stroke="#F1F5F9" stroke-width="0.5"/>
+                            </svg>
+                        </span>
+                        <img src="img/logowi.png" alt="WiCONTABLE Logo" class="logo-img">
+                    </div>
                     <div class="brand-title-group">
                         <div class="brand-name">Wi<span>CONTABLE</span></div>
                         <span class="brand-subtitle">Soluciones Profesionales</span>
@@ -3251,17 +3451,44 @@
                 </div>
             </div>
         </nav>
+        <!-- Guirnalda de Luces Navideñas Parpadeantes -->
+        <div class="holiday-lights-strand" aria-hidden="true">
+            <span class="holiday-bulb red"></span>
+            <span class="holiday-bulb green"></span>
+            <span class="holiday-bulb gold"></span>
+            <span class="holiday-bulb blue"></span>
+            <span class="holiday-bulb red"></span>
+            <span class="holiday-bulb green"></span>
+            <span class="holiday-bulb gold"></span>
+            <span class="holiday-bulb blue"></span>
+            <span class="holiday-bulb red"></span>
+            <span class="holiday-bulb green"></span>
+            <span class="holiday-bulb gold"></span>
+            <span class="holiday-bulb blue"></span>
+            <span class="holiday-bulb red"></span>
+            <span class="holiday-bulb green"></span>
+            <span class="holiday-bulb gold"></span>
+            <span class="holiday-bulb blue"></span>
+            <span class="holiday-bulb red"></span>
+            <span class="holiday-bulb green"></span>
+            <span class="holiday-bulb gold"></span>
+            <span class="holiday-bulb blue"></span>
+            <span class="holiday-bulb red"></span>
+            <span class="holiday-bulb green"></span>
+            <span class="holiday-bulb gold"></span>
+            <span class="holiday-bulb blue"></span>
+        </div>
     </header>
 
     <!-- Catalog Section with Live Filters & Search -->
     <section class="catalog-section" id="catalogo">
-        <div class="section-header reveal-on-scroll">
-            <span class="section-badge">Catálogo PREMIUM 2026</span>
+        <div class="section-header">
+            <span class="section-badge holiday-badge"><span class="holiday-badge-icon">🎄</span> Catálogo Edición Festividades 2026 <span class="holiday-badge-sparkle">✨</span></span>
             <h1 class="section-title">13 Herramientas para tu día a día</h1>
             <p class="section-subtitle">Automatización y gestión tributaria garantizada &bull; Pago único sin suscripciones recurrentes</p>
         </div>
 
-        <div class="controls-panel reveal-on-scroll">
+        <div class="controls-panel">
             <div class="search-wrapper">
                 <input type="text" id="searchInput" class="search-input" placeholder="🔍 Buscar por palabra clave (ej. DIAN, RUT, Factura, Excel, Licencia...)" onkeyup="filterProducts()">
                 <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
@@ -3702,7 +3929,7 @@
             filtered.forEach(p => {
                 const card = document.createElement('div');
                 const isNuevo = p.etiqueta && p.etiqueta.toUpperCase().includes('NUEVO');
-                card.className = 'product-card reveal-on-scroll' + (isNuevo ? ' product-card-nuevo' : '');
+                card.className = 'product-card' + (isNuevo ? ' product-card-nuevo' : '');
 
                 // Extract REF code
                 let refHTML = '';
@@ -3746,7 +3973,7 @@
                     </div>
                     
                     <a href="${linkHref}" class="card-image-box" title="Ver detalles de ${p.nombre}">
-                        <img src="${safeImg}" alt="${p.nombre}" loading="lazy">
+                        <img src="${safeImg}" alt="${p.nombre}" loading="eager" decoding="async">
                     </a>
 
                     <div class="card-body">
@@ -3772,9 +3999,6 @@
 
                 catalogContainer.appendChild(card);
             });
-
-            // Trigger scroll reveal for newly added cards
-            initScrollObserver();
         }
 
         /* ==========================================================================

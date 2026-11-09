@@ -3983,10 +3983,11 @@
                         <p class="card-desc">${cleanDesc}</p>
                     </div>
 
-                    <div class="card-footer-box">
-                        <div class="price-row">
-                            <span class="price-amount">${p.precio || 'Consultar'}</span>
-                        </div>
+<div class="card-footer-box">
+<div class="price-row" style="flex-direction: column; gap: 2px;">
+    <span class="price-amount">${p.precio || 'Consultar'}</span>
+    ${p.tipoPago ? `<span style="font-size: 0.78rem; color: #94A3B8; font-weight: 500;">${p.tipoPago}</span>` : ''}
+</div>
 
                         <div class="card-actions-grid">
                             <a href="${linkHref}" class="btn-card-details">

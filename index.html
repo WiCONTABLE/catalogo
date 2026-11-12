@@ -446,11 +446,11 @@
             text-transform: uppercase;
         }
 
-        /* Nav links row */
+        /* Nav links row (Botones de Navegación) */
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 7px;
             flex-shrink: 1;
             min-width: 0;
         }
@@ -459,7 +459,9 @@
             font-size: 0.8125rem;
             font-weight: 600;
             color: var(--text-secondary);
-            padding: 7px 11px;
+            background: var(--bg-surface-elevated);
+            border: 1px solid var(--border-subtle);
+            padding: 7px 13px;
             border-radius: var(--radius-full);
             white-space: nowrap;
             transition: all var(--tr-fast);
@@ -467,22 +469,35 @@
             align-items: center;
             gap: 5px;
             cursor: pointer;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
         }
 
         .nav-link:hover {
-            color: var(--text-primary);
-            background: var(--border-subtle);
+            color: var(--brand-green);
+            background: #FFFFFF;
+            border-color: rgba(16, 185, 129, 0.35);
+            box-shadow: 0 3px 10px rgba(16, 185, 129, 0.12);
+            transform: translateY(-1px);
+        }
+
+        .nav-link:active {
+            transform: translateY(0);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
         }
 
         .nav-link.highlight {
             color: var(--brand-green);
             background: var(--brand-green-light);
-            border: 1px solid rgba(16, 185, 129, 0.25);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            font-weight: 700;
         }
 
         .nav-link.highlight:hover {
-            background: rgba(16, 185, 129, 0.2);
-            color: #fff;
+            background: rgba(16, 185, 129, 0.18);
+            border-color: var(--brand-green);
+            color: var(--brand-teal-dark);
+            box-shadow: 0 4px 14px rgba(16, 185, 129, 0.2);
+            transform: translateY(-1px);
         }
 
         /* Nav Dropdown for Secondary Resources */
@@ -1850,6 +1865,43 @@
             max-width: 360px;
         }
 
+        /* ── CYBER MORPH ANIMATION (Footer Brand) ── */
+        .main-footer .brand-name.cyber-morph {
+            font-variant-numeric: tabular-nums;
+            transition: text-shadow 0.4s ease;
+        }
+
+        .main-footer .brand-name.cyber-glow {
+            text-shadow: 0 0 12px rgba(16, 185, 129, 0.45),
+                         0 0 24px rgba(16, 185, 129, 0.2);
+            animation: cyberPulse 2s ease-in-out infinite;
+        }
+
+        .main-footer .brand-name.cyber-glow,
+        .main-footer .brand-name.cyber-glow span {
+            background: none !important;
+            -webkit-background-clip: unset !important;
+            -webkit-text-fill-color: var(--brand-green) !important;
+            color: var(--brand-green);
+        }
+
+        .main-footer .brand-subtitle.cyber-glow {
+            color: var(--brand-green) !important;
+            text-shadow: 0 0 8px rgba(16, 185, 129, 0.3);
+            transition: color 0.4s ease, text-shadow 0.4s ease;
+        }
+
+        @keyframes cyberPulse {
+            0%, 100% {
+                text-shadow: 0 0 8px rgba(16, 185, 129, 0.35),
+                             0 0 18px rgba(16, 185, 129, 0.15);
+            }
+            50% {
+                text-shadow: 0 0 18px rgba(16, 185, 129, 0.6),
+                             0 0 36px rgba(16, 185, 129, 0.3);
+            }
+        }
+
         .footer-column h4 {
             font-family: var(--font-heading);
             font-size: 0.95rem;
@@ -3004,7 +3056,6 @@
                 <!-- Responsive Buttons List: Never cut off / Zero truncations -->
                 <div class="nav-links">
                     <a href="plantillas.html" class="nav-link highlight">Plantillas GRATIS</a>
-                    <a href="https://burly-darkness-70e.notion.site/WiCONTABLE-2ea95ee6323880ec8cbae8ba51b03831" target="_blank" class="nav-link">Repositorio</a>
                     <a href="https://chatgpt.com/g/g-vO0tKViyq-asistente-contable-colombia" target="_blank" class="nav-link">GPT Asistente</a>
 
                     <!-- Direct buttons visible on large desktop screens (>= 1321px) -->
@@ -3216,13 +3267,6 @@
             </a>
 
             <div class="mobile-nav-group-title">Recursos y Utilidades</div>
-            <a href="https://burly-darkness-70e.notion.site/WiCONTABLE-2ea95ee6323880ec8cbae8ba51b03831" target="_blank" class="mobile-nav-item" onclick="closeMobileMenu()">
-                <span class="mobile-nav-icon"></span>
-                <div class="mobile-nav-info">
-                    <strong>Repositorio Contable</strong>
-                    <small>Base de conocimiento oficial en Notion</small>
-                </div>
-            </a>
             <a href="https://chatgpt.com/g/g-vO0tKViyq-asistente-contable-colombia" target="_blank" class="mobile-nav-item" onclick="closeMobileMenu()">
                 <span class="mobile-nav-icon"></span>
                 <div class="mobile-nav-info">
@@ -3870,6 +3914,167 @@
         window.addEventListener('load', () => {
             //setTimeout(openNoticeModal, 400);
         });
+
+        /* ==========================================================================
+           CYBER MORPH — Footer Brand Animation
+           ========================================================================== */
+        (function initCyberMorph() {
+            const CHARS = '01$%#&@!?+=<>{}[]|/\\~^*';
+            const MORPH_WORDS = [
+                'ANALISIS FINANCIERO',
+                'AUTOMATIZACIÓN',
+                'CONTABILIDAD',
+                'CONSULTAS NIT',
+                'PROCESOS MASIVOS DIAN',
+                'AUDITORIA TRIBUTARIA',
+                'MEMBRESIAS',
+                'TUTORIALES',
+                'LOS MEJORES PRECIOS'
+            ];
+            const BRAND_ORIGINAL_HTML = 'Wi<span>CONTABLE</span>';
+            const BRAND_ORIGINAL_TEXT = 'WiCONTABLE';
+            const SUBTITLE_ORIGINAL = 'Wilder Sarria Hernández';
+
+            const SCRAMBLE_SPEED = 35;     // ms per tick
+            const RESOLVE_DELAY = 2;       // ticks before resolving next char
+            const HOLD_TIME = 3500;        // ms to hold each word
+            const MAX_CYCLES = 2;          // full rotations before stopping
+
+            const footer = document.querySelector('.main-footer');
+            if (!footer) return;
+
+            const brandName = footer.querySelector('.brand-name');
+            const brandSub = footer.querySelector('.brand-subtitle');
+            if (!brandName || !brandSub) return;
+
+            let isAnimating = false;
+            let cycleCount = 0;
+            let wordIndex = 0;
+            let animFrameId = null;
+
+            function randomChar() {
+                return CHARS[Math.floor(Math.random() * CHARS.length)];
+            }
+
+            function scrambleTo(element, targetText, onDone) {
+                const len = Math.max(element.textContent.length, targetText.length);
+                const padded = targetText.padEnd(len);
+                let resolved = 0;
+                let tick = 0;
+
+                element.classList.add('cyber-glow');
+
+                function step() {
+                    tick++;
+                    if (tick % RESOLVE_DELAY === 0 && resolved < padded.length) {
+                        resolved++;
+                    }
+                    let display = '';
+                    for (let i = 0; i < padded.length; i++) {
+                        if (i < resolved) {
+                            display += padded[i];
+                        } else {
+                            display += randomChar();
+                        }
+                    }
+                    element.textContent = display.trimEnd();
+
+                    if (resolved >= padded.length) {
+                        element.textContent = targetText;
+                        if (onDone) onDone();
+                        return;
+                    }
+                    animFrameId = setTimeout(step, SCRAMBLE_SPEED);
+                }
+                step();
+            }
+
+            function restoreBrand(onDone) {
+                scrambleTo(brandName, BRAND_ORIGINAL_TEXT, () => {
+                    brandName.innerHTML = BRAND_ORIGINAL_HTML;
+                    brandName.classList.remove('cyber-glow');
+                    if (onDone) onDone();
+                });
+            }
+
+            function scrambleSubtitle(onDone) {
+                scrambleTo(brandSub, SUBTITLE_ORIGINAL, () => {
+                    brandSub.classList.remove('cyber-glow');
+                    if (onDone) onDone();
+                });
+            }
+
+            function cycleNext() {
+                if (cycleCount >= MAX_CYCLES) {
+                    // Final restore
+                    brandName.innerHTML = BRAND_ORIGINAL_HTML;
+                    brandName.classList.remove('cyber-glow', 'cyber-morph');
+                    brandSub.textContent = SUBTITLE_ORIGINAL;
+                    brandSub.classList.remove('cyber-glow');
+                    isAnimating = false;
+                    return;
+                }
+
+                const nextWord = MORPH_WORDS[wordIndex];
+                wordIndex = (wordIndex + 1) % MORPH_WORDS.length;
+
+                // If we completed a full rotation of words
+                if (wordIndex === 0) cycleCount++;
+
+                // Scramble brand name to the word
+                scrambleTo(brandName, nextWord, () => {
+                    // Hold the word, then scramble back to WiCONTABLE
+                    animFrameId = setTimeout(() => {
+                        restoreBrand(() => {
+                            // Hold WiCONTABLE, then go to next word
+                            animFrameId = setTimeout(cycleNext, HOLD_TIME);
+                        });
+                    }, HOLD_TIME);
+                });
+            }
+
+            function startAnimation() {
+                if (isAnimating) return;
+                isAnimating = true;
+                cycleCount = 0;
+                wordIndex = 0;
+
+                brandName.classList.add('cyber-morph');
+
+                // Phase 1: Scramble entrance for brand name
+                brandName.textContent = '';
+                brandSub.textContent = '';
+
+                scrambleTo(brandName, BRAND_ORIGINAL_TEXT, () => {
+                    brandName.innerHTML = BRAND_ORIGINAL_HTML;
+                    brandName.classList.remove('cyber-glow');
+
+                    // Phase 1b: Scramble entrance for subtitle
+                    scrambleSubtitle(() => {
+                        // Phase 2: Start word cycling after a pause
+                        animFrameId = setTimeout(cycleNext, HOLD_TIME);
+                    });
+                });
+            }
+
+            // Trigger on scroll into view with IntersectionObserver
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !isAnimating) {
+                        startAnimation();
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            observer.observe(footer);
+
+            // Allow restart on hover after animation completes
+            footer.querySelector('.footer-brand').addEventListener('mouseenter', () => {
+                if (!isAnimating) {
+                    startAnimation();
+                }
+            });
+        })();
     </script>
 </body>
 </html>

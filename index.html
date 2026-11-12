@@ -11,6 +11,7 @@
 
     <!-- Preload Critical Assets -->
     <link rel="preload" as="image" href="img/logowi.png">
+    <link rel="preload" as="image" href="img/p6-0.png" fetchpriority="high">
 
     <!-- Structured Data (Schema.org JSON-LD) -->
     <script type="application/ld+json">
@@ -3600,7 +3601,7 @@
                 return;
             }
 
-            filtered.forEach(p => {
+            filtered.forEach((p, idx) => {
                 const card = document.createElement('div');
                 const isNuevo = p.etiqueta && p.etiqueta.toUpperCase().includes('NUEVO');
                 card.className = 'product-card' + (isNuevo ? ' product-card-nuevo' : '');
@@ -3639,6 +3640,8 @@
                         <rect class="marching-ants-rect" x="1.5" y="1.5" rx="28" ry="28"></rect>
                     </svg>` : '';
 
+                const imgLoading = idx < 2 ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"';
+
                 card.innerHTML = `
                     ${antsSVG}
                     <div class="card-header-bar">
@@ -3647,7 +3650,7 @@
                     </div>
                     
                     <a href="${linkHref}" class="card-image-box" title="Ver detalles de ${p.nombre}">
-                        <img src="${safeImg}" alt="${p.nombre}" loading="eager" decoding="async">
+                        <img src="${safeImg}" alt="${p.nombre}" ${imgLoading} decoding="async">
                     </a>
 
                     <div class="card-body">

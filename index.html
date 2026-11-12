@@ -7,6 +7,59 @@
     <link rel="icon" href="https://wicontable.com/img/logowi.png" type="image/png" sizes="48x48">
     <link rel="canonical" href="https://wicontable.com/">
     <meta name="description" content="Automatiza procesos contables, ahorra horas de trabajo y optimiza tu gestión tributaria con herramientas especializadas sin pagos recurrentes.">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- Preload Critical Assets -->
+    <link rel="preload" as="image" href="img/logowi.png">
+
+    <!-- Structured Data (Schema.org JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://wicontable.com/#organization",
+          "name": "WiCONTABLE",
+          "url": "https://wicontable.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://wicontable.com/img/logowi.png",
+            "width": 800,
+            "height": 800
+          },
+          "founder": {
+            "@type": "Person",
+            "name": "Wilder Sarria Hernández"
+          },
+          "description": "Automatiza procesos contables, ahorra horas de trabajo y optimiza tu gestión tributaria con herramientas especializadas sin pagos recurrentes.",
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "telephone": "+57-315-6016386",
+              "contactType": "customer support",
+              "availableLanguage": "Spanish"
+            }
+          ],
+          "sameAs": [
+            "https://wa.me/573156016386",
+            "https://telegram.me/wicontableINFO",
+            "https://chatgpt.com/g/g-vO0tKViyq-asistente-contable-colombia"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://wicontable.com/#website",
+          "url": "https://wicontable.com/",
+          "name": "WiCONTABLE",
+          "publisher": {
+            "@id": "https://wicontable.com/#organization"
+          },
+          "description": "Catálogo de software, macros y herramientas de automatización contable en Colombia."
+        }
+      ]
+    }
+    </script>
     
     <!-- Open Graph / WhatsApp / Facebook / LinkedIn -->
     <meta property="og:type" content="website">
@@ -33,7 +86,7 @@
     <!-- Fonts: Plus Jakarta Sans & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap" rel="stylesheet">
 
     <style>
         /* ==========================================================================
@@ -994,14 +1047,21 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 28px;
+            min-height: 1200px;
         }
 
         @media (max-width: 1100px) {
-            .catalog-grid { grid-template-columns: repeat(2, 1fr); }
+            .catalog-grid { 
+                grid-template-columns: repeat(2, 1fr); 
+                min-height: 1800px;
+            }
         }
 
         @media (max-width: 680px) {
-            .catalog-grid { grid-template-columns: 1fr; }
+            .catalog-grid { 
+                grid-template-columns: 1fr; 
+                min-height: 2400px;
+            }
         }
 
         .product-card {
@@ -1902,7 +1962,7 @@
             }
         }
 
-        .footer-column h4 {
+        .footer-column h3, .footer-column h4 {
             font-family: var(--font-heading);
             font-size: 0.95rem;
             font-weight: 800;
@@ -3066,7 +3126,7 @@
                                 <circle cx="31" cy="10" r="4" fill="#FFFFFF" stroke="#F1F5F9" stroke-width="0.5"/>
                             </svg>
                         </span>
-                        <img src="img/logowi.png" alt="WiCONTABLE Logo" class="logo-img">
+                        <img src="img/logowi.png" alt="WiCONTABLE Logo" class="logo-img" width="40" height="40">
                     </div>
                     <div class="brand-title-group">
                         <div class="brand-name">Wi<span>CONTABLE</span></div>
@@ -3188,11 +3248,13 @@
         </div>
 
         <!-- Product Grid Target -->
+        <h2 class="sr-only">Catálogo de Herramientas y Soluciones Contables</h2>
         <div class="catalog-grid" id="catalog"></div>
     </section>
 
     <!-- 7. Trust & Guarantee Features -->
     <section class="trust-section reveal-on-scroll">
+        <h2 class="sr-only">Beneficios y Garantías del Servicio WiCONTABLE</h2>
         <div class="trust-grid">
             <div class="trust-card">
                 <div class="trust-icon-box">⚡</div>
@@ -3260,7 +3322,7 @@
     <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-label="Menú de Navegación">
         <div class="mobile-nav-header">
             <a href="https://wicontable.com/" class="brand-logo" onclick="closeMobileMenu()">
-                <img src="img/logowi.png" alt="WiCONTABLE" class="logo-img">
+                <img src="img/logowi.png" alt="WiCONTABLE" class="logo-img" width="40" height="40">
                 <div class="brand-title-group">
                     <div class="brand-name">Wi<span>CONTABLE</span></div>
                     <span class="brand-subtitle">Soluciones Profesionales</span>
@@ -3402,10 +3464,11 @@
 
     <!-- 12. Footer Section -->
     <footer class="main-footer">
+        <h2 class="sr-only">Enlaces de Interés, Comunidad y Canales de Atención</h2>
         <div class="footer-container">
             <div class="footer-brand">
                 <a href="https://wicontable.com/" class="brand-logo" style="margin-bottom: 16px;">
-                    <img src="img/logowi.png" alt="WiCONTABLE" class="logo-img">
+                    <img src="img/logowi.png" alt="WiCONTABLE" class="logo-img" width="40" height="40">
                     <div class="brand-title-group">
                         <div class="brand-name">Wi<span>CONTABLE</span></div>
                         <span class="brand-subtitle">Wilder Sarria Hernández</span>
@@ -3415,7 +3478,7 @@
             </div>
 
             <div class="footer-column">
-                <h4>Comunidad & IA</h4>
+                <h3>Comunidad & IA</h3>
                 <ul class="footer-links-list">
                     <li><a href="https://whatsapp.com/channel/0029Va4o0RV2f3ENoTURyU40" target="_blank">Canal de Noticias WhatsApp</a></li>
                     <li><a href="https://chat.whatsapp.com/HwfY2wD4G5C4TipWlkPIvl" target="_blank">Grupo de Colegas WhatsApp</a></li>
@@ -3424,7 +3487,7 @@
             </div>
 
             <div class="footer-column">
-                <h4>Atención & Contacto</h4>
+                <h3>Atención & Contacto</h3>
                 <div class="footer-contact-info">
                     <div class="contact-entry">
                         <span class="contact-label">WhatsApp / Telegram:</span>
@@ -3476,7 +3539,7 @@
             }
         });
 
-        window.addEventListener('DOMContentLoaded', () => {
+        function initApp() {
             if (typeof productos === 'undefined') {
                 catalogContainer.innerHTML = `
                     <div style="grid-column: 1/-1; text-align: center; background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); padding: 40px; border-radius: 20px;">
@@ -3490,7 +3553,13 @@
             updateCartUI();
             initCounters();
             initScrollObserver();
-        });
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initApp);
+        } else {
+            initApp();
+        }
 
         function initCategories() {
             const filtersBox = document.getElementById('categoryFilters');

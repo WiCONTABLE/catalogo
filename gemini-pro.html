@@ -5301,6 +5301,13 @@
         function renderProduct(p) {
 
             const root = document.getElementById('detailRoot');
+            const safePhotos = (p.fotos && p.fotos.length > 0) ? p.fotos : ['img/logowi.png'];
+            totalSlides = safePhotos.length;
+
+            if (root && root.querySelector('.product-grid-layout')) {
+                // HTML is already pre-rendered! Do not overwrite DOM to avoid heavy image re-downloads and layout recalculation.
+                return;
+            }
 
 
 
@@ -5432,14 +5439,13 @@
 
                             <div class="slides-container" id="slidesContainer">
 
-                                ${safePhotos.map(f => `
-
+                                ${safePhotos.map((f, idx) => `
                                     <div class="slide-img-box">
-
-                                        <img src="${f}" alt="${p.nombre}">
-
+                                        <picture>
+                                            <source srcset="${f.replace(/\.(png|jpg|jpeg)$/i, '.webp')}" type="image/webp">
+                                            <img src="${f}" alt="${p.nombre}" ${idx === 0 ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async" width="600" height="600">
+                                        </picture>
                                     </div>
-
                                 `).join('')}
 
                             </div>
@@ -5461,13 +5467,12 @@
                             <div class="thumbnails-row">
 
                                 ${safePhotos.map((f, idx) => `
-
                                     <div class="thumb-item ${idx === 0 ? 'active' : ''}" onclick="goToSlide(${idx})">
-
-                                        <img src="${f}" alt="${p.nombre}">
-
+                                        <picture>
+                                            <source srcset="${f.replace(/\.(png|jpg|jpeg)$/i, '.webp')}" type="image/webp">
+                                            <img src="${f}" alt="${p.nombre}" loading="lazy" decoding="async" width="80" height="80">
+                                        </picture>
                                     </div>
-
                                 `).join('')}
 
                             </div>

@@ -9,10 +9,6 @@
     <meta name="description" content="Automatiza procesos contables, ahorra horas de trabajo y optimiza tu gestión tributaria con herramientas especializadas sin pagos recurrentes.">
     <meta name="referrer" content="strict-origin-when-cross-origin">
 
-    <!-- Preload Critical Assets -->
-    <link rel="preload" as="image" href="img/logowi.png">
-    <link rel="preload" as="image" href="img/p6-0.png" fetchpriority="high">
-
     <!-- Structured Data (Schema.org JSON-LD) -->
     <script type="application/ld+json">
     {
@@ -84,10 +80,14 @@
     <!-- Image Fallback -->
     <link rel="image_src" href="https://wicontable.com/img/logowi.png">
 
-    <!-- Fonts: Plus Jakarta Sans & Inter -->
+    <!-- Fonts: Plus Jakarta Sans & Inter (Asynchronous Non-Blocking) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap">
+    </noscript>
 
     <style>
         /* ==========================================================================
@@ -3640,7 +3640,7 @@
                         <rect class="marching-ants-rect" x="1.5" y="1.5" rx="28" ry="28"></rect>
                     </svg>` : '';
 
-                const imgLoading = idx < 2 ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"';
+                const imgLoading = idx < 2 ? 'loading="eager"' : 'loading="lazy"';
 
                 card.innerHTML = `
                     ${antsSVG}

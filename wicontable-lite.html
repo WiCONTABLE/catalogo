@@ -4657,6 +4657,7 @@
                 </div>
 
                 
+                ${p.mostrarTecnica !== false ? `
                 <!-- Technical FAQ Accordion Section -->
                 <section class="technical-section">
                     <h2 class="tech-sec-title">
@@ -4666,7 +4667,7 @@
                     <p style="color:var(--text-secondary); margin-bottom: 20px;">
                         Creamos nuestras herramientas escuchando a las personas del gremio que, como tú, buscan la mejor manera de automatizar ese trabajo repetitivo del día a día.
 
-<br><br><b>Nota:</b> No necesitas realizar pagos recurrentes ni preocuparte por fechas de vencimiento. Te ofrecemos la herramienta mediante un pago único, la cual se mantendrÃ¡ completamente funcional siempre que el origen de datos no aplique cambios estructurales en su plataforma. Si algún desarrollo deja de ser funcional obtendras el 20% una vez realicemos los ajustes de actualización.
+<br><br><b>Nota:</b> No necesitas realizar pagos recurrentes ni preocuparte por fechas de vencimiento. Te ofrecemos la herramienta mediante un pago único, la cual se mantendrá completamente funcional siempre que el origen de datos no aplique cambios estructurales en su plataforma. Si algún desarrollo deja de ser funcional obtendras el 20% una vez realicemos los ajustes de actualización.
                     </p>
 
                     <div class="faq-accordion">
@@ -4679,18 +4680,31 @@
                                 Para garantizar la mejor experiencia, es fundamental que visualice previamente el video tutorial de funcionamiento; una vez confirmado el pago, nos pondremos en contacto con usted a través de WhatsApp y AnyDesk para realizar la instalación y activación del producto correspondiente. <br><br><b>💡 Importante: Se requiere alguno de estos navegadores (Chrome - Brave - Edge) para la instalación y recuerde que el rendimiento depende que el pc tenga buen desempeño, sirve para Sistema Operativo Windows y MacOS.</b> <br><br>Adicionalmente, brindaremos un espacio para resolver cualquier inquietud que no haya sido aclarada en el video de apoyo.
                             </div>
                         </div>
+
                         <div class="faq-item" onclick="toggleFaq(this)">
                             <div class="faq-question">
-                                <span>¿El pago es mensual o tiene vigencia?</span>
+                                <span>¿Cuánto tarda la entrega o instalación tras realizar el pago?</span>
                                 <span class="faq-icon">▼</span>
                             </div>
                             <div class="faq-answer">
-                                No, nuestras soluciones cuentan con un modelo de <b>pago único</b> sin suscripciones ni mensualidades obligatorias.
+                                La instalación suele ser inmediata o agendada en el transcurso del mismo día en que se realiza la confirmación del pago.
+                            </div>
+                        </div>
+
+                        <div class="faq-item" onclick="toggleFaq(this)">
+                            <div class="faq-question">
+                                <span>¿Qué horarios manejan para soporte técnico?</span>
+                                <span class="faq-icon">▼</span>
+                            </div>
+                            <div class="faq-answer">
+                                Colega, si Dios lo permite, estamos disponibles en el siguiente horario: Lunes a sábado de 7:00am a 09:00pm y Domingos y festivos 9:00am a 6:00pm.
                             </div>
                         </div>
                     </div>
                 </section>
-    </main>
+                ` : ''}
+            `;
+        }
 
 
 

@@ -32,7 +32,7 @@ etiqueta: "¡NUEVO!",
         tipoPago: "Pago único",
         video: "video/WiCONTABLE.mp4",
         youtube: "",
-        fotos: ["img/p0-0.png", "img/p0-1.png"]
+        fotos: ["img/p0-0.webp", "img/p0-1.webp"]
     },   
          {
         id: 2,
@@ -48,7 +48,7 @@ etiqueta: "¡NUEVO!",
         tipoPago: "Pago único",
         video: "video/Pdfs.mp4",
         youtube: "https://youtu.be/jwaJ-Z9O5Y0",
-        fotos: ["img/p2-0.png", "img/p2-1.png", "img/p2-2.png","img/p2-3.png","img/p2-4.png","img/p2-5.jpg"]
+        fotos: ["img/p2-0.webp", "img/p2-1.webp", "img/p2-2.webp","img/p2-3.webp","img/p2-4.webp","img/p2-5.webp"]
     }, 
      {
         id: 14,
@@ -64,7 +64,7 @@ etiqueta: "ACTIVA",
         tipoPago: "Pago único",
         video: "video/pdfextractpro.mp4",
         youtube: "https://youtu.be/Oi_HuA9jlL0",
-        fotos: ["img/p14-0.png", "img/p14-1.png", "img/p14-2.png"]
+        fotos: ["img/p14-0.webp", "img/p14-1.webp", "img/p14-2.webp"]
     },
      {
         id: 3,
@@ -80,7 +80,7 @@ etiqueta: "ACTIVA",
         tipoPago: "Pago único",
         video: "video/RUT2026.mp4",
         youtube: "https://www.youtube.com/watch?v=1wLEFzIwj38",
-        fotos: ["img/p3-0.png", "img/p3-1.jpg"]
+        fotos: ["img/p3-0.webp", "img/p3-1.webp"]
     }, 
      {
         id: 13,
@@ -101,7 +101,7 @@ etiqueta: "DISPONIBLE",
     nota: "El valor del servicio puede variar según el estado de la cuenta en el portal de la DIAN o la cantidad de modificaciones requeridas. <br><br><b>¡Contáctanos para gestionar tu trámite de forma rápida y segura!</b>",
         precio: "COP $60.000",
         video: "",
-        fotos: ["img/p13-0.png", "img/p13-1.png", "img/p13-2.png", "img/p13-3.png", "img/p13-4.png"]
+        fotos: ["img/p13-0.webp", "img/p13-1.webp", "img/p13-2.webp", "img/p13-3.webp", "img/p13-4.webp"]
     },  
      
     {
@@ -118,22 +118,8 @@ etiqueta: "DISPONIBLE",
         tipoPago: "Pago único",
         video: "video/ReportePN.mp4",
         youtube: "https://youtu.be/qa_wJjN3Nvo",
-        fotos: ["img/p12-0.png", "img/p12-1.png", "img/p12-2.png", "img/p12-3.png"]
+        fotos: ["img/p12-0.webp", "img/p12-1.webp", "img/p12-2.webp", "img/p12-3.webp"]
     },    
-   {
-        id: 11,
-        nombre: "Declaración de Renta Persona Natural (DIAN)",
-        url: "declaracion-renta-pn.html",
-        formato: "Consultoria Contable",
-        mostrarTecnica: false,
-etiqueta: "AGOTADO",
-        desc: "<b>REF011</b> Brindamos asesoría integral en la elaboración y presentación de tu Declaración de Renta Persona Natural. Garantizamos total cumplimiento normativo y una optimización fiscal estratégica, tanto en el Formulario 210 como en el Formulario 110.",
-        caracteristicas: ["Diagnóstico inicial de requisitos según topes de la DIAN.", "Análisis de deducciones y beneficios tributarios para pagar lo justo.", "Elaboración del borrador y presentación de formulario 110/210.", "Acompañamiento en el proceso de pago y firma electrónica.", "Entrega de informe detallado de la declaración presentada."],
-        nota: "El valor del servicio puede variar según la complejidad de la realidad financiera del contribuyente (cantidad de cruce cedular, inversiones, etc.). <br><br><b>¡Contáctanos para una cotización personalizada!</b>",
-        precio: "Desde COP $300.000",
-        video: "",
-        fotos: ["img/p11-0.png", "img/p11-1.png", "img/p11-2.png", "img/p11-3.png", "img/p11-4.png"]
-    },
  {
         id: 4,
         nombre: "Microsoft 365 Genuina (1 año)",
@@ -148,7 +134,7 @@ etiqueta: "DISPONIBLE",
         tipoPago: "Pago único",
         video: "video/365.mp4",
         youtube: "https://youtu.be/jKVPmmDu1-I",
-        fotos: ["img/p4-0.png", "img/p4-1.png", "img/p4-2.png"]
+        fotos: ["img/p4-0.webp", "img/p4-1.webp", "img/p4-2.webp"]
     },
  {
         id: 8,
@@ -163,7 +149,7 @@ etiqueta: "DISPONIBLE",
         precio: "COP $20.000",
         tipoPago: "Pago único",
         video: "",
-        fotos: ["img/p8-0.png", "img/p8-1.png"]
+        fotos: ["img/p8-0.webp", "img/p8-1.webp"]
     },
   {
         id: 9,
@@ -178,8 +164,11 @@ etiqueta: "DISPONIBLE",
         precio: "COP $20.000",
         tipoPago: "Pago único",
         video: "",
-        fotos: ["img/p9-0.png", "img/p9-1.png"]
-    },                  
+        fotos: ["img/p9-0.webp", "img/p9-1.webp"]
+    },
+
+         
+         
      {
         id: 15,
         nombre: "Duolingo Super (1 AÑO)",
@@ -194,8 +183,9 @@ etiqueta: "DISPONIBLE",
         tipoPago: "Pago único",
         video: "video/superduo.mp4",
         youtube: "https://youtu.be/JDlt_Eu4lrQ",
-        fotos: ["img/p15-0.png", "img/p15-1.png", "img/p15-2.png", "img/p15-3.png"]
-    },            
+        fotos: ["img/p15-0.webp", "img/p15-1.webp", "img/p15-2.webp", "img/p15-3.webp"]
+    },   
+         
 {
         id: 10,
         nombre: "Plataformas/Membresías",
@@ -208,9 +198,22 @@ etiqueta: "DISPONIBLE",
         nota: "(En ver videotutorial encontrarás lista de precios y plataformas) Las membresias son en la mayoria mensuales y otras con oferta de hasta 3 y 12 meses. <b>Escribenos y podemos ampliar la información de interes.</b>",
         precio: "Desde COP $1.500",
         video: "https://acortar.link/Plataformax",
-        fotos: ["img/p10-0.png"]
+        fotos: ["img/p10-0.webp"]
+    },
+{
+        id: 11,
+        nombre: "Declaración de Renta Persona Natural (DIAN)",
+        url: "declaracion-renta-pn.html",
+        formato: "Consultoria Contable",
+        mostrarTecnica: false,
+etiqueta: "AGOTADO",
+        desc: "<b>REF011</b> Brindamos asesoría integral en la elaboración y presentación de tu Declaración de Renta Persona Natural. Garantizamos total cumplimiento normativo y una optimización fiscal estratégica, tanto en el Formulario 210 como en el Formulario 110.",
+        caracteristicas: ["Diagnóstico inicial de requisitos según topes de la DIAN.", "Análisis de deducciones y beneficios tributarios para pagar lo justo.", "Elaboración del borrador y presentación de formulario 110/210.", "Acompañamiento en el proceso de pago y firma electrónica.", "Entrega de informe detallado de la declaración presentada."],
+        nota: "El valor del servicio puede variar según la complejidad de la realidad financiera del contribuyente (cantidad de cruce cedular, inversiones, etc.). <br><br><b>¡Contáctanos para una cotización personalizada!</b>",
+        precio: "Desde COP $300.000",
+        video: "",
+        fotos: ["img/p11-0.webp", "img/p11-1.webp", "img/p11-2.webp", "img/p11-3.webp", "img/p11-4.webp"]
     }
-
 
 
 ];

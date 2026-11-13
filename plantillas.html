@@ -585,7 +585,7 @@
         .hero-desc { color: var(--text-secondary); font-size: 1.05rem; line-height: 1.6; }
 
         /* Search & Filter Controls */
-        .templates-controls { max-width: 1320px; margin: 0 auto 50px; padding: 0 24px; position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+        .templates-controls { max-width: 1440px; margin: 0 auto 50px; padding: 0 24px; position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 20px; }
         .search-box-large { width: 100%; max-width: 680px; position: relative; }
         .search-input-large { width: 100%; background: var(--bg-surface); border: 1px solid var(--border-subtle); color: var(--text-primary); padding: 16px 20px 16px 52px; border-radius: var(--radius-full); font-size: 1rem; outline: none; box-shadow: var(--card-shadow); transition: all var(--tr-fast); font-family: inherit; }
         .search-input-large:focus { border-color: var(--brand-green); box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.15); }
@@ -596,15 +596,40 @@
         .filter-tab-btn.active { background: var(--brand-gradient); color: #042f2e; border-color: transparent; }
 
         /* Grid */
-        .templates-grid-section { max-width: 1320px; margin: 0 auto 100px; padding: 0 24px; position: relative; z-index: 1; }
+        .templates-grid-section { max-width: 1440px; margin: 0 auto 100px; padding: 0 24px; position: relative; z-index: 1; }
         .category-group-title { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; margin: 40px 0 24px; display: flex; align-items: center; gap: 10px; padding-bottom: 12px; border-bottom: 1px solid var(--border-subtle); }
-        .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 24px; }
-        @media (max-width: 720px) { .cards-grid { grid-template-columns: 1fr; } }
+        .cards-grid { 
+            display: grid; 
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 20px; 
+            align-content: start;
+        }
 
-        .template-card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); padding: 26px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: var(--card-shadow); transition: all var(--tr-smooth); }
+        @media (max-width: 1240px) {
+            .cards-grid { 
+                grid-template-columns: repeat(3, 1fr); 
+                gap: 20px; 
+            }
+        }
+
+        @media (max-width: 880px) {
+            .cards-grid { 
+                grid-template-columns: repeat(2, 1fr); 
+                gap: 16px; 
+            }
+        }
+
+        @media (max-width: 580px) {
+            .cards-grid { 
+                grid-template-columns: 1fr; 
+                gap: 16px; 
+            }
+        }
+
+        .template-card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); padding: 20px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: var(--card-shadow); transition: all var(--tr-smooth); height: auto; }
         .template-card:hover { transform: translateY(-6px); border-color: rgba(16, 185, 129, 0.4); box-shadow: 0 20px 40px -15px rgba(0,0,0,0.3); }
 
-        .card-top { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 16px; }
+        .card-top { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px; }
         .doc-icon-badge {
             width: 48px;
             height: 48px;
@@ -627,7 +652,7 @@
 
         .doc-meta { display: flex; flex-direction: column; }
         .doc-date { font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
-        .doc-title { font-family: var(--font-heading); font-size: 1.15rem; font-weight: 800; color: var(--text-primary); line-height: 1.3; }
+        .doc-title { font-family: var(--font-heading); font-size: 1.05rem; font-weight: 800; color: var(--text-primary); line-height: 1.3; }
 
         .card-btn-row { 
             display: flex; 

@@ -65,6 +65,9 @@
     }
     </script>
 
+    <!-- Preload Critical LCP Hero Image -->
+    <link rel="preload" as="image" href="img/p6-0.webp" type="image/webp" fetchpriority="high">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -5213,47 +5216,32 @@
 
 
 
-            // Find product by hardcoded currentProductId or fallback
+            // Check if another product ID was explicitly requested via URL parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            const qId = parseInt(urlParams.get('id'));
 
-            let p = productos.find(item => item.id === currentProductId);
-
-            if (!p) {
-
-                const urlParams = new URLSearchParams(window.location.search);
-
-                const qId = parseInt(urlParams.get('id'));
-
-                if (qId) p = productos.find(item => item.id === qId);
-
+            if (qId && qId !== currentProductId) {
+                let p = productos.find(item => item.id === qId);
+                if (p) {
+                    renderProduct(p);
+                    renderRelated(p.id);
+                } else {
+                    document.getElementById('detailRoot').innerHTML = `
+                        <div style="text-align:center; padding: 80px 20px;">
+                            <h2 style="font-size:1.8rem; margin-bottom:12px;">Solución no encontrada</h2>
+                            <p style="color:var(--text-secondary); margin-bottom:24px;">Esta herramienta fue actualizada o movida en el catálogo.</p>
+                            <a href="index.html" style="display:inline-block; background:var(--brand-gradient); color:#042f2e; padding:12px 24px; border-radius:var(--radius-full); font-weight:800;">Explorar Catálogo Completo</a>
+                        </div>
+                    `;
+                    return;
+                }
+            } else {
+                // Gemini PRO (ID: 6) is ALREADY statically pre-rendered in HTML!
+                // Keeping static DOM intact prevents DOM reconstruction and eliminates LCP delay on mobile.
+                const slides = document.querySelectorAll('#slidesContainer .slide-img-box');
+                totalSlides = slides.length || 6;
+                renderRelated(currentProductId);
             }
-
-
-
-            if (!p) {
-
-                document.getElementById('detailRoot').innerHTML = `
-
-                    <div style="text-align:center; padding: 80px 20px;">
-
-                        <h2 style="font-size:1.8rem; margin-bottom:12px;">Solución no encontrada</h2>
-
-                        <p style="color:var(--text-secondary); margin-bottom:24px;">Esta herramienta fue actualizada o movida en el catálogo.</p>
-
-                        <a href="index.html" style="display:inline-block; background:var(--brand-gradient); color:#042f2e; padding:12px 24px; border-radius:var(--radius-full); font-weight:800;">Explorar Catálogo Completo</a>
-
-                    </div>
-
-                `;
-
-                return;
-
-            }
-
-
-
-            renderProduct(p);
-
-            renderRelated(p.id);
 
             // Enable touch swipe on carousel
             const carouselBox = document.querySelector('.main-carousel');

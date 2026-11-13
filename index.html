@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WiCONTABLE | Catálogo Contable</title>
-    <link rel="icon" href="https://wicontable.com/img/logowi.png" type="image/png" sizes="48x48">
+    <link rel="icon" href="https://wicontable.com/img/logowi.webp" type="image/png" sizes="48x48">
     <link rel="canonical" href="https://wicontable.com/">
     <meta name="description" content="Automatiza procesos contables, ahorra horas de trabajo y optimiza tu gestión tributaria con herramientas especializadas sin pagos recurrentes.">
     <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -21,7 +21,7 @@
           "url": "https://wicontable.com/",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://wicontable.com/img/logowi.png",
+            "url": "https://wicontable.com/img/logowi.webp",
             "width": 800,
             "height": 800
           },
@@ -78,7 +78,7 @@
     <meta name="twitter:image" content="https://wicontable.com/img/og-banner.png">
 
     <!-- Image Fallback -->
-    <link rel="image_src" href="https://wicontable.com/img/logowi.png">
+    <link rel="image_src" href="https://wicontable.com/img/logowi.webp">
 
     <!-- Fonts: Plus Jakarta Sans & Inter (Asynchronous Non-Blocking) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -202,7 +202,7 @@
             content: "";
             position: fixed;
             inset: 0;
-            background-image: url('img/logowi.png');
+            background-image: url('img/logowi.webp');
             background-repeat: no-repeat;
             background-position: center center;
             background-size: min(540px, 65vw, 65vh);
@@ -3150,7 +3150,7 @@
                                 <circle cx="31" cy="10" r="4" fill="#FFFFFF" stroke="#F1F5F9" stroke-width="0.5"/>
                             </svg>
                         </span>
-                        <img src="img/logowi.png" alt="WiCONTABLE Logo" class="logo-img" width="40" height="40">
+                        <img src="img/logowi.webp" alt="WiCONTABLE Logo" class="logo-img" width="40" height="40">
                     </div>
                     <div class="brand-title-group">
                         <div class="brand-name">Wi<span>CONTABLE</span></div>
@@ -3346,7 +3346,7 @@
     <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-label="Menú de Navegación">
         <div class="mobile-nav-header">
             <a href="https://wicontable.com/" class="brand-logo" onclick="closeMobileMenu()">
-                <img src="img/logowi.png" alt="WiCONTABLE" class="logo-img" width="40" height="40" loading="lazy">
+                <img src="img/logowi.webp" alt="WiCONTABLE" class="logo-img" width="40" height="40" loading="lazy">
                 <div class="brand-title-group">
                     <div class="brand-name">Wi<span>CONTABLE</span></div>
                     <span class="brand-subtitle">Soluciones Profesionales</span>
@@ -3492,7 +3492,7 @@
         <div class="footer-container">
             <div class="footer-brand">
                 <a href="https://wicontable.com/" class="brand-logo" style="margin-bottom: 16px;">
-                    <img src="img/logowi.png" alt="WiCONTABLE" class="logo-img" width="40" height="40" loading="lazy">
+                    <img src="img/logowi.webp" alt="WiCONTABLE" class="logo-img" width="40" height="40" loading="lazy">
                     <div class="brand-title-group">
                         <div class="brand-name">Wi<span>CONTABLE</span></div>
                         <span class="brand-subtitle">Wilder Sarria Hernández</span>
@@ -3651,7 +3651,7 @@
                     badgeHTML = `<span class="badge-status ${badgeClass}">${p.etiqueta}</span>`;
                 }
 
-                const safeImg = (p.fotos && p.fotos.length > 0) ? p.fotos[0] : 'img/logowi.png';
+                const safeImg = (p.fotos && p.fotos.length > 0) ? p.fotos[0] : 'img/logowi.webp';
                 const isAgotado = p.etiqueta && p.etiqueta.toUpperCase().includes('AGOTADO');
                 const linkHref = p.url || `producto-${p.id}.html`;
 
@@ -3850,7 +3850,7 @@
             cart.forEach(item => {
                 const numericPrice = parsePrice(item.precio);
                 totalAmount += numericPrice * item.cantidad;
-                const safeImg = (item.fotos && item.fotos.length > 0) ? item.fotos[0] : 'img/logowi.png';
+                const safeImg = (item.fotos && item.fotos.length > 0) ? item.fotos[0] : 'img/logowi.webp';
 
                 itemsContainer.innerHTML += `
                     <div class="cart-item">

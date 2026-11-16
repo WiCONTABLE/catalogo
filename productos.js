@@ -37,7 +37,7 @@ etiqueta: "DISPONIBLE",
          {
         id: 2,
         nombre: "PDFs/ZIP Downloader (DIAN)",
-        url: "pdfs-downloader.html",
+        url: "pdfs-zips-downloader.html",
         formato: "Extensión Web .crx",
         mostrarTecnica: true,
         etiqueta: "¡EN PRODUCCION!",

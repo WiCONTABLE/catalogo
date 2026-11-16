@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PDFs/ZIPs Downloader (DIAN) - WiCONTABLE</title>
-    <link rel="icon" href="https://wicontable.com/img/logowi.png" type="image/png" sizes="48x48">
+    <link rel="icon" href="https://wicontable.com/img/logowi.webp" type="image/png" sizes="48x48">
     <link rel="canonical" href="https://wicontable.com/pdfs-downloader.html">
     <meta name="description" content="Accede desde windows y/o macOS y descarga documentos electrónicos en PDF directamente desde la DIAN de forma rápida, sin contraseñas y validando captcha y NIT.">
     
     <meta property="og:title" content="PDFs/ZIPs Downloader (DIAN)">
     <meta property="og:description" content="Accede y descarga documentos electrónicos en PDF directamente desde la DIAN de forma rápida, sin contraseñas y validando captcha y NIT; tambien ZIP mediante token.">
-    <meta property="og:image" content="https://wicontable.com/img/p2-0.png">
+    <meta property="og:image" content="https://wicontable.com/img/p2-0.webp">
     <meta property="og:url" content="https://wicontable.com/pdfs-downloader.html">
     <meta property="og:type" content="website">
 
@@ -120,7 +120,7 @@
             content: "";
             position: fixed;
             inset: 0;
-            background-image: url('img/logowi.png');
+            background-image: url('img/logowi.webp');
             background-repeat: no-repeat;
             background-position: center center;
             background-size: min(540px, 65vw, 65vh);
@@ -2136,7 +2136,7 @@
         <header class="navbar">
             <div class="navbar-container">
                 <a href="https://wicontable.com/" class="brand-logo" title="WiCONTABLE Inicio">
-                    <img src="img/logowi.png" alt="WiCONTABLE Logo" class="logo-img">
+                    <img src="img/logowi.webp" alt="WiCONTABLE Logo" class="logo-img">
                     <div class="brand-title-group">
                         <div class="brand-name">Wi<span>CONTABLE</span></div>
                         <span class="brand-subtitle">Soluciones Profesionales</span>
@@ -2217,7 +2217,7 @@
     <aside class="mobile-nav-drawer" id="mobileDrawer">
         <div class="mobile-nav-header">
             <div class="brand-logo">
-                <img src="img/logowi.png" alt="WiCONTABLE" class="logo-img">
+                <img src="img/logowi.webp" alt="WiCONTABLE" class="logo-img">
                 <div class="brand-name">Wi<span>CONTABLE</span></div>
             </div>
             <button class="btn-close-mobile" onclick="closeMobileMenu()">&times;</button>
@@ -2375,7 +2375,7 @@
         <div class="footer-container">
             <div class="footer-brand">
                 <div class="brand-logo">
-                    <img src="img/logowi.png" alt="WiCONTABLE Logo" class="logo-img">
+                    <img src="img/logowi.webp" alt="WiCONTABLE Logo" class="logo-img">
                     <div class="brand-name">Wi<span>CONTABLE</span></div>
                 </div>
                 <p>Herramientas y automatizaciones contables de alta precisión. Diseñadas para simplificar tareas repetitivas y maximizar tu productividad tributaria en Colombia.</p>
@@ -2487,7 +2487,7 @@
                 cleanDesc = cleanDesc.replace(/<b>REF[a-zA-Z0-9]+<\/b>/i, '').trim();
             }
 
-            const safePhotos = (p.fotos && p.fotos.length > 0) ? p.fotos : ['img/logowi.png'];
+            const safePhotos = (p.fotos && p.fotos.length > 0) ? p.fotos : ['img/logowi.webp'];
             totalSlides = safePhotos.length;
             const isAgotado = p.etiqueta && p.etiqueta.toUpperCase().includes('AGOTADO');
             const formatText = p.formato || 'Software Especializado';
@@ -2758,7 +2758,7 @@
                     }
                 }
 
-                const safeImg = (item.fotos && item.fotos.length > 0) ? item.fotos[0] : 'img/logowi.png';
+                const safeImg = (item.fotos && item.fotos.length > 0) ? item.fotos[0] : 'img/logowi.webp';
 
                 el.innerHTML = `
                     <div>
@@ -2870,7 +2870,7 @@
             cart.forEach(item => {
                 const num = parsePrice(item.precio);
                 sum += num * item.cantidad;
-                const safeImg = (item.fotos && item.fotos.length > 0) ? item.fotos[0] : ((typeof productos !== 'undefined' && productos.find(p => p.id === item.id)?.fotos?.[0]) || 'img/logowi.png');
+                const safeImg = (item.fotos && item.fotos.length > 0) ? item.fotos[0] : ((typeof productos !== 'undefined' && productos.find(p => p.id === item.id)?.fotos?.[0]) || 'img/logowi.webp');
 
                 list.innerHTML += `
                     <div class="cart-item">

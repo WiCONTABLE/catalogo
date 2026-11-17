@@ -2,39 +2,7 @@ const miTelefono = "@wicontable";
 const miTelegram = "https://telegram.me/wicontable";
 
 const productos = [
-          {
-        id: 6,
-        nombre: "Gemini PRO (12 Meses)",
-        url: "gemini-pro.html",
-        formato: "Credenciales",
-        mostrarTecnica: false,
-etiqueta: "DISPONIBLE",
-        desc: "Disfruta de 12 meses completos de Gemini PRO, con acceso a las funciones avanzadas de inteligencia artificial de Google, además de los beneficios incluidos con la promoción estudiantil.<p><b> </b><p>",
-        caracteristicas: ["Acceso a Gemini Pro con tu cuenta personal GMAIL", "Modelos de IA avanzados para mayor rendimiento (Chat / Tarea).", "Investigación más profunda y preparación para exámenes; obtén acceso ampliado en Gemini y Gemini Notebook para analizar hasta 1,500 páginas de tus apunte.", "Más ayuda para escribir y preparación profesional; obtén acceso ampliado para generar un primer borrador, trabajar en tus argumentos y definir mejor tus ideas.", "Creación de contenido potenciada; crea imágenes y videos dinámicos fácilmente con más acceso a Gemini Omni Flash y Nano Banana Pro.", "Creación más rápida de código y proyectos; acceso ampliado a nuestra plataforma de desarrollo de IA: Google Antigravity, Jules, Google Developer Program premium y más.", "5 TB de almacenamiento²; almacenamiento total para Google Fotos, Drive y Gmail.", "Se asiste vía anydesk para canjear el beneficio."],
-        nota: "Te en cuenta las siguientes recomendaciones: <b>El enlace es de un solo uso.</b> Se recomienda canjearlo únicamente en la cuenta de Google donde deseas disfrutar el beneficio; Una vez activado correctamente, el servicio quedará asociado a tu cuenta Gmail. <p><br><b>Te realizamos acompañamiento vía Anydesk, para ello tenerlo instalado para poder proceder y para validar una correcta activación, es importante que estes en un PC, no es válido ni en Tablet, ni celular para el acompañamiento. Para agilizar la activación se recomienda que el usuario tenga instalado VPN Proton o cualquiera de su preferencia en windows no validador tipo extensión.</b></p> <br><p>Manejamos pago local COP y Binance USDT.</p> <br><p><b>Tener en cuenta que se brinda garantía por 3 meses y que solo se procede si podemos asistir vía anydesk, de lo contrario no hay garantía.</b> Precio en USDT $10 mediante Binance.<p/>",
-        precio: "COP $30.000",
-        tipoPago: "Pago único",
-        video: "video/Gemini.mp4",
-        youtube: "https://youtu.be/f1pKdYerHxg",
-        fotos: ["img/p6-0.webp", "img/p6-1.webp", "img/p6-2.webp", "img/p6-3.webp", "img/p6-4.webp", "img/p6-5.webp"]
-    },
-         {
-        id: 7,
-        nombre: "WiCONTABLE Lite",
-        url: "wicontable-lite.html",
-        formato: "Ejecutable .exe",
-        mostrarTecnica: true,
-        etiqueta: "¡EN PRODUCCION!",
-        desc: "<b>REF001</b><p>La primera solución contable que permite consultar de manera masiva en 10 plataformas claves: REGISTRADURIA, PROCURADURIA, SISBÉN, DIAN, POLICIA, RUAF, SISPRO, RUES, SIMIT, FOSYGA. Pensada para contadores y profesionales financieros para optimizar la auditoria de terceros.<p><br><b>Actualizada el XX-11-2026</b>",
-        caracteristicas: ["Facilite la depuración de terceros para Exógena, migraciones ERP y otros reportes regulatorios, auditando la identidad fiscal (NIT/C.C.) exigida según los parámetros de consulta de cada entidad.", "¡EN PRODUCCION!", "¡EN PRODUCCION!", "¡EN PRODUCCION!", "¡EN PRODUCCION!", "¡EN PRODUCCION!", "¡EN PRODUCCION!", "¡EN PRODUCCION!", "¡EN PRODUCCION!", "¡EN PRODUCCION!", "¡EN PRODUCCION!"],
-        nota: "<p>Para brindarle un soporte técnico oportuno, requerimos conectarnos de forma remota a su equipo a través de AnyDesk.<p> <br><p>Tenga en cuenta que este acceso quedará registrado de manera individual en cada computadora durante la instalación. Por su seguridad, nuestro equipo se comunicará exclusivamente al número de móvil ó @usuario que tiene registrado con nosotros.<p> <br><p>Asimismo, le recordamos que el funcionamiento de nuestra herramienta depende de plataformas de terceros integradas; <b>cualquier cambio en los parámetros de dichas plataformas nos exime de responsabilidad sobre la continuidad del servicio.</b><p> <br><b><p>RECUERDE</b> que es importante ver el videotutorial antes de adquirir la herramienta. De esta manera, al finalizar la instalación, le será más fácil resolver cualquier duda que no se haya abordado en el video.</p> <br><p>Le pedimos disponer de unos 15 minutos mientras realizamos la instalación y para las pruebas de funcionalidad un listado de NIT ó Número documento para consultar. Recuerde que la herramienta no tiene fecha de vencimiento; por ello, nos aseguramos de entregarla probada y funcionando correctamente al momento de su adquisición.</p>",
-        precio: "COP $69.900",
-        tipoPago: "Pago único",
-        video: "video/WiCONTABLE.mp4",
-        youtube: "",
-        fotos: ["img/p0-0.webp", "img/p0-1.webp"]
-    },   
-         {
+      {
         id: 2,
         nombre: "PDFs/ZIP Downloader (DIAN)",
         url: "pdfs-downloader.html",
@@ -49,7 +17,13 @@ etiqueta: "DISPONIBLE",
         video: "video/Pdfs.mp4",
         youtube: "https://youtu.be/jwaJ-Z9O5Y0",
         fotos: ["img/p2-0.webp", "img/p2-1.webp", "img/p2-2.webp","img/p2-3.webp","img/p2-4.webp","img/p2-5.webp","img/p2-6.webp"]
-    }, 
+    },
+
+
+
+
+
+          
      {
         id: 14,
         nombre: "PDF Extract PRO",
@@ -119,7 +93,21 @@ etiqueta: "DISPONIBLE",
         video: "video/ReportePN.mp4",
         youtube: "https://youtu.be/qa_wJjN3Nvo",
         fotos: ["img/p12-0.webp", "img/p12-1.webp", "img/p12-2.webp", "img/p12-3.webp"]
-    },    
+    },
+          {
+        id: 11,
+        nombre: "Declaración de Renta Persona Natural (DIAN)",
+        url: "declaracion-renta-pn.html",
+        formato: "Consultoria Contable",
+        mostrarTecnica: false,
+etiqueta: "AGOTADO",
+        desc: "<b>REF011</b> Brindamos asesoría integral en la elaboración y presentación de tu Declaración de Renta Persona Natural. Garantizamos total cumplimiento normativo y una optimización fiscal estratégica, tanto en el Formulario 210 como en el Formulario 110.",
+        caracteristicas: ["Diagnóstico inicial de requisitos según topes de la DIAN.", "Análisis de deducciones y beneficios tributarios para pagar lo justo.", "Elaboración del borrador y presentación de formulario 110/210.", "Acompañamiento en el proceso de pago y firma electrónica.", "Entrega de informe detallado de la declaración presentada."],
+        nota: "El valor del servicio puede variar según la complejidad de la realidad financiera del contribuyente (cantidad de cruce cedular, inversiones, etc.). <br><br><b>¡Contáctanos para una cotización personalizada!</b>",
+        precio: "Desde COP $300.000",
+        video: "",
+        fotos: ["img/p11-0.webp", "img/p11-1.webp", "img/p11-2.webp", "img/p11-3.webp", "img/p11-4.webp"]
+    },
  {
         id: 4,
         nombre: "Microsoft 365 Genuina (1 año)",
@@ -199,21 +187,8 @@ etiqueta: "DISPONIBLE",
         precio: "Desde COP $1.500",
         video: "https://acortar.link/Plataformax",
         fotos: ["img/p10-0.webp"]
-    },
-{
-        id: 11,
-        nombre: "Declaración de Renta Persona Natural (DIAN)",
-        url: "declaracion-renta-pn.html",
-        formato: "Consultoria Contable",
-        mostrarTecnica: false,
-etiqueta: "AGOTADO",
-        desc: "<b>REF011</b> Brindamos asesoría integral en la elaboración y presentación de tu Declaración de Renta Persona Natural. Garantizamos total cumplimiento normativo y una optimización fiscal estratégica, tanto en el Formulario 210 como en el Formulario 110.",
-        caracteristicas: ["Diagnóstico inicial de requisitos según topes de la DIAN.", "Análisis de deducciones y beneficios tributarios para pagar lo justo.", "Elaboración del borrador y presentación de formulario 110/210.", "Acompañamiento en el proceso de pago y firma electrónica.", "Entrega de informe detallado de la declaración presentada."],
-        nota: "El valor del servicio puede variar según la complejidad de la realidad financiera del contribuyente (cantidad de cruce cedular, inversiones, etc.). <br><br><b>¡Contáctanos para una cotización personalizada!</b>",
-        precio: "Desde COP $300.000",
-        video: "",
-        fotos: ["img/p11-0.webp", "img/p11-1.webp", "img/p11-2.webp", "img/p11-3.webp", "img/p11-4.webp"]
     }
+
 
 
 ];

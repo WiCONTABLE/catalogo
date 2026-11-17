@@ -48,7 +48,7 @@ etiqueta: "DISPONIBLE",
         tipoPago: "Pago único",
         video: "video/Pdfs.mp4",
         youtube: "https://youtu.be/jwaJ-Z9O5Y0",
-        fotos: ["img/p2-0.webp", "img/p2-1.webp", "img/p2-2.webp","img/p2-3.webp","img/p2-4.webp","img/p2-5.webp"]
+        fotos: ["img/p2-0.webp", "img/p2-1.webp", "img/p2-2.webp","img/p2-3.webp","img/p2-4.webp","img/p2-5.webp","img/p2-6.webp"]
     }, 
      {
         id: 14,

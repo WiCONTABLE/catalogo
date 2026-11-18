@@ -833,6 +833,29 @@
                 line-height: 1.5;
                 word-break: break-word;
             }
+            .features-rich-list {
+                gap: 16px;
+            }
+            .feature-block {
+                font-size: 0.88rem;
+                line-height: 1.58;
+                word-break: break-word;
+            }
+            .feature-block-title {
+                font-size: 0.92rem;
+            }
+            .feature-sublist {
+                padding-left: 20px;
+            }
+            .feature-sublist li {
+                font-size: 0.86rem;
+                line-height: 1.5;
+                word-break: break-word;
+            }
+            .feature-closing {
+                font-size: 0.89rem;
+                word-break: break-word;
+            }
             .support-card {
                 padding: 20px 16px;
                 border-radius: var(--radius-lg);
@@ -1249,12 +1272,10 @@
 
         .features-heading {
             font-family: var(--font-heading);
-            font-size: 0.95rem;
+            font-size: 1.02rem;
             font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
             color: var(--text-primary);
-            margin-bottom: 16px;
+            margin-bottom: 18px;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -1282,6 +1303,60 @@
             font-weight: 900;
             font-size: 1.1rem;
             flex-shrink: 0;
+        }
+
+        .features-rich-list {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .feature-block {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            font-size: 0.925rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
+        }
+
+        .feature-block p {
+            margin: 0;
+        }
+
+        .feature-block-title {
+            font-weight: 700;
+            color: var(--text-primary);
+            font-size: 0.96rem;
+            line-height: 1.4;
+        }
+
+        .feature-sublist {
+            list-style: disc;
+            padding-left: 22px;
+            margin: 4px 0 0 0;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .feature-sublist li {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.55;
+        }
+
+        .feature-sublist li::marker {
+            color: var(--brand-green);
+        }
+
+        .feature-closing {
+            margin-top: 4px;
+            padding-top: 14px;
+            border-top: 1px solid var(--border-subtle);
+            color: var(--text-primary);
+            font-size: 0.94rem;
+            line-height: 1.5;
         }
 
         /* Action bar */
@@ -3030,9 +3105,12 @@
                                 <span>⚡</span>
                                 <span>Beneficios y Funcionalidades Clave</span>
                             </div>
-                            <ul class="features-list">
-                                ${(p.caracteristicas || []).map(c => `<li>${c}</li>`).join('')}
-                            </ul>
+                            ${typeof p.caracteristicas === 'string'
+                                ? `<div class="features-rich-list">${p.caracteristicas}</div>`
+                                : (p.caracteristicas || []).some(c => c.includes('feature-block') || c.includes('feature-closing'))
+                                    ? `<div class="features-rich-list">${(p.caracteristicas || []).join('')}</div>`
+                                    : `<ul class="features-list">${(p.caracteristicas || []).map(c => `<li>${c}</li>`).join('')}</ul>`
+                            }
                         </div>
 
                         <!-- Support Card (Móvil: en celulares queda después de los botones) -->

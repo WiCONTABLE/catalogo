@@ -6,7 +6,7 @@
     <title>PDFs/ZIPs Downloader (DIAN) - WiCONTABLE</title>
     <link rel="icon" href="https://wicontable.com/img/logowi.webp" type="image/png" sizes="48x48">
     <link rel="canonical" href="https://wicontable.com/pdfs-downloader.html">
-    <meta name="description" content="Accede desde windows y/o macOS y descarga documentos electrónicos en PDF directamente desde la DIAN de forma rápida, sin contraseñas y validando captcha y NIT.">
+    <meta name="description" content="Optimiza tu gestión contable. Consulta y descarga de forma individual o masiva facturas electrónicas, notas crédito, notas débito y otros documentos electrónicos desde los servicios de la DIAN, en formatos PDF y ZIP según su disponibilidad. Organiza documentos, procesa archivos Excel y automatiza tareas repetitivas mediante CUFE, CUDE y NIT, con una solución diseñada para contadores y empresas.">
     
     <meta property="og:title" content="PDFs/ZIPs Downloader (DIAN)">
     <meta property="og:description" content="Accede y descarga documentos electrónicos en PDF directamente desde la DIAN de forma rápida, sin contraseñas y validando captcha y NIT; tambien ZIP mediante token.">
@@ -101,6 +101,9 @@
         html {
             scroll-behavior: smooth;
             font-size: 16px;
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
         }
 
         body {
@@ -109,6 +112,8 @@
             color: var(--text-primary);
             line-height: 1.6;
             overflow-x: clip;
+            max-width: 100vw;
+            width: 100%;
             transition: background-color var(--tr-smooth), color var(--tr-smooth);
             position: relative;
             min-height: 100vh;
@@ -502,9 +507,42 @@
         }
 
         @media (max-width: 992px) {
-            .nav-links { display: none; }
+            .nav-links { display: none !important; }
             .btn-mobile-menu { display: flex; }
             .cart-btn-label { display: none; }
+            .ticker-schedule { display: none; }
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding-top: 104px;
+            }
+            .brand-subtitle {
+                display: none !important;
+            }
+            .brand-name {
+                font-size: 1.15rem;
+            }
+            .btn-cart-text, .cart-btn-label {
+                display: none !important;
+            }
+            .btn-nav-cart {
+                padding: 8px 12px;
+            }
+            .navbar-container {
+                padding: 8px 12px;
+            }
+            .ticker-support-link span {
+                display: none;
+            }
+            .ticker-support-link {
+                padding: 4px 8px;
+                background: var(--brand-green-light);
+                border-radius: var(--radius-full);
+            }
+            .ticker-support-link.ticker-tg-link {
+                background: rgba(0, 136, 204, 0.12);
+            }
         }
 
         /* Mobile Drawer */
@@ -663,6 +701,168 @@
             padding: 36px 24px 80px;
             position: relative;
             z-index: 1;
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .detail-wrapper {
+                padding: 16px 14px 50px;
+                width: 100%;
+                max-width: 100%;
+                box-sizing: border-box;
+                overflow-x: hidden;
+            }
+            .breadcrumbs {
+                margin-bottom: 16px;
+                font-size: 0.8rem;
+                gap: 6px;
+                word-break: break-word;
+            }
+            .product-meta-header {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 8px;
+                margin-bottom: 10px;
+                width: 100%;
+            }
+            .detail-title {
+                font-size: 1.55rem;
+                line-height: 1.25;
+                word-break: break-word;
+                overflow-wrap: break-word;
+                margin-bottom: 12px;
+                text-align: center;
+                width: 100%;
+            }
+            .video-action-row {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                margin: 6px 0 20px 0;
+            }
+            .detail-desc {
+                font-size: 0.925rem;
+                line-height: 1.6;
+                word-break: break-word;
+                overflow-wrap: break-word;
+                margin-bottom: 18px;
+            }
+            .gallery-box {
+                width: 100%;
+                max-width: 100%;
+                margin: 0 auto;
+                align-items: center;
+            }
+            .main-carousel {
+                width: 100%;
+                max-width: 100%;
+                margin: 0 auto;
+                border-radius: var(--radius-lg);
+            }
+            .slide-img-box {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                padding: 12px;
+            }
+            .slide-img-box img {
+                margin: 0 auto;
+                display: block;
+                max-width: 100%;
+                max-height: 100%;
+                object-fit: contain;
+            }
+            .thumbnails-row {
+                width: 100%;
+                max-width: 100%;
+                padding: 4px 2px 8px;
+                justify-content: flex-start;
+                box-sizing: border-box;
+            }
+            .btn-ver-funcionamiento {
+                max-width: 100%;
+                box-sizing: border-box;
+                padding: 8px 18px;
+            }
+            .btn-video-main {
+                font-size: 0.88rem;
+            }
+            .btn-video-date {
+                font-size: 0.72rem;
+            }
+            .purchase-bar {
+                padding: 20px 16px;
+                border-radius: var(--radius-lg);
+                width: 100%;
+                box-sizing: border-box;
+            }
+            .price-main {
+                font-size: 1.85rem;
+            }
+            .cta-buttons-row {
+                gap: 10px;
+            }
+            .btn-add-cart-large,
+            .btn-wa-direct,
+            .btn-tg-direct {
+                font-size: 0.9rem;
+                padding: 12px 16px;
+            }
+            .tech-spec-bar {
+                gap: 8px;
+            }
+            .tech-chip-action {
+                font-size: 0.8rem;
+                padding: 9px 14px;
+                width: 100%;
+                justify-content: center;
+            }
+            .features-card {
+                padding: 20px 16px;
+                border-radius: var(--radius-lg);
+                width: 100%;
+                box-sizing: border-box;
+            }
+            .features-list li {
+                font-size: 0.88rem;
+                line-height: 1.5;
+                word-break: break-word;
+            }
+            .support-card {
+                padding: 20px 16px;
+                border-radius: var(--radius-lg);
+                width: 100%;
+                box-sizing: border-box;
+            }
+            .support-card-text {
+                font-size: 0.88rem;
+                line-height: 1.55;
+                word-break: break-word;
+            }
+            .technical-section {
+                padding: 20px 16px;
+                margin-top: 32px;
+                border-radius: var(--radius-lg);
+                width: 100%;
+                box-sizing: border-box;
+            }
+            .tech-sec-title {
+                font-size: 1.2rem;
+            }
+            .faq-question {
+                font-size: 0.9rem;
+                padding: 14px 12px;
+            }
+            .faq-answer {
+                font-size: 0.85rem;
+                padding: 0 12px 14px;
+                word-break: break-word;
+            }
         }
 
         .breadcrumbs {
@@ -698,10 +898,17 @@
             grid-template-columns: 1fr 1.25fr;
             gap: 48px;
             margin-bottom: 60px;
+            min-width: 0;
+            width: 100%;
         }
 
         @media (max-width: 960px) {
-            .product-grid-layout { grid-template-columns: 1fr; gap: 36px; }
+            .product-grid-layout {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 36px;
+                min-width: 0;
+                width: 100%;
+            }
         }
 
         /* Left Column: Gallery & Guarantee Card */
@@ -709,11 +916,15 @@
             display: flex;
             flex-direction: column;
             gap: 20px;
+            min-width: 0;
+            max-width: 100%;
+            width: 100%;
         }
 
         .main-carousel {
             position: relative;
             width: 100%;
+            max-width: 100%;
             aspect-ratio: 1 / 1;
             background: #FFFFFF;
             border-radius: var(--radius-xl);
@@ -873,7 +1084,21 @@
             display: flex;
             gap: 12px;
             overflow-x: auto;
-            padding-bottom: 6px;
+            max-width: 100%;
+            width: 100%;
+            padding: 4px 2px 8px;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+        }
+
+        .thumbnails-row::-webkit-scrollbar {
+            height: 4px;
+        }
+
+        .thumbnails-row::-webkit-scrollbar-thumb {
+            background: rgba(16, 185, 129, 0.35);
+            border-radius: 4px;
         }
 
         .thumb-item {
@@ -886,6 +1111,18 @@
             cursor: pointer;
             flex-shrink: 0;
             transition: all var(--tr-fast);
+        }
+
+        @media (max-width: 600px) {
+            .thumbnails-row {
+                gap: 8px;
+                padding-bottom: 6px;
+            }
+            .thumb-item {
+                width: 58px;
+                height: 58px;
+                flex: 0 0 58px;
+            }
         }
 
         .thumb-item.active, .thumb-item:hover {
@@ -940,7 +1177,15 @@
         .support-card-text {
             font-size: 0.875rem;
             color: var(--text-secondary);
-            line-height: 1.6;
+            line-height: 1.65;
+        }
+
+        .support-card-text p {
+            margin-bottom: 8px;
+        }
+
+        .support-card-text p:last-child {
+            margin-bottom: 0;
         }
 
         /* Right Column: Info & Purchase Actions */
@@ -1893,7 +2138,120 @@
         }
 
         @media (max-width: 850px) {
-            .footer-container { grid-template-columns: 1fr; gap: 32px; }
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 32px;
+                text-align: center;
+                justify-items: center;
+            }
+            .footer-brand {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                width: 100%;
+            }
+            .footer-brand .brand-logo {
+                justify-content: center;
+                margin: 0 auto;
+            }
+            .footer-brand p {
+                text-align: center;
+                margin: 12px auto 0;
+                max-width: 440px;
+            }
+            .footer-social-row {
+                justify-content: center;
+                margin: 20px auto 0;
+            }
+            .footer-col {
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+            .footer-col h4 {
+                text-align: center;
+            }
+            .footer-col div {
+                text-align: center;
+            }
+            .footer-links-list {
+                align-items: center;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .main-footer {
+                padding: 40px 16px 24px;
+                width: 100%;
+                box-sizing: border-box;
+            }
+            .footer-container {
+                gap: 28px;
+                margin-bottom: 28px;
+                text-align: center;
+                justify-items: center;
+            }
+            .footer-brand {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                width: 100%;
+            }
+            .footer-brand .brand-logo {
+                justify-content: center;
+                margin: 0 auto;
+            }
+            .footer-brand p {
+                max-width: 100%;
+                font-size: 0.86rem;
+                word-break: break-word;
+                text-align: center;
+                margin: 12px auto 0;
+            }
+            .footer-social-row {
+                gap: 8px;
+                flex-wrap: wrap;
+                justify-content: center;
+                margin: 18px auto 0;
+            }
+            .social-link {
+                width: 36px;
+                height: 36px;
+                font-size: 0.95rem;
+            }
+            .footer-col {
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+            .footer-col h4 {
+                margin-bottom: 12px;
+                font-size: 0.88rem;
+                text-align: center;
+            }
+            .footer-col div {
+                text-align: center;
+            }
+            .footer-links-list {
+                gap: 8px;
+                font-size: 0.84rem;
+                word-break: break-word;
+                align-items: center;
+                text-align: center;
+            }
+            .footer-bottom {
+                font-size: 0.78rem;
+                padding-top: 18px;
+                word-break: break-word;
+                text-align: center;
+            }
         }
 
         .footer-brand p {
@@ -2078,22 +2436,39 @@
 
         .btn-ver-funcionamiento {
             display: inline-flex;
+            flex-direction: column;
             align-items: center;
-            gap: 10px;
-            padding: 10px 24px;
+            justify-content: center;
+            gap: 3px;
+            padding: 9px 24px;
             border-radius: var(--radius-full);
             background: rgba(16, 185, 129, 0.08);
             border: 1.5px solid var(--brand-green);
             color: #047857;
             font-family: var(--font-body);
-            font-size: 0.95rem;
-            font-weight: 700;
             cursor: pointer;
             text-decoration: none;
             outline: none;
             transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
             animation: soft-pulse-glow 2.5s infinite ease-in-out;
             box-shadow: 0 2px 8px rgba(16, 185, 129, 0.15);
+            line-height: 1.25;
+            text-align: center;
+        }
+
+        .btn-video-main {
+            font-size: 0.95rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-video-date {
+            font-size: 0.76rem;
+            font-weight: 600;
+            opacity: 0.88;
+            letter-spacing: 0.2px;
         }
 
         .btn-ver-funcionamiento:hover {
@@ -2103,6 +2478,11 @@
             transform: translateY(-2px);
             box-shadow: 0 8px 24px rgba(16, 185, 129, 0.45);
             animation: none;
+        }
+
+        .btn-ver-funcionamiento:hover .btn-video-date {
+            color: #ffffff;
+            opacity: 0.95;
         }
 
         .btn-ver-funcionamiento:active {
@@ -2480,11 +2860,17 @@
             const root = document.getElementById('detailRoot');
 
             let refCode = '';
+            let updateDate = '';
             let cleanDesc = p.desc || '';
             const matchRef = cleanDesc.match(/<b>(REF[a-zA-Z0-9]+)<\/b>/i);
             if (matchRef) {
                 refCode = matchRef[1];
                 cleanDesc = cleanDesc.replace(/<b>REF[a-zA-Z0-9]+<\/b>/i, '').trim();
+            }
+            const matchDate = cleanDesc.match(/<b>(Actualizad[oa][^<]*)<\/b>/i);
+            if (matchDate) {
+                updateDate = matchDate[1];
+                cleanDesc = cleanDesc.replace(/<b>Actualizad[oa][^<]*<\/b>/i, '').trim();
             }
 
             const safePhotos = (p.fotos && p.fotos.length > 0) ? p.fotos : ['img/logowi.webp'];
@@ -2519,13 +2905,24 @@
                 ytUrl = p.video.trim();
             }
 
+            const dateBadgeHTML = updateDate ? `<span class="btn-video-date">${updateDate}</span>` : '';
+
             if (hasLocalMp4) {
-                videoBtnHTML = `<button onclick="openVideoModal(null, '${p.video}', '${ytUrl}')" class="btn-ver-funcionamiento">🎥 Ver Video de Funcionamiento</button>`;
+                videoBtnHTML = `<button onclick="openVideoModal(null, '${p.video}', '${ytUrl}')" class="btn-ver-funcionamiento">
+                    <span class="btn-video-main">🎥 Ver Video de Funcionamiento</span>
+                    ${dateBadgeHTML}
+                </button>`;
             } else if (localYt || extraYt) {
                 const targetYtId = localYt || extraYt;
-                videoBtnHTML = `<button onclick="openVideoModal('${targetYtId}', null, '${ytUrl}')" class="btn-ver-funcionamiento">🎥 Ver Funcionamiento</button>`;
+                videoBtnHTML = `<button onclick="openVideoModal('${targetYtId}', null, '${ytUrl}')" class="btn-ver-funcionamiento">
+                    <span class="btn-video-main">🎥 Ver Video de Funcionamiento</span>
+                    ${dateBadgeHTML}
+                </button>`;
             } else if (p.video && p.video.trim() !== '' && p.video.trim() !== '#') {
-                videoBtnHTML = `<a href="${p.video}" target="_blank" class="btn-ver-funcionamiento">🎥 Ver Funcionamiento</a>`;
+                videoBtnHTML = `<a href="${p.video}" target="_blank" class="btn-ver-funcionamiento">
+                    <span class="btn-video-main">🎥 Ver Video de Funcionamiento</span>
+                    ${dateBadgeHTML}
+                </a>`;
             }
 
             root.innerHTML = `
@@ -2569,7 +2966,7 @@
                         <div class="support-card support-desktop">
                             <div class="support-card-header">
                                 <span>🛡️</span>
-                                <span>Soporte</span>
+                                <span>Soporte técnico e instalación</span>
                             </div>
                             <div class="support-card-text">
                                 ${p.nota || 'Para brindarte un soporte técnico oportuno y asegurar el correcto funcionamiento, realizamos acompañamiento remoto vía AnyDesk durante la instalación y entrega de tu solución.'}
@@ -2592,33 +2989,11 @@
                         ` : ''}
                         <div class="detail-desc">${cleanDesc}</div>
 
-                        <!-- Features -->
-                        <div class="features-card">
-                            <div class="features-heading">
-                                <span>⚡</span>
-                                <span>Beneficios y Funcionalidades Clave</span>
-                            </div>
-                            <ul class="features-list">
-                                ${(p.caracteristicas || []).map(c => `<li>${c}</li>`).join('')}
-                            </ul>
-                        </div>
-
-                        <!-- Technical Quick Chips -->
-                        <div class="tech-spec-bar">
-                            <a href="https://wa.me/?text=Mira%20esta%20herramienta%20contable:%20*${encodeURIComponent(p.nombre)}*%20${encodeURIComponent(window.location.href)}" target="_blank" class="tech-chip-action">
-                                <span>📲 Compartir en WhatsApp</span>
-                            </a>
-                            <a href="https://t.me/share/url?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent('Mira esta herramienta contable: ' + p.nombre)}" target="_blank" rel="noopener noreferrer" class="tech-chip-action tech-chip-tg">
-                                <span>📲 Compartir en Telegram</span>
-                            </a>
-                            
-                        </div>
-
-                        <!-- Purchase Bar -->
+                        <!-- Purchase Bar (Precio, Botones de Compra y Compartir) -->
                         <div class="purchase-bar">
                             <div class="price-group">
                                 <span class="price-main">${p.precio || 'Consultar'}</span>
-                                        <span style="font-size: 0.88rem; color: #94A3B8; font-weight: 600; margin-top: 6px; letter-spacing: 0.3px;">Pago único</span>
+                                <span style="font-size: 0.88rem; color: #94A3B8; font-weight: 600; margin-top: 6px; letter-spacing: 0.3px;">Pago único</span>
                             </div>
                             <div class="cta-buttons-row">
                                 ${isAgotado ? `
@@ -2637,13 +3012,34 @@
                                     </a>
                                 `}
                             </div>
+
+                            <!-- Share Buttons (Debajo del botón de Telegram) -->
+                            <div class="tech-spec-bar" style="margin-bottom:0; justify-content: center; width: 100%;">
+                                <a href="https://wa.me/?text=Mira%20esta%20herramienta%20contable:%20*${encodeURIComponent(p.nombre)}*%20${encodeURIComponent(window.location.href)}" target="_blank" class="tech-chip-action">
+                                    <span>📲 Compartir en WhatsApp</span>
+                                </a>
+                                <a href="https://t.me/share/url?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent('Mira esta herramienta contable: ' + p.nombre)}" target="_blank" rel="noopener noreferrer" class="tech-chip-action tech-chip-tg">
+                                    <span>📲 Compartir en Telegram</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Features -->
+                        <div class="features-card">
+                            <div class="features-heading">
+                                <span>⚡</span>
+                                <span>Beneficios y Funcionalidades Clave</span>
+                            </div>
+                            <ul class="features-list">
+                                ${(p.caracteristicas || []).map(c => `<li>${c}</li>`).join('')}
+                            </ul>
                         </div>
 
                         <!-- Support Card (Móvil: en celulares queda después de los botones) -->
                         <div class="support-card support-mobile">
                             <div class="support-card-header">
                                 <span>🛡️</span>
-                                <span>Soporte</span>
+                                <span>Soporte técnico e instalación</span>
                             </div>
                             <div class="support-card-text">
                                 ${p.nota || 'Para brindarte un soporte técnico oportuno y asegurar el correcto funcionamiento, realizamos acompañamiento remoto vía AnyDesk durante la instalación y entrega de tu solución.'}
@@ -2701,6 +3097,27 @@
             `;
         }
 
+        
+        function initTouchSwipe() {
+            const mcEl = document.querySelector('.main-carousel');
+            if (!mcEl || mcEl.dataset.swipeInit) return;
+            mcEl.dataset.swipeInit = 'true';
+            let startX = 0;
+            let startY = 0;
+            mcEl.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].clientX;
+                startY = e.touches[0].clientY;
+            }, { passive: true });
+            mcEl.addEventListener('touchend', (e) => {
+                const diffX = startX - e.changedTouches[0].clientX;
+                const diffY = startY - e.changedTouches[0].clientY;
+                if (Math.abs(diffX) > 40 && Math.abs(diffX) > Math.abs(diffY)) {
+                    if (diffX > 0) moveSlide(1);
+                    else moveSlide(-1);
+                }
+            }, { passive: true });
+        }
+
         function moveSlide(dir) {
             const container = document.getElementById('slidesContainer');
             if (!container) return;
@@ -2710,7 +3127,11 @@
             container.style.transform = `translateX(-${currentSlide * 100}%)`;
 
             document.querySelectorAll('.thumb-item').forEach((t, i) => {
-                t.classList.toggle('active', i === currentSlide);
+                const isActive = i === currentSlide;
+                t.classList.toggle('active', isActive);
+                if (isActive) {
+                    t.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                }
             });
         }
 
@@ -2719,7 +3140,11 @@
             const container = document.getElementById('slidesContainer');
             if (container) container.style.transform = `translateX(-${idx * 100}%)`;
             document.querySelectorAll('.thumb-item').forEach((t, i) => {
-                t.classList.toggle('active', i === idx);
+                const isActive = i === idx;
+                t.classList.toggle('active', isActive);
+                if (isActive) {
+                    t.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                }
             });
         }
 

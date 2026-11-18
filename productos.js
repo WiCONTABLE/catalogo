@@ -2,29 +2,23 @@ const miTelefono = "@wicontable";
 const miTelegram = "https://telegram.me/wicontable";
 
 const productos = [
-      {
-        id: 2,
-        nombre: "PDFs/ZIP Downloader (DIAN)",
-        url: "pdfs-downloader.html",
-        formato: "Extensión Web .crx",
-        mostrarTecnica: true,
-        etiqueta: "¡EN PRODUCCION!",
-        desc: "<b>REF006</b> <p>Accede desde Windows y/o macOS, descarga y analiza documentos electrónicos en PDF directamente desde la DIAN de forma sencilla,  masiva y sin procesos manuales. Dile adiós a las interrupciones; nuestra herramienta se encarga de validar los captchas y de ingresar el NIT correspondiente, optimizando tu flujo de trabajo al máximo sin límite de empresas.<p><br><b>Actualizada el 22-10-2026</b>",
-        caracteristicas: ["<p><b>Cero trámites adicionales:</b> No necesitas generar Token ni adquirir un Certificado Digital de la DIAN para descargar tus PDFs.</p>","<p><b>Módulo Descarga Pública (Multidocumento):</b> Carga tu plantilla de Excel con los códigos (CUDE, CUDS, CUFE, CUNE) y su respectivo NIT. El sistema procesa de forma automatizada (entre 3 y 9 segundos por documento) validando los captchas y entregando los PDFs listos para visualizar, sin contraseñas.</p>", "<p><b>Módulo Descarga F.E-N.C-N.D (Ultrarrápido):</b> Descarga masiva de Facturas Electrónicas y Notas a una velocidad increíble de 0.5 segundos por documento. Sin captchas, sin NIT y sin contraseñas. Solo carga tu Excel o pega los CUFES directamente.</p>", "<p><b>Módulo Tools (Gestión y Exportación):</b> Toma el control total de tus archivos. Renombra tus PDFs de forma masiva, extrae la información clave, lístala y expórtala directamente a Excel para tus cruces e informes que incluye la estructura de 10 tipos de documentos: F.E, Notas, Nómina, Documentos Equivales, Documento Soportes, Extracto, Peaje entre otros.</p>", "PRUDUCCION", "PRODUCCION"],
-        nota: "<p>Para brindarle un soporte técnico oportuno, requerimos conectarnos de forma remota a su equipo a través de AnyDesk.<p> <br><p>Tenga en cuenta que este acceso quedará registrado de manera individual en cada computadora durante la instalación. Por su seguridad, nuestro equipo se comunicará exclusivamente al número de móvil ó @usuario que tiene registrado con nosotros.<p> <br><p>Asimismo, le recordamos que el funcionamiento de nuestra herramienta depende de plataformas de terceros integradas; <b>cualquier cambio en los parámetros de dichas plataformas nos exime de responsabilidad sobre la continuidad del servicio.</b><p> <br><b><p>RECUERDE</b> que es importante ver el videotutorial antes de adquirir la herramienta. De esta manera, al finalizar la instalación, le será más fácil resolver cualquier duda que no se haya abordado en el video.</p> <br><p>Le pedimos disponer de unos 15 minutos mientras realizamos la instalación y para las pruebas de funcionalidad un histórico DIAN con datos. Recuerde que la herramienta no tiene fecha de vencimiento; por ello, nos aseguramos de entregarla probada y funcionando correctamente al momento de su adquisición.</p>",
-        precio: "COP $50.000",
+          {
+        id: 6,
+        nombre: "Gemini PRO (12 Meses)",
+        url: "gemini-pro.html",
+        formato: "Credenciales",
+        mostrarTecnica: false,
+etiqueta: "DISPONIBLE",
+        desc: "Disfruta de 12 meses completos de Gemini PRO, con acceso a las funciones avanzadas de inteligencia artificial de Google, además de los beneficios incluidos con la promoción estudiantil.<p><b> </b><p>",
+        caracteristicas: ["Acceso a Gemini Pro con tu cuenta personal GMAIL", "Modelos de IA avanzados para mayor rendimiento (Chat / Tarea).", "Investigación más profunda y preparación para exámenes; obtén acceso ampliado en Gemini y Gemini Notebook para analizar hasta 1,500 páginas de tus apunte.", "Más ayuda para escribir y preparación profesional; obtén acceso ampliado para generar un primer borrador, trabajar en tus argumentos y definir mejor tus ideas.", "Creación de contenido potenciada; crea imágenes y videos dinámicos fácilmente con más acceso a Gemini Omni Flash y Nano Banana Pro.", "Creación más rápida de código y proyectos; acceso ampliado a nuestra plataforma de desarrollo de IA: Google Antigravity, Jules, Google Developer Program premium y más.", "5 TB de almacenamiento²; almacenamiento total para Google Fotos, Drive y Gmail.", "Se asiste vía anydesk para canjear el beneficio."],
+        nota: "Te en cuenta las siguientes recomendaciones: <b>El enlace es de un solo uso.</b> Se recomienda canjearlo únicamente en la cuenta de Google donde deseas disfrutar el beneficio; Una vez activado correctamente, el servicio quedará asociado a tu cuenta Gmail. <p><br><b>Te realizamos acompañamiento vía Anydesk, para ello tenerlo instalado para poder proceder y para validar una correcta activación, es importante que estes en un PC, no es válido ni en Tablet, ni celular para el acompañamiento. Para agilizar la activación se recomienda que el usuario tenga instalado VPN Proton o cualquiera de su preferencia en windows no validador tipo extensión.</b></p> <br><p>Manejamos pago local COP y Binance USDT.</p> <br><p><b>Tener en cuenta que se brinda garantía por 3 meses y que solo se procede si podemos asistir vía anydesk, de lo contrario no hay garantía.</b> Precio en USDT $10 mediante Binance.<p/>",
+        precio: "COP $30.000",
         tipoPago: "Pago único",
-        video: "video/Pdfs.mp4",
-        youtube: "https://youtu.be/jwaJ-Z9O5Y0",
-        fotos: ["img/p2-0.webp", "img/p2-1.webp", "img/p2-2.webp","img/p2-3.webp","img/p2-4.webp","img/p2-5.webp","img/p2-6.webp"]
+        video: "video/Gemini.mp4",
+        youtube: "https://youtu.be/f1pKdYerHxg",
+        fotos: ["img/p6-0.webp", "img/p6-1.webp", "img/p6-2.webp", "img/p6-3.webp", "img/p6-4.webp", "img/p6-5.webp"]
     },
-
-      
-      
-      
-      
-      
-      {
+         {
         id: 7,
         nombre: "WiCONTABLE Lite",
         url: "wicontable-lite.html",
@@ -39,12 +33,23 @@ const productos = [
         video: "video/WiCONTABLE.mp4",
         youtube: "",
         fotos: ["img/p0-0.webp", "img/p0-1.webp"]
-    },
-
-
-
-
-          
+    },   
+         {
+        id: 2,
+        nombre: "PDFs/ZIP Downloader (DIAN)",
+        url: "pdfs-downloader.html",
+        formato: "Extensión Web .crx",
+        mostrarTecnica: true,
+        etiqueta: "¡EN PRODUCCION!",
+        desc: "<b>REF006</b> <b>Actualizada el 22-10-2026</b> <p>Optimiza tu gestión contable. Consulta y descarga de forma individual o masiva facturas electrónicas, notas crédito, notas débito y otros documentos electrónicos desde los servicios de la DIAN, en formatos PDF y ZIP según su disponibilidad. Organiza documentos, procesa archivos Excel y automatiza tareas repetitivas mediante CUFE, CUDE y NIT, con una solución diseñada para contadores y empresas.<p><br>",
+        caracteristicas: ["<p><b>Cero trámites adicionales:</b> No necesitas generar Token ni adquirir un Certificado Digital de la DIAN para descargar tus PDFs.</p>","<p><b>Módulo Descarga Pública (Multidocumento):</b> Carga tu plantilla de Excel con los códigos (CUDE, CUDS, CUFE, CUNE) y su respectivo NIT. El sistema procesa de forma automatizada (entre 3 y 9 segundos por documento) validando los captchas y entregando los PDFs listos para visualizar, sin contraseñas.</p>", "<p><b>Módulo Descarga F.E-N.C-N.D (Ultrarrápido):</b> Descarga masiva de Facturas Electrónicas y Notas a una velocidad increíble de 0.5 segundos por documento. Sin captchas, sin NIT y sin contraseñas. Solo carga tu Excel o pega los CUFES directamente.</p>", "<p><b>Módulo Tools (Gestión y Exportación):</b> Toma el control total de tus archivos. Renombra tus PDFs de forma masiva, extrae la información clave, lístala y expórtala directamente a Excel para tus cruces e informes que incluye la estructura de 10 tipos de documentos: F.E, Notas, Nómina, Documentos Equivales, Documento Soportes, Extracto, Peaje entre otros.</p>", "PRUDUCCION", "PRODUCCION"],
+        nota: "<p>En <b>WiCONTABLE</b> queremos que puedas comenzar a utilizar nuestra herramienta de forma segura, sencilla y con el acompañamiento necesario.</p><br><p><b>🖥️ Instalación y asistencia remota</b></p><p>Para realizar la instalación, configuración inicial y pruebas de funcionamiento, nuestro equipo técnico utiliza <b>AnyDesk</b>, una herramienta de conexión remota que nos permite brindarte asistencia directamente en tu computador.</p><p>Cada equipo se registra de manera individual durante el proceso de instalación. Por tu seguridad, las comunicaciones de soporte se realizan exclusivamente a través del número de celular o usuario de contacto que hayas registrado con nosotros.</p><p>La conexión remota requiere tu autorización y participación durante la asistencia.</p><br><p><b>🎥 Videotutorial antes de adquirir</b></p><p>Te recomendamos <b>ver el videotutorial antes de realizar la compra</b>. Allí conocerás las principales funcionalidades, los requisitos y el funcionamiento general de la herramienta.</p><p>Esto te permitirá evaluar si se ajusta a tus necesidades contables y aprovechar mejor la capacitación y el acompañamiento durante la instalación.</p><br><p><b>⏱️ Tiempo de instalación y pruebas</b></p><p>Te sugerimos disponer de aproximadamente <b>15 minutos</b> para la instalación y configuración inicial.</p><p>Para comprobar el funcionamiento, es importante contar con un <b>histórico de documentos electrónicos de la DIAN que contenga registros para realizar pruebas</b>.</p><p>Nuestro objetivo es que puedas verificar las funcionalidades contratadas antes de finalizar la asistencia.</p><br><p><b>🔄 Compatibilidad con los servicios de la DIAN</b></p><p>Nuestra herramienta interactúa con plataformas y servicios tecnológicos de terceros, especialmente los sistemas electrónicos de la DIAN.</p><p>Por esta razón, los cambios en sus portales, mecanismos de seguridad, condiciones de acceso o estructuras tecnológicas pueden afectar temporalmente determinadas funcionalidades.</p><p><b>WiCONTABLE no controla la disponibilidad ni las modificaciones realizadas por estas plataformas.</b> Cuando se presenten cambios que afecten el funcionamiento, evaluaremos su impacto y la viabilidad técnica de realizar los ajustes correspondientes, sin garantizar compatibilidad permanente.</p><br><p><b>🔐 Licencia sin fecha de vencimiento</b></p><p>La licencia de nuestra herramienta <b>no tiene una fecha de vencimiento establecida</b>.</p><p>Esto significa que puedes continuar utilizando la versión adquirida mientras se mantengan las condiciones técnicas necesarias para su funcionamiento.</p><p>La licencia sin vencimiento no implica que los servicios de terceros permanezcan disponibles indefinidamente ni que todas las actualizaciones futuras estén incluidas.</p><br><p><b>✅ Nuestro compromiso</b></p><p>En WiCONTABLE buscamos entregarte una herramienta correctamente instalada, configurada y probada, para que puedas incorporarla a tus actividades de gestión documental y contable con mayor tranquilidad.</p>",
+        precio: "COP $50.000",
+        tipoPago: "Pago único",
+        video: "video/Pdfs.mp4",
+        youtube: "https://youtu.be/jwaJ-Z9O5Y0",
+        fotos: ["img/p2-0.webp", "img/p2-1.webp", "img/p2-2.webp","img/p2-3.webp","img/p2-4.webp","img/p2-5.webp","img/p2-6.webp"]
+    }, 
      {
         id: 14,
         nombre: "PDF Extract PRO",
@@ -114,41 +119,7 @@ etiqueta: "DISPONIBLE",
         video: "video/ReportePN.mp4",
         youtube: "https://youtu.be/qa_wJjN3Nvo",
         fotos: ["img/p12-0.webp", "img/p12-1.webp", "img/p12-2.webp", "img/p12-3.webp"]
-    },
-          {
-        id: 11,
-        nombre: "Declaración de Renta Persona Natural (DIAN)",
-        url: "declaracion-renta-pn.html",
-        formato: "Consultoria Contable",
-        mostrarTecnica: false,
-etiqueta: "AGOTADO",
-        desc: "<b>REF011</b> Brindamos asesoría integral en la elaboración y presentación de tu Declaración de Renta Persona Natural. Garantizamos total cumplimiento normativo y una optimización fiscal estratégica, tanto en el Formulario 210 como en el Formulario 110.",
-        caracteristicas: ["Diagnóstico inicial de requisitos según topes de la DIAN.", "Análisis de deducciones y beneficios tributarios para pagar lo justo.", "Elaboración del borrador y presentación de formulario 110/210.", "Acompañamiento en el proceso de pago y firma electrónica.", "Entrega de informe detallado de la declaración presentada."],
-        nota: "El valor del servicio puede variar según la complejidad de la realidad financiera del contribuyente (cantidad de cruce cedular, inversiones, etc.). <br><br><b>¡Contáctanos para una cotización personalizada!</b>",
-        precio: "Desde COP $300.000",
-        video: "",
-        fotos: ["img/p11-0.webp", "img/p11-1.webp", "img/p11-2.webp", "img/p11-3.webp", "img/p11-4.webp"]
-    },
-
-{
-        id: 6,
-        nombre: "Gemini PRO (12 Meses)",
-        url: "gemini-pro.html",
-        formato: "Credenciales",
-        mostrarTecnica: false,
-etiqueta: "DISPONIBLE",
-        desc: "Disfruta de 12 meses completos de Gemini PRO, con acceso a las funciones avanzadas de inteligencia artificial de Google, además de los beneficios incluidos con la promoción estudiantil.<p><b> </b><p>",
-        caracteristicas: ["Acceso a Gemini Pro con tu cuenta personal GMAIL", "Modelos de IA avanzados para mayor rendimiento (Chat / Tarea).", "Investigación más profunda y preparación para exámenes; obtén acceso ampliado en Gemini y Gemini Notebook para analizar hasta 1,500 páginas de tus apunte.", "Más ayuda para escribir y preparación profesional; obtén acceso ampliado para generar un primer borrador, trabajar en tus argumentos y definir mejor tus ideas.", "Creación de contenido potenciada; crea imágenes y videos dinámicos fácilmente con más acceso a Gemini Omni Flash y Nano Banana Pro.", "Creación más rápida de código y proyectos; acceso ampliado a nuestra plataforma de desarrollo de IA: Google Antigravity, Jules, Google Developer Program premium y más.", "5 TB de almacenamiento²; almacenamiento total para Google Fotos, Drive y Gmail.", "Se asiste vía anydesk para canjear el beneficio."],
-        nota: "Te en cuenta las siguientes recomendaciones: <b>El enlace es de un solo uso.</b> Se recomienda canjearlo únicamente en la cuenta de Google donde deseas disfrutar el beneficio; Una vez activado correctamente, el servicio quedará asociado a tu cuenta Gmail. <p><br><b>Te realizamos acompañamiento vía Anydesk, para ello tenerlo instalado para poder proceder y para validar una correcta activación, es importante que estes en un PC, no es válido ni en Tablet, ni celular para el acompañamiento. Para agilizar la activación se recomienda que el usuario tenga instalado VPN Proton o cualquiera de su preferencia en windows no validador tipo extensión.</b></p> <br><p>Manejamos pago local COP y Binance USDT.</p> <br><p><b>Tener en cuenta que se brinda garantía por 3 meses y que solo se procede si podemos asistir vía anydesk, de lo contrario no hay garantía.</b> Precio en USDT $10 mediante Binance.<p/>",
-        precio: "COP $30.000",
-        tipoPago: "Pago único",
-        video: "video/Gemini.mp4",
-        youtube: "https://youtu.be/f1pKdYerHxg",
-        fotos: ["img/p6-0.webp", "img/p6-1.webp", "img/p6-2.webp", "img/p6-3.webp", "img/p6-4.webp", "img/p6-5.webp"]
-    },
-
-
-      
+    },    
  {
         id: 4,
         nombre: "Microsoft 365 Genuina (1 año)",
@@ -228,8 +199,21 @@ etiqueta: "DISPONIBLE",
         precio: "Desde COP $1.500",
         video: "https://acortar.link/Plataformax",
         fotos: ["img/p10-0.webp"]
+    },
+{
+        id: 11,
+        nombre: "Declaración de Renta Persona Natural (DIAN)",
+        url: "declaracion-renta-pn.html",
+        formato: "Consultoria Contable",
+        mostrarTecnica: false,
+etiqueta: "AGOTADO",
+        desc: "<b>REF011</b> Brindamos asesoría integral en la elaboración y presentación de tu Declaración de Renta Persona Natural. Garantizamos total cumplimiento normativo y una optimización fiscal estratégica, tanto en el Formulario 210 como en el Formulario 110.",
+        caracteristicas: ["Diagnóstico inicial de requisitos según topes de la DIAN.", "Análisis de deducciones y beneficios tributarios para pagar lo justo.", "Elaboración del borrador y presentación de formulario 110/210.", "Acompañamiento en el proceso de pago y firma electrónica.", "Entrega de informe detallado de la declaración presentada."],
+        nota: "El valor del servicio puede variar según la complejidad de la realidad financiera del contribuyente (cantidad de cruce cedular, inversiones, etc.). <br><br><b>¡Contáctanos para una cotización personalizada!</b>",
+        precio: "Desde COP $300.000",
+        video: "",
+        fotos: ["img/p11-0.webp", "img/p11-1.webp", "img/p11-2.webp", "img/p11-3.webp", "img/p11-4.webp"]
     }
-
 
 
 ];

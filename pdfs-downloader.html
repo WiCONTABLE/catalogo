@@ -107,7 +107,8 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"></noscript>
 
     <style>
         :root {
@@ -2681,7 +2682,7 @@
         <header class="navbar">
             <div class="navbar-container">
                 <a href="https://wicontable.com/" class="brand-logo" title="WiCONTABLE Inicio">
-                    <img src="img/logowi.webp" alt="WiCONTABLE Logo" class="logo-img">
+                    <img src="img/logowi.webp" alt="WiCONTABLE Logo" class="logo-img" width="40" height="40">
                     <div class="brand-title-group">
                         <div class="brand-name">Wi<span>CONTABLE</span></div>
                         <span class="brand-subtitle">Soluciones Profesionales</span>
@@ -2762,7 +2763,7 @@
     <aside class="mobile-nav-drawer" id="mobileDrawer">
         <div class="mobile-nav-header">
             <div class="brand-logo">
-                <img src="img/logowi.webp" alt="WiCONTABLE" class="logo-img">
+                <img src="img/logowi.webp" alt="WiCONTABLE" class="logo-img" width="40" height="40">
                 <div class="brand-name">Wi<span>CONTABLE</span></div>
             </div>
             <button class="btn-close-mobile" onclick="closeMobileMenu()">&times;</button>
@@ -2988,7 +2989,7 @@
                                 <span>⚡</span>
                                 <span>Beneficios y Funcionalidades Clave</span>
                             </div>
-                            <div class="features-rich-list"><div class="feature-block"><p class="feature-block-title">🚀 Simplifica tu gestión documental y contable</p><p>Reduce las tareas repetitivas de consulta, descarga y organización de documentos electrónicos de la DIAN. Procesa información de forma individual o masiva y ahorra tiempo en tus actividades contables.</p></div><div class="feature-block"><p class="feature-block-title">✅ Consultas sin trámites adicionales</p><p>Para las consultas compatibles, no necesitas generar tokens ni adquirir un certificado digital adicional. Utiliza los identificadores de tus documentos y los datos requeridos por cada servicio de la DIAN.</p></div><div class="feature-block"><p class="feature-block-title">📄 Módulo F.E - N.C - N.D | Descarga rápida de PDF</p><p>Descarga facturas electrónicas, notas crédito y notas débito mediante sus identificadores CUFE/CUDE. Importa tus registros desde Excel, arrastra el archivo directamente al módulo o pega los códigos para realizar descargas individuales y masivas de manera ágil.</p></div><div class="feature-block"><p class="feature-block-title">🌐 Módulo CUDE - CUNE - CUDS - CUFE | Descarga pública multidocumento</p><p>Consulta y descarga diferentes tipos de documentos electrónicos utilizando sus identificadores y la información tributaria requerida, como el NIT.</p><p>Carga tus registros desde Excel y automatiza el diligenciamiento de consultas. Cuando la DIAN solicite una verificación de seguridad o CAPTCHA, de manera automática lo realizara.</p></div><div class="feature-block"><p class="feature-block-title">📦 Módulo Descarga ZIP | Descarga y organización masiva</p><p>Aprovecha tu sesión activa en la DIAN para descargar archivos ZIP de facturas electrónicas a partir de listados Excel.</p><ul class="feature-sublist"><li>Identifica documentos procesados y fallidos.</li><li>Reintenta únicamente las descargas fallidas.</li><li>Selecciona una carpeta local para administrar tus archivos ZIP.</li><li>Analiza y renombra archivos ZIP mediante identificadores CUFE/CUDE.</li></ul></div><div class="feature-block"><p class="feature-block-title">🛠️ Módulo Tools PDF | Gestión documental y reportes contables</p><p>Organiza y procesa tus documentos PDF directamente desde tu equipo:</p><ul class="feature-sublist"><li>Renombra archivos masivamente utilizando datos del documento, fecha, emisor, receptor e identificadores tributarios.</li><li>Genera listados de archivos y subcarpetas.</li><li>Extrae información disponible de facturas electrónicas y notas crédito.</li><li>Exporta reportes Excel con información de documentos, ítems, bases gravables, tarifas de IVA, impuestos y terceros.</li><li>Facilita la vista previa de archivos PDF mediante una herramienta auxiliar compatible con Windows.</li></ul></div><div class="feature-block"><p class="feature-block-title">📊 Excel como aliado de tu contabilidad</p><p>Importa listados para realizar consultas masivas y genera reportes estructurados que facilitan la revisión documental, los cruces de información y la preparación de informes contables.</p></div><div class="feature-block"><p class="feature-block-title">🏢 Gestión de múltiples empresas</p><p>Una herramienta diseñada para profesionales contables que administran documentos electrónicos de diferentes clientes y empresas, con las condiciones de uso establecidas en la licencia adquirida.</p></div><div class="feature-block"><p class="feature-block-title">🔐 Procesamiento local y control del usuario</p><p>Las herramientas de organización y generación de reportes trabajan con los archivos seleccionados en tu equipo. Las consultas y descargas utilizan los servicios correspondientes de la DIAN.</p></div><div class="feature-closing"><b>WiCONTABLE: menos tareas repetitivas, más tiempo para tu gestión contable.</b></div></div>
+                            <div class="features-rich-list"><div class="feature-block"><p class="feature-block-title">🚀 Simplifica tu gestión documental y contable</p><p>Reduce las tareas repetitivas de consulta, descarga y organización de documentos electrónicos de la DIAN. Procesa información de forma individual o masiva y ahorra tiempo en tus actividades contables.</p></div><div class="feature-block"><p class="feature-block-title">✅ Consultas sin trámites adicionales</p><p>Para las consultas compatibles, no necesitas generar tokens ni adquirir un certificado digital adicional. Utiliza los identificadores de tus documentos y los datos requeridos por cada servicio de la DIAN.</p></div><div class="feature-block"><p class="feature-block-title">📄 Módulo F.E - N.C - N.D | Descarga rápida de PDF</p><p>Descarga facturas electrónicas, notas crédito y notas débito mediante sus identificadores CUFE/CUDE. Importa tus registros desde Excel, arrastra el archivo directamente al módulo o pega los códigos para realizar descargas individuales y masivas de manera ágil.</p></div><div class="feature-block"><p class="feature-block-title">🌐 Módulo CUDE - CUNE - CUDS - CUFE | Descarga pública multidocumento</p><p>Consulta y descarga diferentes tipos de documentos electrónicos utilizando sus identificadores y la información tributaria requerida, como el NIT.</p><p>Carga tus registros desde Excel y automatiza el diligenciamiento de consultas. Cuando la DIAN solicite una verificación de seguridad o CAPTCHA, deberás completarla manualmente.</p></div><div class="feature-block"><p class="feature-block-title">📦 Módulo Descarga ZIP | Descarga y organización masiva</p><p>Aprovecha tu sesión activa en la DIAN para descargar archivos ZIP de facturas electrónicas a partir de listados Excel.</p><ul class="feature-sublist"><li>Identifica documentos procesados y fallidos.</li><li>Reintenta únicamente las descargas fallidas.</li><li>Selecciona una carpeta local para administrar tus archivos ZIP.</li><li>Analiza y renombra archivos ZIP mediante identificadores CUFE/CUDE.</li></ul></div><div class="feature-block"><p class="feature-block-title">🛠️ Módulo Tools PDF | Gestión documental y reportes contables</p><p>Organiza y procesa tus documentos PDF directamente desde tu equipo:</p><ul class="feature-sublist"><li>Renombra archivos masivamente utilizando datos del documento, fecha, emisor, receptor e identificadores tributarios.</li><li>Genera listados de archivos y subcarpetas.</li><li>Extrae información disponible de facturas electrónicas y notas crédito.</li><li>Exporta reportes Excel con información de documentos, ítems, bases gravables, tarifas de IVA, impuestos y terceros.</li><li>Facilita la vista previa de archivos PDF mediante una herramienta auxiliar compatible con Windows.</li></ul></div><div class="feature-block"><p class="feature-block-title">📊 Excel como aliado de tu contabilidad</p><p>Importa listados para realizar consultas masivas y genera reportes estructurados que facilitan la revisión documental, los cruces de información y la preparación de informes contables.</p></div><div class="feature-block"><p class="feature-block-title">🏢 Gestión de múltiples empresas</p><p>Una herramienta diseñada para profesionales contables que administran documentos electrónicos de diferentes clientes y empresas, con las condiciones de uso establecidas en la licencia adquirida.</p></div><div class="feature-block"><p class="feature-block-title">🔐 Procesamiento local y control del usuario</p><p>Las herramientas de organización y generación de reportes trabajan con los archivos seleccionados en tu equipo. Las consultas y descargas utilizan los servicios correspondientes de la DIAN.</p></div><div class="feature-closing"><b>WiCONTABLE: menos tareas repetitivas, más tiempo para tu gestión contable.</b></div></div>
                         </div>
 
                         <!-- Support Card (Móvil: en celulares queda después de los botones) -->
@@ -3133,7 +3134,7 @@
         <div class="footer-container">
             <div class="footer-brand">
                 <div class="brand-logo">
-                    <img src="img/logowi.webp" alt="WiCONTABLE Logo" class="logo-img">
+                    <img src="img/logowi.webp" alt="WiCONTABLE Logo" class="logo-img" width="40" height="40">
                     <div class="brand-name">Wi<span>CONTABLE</span></div>
                 </div>
                 <p>Herramientas y automatizaciones contables de alta precisión. Diseñadas para simplificar tareas repetitivas y maximizar tu productividad tributaria en Colombia.</p>
@@ -3212,10 +3213,10 @@
                     totalSlides = container.querySelectorAll('.slide-img-box').length || 1;
                 }
                 initTouchSwipe();
-                renderRelated(p.id);
+                if ('requestIdleCallback' in window) { requestIdleCallback(() => renderRelated(p.id)); } else { setTimeout(() => renderRelated(p.id), 300); }
             } else if (p) {
                 renderProduct(p);
-                renderRelated(p.id);
+                if ('requestIdleCallback' in window) { requestIdleCallback(() => renderRelated(p.id)); } else { setTimeout(() => renderRelated(p.id), 300); }
             } else if (root) {
                 root.innerHTML = `
                     <div style="text-align:center; padding: 80px 20px;">
@@ -3575,7 +3576,7 @@
                             ${badgeHTML}
                         </div>
                         <div class="related-img-box">
-                            <img src="${safeImg}" alt="${item.nombre}">
+                            <img src="${safeImg}" alt="${item.nombre}" loading="lazy" width="220" height="160">
                         </div>
                     </div>
                     <div>

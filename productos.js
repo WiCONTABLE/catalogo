@@ -9,7 +9,7 @@ const productos = [
         formato: "Extensión Web .crx",
         mostrarTecnica: true,
         etiqueta: "¡EN PRODUCCION!",
-        desc: "<b>REF006</b> <b>Actualizada el 16-11-2026</b> <p>Optimiza tu gestión contable. Consulta y descarga de forma individual o masiva facturas electrónicas, notas crédito, notas débito y otros documentos electrónicos desde los servicios de la DIAN, en formatos PDF y ZIP según su disponibilidad. Organiza documentos, procesa archivos Excel y automatiza tareas repetitivas mediante CUFE, CUDE y NIT, con una solución diseñada para contadores y empresas.<p><br>",
+        desc: "<b>REF006</b> <p>Optimiza tu gestión contable. Consulta y descarga de forma individual o masiva facturas electrónicas, notas crédito, notas débito y otros documentos electrónicos desde los servicios de la DIAN, en formatos PDF y ZIP según su disponibilidad. Organiza documentos, procesa archivos Excel y automatiza tareas repetitivas mediante CUFE, CUDE y NIT, con una solución diseñada para contadores y empresas.<p><br><b>Actualizada el 16-11-2026</b>",
         caracteristicas: [
             "<div class=\"feature-block\"><p class=\"feature-block-title\">🚀 Simplifica tu gestión documental y contable</p><p>Reduce las tareas repetitivas de consulta, descarga y organización de documentos electrónicos de la DIAN. Procesa información de forma individual o masiva y ahorra tiempo en tus actividades contables.</p></div>",
             "<div class=\"feature-block\"><p class=\"feature-block-title\">✅ Consultas sin trámites adicionales</p><p>Para las consultas compatibles, no necesitas generar tokens ni adquirir un certificado digital adicional. Utiliza los identificadores de tus documentos y los datos requeridos por cada servicio de la DIAN.</p></div>",

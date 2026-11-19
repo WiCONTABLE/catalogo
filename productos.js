@@ -26,7 +26,7 @@ const productos = [
         precio: "COP $50.000",
         tipoPago: "Pago único",
         video: "video/WiCONTABLE.mp4",
-        youtube: "",
+        youtube: "https://youtu.be/ehYYA0f8vws",
         fotos: ["img/p2-0.webp", "img/p2-1.webp", "img/p2-2.webp","img/p2-3.webp","img/p2-4.webp","img/p2-5.webp","img/p2-6.webp"]
     }, 
 

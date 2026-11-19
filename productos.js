@@ -4,7 +4,7 @@ const miTelegram = "https://telegram.me/wicontable";
 const productos = [
            {
         id: 2,
-        nombre: "PDFs/ZIP Downloader (DIAN)",
+        nombre: "PDFs/ZIPs Downloader (DIAN)",
         url: "pdfs-downloader.html",
         formato: "Extensión Web .crx",
         mostrarTecnica: true,

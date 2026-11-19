@@ -2942,7 +2942,7 @@
                         <h1 class="detail-title">PDFs/ZIP Downloader (DIAN)</h1>
                         
                         <div class="video-action-row">
-                            <button onclick="openVideoModal(null, 'video/WiCONTABLE.mp4', '')" class="btn-ver-funcionamiento">
+                            <button onclick="openVideoModal(\'ehYYA0f8vws\', null, \'https://youtu.be/ehYYA0f8vws\')" class="btn-ver-funcionamiento">
                     <span class="btn-video-main">🎥 Ver Video de Funcionamiento</span>
                     <span class="btn-video-date">Actualizada el 16-11-2026</span>
                 </button>
@@ -3203,28 +3203,21 @@
             const qId = parseInt(urlParams.get('id'));
             const p = qId ? productos.find(item => item.id === qId) : productos.find(item => item.id === currentProductId);
 
-            const root = document.getElementById('detailRoot');
-            const hasPrerenderedContent = root && root.querySelector('.product-grid-layout');
-
-            if (p && p.id === currentProductId && hasPrerenderedContent) {
-                // Pre-rendered statically: keep DOM intact to avoid layout shift (CLS = 0)
-                const container = document.getElementById('slidesContainer');
-                if (container) {
-                    totalSlides = container.querySelectorAll('.slide-img-box').length || 1;
-                }
+            if (p) {
+                renderProduct(p);
                 initTouchSwipe();
                 if ('requestIdleCallback' in window) { requestIdleCallback(() => renderRelated(p.id)); } else { setTimeout(() => renderRelated(p.id), 300); }
-            } else if (p) {
-                renderProduct(p);
-                if ('requestIdleCallback' in window) { requestIdleCallback(() => renderRelated(p.id)); } else { setTimeout(() => renderRelated(p.id), 300); }
-            } else if (root) {
-                root.innerHTML = `
-                    <div style="text-align:center; padding: 80px 20px;">
-                        <h2 style="font-size:1.8rem; margin-bottom:12px;">Solución no encontrada</h2>
-                        <p style="color:var(--text-secondary); margin-bottom:24px;">Esta herramienta fue actualizada o movida en el catálogo.</p>
-                        <a href="index.html" style="display:inline-block; background:var(--brand-gradient); color:#042f2e; padding:12px 24px; border-radius:var(--radius-full); font-weight:800;">Explorar Catálogo Completo</a>
-                    </div>
-                `;
+            } else {
+                const root = document.getElementById('detailRoot');
+                if (root) {
+                    root.innerHTML = `
+                        <div style="text-align:center; padding: 80px 20px;">
+                            <h2 style="font-size:1.8rem; margin-bottom:12px;">Solución no encontrada</h2>
+                            <p style="color:var(--text-secondary); margin-bottom:24px;">Esta herramienta fue actualizada o movida en el catálogo.</p>
+                            <a href="index.html" style="display:inline-block; background:var(--brand-gradient); color:#042f2e; padding:12px 24px; border-radius:var(--radius-full); font-weight:800;">Explorar Catálogo Completo</a>
+                        </div>
+                    `;
+                }
             }
         });
 
@@ -3269,11 +3262,12 @@
                 badgeHTML = `<span class="gallery-badge badge-status ${badgeClass}">${p.etiqueta}</span>`;
             }
 
-                        // Video action
+                        // Video action: Priorizar YouTube si está definido
             let videoBtnHTML = '';
-            const hasLocalMp4 = p.video && p.video.toLowerCase().endsWith('.mp4');
-            const localYt = p.video ? getYouTubeId(p.video) : null;
             const extraYt = p.youtube ? getYouTubeId(p.youtube) : null;
+            const localYt = p.video ? getYouTubeId(p.video) : null;
+            const targetYtId = extraYt || localYt;
+            const hasLocalMp4 = p.video && p.video.toLowerCase().endsWith('.mp4');
 
             // Enlace de YouTube para ver externamente desde el modal
             let ytUrl = '';
@@ -3285,14 +3279,13 @@
 
             const dateBadgeHTML = updateDate ? `<span class="btn-video-date">${updateDate}</span>` : '';
 
-            if (hasLocalMp4) {
-                videoBtnHTML = `<button onclick="openVideoModal(null, '${p.video}', '${ytUrl}')" class="btn-ver-funcionamiento">
+            if (targetYtId) {
+                videoBtnHTML = `<button onclick="openVideoModal('${targetYtId}', null, '${ytUrl}')" class="btn-ver-funcionamiento">
                     <span class="btn-video-main">🎥 Ver Video de Funcionamiento</span>
                     ${dateBadgeHTML}
                 </button>`;
-            } else if (localYt || extraYt) {
-                const targetYtId = localYt || extraYt;
-                videoBtnHTML = `<button onclick="openVideoModal('${targetYtId}', null, '${ytUrl}')" class="btn-ver-funcionamiento">
+            } else if (hasLocalMp4) {
+                videoBtnHTML = `<button onclick="openVideoModal(null, '${p.video}', '${ytUrl}')" class="btn-ver-funcionamiento">
                     <span class="btn-video-main">🎥 Ver Video de Funcionamiento</span>
                     ${dateBadgeHTML}
                 </button>`;
@@ -3318,9 +3311,9 @@
                         <div class="main-carousel">
                             ${badgeHTML}
                             <div class="slides-container" id="slidesContainer">
-                                ${safePhotos.map(f => `
+                                ${safePhotos.map((f, idx) => `
                                     <div class="slide-img-box">
-                                        <img src="${f}" alt="${p.nombre}">
+                                        <img src="${f}" alt="${p.nombre}" width="600" height="600" ${idx === 0 ? 'fetchpriority="high"' : 'loading="lazy"'}>
                                     </div>
                                 `).join('')}
                             </div>
@@ -3334,7 +3327,7 @@
                             <div class="thumbnails-row">
                                 ${safePhotos.map((f, idx) => `
                                     <div class="thumb-item ${idx === 0 ? 'active' : ''}" onclick="goToSlide(${idx})">
-                                        <img src="${f}" alt="${p.nombre}">
+                                        <img src="${f}" alt="${p.nombre}" width="58" height="58" loading="lazy">
                                     </div>
                                 `).join('')}
                             </div>
@@ -3754,13 +3747,13 @@
             const footer = document.getElementById('videoModalFooter');
             if (!modal || !container) return;
 
-            if (localMp4 && localMp4.trim() !== '') {
+            if (ytId && ytId.trim() !== '') {
+                container.innerHTML = `<iframe src="https://www.youtube.com/embed/${ytId}?autoplay=1&rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width: 100%; height: 100%; border: none; border-radius: 12px;"></iframe>`;
+            } else if (localMp4 && localMp4.trim() !== '') {
                 container.innerHTML = `
                     <video src="${localMp4}" controls autoplay playsinline style="width: 100%; height: 100%; object-fit: contain; background: #000; border-radius: 12px;">
                         Tu navegador no soporta la reproducción de video MP4.
                     </video>`;
-            } else if (ytId && ytId.trim() !== '') {
-                container.innerHTML = `<iframe src="https://www.youtube.com/embed/${ytId}?autoplay=1&rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width: 100%; height: 100%; border: none; border-radius: 12px;"></iframe>`;
             }
 
             if (footer) {

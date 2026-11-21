@@ -44,12 +44,7 @@ etiqueta: "DISPONIBLE",
         video: "video/Gemini.mp4",
         youtube: "https://youtu.be/f1pKdYerHxg",
         fotos: ["img/p6-0.webp", "img/p6-1.webp", "img/p6-2.webp", "img/p6-3.webp", "img/p6-4.webp", "img/p6-5.webp"]
-    },
-
-
-
-
-           
+    },         
          {
         id: 7,
         nombre: "WiCONTABLE Lite",
@@ -66,7 +61,6 @@ etiqueta: "DISPONIBLE",
         youtube: "",
         fotos: ["img/p0-0.webp", "img/p0-1.webp"]
     },   
-        
      {
         id: 14,
         nombre: "PDF Extract PRO",
@@ -83,6 +77,9 @@ etiqueta: "ACTIVA",
         youtube: "https://youtu.be/Oi_HuA9jlL0",
         fotos: ["img/p14-0.webp", "img/p14-1.webp", "img/p14-2.webp"]
     },
+
+
+           
      {
         id: 3,
         nombre: "Consulta Datos NIT (DIAN)",

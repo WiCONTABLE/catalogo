@@ -1232,13 +1232,6 @@
             }
         }
 
-        @media (max-width: 600px) {
-            .footer-container {
-                grid-template-columns: 1fr;
-                gap: 28px;
-            }
-        }
-
         .footer-brand h2 {
             font-family: var(--font-heading);
             font-weight: 800;
@@ -1459,6 +1452,101 @@
             gap: 16px;
             color: var(--text-muted);
             font-size: 0.8125rem;
+        }
+
+        @media (max-width: 850px) {
+            .main-footer {
+                padding: 40px 16px 28px;
+                text-align: center;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 36px;
+                text-align: center;
+                justify-items: center;
+                margin-bottom: 36px;
+            }
+
+            .footer-brand {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                width: 100%;
+            }
+
+            .footer-brand .brand-logo {
+                justify-content: center;
+                margin: 0 auto 16px;
+            }
+
+            .footer-brand p {
+                text-align: center;
+                margin: 0 auto 20px;
+                max-width: 440px;
+            }
+
+            .social-buttons-row {
+                justify-content: center;
+                margin: 0 auto;
+            }
+
+            .footer-column {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                width: 100%;
+            }
+
+            .footer-column h4 {
+                text-align: center;
+                width: 100%;
+            }
+
+            .footer-contact-info {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                width: 100%;
+            }
+
+            .contact-entry {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                width: 100%;
+            }
+
+            .contact-entry > div {
+                justify-content: center;
+            }
+
+            .contact-label {
+                text-align: center;
+            }
+
+            .contact-schedule {
+                text-align: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                gap: 8px;
+                padding-top: 24px;
+            }
+
+            .footer-bottom p {
+                text-align: center;
+                margin: 0;
+                width: 100%;
+            }
         }
 
 /* ==========================================================================

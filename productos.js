@@ -111,6 +111,7 @@ etiqueta: "DISPONIBLE",
     ],
     nota: "El valor del servicio puede variar según el estado de la cuenta en el portal de la DIAN o la cantidad de modificaciones requeridas. <br><br><b>¡Contáctanos para gestionar tu trámite de forma rápida y segura!</b>",
         precio: "COP $60.000",
+        tipoPago: "Tarifa base / Consultoría",
         video: "",
         fotos: ["img/p13-0.webp", "img/p13-1.webp", "img/p13-2.webp", "img/p13-3.webp", "img/p13-4.webp"]
     },  

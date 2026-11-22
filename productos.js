@@ -77,9 +77,6 @@ etiqueta: "ACTIVA",
         youtube: "https://youtu.be/Oi_HuA9jlL0",
         fotos: ["img/p14-0.webp", "img/p14-1.webp", "img/p14-2.webp"]
     },
-
-
-           
      {
         id: 3,
         nombre: "Consulta Datos NIT (DIAN)",
@@ -96,6 +93,10 @@ etiqueta: "ACTIVA",
         youtube: "https://www.youtube.com/watch?v=1wLEFzIwj38",
         fotos: ["img/p3-0.webp", "img/p3-1.webp"]
     }, 
+
+
+
+           
      {
         id: 13,
         nombre: "Trámites Digitales (DIAN)",

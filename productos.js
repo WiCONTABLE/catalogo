@@ -93,10 +93,6 @@ etiqueta: "ACTIVA",
         youtube: "https://www.youtube.com/watch?v=1wLEFzIwj38",
         fotos: ["img/p3-0.webp", "img/p3-1.webp"]
     }, 
-
-
-
-           
      {
         id: 13,
         nombre: "Trámites Digitales (DIAN)",
@@ -118,6 +114,10 @@ etiqueta: "DISPONIBLE",
         video: "",
         fotos: ["img/p13-0.webp", "img/p13-1.webp", "img/p13-2.webp", "img/p13-3.webp", "img/p13-4.webp"]
     },  
+
+
+           
+
      
     {
         id: 12,

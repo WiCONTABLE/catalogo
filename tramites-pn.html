@@ -2928,6 +2928,256 @@
             transform: translateY(-2px);
             box-shadow: 0 12px 30px rgba(16, 185, 129, 0.6);
         }
+    
+        /* ==========================================================================
+           RESPONSIVE DETAIL PAGE (MOBILE <= 768px)
+           ========================================================================== */
+        
+
+    
+        /* ==========================================================================
+           RESPONSIVE DETAIL PAGE (MOBILE <= 768px)
+           ========================================================================== */
+        @media (max-width: 768px) {
+            .detail-wrapper {
+                padding: 16px 14px 50px;
+                width: 100%;
+                max-width: 100%;
+                box-sizing: border-box;
+                overflow-x: hidden;
+            }
+            .breadcrumbs {
+                margin-bottom: 16px;
+                font-size: 0.8rem;
+                gap: 6px;
+                word-break: break-word;
+            }
+            .product-grid-layout {
+                grid-template-columns: 100% !important;
+                gap: 28px;
+                width: 100%;
+                min-width: 0;
+            }
+            .gallery-box,
+            .info-col {
+                width: 100% !important;
+                max-width: 100% !important;
+                min-width: 0 !important;
+                margin: 0 auto;
+                box-sizing: border-box;
+            }
+            .main-carousel {
+                width: 100%;
+                max-width: 100%;
+                margin: 0 auto;
+                border-radius: var(--radius-lg);
+            }
+            .slide-img-box {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                padding: 12px;
+            }
+            .slide-img-box img {
+                margin: 0 auto;
+                display: block;
+                max-width: 100%;
+                max-height: 100%;
+                object-fit: contain;
+            }
+            /* 1. Miniaturas perfectamente centradas */
+            .thumbnails-row {
+                width: 100%;
+                max-width: 100%;
+                padding: 4px 2px 8px;
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+                box-sizing: border-box;
+                margin: 0 auto;
+            }
+            /* 2. Insignias centradas */
+            .product-meta-header {
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+                flex-wrap: wrap;
+                gap: 8px;
+                margin-bottom: 10px;
+                width: 100%;
+            }
+            /* 3. Título centrado */
+            .detail-title {
+                font-size: 1.55rem !important;
+                line-height: 1.25;
+                word-break: break-word;
+                overflow-wrap: break-word;
+                margin-bottom: 12px !important;
+                text-align: center !important;
+                width: 100%;
+            }
+            .detail-desc {
+                font-size: 0.925rem;
+                line-height: 1.6;
+                word-break: break-word;
+                overflow-wrap: break-word;
+                margin-bottom: 18px;
+            }
+            .video-action-row {
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+                width: 100%;
+                margin: 6px 0 20px 0;
+            }
+            .btn-ver-funcionamiento {
+                max-width: 100%;
+                box-sizing: border-box;
+                padding: 8px 18px;
+            }
+            .btn-video-main {
+                font-size: 0.88rem;
+            }
+            .btn-video-date {
+                font-size: 0.72rem;
+            }
+            .purchase-bar {
+                padding: 20px 16px;
+                border-radius: var(--radius-lg);
+                width: 100%;
+                max-width: 100%;
+                box-sizing: border-box;
+            }
+            .price-main {
+                font-size: 1.85rem;
+            }
+            /* 4. Botones de Compra: Fila 1 dos botones lado a lado, Fila 2 Telegram ancho completo */
+            .cta-buttons-row {
+                display: flex !important;
+                flex-direction: row !important;
+                flex-wrap: wrap !important;
+                gap: 8px !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                justify-content: center !important;
+                align-items: stretch !important;
+                box-sizing: border-box !important;
+            }
+            .btn-add-cart-large,
+            .btn-wa-direct {
+                flex: 1 1 calc(50% - 5px) !important;
+                width: calc(50% - 5px) !important;
+                min-width: 0 !important;
+                font-size: clamp(0.78rem, 2.4vw, 0.88rem) !important;
+                padding: 12px 6px !important;
+                box-sizing: border-box !important;
+                white-space: nowrap !important;
+                display: inline-flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+            .btn-tg-direct {
+                flex: 1 1 100% !important;
+                width: 100% !important;
+                min-width: 100% !important;
+                font-size: 0.9rem !important;
+                padding: 12px 16px !important;
+                box-sizing: border-box !important;
+                display: inline-flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+            /* 5. Botones Compartir: Filas centradas formato pastilla */
+            .tech-spec-bar {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: center !important;
+                gap: 8px !important;
+                width: 100% !important;
+                margin-bottom: 0 !important;
+            }
+            .tech-chip-action {
+                display: inline-flex !important;
+                font-size: 0.8rem !important;
+                padding: 9px 20px !important;
+                width: auto !important;
+                max-width: 100% !important;
+                justify-content: center !important;
+                text-align: center !important;
+                box-sizing: border-box !important;
+                margin: 0 auto !important;
+            }
+            .features-card {
+                padding: 20px 16px;
+                border-radius: var(--radius-lg);
+                width: 100%;
+                max-width: 100%;
+                box-sizing: border-box;
+            }
+            .features-list li {
+                font-size: 0.88rem;
+                line-height: 1.5;
+                word-break: break-word;
+            }
+            .features-rich-list {
+                gap: 16px;
+            }
+            .feature-block {
+                font-size: 0.88rem;
+                line-height: 1.58;
+                word-break: break-word;
+            }
+            .feature-block-title {
+                font-size: 0.92rem;
+            }
+            .feature-sublist {
+                padding-left: 20px;
+            }
+            .feature-sublist li {
+                font-size: 0.86rem;
+                line-height: 1.5;
+                word-break: break-word;
+            }
+            .feature-closing {
+                font-size: 0.89rem;
+                word-break: break-word;
+            }
+            .support-card {
+                padding: 20px 16px;
+                border-radius: var(--radius-lg);
+                width: 100%;
+                max-width: 100%;
+                box-sizing: border-box;
+            }
+            .support-card-text {
+                font-size: 0.88rem;
+                line-height: 1.55;
+                word-break: break-word;
+            }
+            .technical-section {
+                padding: 20px 16px;
+                margin-top: 32px;
+                border-radius: var(--radius-lg);
+                width: 100%;
+                max-width: 100%;
+                box-sizing: border-box;
+            }
+            .tech-sec-title {
+                font-size: 1.2rem;
+            }
+            .faq-question {
+                font-size: 0.9rem;
+                padding: 14px 12px;
+            }
+            .faq-answer {
+                font-size: 0.85rem;
+                padding: 0 12px 14px;
+                word-break: break-word;
+            }
+        }
+
     </style>
 </head>
 <body oncontextmenu="return false;">

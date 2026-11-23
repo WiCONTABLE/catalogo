@@ -4609,7 +4609,7 @@
 
                 <div class="brand-logo">
 
-                    <img src="img/logowi.png" alt="WiCONTABLE Logo" class="logo-img">
+                    <img src="img/logowi.webp" alt="WiCONTABLE Logo" class="logo-img">
 
                     <div class="brand-name">Wi<span>CONTABLE</span></div>
 
@@ -4821,7 +4821,7 @@
 
 
 
-            const safePhotos = (p.fotos && p.fotos.length > 0) ? p.fotos : ['img/logowi.png'];
+            const safePhotos = (p.fotos && p.fotos.length > 0) ? p.fotos : ['img/logowi.webp'];
 
             totalSlides = safePhotos.length;
 
@@ -5359,7 +5359,7 @@
 
 
 
-                const safeImg = (item.fotos && item.fotos.length > 0) ? item.fotos[0] : 'img/logowi.png';
+                const safeImg = (item.fotos && item.fotos.length > 0) ? item.fotos[0] : 'img/logowi.webp';
 
 
 
@@ -5498,7 +5498,7 @@
             cart.forEach(item => {
                 const num = parsePrice(item.precio);
                 sum += num * item.cantidad;
-                const safeImg = (item.fotos && item.fotos.length > 0) ? item.fotos[0] : ((typeof productos !== 'undefined' && productos.find(p => p.id === item.id)?.fotos?.[0]) || 'img/logowi.png');
+                const safeImg = (item.fotos && item.fotos.length > 0) ? item.fotos[0] : ((typeof productos !== 'undefined' && productos.find(p => p.id === item.id)?.fotos?.[0]) || 'img/logowi.webp');
 
                 list.innerHTML += `
                     <div class="cart-item">

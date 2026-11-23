@@ -131,15 +131,7 @@ etiqueta: "DISPONIBLE",
         youtube: "https://youtu.be/qa_wJjN3Nvo",
         fotos: ["img/p12-0.webp", "img/p12-1.webp", "img/p12-2.webp", "img/p12-3.webp"]
     },    
-
-
-
-
-
-
-
-           
- {
+{
         id: 4,
         nombre: "Microsoft 365 Genuina (1 año)",
         url: "365-office.html",
@@ -186,7 +178,9 @@ etiqueta: "DISPONIBLE",
         fotos: ["img/p9-0.webp", "img/p9-1.webp"]
     },
 
-         
+
+
+           
          
      {
         id: 15,

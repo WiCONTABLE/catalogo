@@ -3728,9 +3728,103 @@
 
 
         @media (max-width: 850px) {
+            .main-footer {
+                padding: 40px 16px 28px;
+                text-align: center;
+            }
 
-            .footer-container { grid-template-columns: 1fr; gap: 32px; }
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 36px;
+                text-align: center;
+                justify-items: center;
+                margin-bottom: 36px;
+            }
 
+            .footer-brand {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                width: 100%;
+            }
+
+            .footer-brand .brand-logo {
+                justify-content: center;
+                margin: 0 auto 16px;
+            }
+
+            .footer-brand p {
+                text-align: center;
+                margin: 0 auto 20px;
+                max-width: 440px;
+            }
+
+            .social-buttons-row {
+                justify-content: center;
+                margin: 0 auto;
+            }
+
+            .footer-col, .footer-column {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                width: 100%;
+            }
+
+            .footer-col h4, .footer-column h4 {
+                text-align: center;
+                width: 100%;
+            }
+
+            .footer-col p {
+                text-align: center;
+                width: 100%;
+            }
+
+            .footer-contact-info {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                width: 100%;
+            }
+
+            .contact-entry {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                width: 100%;
+            }
+
+            .contact-entry > div {
+                justify-content: center;
+            }
+
+            .contact-label {
+                text-align: center;
+            }
+
+            .contact-schedule {
+                text-align: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                gap: 8px;
+                padding-top: 24px;
+            }
+
+            .footer-bottom p {
+                text-align: center;
+                margin: 0;
+                width: 100%;
+            }
         }
 
 
@@ -4086,101 +4180,319 @@
            ========================================================================== */
 
         .video-action-row {
-
             margin: 8px 0 20px 0;
-
             display: flex;
-
             align-items: center;
-
         }
-
-
 
         .btn-ver-funcionamiento {
-
             display: inline-flex;
-
+            flex-direction: column;
             align-items: center;
-
-            gap: 10px;
-
-            padding: 10px 24px;
-
+            justify-content: center;
+            gap: 3px;
+            padding: 9px 24px;
             border-radius: var(--radius-full);
-
             background: rgba(16, 185, 129, 0.08);
-
             border: 1.5px solid var(--brand-green);
-
             color: #047857;
-
             font-family: var(--font-body);
-
-            font-size: 0.95rem;
-
-            font-weight: 700;
-
             cursor: pointer;
-
             text-decoration: none;
-
             outline: none;
-
             transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-
             animation: soft-pulse-glow 2.5s infinite ease-in-out;
-
             box-shadow: 0 2px 8px rgba(16, 185, 129, 0.15);
-
+            line-height: 1.25;
+            text-align: center;
         }
 
+        .btn-video-main {
+            font-size: 0.95rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
 
+        .btn-video-date {
+            font-size: 0.76rem;
+            font-weight: 600;
+            opacity: 0.88;
+            letter-spacing: 0.2px;
+        }
+
+        .btn-ver-funcionamiento:hover .btn-video-date {
+            color: #ffffff;
+            opacity: 0.95;
+        }
 
         .btn-ver-funcionamiento:hover {
-
             background: var(--brand-green);
-
             color: #ffffff;
-
             border-color: var(--brand-green);
-
             transform: translateY(-2px);
-
             box-shadow: 0 8px 24px rgba(16, 185, 129, 0.45);
-
             animation: none;
-
         }
-
-
 
         .btn-ver-funcionamiento:active {
-
             transform: translateY(0);
-
         }
 
-
-
         @keyframes soft-pulse-glow {
-
             0%, 100% {
-
                 box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.25), 0 2px 8px rgba(16, 185, 129, 0.12);
-
                 border-color: rgba(16, 185, 129, 0.6);
-
             }
-
             50% {
-
                 box-shadow: 0 0 18px 4px rgba(16, 185, 129, 0.45), 0 4px 14px rgba(16, 185, 129, 0.25);
-
                 border-color: rgba(16, 185, 129, 1);
-
             }
+        }
 
+        /* ==========================================================================
+           RESPONSIVE MOBILE RULES (MAX-WIDTH: 768PX)
+           Centrado integral de cabecera, 2+1 en botones de compra y pastillas de compartir
+           ========================================================================== */
+        @media (max-width: 768px) {
+            .detail-wrapper {
+                padding: 16px 14px 50px;
+                width: 100%;
+                max-width: 100%;
+                box-sizing: border-box;
+                overflow-x: hidden;
+            }
+            .breadcrumbs {
+                margin-bottom: 16px;
+                font-size: 0.8rem;
+                gap: 6px;
+                word-break: break-word;
+            }
+            .product-grid-layout {
+                grid-template-columns: 100% !important;
+                gap: 28px;
+                width: 100%;
+                min-width: 0;
+            }
+            .gallery-box,
+            .info-col {
+                width: 100% !important;
+                max-width: 100% !important;
+                min-width: 0 !important;
+                margin: 0 auto;
+                box-sizing: border-box;
+            }
+            .main-carousel {
+                width: 100%;
+                max-width: 100%;
+                margin: 0 auto;
+                border-radius: var(--radius-lg);
+            }
+            .slide-img-box {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                padding: 12px;
+            }
+            .slide-img-box img {
+                margin: 0 auto;
+                display: block;
+                max-width: 100%;
+                max-height: 100%;
+                object-fit: contain;
+            }
+            /* 1. Miniaturas perfectamente centradas */
+            .thumbnails-row {
+                width: 100%;
+                max-width: 100%;
+                padding: 4px 2px 8px;
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+                box-sizing: border-box;
+                margin: 0 auto;
+            }
+            /* 2. Insignias centradas */
+            .product-meta-header {
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+                flex-wrap: wrap;
+                gap: 8px;
+                margin-bottom: 10px;
+                width: 100%;
+            }
+            /* 3. Título centrado */
+            .detail-title {
+                font-size: 1.55rem !important;
+                line-height: 1.25;
+                word-break: break-word;
+                overflow-wrap: break-word;
+                margin-bottom: 12px !important;
+                text-align: center !important;
+                width: 100%;
+            }
+            .detail-desc {
+                font-size: 0.925rem;
+                line-height: 1.6;
+                word-break: break-word;
+                overflow-wrap: break-word;
+                margin-bottom: 18px;
+            }
+            .video-action-row {
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+                width: 100%;
+                margin: 6px 0 20px 0;
+            }
+            .btn-ver-funcionamiento {
+                max-width: 100%;
+                box-sizing: border-box;
+                padding: 8px 18px;
+            }
+            .btn-video-main {
+                font-size: 0.88rem;
+            }
+            .btn-video-date {
+                font-size: 0.72rem;
+            }
+            .purchase-bar {
+                padding: 20px 16px;
+                border-radius: var(--radius-lg);
+                width: 100%;
+                max-width: 100%;
+                box-sizing: border-box;
+            }
+            .price-main {
+                font-size: 1.85rem;
+            }
+            /* 4. Botones de Compra: Fila 1 dos botones lado a lado, Fila 2 Telegram ancho completo */
+            .cta-buttons-row {
+                display: flex !important;
+                flex-direction: row !important;
+                flex-wrap: wrap !important;
+                gap: 8px !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                justify-content: center !important;
+                align-items: stretch !important;
+                box-sizing: border-box !important;
+            }
+            .btn-add-cart-large,
+            .btn-wa-direct {
+                flex: 1 1 calc(50% - 5px) !important;
+                width: calc(50% - 5px) !important;
+                min-width: 0 !important;
+                font-size: clamp(0.78rem, 2.4vw, 0.88rem) !important;
+                padding: 12px 6px !important;
+                box-sizing: border-box !important;
+                white-space: nowrap !important;
+                display: inline-flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+            .btn-tg-direct {
+                flex: 1 1 100% !important;
+                width: 100% !important;
+                min-width: 100% !important;
+                font-size: 0.9rem !important;
+                padding: 12px 16px !important;
+                box-sizing: border-box !important;
+                display: inline-flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+            /* 5. Botones Compartir: Filas centradas formato pastilla */
+            .tech-spec-bar {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: center !important;
+                gap: 8px !important;
+                width: 100% !important;
+                margin-bottom: 0 !important;
+            }
+            .tech-chip-action {
+                display: inline-flex !important;
+                font-size: 0.8rem !important;
+                padding: 9px 20px !important;
+                width: auto !important;
+                max-width: 100% !important;
+                justify-content: center !important;
+                text-align: center !important;
+                box-sizing: border-box !important;
+                margin: 0 auto !important;
+            }
+            .features-card {
+                padding: 20px 16px;
+                border-radius: var(--radius-lg);
+                width: 100%;
+                max-width: 100%;
+                box-sizing: border-box;
+            }
+            .features-list li {
+                font-size: 0.88rem;
+                line-height: 1.5;
+                word-break: break-word;
+            }
+            .features-rich-list {
+                gap: 16px;
+            }
+            .feature-block {
+                font-size: 0.88rem;
+                line-height: 1.58;
+                word-break: break-word;
+            }
+            .feature-block-title {
+                font-size: 0.92rem;
+            }
+            .feature-sublist {
+                padding-left: 20px;
+            }
+            .feature-sublist li {
+                font-size: 0.86rem;
+                line-height: 1.5;
+                word-break: break-word;
+            }
+            .feature-closing {
+                font-size: 0.89rem;
+                word-break: break-word;
+            }
+            .support-card {
+                padding: 20px 16px;
+                border-radius: var(--radius-lg);
+                width: 100%;
+                max-width: 100%;
+                box-sizing: border-box;
+            }
+            .support-card-text {
+                font-size: 0.88rem;
+                line-height: 1.55;
+                word-break: break-word;
+            }
+            .technical-section {
+                padding: 20px 16px;
+                margin-top: 32px;
+                border-radius: var(--radius-lg);
+                width: 100%;
+                max-width: 100%;
+                box-sizing: border-box;
+            }
+            .tech-sec-title {
+                font-size: 1.2rem;
+            }
+            .faq-question {
+                font-size: 0.9rem;
+                padding: 14px 12px;
+            }
+            .faq-answer {
+                font-size: 0.85rem;
+                padding: 0 12px 14px;
+                word-break: break-word;
+            }
         }
 
 
@@ -4335,10 +4647,44 @@
                         <h1 class="detail-title">WiCONTABLE Lite</h1>
                         
                         <div class="video-action-row">
-                            <button onclick="openVideoModal(null, 'video/WiCONTABLE.mp4', '')" class="btn-ver-funcionamiento">📹 Ver Video de Funcionamiento</button>
+                            <button onclick="openVideoModal(null, 'video/WiCONTABLE.mp4', '')" class="btn-ver-funcionamiento">
+                                <span class="btn-video-main">🎥 Ver Video de Funcionamiento</span>
+                                <span class="btn-video-date">Actualizada el XX-11-2026</span>
+                            </button>
                         </div>
                         
-                        <div class="detail-desc"><p>La primera solución contable que permite consultar de manera masiva en 10 plataformas claves: REGISTRADURIA, PROCURADURIA, SISBÉN, DIAN, POLICIA, RUAF, SISPRO, RUES, SIMIT, FOSYGA. Pensada para contadores y profesionales financieros para optimizar la auditoria de terceros.<p><br><b>Actualizada el XX-11-2026</b></div>
+                        <div class="detail-desc"><p>La primera solución contable que permite consultar de manera masiva en 10 plataformas claves: REGISTRADURIA, PROCURADURIA, SISBÉN, DIAN, POLICIA, RUAF, SISPRO, RUES, SIMIT, FOSYGA. Pensada para contadores y profesionales financieros para optimizar la auditoria de terceros.</p></div>
+
+                        <!-- Purchase Bar (Precio, Botones de Compra y Compartir) -->
+                        <div class="purchase-bar">
+                            <div class="price-group">
+                                <span class="price-main">COP $69.900</span>
+                                <span style="font-size: 0.88rem; color: #94A3B8; font-weight: 600; margin-top: 6px; letter-spacing: 0.3px;">Pago único</span>
+                            </div>
+                            <div class="cta-buttons-row">
+                                <button class="btn-add-cart-large" onclick="addToCart(7)">
+                                    <span>🛒 Añadir al Pedido</span>
+                                </button>
+                                <a href="https://wa.me/@wicontable?text=¡Hola!%20Deseo%20adquirir%20la%20herramienta%20WiCONTABLE%20Lite" target="_blank" class="btn-wa-direct">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.176.001 6.163 1.237 8.407 3.483 2.245 2.246 3.48 5.234 3.479 8.414-.004 6.597-5.342 11.945-11.893 11.945-1.996-.001-3.957-.503-5.69-1.462L0 24zm6.59-4.846c1.62.962 3.235 1.467 4.962 1.468 5.334 0 9.673-4.321 9.676-9.635.001-2.574-1.002-4.994-2.825-6.819C16.638 2.344 14.225 1.34 11.66 1.34 6.326 1.34 1.986 5.661 1.983 10.977c-.001 1.8.473 3.559 1.373 5.111l-.995 3.633 3.689-.967z"/></svg>
+                                    <span>Preguntar a Wilder</span>
+                                </a>
+                                <a href="https://telegram.me/wicontable?text=¡Hola!%20Deseo%20adquirir%20la%20herramienta%20WiCONTABLE%20Lite" target="_blank" rel="noopener noreferrer" class="btn-tg-direct">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 11.944 0zm5.666 8.163l-1.925 9.074c-.145.641-.527.798-1.066.496l-2.955-2.18-1.426 1.374c-.157.158-.29.29-.593.29l.212-3.02 5.5-4.97c.239-.213-.052-.332-.372-.119L8.19 13.342l-2.928-.916c-.636-.2-.65-.636.133-.942l11.442-4.41c.53-.193.994.125.807 1.089z"/></svg>
+                                    <span>Preguntar a Wilder</span>
+                                </a>
+                            </div>
+
+                            <!-- Share Buttons (Debajo del botón de Telegram) -->
+                            <div class="tech-spec-bar" style="margin-bottom:0; justify-content: center; width: 100%;">
+                                <a href="https://wa.me/?text=Mira%20esta%20herramienta%20contable:%20*WiCONTABLE%20Lite*%20https%3A%2F%2Fwicontable.com%2Fwicontable-lite.html" target="_blank" class="tech-chip-action">
+                                    <span>📲 Compartir en WhatsApp</span>
+                                </a>
+                                <a href="https://t.me/share/url?url=https%3A%2F%2Fwicontable.com%2Fwicontable-lite.html&text=Mira%20esta%20herramienta%20contable:%20WiCONTABLE%20Lite" target="_blank" rel="noopener noreferrer" class="tech-chip-action tech-chip-tg">
+                                    <span>📲 Compartir en Telegram</span>
+                                </a>
+                            </div>
+                        </div>
 
                         <!-- Features -->
                         <div class="features-card">
@@ -4349,39 +4695,6 @@
                             <ul class="features-list">
                                 <li>Ideal para temporada de Exogena podras validar los nombres asociados a los NIT, C.C ó cualquier tipo de documento que permitan las plataformas.</li><li>¡EN PRODUCCION!</li><li>¡EN PRODUCCION!</li><li>¡EN PRODUCCION!</li><li>¡EN PRODUCCION!</li><li>¡EN PRODUCCION!</li><li>¡EN PRODUCCION!</li><li>¡EN PRODUCCION!</li>
                             </ul>
-                        </div>
-
-                        <!-- Technical Quick Chips -->
-                        <div class="tech-spec-bar">
-                            <a href="https://wa.me/?text=Mira%20esta%20herramienta%20contable:%20*WiCONTABLE%20Lite*%20https%3A%2F%2Fwicontable.com%2Fwicontable-lite.html" target="_blank" class="tech-chip-action">
-                                <span>📱 Compartir en WhatsApp</span>
-                            </a>
-                            <a href="https://t.me/share/url?url=https%3A%2F%2Fwicontable.com%2Fwicontable-lite.html&text=Mira%20esta%20herramienta%20contable%3A%20WiCONTABLE%20Lite" target="_blank" rel="noopener noreferrer" class="tech-chip-action tech-chip-tg">
-                                <span>📱 Compartir en Telegram</span>
-                            </a>
-                        </div>
-
-                        <!-- Purchase Bar -->
-                        <div class="purchase-bar">
-                            <div class="price-group">
-                                <span class="price-main">COP $69.900</span>
-                                <span style="font-size: 0.88rem; color: #94A3B8; font-weight: 600; margin-top: 6px; letter-spacing: 0.3px;">Pago único</span>
-                            </div>
-                            <div class="cta-buttons-row">
-                                
-                                    <button class="btn-add-cart-large" onclick="addToCart(7)">
-                                        <span>🛒 Añadir al Pedido</span>
-                                    </button>
-                                    <a href="https://wa.me/@wicontable?text=¡Hola!%20Deseo%20adquirir%20la%20herramienta%20WiCONTABLE%20Lite" target="_blank" class="btn-wa-direct">
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.176.001 6.163 1.237 8.407 3.483 2.245 2.246 3.48 5.234 3.479 8.414-.004 6.597-5.342 11.945-11.893 11.945-1.996-.001-3.957-.503-5.69-1.462L0 24zm6.59-4.846c1.62.962 3.235 1.467 4.962 1.468 5.334 0 9.673-4.321 9.676-9.635.001-2.574-1.002-4.994-2.825-6.819C16.638 2.344 14.225 1.34 11.66 1.34 6.326 1.34 1.986 5.661 1.983 10.977c-.001 1.8.473 3.559 1.373 5.111l-.995 3.633 3.689-.967z"/></svg>
-                                        <span>Preguntar a Wilder</span>
-                                    </a>
-                                    <a href="https://telegram.me/wicontable?text=¡Hola!%20Deseo%20adquirir%20la%20herramienta%20WiCONTABLE%20Lite" target="_blank" rel="noopener noreferrer" class="btn-tg-direct">
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 11.944 0zm5.666 8.163l-1.925 9.074c-.145.641-.527.798-1.066.496l-2.955-2.18-1.426 1.374c-.157.158-.29.29-.593.29l.212-3.02 5.5-4.97c.239-.213-.052-.332-.372-.119L8.19 13.342l-2.928-.916c-.636-.2-.65-.636.133-.942l11.442-4.41c.53-.193.994.125.807 1.089z"/></svg>
-                                        <span>Preguntar a Wilder</span>
-                                    </a>
-                                
-                            </div>
                         </div>
 
                         <!-- Support Card (Móvil: en celulares queda después de los botones) -->
@@ -4397,8 +4710,6 @@
                     </div>
                 </div>
 
-                
-                ${p.mostrarTecnica !== false ? `
                 <!-- Technical FAQ Accordion Section -->
                 <section class="technical-section">
                     <h2 class="tech-sec-title">
@@ -4800,502 +5111,261 @@
 
 
         function renderProduct(p) {
-
             const root = document.getElementById('detailRoot');
 
-
-
             let refCode = '';
-
+            let updateDate = '';
             let cleanDesc = p.desc || '';
-
             const matchRef = cleanDesc.match(/<b>(REF[a-zA-Z0-9]+)<\/b>/i);
-
             if (matchRef) {
-
                 refCode = matchRef[1];
-
                 cleanDesc = cleanDesc.replace(/<b>REF[a-zA-Z0-9]+<\/b>/i, '').trim();
-
             }
-
-
+            const matchDate = cleanDesc.match(/<b>(Actualizad[oa][^<]*)<\/b>/i);
+            if (matchDate) {
+                updateDate = matchDate[1];
+                cleanDesc = cleanDesc.replace(/<b>Actualizad[oa][^<]*<\/b>/i, '').trim();
+            }
 
             const safePhotos = (p.fotos && p.fotos.length > 0) ? p.fotos : ['img/logowi.webp'];
-
             totalSlides = safePhotos.length;
-
             const isAgotado = p.etiqueta && p.etiqueta.toUpperCase().includes('AGOTADO');
-
             const formatText = p.formato || 'Software Especializado';
 
-
-
             // Badge styling
-
             let badgeHTML = '';
-
             if (p.etiqueta) {
-
                 const upper = p.etiqueta.toUpperCase();
-
                 let badgeClass = 'badge-status-activa';
-
                 if (upper.includes('NUEVO')) badgeClass = 'badge-status-nuevo';
-
                 else if (upper.includes('MANTEN')) badgeClass = 'badge-status-manten';
-
                 else if (upper.includes('PROD')) badgeClass = 'badge-status-prod';
-
                 else if (upper.includes('AGOTADO')) badgeClass = 'badge-status-agotado';
-
                 else if (upper.includes('DISPONIBLE')) badgeClass = 'badge-status-disponible';
-
                 badgeHTML = `<span class="gallery-badge badge-status ${badgeClass}">${p.etiqueta}</span>`;
-
             }
 
-
-
-                        // Video action
-
+            // Video action
             let videoBtnHTML = '';
-
             const hasLocalMp4 = p.video && p.video.toLowerCase().endsWith('.mp4');
-
             const localYt = p.video ? getYouTubeId(p.video) : null;
-
             const extraYt = p.youtube ? getYouTubeId(p.youtube) : null;
-
-
+            const targetYtId = extraYt || localYt || '';
+            const targetLocalMp4 = hasLocalMp4 ? p.video : '';
 
             // Enlace de YouTube para ver externamente desde el modal
-
             let ytUrl = '';
-
             if (p.youtube && p.youtube.trim() !== '') {
-
                 ytUrl = p.youtube.trim();
-
             } else if (localYt) {
-
                 ytUrl = p.video.trim();
-
             }
 
+            const dateBadgeHTML = updateDate ? `<span class="btn-video-date">${updateDate}</span>` : '';
 
-
-            if (hasLocalMp4) {
-
-                videoBtnHTML = `<button onclick="openVideoModal(null, '${p.video}', '${ytUrl}')" class="btn-ver-funcionamiento">🎥 Ver Funcionamiento</button>`;
-
-            } else if (localYt || extraYt) {
-
-                const targetYtId = localYt || extraYt;
-
-                videoBtnHTML = `<button onclick="openVideoModal('${targetYtId}', null, '${ytUrl}')" class="btn-ver-funcionamiento">🎥 Ver Funcionamiento</button>`;
-
+            if (targetLocalMp4 || targetYtId) {
+                videoBtnHTML = `<button onclick="openVideoModal('${targetYtId}', '${targetLocalMp4}', '${ytUrl}')" class="btn-ver-funcionamiento">
+                    <span class="btn-video-main">🎥 Ver Video de Funcionamiento</span>
+                    ${dateBadgeHTML}
+                </button>`;
             } else if (p.video && p.video.trim() !== '' && p.video.trim() !== '#') {
-
-                videoBtnHTML = `<a href="${p.video}" target="_blank" class="btn-ver-funcionamiento">🎥 Ver Funcionamiento</a>`;
-
+                videoBtnHTML = `<a href="${p.video}" target="_blank" class="btn-ver-funcionamiento">
+                    <span class="btn-video-main">🎥 Ver Video de Funcionamiento</span>
+                    ${dateBadgeHTML}
+                </a>`;
             }
 
+            const existingTitle = root.querySelector('.detail-title');
+            const existingGallery = root.querySelector('.slides-container');
 
+            // Optimización LCP: Si el producto estático ya está cargado en el HTML,
+            // actualizamos datos dinámicos sin destruir ni recrear el nodo de la imagen heroica.
+            if (existingGallery && existingTitle && p.id === currentProductId) {
+                if (existingTitle.innerText !== p.nombre) existingTitle.innerText = p.nombre;
+                const descEl = root.querySelector('.detail-desc');
+                if (descEl && cleanDesc) descEl.innerHTML = cleanDesc;
+                const priceEl = root.querySelector('.price-main');
+                if (priceEl && p.precio) priceEl.innerText = p.precio;
+                const videoBtnContainer = root.querySelector('.video-action-row');
+                if (videoBtnContainer && videoBtnHTML) videoBtnContainer.innerHTML = videoBtnHTML;
+                return;
+            }
 
             root.innerHTML = `
-
                 <div class="breadcrumbs">
-
                     <a href="https://wicontable.com/">Catálogo</a>
-
                     <span class="breadcrumbs-sep">/</span>
-
                     <span>${formatText}</span>
-
                     <span class="breadcrumbs-sep">/</span>
-
                     <span class="breadcrumbs-active">${p.nombre}</span>
-
                 </div>
 
-
-
                 <div class="product-grid-layout">
-
                     <!-- Left: Gallery -->
-
                     <div class="gallery-box">
-
                         <div class="main-carousel">
-
                             ${badgeHTML}
-
                             <div class="slides-container" id="slidesContainer">
-
-                                ${safePhotos.map(f => `
-
+                                ${safePhotos.map((f, idx) => `
                                     <div class="slide-img-box">
-
-                                        <img src="${f}" alt="${p.nombre}">
-
+                                        <img ${idx === 0 ? `src="${f}" fetchpriority="high"` : `data-src="${f}" loading="lazy"`} alt="${p.nombre}" width="600" height="600">
                                     </div>
-
                                 `).join('')}
-
                             </div>
-
                             ${safePhotos.length > 1 ? `
-
                                 <button class="carousel-btn prev" onclick="moveSlide(-1)">‹</button>
-
                                 <button class="carousel-btn next" onclick="moveSlide(1)">›</button>
-
                             ` : ''}
-
                         </div>
-
-
 
                         ${safePhotos.length > 1 ? `
-
                             <div class="thumbnails-row">
-
                                 ${safePhotos.map((f, idx) => `
-
                                     <div class="thumb-item ${idx === 0 ? 'active' : ''}" onclick="goToSlide(${idx})">
-
-                                        <img src="${f}" alt="${p.nombre}">
-
+                                        <img ${idx === 0 ? `src="${f}"` : `data-src="${f}"`} alt="${p.nombre}" width="58" height="58" loading="lazy">
                                     </div>
-
                                 `).join('')}
-
                             </div>
-
                         ` : ''}
-
-
 
                         <!-- Support Card (Desktop: en PC queda debajo de la galería) -->
-
                         <div class="support-card support-desktop">
-
                             <div class="support-card-header">
-
                                 <span>🛡️</span>
-
                                 <span>Soporte</span>
-
                             </div>
-
                             <div class="support-card-text">
-
                                 ${p.nota || 'Para brindarte un soporte técnico oportuno y asegurar el correcto funcionamiento, realizamos acompañamiento remoto vía AnyDesk durante la instalación y entrega de tu solución.'}
-
                             </div>
-
                         </div>
-
                     </div>
 
-
-
                     <!-- Right: Info & Buy -->
-
                     <div class="info-col">
-
                         <div class="product-meta-header">
-
                             <span class="format-badge">${formatText}</span>
-
                             ${refCode ? `<span class="ref-code-badge">${refCode}</span>` : ''}
-
                         </div>
-
-
 
                         <h1 class="detail-title">${p.nombre}</h1>
-
                         ${videoBtnHTML ? `
-
                         <div class="video-action-row">
-
                             ${videoBtnHTML}
-
                         </div>
-
                         ` : ''}
-
                         <div class="detail-desc">${cleanDesc}</div>
 
-
-
-                        <!-- Features -->
-
-                        <div class="features-card">
-
-                            <div class="features-heading">
-
-                                <span>⚡</span>
-
-                                <span>Beneficios y Funcionalidades Clave</span>
-
-                            </div>
-
-                            <ul class="features-list">
-
-                                ${(p.caracteristicas || []).map(c => `<li>${c}</li>`).join('')}
-
-                            </ul>
-
-                        </div>
-
-
-
-                        <!-- Technical Quick Chips -->
-
-                        <div class="tech-spec-bar">
-
-                            <a href="https://wa.me/?text=Mira%20esta%20herramienta%20contable:%20*${encodeURIComponent(p.nombre)}*%20${encodeURIComponent(window.location.href)}" target="_blank" class="tech-chip-action">
-
-                                <span>📲 Compartir en WhatsApp</span>
-
-                            </a>
-
-                            <a href="https://t.me/share/url?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent('Mira esta herramienta contable: ' + p.nombre)}" target="_blank" rel="noopener noreferrer" class="tech-chip-action tech-chip-tg">
-
-                                <span>📲 Compartir en Telegram</span>
-
-                            </a>
-
-                        </div>
-
-
-
-                        <!-- Purchase Bar -->
-
+                        <!-- Purchase Bar (Precio, Botones de Compra y Compartir) -->
                         <div class="purchase-bar">
-
                             <div class="price-group">
-
-                                <span class="price-main">${p.precio || 'Consultar'}</span>
-        <span style="font-size: 0.88rem; color: #94A3B8; font-weight: 600; margin-top: 6px; letter-spacing: 0.3px;">Pago único</span>
+                                <span class="price-main">${p.precio || 'COP $69.900'}</span>
+                                <span style="font-size: 0.88rem; color: #94A3B8; font-weight: 600; margin-top: 6px; letter-spacing: 0.3px;">Pago único</span>
                             </div>
 
                             <div class="cta-buttons-row">
-
                                 ${isAgotado ? `
-
                                     <button class="btn-add-cart-large" style="background:var(--bg-surface-elevated); color:var(--text-muted); cursor:not-allowed;" disabled>No Disponible</button>
-
                                 ` : `
-
                                     <button class="btn-add-cart-large" onclick="addToCart(${p.id})">
-
                                         <span>🛒 Añadir al Pedido</span>
-
                                     </button>
-
                                     <a href="https://wa.me/@wicontable?text=¡Hola!%20Deseo%20adquirir%20la%20herramienta%20${encodeURIComponent(p.nombre)}" target="_blank" class="btn-wa-direct">
-
                                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.176.001 6.163 1.237 8.407 3.483 2.245 2.246 3.48 5.234 3.479 8.414-.004 6.597-5.342 11.945-11.893 11.945-1.996-.001-3.957-.503-5.69-1.462L0 24zm6.59-4.846c1.62.962 3.235 1.467 4.962 1.468 5.334 0 9.673-4.321 9.676-9.635.001-2.574-1.002-4.994-2.825-6.819C16.638 2.344 14.225 1.34 11.66 1.34 6.326 1.34 1.986 5.661 1.983 10.977c-.001 1.8.473 3.559 1.373 5.111l-.995 3.633 3.689-.967z"/></svg>
-
                                         <span>Preguntar a Wilder</span>
-
                                     </a>
-
                                     <a href="https://telegram.me/wicontable?text=¡Hola!%20Deseo%20adquirir%20la%20herramienta%20${encodeURIComponent(p.nombre)}" target="_blank" rel="noopener noreferrer" class="btn-tg-direct">
-
                                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 11.944 0zm5.666 8.163l-1.925 9.074c-.145.641-.527.798-1.066.496l-2.955-2.18-1.426 1.374c-.157.158-.29.29-.593.29l.212-3.02 5.5-4.97c.239-.213-.052-.332-.372-.119L8.19 13.342l-2.928-.916c-.636-.2-.65-.636.133-.942l11.442-4.41c.53-.193.994.125.807 1.089z"/></svg>
-
                                         <span>Preguntar a Wilder</span>
-
                                     </a>
-
                                 `}
-
                             </div>
 
+                            <!-- Share Buttons (Debajo del botón de Telegram) -->
+                            <div class="tech-spec-bar" style="margin-bottom:0; justify-content: center; width: 100%;">
+                                <a href="https://wa.me/?text=Mira%20esta%20herramienta%20contable:%20*${encodeURIComponent(p.nombre)}*%20${encodeURIComponent(window.location.href)}" target="_blank" class="tech-chip-action">
+                                    <span>📲 Compartir en WhatsApp</span>
+                                </a>
+                                <a href="https://t.me/share/url?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent('Mira esta herramienta contable: ' + p.nombre)}" target="_blank" rel="noopener noreferrer" class="tech-chip-action tech-chip-tg">
+                                    <span>📲 Compartir en Telegram</span>
+                                </a>
+                            </div>
                         </div>
 
-
+                        <!-- Features -->
+                        <div class="features-card">
+                            <div class="features-heading">
+                                <span>⚡</span>
+                                <span>Beneficios y Funcionalidades Clave</span>
+                            </div>
+                            ${typeof p.caracteristicas === 'string'
+                                ? `<div class="features-rich-list">${p.caracteristicas}</div>`
+                                : (p.caracteristicas || []).some(c => c.includes('feature-block') || c.includes('feature-closing'))
+                                    ? `<div class="features-rich-list">${(p.caracteristicas || []).join('')}</div>`
+                                    : `<ul class="features-list">${(p.caracteristicas || []).map(c => `<li>${c}</li>`).join('')}</ul>`
+                            }
+                        </div>
 
                         <!-- Support Card (Móvil: en celulares queda después de los botones) -->
-
                         <div class="support-card support-mobile">
-
                             <div class="support-card-header">
-
                                 <span>🛡️</span>
-
                                 <span>Soporte</span>
-
                             </div>
-
                             <div class="support-card-text">
-
                                 ${p.nota || 'Para brindarte un soporte técnico oportuno y asegurar el correcto funcionamiento, realizamos acompañamiento remoto vía AnyDesk durante la instalación y entrega de tu solución.'}
-
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
 
-
-
                 ${p.mostrarTecnica !== false ? `
-
                 <!-- Technical FAQ Accordion Section -->
-
                 <section class="technical-section">
-
                     <h2 class="tech-sec-title">
-
                         <span>📋</span>
-
                         <span>Detalles Técnicos y Preguntas Frecuentes</span>
-
                     </h2>
-
                     <p style="color:var(--text-secondary); margin-bottom: 20px;">
-
                         Creamos nuestras herramientas escuchando a las personas del gremio que, como tú, buscan la mejor manera de automatizar ese trabajo repetitivo del día a día.
 
-
-
 <br><br><b>Nota:</b> No necesitas realizar pagos recurrentes ni preocuparte por fechas de vencimiento. Te ofrecemos la herramienta mediante un pago único, la cual se mantendrá completamente funcional siempre que el origen de datos no aplique cambios estructurales en su plataforma. Si algún desarrollo deja de ser funcional obtendras el 20% una vez realicemos los ajustes de actualización.
-
                     </p>
 
-
-
                     <div class="faq-accordion">
-
                         <div class="faq-item" onclick="toggleFaq(this)">
-
                             <div class="faq-question">
-
                                 <span>¿Qué requiero en mi computador para instalar la herramienta?</span>
-
                                 <span class="faq-icon">▼</span>
-
                             </div>
-
                             <div class="faq-answer">
-
-                                Para garantizar la mejor experiencia, es fundamental que visualice previamente el video tutorial de funcionamiento; una vez confirmado el pago, nos pondremos en contacto con usted a través de WhatsApp y AnyDesk para realizar la instalación y activación del producto correspondiente. <br><br><b>💡 Importante: Te recomendamos tener Windows 11 o superior y al menos 8 GB de RAM para garantizar el mejor rendimiento y evitar que la aplicación se lentitee.</b> <br><br>Adicionalmente, brindaremos un espacio para resolver cualquier inquietud que no haya sido aclarada en el video de apoyo.
-
+                                Para garantizar la mejor experiencia, es fundamental que visualice previamente el video tutorial de funcionamiento; una vez confirmado el pago, nos pondremos en contacto con usted a través de WhatsApp y AnyDesk para realizar la instalación y activación del producto correspondiente. <br><br><b>💡 Importante: Se requiere alguno de estos navegadores (Chrome - Brave - Edge) para la instalación y recuerde que el rendimiento depende que el pc tenga buen desempeño, sirve para Sistema Operativo Windows y MacOS.</b> <br><br>Adicionalmente, brindaremos un espacio para resolver cualquier inquietud que no haya sido aclarada en el video de apoyo.
                             </div>
-
                         </div>
 
-
-
                         <div class="faq-item" onclick="toggleFaq(this)">
-
                             <div class="faq-question">
-
                                 <span>¿Cuánto tarda la entrega o instalación tras realizar el pago?</span>
-
                                 <span class="faq-icon">▼</span>
-
                             </div>
-
                             <div class="faq-answer">
-
                                 La instalación suele ser inmediata o agendada en el transcurso del mismo día en que se realiza la confirmación del pago.
-
                             </div>
-
                         </div>
-
-
 
                         <div class="faq-item" onclick="toggleFaq(this)">
-
                             <div class="faq-question">
-
                                 <span>¿Qué horarios manejan para soporte técnico?</span>
-
                                 <span class="faq-icon">▼</span>
-
                             </div>
-
                             <div class="faq-answer">
-
                                 Colega, si Dios lo permite, estamos disponibles en el siguiente horario: Lunes a sábado de 7:00am a 09:00pm y Domingos y festivos 9:00am a 6:00pm.
-
                             </div>
-
                         </div>
-
                     </div>
-
                 </section>
-
                 ` : ''}
-
             `;
-
         }
-
-
-
-        function moveSlide(dir) {
-
-            const container = document.getElementById('slidesContainer');
-
-            if (!container) return;
-
-            currentSlide += dir;
-
-            if (currentSlide < 0) currentSlide = totalSlides - 1;
-
-            if (currentSlide >= totalSlides) currentSlide = 0;
-
-            container.style.transform = `translateX(-${currentSlide * 100}%)`;
-
-
-
-            document.querySelectorAll('.thumb-item').forEach((t, i) => {
-
-                t.classList.toggle('active', i === currentSlide);
-
-            });
-
-        }
-
-
-
-        function goToSlide(idx) {
-
-            currentSlide = idx;
-
-            const container = document.getElementById('slidesContainer');
-
-            if (container) container.style.transform = `translateX(-${idx * 100}%)`;
-
-            document.querySelectorAll('.thumb-item').forEach((t, i) => {
-
-                t.classList.toggle('active', i === idx);
-
-            });
-
-        }
-
-
-
-        function toggleFaq(el) {
-
-            el.classList.toggle('active');
-
-        }
-
-
 
         function renderRelated(currentId) {
 

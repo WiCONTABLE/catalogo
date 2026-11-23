@@ -2396,7 +2396,77 @@
                     </div>
                 </a>
 
-                
+                <!-- Responsive Buttons List: Never cut off / Zero truncations -->
+                <div class="nav-links">
+                    <a href="plantillas.html" class="nav-link highlight">🎁 Plantillas GRATIS</a>
+                    <a href="https://burly-darkness-70e.notion.site/WiCONTABLE-2ea95ee6323880ec8cbae8ba51b03831" target="_blank" class="nav-link">📚 Repositorio</a>
+                    <a href="https://chatgpt.com/g/g-vO0tKViyq-asistente-contable-colombia" target="_blank" class="nav-link">🤖 GPT Asistente</a>
+
+                    <!-- Direct buttons visible on large desktop screens (>= 1321px) -->
+                    <a href="https://sites.google.com/view/estatuton-2024/inicio" target="_blank" class="nav-link nav-link-desktop-only">📁 Estatutón</a>
+                    <a href="https://drive.google.com/drive/folders/12Wl1oNyj58xcgi5LF3PCHAhDyjsKjV-N" target="_blank" class="nav-link nav-link-desktop-only">📝 R.U.T CIAS</a>
+                    <a href="#" onclick="showCourseNotice('Excel'); return false;" class="nav-link nav-link-desktop-only">📗 Aprende Excel</a>
+                    <a href="#" onclick="showCourseNotice('PowerBI'); return false;" class="nav-link nav-link-desktop-only">📊 Aprende PowerBI</a>
+
+                    <!-- Compact Dropdown automatically shown on medium / laptop screens (993px to 1320px) -->
+                    <div class="nav-dropdown" id="navMoreDropdown">
+                        <button class="nav-link nav-dropdown-btn" onclick="toggleNavDropdown(event)" aria-expanded="false" title="Más herramientas y recursos">
+                            <span>📁 Más Recursos</span>
+                            <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div class="nav-dropdown-menu" id="navDropdownMenu">
+                            <a href="https://sites.google.com/view/estatuton-2024/inicio" target="_blank" class="dropdown-item">
+                                <span class="dropdown-item-icon">📁</span>
+                                <div class="dropdown-item-text">
+                                    <strong>Estatutón Contable</strong>
+                                    <small>Estatuto tributario online</small>
+                                </div>
+                            </a>
+                            <a href="https://drive.google.com/drive/folders/12Wl1oNyj58xcgi5LF3PCHAhDyjsKjV-N" target="_blank" class="dropdown-item">
+                                <span class="dropdown-item-icon">📝</span>
+                                <div class="dropdown-item-text">
+                                    <strong>R.U.T CIAS</strong>
+                                    <small>Formatos RUT para empresas</small>
+                                </div>
+                            </a>
+                            <a href="#" onclick="showCourseNotice('Excel'); closeNavDropdown(); return false;" class="dropdown-item">
+                                <span class="dropdown-item-icon">📗</span>
+                                <div class="dropdown-item-text">
+                                    <strong>Aprende Excel</strong>
+                                    <small>Trucos y fórmulas contables</small>
+                                </div>
+                            </a>
+                            <a href="#" onclick="showCourseNotice('PowerBI'); closeNavDropdown(); return false;" class="dropdown-item">
+                                <span class="dropdown-item-icon">📊</span>
+                                <div class="dropdown-item-text">
+                                    <strong>Aprende PowerBI</strong>
+                                    <small>Dashboards e inteligencia de datos</small>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nav-actions">
+                    <!-- Cart Button -->
+                    <button class="btn-nav-cart" onclick="openCart()" title="Ver pedido">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                        <span class="btn-cart-text">Pedido</span>
+                        <span class="nav-cart-badge" id="cartCount">0</span>
+                    </button>
+
+                    <!-- Mobile Hamburger Button (<= 992px) -->
+                    <button class="btn-mobile-menu" onclick="openMobileMenu()" aria-label="Abrir Menú de Navegación" title="Menú">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
 
     <!-- Mobile Drawer -->
     <div class="drawer-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
@@ -2609,7 +2679,7 @@
                         <li><b>Facturación electrónica y PDF:</b> Descarga y renombra automáticamente los reportes de facturas electrónicas y sus respectivos archivos PDF.</li>
                         <li><b>Formularios 110 y 210:</b> Descarga masiva de declaraciones y formularios presentados anteriormente para consulta y auditoría histórica.</li>
                         <li><b>Analizador tributario:</b> Módulo integrado para la conciliación ágil y validación de inconsistencias en la exógena.</li>
-                        <li><b>Optimizado para temporada:</b> Herramienta clave de alta velocidad diseñada para la temporada de Renta Personas Naturales (Agosto a Noviembre 2026).</li>
+                        <li><b>Optimizado para temporada:</b> Herramienta clave de alta velocidad diseñada para la temporada de Renta Personas Naturales (Agosto a Octubre 2026).</li>
                     </ul>
                 </div>
 
@@ -2787,7 +2857,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2027 WiCONTABLE &bull; Desarrollado por Wilder Sarria Hernández &bull; Cali, Colombia</p>
+            <p>© 2026 WiCONTABLE &bull; Desarrollado por Wilder Sarria Hernández &bull; Cali, Colombia</p>
         </div>
     </footer>
 

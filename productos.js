@@ -177,12 +177,7 @@ etiqueta: "DISPONIBLE",
         video: "",
         fotos: ["img/p9-0.webp", "img/p9-1.webp"]
     },
-
-
-
-           
-         
-     {
+{
         id: 15,
         nombre: "Duolingo Super (1 AÑO)",
         url: "duolingosuper.html",
@@ -198,7 +193,12 @@ etiqueta: "DISPONIBLE",
         youtube: "https://youtu.be/JDlt_Eu4lrQ",
         fotos: ["img/p15-0.webp", "img/p15-1.webp", "img/p15-2.webp", "img/p15-3.webp"]
     },   
-         
+
+
+
+
+
+           
 {
         id: 10,
         nombre: "Plataformas/Membresías",

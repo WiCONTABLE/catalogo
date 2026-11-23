@@ -115,11 +115,6 @@ etiqueta: "DISPONIBLE",
         video: "",
         fotos: ["img/p13-0.webp", "img/p13-1.webp", "img/p13-2.webp", "img/p13-3.webp", "img/p13-4.webp"]
     },  
-
-
-           
-
-     
     {
         id: 12,
         nombre: "Reportes Renta P.N A.G2025 (DIAN)",
@@ -136,6 +131,14 @@ etiqueta: "DISPONIBLE",
         youtube: "https://youtu.be/qa_wJjN3Nvo",
         fotos: ["img/p12-0.webp", "img/p12-1.webp", "img/p12-2.webp", "img/p12-3.webp"]
     },    
+
+
+
+
+
+
+
+           
  {
         id: 4,
         nombre: "Microsoft 365 Genuina (1 año)",

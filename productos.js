@@ -29,22 +29,7 @@ const productos = [
         youtube: "https://youtu.be/ehYYA0f8vws",
         fotos: ["img/p2-0.webp", "img/p2-1.webp", "img/p2-2.webp","img/p2-3.webp","img/p2-4.webp","img/p2-5.webp","img/p2-6.webp"]
     }, 
-        {
-        id: 6,
-        nombre: "Gemini PRO (12 Meses)",
-        url: "gemini-pro.html",
-        formato: "Credenciales",
-        mostrarTecnica: false,
-etiqueta: "AGOTADO",
-        desc: "Disfruta de 12 meses completos de Gemini PRO, con acceso a las funciones avanzadas de inteligencia artificial de Google, además de los beneficios incluidos con la promoción estudiantil.<p><b> </b><p>",
-        caracteristicas: ["Acceso a Gemini Pro con tu cuenta personal GMAIL", "Modelos de IA avanzados para mayor rendimiento (Chat / Tarea).", "Investigación más profunda y preparación para exámenes; obtén acceso ampliado en Gemini y Gemini Notebook para analizar hasta 1,500 páginas de tus apunte.", "Más ayuda para escribir y preparación profesional; obtén acceso ampliado para generar un primer borrador, trabajar en tus argumentos y definir mejor tus ideas.", "Creación de contenido potenciada; crea imágenes y videos dinámicos fácilmente con más acceso a Gemini Omni Flash y Nano Banana Pro.", "Creación más rápida de código y proyectos; acceso ampliado a nuestra plataforma de desarrollo de IA: Google Antigravity, Jules, Google Developer Program premium y más.", "5 TB de almacenamiento²; almacenamiento total para Google Fotos, Drive y Gmail.", "Te permite elegir qué versión del modelo quieres utilizar según la complejidad de tu consulta: Hydrogen ó Neon."],
-        nota: "Te en cuenta las siguientes recomendaciones: <b>El enlace es de un solo uso.</b> Se recomienda canjearlo únicamente en la cuenta de Google donde deseas disfrutar el beneficio; Una vez activado correctamente, el servicio quedará asociado a tu cuenta Gmail. <p><br><b>Te realizamos acompañamiento vía Anydesk, para ello tenerlo instalado para poder proceder y para validar una correcta activación, es importante que estes en un PC, no es válido ni en Tablet, ni celular para el acompañamiento. Para agilizar la activación se recomienda que el usuario tenga instalado VPN Proton o cualquiera de su preferencia, pueder ser tambien vía extensión web.</b></p> <br><p>Manejamos pago local COP y Binance USDT.</p> <br><p><b>Tener en cuenta que se brinda garantía por 3 meses y que solo se procede si podemos asistir vía anydesk, de lo contrario no hay garantía.</b> Precio en USDT $10 mediante Binance.<p/>",
-        precio: "COP $30.000",
-        tipoPago: "Pago único",
-        video: "video/Gemini.mp4",
-        youtube: "https://youtu.be/f1pKdYerHxg",
-        fotos: ["img/p6-0.webp", "img/p6-1.webp", "img/p6-2.webp", "img/p6-3.webp", "img/p6-4.webp", "img/p6-5.webp"]
-    },         
+        
          {
         id: 7,
         nombre: "WiCONTABLE Lite",
@@ -130,7 +115,21 @@ etiqueta: "DISPONIBLE",
         video: "video/ReportePN.mp4",
         youtube: "https://youtu.be/qa_wJjN3Nvo",
         fotos: ["img/p12-0.webp", "img/p12-1.webp", "img/p12-2.webp", "img/p12-3.webp"]
-    },    
+    },   
+           {
+        id: 11,
+        nombre: "Declaración de Renta Persona Natural (DIAN)",
+        url: "declaracion-renta-pn.html",
+        formato: "Consultoria Contable",
+        mostrarTecnica: false,
+etiqueta: "DISPONIBLE",
+        desc: "<b>REF011</b> Brindamos asesoría integral en la elaboración y presentación de tu Declaración de Renta Persona Natural. Garantizamos total cumplimiento normativo y una optimización fiscal estratégica, tanto en el Formulario 210 como en el Formulario 110.",
+        caracteristicas: ["Diagnóstico inicial de requisitos según topes de la DIAN.", "Análisis de deducciones y beneficios tributarios para pagar lo justo.", "Elaboración del borrador y presentación de formulario 110/210.", "Acompañamiento en el proceso de pago y firma electrónica.", "Entrega de informe detallado de la declaración presentada."],
+        nota: "El valor del servicio puede variar según la complejidad de la realidad financiera del contribuyente (cantidad de cruce cedular, inversiones, etc.). <br><br><b>¡Contáctanos para una cotización personalizada!</b>",
+        precio: "Desde COP $300.000",
+        video: "",
+        fotos: ["img/p11-0.webp", "img/p11-1.webp", "img/p11-2.webp", "img/p11-3.webp", "img/p11-4.webp"]
+    },
 {
         id: 4,
         nombre: "Microsoft 365 Genuina (1 año)",
@@ -193,7 +192,22 @@ etiqueta: "DISPONIBLE",
         youtube: "https://youtu.be/JDlt_Eu4lrQ",
         fotos: ["img/p15-0.webp", "img/p15-1.webp", "img/p15-2.webp", "img/p15-3.webp"]
     },   
-
+        {
+        id: 6,
+        nombre: "Gemini PRO (12 Meses)",
+        url: "gemini-pro.html",
+        formato: "Credenciales",
+        mostrarTecnica: false,
+etiqueta: "AGOTADO",
+        desc: "Disfruta de 12 meses completos de Gemini PRO, con acceso a las funciones avanzadas de inteligencia artificial de Google, además de los beneficios incluidos con la promoción estudiantil.<p><b> </b><p>",
+        caracteristicas: ["Acceso a Gemini Pro con tu cuenta personal GMAIL", "Modelos de IA avanzados para mayor rendimiento (Chat / Tarea).", "Investigación más profunda y preparación para exámenes; obtén acceso ampliado en Gemini y Gemini Notebook para analizar hasta 1,500 páginas de tus apunte.", "Más ayuda para escribir y preparación profesional; obtén acceso ampliado para generar un primer borrador, trabajar en tus argumentos y definir mejor tus ideas.", "Creación de contenido potenciada; crea imágenes y videos dinámicos fácilmente con más acceso a Gemini Omni Flash y Nano Banana Pro.", "Creación más rápida de código y proyectos; acceso ampliado a nuestra plataforma de desarrollo de IA: Google Antigravity, Jules, Google Developer Program premium y más.", "5 TB de almacenamiento²; almacenamiento total para Google Fotos, Drive y Gmail.", "Te permite elegir qué versión del modelo quieres utilizar según la complejidad de tu consulta: Hydrogen ó Neon."],
+        nota: "Te en cuenta las siguientes recomendaciones: <b>El enlace es de un solo uso.</b> Se recomienda canjearlo únicamente en la cuenta de Google donde deseas disfrutar el beneficio; Una vez activado correctamente, el servicio quedará asociado a tu cuenta Gmail. <p><br><b>Te realizamos acompañamiento vía Anydesk, para ello tenerlo instalado para poder proceder y para validar una correcta activación, es importante que estes en un PC, no es válido ni en Tablet, ni celular para el acompañamiento. Para agilizar la activación se recomienda que el usuario tenga instalado VPN Proton o cualquiera de su preferencia, pueder ser tambien vía extensión web.</b></p> <br><p>Manejamos pago local COP y Binance USDT.</p> <br><p><b>Tener en cuenta que se brinda garantía por 3 meses y que solo se procede si podemos asistir vía anydesk, de lo contrario no hay garantía.</b> Precio en USDT $10 mediante Binance.<p/>",
+        precio: "COP $30.000",
+        tipoPago: "Pago único",
+        video: "video/Gemini.mp4",
+        youtube: "https://youtu.be/f1pKdYerHxg",
+        fotos: ["img/p6-0.webp", "img/p6-1.webp", "img/p6-2.webp", "img/p6-3.webp", "img/p6-4.webp", "img/p6-5.webp"]
+    }, 
 {
         id: 10,
         nombre: "Plataformas/Membresías",
@@ -207,21 +221,8 @@ etiqueta: "DISPONIBLE",
         precio: "Desde COP $1.500",
         video: "https://acortar.link/Plataformax",
         fotos: ["img/p10-0.webp"]
-    },
-{
-        id: 11,
-        nombre: "Declaración de Renta Persona Natural (DIAN)",
-        url: "declaracion-renta-pn.html",
-        formato: "Consultoria Contable",
-        mostrarTecnica: false,
-etiqueta: "DISPONIBLE",
-        desc: "<b>REF011</b> Brindamos asesoría integral en la elaboración y presentación de tu Declaración de Renta Persona Natural. Garantizamos total cumplimiento normativo y una optimización fiscal estratégica, tanto en el Formulario 210 como en el Formulario 110.",
-        caracteristicas: ["Diagnóstico inicial de requisitos según topes de la DIAN.", "Análisis de deducciones y beneficios tributarios para pagar lo justo.", "Elaboración del borrador y presentación de formulario 110/210.", "Acompañamiento en el proceso de pago y firma electrónica.", "Entrega de informe detallado de la declaración presentada."],
-        nota: "El valor del servicio puede variar según la complejidad de la realidad financiera del contribuyente (cantidad de cruce cedular, inversiones, etc.). <br><br><b>¡Contáctanos para una cotización personalizada!</b>",
-        precio: "Desde COP $300.000",
-        video: "",
-        fotos: ["img/p11-0.webp", "img/p11-1.webp", "img/p11-2.webp", "img/p11-3.webp", "img/p11-4.webp"]
     }
+
 
 
 ];

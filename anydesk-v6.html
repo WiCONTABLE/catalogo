@@ -4597,7 +4597,108 @@
 
 
 
-               
+                <!-- Responsive Buttons List: Never cut off / Zero truncations -->
+
+                <div class="nav-links">
+
+                    <a href="plantillas.html" class="nav-link highlight">🎁 Plantillas GRATIS</a>
+
+                    <a href="https://burly-darkness-70e.notion.site/WiCONTABLE-2ea95ee6323880ec8cbae8ba51b03831" target="_blank" class="nav-link">📚 Repositorio</a>
+
+                    <a href="https://chatgpt.com/g/g-vO0tKViyq-asistente-contable-colombia" target="_blank" class="nav-link">🤖 GPT Asistente</a>
+
+
+
+                    <!-- Direct buttons visible on large desktop screens (>= 1321px) -->
+
+                    <a href="https://sites.google.com/view/estatuton-2024/inicio" target="_blank" class="nav-link nav-link-desktop-only">📁 Estatutón</a>
+
+                    <a href="https://drive.google.com/drive/folders/12Wl1oNyj58xcgi5LF3PCHAhDyjsKjV-N" target="_blank" class="nav-link nav-link-desktop-only">📝 R.U.T CIAS</a>
+
+                    <a href="#" onclick="showCourseNotice('Excel'); return false;" class="nav-link nav-link-desktop-only">📗 Aprende Excel</a>
+
+                    <a href="#" onclick="showCourseNotice('PowerBI'); return false;" class="nav-link nav-link-desktop-only">📊 Aprende PowerBI</a>
+
+
+
+                    <!-- Compact Dropdown automatically shown on medium / laptop screens (993px to 1320px) -->
+
+                    <div class="nav-dropdown" id="navMoreDropdown">
+
+                        <button class="nav-link nav-dropdown-btn" onclick="toggleNavDropdown(event)" aria-expanded="false" title="Más herramientas y recursos">
+
+                            <span>📁 Más Recursos</span>
+
+                            <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+
+                        </button>
+
+                        <div class="nav-dropdown-menu" id="navDropdownMenu">
+
+                            <a href="https://sites.google.com/view/estatuton-2024/inicio" target="_blank" class="dropdown-item">
+
+                                <span class="dropdown-item-icon">📁</span>
+
+                                <div class="dropdown-item-text">
+
+                                    <strong>Estatutón Contable</strong>
+
+                                    <small>Estatuto tributario online</small>
+
+                                </div>
+
+                            </a>
+
+                            <a href="https://drive.google.com/drive/folders/12Wl1oNyj58xcgi5LF3PCHAhDyjsKjV-N" target="_blank" class="dropdown-item">
+
+                                <span class="dropdown-item-icon">📝</span>
+
+                                <div class="dropdown-item-text">
+
+                                    <strong>R.U.T CIAS</strong>
+
+                                    <small>Formatos RUT para empresas</small>
+
+                                </div>
+
+                            </a>
+
+                            <a href="#" onclick="showCourseNotice('Excel'); closeNavDropdown(); return false;" class="dropdown-item">
+
+                                <span class="dropdown-item-icon">📗</span>
+
+                                <div class="dropdown-item-text">
+
+                                    <strong>Aprende Excel</strong>
+
+                                    <small>Trucos y fórmulas contables</small>
+
+                                </div>
+
+                            </a>
+
+                            <a href="#" onclick="showCourseNotice('PowerBI'); closeNavDropdown(); return false;" class="dropdown-item">
+
+                                <span class="dropdown-item-icon">📊</span>
+
+                                <div class="dropdown-item-text">
+
+                                    <strong>Aprende PowerBI</strong>
+
+                                    <small>Dashboards e inteligencia de datos</small>
+
+                                </div>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
                 <div class="nav-actions">
 
                     <!-- Cart Button -->
@@ -4614,7 +4715,24 @@
 
 
 
-                 
+                    <!-- Mobile Hamburger Button (<= 992px) -->
+
+                    <button class="btn-mobile-menu" onclick="openMobileMenu()" aria-label="Abrir Menú de Navegación" title="Menú">
+
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+
+                        </svg>
+
+                    </button>
+
+                </div>
+
             </div>
 
         </nav>
@@ -4623,7 +4741,182 @@
 
 
 
-    
+    <!-- Mobile Drawer -->
+
+    <div class="drawer-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
+
+    <aside class="mobile-nav-drawer" id="mobileDrawer">
+
+        <div class="mobile-nav-header">
+
+            <div class="brand-logo">
+
+                <img src="img/logowi.webp" alt="WiCONTABLE" class="logo-img">
+
+                <div class="brand-name">Wi<span>CONTABLE</span></div>
+
+            </div>
+
+            <button class="btn-close-mobile" onclick="closeMobileMenu()">&times;</button>
+
+        </div>
+
+        <div class="mobile-nav-content">
+
+            <a href="index.html" class="mobile-nav-item" onclick="closeMobileMenu()">
+
+                <span class="mobile-nav-icon">🏠</span>
+
+                <div class="mobile-nav-info">
+
+                    <strong>Inicio Catálogo</strong>
+
+                    <small>Todas las soluciones disponibles</small>
+
+                </div>
+
+            </a>
+
+            <a href="plantillas.html" class="mobile-nav-item" onclick="closeMobileMenu()">
+
+                <span class="mobile-nav-icon">🎁</span>
+
+                <div class="mobile-nav-info">
+
+                    <strong>Plantillas GRATIS</strong>
+
+                    <small>Descargas contables sin costo</small>
+
+                </div>
+
+            </a>
+
+            <div class="mobile-nav-group-title">Recursos y Utilidades</div>
+
+            <a href="https://burly-darkness-70e.notion.site/WiCONTABLE-2ea95ee6323880ec8cbae8ba51b03831" target="_blank" class="mobile-nav-item" onclick="closeMobileMenu()">
+
+                <span class="mobile-nav-icon">📚</span>
+
+                <div class="mobile-nav-info">
+
+                    <strong>Repositorio Contable</strong>
+
+                    <small>Base oficial en Notion</small>
+
+                </div>
+
+            </a>
+
+            <a href="https://chatgpt.com/g/g-vO0tKViyq-asistente-contable-colombia" target="_blank" class="mobile-nav-item" onclick="closeMobileMenu()">
+
+                <span class="mobile-nav-icon">🤖</span>
+
+                <div class="mobile-nav-info">
+
+                    <strong>GPT Asistente Colombia</strong>
+
+                    <small>IA para consultas contables</small>
+
+                </div>
+
+            </a>
+
+            <a href="https://sites.google.com/view/estatuton-2024/inicio" target="_blank" class="mobile-nav-item" onclick="closeMobileMenu()">
+
+                <span class="mobile-nav-icon">📁</span>
+
+                <div class="mobile-nav-info">
+
+                    <strong>Estatutón Contable</strong>
+
+                    <small>Estatuto tributario online</small>
+
+                </div>
+
+            </a>
+
+            <a href="https://drive.google.com/drive/folders/12Wl1oNyj58xcgi5LF3PCHAhDyjsKjV-N" target="_blank" class="mobile-nav-item" onclick="closeMobileMenu()">
+
+                <span class="mobile-nav-icon">📝</span>
+
+                <div class="mobile-nav-info">
+
+                    <strong>R.U.T CIAS</strong>
+
+                    <small>Formatos RUT en Drive</small>
+
+                </div>
+
+            </a>
+
+            <div class="mobile-nav-group-title">Formación</div>
+
+            <a href="#" onclick="showCourseNotice('Excel'); closeMobileMenu(); return false;" class="mobile-nav-item">
+
+                <span class="mobile-nav-icon">📗</span>
+
+                <div class="mobile-nav-info">
+
+                    <strong>Aprende Excel</strong>
+
+                    <small>Automatización tributaria</small>
+
+                </div>
+
+            </a>
+
+            <a href="#" onclick="showCourseNotice('PowerBI'); closeMobileMenu(); return false;" class="mobile-nav-item">
+
+                <span class="mobile-nav-icon">📊</span>
+
+                <div class="mobile-nav-info">
+
+                    <strong>Aprende PowerBI</strong>
+
+                    <small>Dashboards contables</small>
+
+                </div>
+
+            </a>
+
+            <a href="https://telegram.me/wicontable" target="_blank" rel="noopener noreferrer" class="mobile-nav-item">
+
+                <span class="mobile-nav-icon">✈️</span>
+
+                <div class="mobile-nav-info">
+
+                    <strong>Canal Telegram</strong>
+
+                    <small>Soporte y actualizaciones wicontable</small>
+
+                </div>
+
+            </a>
+
+        </div>
+
+        <div class="mobile-nav-footer">
+
+            <div class="mobile-nav-schedule">⏰ Lun-Sáb 7am-9pm | Dom/Fest 9am-6pm</div>
+
+            <a href="https://wa.me/@wicontable?text=Hola,%20soy%20cliente%20y%20requiero%20soporte." target="_blank" rel="noopener noreferrer" class="mobile-btn-wa">
+
+                <span>WhatsApp Soporte @wicontable</span>
+
+            </a>
+
+            <a href="https://telegram.me/wicontable" target="_blank" rel="noopener noreferrer" class="mobile-btn-tg">
+
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.458c.538-.196 1.006.128.832.943z"/></svg>
+
+                <span>Telegram Soporte wicontable</span>
+
+            </a>
+
+        </div>
+
+    </aside>
+
 
 
     <!-- Main Content Container -->
@@ -4670,9 +4963,8 @@
                         <span>Soporte e Instalación</span>
                     </div>
                     <div class="support-card-text">
-                        <p>Se trata de una aplicación ejecutable (EXE) que ha sido ajustada para mantener siempre la sesión activa y sin límites de tiempo; la aplicación se mantiene operativa de forma indefinida.</p><br>
-                        <p><b>Recomendación técnica:</b> Se recomienda no actualizar y mantener la versión inicial. En caso de que el usuario tenga alguna versión instalada anteriormente, se recomienda limpiar los registros mediante regedit para su óptimo funcionamiento. Precio en USDT $7 mediante Binance.</p>
-                    </div>
+                                Se trata de una aplicación ejecutable (EXE) ajustada para mantener siempre la sesión activa y sin límites de tiempo; la aplicación se mantiene operativa de forma indefinida. <br><br><p>En caso de que el usuario tenga alguna versión instalada anteriormente, se recomienda limpiar registros anteriores mediante regedit para el óptimo funcionamiento de esta versión.</p> <br><p>Manejamos pago local COP y Binance USDT (Precio: <b>USDT $7</b> mediante Binance).</p> <br><div class="warranty-policy-box" style="margin-top: 12px; padding: 14px 16px; background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: 10px;"><strong style="color: var(--text-primary); font-size: 0.95rem; display: block; margin-bottom: 8px;">Garantía y Operatividad Vitalicia:</strong><ul style="margin: 0 0 10px 18px; padding: 0; font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55;"><li><b>Sesión sin límite de tiempo:</b> Herramienta ejecutable optimizada para mantenerse siempre activa.</li><li><b>Recomendación clave:</b> Se recomienda no actualizar y mantener la versión inicial entregada para preservar la estabilidad.</li></ul><p style="margin: 0; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;"><b>Soporte remoto:</b> Se brinda acompañamiento vía AnyDesk para la configuración inicial y pruebas de funcionamiento.</p></div>
+                            </div>
                 </div>
             </div>
 
@@ -4742,9 +5034,8 @@
                         <span>Soporte e Instalación</span>
                     </div>
                     <div class="support-card-text">
-                        <p>Se trata de una aplicación ejecutable (EXE) que ha sido ajustada para mantener siempre la sesión activa y sin límites de tiempo; la aplicación se mantiene operativa de forma indefinida.</p><br>
-                        <p><b>Recomendación técnica:</b> Se recomienda no actualizar y mantener la versión inicial. En caso de que el usuario tenga alguna versión instalada anteriormente, se recomienda limpiar los registros mediante regedit para su óptimo funcionamiento. Precio en USDT $7 mediante Binance.</p>
-                    </div>
+                                Se trata de una aplicación ejecutable (EXE) ajustada para mantener siempre la sesión activa y sin límites de tiempo; la aplicación se mantiene operativa de forma indefinida. <br><br><p>En caso de que el usuario tenga alguna versión instalada anteriormente, se recomienda limpiar registros anteriores mediante regedit para el óptimo funcionamiento de esta versión.</p> <br><p>Manejamos pago local COP y Binance USDT (Precio: <b>USDT $7</b> mediante Binance).</p> <br><div class="warranty-policy-box" style="margin-top: 12px; padding: 14px 16px; background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: 10px;"><strong style="color: var(--text-primary); font-size: 0.95rem; display: block; margin-bottom: 8px;">Garantía y Operatividad Vitalicia:</strong><ul style="margin: 0 0 10px 18px; padding: 0; font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55;"><li><b>Sesión sin límite de tiempo:</b> Herramienta ejecutable optimizada para mantenerse siempre activa.</li><li><b>Recomendación clave:</b> Se recomienda no actualizar y mantener la versión inicial entregada para preservar la estabilidad.</li></ul><p style="margin: 0; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;"><b>Soporte remoto:</b> Se brinda acompañamiento vía AnyDesk para la configuración inicial y pruebas de funcionamiento.</p></div>
+                            </div>
                 </div>
             </div>
         </div>
@@ -4998,7 +5289,7 @@
     <!-- Scripts -->
     
     <!-- Scripts -->
-    <script src="productos.js"></script>
+    <script src="productos.js?v=20261125"></script>
     <script>
 
         const currentProductId = 9;
@@ -5201,18 +5492,87 @@
                 videoBtnHTML = `<a href="${p.video}" target="_blank" class="btn-ver-funcionamiento">🎥 Ver Funcionamiento</a>`;
             }
 
-            const existingTitle = root.querySelector('.detail-title');
+                        const existingTitle = root.querySelector('.detail-title');
             const existingGallery = root.querySelector('.slides-container');
 
-            // Optimización LCP: Si el producto estático ya está cargado en el HTML,
-            // actualizamos datos dinámicos sin destruir ni recrear el nodo de la imagen heroica.
+            // Optimización LCP con Sincronización Dinámica Total:
+            // Actualiza título, descripción, precio, video, insignia de existencia (DISPONIBLE/AGOTADO/ACTIVA/PRODUCCIÓN),
+            // botones de compra y notas de soporte sin destruir el nodo heroico de la imagen.
             if (existingGallery && existingTitle && p.id === currentProductId) {
                 if (existingTitle.innerText !== p.nombre) existingTitle.innerText = p.nombre;
                 const descEl = root.querySelector('.detail-desc');
                 if (descEl && cleanDesc) descEl.innerHTML = cleanDesc;
                 const priceEl = root.querySelector('.price-main');
                 if (priceEl && p.precio) priceEl.innerText = p.precio;
-                initTouchSwipe();
+                const videoBtnContainer = root.querySelector('.video-action-row');
+                if (videoBtnContainer && videoBtnHTML) videoBtnContainer.innerHTML = videoBtnHTML;
+
+                // 1. Sincronización dinámica de insignia de estado/existencia desde productos.js
+                const badgeContainer = root.querySelector('.main-carousel');
+                const existingBadge = root.querySelector('.gallery-badge');
+                if (p.etiqueta && p.etiqueta.trim() !== '') {
+                    const upper = p.etiqueta.toUpperCase();
+                    let badgeClass = 'badge-status-activa';
+                    if (upper.includes('NUEVO')) badgeClass = 'badge-status-nuevo';
+                    else if (upper.includes('MANTEN')) badgeClass = 'badge-status-manten';
+                    else if (upper.includes('PROD')) badgeClass = 'badge-status-prod';
+                    else if (upper.includes('AGOTADO')) badgeClass = 'badge-status-agotado';
+                    else if (upper.includes('DISPONIBLE')) badgeClass = 'badge-status-disponible';
+
+                    if (existingBadge) {
+                        existingBadge.className = `gallery-badge badge-status ${badgeClass}`;
+                        existingBadge.innerText = p.etiqueta;
+                    } else if (badgeContainer) {
+                        const newBadgeEl = document.createElement('span');
+                        newBadgeEl.className = `gallery-badge badge-status ${badgeClass}`;
+                        newBadgeEl.innerText = p.etiqueta;
+                        badgeContainer.prepend(newBadgeEl);
+                    }
+                } else if (existingBadge) {
+                    existingBadge.remove();
+                }
+
+                // 2. Sincronización dinámica de botones de compra según existencia (AGOTADO vs DISPONIBLE)
+                const ctaRow = root.querySelector('.cta-buttons-row');
+                if (ctaRow) {
+                    if (isAgotado) {
+                        ctaRow.innerHTML = `
+                            <button class="btn-add-cart-large" style="background:var(--bg-surface-elevated); color:var(--text-muted); cursor:not-allowed;" disabled>No Disponible</button>
+                            <a href="https://wa.me/@wicontable?text=¡Hola!%20Deseo%20consultar%20disponibilidad%20de%20${encodeURIComponent(p.nombre)}" target="_blank" class="btn-wa-direct">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.176.001 6.163 1.237 8.407 3.483 2.245 2.246 3.48 5.234 3.479 8.414-.004 6.597-5.342 11.945-11.893 11.945-1.996-.001-3.957-.503-5.69-1.462L0 24zm6.59-4.846c1.62.962 3.235 1.467 4.962 1.468 5.334 0 9.673-4.321 9.676-9.635.001-2.574-1.002-4.994-2.825-6.819C16.638 2.344 14.225 1.34 11.66 1.34 6.326 1.34 1.986 5.661 1.983 10.977c-.001 1.8.473 3.559 1.373 5.111l-.995 3.633 3.689-.967z"></path></svg>
+                                <span>Consultar por WhatsApp</span>
+                            </a>
+                            <a href="https://telegram.me/wicontable?text=¡Hola!%20Deseo%20consultar%20disponibilidad%20de%20${encodeURIComponent(p.nombre)}" target="_blank" rel="noopener noreferrer" class="btn-tg-direct">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 11.944 0zm5.666 8.163l-1.925 9.074c-.145.641-.527.798-1.066.496l-2.955-2.18-1.426 1.374c-.157.158-.29.29-.593.29l.212-3.02 5.5-4.97c.239-.213-.052-.332-.372-.119L8.19 13.342l-2.928-.916c-.636-.2-.65-.636.133-.942l11.442-4.41c.53-.193.994.125.807 1.089z"></path></svg>
+                                <span>Consultar por Telegram</span>
+                            </a>
+                        `;
+                    } else {
+                        ctaRow.innerHTML = `
+                            <button class="btn-add-cart-large" onclick="addToCart(${p.id})">
+                                <span>🛒 Añadir al Pedido</span>
+                            </button>
+                            <a href="https://wa.me/@wicontable?text=¡Hola!%20Deseo%20preguntar%20acerca%20de%20${encodeURIComponent(p.nombre)}" target="_blank" class="btn-wa-direct">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.176.001 6.163 1.237 8.407 3.483 2.245 2.246 3.48 5.234 3.479 8.414-.004 6.597-5.342 11.945-11.893 11.945-1.996-.001-3.957-.503-5.69-1.462L0 24zm6.59-4.846c1.62.962 3.235 1.467 4.962 1.468 5.334 0 9.673-4.321 9.676-9.635.001-2.574-1.002-4.994-2.825-6.819C16.638 2.344 14.225 1.34 11.66 1.34 6.326 1.34 1.986 5.661 1.983 10.977c-.001 1.8.473 3.559 1.373 5.111l-.995 3.633 3.689-.967z"></path></svg>
+                                <span>Preguntar a Wilder</span>
+                            </a>
+                            <a href="https://telegram.me/wicontable?text=¡Hola!%20Deseo%20preguntar%20acerca%20de%20${encodeURIComponent(p.nombre)}" target="_blank" rel="noopener noreferrer" class="btn-tg-direct">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 11.944 0zm5.666 8.163l-1.925 9.074c-.145.641-.527.798-1.066.496l-2.955-2.18-1.426 1.374c-.157.158-.29.29-.593.29l.212-3.02 5.5-4.97c.239-.213-.052-.332-.372-.119L8.19 13.342l-2.928-.916c-.636-.2-.65-.636.133-.942l11.442-4.41c.53-.193.994.125.807 1.089z"></path></svg>
+                                <span>Preguntar a Wilder</span>
+                            </a>
+                        `;
+                    }
+                }
+
+                // 3. Sincronización de notas de soporte y garantía
+                if (p.nota) {
+                    const supportTexts = root.querySelectorAll('.support-card-text');
+                    supportTexts.forEach(st => {
+                        st.innerHTML = p.nota;
+                    });
+                }
+
+                if (typeof initTouchSwipe === 'function') initTouchSwipe();
                 return;
             }
 
@@ -5305,9 +5665,7 @@
                             </div>
 
                             <div class="support-card-text">
-
-                                ${p.nota || 'Para brindarte un soporte técnico oportuno y asegurar el correcto funcionamiento, realizamos acompañamiento remoto vía AnyDesk durante la instalación y entrega de tu solución.'}
-
+                                Se trata de una aplicación ejecutable (EXE) ajustada para mantener siempre la sesión activa y sin límites de tiempo; la aplicación se mantiene operativa de forma indefinida. <br><br><p>En caso de que el usuario tenga alguna versión instalada anteriormente, se recomienda limpiar registros anteriores mediante regedit para el óptimo funcionamiento de esta versión.</p> <br><p>Manejamos pago local COP y Binance USDT (Precio: <b>USDT $7</b> mediante Binance).</p> <br><div class="warranty-policy-box" style="margin-top: 12px; padding: 14px 16px; background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: 10px;"><strong style="color: var(--text-primary); font-size: 0.95rem; display: block; margin-bottom: 8px;">Garantía y Operatividad Vitalicia:</strong><ul style="margin: 0 0 10px 18px; padding: 0; font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55;"><li><b>Sesión sin límite de tiempo:</b> Herramienta ejecutable optimizada para mantenerse siempre activa.</li><li><b>Recomendación clave:</b> Se recomienda no actualizar y mantener la versión inicial entregada para preservar la estabilidad.</li></ul><p style="margin: 0; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;"><b>Soporte remoto:</b> Se brinda acompañamiento vía AnyDesk para la configuración inicial y pruebas de funcionamiento.</p></div>
                             </div>
 
                         </div>
@@ -5449,9 +5807,7 @@
                             </div>
 
                             <div class="support-card-text">
-
-                                ${p.nota || 'Para brindarte un soporte técnico oportuno y asegurar el correcto funcionamiento, realizamos acompañamiento remoto vía AnyDesk durante la instalación y entrega de tu solución.'}
-
+                                Se trata de una aplicación ejecutable (EXE) ajustada para mantener siempre la sesión activa y sin límites de tiempo; la aplicación se mantiene operativa de forma indefinida. <br><br><p>En caso de que el usuario tenga alguna versión instalada anteriormente, se recomienda limpiar registros anteriores mediante regedit para el óptimo funcionamiento de esta versión.</p> <br><p>Manejamos pago local COP y Binance USDT (Precio: <b>USDT $7</b> mediante Binance).</p> <br><div class="warranty-policy-box" style="margin-top: 12px; padding: 14px 16px; background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: 10px;"><strong style="color: var(--text-primary); font-size: 0.95rem; display: block; margin-bottom: 8px;">Garantía y Operatividad Vitalicia:</strong><ul style="margin: 0 0 10px 18px; padding: 0; font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55;"><li><b>Sesión sin límite de tiempo:</b> Herramienta ejecutable optimizada para mantenerse siempre activa.</li><li><b>Recomendación clave:</b> Se recomienda no actualizar y mantener la versión inicial entregada para preservar la estabilidad.</li></ul><p style="margin: 0; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;"><b>Soporte remoto:</b> Se brinda acompañamiento vía AnyDesk para la configuración inicial y pruebas de funcionamiento.</p></div>
                             </div>
 
                         </div>

@@ -112,6 +112,7 @@ etiqueta: "DISPONIBLE",
         caracteristicas: ["Diagnóstico inicial de requisitos según topes de la DIAN.", "Análisis de deducciones y beneficios tributarios para pagar lo justo.", "Elaboración del borrador y presentación de formulario 110/210.", "Acompañamiento en el proceso de pago y firma electrónica.", "Entrega de informe detallado de la declaración presentada."],
         nota: "El valor del servicio puede variar según la complejidad de la realidad financiera del contribuyente (cantidad de cruce cedular, inversiones, etc.). <br><br><b>¡Contáctanos para una cotización personalizada!</b>",
         precio: "Desde COP $300.000",
+        tipoPago: "Tarifa base / Consultoría",
         video: "",
         fotos: ["img/p11-0.webp", "img/p11-1.webp", "img/p11-2.webp", "img/p11-3.webp", "img/p11-4.webp"]
     },

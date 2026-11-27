@@ -2,6 +2,22 @@ const miTelefono = "@wicontable";
 const miTelegram = "https://telegram.me/wicontable";
 
 const productos = [
+                  {
+        id: 7,
+        nombre: "WiCONTABLE Lite",
+        url: "wicontable-lite.html",
+        formato: "Ejecutable .exe",
+        mostrarTecnica: true,
+        etiqueta: "¡EN PRODUCCION!",
+        desc: "<b>REF001</b><p>La primera solución contable que permite consultar de manera masiva en 10 plataformas claves: REGISTRADURIA, PROCURADURIA, SISBÉN, DIAN, POLICIA, RUAF, SISPRO, RUES, SIMIT, FOSYGA. Pensada para contadores y profesionales financieros para optimizar la auditoria de terceros.<p><br><b>Actualizada el XX-11-2026</b>",
+        caracteristicas: ["Facilite la depuración de terceros para Exógena, migraciones ERP y otros reportes regulatorios, auditando la identidad fiscal (NIT/C.C.) exigida según los parámetros de consulta de cada entidad.", "¡EN PRODUCCION!", "¡EN PRODUCCION!", "¡EN PRODUCCION!", "¡EN PRODUCCION!", "¡EN PRODUCCION!", "¡EN PRODUCCION!", "¡EN PRODUCCION!", "¡EN PRODUCCION!", "¡EN PRODUCCION!", "¡EN PRODUCCION!"],
+        nota: "<p>Para brindarle un soporte técnico oportuno, requerimos conectarnos de forma remota a su equipo a través de <b>AnyDesk</b>.</p><br><p>Tenga en cuenta que este acceso quedará registrado de manera individual en cada computadora durante la instalación. Por su seguridad, nuestro equipo se comunicará exclusivamente al número de móvil o @usuario registrado.</p><br><p>Asimismo, le recordamos que el funcionamiento de nuestra herramienta depende de plataformas de terceros integradas; cualquier cambio en los parámetros de dichas plataformas nos exime de responsabilidad sobre la continuidad del servicio.</p><br><p><b>RECUERDE:</b> Es importante ver el videotutorial antes de adquirir la herramienta. Le pedimos disponer de unos 15 minutos mientras realizamos la instalación y pruebas con un listado de NITs.</p><br><div class=\"warranty-policy-box\" style=\"margin-top: 14px; padding: 14px 16px; background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: 10px;\"><strong style=\"color: var(--text-primary); font-size: 0.95rem; display: block; margin-bottom: 8px;\">Garantía y Licencia de Uso:</strong><ul style=\"margin: 0 0 10px 18px; padding: 0; font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55;\"><li><b>Licencia sin fecha de vencimiento:</b> Solución de pago único entregada probada y funcionando al momento de la instalación.</li><li><b>Plataformas integradas:</b> El servicio opera sobre parámetros web oficiales vigentes de cada entidad.</li></ul><p style=\"margin: 0; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;\"><b>Soporte técnico:</b> Conexión remota exclusiva a través de AnyDesk para configuración y pruebas.</p></div>",
+        precio: "COP $69.900",
+        tipoPago: "Pago único",
+        video: "video/WiCONTABLE.mp4",
+        youtube: "",
+        fotos: ["img/p0-0.webp", "img/p0-1.webp"]
+    }, 
            {
         id: 2,
         nombre: "PDFs/ZIPs Downloader (DIAN)",
@@ -29,23 +45,7 @@ const productos = [
         youtube: "https://youtu.be/ehYYA0f8vws",
         fotos: ["img/p2-0.webp", "img/p2-1.webp", "img/p2-2.webp","img/p2-3.webp","img/p2-4.webp","img/p2-5.webp","img/p2-6.webp"]
     }, 
-        
-         {
-        id: 7,
-        nombre: "WiCONTABLE Lite",
-        url: "wicontable-lite.html",
-        formato: "Ejecutable .exe",
-        mostrarTecnica: true,
-        etiqueta: "¡EN PRODUCCION!",
-        desc: "<b>REF001</b><p>La primera solución contable que permite consultar de manera masiva en 10 plataformas claves: REGISTRADURIA, PROCURADURIA, SISBÉN, DIAN, POLICIA, RUAF, SISPRO, RUES, SIMIT, FOSYGA. Pensada para contadores y profesionales financieros para optimizar la auditoria de terceros.<p><br><b>Actualizada el XX-11-2026</b>",
-        caracteristicas: ["Facilite la depuración de terceros para Exógena, migraciones ERP y otros reportes regulatorios, auditando la identidad fiscal (NIT/C.C.) exigida según los parámetros de consulta de cada entidad.", "¡EN PRODUCCION!", "¡EN PRODUCCION!", "¡EN PRODUCCION!", "¡EN PRODUCCION!", "¡EN PRODUCCION!", "¡EN PRODUCCION!", "¡EN PRODUCCION!", "¡EN PRODUCCION!", "¡EN PRODUCCION!", "¡EN PRODUCCION!"],
-        nota: "<p>Para brindarle un soporte técnico oportuno, requerimos conectarnos de forma remota a su equipo a través de <b>AnyDesk</b>.</p><br><p>Tenga en cuenta que este acceso quedará registrado de manera individual en cada computadora durante la instalación. Por su seguridad, nuestro equipo se comunicará exclusivamente al número de móvil o @usuario registrado.</p><br><p>Asimismo, le recordamos que el funcionamiento de nuestra herramienta depende de plataformas de terceros integradas; cualquier cambio en los parámetros de dichas plataformas nos exime de responsabilidad sobre la continuidad del servicio.</p><br><p><b>RECUERDE:</b> Es importante ver el videotutorial antes de adquirir la herramienta. Le pedimos disponer de unos 15 minutos mientras realizamos la instalación y pruebas con un listado de NITs.</p><br><div class=\"warranty-policy-box\" style=\"margin-top: 14px; padding: 14px 16px; background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: 10px;\"><strong style=\"color: var(--text-primary); font-size: 0.95rem; display: block; margin-bottom: 8px;\">Garantía y Licencia de Uso:</strong><ul style=\"margin: 0 0 10px 18px; padding: 0; font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55;\"><li><b>Licencia sin fecha de vencimiento:</b> Solución de pago único entregada probada y funcionando al momento de la instalación.</li><li><b>Plataformas integradas:</b> El servicio opera sobre parámetros web oficiales vigentes de cada entidad.</li></ul><p style=\"margin: 0; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;\"><b>Soporte técnico:</b> Conexión remota exclusiva a través de AnyDesk para configuración y pruebas.</p></div>",
-        precio: "COP $69.900",
-        tipoPago: "Pago único",
-        video: "video/WiCONTABLE.mp4",
-        youtube: "",
-        fotos: ["img/p0-0.webp", "img/p0-1.webp"]
-    },   
+            
      {
         id: 14,
         nombre: "PDF Extract PRO",
